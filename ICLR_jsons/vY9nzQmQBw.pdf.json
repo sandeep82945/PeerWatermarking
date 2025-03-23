@@ -1,0 +1,753 @@
+{
+    "abstractText": "Recent advancements in neural vocoding are predominantly driven by Generative Adversarial Networks (GANs) operating in the time-domain. While effective, this approach neglects the inductive bias offered by time-frequency representations, resulting in reduntant and computionally-intensive upsampling operations. Fourierbased time-frequency representation is an appealing alternative, aligning more accurately with human auditory perception, and benefitting from well-established fast algorithms for its computation. Nevertheless, direct reconstruction of complexvalued spectrograms has been historically problematic, primarily due to phase recovery issues. This study seeks to close this gap by presenting Vocos, a new model that directly generates Fourier spectral coefficients. Vocos not only matches the state-of-the-art in audio quality, as demonstrated in our evaluations, but it also substantially improves computational efficiency, achieving an order of magnitude increase in speed compared to prevailing time-domain neural vocoding approaches. The source code and model weights have been open-sourced at https://github.com/anonymous5425/anonymous-submission.",
+    "authors": [],
+    "id": "SP:fea861c947ef981f1f084a333bddfe206025e050",
+    "references": [
+        {
+            "authors": [
+                "Taejun Bak",
+                "Junmo Lee",
+                "Hanbin Bae",
+                "Jinhyeok Yang",
+                "Jae-Sung Bae",
+                "Young-Sun Joo"
+            ],
+            "title": "Avocodo: Generative adversarial network for artifact-free vocoder",
+            "venue": "arXiv preprint arXiv:2206.13404,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Zal\u00e1n Borsos",
+                "Rapha\u00ebl Marinier",
+                "Damien Vincent",
+                "Eugene Kharitonov",
+                "Olivier Pietquin",
+                "Matt Sharifi",
+                "Olivier Teboul",
+                "David Grangier",
+                "Marco Tagliasacchi",
+                "Neil Zeghidour"
+            ],
+            "title": "Audiolm: a language modeling approach to audio generation",
+            "venue": "arXiv preprint arXiv:2209.03143,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Marina Bosi",
+                "Richard E Goldberg"
+            ],
+            "title": "Introduction to digital audio coding and standards, volume 721",
+            "venue": "Springer Science & Business Media,",
+            "year": 2002
+        },
+        {
+            "authors": [
+                "Antoine Caillon",
+                "Philippe Esling"
+            ],
+            "title": "Rave: A variational autoencoder for fast and high-quality neural audio synthesis",
+            "venue": "arXiv preprint arXiv:2111.05011,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Michael Chinen",
+                "Felicia SC Lim",
+                "Jan Skoglund",
+                "Nikita Gureev",
+                "Feargus O\u2019Gorman",
+                "Andrew Hines"
+            ],
+            "title": "Visqol v3: An open source production ready objective speech and audio metric",
+            "venue": "In 2020 twelfth international conference on quality of multimedia experience (QoMEX),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Alexandre D\u00e9fossez",
+                "Jade Copet",
+                "Gabriel Synnaeve",
+                "Yossi Adi"
+            ],
+            "title": "High fidelity neural audio compression",
+            "venue": "arXiv preprint arXiv:2210.13438,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Chris Donahue",
+                "Julian McAuley",
+                "Miller Puckette"
+            ],
+            "title": "Adversarial audio synthesis",
+            "venue": "arXiv preprint arXiv:1802.04208,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Harishchandra Dubey",
+                "Vishak Gopal",
+                "Ross Cutler",
+                "Ashkan Aazami",
+                "Sergiy Matusevych",
+                "Sebastian Braun",
+                "Sefik Emre Eskimez",
+                "Manthan Thakker",
+                "Takuya Yoshioka",
+                "Hannes Gamper"
+            ],
+            "title": "Icassp 2022 deep noise suppression challenge",
+            "venue": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Homer Dudley"
+            ],
+            "title": "Remaking speech",
+            "venue": "The Journal of the Acoustical Society of America,",
+            "year": 1939
+        },
+        {
+            "authors": [
+                "Jesse Engel",
+                "Kumar Krishna Agrawal",
+                "Shuo Chen",
+                "Ishaan Gulrajani",
+                "Chris Donahue",
+                "Adam Roberts"
+            ],
+            "title": "Gansynth: Adversarial neural audio synthesis",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Ian Goodfellow",
+                "Jean Pouget-Abadie",
+                "Mehdi Mirza",
+                "Bing Xu",
+                "David Warde-Farley",
+                "Sherjil Ozair",
+                "Aaron Courville",
+                "Yoshua Bengio"
+            ],
+            "title": "Generative adversarial nets",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Daniel Griffin",
+                "Jae Lim"
+            ],
+            "title": "Signal estimation from modified short-time fourier transform",
+            "venue": "IEEE Transactions on acoustics, speech, and signal processing,",
+            "year": 1984
+        },
+        {
+            "authors": [
+                "Alexey Gritsenko",
+                "Tim Salimans",
+                "Rianne van den Berg",
+                "Jasper Snoek",
+                "Nal Kalchbrenner"
+            ],
+            "title": "A spectral energy distance for parallel speech synthesis",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Danijar Hafner",
+                "Jurgis Pasukonis",
+                "Jimmy Ba",
+                "Timothy Lillicrap"
+            ],
+            "title": "Mastering diverse domains through world models",
+            "venue": "arXiv preprint arXiv:2301.04104,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Xun Huang",
+                "Serge Belongie"
+            ],
+            "title": "Arbitrary style transfer in real-time with adaptive instance normalization",
+            "venue": "In Proceedings of the IEEE international conference on computer vision,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Andrew J Hunt",
+                "Alan W Black"
+            ],
+            "title": "Unit selection in a concatenative speech synthesis system using a large speech database",
+            "venue": "IEEE International Conference on Acoustics, Speech, and Signal Processing Conference Proceedings,",
+            "year": 1996
+        },
+        {
+            "authors": [
+                "Won Jang",
+                "Dan Lim",
+                "Jaesam Yoon",
+                "Bongwan Kim",
+                "Juntae Kim"
+            ],
+            "title": "Univnet: A neural vocoder with multi-resolution spectrogram discriminators for high-fidelity waveform generation",
+            "venue": "arXiv preprint arXiv:2106.07889,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Nal Kalchbrenner",
+                "Erich Elsen",
+                "Karen Simonyan",
+                "Seb Noury",
+                "Norman Casagrande",
+                "Edward Lockhart",
+                "Florian Stimberg",
+                "Aaron Oord",
+                "Sander Dieleman",
+                "Koray Kavukcuoglu"
+            ],
+            "title": "Efficient neural audio synthesis",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Takuhiro Kaneko",
+                "Kou Tanaka",
+                "Hirokazu Kameoka",
+                "Shogo Seki"
+            ],
+            "title": "istftnet: Fast and lightweight mel-spectrogram vocoder incorporating inverse short-time fourier transform",
+            "venue": "In ICASSP 20222022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Tero Karras",
+                "Miika Aittala",
+                "Samuli Laine",
+                "Erik H\u00e4rk\u00f6nen",
+                "Janne Hellsten",
+                "Jaakko Lehtinen",
+                "Timo Aila"
+            ],
+            "title": "Alias-free generative adversarial networks",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Hideki Kawahara",
+                "Ikuyo Masuda-Katsuse",
+                "Alain De Cheveigne"
+            ],
+            "title": "Restructuring speech representations using a pitch-adaptive time\u2013frequency smoothing and an instantaneous-frequency-based f0 extraction: Possible role of a repetitive structure in sounds",
+            "venue": "Speech communication,",
+            "year": 1999
+        },
+        {
+            "authors": [
+                "Doh-Suk Kim"
+            ],
+            "title": "Perceptual phase quantization of speech",
+            "venue": "IEEE transactions on speech and audio processing,",
+            "year": 2003
+        },
+        {
+            "authors": [
+                "Jungil Kong",
+                "Jaehyeon Kim",
+                "Jaekyoung Bae"
+            ],
+            "title": "Hifi-gan: Generative adversarial networks for efficient and high fidelity speech synthesis",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Kundan Kumar",
+                "Rithesh Kumar",
+                "Thibault De Boissiere",
+                "Lucas Gestin",
+                "Wei Zhen Teoh",
+                "Jose Sotelo",
+                "Alexandre de Br\u00e9bisson",
+                "Yoshua Bengio",
+                "Aaron C Courville"
+            ],
+            "title": "Melgan: Generative adversarial networks for conditional waveform synthesis",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Sang-gil Lee",
+                "Wei Ping",
+                "Boris Ginsburg",
+                "Bryan Catanzaro",
+                "Sungroh Yoon"
+            ],
+            "title": "Bigvgan: A universal neural vocoder with large-scale training",
+            "venue": "arXiv preprint arXiv:2206.04658,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Zhuang Liu",
+                "Hanzi Mao",
+                "Chao-Yuan Wu",
+                "Christoph Feichtenhofer",
+                "Trevor Darrell",
+                "Saining Xie. A convnet for the"
+            ],
+            "title": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp",
+            "venue": "11976\u201311986, 2022.",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Soroush Mehri",
+                "Kundan Kumar",
+                "Ishaan Gulrajani",
+                "Rithesh Kumar",
+                "Shubham Jain",
+                "Jose Sotelo",
+                "Aaron Courville",
+                "Yoshua Bengio"
+            ],
+            "title": "Samplernn: An unconditional end-to-end neural audio generation model",
+            "venue": "arXiv preprint arXiv:1612.07837,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Takeru Miyato",
+                "Masanori Koyama"
+            ],
+            "title": "cgans with projection discriminator",
+            "venue": "arXiv preprint arXiv:1802.05637,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Masanori Morise",
+                "Fumiya Yokomori",
+                "Kenji Ozawa"
+            ],
+            "title": "World: a vocoder-based high-quality speech synthesis system for real-time applications",
+            "venue": "IEICE TRANSACTIONS on Information and Systems,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Max Morrison",
+                "Rithesh Kumar",
+                "Kundan Kumar",
+                "Prem Seetharaman",
+                "Aaron Courville",
+                "Yoshua Bengio"
+            ],
+            "title": "Chunked autoregressive gan for conditional waveform synthesis",
+            "venue": "arXiv preprint arXiv:2110.10139,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Eric Moulines",
+                "Francis Charpentier"
+            ],
+            "title": "Pitch-synchronous waveform processing techniques for text-to-speech synthesis using diphones",
+            "venue": "Speech communication,",
+            "year": 1990
+        },
+        {
+            "authors": [
+                "Gautham J. Mysore"
+            ],
+            "title": "Daps (device and produced speech",
+            "venue": "URL https://doi. org/10.5281/zenodo.4660670",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Aaron Oord",
+                "Yazhe Li",
+                "Igor Babuschkin",
+                "Karen Simonyan",
+                "Oriol Vinyals",
+                "Koray Kavukcuoglu",
+                "George Driessche",
+                "Edward Lockhart",
+                "Luis Cobo",
+                "Florian Stimberg"
+            ],
+            "title": "Parallel wavenet: Fast high-fidelity speech synthesis",
+            "venue": "In International conference on machine learning,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Aaron van den Oord",
+                "Sander Dieleman",
+                "Heiga Zen",
+                "Karen Simonyan",
+                "Oriol Vinyals",
+                "Alex Graves",
+                "Nal Kalchbrenner",
+                "Andrew Senior",
+                "Koray Kavukcuoglu"
+            ],
+            "title": "Wavenet: A generative model for raw audio",
+            "venue": "arXiv preprint arXiv:1609.03499,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Keisuke Oyamada",
+                "Hirokazu Kameoka",
+                "Takuhiro Kaneko",
+                "Kou Tanaka",
+                "Nobukatsu Hojo",
+                "Hiroyasu Ando"
+            ],
+            "title": "Generative adversarial network-based approach to signal reconstruction from magnitude spectrogram",
+            "venue": "26th European Signal Processing Conference (EUSIPCO),",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Kuldip Paliwal",
+                "Kamil W\u00f3jcicki",
+                "Benjamin Shannon"
+            ],
+            "title": "The importance of phase in speech",
+            "venue": "enhancement. speech communication,",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Marco Pasini",
+                "Jan Schl\u00fcter"
+            ],
+            "title": "Musika! fast infinite waveform music generation",
+            "venue": "arXiv preprint arXiv:2208.08706,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Adam Polyak",
+                "Yossi Adi",
+                "Jade Copet",
+                "Eugene Kharitonov",
+                "Kushal Lakhotia",
+                "Wei-Ning Hsu",
+                "Abdelrahman Mohamed",
+                "Emmanuel Dupoux"
+            ],
+            "title": "Speech resynthesis from discrete disentangled self-supervised representations",
+            "venue": "arXiv preprint arXiv:2104.00355,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Ryan Prenger",
+                "Rafael Valle",
+                "Bryan Catanzaro"
+            ],
+            "title": "Waveglow: A flow-based generative network for speech synthesis",
+            "venue": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Zafar Rafii",
+                "Antoine Liutkus",
+                "Fabian-Robert St\u00f6ter",
+                "Stylianos Ioannis Mimilakis",
+                "Rachel Bittner"
+            ],
+            "title": "Musdb18-a corpus for music separation",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Antony W Rix",
+                "John G Beerends",
+                "Michael P Hollier",
+                "Andries P Hekstra"
+            ],
+            "title": "Perceptual evaluation of speech quality (pesq)-a new method for speech quality assessment of telephone networks and codecs",
+            "venue": "IEEE international conference on acoustics, speech, and signal processing. Proceedings (Cat. No. 01CH37221),",
+            "year": 2001
+        },
+        {
+            "authors": [
+                "Takaaki Saeki",
+                "Detai Xin",
+                "Wataru Nakata",
+                "Tomoki Koriyama",
+                "Shinnosuke Takamichi",
+                "Hiroshi Saruwatari"
+            ],
+            "title": "Utmos: Utokyo-sarulab system for voicemos challenge 2022",
+            "venue": "arXiv preprint arXiv:2204.02152,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ibon Saratxaga",
+                "Inma Hernaez",
+                "Michael Pucher",
+                "Eva Navas",
+                "I\u00f1aki Sainz"
+            ],
+            "title": "Perceptual importance of the phase related information in speech",
+            "venue": "In Thirteenth Annual Conference of the International Speech Communication Association,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Jonathan Shen",
+                "Ruoming Pang",
+                "Ron J Weiss",
+                "Mike Schuster",
+                "Navdeep Jaitly",
+                "Zongheng Yang",
+                "Zhifeng Chen",
+                "Yu Zhang",
+                "Yuxuan Wang",
+                "Rj Skerrv-Ryan"
+            ],
+            "title": "Natural tts synthesis by conditioning wavenet on mel spectrogram predictions",
+            "venue": "IEEE international conference on acoustics, speech and signal processing (ICASSP),",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Hubert Siuzdak",
+                "Piotr Dura",
+                "Pol van Rijn",
+                "Nori Jacoby"
+            ],
+            "title": "WavThruVec: Latent speech representation as intermediate features for neural speech synthesis",
+            "venue": "In Proc. Interspeech 2022,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Suno AI"
+            ],
+            "title": "Bark: Text-prompted generative audio model",
+            "venue": "https://github.com/suno-ai/ bark,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Naoya Takahashi",
+                "Purvi Agrawal",
+                "Nabarun Goswami",
+                "Yuki Mitsufuji"
+            ],
+            "title": "Phasenet: Discretized phase modeling with deep neural networks for audio source separation",
+            "venue": "In Interspeech,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Shinnosuke Takamichi",
+                "Yuki Saito",
+                "Norihiro Takamune",
+                "Daichi Kitamura",
+                "Hiroshi Saruwatari"
+            ],
+            "title": "Phase reconstruction from amplitude spectrograms based on von-mises-distribution deep neural network",
+            "venue": "In 2018 16th International Workshop on Acoustic Signal Enhancement (IWAENC),",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Jean-Marc Valin",
+                "Jan Skoglund"
+            ],
+            "title": "Lpcnet: Improving neural speech synthesis through linear prediction",
+            "venue": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Ashish Vaswani",
+                "Noam Shazeer",
+                "Niki Parmar",
+                "Jakob Uszkoreit",
+                "Llion Jones",
+                "Aidan N Gomez",
+                "\u0141ukasz Kaiser",
+                "Illia Polosukhin"
+            ],
+            "title": "Attention is all you need",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Dequan Wang",
+                "Jae Lim"
+            ],
+            "title": "The unimportance of phase in speech enhancement",
+            "venue": "IEEE Transactions on Acoustics, Speech, and Signal Processing,",
+            "year": 1982
+        },
+        {
+            "authors": [
+                "Ye Wang",
+                "Mikka Vilermo"
+            ],
+            "title": "Modified discrete cosine transform: Its implications for audio coding and error concealment",
+            "venue": "Journal of the Audio Engineering Society,",
+            "year": 2003
+        },
+        {
+            "authors": [
+                "Donald S Williamson",
+                "Yuxuan Wang",
+                "DeLiang Wang"
+            ],
+            "title": "Complex ratio masking for monaural speech separation",
+            "venue": "IEEE/ACM transactions on audio, speech, and language processing,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Takayoshi Yoshimura",
+                "Keiichi Tokuda",
+                "Takashi Masuko",
+                "Takao Kobayashi",
+                "Tadashi Kitamura"
+            ],
+            "title": "Simultaneous modeling of spectrum, pitch and duration in hmm-based speech synthesis",
+            "venue": "In Sixth European Conference on Speech Communication and Technology,",
+            "year": 1999
+        },
+        {
+            "authors": [
+                "Jaeseong You",
+                "Dalhyun Kim",
+                "Gyuhyeon Nam",
+                "Geumbyeol Hwang",
+                "Gyeongsu Chae"
+            ],
+            "title": "Gan vocoder: Multi-resolution discriminator is all you need",
+            "venue": "arXiv preprint arXiv:2103.05236,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Neil Zeghidour",
+                "Alejandro Luebs",
+                "Ahmed Omran",
+                "Jan Skoglund",
+                "Marco Tagliasacchi"
+            ],
+            "title": "Soundstream: An end-to-end neural audio codec",
+            "venue": "IEEE/ACM Transactions on Audio, Speech, and Language Processing,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Heiga Zen",
+                "Viet Dang",
+                "Rob Clark",
+                "Yu Zhang",
+                "Ron J Weiss",
+                "Ye Jia",
+                "Zhifeng Chen",
+                "Yonghui Wu"
+            ],
+            "title": "Libritts: A corpus derived from librispeech for text-to-speech",
+            "year": 1904
+        },
+        {
+            "authors": [
+                "Liu Ziyin",
+                "Tilman Hartwig",
+                "Masahito Ueda"
+            ],
+            "title": "Neural networks fail to learn periodic functions and how to fix it",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        }
+    ],
+    "sections": [
+        {
+            "text": "Recent advancements in neural vocoding are predominantly driven by Generative Adversarial Networks (GANs) operating in the time-domain. While effective, this approach neglects the inductive bias offered by time-frequency representations, resulting in reduntant and computionally-intensive upsampling operations. Fourierbased time-frequency representation is an appealing alternative, aligning more accurately with human auditory perception, and benefitting from well-established fast algorithms for its computation. Nevertheless, direct reconstruction of complexvalued spectrograms has been historically problematic, primarily due to phase recovery issues. This study seeks to close this gap by presenting Vocos, a new model that directly generates Fourier spectral coefficients. Vocos not only matches the state-of-the-art in audio quality, as demonstrated in our evaluations, but it also substantially improves computational efficiency, achieving an order of magnitude increase in speed compared to prevailing time-domain neural vocoding approaches. The source code and model weights have been open-sourced at https://github.com/anonymous5425/anonymous-submission."
+        },
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Sound synthesis, the process of generating audio signals through electronic and computational means, has a long and rich history of innovation . Within the scope of text-to-speech (TTS), concatenative synthesis (Moulines & Charpentier, 1990; Hunt & Black, 1996) and statistical parametric synthesis (Yoshimura et al., 1999) were the prevailing approaches. The latter strategy relied on a source-filter theory of speech production, where the speech signal was seen as being produced by a source (the vocal cords) and then shaped by a filter (the vocal tract). In this framework, various parameters such as pitch, vocal tract shape, and voicing were estimated and then used to control a vocoder (Dudley, 1939) which would reconstruct the final audio signal. While vocoders evolved significantly (Kawahara et al., 1999; Morise et al., 2016), they tended to oversimplify speech production, generating a distinctive \u201dbuzzy\u201d sound and thus compromising the naturalness of the speech.\nA significant breakthrough in speech synthesis was achieved with the introduction of WaveNet (Oord et al., 2016), a deep generative model for raw audio waveforms. WaveNet proposed a novel approach to handle audio signals by modeling them autoregressively in the time-domain, using dilated convolutions to broaden receptive fields and consequently capture long-range temporal dependencies. In contrast to the traditional parametric vocoders which incorporate prior knowledge about audio signals, WaveNet solely depends on end-to-end learning.\nSince the advent of WaveNet, modeling distribution of audio samples in the time-domain has become the most popular approach in the field of audio synthesis. The primary methods have fallen into two major categories: autoregressive models and non-autoregressive models. Autoregressive models, like WaveNet, generate audio samples sequentially, conditioning each new sample on all previously generated ones (Mehri et al., 2016; Kalchbrenner et al., 2018; Valin & Skoglund, 2019). On the other hand, nonautoregressive models generate all samples independently, parallelizing the process and making it more computationally efficient (Oord et al., 2018; Prenger et al., 2019; Donahue et al., 2018)."
+        },
+        {
+            "heading": "1.1 CHALLENGES OF MODELING PHASE SPECTRUM",
+            "text": "Despite considerable advancements in time-domain audio synthesis, efforts to generate spectral representations of signals have been relatively limited. While it\u2019s possible to perfectly reconstruct the original signal from its Short-Time Fourier Transform (STFT), in many applications, only the magnitude of the STFT is utilized, leading to inherent information loss. The magnitude of the STFT provides a clear understanding of the signal by indicating the amplitude of different frequency components throughout its duration. In contrast, phase information is less intuitive and its manipulation can often yield unpredictable results.\nModeling the phase distribution presents challenges due to its intricate nature in the time-frequency domain. Phase spectrum exhibits a periodic structure causing wrapping around the principal values within the range of (\u2212\u03c0, \u03c0] (Figure 1). Furthermore, the literature does not provide a definitive answer regarding the perceptual importance of phase-related information in speech (Wang & Lim, 1982; Paliwal et al., 2011). However, improved phase spectrum estimates have been found to minimize perceptual impairments (Saratxaga et al., 2012). Researchers have explored the use of deep learning for directly modeling the phase spectrum, but this remains a challenging area (Williamson et al., 2015)."
+        },
+        {
+            "heading": "1.2 CONTRIBUTION",
+            "text": "Attempts to model Fourier-related coefficients with generative models have not achieved the same level of success as has been seen with modeling audio in the time-domain. This study focuses on bridging that gap by proposing Vocos \u2013 a GAN-based vocoder, trained to produce STFT coefficients of an audio clip:\n\u2022 To estimate phase angles, we propose a simple formulation of the activation function in terms of a unit circle. This approach naturally incorporates implicit phase wrapping, ensuring meaningful values across all phase angles.\n\u2022 We demonstrate that Vocos does not need specialized modules like Snake nonlinearity (Ziyin et al., 2020) to induce periodicity.\n\u2022 We depart from the conventional architecture of vocoder, which typically utilizes a stack of transposed convolutions for upsampling. Instead, we keep the same feature resolution across all depths, with the upsampling to waveform realized by inverse Fourier transform.\n\u2022 As Vocos maintains a low temporal resolution throughout the network, we revisited the need to use ResBlocks with dilated convolutions, typical to time-domain vocoders. Our results indicate that integrating ConvNeXt blocks contributes to better performance.\n\u2022 Our extensive evaluation shows that Vocos matches the state-of-the-art in audio quality while demonstrating over an order of magnitude increase in speed compared to time-domain counterparts. The source code and model weights have been made open-source, enabling further exploration and potential advancements in the field of neural vocoding."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "GAN-based vocoders Generative Adversarial Networks (GANs) (Goodfellow et al., 2014), have achieved significant success in image generation, sparking interest from audio researchers due to their ability for fast and parallel waveform generation (Donahue et al., 2018; Engel et al., 2018). Progress was made with the introduction of advanced critics, such as the multi-scale discriminator (MSD) (Kumar et al., 2019) and the multi-period discriminator (MPD) (Kong et al., 2020). These works also adopted a feature-matching loss to minimize the distance between the discriminator feature maps of real and synthetic audio. To discriminate between real and generated samples, also multi-resolution spectrograms (MRD) were employed (Jang et al., 2021).\nAt this point the standard practice involves using a stack of dilated convolutions to increase the receptive field, and transposed convolutions to sequentially upsample the feature sequence to the waveform. However, this design is known to be susceptible to aliasing artifacts, and there are works suggesting more specialized modules for both the discriminator (Bak et al., 2022) and generator (Lee et al., 2022). The historical jump in quality is largely attributed to discriminators that are able to capture implicit structures by examining input audio signal at various periods or scales. It has been argued (You et al., 2021) that the architectural details of the generators do not significantly affect the vocoded outcome, given a well-established multi-resolution discriminating framework. Contrary to these methods, Vocos presents a carefully designed, frequency-aware generator that models the distribution of Fourier spectral coefficients, rather than modeling waveforms in the time domain.\nPhase and magnitude estimation Historically, the phase estimation problem has been at the core of audio signal reconstruction. Traditional methods usually rely on the Griffin-Lim algorithm (Griffin & Lim, 1984), which iteratively estimate the phase by enforcing spectrogram consistency. However, the Griffin-Lim method introduces unnatural artifacts into synthesized speech. Several methods have been proposed for reconstructing phase using deep neural networks, including likelihood-based approaches (Takamichi et al., 2018) and GANs (Oyamada et al., 2018). Another line of work suggests perceptual phase quantization (Kim, 2003), which has proven promising in deep learning by treating the phase estimation problem as a classification problem (Takahashi et al., 2018).\nDespite their effectiveness, these models assume the availability of a full-scale magnitude spectrogram, while modern audio synthesis pipelines often employ more compact representations, such as melspectrograms (Shen et al., 2018). Furthermore, recent research is focusing on leveraging latent features extracted by pretrained deep learning models (Polyak et al., 2021; Siuzdak et al., 2022).\nCloser to this paper are studies that estimate both the magnitude and phase spectrum. This can be done either implicitly, by predicting the real and imaginary parts of the STFT, or explicitly, by parameterizing the model to generate the phase and magnitude components. In the former category, Gritsenko et al. (2020) presents a variant of a model trained to produce STFT coefficients. They recognized the significance of adversarial objective in preventing robotic sound quality, however they were unable to train it successfully due to its inherent instability. On the other hand, iSTFTNet (Kaneko et al., 2022) proposes modifications to HiFi-GAN, enabling it to return magnitude and phase spectrum. However, their optimal model only replaces the last two upsample blocks with inverse STFT, leaving the majority of the upsampling to be realized with transposed convolutions. They find that replacing more upsampling layers drastically degrades the quality. Pasini & Schlu\u0308ter (2022) were able to successfully model the magnitude and phase spectrum of audio with higher frequency resolution, although it required multi-step training (Caillon & Esling, 2021), because of the adversarial objective instability. Also, the initial studies using GANs to generate invertible spectrograms involved estimating instantaneous frequency (Engel et al., 2018). However, these were limited to a single dataset containing only individual musical instrument notes, with the assumption of a constant instantaneous frequency."
+        },
+        {
+            "heading": "3 VOCOS",
+            "text": ""
+        },
+        {
+            "heading": "3.1 OVERVIEW",
+            "text": "At its core, the proposed GAN model uses Fourier-based time-frequency representation as the target data distribution for the generator. Vocos is constructed without any transposed convolutions; instead,\nthe upsample operation is realized solely through the fast inverse STFT. This approach permits a unique model design compared to time-domain vocoders, which typically employ a series of upsampling layers to inflate input features to the target waveform\u2019s resolution, often necessitating upscaling by several hundred times. In contrast, Vocos maintains the same temporal resolution throughout the network (Figure 2). This design, known as an isotropic architecture, has been found to work well in various settings, including Transformer (Vaswani et al., 2017). This approach can also be particularly beneficial for audio synthesis. Traditional methods often use transposed convolutions that can introduce aliasing artifacts, necessitating additional measures to mitigate the issue (Karras et al., 2021; Lee et al., 2022). Vocos eliminates learnable upsampling layers, and instead employs the well-establish inverse Fourier transform to reconstruct the original-scale waveform. In the context of converting mel-spectrograms into audio signal, the temporal resolution is dictated by the hop size of the STFT.\nVocos uses the Short-Time Fourier Transform (STFT) to represent audio signals in the time-frequency domain:\nSTFTx[m, k] = N\u22121\u2211 n=0 x[n]w[n\u2212m]e\u2212j2\u03c0kn/N (1)\nThe STFT applies the Fourier transform to successive windowed sections of the signal. In practice, the STFT is computed by taking a sequence of Fast Fourier Transforms (FFTs) on overlapping, windowed frames of data, which are created as the window function advances or \u201chops\u201d through time."
+        },
+        {
+            "heading": "3.2 MODEL",
+            "text": "Backbone Vocos adapts ConvNeXt (Liu et al., 2022) as the foundational backbone for the generator. It first embeds the input features into a hidden dimensionality and then applies a stack of 1D convolutional blocks. Each block is composed of a large-kernel-sized depthwise convolution over the time dimension, followed by an inverted bottleneck that projects features into a higher dimensionality using pointwise convolution. GELU (Gaussian Error Linear Unit) activations are used within the bottleneck, and Layer Normalization is employed between the blocks.\nHead Fourier transform of real-valued signals is conjugate symmetric, so we use only a single side band spectrum, resulting in nfft/2 + 1 coefficients per frame. As we parameterize the model to output phase and magnitude values, hidden-dim activations are projected into a tensor h with nfft + 2 channels and splitted into:\nm,p = h[1 : (nfft/2 + 1)],h[(nfft/2 + 2) : n]\nTo represent the magnitude, we apply the exponential function to m: M = exp(m).\nWe map p onto the unit circle by calculating the cosine and sine of p to obtain x and y, respectively:\nx = cos(p)\ny = sin(p)\nFinally, we represent complex-valued coefficients as: STFT = M \u00b7 (x+ jy). Importantly, this simple formulation allows to express phase angle \u03c6 = atan2(y,x) for any real argument p, and it ensures that \u03c6 is correctly wrapped into the desired range (\u2212\u03c0, \u03c0].\nDiscriminator We employ the multi-period discriminator (MPD) as defined by Kong et al. (2020), and multi-resolution discriminator (MRD) (Jang et al., 2021)."
+        },
+        {
+            "heading": "3.3 LOSS",
+            "text": "Following the approach proposed by Kong et al. (2020), the training objective of Vocos consists of reconstruction loss, adversarial loss and feature matching loss. However, we adopt a hinge loss formulation instead of the least squares GAN objective, as suggested by Zeghidour et al. (2021):\n\u2113G(x\u0302) = 1\nK \u2211 k max (0, 1\u2212Dk(x\u0302))\n\u2113D(x, x\u0302) = 1\nK \u2211 k max (0, 1\u2212Dk(x)) + max (0, 1 +Dk(x\u0302))\nwhere Dk is the kth subdiscriminator. The reconstruction loss, denoted as Lmel, is defined as the L1 distance between the mel-scaled magnitude spectrograms of the ground truth sample x and the synthesized sample: x\u0302: Lmel = \u2225M(x)\u2212M(x\u0302)\u22251. The feature matching loss, denoted as Lfeat is calculated as the mean of the distances between the lth feature maps of the kth subdistriminator: Lfeat = 1 KL \u2211 k \u2211 l\n\u2225\u2225Dlk(x)\u2212Dlk(x\u0302)\u2225\u22251."
+        },
+        {
+            "heading": "4 RESULTS",
+            "text": ""
+        },
+        {
+            "heading": "4.1 MEL-SPECTROGRAMS",
+            "text": "Reconstructing audio waveforms from mel-spectrograms has become a fundamental task for vocoders in contemporary speech synthesis pipelines. In this section, we assess the performance of Vocos relative to established baseline methods.\nData The models are trained on the LibriTTS dataset (Zen et al., 2019), from which we use the entire training subset (both train-clean and train-other). We maintain the original sampling rate of 24 kHz for the audio files. For each audio sample, we compute mel-scaled spectrograms using parameters: nfft = 1024, hopn = 256, and the number of Mel bins is set to 100. A random gain is applied to the audio samples, resulting in a maximum level between -1 and -6 dBFS.\nTraining Details We train our models up to 2 million iterations, with 1 million iterations per generator and discriminator. During training, we randomly crop the audio samples to 16384 samples and use a batch size of 16. The model is optimized using the AdamW optimizer with an initial learning rate of 2e-4 and betas set to (0.9, 0.999). The learning rate is decayed following a cosine schedule.\nBaseline Methods Our proposed model, Vocos, is compared to: iSTFTNet (Kaneko et al., 2022), BigVGAN (Lee et al., 2022), and HiFi-GAN (Kong et al., 2020). These models are retrained on the same LibriTTS subset for up to 2 million iterations, following the original training details recommended by the authors. We use the official implementations of BigVGAN1 and HiFi-GAN2, and a community open-sourced version of iSTFTNet3."
+        },
+        {
+            "heading": "4.1.1 EVALUATION",
+            "text": "Objective Evaluation For objective evaluation of our models, we employ the UTMOS (Saeki et al., 2022) automatic Mean Opinion Score (MOS) prediction system. Although UTMOS can yield scores highly correlated with human evaluations, it is restricted to 16 kHz sample rate. To assess perceptual quality, we also utilize ViSQOL (Chinen et al., 2020) in audio-mode, which operates in the full band. Our evaluation process also encompasses several other metrics, including the Perceptual Evaluation of Speech Quality (PESQ) (Rix et al., 2001), periodicity error, and the F1 score for voiced/unvoiced classification (V/UV F1), following the methodology proposed by Morrison et al. (2021). The results are presented in Table 1. Vocos achieves superior performance in most of the metrics compared to the other models. It obtains the highest scores in VISQOL and PESQ, and importantly, it effectively mitigates the periodicity issues frequently associated with time-domain GANs. BigVGAN stands out as the closest competitor, especially in the UTMOS metric, where it slightly outperforms Vocos.\nIn our ablation study \u201dVocos with absolute phase\u201d, we estimate (scaled) phase angles using a tanh nonlinearity. This formulation does not give the model an implicit bias regarding the periodic nature of phase, and the results show it leads to degraded quality. This finding emphasizes the importance of implicit phase wrapping in the effectiveness of Vocos.\nAdditionally, we present a variant of Vocos that uses Snake as an activation function in the model backbone. Although Snake has been shown to enhance time-domain vocoders such as BigVGAN, in our case, it did not result in performance gains; in fact, it showed a slight decline. The primary purpose of the Snake function is to induce periodicity, addressing the limitations of time-domain vocoders. Vocos, on the other hand, explicitly incorporates periodicity through the use of Fourier basis functions, eliminating the need for specialized modules like Snake.\nFinally, Vocos without ConvNeXt substitutes the ConvNext blocks with traditional ResBlocks that incorporate dilated convolutions. It achieves slightly lower scores across all metrics compared to the original Vocos model, highlighting the contribution of the ConvNext blocks to the overall performance of Vocos.\nSubjective Evaluation We conducted crowd-sourced subjective assessments, using a 5-point Mean Opinion Score (MOS) to evaluate the naturalness of the presented recordings. Participants rated speech samples on a scale from 1 (\u2019poor - completely unnatural speech\u2019) to 5 (\u2019excellent - completely natural speech\u2019). Following (Lee et al., 2022), we also conducted a 5-point Similarity Mean Opinion\n1https://github.com/NVIDIA/BigVGAN 2https://github.com/jik876/hifi-gan 3https://github.com/rishikksh20/iSTFTNet-pytorch\nScore (SMOS) between the reproduced and ground-truth recordings. Participants were asked to assign a similarity score to pairs of audio files, with a rating of 5 indicating \u2019Extremely similar\u2019 and a rating of 1 representing \u2019Not at all similar\u2019.\nTo ensure the quality of responses, we carefully selected participants through a third-party crowdsourcing platform. Our criteria included the use of headphones, fluent English proficiency, and a declared interest in music listening as a hobby. A total of 1560 ratings were collected from 39 participants.\nThe results are detailed in Table 2. Vocos performs on par with the state-of-the-art in both perceived quality and similarity. Statistical tests show no significant differences between Vocos and BigVGAN in MOS and SMOS scores, with p-values greater than 0.05 from the Wilcoxon signed-rank test.\nOut-of-distribution data A crucial aspect of a vocoder is its ability to generalize to unseen acoustic conditions. In this context, we evaluate the performance of Vocos with out-of-distribution audio using the MUSDB18 dataset (Rafii et al., 2017), which includes a variety of multi-track music audio like vocals, drums, bass, and other instruments, along with the original mixture. The VISQOL scores for this evaluation are provided in Table 3. From the table, Vocos consistently outperforms the other models, achieving the highest scores across all categories.\nFigure 3 presents spectrogram visualization of an out-of-distribution singing voice sample, as reproduced by different models. Periodicity artifacts are commonly observed when employing time-domain GANs. BigVGAN, with its anti-aliasing filters, is able to recover some of the harmonics in the upper frequency ranges, marking an improvement over HiFi-GAN. Nonetheless, Vocos appears to provide a more accurate reconstruction of these harmonics, without the need for additional modules."
+        },
+        {
+            "heading": "4.2 NEURAL AUDIO CODEC",
+            "text": "While traditionally, neural vocoders reconstruct the audio waveform from a mel-scaled spectrogram \u2013 an approach widely adopted in many speech synthesis pipelines \u2013 recent research has started to utilize learnt features (Siuzdak et al., 2022), often in a quantized form (Borsos et al., 2022).\nIn this section, we draw a comparison with EnCodec (De\u0301fossez et al., 2022), an open-source neural audio codec, which follows a typical time-domain GAN vocoder architecture and uses Residual Vector Quantization (RVQ) (Zeghidour et al., 2021) to compress the latent space. RVQ cascades multiple layers of Vector Quantization, iteratively quantizing the residuals from the previous stage to form a multi-stage structure, thereby enabling support for multiple bandwidth targets. In EnCodec,\ndedicated discriminators are trained for each bandwidth. In contrast, we have adapted Vocos to be a conditional GAN with a projection discriminator (Miyato & Koyama, 2018), and have incorporated adaptive layer normalization (Huang & Belongie, 2017) into the generator.\nAudio reconstruction We utilize the open-source model checkpoint of EnCodec operating at 24 kHz. To align with EnCodec, we scale down Vocos to match its parameter count (7.9M) and train it on clean speech segments sourced from the DNS Challenge (Dubey et al., 2022). Our evaluation, conducted on the DAPS dataset (Mysore, 2014) and detailed in Table 4, reveals that despite EnCodec\u2019s reconstruction artifacts not significantly impacting PESQ and Periodicity scores, they are considerably reflected in the perceptual score, as denoted by UTMOS. In this regard, Vocos notably outperforms EnCodec. To support this claim, we performed a crowd-sourced subjective assessment to evaluate the naturalness of these samples. The results, as shown in Table 5, indicate that Vocos consistently achieves better performance across a range of bandwidths, based on evaluations by human listeners.\nTable 4: Objective evaluation metric calculated for various bandwidths.\nBandwidth UTMOS (\u2191) VISQOL (\u2191) PESQ (\u2191) V/UV F1 (\u2191) Periodicity (\u2193)\nEnCodec 1.5 kbps 1.527 3.74 1.508 0.8826 0.215 3.0 kbps 2.522 3.93 2.006 0.9347 0.141 6.0 kbps 3.262 4.13 2.665 0.9625 0.090 12.0 kbps 3.765 4.25 3.283 0.9766 0.062\nVocos\n1.5 kbps 3.210 3.88 1.845 0.9238 0.160 3.0 kbps 3.688 4.06 2.317 0.9380 0.135 6.0 kbps 3.822 4.22 2.650 0.9439 0.124 12.0 kbps 3.882 4.34 2.874 0.9482 0.116\nEnd-to-end text-to-speech Recent progress in text-to-speech (TTS) has been notably driven by language modeling architectures employing discrete audio tokens. Bark (Suno AI, 2023), a widely recognized open-source model, leverages a GPT-style, decoder-only architecture, with EnCodec\u2019s 6kbps audio tokens serving as its vocabulary. Vocos trained to reconstruct EnCodec tokens can effectively serve as a drop-in replacement vocoder for Bark. We have provided text-to-speech samples from Bark and Vocos on our website and encourage readers to listen to them for a direct comparison.4."
+        },
+        {
+            "heading": "4.3 INFERENCE SPEED",
+            "text": "Our inference speed benchmarks were conducted using an Nvidia Tesla A100 GPU and an AMD EPYC 7542 CPU. The code was implemented in Pytorch, with no hardware-specific optimizations. The forward pass was computed using a batch of 16 samples, each one second long. Table 6 presents the synthesis speed and model footprint of Vocos in comparison to other models.\nVocos showcases notable speed advantages compared to other models, operating approximately 13 times faster than HiFi-GAN and nearly 70 times faster than BigVGAN. This speed advantage is particularly pronounced when running without GPU acceleration. This is primarily due to the use of\n4Listen to audio samples at https://anonymous5425.github.io/anonymous-submission/\nthe Inverse Short-Time Fourier Transform (ISTFT) algorithm instead of transposed convolutions. We also evaluate a variant of Vocos that utilizes ResBlock\u2019s dilated convolutions instead of ConvNeXt blocks. Depthwise separable convolutions offer an additional speedup when executed on a GPU."
+        },
+        {
+            "heading": "5 CONCLUSIONS",
+            "text": "This paper introduces Vocos, a novel neural vocoder that bridges the gap between time-domain and Fourier-based approaches. Vocos tackles the challenges associated with direct reconstruction of complex-valued spectrograms, with careful design of generator that correctly handle phase wrapping. It achieves accurate reconstruction of the coefficients in Fourier-based time-frequency representations.\nThe results demonstrate that the proposed vocoder matches state-of-the-art audio quality while effectively mitigating periodicity issues commonly observed in time-domain GANs. Importantly, Vocos provides a significant computational efficiency advantage over traditional time-domain methods by utilizing inverse fast Fourier transform for upsampling.\nOverall, the findings of this study contribute to the advancement of neural vocoding techniques by incorporating the benefits of Fourier-based time-frequency representations. The open-sourcing of the source code and model weights allows for further exploration and application of the proposed vocoder in various audio processing tasks."
+        },
+        {
+            "heading": "A MODIFIED DISCRETE COSINE TRANSFORM (MDCT)",
+            "text": "While STFT is widely used in audio processing, there are other time-frequency representations with different properties. In audio coding applications, it is desirable to design the analysis/synthesis system in such a way that the overall rate at the output of the analysis stage equals the rate of the input signal. Such systems are described as being critically sampled. When we transform the signal via the DFT, even a slight overlap between adjacent blocks increases the data rate of the spectral representation of the signal. With 50% overlap between adjoining blocks, we end up doubling our data rate.\nThe Modified Discrete Cosine Transform (MDCT) with its corresponding Inverse Transform (IMDCT) have become a crucial tool in high-quality audio coding as they enable the implementation of a critically sampled analysis/synthesis filter bank. A key feature of these transforms is the Time-Domain Aliasing Cancellation (TDAC) property, which allows for the perfect reconstruction of overlapping segments from a source signal.\nThe MDCT is defined as follows:\nX[k] = 2N\u22121\u2211 n=0 x[n] cos [ \u03c0 N ( n+ 1 2 + N 2 )( k + 1 2 )] (2)\nfor k = 0, 1, . . . , N \u2212 1 and N is the length of the window. The MDCT is a lapped transform and thus produces N output coefficients from 2N input samples, allowing for a 50% overlap between blocks without increasing the data rate.\nThere is a relationship between the MDCT and the DFT through the Shifted Discrete Fourier Transform (SDFT) (Wang & Vilermo, 2003). It can be leveraged to implement a fast version of the MDCT using FFT (Bosi & Goldberg, 2002). See Appendix A.3.\nA.1 VOCOS AND MDCT\nMDCT is attractive in audio coding because of its its efficiency and compact representation of audio signals. In the context of deep learning, this might be seen as reduced dimensionality, potentially advantageous as it requires fewer data points during generation.\nWhile STFT coefficients can be conveniently expressed in polar form, providing a clear interpretation of both magnitude and phase, MDCT represents the signal only in a real subspace of the complex space needed to accurately convey spectral magnitude and phase. Naive approach would be to treat raw unnormalized hidden outputs of the network as MDCT coefficients and convert it back to time-domain with IMDCT. In our preliminary experiments we found that it led to slower convergence. However we can easily observe that the MDCT spectrum, similarly to the STFT, can be more perceptually meaningful on the logarithmic scale, which reflects the logarithmic nature of human auditory perception of sound intensity. But as the MDCT can take also negative values, they cannot be represented using the conventional logarithmic transformation.\nOne solution is to utilize a symmetric logarithmic function. In the context of deep learning, Hafner et al. (2023) introduces such function and its inverse, referred to as symlog and symexp respectively:\nsymlog(x) = sign(x) ln(|x|+ 1) symexp(x) = sign(x)(exp(|x|)\u2212 1) (3)\nThe symlog function compresses the magnitudes of large values, irrespective of their sign. Unlike the conventional logarithm, it is symmetric around the origin and retains the input sign. We note the correspondence with the \u00b5-law companding algorithm, a well-established method in telecommunication and signal processing.\nAn alternative approach involves parametrizing the model to output the absolute value of the MDCT coefficients and its corresponding sign. While the MDCT does not directly convey information about phase relationships, this strategy may offer advantages as the sign of the MDCT can potentially provide additional insights indirectly. For example, an opposite sign could imply a phase difference\nof 180 degrees. In practice, we compute a \u201dsoft\u201d sign using the cosine activation function, which supposedly provides a periodic inductive bias. Hence, similar to the ISTFT head, this approach projects the hidden activations into two values for each frequency bin, representing the final coefficients as MDCT = exp(m) \u00b7 cos(p).\nA.2 RESULTS\nTable 7 presents objective evaluation metrics for a variant of Vocos that represents audio samples with MDCT coefficients. Both \u2019symexp\u2019 and \u2019sign\u2019 demonstrate significantly weaker performance compared to their STFT-based counterpart. This suggests that while MDCT may be attractive in audio coding applications, its properties may not be as favorable in the context of generative modeling with GANs. The redundancy inherent in the STFT representation appears to be beneficial for generative tasks. This finding aligns with the work of Gritsenko et al. (2020), who discovered that an overcomplete Fourier basis contributed to improved training stability. Furthermore, it is worth noting that the MDCT, being a lapped transform, incorporates information from surrounding windows, which effectively act as aliases of the signal. To ensure Time Domain Alias Cancellation (TDAC), the prediction of the coefficients has to be accurate and consistent over the frames.\nA.3 FORWARD MDCT ALGORITHM\nAlgorithm 1 Fast MDCT Algorithm realized with FFT 1: Input: Audio signal x with frame length N 2: Output: MDCT coefficients X 3: procedure MDCT(x) 4: for each frame f in x with overlap of N/2 do 5: f \u2190 f \u00d7 window function 6: f \u2190 f \u00d7 e\u2212j 2\u03c0n2N \u25b7 Pre-twiddle 7: f \u2190 FFT(f) \u25b7 N-point FFT 8: f \u2190 f \u00d7 e\u2212j 2\u03c0 N n0(k+ 1 2 ) \u25b7 Post-twiddle\n9: f \u2190 f \u00d7 \u221a\n1 N\n10: Xk \u2190 \u211c(f)\u00d7 \u221a 2 11: end for 12: return X 13: end procedure"
+        }
+    ],
+    "year": 2023
+}

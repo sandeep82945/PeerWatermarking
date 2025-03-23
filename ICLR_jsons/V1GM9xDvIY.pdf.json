@@ -1,0 +1,690 @@
+{
+    "abstractText": "Discovering the underlying relationships among variables from temporal observations has been a longstanding challenge in numerous scientific disciplines, including biology, finance, and climate science. The dynamics of such systems are often best described using continuous-time stochastic processes. Unfortunately, most existing structure learning approaches assume that the underlying process evolves in discrete-time and/or observations occur at regular time intervals. These mismatched assumptions can often lead to incorrect learned structures and models. In this work, we introduce a novel structure learning method, SCOTCH, which combines neural stochastic differential equations (SDE) with variational inference to infer a posterior distribution over possible structures. This continuous-time approach can naturally handle both learning from and predicting observations at arbitrary time points. Theoretically, we establish sufficient conditions for an SDE and SCOTCH to be structurally identifiable, and prove its consistency under infinite data limits. Empirically, we demonstrate that our approach leads to improved structure learning performance on both synthetic and real-world datasets compared to relevant baselines under regular and irregular sampling intervals.",
+    "authors": [],
+    "id": "SP:a69b5ccbda84d22740cc15441c1f3491f25ed118",
+    "references": [
+        {
+            "authors": [
+                "Chainarong Amornbunchornvej",
+                "Elena Zheleva",
+                "Tanya Y Berger-Wolf"
+            ],
+            "title": "Variable-lag granger causality for time series analysis",
+            "venue": "IEEE International Conference on Data Science and Advanced Analytics (DSAA),",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Yashas Annadani",
+                "Nick Pawlowski",
+                "Joel Jennings",
+                "Stefan Bauer",
+                "Cheng Zhang",
+                "Wenbo Gong"
+            ],
+            "title": "Bayesdag: Gradient-based posterior sampling for causal discovery",
+            "venue": "arXiv preprint arXiv:2307.13917,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Charles K Assaad",
+                "Emilie Devijver",
+                "Eric Gaussier"
+            ],
+            "title": "Survey and evaluation of causal discovery methods for time series",
+            "venue": "Journal of Artificial Intelligence Research,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Alexis Bellot",
+                "Kim Branson",
+                "Mihaela van der Schaar"
+            ],
+            "title": "Neural graphical modelling in continuoustime: consistency guarantees and algorithms",
+            "venue": "arXiv preprint arXiv:2105.02522,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Carlo Berzuini",
+                "Philip Dawid",
+                "Luisa"
+            ],
+            "title": "Bernardinell. Causality: Statistical perspectives and applications",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Michelle Bou\u00e9",
+                "Paul Dupuis"
+            ],
+            "title": "A variational representation for certain functionals of brownian motion",
+            "venue": "The Annals of Probability,",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Annalisa Bracco",
+                "Fabrizio Falasca",
+                "Athanasios Nenes",
+                "Ilias Fountalis",
+                "Constantine Dovrolis"
+            ],
+            "title": "Advancing climate science with knowledge-discovery through data mining",
+            "venue": "npj Climate and Atmospheric Science,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Bart Bussmann",
+                "Jannes Nys",
+                "Steven Latr\u00e9"
+            ],
+            "title": "Neural additive vector autoregression models for causal discovery in time series",
+            "venue": "In Discovery Science: 24th International Conference,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Ricky TQ Chen",
+                "Yulia Rubanova",
+                "Jesse Bettencourt",
+                "David K Duvenaud"
+            ],
+            "title": "Neural ordinary differential equations",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Shizhe Chen",
+                "Ali Shojaie",
+                "Daniela M Witten"
+            ],
+            "title": "Network reconstruction from high-dimensional ordinary differential equations",
+            "venue": "Journal of the American Statistical Association,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Yuxiao Cheng",
+                "Runzhao Yang",
+                "Tingxiong Xiao",
+                "Zongren Li",
+                "Jinli Suo",
+                "Kunlun He",
+                "Qionghai Dai"
+            ],
+            "title": "Cuts: Neural causal discovery from irregular time-series data",
+            "venue": "arXiv preprint arXiv:2302.07458,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Kyunghyun Cho",
+                "Bart Van Merri\u00ebnboer",
+                "Caglar Gulcehre",
+                "Dzmitry Bahdanau",
+                "Fethi Bougares",
+                "Holger Schwenk",
+                "Yoshua Bengio"
+            ],
+            "title": "Learning phrase representations using rnn encoder-decoder for statistical machine translation",
+            "venue": "arXiv preprint arXiv:1406.1078,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Andrea Cini",
+                "Ivan Marisca",
+                "Cesare Alippi"
+            ],
+            "title": "Filling the g ap s: Multivariate time series imputation by graph neural networks",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Xuan-Hong Dang",
+                "Syed Yousaf Shah",
+                "Petros Zerfos"
+            ],
+            "title": "seq2graph: Discovering dynamic nonlinear dependencies from multivariate time series",
+            "venue": "IEEE International Conference on Big Data (Big Data),",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Bryan C Daniels",
+                "Ilya Nemenman"
+            ],
+            "title": "Efficient inference of parsimonious phenomenological models of cellular dynamics using s-systems and alternating regression",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Paul Dupuis",
+                "Richard S Ellis"
+            ],
+            "title": "A weak convergence approach to the theory of large deviations",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Tomas Geffner",
+                "Javier Antoran",
+                "Adam Foster",
+                "Wenbo Gong",
+                "Chao Ma",
+                "Emre Kiciman",
+                "Amit Sharma",
+                "Angus Lamb",
+                "Martin Kukla",
+                "Nick Pawlowski"
+            ],
+            "title": "Deep end-to-end causal inference",
+            "venue": "arXiv preprint arXiv:2202.02195,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ary L Goldberger",
+                "Bruce J West"
+            ],
+            "title": "Applications of nonlinear dynamics to clinical cardiology",
+            "venue": "Annals of the New York Academy of Sciences,",
+            "year": 1987
+        },
+        {
+            "authors": [
+                "Wenbo Gong",
+                "Yingzhen Li",
+                "Jos\u00e9 Miguel Hern\u00e1ndez-Lobato"
+            ],
+            "title": "Meta-learning for stochastic gradient mcmc",
+            "venue": "arXiv preprint arXiv:1806.04522,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Wenbo Gong",
+                "Joel Jennings",
+                "Cheng Zhang",
+                "Nick Pawlowski"
+            ],
+            "title": "Rhino: Deep causal temporal relationship learning with history-dependent noise",
+            "venue": "arXiv preprint arXiv:2210.14706,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Niels Hansen",
+                "Alexander Sokol"
+            ],
+            "title": "Causal interpretation of stochastic differential equations",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Ali Hasan",
+                "Joao M Pereira",
+                "Sina Farsiu",
+                "Vahid Tarokh"
+            ],
+            "title": "Identifying latent stochastic differential equations",
+            "venue": "IEEE Transactions on Signal Processing,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Kaiming He",
+                "Xiangyu Zhang",
+                "Shaoqing Ren",
+                "Jian Sun"
+            ],
+            "title": "Deep residual learning for image recognition",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Mathias L Heltberg",
+                "Sandeep Krishna",
+                "Mogens H Jensen"
+            ],
+            "title": "On chaotic dynamics in transcription factors and the associated effects in differential gene regulation",
+            "venue": "Nature communications,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Kurt Hornik",
+                "Maxwell Stinchcombe",
+                "Halbert White"
+            ],
+            "title": "Multilayer feedforward networks are universal approximators",
+            "venue": "Neural networks,",
+            "year": 1989
+        },
+        {
+            "authors": [
+                "Patrik Hoyer",
+                "Dominik Janzing",
+                "Joris M Mooij",
+                "Jonas Peters",
+                "Bernhard Sch\u00f6lkopf"
+            ],
+            "title": "Nonlinear causal discovery with additive noise models",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Aapo Hyv\u00e4rinen",
+                "Kun Zhang",
+                "Shohei Shimizu",
+                "Patrik O Hoyer"
+            ],
+            "title": "Estimation of a structural vector autoregression model using non-gaussianity",
+            "venue": "Journal of Machine Learning Research,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Saurabh Khanna",
+                "Vincent YF Tan"
+            ],
+            "title": "Economy statistical recurrent units for inferring nonlinear granger causality",
+            "venue": "arXiv preprint arXiv:1911.09879,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Ilyes Khemakhem",
+                "Diederik Kingma",
+                "Ricardo Monti",
+                "Aapo Hyvarinen"
+            ],
+            "title": "Variational autoencoders and nonlinear ica: A unifying framework",
+            "venue": "In International Conference on Artificial Intelligence and Statistics,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Diederik P Kingma",
+                "Jimmy Ba"
+            ],
+            "title": "Adam: A method for stochastic optimization",
+            "venue": "arXiv preprint arXiv:1412.6980,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Xuechen Li",
+                "Ting-Kam Leonard Wong",
+                "Ricky TQ Chen",
+                "David Duvenaud"
+            ],
+            "title": "Scalable gradients for stochastic differential equations",
+            "venue": "In International Conference on Artificial Intelligence and Statistics,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Edward N Lorenz"
+            ],
+            "title": "Predictability: A problem partly solved",
+            "venue": "In Proc. Seminar on predictability,",
+            "year": 1996
+        },
+        {
+            "authors": [
+                "Sindy L\u00f6we",
+                "David Madras",
+                "Richard Zemel",
+                "Max Welling"
+            ],
+            "title": "Amortized causal discovery: Learning to infer causal graphs from time-series data",
+            "venue": "In Conference on Causal Learning and Reasoning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Daniel Marbach",
+                "Thomas Schaffter",
+                "Claudio Mattiussi",
+                "Dario Floreano"
+            ],
+            "title": "Generating realistic in silico gene networks for performance assessment of reverse engineering methods",
+            "venue": "Journal of computational biology,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Roxana Pamfil",
+                "Nisara Sriwattanaworachai",
+                "Shaan Desai",
+                "Philip Pilgerstorfer",
+                "Konstantinos Georgatzis",
+                "Paul Beaumont",
+                "Bryon Aragam"
+            ],
+            "title": "Dynotears: Structure learning from time-series data",
+            "venue": "In International Conference on Artificial Intelligence and Statistics,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jonas Peters",
+                "Dominik Janzing",
+                "Bernhard Sch\u00f6lkopf"
+            ],
+            "title": "Elements of causal inference: foundations and learning algorithms",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Robert J Prill",
+                "Daniel Marbach",
+                "Julio Saez-Rodriguez",
+                "Peter K Sorger",
+                "Leonidas G Alexopoulos",
+                "Xiaowei Xue",
+                "Neil D Clarke",
+                "Gregoire Altan-Bonnet",
+                "Gustavo Stolovitzky"
+            ],
+            "title": "Towards a rigorous assessment of systems biology models: the dream3 challenges",
+            "venue": "PloS one,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Zhaozhi Qian",
+                "Ahmed Alaa",
+                "Alexis Bellot",
+                "Mihaela Schaar",
+                "Jem Rashbass"
+            ],
+            "title": "Learning dynamic and personalized comorbidity networks from event data using deep diffusion processes",
+            "venue": "In International Conference on Artificial Intelligence and Statistics,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Xiaojie Qiu",
+                "Qi Mao",
+                "Ying Tang",
+                "Li Wang",
+                "Raghav Chawla",
+                "Hannah A Pliner",
+                "Cole Trapnell"
+            ],
+            "title": "Reversed graph embedding resolves complex single-cell trajectories",
+            "venue": "Nature methods,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Federica Raia"
+            ],
+            "title": "Causality in complex dynamic systems: A challenge in earth systems science education",
+            "venue": "Journal of Geoscience Education,",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Jim O Ramsay",
+                "Giles Hooker",
+                "David Campbell",
+                "Jiguo Cao"
+            ],
+            "title": "Parameter estimation for differential equations: a generalized smoothing approach",
+            "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology,",
+            "year": 2007
+        },
+        {
+            "authors": [
+                "Christian Reiser"
+            ],
+            "title": "Causal discovery for time series with latent confounders",
+            "venue": "arXiv preprint arXiv:2209.03427,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jakob Runge"
+            ],
+            "title": "Causal network reconstruction from time series: From theoretical assumptions to practical estimation",
+            "venue": "Chaos: An Interdisciplinary Journal of Nonlinear Science,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Jakob Runge"
+            ],
+            "title": "Discovering contemporaneous and lagged causal relations in autocorrelated nonlinear time series datasets",
+            "venue": "In Conference on Uncertainty in Artificial Intelligence,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jakob Runge",
+                "Peer Nowack",
+                "Marlene Kretschmer",
+                "Seth Flaxman",
+                "Dino Sejdinovic"
+            ],
+            "title": "Detecting and quantifying causal associations in large nonlinear time series datasets",
+            "venue": "Science advances,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Shohei Shimizu",
+                "Patrik O Hoyer",
+                "Aapo Hyv\u00e4rinen",
+                "Antti Kerminen",
+                "Michael Jordan"
+            ],
+            "title": "A linear non-gaussian acyclic model for causal discovery",
+            "venue": "Journal of Machine Learning Research,",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "Ali Shojaie",
+                "George Michailidis"
+            ],
+            "title": "Discovering graphical granger causality using the truncating lasso",
+            "venue": "penalty. Bioinformatics,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Elsa Siggiridou",
+                "Dimitris Kugiumtzis"
+            ],
+            "title": "Granger causality in multivariate time series using a timeordered restricted vector autoregressive model",
+            "venue": "IEEE Transactions on Signal Processing,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Peter Spirtes",
+                "Clark N Glymour",
+                "Richard Scheines"
+            ],
+            "title": "Causation, prediction, and search",
+            "venue": "MIT press,",
+            "year": 2000
+        },
+        {
+            "authors": [
+                "Alex Tank",
+                "Ian Covert",
+                "Nicholas Foti",
+                "Ali Shojaie",
+                "Emily B Fox"
+            ],
+            "title": "Neural granger causality",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Cole Trapnell",
+                "Davide Cacchiarelli",
+                "Jonna Grimsby",
+                "Prapti Pokharel",
+                "Shuqiang Li",
+                "Michael Morse",
+                "Niall J Lennon",
+                "Kenneth J Livak",
+                "Tarjei S Mikkelsen",
+                "John L Rinn"
+            ],
+            "title": "The dynamics and regulators of cell fate decisions are revealed by pseudotemporal ordering of single cells",
+            "venue": "Nature biotechnology,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Belinda Tzen",
+                "Maxim Raginsky"
+            ],
+            "title": "Neural stochastic differential equations: Deep latent gaussian models in the diffusion limit",
+            "venue": "arXiv preprint arXiv:1905.09883,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Belinda Tzen",
+                "Maxim Raginsky"
+            ],
+            "title": "Theoretical guarantees for sampling and inference in generative models with latent diffusions",
+            "venue": "In Conference on Learning Theory,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Max Welling",
+                "Yee W Teh"
+            ],
+            "title": "Bayesian learning via stochastic gradient langevin dynamics",
+            "venue": "In Proceedings of the 28th international conference on machine learning",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Hulin Wu",
+                "Tao Lu",
+                "Hongqi Xue",
+                "Hua Liang"
+            ],
+            "title": "Sparse additive ordinary differential equations for dynamic gene regulatory network modeling",
+            "venue": "Journal of the American Statistical Association,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Tailin Wu",
+                "Thomas Breuel",
+                "Michael Skuhersky",
+                "Jan Kautz"
+            ],
+            "title": "Discovering nonlinear relations with minimum predictive information regularization",
+            "venue": "arXiv preprint arXiv:2001.01885,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Chenxiao Xu",
+                "Hao Huang",
+                "Shinjae Yoo"
+            ],
+            "title": "Scalable causal graph learning through a deep neural network",
+            "venue": "In Proceedings of the 28th ACM international conference on information and knowledge management,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Cheng Zhang",
+                "Judith B\u00fctepage",
+                "Hedvig Kjellstr\u00f6m",
+                "Stephan Mandt"
+            ],
+            "title": "Advances in variational inference",
+            "venue": "IEEE transactions on pattern analysis and machine intelligence,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Kun Zhang",
+                "Biwei Huang",
+                "Jiji Zhang",
+                "Clark Glymour",
+                "Bernhard Sch\u00f6lkopf"
+            ],
+            "title": "Causal discovery from nonstationary/heterogeneous data: Skeleton estimation and orientation determination",
+            "venue": "In IJCAI: Proceedings of the Conference,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Xun Zheng",
+                "Bryon Aragam",
+                "Pradeep K Ravikumar",
+                "Eric P Xing"
+            ],
+            "title": "Dags with no tears: Continuous optimization for structure learning",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2018
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Time-series data are ubiquitous in the real world, often comprising a series of data points recorded at varying time intervals. Understanding the underlying structures between variables associated with temporal processes is of paramount importance for numerous real-world applications (Spirtes et al., 2000; Berzuini et al., 2012; Peters et al., 2017). Although randomised experiments are considered the gold standard for unveiling such relationships, they are frequently hindered by factors such as cost and ethical concerns. Structure learning seeks to infer hidden structures from purely observational data, offering a powerful approach for a wide array of applications (Bellot et al., 2021; Lo\u0308we et al., 2022; Runge, 2018; Tank et al., 2021; Pamfil et al., 2020; Gong et al., 2022).\nHowever, many existing structure learning methods for time series are inherently discrete, assuming that the underlying temporal processes are discretized in time and requiring uniform sampling intervals throughout the entire time range. Consequently, these models face two key limitations: (i) they may misrepresent the true underlying process when it is continuous in time, potentially leading to incorrect inferred relationships; and (ii) they struggle with handling irregular sampling intervals, which frequently arise in fields such as biology (Trapnell et al., 2014; Qiu et al., 2017; Qian et al., 2020) and climate science (Bracco et al., 2018; Raia, 2008). Although there exists a previous work (Bellot et al., 2021) that also tries to infer the underlying structure from the continuous-time perspective, its framework based on ordinary differential equations (ODE) is intrinsically flawed, and we show that it cannot correctly learn the underlying system under multiple time series settings.\nTo address these challenges, we introduce a novel structure learning framework, Structure learning with COntinuous-Time stoCHastic models (SCOTCH), which combines stochastic differential equations (SDEs) and variational inference (VI) to model the underlying temporal processes. Owing to its continuous nature, SCOTCH can manage irregularly sampled time series and accurately represent continuous processes. We make the following key contributions:\n1. We introduce a novel latent Stochastic Differential Equation (SDE) formulation for modelling continuous-time observational time-series data. To effectively train our proposed\nmodel, which we denote as SCOTCH, we adapt the variational inference framework proposed in (Li et al., 2020; Tzen & Raginsky, 2019a) to approximate the posterior for both the underlying graph structure and the latent variables. In contrast to the previous ODE-based approach, our model is capable of accurately learning the underlying dynamics.\n2. We provide a rigorous theoretical analysis to support our proposed methodology. Specifically, we prove that when SDEs are directly employed for modelling the observational process, the resulting SDEs are structurally identifiable under global Lipschitz and diagonal noise assumptions. We also prove our model maintains structural identifiability under certain conditions, even when adopting the latent formulation and that variational inference, when integrated with the latent formulation, in the infinite data limit, can successfully recover the ground truth graph structure and mechanisms under specific assumptions.\n3. Empirically, we derive a failure case where the previous approach failed to learn the ground truth compared to ours. Additionally, we conduct extensive experiments on both synthetic and real-world datasets that SCOTCH can improve upon existing methods on structure learning, including when the data is irregularly sampled."
+        },
+        {
+            "heading": "2 PRELIMINARY",
+            "text": "Notations We use Xt \u2208 RD to denote the D-dimensional observation vector at time t, with Xt,d representing the dth variable of the observation. A time series is a set of I observations X = {Xti}It=1, where {ti}Ii=1 are the observation times. In the case where we have multiple (N ) i.i.d. time series, we use X(n) to indicate the nth time series.\nBayesian structure learning In structure learning, the aim is to infer the graph representing the relationships between variables from data. Given time series data {X(n)}Nn=1, the joint distribution over graphs and data is given by:\np\u03b8(G,X (1), . . . ,X(N)) = p(G) N\u220f n=1 p\u03b8(X (n)|G) (1)\nwhere p(G) is the graph prior and p(X(n)|G) is the likelihood term. The goal is then to compute the graph posterior p(G|X). However, analytic computation is intractable for high dimensional settings. Therefore, variational inference (Zhang et al., 2018) and sampling methods (Welling & Teh, 2011; Gong et al., 2018; Annadani et al., 2023) are commonly used for inference.\nStructural equation models (SEMs) Given a time series X and graph G \u2208 {0, 1}D\u00d7D, we can use SEMs to describe the structural relationships between variables:\nXt,d = ft,d(PaG d(< t), \u03f5t,d) (2)\nwhere PaGd(< t) specifies the lagged parents of Xt,d at previous time and \u03f5t,d is the mutually independent noise. Such a model requires discrete time steps that are usually assumed to follow a regular sampling interval, i.e. ti+1 \u2212 ti is a constant for all i = 1, . . . , I \u2212 1. Most existing models can be regarded as a special case of this framework.\nIto\u0302 diffusion A time-homogenous Ito\u0302 diffusion is a stochastic process Xt and has the form:\ndXt = f(Xt)dt+ g(Xt)dWt (3)\nwhere f : RD \u2192 RD, g : RD \u2192 RD\u00d7D are time-homogeneous drift and diffusion functions, respectively, and Wt is a Brownian motion under the measure P . It is known that under global Lipschitz guarantees (Assumption 1) it has a unique strong solution (\u00d8ksendal & \u00d8ksendal, 2003).\nEuler discretization and Euler SEM For most Ito\u0302 diffusions, the analytic solution Xt is intractable, especially with non-linear drift and diffusion functions. Thus, we often seek to simulate the trajectory by discretization. One common scheme is called Euler-Maruyama (EM) scheme. With a fixed step size \u2206, EM simulates the trajectory as\nX\u2206t+1 = X \u2206 t + f(X \u2206 t )\u2206 + g(X \u2206 t )\u03b7t (4)\nwhere X\u2206t is the random variable induced by discretization and \u03b7t \u223c N (0,\u2206). Notice that eq. (4) is a special case of eq. (2). If we define the graph G as the following: if X\u2206t,i \u2192 X\u2206t+1,j in G, then \u2202fj(X \u2206 t )\n\u2202X\u2206t,i \u0338= 0 or \u2203k, \u2202gj,k(X\n\u2206 t )\n\u2202X\u2206t,i \u0338= 0; and assume gG only outputs a diagonal matrix, then the above\nEM induces a temporal SEM, called Euler SEM (Hansen & Sokol, 2014), which provides a useful analysis tool for continuous time processes.\n3 SCOTCH: BAYESIAN STRUCTURE LEARNING FOR CONTINUOUS TIME SERIES\nWe consider a dynamical system in which there is both intrinsic stochasticity in the evolution of the state, as well as independent measurement noise that is present in the observed data. For example, in healthcare, the condition of a patient will progress with randomness rather than deterministically. On the other hand, the measurement of patient status will also be affected by the accuracy of the equipment, where the noise is independent to the intrinsic stochasticity. To account for the above behaviour, we propose to use the latent SDE formulation (Li et al., 2020; Tzen & Raginsky, 2019a):\ndZt = f\u03b8(Zt)dt+ g\u03b8(Zt)dWt (latent process) Xt = Zt + \u03f5t (noisy observations) (5)\nwhere Zt \u2208 RD is the latent variable representing the internal state of the dynamic system, Xt \u2208 RD describes the observational data with the same dimension, \u03f5t is additive Gaussian noise with diagonal covariance matrix, f\u03b8 : RD \u2192 RD is the drift function, g\u03b8 : RD \u2192 RD\u00d7D is the diffusion function and Wt is the Wiener process.\nRevision rM8f: clearer assumption 1,2\nFor SCOTCH, we require the following two assumptions:\nAssumption 1 (Global Lipschitz). We assume that the drift and diffusion functions in eq. (5) satisfy the global Lipschitz constraints. Namely, we have\n|f\u03b8(x)\u2212 f\u03b8(y)|+ |g\u03b8(x)\u2212 g\u03b8(y)| \u2264 C|x\u2212 y| (6)\nfor some constant C, x,y \u2208 RD and | \u00b7 | is the corresponding L2 norm for vector-valued functions and matrix norm for matrix-valued functions.\nAssumption 2 (Diagonal diffusion). We assume that the diffusion function g\u03b8 outputs a non-zero diagonal matrix. That is, it can be simplified to a vector-valued function g\u03b8(Xt) : RD \u2192 RD.\nThe former is a standard assumption required by most SDE literature to ensure the existence of a strong solution. The key distinction is the latter assumption of a nonzero diagonal diffusion function, g\u03b8, rather than a full diffusion matrix, enabling structural identifiability as we show in the next section. Please refer to appendix A.1 for more detailed explanations.\nSignature graph In accordance with the graph defined in Euler SEMs (section 2), we define the graph G as follows: edge i \u2192 j is present in G iff \u2203t s.t. either \u2202fj(Zt)\u2202Zt,i \u0338= 0 or \u2202gj(Zt) \u2202Zt,i\n\u0338= 0. Note that there is no requirement for the graph to be acyclic. Intuitively, the graph G describes the structural dependence between variables.\nTo present SCOTCH, we first define the prior and likelihood components:\nPrior over Graphs Leveraging Geffner et al. (2022); Annadani et al. (2023), our graph prior is designed as: p(G) \u221d exp(\u2212\u03bbs\u2225G\u22252F ) (7) where \u03bbs is the graph sparsity coefficient, and \u2225 \u00b7 \u2225F is the Frobenius norm.\nPrior process Since the latent process induces a distribution over latent trajectories before seeing any observations, we also call it the prior process. We propose to use neural networks for drift and diffusion functions f\u03b8 : RD \u00d7 {0, 1}D\u00d7D \u2192 RD, g\u03b8 : RD \u00d7 {0, 1}D\u00d7D \u2192 RD, which explicitly take the latent state and the graph as inputs. Note that although the signature graph is defined through the function derivatives, we explicitly use the graph G as input to denote their dependence.\nWe will interchangeably use the notation fG and gG to denote f\u03b8(\u00b7,G) and g\u03b8(\u00b7,G). To design the graph-dependent drift and diffusion, we leverage the design of Geffner et al. (2022) and propose:\nfG,d(Zt) = \u03b6 ( D\u2211 i=1 Gi,dl(Zt,i, ei), ed ) (8)\nfor both fG and gG, where \u03b6, l are neural networks, and ei is a trainable node embedding for the ith node. The corresponding prior process is:\ndZt = f\u03b8(Zt,G)dt+ g\u03b8(Zt,G)dWt (prior process) (9)\nLikelihood of time series Given a time series {Xti}Ii=1, the likelihood is defined as\np({Xti}Ii=1|{Zti}Ii=1,G) = I\u220f i=1 D\u220f d=1 N (Zti,d, \u03c32ti,d) (10)\nwhere \u03c32ti,d is the variance of noise \u03f5ti,d."
+        },
+        {
+            "heading": "3.1 VARIATIONAL INFERENCE",
+            "text": "Suppose that we are given multiple time series {X(n)}Nn=1 as observed data from the system. The goal is then to compute the posterior over graph structures p(G|{X(n)}Nn=1), which is intractable. Thus, we leverage variational inference to simultaneously approximate both the graph posterior, and a latent posterior process over Z(n) for every observed time series X(n).\nGiven N i.i.d time series {X(n)}Nn=1, we propose to use a variational approximation q\u03d5(G) \u2248 p(G|X(1), . . . ,X(N)). With the standard trick from variational inference, we have the following evidence lower bound (ELBO):\nlog p(X(1), . . . ,X(N)) \u2265 Eq\u03d5(G) [ N\u2211 n=1 log p\u03b8(X (n)|G) ] \u2212DKL(q\u03d5(G)\u2225p(G)) (11)\nUnfortunately, the distribution p\u03b8(X(n)|G) remains intractable due to the marginalization of the latent Ito\u0302 diffusion Z(n). Therefore, we leverage the variational framework proposed in Tzen & Raginsky (2019a); Li et al. (2020) to approximate the true posterior p(Z(n)|X(n),G). For each n = 1, . . . , N , the variational posterior q\u03c8(Z\u0303(n)|X(n),G) is given by the solution to the following:\nZ\u0303 (n) t,0 \u223c N (\u00b5\u03c8(G,X(n)),\u03a3\u03c8(G,X(n))) (posterior initial state)\ndZ\u0303 (n) t = h\u03c8(Z\u0303 (n) t , t;G,X (n))dt+ gG(Z\u0303 (n) t )dWt (posterior process) (12)\nFor the initial latent state, \u00b5\u03c8,\u03a3\u03c8 are posterior mean and covariance functions implemented as neural networks. For the SDE, we use the same diffusion function gG for both the prior and posterior processes, but train a separate neural drift function h\u03c8 for the posterior, which takes a time series X(n) as input. The posterior drift function differs from the prior in two key ways. Firstly, the posterior drift function depends on time; this is necessary as conditioning on the observed data creates this dependence even when the prior process is time-homogenous. Secondly, while h\u03c8 takes the graph G as an input, the function design is not constrained to have a matching signature graph like fG. More details on the implementation of h\u03c8,\u00b5\u03c8,\u03a3\u03c8 can be found in Appendix B.\nAssume for each time series X(n), we have observation times ti for i = 1, . . . , I within the time range [0, T ], then, we have the following evidence lower bound for log p(X(n)|G) (Li et al., 2020):\nlog p(X(n)|G) \u2265 Eq\u03c8 [ I\u2211 i=1 log p(X (n) ti |Z\u0303 (n) ti ,G)\u2212 \u222b T 0 \u2225u(n)(Z\u0303(n)t )\u22252dt ] (13)\nwhere Z\u0303(n)t is the posterior process modelled by eq. (12) and u (n)(Z\u0303 (n) t ) is given by:\nu(n)(Z\u0303 (n) t ) = gG(Z\u0303 (n) t ) \u22121(h\u03c8(Z\u0303 (n) t , t;G,X (n))\u2212 fG(Z\u0303(n)t )) (14)\nAlgorithm 1 SCOTCH training\nInput: i.i.d time series {X(n)}Nn=1; drift functions fG, h\u03c8 , diffusion function gG, SDE solver Solver, initial condition Z\u0303(n)0 , training iterations L for l = 1, . . . , L do\nSample time series mini-batch {X(n)}Sn=1 with batch size S. for n = 1, . . . , S do\nDraw graph G \u223c q\u03d5(G) Draw initial latent state Z\u0303(n)0 \u223c N (\u00b5\u03c8(G,X(n)),\u03a3\u03c8(G,X(n))) Solve (sample from) the posterior process (Z\u0303(n), L) = Solver((Z\u0303(n)0 , 0),fG,h\u03c8, gG)\nend for Maximize ELBO eq. (15) w.r.t. \u03d5, \u03c8, \u03b8\nend for\nBy combining eq. (11) and eq. (13), we derive an overall ELBO:\nlog p\u03b8(X (1), . . . ,X(N)) \u2265Eq\u03d5 [ N\u2211 n=1 Eq\u03c8 [ I\u2211 i=1 log p(X (n) ti |Z\u0303 (n) ti ,G)\u2212 \u222b T 0 \u2225u(n)(Z\u0303(n)t )\u22252dt ]] \u2212DKL(q\u03d5(G)\u2225p(G)) (15)\nIn practice, we approximate the ELBO (and its gradients) using a Monte-Carlo approximation. The inner expectation can be approximated by simulating from an augmented version of eq. (12) where an extra variable L is added with drift 12 |u (n)(Z\u0303 (n) t )|2 and diffusion zero (Li et al., 2020). Algorithm 1 summarizes the training algorithm of SCOTCH."
+        },
+        {
+            "heading": "3.2 COMPARISON TO RELATED WORK",
+            "text": "NGM Bellot et al. (2021) proposed a structure learning method, called NGM, to learn from single time series generated by SDEs. NGM uses a neural ODE to model the mean process f\u03b8, and extracts graphical structure from the first layer of f\u03b8. However, NGM assumes that the observed single series X follows a multivariate Gaussian distribution, which only holds for linear SDEs. If this assumption is violated, optimizing their proposed squared loss cannot recover the underlying system. SCOTCH does not have this limitation and can handle more flexible state-dependent drifts and diffusions. Another drawback of NGM is its inability to handle multiple time series (N > 1). Learning from multiple series is important when dealing with SDEs with multimodal behaviour. We propose a simple bimodal 1-D failure case: dX = Xdt + 0.01dWt, X0 = 0, with the signature graph containing a self-loop. Figure 1 shows the bimodal trajectories (upwards and downwards) sampled from the SDE. The optimal ODE mean process in this case is the constant f\u03b8 = 0 with an empty graph, as confirmed by the learned mean process of NGM (black line in fig. 1b). In contrast, SCOTCH can learn the underlying SDE and simulate the correct trajectories (fig. 1c).\nHighlight, rM8f, Netsim\nRhino Gong et al. (2022) proposed a flexible discretised temporal SEM that is capable of modelling (1) lagged parents; (2) instantaneous effect; and (3) history dependent noise. Rhino\u2019s SEM is\n5\ngiven by Xt,d = fd(PaGd(< t),PaGd(t))+gd(PaGd(< t))\u03f5t,d. We can clearly see its similarity to SCOTCH. If fd has a residual structure as fd(\u00b7) = Xt,d+rd(\u00b7)\u2206 and we assume no instantaneous effect (PaGd(t) is empty), Rhino SEM is equivalent to the Euler SEM of the latent process (eq. (9)) with drift r, step size \u2206 and diagonal diffusion g. Thus, similar to the relation of ResNet (He et al., 2016) to NeuralODE (Chen et al., 2018), SCOTCH is the continuous-time analog of Rhino.\n4 THEORETICAL CONSIDERATIONS OF SCOTCH\nIn this section, we aim to answer three important theoretical questions regarding the Ito\u0302 diffusion proposed in section 3. For notational simplicity, we consider the single time series setting. First, we examine when a general Ito\u0302 diffusion is structurally identifiable. Secondly, we consider structural identifiability in the latent formulation of eq. (5). Finally, we consider whether optimising ELBO (eq. (15)) can recover the true graph and mechanism if we have infinite observations for a single time series within a fixed time range [0, T ]. All detailed proofs, definitions, and assumptions can be found in appendix A."
+        },
+        {
+            "heading": "4.1 STRUCTURE IDENTIFIABILITY",
+            "text": "Suppose that the observational process is given as an Ito\u0302 diffusion:\ndXt = fG(Xt)dt+ gG(Xt)dWt (16)\nThen we might ask what are sufficient conditions for the model to be structurally identifiable? That is, there does not exist G\u2032 \u0338= G that can induce the same observational distribution. Theorem 4.1 (Structure identifiability of the observational process). Given eq. (16), let us define another process with X\u0304t, G \u0338= G\u0304, f\u0304G\u0304, g\u0304G\u0304 and W\u0304t. Then, under Assumptions 1-2, and with the same initial condition X(0) = X\u0304(0) = x0, the solutions Xt and X\u0304t will have different distributions.\nNext, we show that structural identifiability is preserved, under certain conditions, even in the latent formulation where the SDE solution is not directly observed. Theorem 4.2 (Structural identifiability with latent formulation). Consider the distributions p, p\u0304 defined by the latent model in eq. (5) with (G,Z,X,fG, gG), (G\u0304, Z\u0304, X\u0304, f\u0304G\u0304, g\u0304G\u0304) respectively, where G \u0338= G\u0304. Further, let t1, . . . , tI be the observation times. Then, under Assumptions 1 and 2:\n1. if ti+1 \u2212 ti = \u2206 for all i \u2208 1, ..., I \u2212 1, then p\u2206(Xt1 , . . . ,XtI ) \u0338= p\u0304\u2206(X\u0304t1 , . . . , X\u0304tI ), where p\u2206 is the density generated by the Euler discretized eq. (9) for Zt;\n2. if we have a fixed time range [0, T ], then the path probability p(Xt1 , . . . ,XtI ) \u0338= p\u0304(X\u0304t1 , . . . , X\u0304tI ) under the limit of infinite data (I \u2192\u221e)."
+        },
+        {
+            "heading": "4.2 CONSISTENCY",
+            "text": "Building upon the structural identifiability, we can prove the consistency of the variational formulation. Namely, in the infinite data limit, one can recover the ground truth graph and mechanism by maximizing ELBO with a sufficiently expressive posterior process and a correctly specified model. Theorem 4.3 (Consistency of variational formulation). Suppose Assumptions 1-4 are satisfied for the latent formulation (eq. (5)). Then, for a fixed observation time range [0, T ], as the number of observations I \u2192\u221e, when ELBO (eq. (15)) is maximised, q\u03d5(G) = \u03b4(G\u2217), where G\u2217 is the ground truth graph, and the latent formulation recovers the underlying ground truth mechanism."
+        },
+        {
+            "heading": "5 RELATED WORK",
+            "text": "Discrete time causal models The majority of the existing approaches are inherently discrete in time. Assaad et al. (2022) provides a comprehensive overview. There are three types of discovery methods: (1) Granger causality; (2) structure equation model (SEM); and (3) constraint-based methods. Granger causality assumes that no instantaneous effects are present and the causal direction cannot flow backward in time. Wu et al. (2020); Shojaie & Michailidis (2010); Siggiridou\n& Kugiumtzis (2015); Amornbunchornvej et al. (2019) leverage the vector-autoregressive model to predict future observations. Lo\u0308we et al. (2022); Tank et al. (2021); Bussmann et al. (2021); Dang et al. (2019); Xu et al. (2019); Khanna & Tan (2019) utilise deep neural networks for prediction. Recently, Cheng et al. (2023) introduced a deep-learning based Granger causality that can handle irregularly sampled data, treating it as a missing data problem and proposing a joint framework for data imputation and graph fitting. SEM based approaches assume an explicit causal model associated to the temporal process. Hyva\u0308rinen et al. (2010) leverages the identifiability of additive noise models (Hoyer et al., 2008) to build a linear auto-regressive SEM with non-Gaussian noise. Pamfil et al. (2020) utilises the NOTEARS framework (Zheng et al., 2018) to continuously relax the DAG constraints for fully differentiable structure learning. The recently proposed Gong et al. (2022) extended the prior DECI Geffner et al. (2022) framework to handle time series data and is capable of modelling instantaneous effect and history-dependent noise. Constraint-based approaches use conditional independence tests to determine the causal structures. Runge et al. (2019) combines the PC (Spirtes et al., 2000) and momentary conditional independence tests for the lagged parents. PCMCI+ (Runge, 2020) can additionally detect the instantaneous effect. LPCMCI (Reiser, 2022) can further handle latent confounders. CD-NOD (Zhang et al., 2017) is designed to handle non-stationary heterogeneous time series data. However, all constraint-based approaches can only identify the graph up to Markov equivalence class without the functional relationship between variables.\nContinuous time causal models In terms of using differential equations to model the continuous temporal process, Hansen & Sokol (2014) proposed using stochastic differential equations to describe the temporal causal system. They proved identifiability with respect to the intervention distributions, but did not show how to learn a corresponding SDE. Penalised regression has been explored for linear models, where parameter consistency has been established (Ramsay et al., 2007; Chen et al., 2017; Wu et al., 2014). Recently, NGM (Bellot et al., 2021) uses ODEs to model the temporal process with both identifiability and consistency results. As discussed in previous sections, SCOTCH is based on SDEs rather than ODEs, and can model the intrinsic stochasticity within the causal system, whereas NGM assumes deterministic state transitions."
+        },
+        {
+            "heading": "6 EXPERIMENTS",
+            "text": "Baselines and Metrics We benchmark our method against a representative sample of baselines: (i) VARLiNGaM (Hyva\u0308rinen et al., 2010), a linear SEM based approach; (ii) PCMCI+ (Runge, 2018; 2020), a constraint-based method for time series; (iii) CUTS, a Granger causality approach which can handle irregular time series; (iv) Rhino (Gong et al., 2022), a non-linear SEM based approach with history-dependent noise and instantaneous effects; and (v) NGM (Bellot et al., 2021), a continuous-time ODE based structure learner. Since most methods require a threshold to determine the graph, we use the threshold-free area under the ROC curve (AUROC) as the performance metric. In appendix D, we also report F1 score, true positive rate (TPR) and false discovery rate (FDR).\nAddition, pC52, accuracy of SDE Setup Both the synthetic datasets (Lorenz-96, Glycolysis) and real-world datasets (DREAM3, Netsim) consist of multiple time series. However, it is not trivial to modify NGM and CUTS to support multiple time series. For fair comparison, we use the concatenation of multiple time series, which we found empirically to improve performance. We also mimic irregularly sampled data by randomly dropping observations, which VARLiNGaM, PCMCI, and Rhino cannot handle; in these cases, for these methods we impute the missing data using zero-order hold (ZOH). For SCOTCH, we use pathwise gradient estimators with Euler discretization for solving the SDE (see appendix D.1 for discussion on this choice). Further experimental details can be found in Appendices B, C, D."
+        },
+        {
+            "heading": "6.1 SYNTHETIC EXPERIMENTS: LORENZ AND GLYCOLYSIS",
+            "text": "First, we evaluate SCOTCH on synthetic benchmarks including the Lorenz-96 (Lorenz, 1996) and Glycolysis (Daniels & Nemenman, 2015) datasets, which model continuous-time dynamical systems. The Lorenz model is a well-known example of chaotic systems observed in biology (Goldberger & West, 1987; Heltberg et al., 2019). To mimic irregularly sampled data, we follow the setup of Cheng et al. (2023) and randomly drop some observations with missing probability p. To verify the advantages of using SDE models, we also simulate another dataset from a biological model,\nwhich describes metabolic iterations that break down glucose in cells. This is called Glycolysis, consisting of an SDE with 7 variables. As a preprocessing step, we standardised this dataset to avoid large differences in variable scales. Both datasets consist of N = 10 time series with sequence length I = 100 (before random drops), and have dimensionality 10 and 7, respectively. Note that we choose a large data sampling interval, as we want to test settings where observations are fairly sparse and the difficulty of correctly modelling continuous-time dynamics increases. The above data setup is different from Bellot et al. (2021); Cheng et al. (2023) where they use a single series with I = 1000 observations, which is more informative compared to our sparse setting. Refer to appendix D.3 and appendix D.4 for details.\nThe left two columns in table 1 compare the AUROC of SCOTCH to baselines for Lorenz. We can see that SCOTCH can effectively handle the irregularly sampled data compared to other baselines. Compared to NGM and CUTS, we can achieve much better results with small missingness and performs competitively with larger missingness. Rhino, VARLiNGaM and PCMCI+ perform poorly in comparison as they assume regularly sampled observations and are discrete in nature.\nFrom the right column in table 1, SCOTCH outperforms the baselines by a large margin on Glycolysis. In particular, compared to the ODE-based NGM, SCOTCH clearly demonstrates the advantage of the proposed SDE framework in multiple time series settings. As we may have anticipated from the discussion in section 3.2, NGM can produce an incorrect model when multiple time series are sampled from a given SDE system. Another interesting observation is that SCOTCH is more robust when encountering data with different scales compared to NGM (refer to appendix D.4.3). This robustness is due to the stochastic nature of SDE compared to the deterministic ODE, where ODE can easily overshoot with less stable training behaviour. We can also see that SCOTCH has a significant advantage over both CUTS and Rhino, which do not model continuous-time dynamics."
+        },
+        {
+            "heading": "6.2 DREAM3",
+            "text": "We also evaluate SCOTCH performance on the DREAM3 datasets (Prill et al., 2010; Marbach et al., 2009), which have been adopted for assessing the performance of structure learning (Tank et al., 2021; Pamfil et al., 2020; Gong et al., 2022). These datasets contain in silico measurement of gene expression levels for 5 different structures. Each dataset corresponds to a particular gene expression network, and contains N = 46 time series of 100 dimensional variables, with I = 21 per series. The goal is to infer the underlying structures from each dataset. Following the same setup as (Gong et al., 2022; Khanna & Tan, 2019), we ignore all the self-connections by setting the edge probability to 0, and use AUROC as the performance metric. Appendix D.5 details the experiment setup, selected hyperparameters, and additional plots. We do not include VARLiNGaM since it cannot support the series where the dimensionality (100) is greater than the length (21). Also due to the time series length, we decide not to test with irregularly sampled data. For CUTS, we failed to reproduce the reported number in their paper, but we cite it for a fair comparison.\nTable 2 shows the AUROC performances of SCOTCH and baselines. We can clearly observe that SCOTCH outperforms the other baselines with a large margin. This indicates the advantage of the SDE formulation compared to ODEs and discretized temporal models, even when we have complete and regularly sampled data. A more interesting observation is to compare Rhino with SCOTCH. As discussed before, as SCOTCH is the continuous version of Rhino, the advantage comes from the continuous formulation and the corresponding training objective eq. (15).\n6.3 NETSIM\nHighlight, rM8f, Netsim performance Netsim consists of blood oxygenation level dependent imaging data. Following the same setup as Gong et al. (2022), we use subjects 2-6 to form the dataset, which consists of 5 time series. Each contains 15 dimensional observations with I = 200. The goal is to infer the underlying connectivity between different brain regions. Unlike Dream3, we include the self-connection edge for all methods. To evaluate the performance under irregularly sampled data, we follow the same setup as in the Lorenz and Cheng et al. (2023) to randomly drop observations with missing probability. Since it is very important to model instantaneous effects in Netsim (Gong et al., 2022), which SCOTCH cannot handle, we replace Rhino with Rhino+NoInst and PCMCI+ with PCMCI for fair comparison.\nTable 3 shows the performance comparisons. We observe that SCOTCH significantly outperforms the other baselines and performs on par with Rhino+NoInst, which demonstrates its robustness towards smaller datasets and balance between true and false positive rates. Again, this confirms the modelling power of our approach compared to NGM and other baselines. Interestingly, Rhinobased approaches perform particularly well on the Netsim dataset. We suspect that the underlying generation mechanism can be better modelled with a discretized as opposed to continuous system.\n7 CONCLUSION\nAddition, rM8f, homogeneous drift/diffusion We propose SCOTCH, a flexible continuous-time temporal structure learning method based on latent Ito\u0302 diffusion. We leverage the variational inference framework to infer the posterior over latent states and the graph. Theoretically, we validate our approach by proving the structural identifiability of the Ito\u0302 diffusion and latent formulation, and the consistency of the proposed variational framework. Empirically, we extensively evaluated our approach using synthetic and semi-synthetic datasets, where SCOTCH outperforms the baselines in both regularly and irregularly sampled data. There are three limitations that require further investigation. The first one is the inability to handle instantaneous effects, which can arise due to data aggregation. Another computational drawback is it scales linearly with the series length. This could be potentially fixed by incorporating an encoder network to infer latent states at arbitrary time points. Last but not least, the current formulation of SCOTCH cannot handle non-stationary systems due to the homogeneous drift and diffusion function. However, direct incorporation of time embeddings may break the theoretical guarantees without additional assumptions. Therefore, new theories and methodologies may be needed to tackle such a scenario. We leave these challenges for future work."
+        }
+    ],
+    "year": 2023
+}

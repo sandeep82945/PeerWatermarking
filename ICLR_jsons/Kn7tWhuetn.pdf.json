@@ -1,0 +1,441 @@
+{
+    "abstractText": "Neural algorithmic reasoning is an emerging research direction that endows neural networks with the ability to mimic algorithmic executions step-by-step. A common paradigm in existing designs involves the use of historical embeddings in predicting the results of future execution steps. Our observation in this work is that such historical dependence intrinsically contradicts the Markov nature of algorithmic reasoning tasks. Based on this motivation, we present our ForgetNet, which does not use historical embeddings and thus is consistent with the Markov nature of the tasks. To address challenges in training ForgetNet at early stages, we further introduce G-ForgetNet, which uses a gating mechanism to allow for the selective integration of historical embeddings. Such an enhanced capability provides valuable computational pathways during the model\u2019s early training phase. Our extensive experiments, based on the CLRS-30 algorithmic reasoning benchmark, demonstrate that both ForgetNet and G-ForgetNet achieve better generalization capability than existing methods. Furthermore, we investigate the behavior of the gating mechanism, highlighting its degree of alignment with our intuitions and its effectiveness for robust performance.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Meng Liu"
+        },
+        {
+            "affiliations": [],
+            "name": "Alexandra Saxton"
+        },
+        {
+            "affiliations": [],
+            "name": "Shuiwang Ji"
+        }
+    ],
+    "id": "SP:6c9e457adf44afe5c193c8184ab5724d833f943e",
+    "references": [
+        {
+            "authors": [
+                "Peter W Battaglia",
+                "Jessica B Hamrick",
+                "Victor Bapst",
+                "Alvaro Sanchez-Gonzalez",
+                "Vinicius Zambaldi",
+                "Mateusz Malinowski",
+                "Andrea Tacchetti",
+                "David Raposo",
+                "Adam Santoro",
+                "Ryan Faulkner"
+            ],
+            "title": "Relational inductive biases, deep learning, and graph networks",
+            "venue": "arXiv preprint arXiv:1806.01261,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Luca Beurer-Kellner",
+                "Martin Vechev",
+                "Laurent Vanbever",
+                "Petar Veli\u010dkovi\u0107"
+            ],
+            "title": "Learning to configure computer networks with neural algorithmic reasoning",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Beatrice Bevilacqua",
+                "Kyriacos Nikiforou",
+                "Borja Ibarz",
+                "Ioana Bica",
+                "Michela Paganini",
+                "Charles Blundell",
+                "Jovana Mitrovic",
+                "Petar Veli\u010dkovi\u0107"
+            ],
+            "title": "Neural algorithmic reasoning with causal regularisation",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Thomas H Cormen",
+                "Charles E Leiserson",
+                "Ronald L Rivest",
+                "Clifford Stein"
+            ],
+            "title": "Introduction to algorithms",
+            "venue": "MIT press,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Andreea-Ioana Deac",
+                "Petar Veli\u010dkovi\u0107",
+                "Ognjen Milinkovic",
+                "Pierre-Luc Bacon",
+                "Jian Tang",
+                "Mladen Nikolic"
+            ],
+            "title": "Neural algorithmic reasoners are implicit planners",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Cameron Diao",
+                "Ricky Loynd"
+            ],
+            "title": "Relational attention: Generalizing transformers for graph-structured tasks",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Andrew J Dudzik",
+                "Petar"
+            ],
+            "title": "Veli\u010dkovi\u0107. Graph neural networks are dynamic programmers",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Vijay Prakash Dwivedi",
+                "Chaitanya K Joshi",
+                "Anh Tuan Luu",
+                "Thomas Laurent",
+                "Yoshua Bengio",
+                "Xavier Bresson"
+            ],
+            "title": "Benchmarking graph neural networks",
+            "venue": "Journal of Machine Learning Research,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Dobrik Georgiev",
+                "Pietro Li\u00f3"
+            ],
+            "title": "Neural bipartite matching",
+            "venue": "arXiv preprint arXiv:2005.11304,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Justin Gilmer",
+                "Samuel S Schoenholz",
+                "Patrick F Riley",
+                "Oriol Vinyals",
+                "George E Dahl"
+            ],
+            "title": "Neural message passing for quantum chemistry",
+            "venue": "In International conference on machine learning,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Alex Graves",
+                "Greg Wayne",
+                "Ivo Danihelka"
+            ],
+            "title": "Neural turing machines",
+            "venue": "arXiv preprint arXiv:1410.5401,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Alex Graves",
+                "Greg Wayne",
+                "Malcolm Reynolds",
+                "Tim Harley",
+                "Ivo Danihelka",
+                "Agnieszka GrabskaBarwi\u0144ska",
+                "Sergio G\u00f3mez Colmenarejo",
+                "Edward Grefenstette",
+                "Tiago Ramalho",
+                "John Agapiou"
+            ],
+            "title": "Hybrid computing using a neural network with dynamic external memory",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Jessica B Hamrick",
+                "Kelsey R Allen",
+                "Victor Bapst",
+                "Tina Zhu",
+                "Kevin R McKee",
+                "Joshua B Tenenbaum",
+                "Peter W Battaglia"
+            ],
+            "title": "Relational inductive bias for physical construction in humans and machines",
+            "venue": "arXiv preprint arXiv:1806.01203,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Borja Ibarz",
+                "Vitaly Kurin",
+                "George Papamakarios",
+                "Kyriacos Nikiforou",
+                "Mehdi Bennani",
+                "R\u00f3bert Csord\u00e1s",
+                "Andrew Joseph Dudzik",
+                "Matko Bo\u0161njak",
+                "Alex Vitvitskyi",
+                "Yulia Rubanova"
+            ],
+            "title": "A generalist neural algorithmic learner",
+            "venue": "In Learning on Graphs Conference,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Armand Joulin",
+                "Tomas Mikolov"
+            ],
+            "title": "Inferring algorithmic patterns with stack-augmented recurrent nets",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "\u0141ukasz Kaiser",
+                "Ilya Sutskever"
+            ],
+            "title": "Neural gpus learn algorithms",
+            "venue": "arXiv preprint arXiv:1511.08228,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Diederik P Kingma",
+                "Jimmy Ba"
+            ],
+            "title": "Adam: A method for stochastic optimization",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Sadegh Mahdavi",
+                "Kevin Swersky",
+                "Thomas Kipf",
+                "Milad Hashemi",
+                "Christos Thrampoulidis",
+                "Renjie Liao"
+            ],
+            "title": "Towards better out-of-distribution generalization of neural algorithmic reasoning",
+            "venue": "tasks. Transactions on Machine Learning Research,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Danilo Numeroso",
+                "Davide Bacciu",
+                "Petar Veli\u010dkovi\u0107"
+            ],
+            "title": "Dual algorithmic reasoning",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Sainbayar Sukhbaatar",
+                "Jason Weston",
+                "Rob Fergus"
+            ],
+            "title": "End-to-end memory networks",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Petar Veli\u010dkovi\u0107",
+                "Guillem Cucurull",
+                "Arantxa Casanova",
+                "Adriana Romero",
+                "Pietro Li\u00f2",
+                "Yoshua Bengio"
+            ],
+            "title": "Graph attention networks",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Petar Veli\u010dkovi\u0107",
+                "Lars Buesing",
+                "Matthew Overlan",
+                "Razvan Pascanu",
+                "Oriol Vinyals",
+                "Charles Blundell"
+            ],
+            "title": "Pointer graph networks",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Petar Veli\u010dkovi\u0107",
+                "Rex Ying",
+                "Matilde Padovano",
+                "Raia Hadsell",
+                "Charles Blundell"
+            ],
+            "title": "Neural execution of graph algorithms",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Petar Veli\u010dkovi\u0107",
+                "Adri\u00e0 Puigdom\u00e8nech Badia",
+                "David Budden",
+                "Razvan Pascanu",
+                "Andrea Banino",
+                "Misha Dashevskiy",
+                "Raia Hadsell",
+                "Charles Blundell"
+            ],
+            "title": "The CLRS algorithmic reasoning benchmark",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Louis-Pascal Xhonneux",
+                "Andreea-Ioana Deac",
+                "Petar Veli\u010dkovi\u0107",
+                "Jian Tang"
+            ],
+            "title": "How to transfer algorithmic reasoning knowledge to learn new algorithms",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Keyulu Xu",
+                "Jingling Li",
+                "Mozhi Zhang",
+                "Simon S Du",
+                "Ken-ichi Kawarabayashi",
+                "Stefanie Jegelka"
+            ],
+            "title": "What can neural networks reason about",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yujun Yan",
+                "Kevin Swersky",
+                "Danai Koutra",
+                "Parthasarathy Ranganathan",
+                "Milad Hashemi"
+            ],
+            "title": "Neural execution engines: Learning to execute subroutines",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Wojciech Zaremba",
+                "Ilya Sutskever"
+            ],
+            "title": "Learning to execute",
+            "venue": "arXiv preprint arXiv:1410.4615,",
+            "year": 2014
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Neural algorithmic reasoning stands at the intersection of neural networks and classical algorithm research. It involves training neural networks to reason like classical algorithms, typically through learning to execute step-by-step algorithmic operations (Velic\u030ckovic\u0301 & Blundell, 2021; Velic\u030ckovic\u0301 et al., 2022a). Since classical algorithms inherently possess the power to generalize across inputs of varying sizes and act as \u201cbuilding blocks\u201d for complicated reasoning pathways, learning to mimic algorithmic execution can confirm and amplify the generalization and reasoning abilities of neural network models (Xu et al., 2020; Deac et al., 2021; Numeroso et al., 2023; Velic\u030ckovic\u0301 et al., 2022b).\nExisting works based on the CLRS-30 benchmark (Velic\u030ckovic\u0301 et al., 2022a) have demonstrated the effectiveness of mimicking algorithmic operations in high-dimensional latent space (Velic\u030ckovic\u0301 et al., 2020b; Georgiev & Lio\u0301, 2020; Velic\u030ckovic\u0301 et al., 2020a; 2022a; Ibarz et al., 2022; Diao & Loynd, 2023). As detailed in Section 3.1, they typically employ an encoder-processor-decoder framework to learn the step-by-step execution of algorithms. At each step, the current algorithm state is first embedded in a high-dimensional latent space via the encoder. The embedding is then given to the processor to perform one step of computation in the latent space. The processed embeddings are then decoded to predict the updated algorithm state, namely hints. Within this paradigm, a common practice is to use historical embeddings in the current execution step. Our insight in this work is that such historical dependence contradicts the intrinsic nature of classical algorithms.\nOur work is motivated by the Markov property of algorithmic reasoning tasks; that is, the present state is sufficient to fully determine the execution output of the current step. This observation led us to investigate if the use of historical embeddings in the existing paradigm is indeed useful as it does not align with the underlying Markov property. Such a misalignment introduces noise, thus hindering\n\u2217Equal contribution\nthe model\u2019s generalization ability, especially in out-of-distribution scenarios. To be consistent with the Markov property, we present ForgetNet, which removes the dependency on historical embeddings and explicitly embraces the Markov nature of algorithmic reasoning tasks. Such a modification, while simple, fundamentally realigns the computational graph of the neural model with the inherent structure of algorithmic processes. We observe that, although ForgetNet shows improvements across a wide range of tasks, training such models may be challenging due to inaccurate intermediate state predictions, especially at the early stages of training. To improve training, we further enhance our design with G-ForgetNet, in which a regularized gating mechanism is introduced in order to align with the Markov property during testing while still allowing for beneficial computational pathways during training.\nOur extensive experimental evaluations on the widely used CLRS-30 algorithmic reasoning benchmark demonstrate that both ForgetNet and G-ForgetNet outperform established baselines. In particular, G-ForgetNet achieves robust and promising performance in many different tasks, showing the benefit of the proposed gating mechanism. Further in-depth analyses of the training dynamics and gate behavior shed light on our understanding of the advantages of the proposed approaches. Overall, the findings in this work demonstrate the importance of aligning model design with the underlying Markov nature to achieve better generalization performance in neural algorithmic reasoning tasks."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "Equipping neural networks with algorithmic reasoning abilities has gained increasing attention in recent research. Early attempts (Zaremba & Sutskever, 2014; Graves et al., 2014; Kaiser & Sutskever, 2015; Graves et al., 2016; Joulin & Mikolov, 2015) in this direction typically use recurrent neural networks with augmented memory mechanisms to mimic algorithms, showing that neural models could learn algorithmic patterns from data. With the use of graph-based representations, graph neural networks (GNNs) (Gilmer et al., 2017; Battaglia et al., 2018) can be applied naturally to algorithmic reasoning tasks (Velic\u030ckovic\u0301 et al., 2020b; Georgiev & Lio\u0301, 2020; Velic\u030ckovic\u0301 et al., 2020a; Xu et al., 2020; Yan et al., 2020; Dudzik & Velic\u030ckovic\u0301, 2022; Dwivedi et al., 2023). Intuitively, the message passing schema in various GNNs can naturally model the propagation and iterative nature of many classical algorithms. Recently, Velic\u030ckovic\u0301 & Blundell (2021) outlines a blueprint for neural algorithmic reasoning, proposing a general encoder-processor-decoder framework. The framework, trained in algorithmic tasks, produces processors with potential applicability in real-world applications. Such generalization and transferable reasoning capabilities have been showcased in a few prior studies (Deac et al., 2021; Numeroso et al., 2023; Velic\u030ckovic\u0301 et al., 2022b; Beurer-Kellner et al., 2022). In addition, Xhonneux et al. (2021); Ibarz et al. (2022) have explored the generalization ability of the processor across multiple algorithms.\nTo provide a comprehensive testbed for algorithm reasoning tasks, Velic\u030ckovic\u0301 et al. (2022a) presents the CLRS-30 benchmark, which covers 30 classical algorithms that span sorting, searching, dynamic programming, geometry, graphs, and strings (Cormen et al., 2022). The CLRS-30 benchmark is known for its out-of-distribution (OOD) testing setup (Mahdavi et al., 2022), where the input size of testing samples is much larger than those during training. Such a setup provides a rigorous test for the generalization capability of models, serving as a standard testbed for algorithmic reasoning tasks. In the benchmark study, multiple representative neural models, including Deep Sets (Zaheer et al., 2017), GAT (Velic\u030ckovic\u0301 et al., 2018), MPNN (Gilmer et al., 2017), PGN (Velic\u030ckovic\u0301 et al., 2020a), and Memnet (Sukhbaatar et al., 2015), have been evaluated as the processor network within the encoder-processor-decoder framework. Based on this benchmark, Ibarz et al. (2022) further proposes Triplet-GMPNN, which employs a triplet message passing schema (Dudzik & Velic\u030ckovic\u0301, 2022) and multiple improvements for the training stability of the encoder-processor-decoder framework. Recently, Bevilacqua et al. (2023) proposes an additional self-supervised objective to learn similar representations for inputs that result in identical intermediate computation. a common design in the above methods is the incorporation of historical embeddings into current execution steps. In this work, we highlight that such historical dependence poses a misalignment with the Markov nature of the algorithmic execution. This insight motivates our proposed ForgetNet and its enhanced version G-ForgetNet, which more faithfully align with the Markov nature by reconsidering the use of historical embeddings."
+        },
+        {
+            "heading": "3 ANALYSES ON THE MARKOV PROPERTY",
+            "text": "In this section, we first recap the existing encoder-processor-decoder paradigm on the algorithmic reasoning tasks given in the CLRS-30 benchmark. Then, we emphasize the Markov characteristic of algorithmic executions. In addition, we highlight the existing misalignment between the use of historical embeddings and this Markov property. Motivated by this observation, we present ForgetNet, which removes such historical embeddings to achieve a closer alignment with the task\u2019s nature. An empirical study validates that ForgetNet achieves better generalization capability."
+        },
+        {
+            "heading": "3.1 ENCODER-PROCESSOR-DECODER PARADIGM",
+            "text": "Following prior research, we consider the algorithmic reasoning tasks as formulated in the CLRS-30 benchmark (Velic\u030ckovic\u0301 et al., 2022a). For a certain algorithm, a single execution trajectory serves as a data sample, which is composed of the input, output, and hints. Here, hints are a time series of intermediate states of the algorithm execution. Typically, a data sample is represented as a graph with n nodes, where n reflects the size of a particular sample. For example, in sorting algorithms, elements in the input list of length n are denoted as n nodes. With such a graph representation, the input, output, and hints at a particular time step are either located in node-level, edge-level, or graph-level features. As detailed in Velic\u030ckovic\u0301 et al. (2022a), there are five possible types of features, including scalar, categorical, mask, mask one, and pointer, each accompanied by its encoding/decoding strategies and associated loss functions.\nLet us denote the node-level, edge-level, and graph-level features at time step t as {x(t)i }, {e (t) ij }, and g(t), respectively. Here, i indicates the node index and ij specifies the index of the edge between node i and j. Note that in addition to the input, hints are also included in these features when they are available. Most existing neural algorithmic learners (Velic\u030ckovic\u0301 et al., 2020b; Georgiev & Lio\u0301, 2020; Velic\u030ckovic\u0301 et al., 2020a; 2022a; Ibarz et al., 2022; Diao & Loynd, 2023) adopt the encoder-processor-decoder paradigm (Hamrick et al., 2018). Specifically, at each time step t, the encoder first embeds the current features into high-dimensional representations as\nx\u0304 (t) i = fn ( x (t) i ) , e\u0304 (t) ij = fe ( e (t) ij ) , g\u0304(t) = fg ( g(t) ) . (1)\nHere, fn(\u00b7), fe(\u00b7), and fg(\u00b7) are the encoder layers, typically parameterized as linear layers. The embeddings are then fed into a processor, which is parameterized as a graph neural network fGNN(\u00b7), to perform one step of computation. The processor can be formulated as\nz (t) i = [ x\u0304 (t) i ,h (t\u22121) i ] , {h(t)i } = fGNN ( {z(t)i }, {e\u0304 (t) ij }, g\u0304 (t) ) , (2)\nwhere [\u00b7] denotes concatenation. It is worth noting that the processed node embeddings from the previous step, {h(t\u22121)i }, are used at each time step t. Initially, h (0) i = 0 for all nodes. Subsequently, the decoder, a linear model, uses the processed node embeddings {h(t)i } to either predict the hints for the next time step, or the output if it is at the final time step. Note that the encoder and decoder should be task-tailored based on the feature types in the particular task. Additionally, the learnable parameters of all neural modules are shared over time steps. To train the described encoder-processordecoder model, the loss is calculated based on the decoded hints at every step and the output at the end.\nDuring training, either the ground truth hints or the hints predicted from the previous step can be fed into the encoder, depending on whether teacher forcing is used. During inference, the step-by-step hints are not available, and the encoder always receives the predicted hints from the previous step. In the benchmark study by Velic\u030ckovic\u0301 et al. (2022a), the ground truth hints are used with 50% probability during training, given that the training process would become unstable without teacher forcing. While using the actual hints can stabilize training, it introduces discrepancies between training and inference modes. Recently, Ibarz et al. (2022) proposes several techniques to improve training stability, such as using soft hint prediction, specific initialization, and gradient clipping tricks. More importantly, it demonstrates that, with such training stability, it is possible to completely remove teacher forcing and enforce the model to rely on the hints predicted from the previous step, thus aligning the training with inference and achieving better performance. Therefore, as illustrated in Figure 1 (a), our study in this work specifically adopts and builds on this pipeline that operates without relying on teacher forcing."
+        },
+        {
+            "heading": "3.2 ALGORITHMIC NECESSITY OF HISTORICAL EMBEDDINGS",
+            "text": "Markov nature of algorithmic executions. The Markov property refers to the principle that future states depend only on the current state and not on the sequence of states that preceded it. It is important to note that such fundamental property holds in the context of algorithmic reasoning tasks formulated in the CLRS-30 benchmark because the entire algorithm state is given in each hints. To be specific, within an algorithm\u2019s sequential execution, the state at a time step t encompasses all necessary information to unambiguously determine the state at the subsequent time step t + 1, preventing the need to refer to any states preceding time step t. Let us take the insertion sort in Figure 2 as an example. At any specific step, the intermediate state, represented as the hints, completely determines the algorithmic execution output of that particular step, i.e., the next intermediate state.\nMisalignment with the use of historical embeddings. Given the Markov nature of the task, we revisit the necessity of using historical embeddings in the existing paradigm for algorithm reasoning. As described in Section 3.1, a prevalent practice in the existing encoder-processor-decoder framework is the incorporation of historical embeddings from previous steps into the current processor input. This practice, which might seem to naturally borrow from design principles in graph neural networks (GNNs) and recurrent neural networks (RNNs), intends to capture and propagate potentially relevant information across time steps. However, it intrinsically contradicts the Markov nature of the task as highlighted above. Given the Markov property of tasks within the CLRS-30 benchmark, the progression of the algorithm should depend solely on the current state, given by the current hints. The incorporation of historical embeddings from previous steps, while seemingly advantageous, might inadvertently add unnecessary complexity to the model. Such an addition not only complicates the model architecture but also introduces potential discrepancies and noise that might misguide our neural learners away from the desired algorithmic trajectory, consequently compromising the generalization ability.\nForgetNet: removing the use of historical embeddings. As studied by Xu et al. (2020), it is easier for neural networks to learn reasoning tasks where the computational graph of the neural network aligns with the algorithmic structure of the task since the network only needs to learn simple algorithm steps. Motivated by this intuition and the identified misalignment between the use of historical embeddings and the Markov nature of neural algorithmic reasoning tasks, we suggest removing the use of historical embeddings to align the computational graph of the neural model\nwith the task\u2019s Markov nature. Specifically, following the notation in Eq. (2), we remove the use of {h(t\u22121)i } and only use the encoded node embeddings {x\u0304 (t) i } as the input node embeddings for the processor. Formally, the processor as in Eq. (2) is replaced with\n{h(t)i } = fGNN ( {x\u0304(t)i }, {e\u0304 (t) ij }, g\u0304 (t) ) . (3)\nWhile the modification of the model architecture seems simple, it non-trivially enables the updated model to have a direct and coherent alignment with the underlying Markov nature of the neural algorithmic reasoning task. The parameterized processor can thus focus on learning the one-step execution of the algorithm, without the potential discrepancies introduced by using historical embeddings. This new streamlined framework, as illustrated in Figure 1 (b), is termed ForgetNet.\nEmpirical validation. To verify our insight, using the full set of algorithms from the CLRS-30 benchmark, we train our ForgetNet alongside the existing architecture as a baseline (i.e., Figure 1 (b) vs. Figure 1 (a)). The only difference between these two models is that the historical embeddings are removed in ForgetNet. Using the standard OOD splits in the CLRS-30 benchmark, we perform 10 runs for each model on each algorithm task with a single set of hyperparameters. As demonstrated in Figure 3, ForgetNet improves the performance over the baseline across 23/30 algorithmic reasoning tasks. The improvements brought by removing historical embeddings are quite significant on several tasks. For example, the absolute margins of improvement on DFS, insertion sort, and bubble sort are 66.79%, 24.57%, and 13.19% respectively. By focusing purely on the relevant signals at the current step, ForgetNet can generalize better to OOD testing samples, fitting more useful signals for improved performance. In Appendix B.1, we further evaluate the performance of ForgetNet on the multi-task setup following Ibarz et al. (2022). These empirical studies directly verify our insight that it is effective to explicitly enforce the Markov property in neural algorithmic learners."
+        },
+        {
+            "heading": "4 IMPROVED TRAINING VIA ADAPTIVE ALIGNMENT",
+            "text": "In this section, we first identify the limitation of completely removing historical embeddings as suggested in ForgetNet. In particular, inaccurate intermediate state predictions at the early stage of the training will potentially lead to sub-optimal convergence. To alleviate this, we propose the G-ForgetNet model, which uses a learnable gating mechanism and an additional regularization term in order to capture the Markov property of ForgetNet without the subsequent training limitations."
+        },
+        {
+            "heading": "4.1 LIMITATIONS OF ENTIRELY REMOVING HISTORICAL EMBEDDINGS",
+            "text": "While our ForgetNet model demonstrates effectiveness on a diverse set of tasks, it underperforms the baseline on several tasks, such as the Floyd-Warshall algorithm. A closer examination suggests that during the early stage of training, the model struggles with producing accurate intermediate predictions for certain algorithm tasks, which could lead the model towards suboptimal convergence. To make this clear, with a slight abuse of notations, we let x and y(t) denote the input state and the t-th\nintermediate state, i.e., the hints, of an algorithmic trajectory sample, respectively. Accordingly, y\u0302(t) represents the intermediate state predicted at timestep t. In addition, E , P , and D represent the computation included in the encoder, processor, and decoder, respectively. In our ForgetNet model, the computational pathway x \u2192 E \u2192 P \u2192 D \u2192 y(1) naturally emerges as a desirable pathway for training. This is because both x and y(1) are accurate, facilitating a high-quality back-propagation signal. However, as we progress into extended paths for subsequent execution steps, we expose the model to the pitfalls of inaccurate intermediate state predictions. For example, the computational pathway associated with the loss function for the second intermediate state, x \u2192 E \u2192 P \u2192 D \u2192 y\u0302(1) \u2192 E \u2192 P \u2192 D \u2192 y(2), is impacted by the inaccuracies of the prediction y\u0302(1). Intuitively, this introduces noise for the processor P to learn the one-step execution of the algorithm, since the processor receives inaccurate input at the second time step. Such inaccuracies accumulate over time steps. This indicates that, during the early stages of training, the model is primarily navigating these sub-optimal pathways, hindering its optimization. Additionally, by removing the hidden states in ForgetNet, we have essentially removed a residual connection between processor layers, making it more difficult for the model to backpropagate signals through many consecutive processor layers. As an empirical illustration, Figure 4 shows the training loss of ForgetNet and that of the baseline model for the Floyd-Warshall algorithm task. It indeed shows that the training losses for ForgetNet are elevated during the early stage of training, leading to sub-optimal convergence. We provide more results and deeper analysis of the training difficulties in ForgetNet in Appendix B.2, where we observe that elevated losses in ForgetNet are primarily incurred during the later steps of the hints time series, indicating the difficulties the model has with accumulation of inaccurate intermediate predictions."
+        },
+        {
+            "heading": "4.2 G-FORGETNET: ADAPTIVE USE OF HISTORICAL EMBEDDINGS",
+            "text": "In light of the aforementioned limitation, we further introduce G-ForgetNet with a regularized gating mechanism that restores important computational pathways during training and learns to align with the Markov property. The core motivation behind this proposal is that while inclusion of information from previous layers does not align with the inherent Markov nature of the task, it can provide helpful support, especially during the early stage of training, where it can mitigate the effects of inaccurate intermediate predictions and facilitate higher quality backpropagation signals. Further, the added loss penalty encourages the model to obey the Markov property that was shown to be beneficial in Section 3.2. Specifically, by including h(t\u22121)i in Eq. (2) as a component of the input for the processor at time step t, it can enrich the model with useful computational pathways, such as x \u2192 E \u2192 P \u2192 P \u2192 D \u2192 y(2) associated with the loss function for the second intermediate state. In general, the introduced computational pathways x \u2192 E \u2192 P \u2192 \u00b7 \u00b7 \u00b7 \u2192 P \u2192 D \u2192 y(t), where there are t sequentially applied processors, are valuable for training the processor P to capture onestep algorithmic execution. This is because y(t) is the accurate output after executing the algorithm for t steps from the input x. In essence, these pathways create an alternative route, circumventing the challenges posed by inaccurate intermediate state predictions, especially at the early stage of training.\nBased on the above intuition, in G-ForgetNet, we further introduce a learnable gating mechanism that modulates the use of historical embeddings. Formally, Eq. (2) is replaced with\nz (t) i = [ x\u0304 (t) i , g (t) i \u2299 h (t\u22121) i ] , {h(t)i } = fGNN ( {z(t)i }, {e\u0304 (t) ij }, g\u0304 (t) ) , (4)\nwhere the gate g(t)i has the same dimensions as h (t\u22121) i and \u2299 denotes element-wise product. Here, we employ a simple multi-layer perceptron (MLP) to obtain the gate as\ng (t) i = \u03c3\n( MLP ([ x\u0304 (t) i ,h (t\u22121) i ])) , (5)\nwhere \u03c3(\u00b7) is the sigmoid function. An illustration of G-ForgetNet is in Figure 1 (c). Finally, we introduce a modified hints loss function that includes a regularization term on the magnitude of g (t) i as\nLoss(t) = L ( y\u0302(t), y(t) ) + \u03bb \u2211 i \u2225\u2225\u2225g(t)i \u2225\u2225\u2225 (6) Where L ( y\u0302(t), y(t) ) is the standard hints loss functions used in the CLRS-30 benchmark, which\ndepends on the type and location of features contained in y(t). At the early stage of training, we"
+        },
+        {
+            "heading": "Algorithm Baseline ForgetNet G-ForgetNet Algorithm Baseline ForgetNet G-ForgetNet",
+            "text": "intuitively anticipate the gate to be more \u201copen\u201d, i.e., the magnitude of g(t)i to be large, thus enriching the model with the aforementioned beneficial pathways. As training progresses and the model starts predicting more reliable intermediate predictions, the dependence on historical embeddings should diminish, i.e., the gate becomes more \u201cclosed\u201d, to honor the Markov nature. Since the scale of the hints losses varies drastically for each algorithm, we use a heuristic to select the value of \u03bb for each algorithm based on the loss values; further details can be found in Appendix A.1."
+        },
+        {
+            "heading": "5 EXPERIMENTS",
+            "text": "In this section, we perform comprehensive experiments to evaluate the proposed G-ForgetNet model, by addressing the following questions. (1) Can our G-ForgetNet model, equipped with the regularized gating mechanism, consistently perform better than the baseline model? How does it perform in the several tasks where ForgetNet underperforms the baseline? Does it help the early stage of training? (2) How is the G-ForgetNet model compared to a boarder range of prior methods? (3) What are the dynamics of the gating mechanism within G-ForgetNet? To what extent does it align with our expectations?\nDatasets and setup. We perform experiments on the standard out-of-distribution (OOD) splits present in the CLRS-30 algorithmic reasoning benchmark (Velic\u030ckovic\u0301 et al., 2022a). To be specific, we train on inputs with 16 or fewer nodes, and use inputs with 16 nodes for validation. During testing, for most algorithms, there are 32 trajectories with inputs of 64 nodes. For algorithms where the ouputs are associated with graph-level features, rather than node-level or edge-level, there are 64\u00d7 more trajectories, ensuring a consistent number of targets across all tasks. For the baseline, ForgetNet, and G-ForgetNet introduced in Section 3.1, 3.2, and 4.2 respectively, we conduct 10 runs for each model in each task, with a single set of hyperparameters. Specifically, we employ the Adam optimizer (Kingma & Ba, 2015) with a cosine learning rate scheduler and an initial learning rate of 0.0015. The models are trained for 10,000 steps with a batch size of 32.\nMore baselines. Beyond the baseline paradigm introduced in Section 3.1, we further include more existing state-of-the-art methods for comparison. Specifically, we first involve the notable methods studied in the CLRS-30 benchmark, including Memnet (Sukhbaatar et al., 2015), MPNN (Gilmer et al., 2017), and PGN (Velic\u030ckovic\u0301 et al., 2020a). These models serve as the processor in the encoderprocessor-decoder framework, which is trained with noisy teacher forcing in the benchmark setup. Furthermore, we include the recently proposed Triplet-GMPNN method (Ibarz et al., 2022), which develops a set of techniques to stabilize training, thus removing teacher forcing completely to align the training and inference. Moreover, the processor network in Triplet-GMPNN is a message passing network which incorporates messages from triplets of nodes. Our introduced baseline, ForgetNet, and G-ForgetNet, i.e., the three methods in Figure 1, are built on the framework as developed by Ibarz et al. (2022). Differing from the baseline described in Section 3.1, Triplet-GMPNN has an additional update gate. It is worth noting that such a gate is different from our introduced gating mechanism in G-ForgetNet in terms of both motivation and architectural design. In particular, the update gate in Triplet-GMPNN is placed ahead of the decoder and aims to update the processed embeddings for a subset of nodes at each time step and keep the remaining unchanged, whereas our gate mechanism is"
+        },
+        {
+            "heading": "Algorithm Memnet MPNN PGN Triplet-GMPNN G-ForgetNet",
+            "text": "designed to enforce the Markov property of algorithmic reasoning and is supported by a regularization term in the loss function. Another recent model, Hint-ReLIC (Bevilacqua et al., 2023), uses an additional self-supervised learning objective based on data augmentations. Given such augmentations and different setups, our model and Hint-ReLIC are not directly comparable. We expect that a fusion of our model and Hint-ReLIC could further boost the performance, and we leave such an evaluation to future work as the code of Hint-ReLIC is not yet publicly available.\nG-ForgetNet vs. ForgetNet vs. the baseline. In Section 3.2, we have demonstrated the effectiveness of our ForgetNet model which removes historical embeddings to honor the Markov nature of algorithmic reasoning. Here, we further compare the three methods included in Figure 1 to evaluate the effectiveness of our proposed gating mechanism in the G-ForgetNet model. In Table 1, we report the average test results over 10 runs for each model in each algorithm. While ForgetNet surpasses the baseline across 23/30 tasks, G-ForgetNet consistently achieves improved performance over the baseline on all 30 tasks. In the several tasks where ForgetNet underperforms the baseline, such as the Floyd-Warshall and na\u0131\u0308ve string matcher tasks, G-ForgetNet demonstrates consistent improvements over the baseline. For example, in the na\u0131\u0308ve string matcher task, while ForgetNet performs worse than the baseine, G-ForgetNet outperforms the baseline by an absolute margin of 16.70%. This demonstrates the effectiveness of the proposed gating mechanism, which is able to capture the benefits of honoring the Markov property without the training difficulties of ForgetNet.\nAs clarified in Section 4.2, the proposed gating structure is expected to enhance the early stage of training, thus improving the final convergence in many tasks. To empirically verify such intuition, in Figure 4, we illustrate the training losses of the baseline, ForgetNet, and G-ForgetNet models in the Floyd-Warshall task. We observe that ForgetNet indeed faces challenges during the early stages, leading to sub-optimal convergence compared to the baseline in this task. The G-ForgetNet model, can effectively sidestep the early training pitfalls, thereby leading to a better convergence at the end of training in this task. This verifies our intuition that the additional computational pathways in G-ForgetNet can help enhance the early stages of training. In Appendix B we dive deeper into the loss curves corresponding to different execution steps for several algorithms and demonstrate that the loss experienced by ForgetNet at each execution step tends to escalate more sharply as the algorithmic execution progresses than G-ForgetNet. This observation validates our earlier intuition in Section 4.2 that the gating mechanism in G-ForgetNet introduces computational pathways that act as corrective\nsignals against accumulated errors. By offering these pathways, G-ForgetNet can circumvent the pitfalls posed by inaccurate intermediate predictions, thereby facilitating the optimization of the losses corresponding to later execution steps. Overall, G-ForgetNet outperforms ForgetNet in 26/30 tasks and improves the overall average score from 78.98% in ForgetNet to 82.89% in G-ForgetNet.\nCompared to more existing methods. We further extend our comparison of G-ForgetNet to more existing methods, including the aforementioned Memnet, MPNN, PGN, and Triplet-GMPNN methods. The results of these methods are obtained from the respective literature (Velic\u030ckovic\u0301 et al., 2022a; Ibarz et al., 2022). As summarized in Table 2, G-ForgetNet emerges as the top performer in 25/30 algorithmic tasks. Compared to the previous state-of-the-art method Triplet-GMPNN, G-ForgetNet improves the mean test performance across all 30 tasks from 75.98% to 82.89%. Additionally, G-ForgetNet surpasses the 99% threshold on 9/30 algorithms, compared to the prior best of just 1/30. Further, G-ForgetNet achieves large performance increases on several algorithms. For example, G-ForgetNet achieves a test score of 97.02% in the na\u0131\u0308ve string matcher task, while the previous state-of-the-art performance is 78.67%, and G-ForgetNet achieves a test score of 98.40% on insertion sort, compared to the previous state-of-the-art of 78.14%. This comparison further demonstrates the effectiveness of our proposed method.\nDynamics of the gating mechanism. In order to understand the behavior of the gating mechanism and gauge its alignment with our anticipations, we empirically investigate its dynamics during training. Specifically, we compute the L2 norm of the hidden states, h(t)i before being passed to the processor and then normalize by dividing by the square root of the hidden state dimension. In GForgetNet, the L2 norm is taken after gating g(t)i \u2299h (t\u22121) i , so we are effectively measuring how much of the hidden states are allowed to pass into the processor. For every sample in the validation set, we consistently monitor the average L2 norm over both nodes and algorithmic execution steps, along the training iterations. In Figure 5, we illustrate the average L2 norm over all samples in the validation set during the training process for the FloydWarshall task for the baseline and for G-ForgetNet. We observe that the baseline hidden state norm is fairly constant and has a relatively large magnitude, indicating that\nit is fitting historical noise during training, whereas G-ForgetNet declines to nearly zero. This empirically validates that the dynamics of the gating mechanism align with our intuition in this task. That is, the gating mechanism is open during the beginning of training, thus enhancing early training while progressively focusing on the Markov nature of algorithmic tasks. We generally observe similar trends across all of the CLRS-30 algorithms, with more tasks shown in Appendix A.2. We further validate the importance of the loss penalty included in G-ForgetNet in Appendix A.3, where we investigate the behavior of the G-ForgetNet model without the loss penalty. We observe that without the loss penalty, the model still exhibits declining trends in the hidden state norm, however it will not converge to 0 as desired. The performance of G-ForgetNet without the penalty is still better than the baselines, however the performance is significantly improved with the penalty. This aligns with our intuitions since the penalty ensures that G-ForgetNet is consistent with the Markov property."
+        },
+        {
+            "heading": "6 CONCLUSION",
+            "text": "In this work, we highlight a key misalignment between the prevalent practice of incorporating historical embeddings and the intrinsic Markov characteristics of algorithmic reasoning tasks. In response, we propose ForgetNet, which explicitly honors the Markov nature by removing the use of historical embeddings, and its adaptive variant, G-ForgetNet, equipped with a gating mechanism and subsequent loss penalty in order to capture the benefits of the Markov property without the training difficulties found in ForgetNet. Our comprehensive experiments on the CLRS-30 benchmark demonstrate the superior generalization capabilities of both models compared to established baselines. In summary, this work reveals the importance of aligning model design with the Markov nature in neural algorithmic reasoning tasks, paving the way for more advancements in future research."
+        },
+        {
+            "heading": "ACKNOWLEDGMENTS",
+            "text": "This work was supported in part by National Science Foundation grants IIS-2243850 and IIS-2006861."
+        },
+        {
+            "heading": "A FURTHER G-FORGETNET ANALYSIS",
+            "text": "In Figure 6 we compare G-ForgetNet with ForgetNet and the baseline model, and in Table 3, we provide the full numeric results for G-ForgetNet compared with Memnet, MPNN, PGN, and TripletGMPNN."
+        },
+        {
+            "heading": "A.1 LAMBDA HEURISTIC",
+            "text": "Since the scale of the loss function varies drastically between algorithms, it is not possible to use a single value for \u03bb across all algorithms. In general, it is non-trivial to select optimal values for this parameter, and in this work, we use a heuristic to select reasonable values for \u03bb. Specifically, we select \u03bb such that the gate penalty makes up approximately half of the total training loss after 6,000 training steps. Intuitively, with such a schedule, the model will spend the first 6,000 steps simply learning to execute the algorithm, then during the remaining 4,000 steps, the model will focus on learning single-step executions in accordance with the Markov property. As demonstrated in Table 2, this simple heuristic has quite robust performance across the entire set of CLRS-30 algorithms. We acknowledge that such a simple penalty schedule and heuristic is unlikely to be optimal and will be approved upon by future works."
+        },
+        {
+            "heading": "A.2 GATE ANALYSIS",
+            "text": "In Figure 7 we include more figures of the hidden state\u2019s L2 norm for G-ForgetNet and the baseline, as in Section 5. These further support that our G-ForgetNet model does enforce the Markov property during testing as we observe the L2 norm converge to 0."
+        },
+        {
+            "heading": "Algorithm Memnet MPNN PGN Triplet-GMPNN G-ForgetNet",
+            "text": ""
+        },
+        {
+            "heading": "A.3 PENALTY ANALYSIS",
+            "text": "In Table 4, we report the performance of our G-ForgetNet model without the loss penalty, i.e., with just the gate mechanism. We observe that, even without the loss penalty, the model still outperforms the baseline on 28/30 algorithms, however the average score is only 79.31% compared to 82.88% with the penalty. Additionally, G-ForgetNet without penalty outperforms G-ForgetNet with penalty on 7 algorithms, however these cases are very small improvements. Overall, this study empirically shows us the importance of the penalty in the G-ForgetNet model, which aligns with our intuition that the penalty is necessary in order to enforce the Markov property. Finally, we provide a comparison of the L2 norm of the gated hidden states in G-ForgetNet with and without the penalty in Figure 8. On the activity selector algorithm, the G-ForgetNet model without the penalty still consistently decreases during training, however it does not reach the same final convergence as the model with the penalty, and on Floyd-Warshall, G-ForgetNet without the penalty is fairly constant throughout training, again demonstrating the necessity of the loss penalty to enforce the Markov property in G-ForgetNet."
+        },
+        {
+            "heading": "B MORE EXPERIMENTAL RESULTS",
+            "text": ""
+        },
+        {
+            "heading": "B.1 MULTI-TASK EXPERIMENTS",
+            "text": "Prior works (Xhonneux et al., 2021; Ibarz et al., 2022) have investigated jointly learning multiple algorithms using a single processor. We follow the multi-task setup in Ibarz et al. (2022) and train a single ForgetNet processor on all 30 CLRS algorithms while keeping separate encoders and decoders\nfor each algorithm. As shown in Figure 9 and in Table 5, ForgetNet performs better than the baseline on 20/30 algorithms and has a higher average score across all algorithms. This confirms that enforcing the Markov property is also beneficial in the multi-task setting."
+        },
+        {
+            "heading": "B.2 MORE TRAINING CURVES",
+            "text": "More training curves of the baseline, ForgetNet, and G-ForgetNet methods. In Figure 10, we illustrate the training curves, including the total loss and losses at different execution steps, of the three methods in the Floyd-Warshall and activity selector tasks. We observe that ForgetNet does not converge to the same total loss value, shown in plot (a) on each figure. Further, we observe that the gap between ForgetNet and the baseline widens at later points in the hints time series, showing how the removal of connections between consecutive layers in ForgetNet introduces training difficulties. The inaccurate intermediate predictions cause the model to struggle to optimize losses corresponding to later execution steps."
+        }
+    ],
+    "year": 2024
+}

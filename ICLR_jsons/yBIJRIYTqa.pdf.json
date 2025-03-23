@@ -1,0 +1,422 @@
+{
+    "abstractText": "The bandits with knapsacks (BwK) framework models online decision-making problems in which an agent makes a sequence of decisions subject to resource consumption constraints. The traditional model assumes that each action consumes a non-negative amount of resources and the process ends when the initial budgets are fully depleted. We study a natural generalization of the BwK framework which allows non-monotonic resource utilization, i.e., resources can be replenished by a positive amount. We propose a best-of-both-worlds primal-dual template that can handle any online learning problem with replenishment for which a suitable primal regret minimizer exists. In particular, we provide the first positive results for the case of adversarial inputs by showing that our framework guarantees a constant competitive ratio \u03b1 when B = \u03a9(T ) or when the possible per-round replenishment is a positive constant. Moreover, under a stochastic input model, our algorithm yields an instance-independent \u00d5(T ) regret bound which complements existing instance-dependent bounds for the same setting. Finally, we provide applications of our framework to some economic problems of practical relevance.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "REPLENISHABLE KNAPSACKS"
+        }
+    ],
+    "id": "SP:21a1d647c3a2573d2779245431371f567f2db44b",
+    "references": [
+        {
+            "authors": [
+                "Shipra Agrawal",
+                "Nikhil R Devanur"
+            ],
+            "title": "Bandits with global convex constraints and objective",
+            "venue": "Operations Research,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Shipra Agrawal",
+                "Nikhil R Devanur",
+                "Lihong Li"
+            ],
+            "title": "An efficient algorithm for contextual bandits with knapsacks, and an extension to concave objectives",
+            "venue": "In 29th Annual Conference on Learning Theory (COLT),",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Moshe Babaioff",
+                "Shaddin Dughmi",
+                "Robert Kleinberg",
+                "Aleksandrs Slivkins"
+            ],
+            "title": "Dynamic pricing with limited supply",
+            "venue": "In Proceedings of the 13th ACM Conference on Electronic Commerce,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Ashwinkumar Badanidiyuru",
+                "Robert Kleinberg",
+                "Yaron Singer"
+            ],
+            "title": "Learning on a budget: posted price mechanisms for online procurement",
+            "venue": "In Proceedings of the 13th ACM conference on electronic commerce,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Ashwinkumar Badanidiyuru",
+                "John Langford",
+                "Aleksandrs Slivkins"
+            ],
+            "title": "Resourceful contextual bandits",
+            "venue": "In Conference on Learning Theory,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Ashwinkumar Badanidiyuru",
+                "Robert Kleinberg",
+                "Aleksandrs Slivkins"
+            ],
+            "title": "Bandits with knapsacks",
+            "venue": "J. ACM,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Santiago R Balseiro",
+                "Yonatan Gur"
+            ],
+            "title": "Learning in repeated auctions with budgets: Regret minimization and equilibrium",
+            "venue": "Management Science,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Santiago R Balseiro",
+                "Haihao Lu",
+                "Vahab Mirrokni"
+            ],
+            "title": "The best of many worlds: Dual mirror descent for online allocation problems",
+            "venue": "Operations Research,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Omar Besbes",
+                "Assaf Zeevi"
+            ],
+            "title": "Dynamic pricing without knowing the demand function: Risk bounds and near-optimal algorithms",
+            "venue": "Operations Research,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Olivier Bousquet",
+                "Manfred K Warmuth"
+            ],
+            "title": "Tracking a small set of experts by mixing past posteriors",
+            "venue": "Journal of Machine Learning Research,",
+            "year": 2002
+        },
+        {
+            "authors": [
+                "Matteo Castiglioni",
+                "Andrea Celli",
+                "Christian Kroer"
+            ],
+            "title": "Online learning with knapsacks: the best of both worlds",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Matteo Castiglioni",
+                "Andrea Celli",
+                "Alberto Marchesi",
+                "Giulia Romano",
+                "Nicola Gatti"
+            ],
+            "title": "A unifying framework for online optimization with long-term constraints",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Matteo Castiglioni",
+                "Andrea Celli",
+                "Christian Kroer"
+            ],
+            "title": "Online bidding in repeated non-truthful auctions under budget and roi constraints",
+            "venue": "arXiv preprint arXiv:2302.01203,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Andrea Celli",
+                "Matteo Castiglioni",
+                "Christian Kroer"
+            ],
+            "title": "Best of many worlds guarantees for online learning with knapsacks",
+            "venue": "arXiv preprint arXiv:2202.13710,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Nicol\u00f2 Cesa-Bianchi",
+                "Pierre Gaillard",
+                "G\u00e1bor Lugosi",
+                "Gilles Stoltz"
+            ],
+            "title": "Mirror descent meets fixed share (and feels no regret)",
+            "venue": "In Proceedings of the 25th International Conference on Neural Information Processing Systems - Volume",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Nicol\u00f2 Cesa-Bianchi",
+                "Tommaso Cesari",
+                "Roberto Colomboni",
+                "Federico Fusco",
+                "Stefano Leonardi"
+            ],
+            "title": "Bilateral trade: A regret minimization perspective",
+            "venue": "Mathematics of Operations Research,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Boxiao Chen",
+                "David Simchi-Levi",
+                "Yining Wang",
+                "Yuan Zhou"
+            ],
+            "title": "Dynamic pricing and inventory control with fixed ordering cost and incomplete demand information",
+            "venue": "Management Science,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Xin Chen",
+                "David Simchi-Levi"
+            ],
+            "title": "Coordinating inventory control and pricing strategies with random demand and fixed ordering cost: The finite horizon case",
+            "venue": "Operations research,",
+            "year": 2004
+        },
+        {
+            "authors": [
+                "Richard Combes",
+                "Chong Jiang",
+                "Rayadurgam Srikant"
+            ],
+            "title": "Bandits with budgets: Regret lower bounds and optimal algorithms",
+            "venue": "ACM SIGMETRICS Performance Evaluation Review,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Giannis Fikioris",
+                "\u00c9va Tardos"
+            ],
+            "title": "Approximately stationary bandits with knapsacks",
+            "venue": "arXiv preprint arXiv:2302.14686,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Elad Hazan",
+                "Comandur Seshadhri"
+            ],
+            "title": "Adaptive algorithms for online decision problems",
+            "venue": "In Electronic colloquium on computational complexity (ECCC),",
+            "year": 2007
+        },
+        {
+            "authors": [
+                "Elad Hazan"
+            ],
+            "title": "Introduction to online convex optimization, volume 2",
+            "venue": "Now Publishers,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Mark Herbster",
+                "Manfred K Warmuth"
+            ],
+            "title": "Tracking the best expert",
+            "venue": "Machine learning,",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Nicole Immorlica",
+                "Karthik Sankararaman",
+                "Robert Schapire",
+                "Aleksandrs Slivkins"
+            ],
+            "title": "Adversarial bandits with knapsacks",
+            "venue": "J. ACM,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Raunak Kumar",
+                "Robert Kleinberg"
+            ],
+            "title": "Non-monotonic resource utilization in the bandits with knapsacks problem",
+            "venue": "In Advances in Neural Information Processing Systems (NeurIPS),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Xiaocheng Li",
+                "Chunlin Sun",
+                "Yinyu Ye"
+            ],
+            "title": "The symmetry between arms and knapsacks: A primaldual approach for bandits with knapsacks",
+            "venue": "In ICML,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Roger B Myerson",
+                "Mark A Satterthwaite"
+            ],
+            "title": "Efficient mechanisms for bilateral trading",
+            "venue": "Journal of economic theory,",
+            "year": 1983
+        },
+        {
+            "authors": [
+                "Gergely Neu"
+            ],
+            "title": "Explore no more: Improved high-probability regret bounds for non-stochastic bandits",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Karthik Abinav Sankararaman",
+                "Aleksandrs Slivkins"
+            ],
+            "title": "Combinatorial semi-bandits with knapsacks",
+            "venue": "In International Conference on Artificial Intelligence and Statistics,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Aleksandrs Slivkins",
+                "Karthik Abinav Sankararaman",
+                "Dylan J Foster"
+            ],
+            "title": "Contextual bandits with packing and covering constraints: A modular lagrangian approach via regression",
+            "venue": "In The Thirty Sixth Annual Conference on Learning Theory,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "William Vickrey"
+            ],
+            "title": "Counterspeculation, auctions, and competitive sealed tenders",
+            "venue": "The Journal of finance,",
+            "year": 1961
+        },
+        {
+            "authors": [
+                "Zizhuo Wang",
+                "Shiming Deng",
+                "Yinyu Ye"
+            ],
+            "title": "Close the gaps: A learning-while-doing algorithm for single-product revenue management problems",
+            "venue": "Operations Research,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Xiaohan Wei",
+                "Hao Yu",
+                "Michael J Neely"
+            ],
+            "title": "Online primal-dual mirror descent under stochastic constraints",
+            "venue": "Proceedings of the ACM on Measurement and Analysis of Computing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Hao Yu",
+                "Michael Neely",
+                "Xiaohan Wei"
+            ],
+            "title": "Online convex optimization with stochastic constraints",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2017
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "We study online learning problems in which a decision maker tries to maximize their cumulative reward over a time horizon T , subject to a set of m resource-consumption constraints. At each t, the decision maker plays an action xt \u2208 X , and subsequently observes a realized reward ft(xt), with ft : X \u2192 [0, 1], and an m-dimensional vector of resource consumption ct(xt). Our framework extends the well-known Bandits with Knapsacks (BwK) framework of Badanidiyuru et al. (2018). In the BwK model, the resource consumption is monotonic (i.e., ct(\u00b7) \u2208 [0, 1]m for all t \u2208 [T ]). This framework has numerous motivating applications ranging from dynamic pricing to online ad allocation (see, e.g., Besbes and Zeevi (2009); Babaioff et al. (2012); Wang et al. (2014); Badanidiyuru et al. (2012); Combes et al. (2015)), and it has been extended in numerous directions such as modeling adversarial inputs Immorlica et al. (2022) and other non-stationary input models Celli et al. (2023); Fikioris and Tardos (2023), more general notions of resources and constraints Agrawal and Devanur (2019), contextual and combinatorial bandits Badanidiyuru et al. (2014); Agrawal et al. (2016); Sankararaman and Slivkins (2018).\nKumar and Kleinberg (2022) recently proposed a natural generalization of the BwK model in which resource consumption can be non-monotonic, i.e., , resources can be replenished over time so costs are ct(xt) \u2208 [\u22121, 1]m. We call such model Bandits with Replenishable Knapsacks (BwRK). Kumar and Kleinberg (2022) focus on the stochastic setting, while we are interested in providing best-of-both-worlds algorithms that provide guarantees under both stochastic and adversarial inputs.\nContributions. We propose a general primal-dual template that can handle online learning problems in which the decision maker has to guarantee some long-term resource-consumption constraints and resources can be renewed over time. We show that our framework provides best-of-both-worlds guarantees in the spirit of Balseiro et al. (2022): it guarantees a regret bound of O\u0303(T 1/2) in the case in which (ft, ct) are i.i.d. samples from a fixed but unknown distribution, and it guarantees a constant-factor competitive ratio in the case in which budgets grow at least linearly in T , or when the possible per-round replenishment is a positive constant. We remark that known best-of-both-worlds frameworks like the one by Balseiro et al. (2022) cannot be applied to this setting as they assume\nmonotonic resource consumption. In that case, we show that our framework recovers the state-ofthe-art rate of 1/\u03c1 by Castiglioni et al. (2022a), where \u03c1 is the per-iteration budget. Our primal-dual template is applicable to any online problem for which a suitable primal regret minimizer is available. Therefore, we first provide general guarantees for the framework without making any assumption on the primal and dual regret minimizers being employed (Section 4). Then, we show how such regret minimizers should be chosen depending on the information available to the learner about the intensity of the budget replenishment (Section 5). Moreover, we provide explicit bounds that only depend on the guarantees of the primal regret minimizer. In particular, we show how the primal and dual minimizers should be instantiated in the case in which the amount of resources that can be replenished at each time t is known, and in the more challenging case in which it is unknown a-priori to the decision maker. Finally, we demonstrate the flexibility of our framework by instantiating it in some relevant settings (Section 6). First, we instantiate the framework in the BwRK model by Kumar and Kleinberg (2022), thereby providing the first positive results for BwRK under adversarial inputs, and the first instance-independent regret bound for the stochastic setting. The latter complements the instance-dependent analysis by Kumar and Kleinberg (2022). Then, we apply the framework to a simple inventory management problem, and to revenue maximization in bilateral trade.\nRelated works. Primal-dual approaches for bandit problems with resource-consumption constraints popularized by the work of Immorlica et al. (2022) cannot be applied in our setting. Such primal-dual approaches (see also Castiglioni et al. (2022a); Balseiro et al. (2022); Balseiro and Gur (2019)) usually require as an input the Slater\u2019s parameter of the problem (i.e., in their setting, the per-round budget). This is not the case in our setting since the amount by which each constraints is replenished is a priori unknown. This issue has been effectively addressed in stochastic settings where sublinear constraints violations are allowed, such as online optimization under stochastic inputs (see, e.g., , Yu et al. (2017); Wei et al. (2020)), and stochastic online learning problems with long-term constraints Castiglioni et al. (2022b); Slivkins et al. (2023). However, in BwK problems constraints are required to be satisfied strictly at all rounds. Addressing this issue in the adversarial setting is considerably more challenging and this direction remains largely unexplored. A notable exception is the recent work by Castiglioni et al. (2023). Such works focuses on a setting with only one monotone budget constraint, for which Slater\u2019s parameter is known, and one \u201csoft\u201d return-on-investments (ROI) constraints (i.e., ROI constraints can be violated up to a sublinear amount). Being allowed to violated the ROI constrain renders the problem significantly simpler than ours, where budget constraints must be strictly satisfied at each time t. Moreover, our framework can handle an arbitrary number of constraints, while Castiglioni et al. (2023) can only manage one unknown feasibilty parameter. Finally, we mention that in the case of stochastic inputs other approaches for budget-management problems are known, most notably optimism-under-uncertainty Agrawal and Devanur (2019); Badanidiyuru et al. (2018)."
+        },
+        {
+            "heading": "2 PRELIMINARIES",
+            "text": "Vectors are denoted by bold fonts. Given vector x, let x[i] be its i-th component. The set {1, . . . , n}, with n \u2208 N>0, is denoted as [n]. Finally, given a discrete set S, we denote by \u2206S the |S|-simplex."
+        },
+        {
+            "heading": "2.1 BASIC SET-UP",
+            "text": "There are T rounds and m resources. The decision maker has an arbitrary non-empty set of available strategies X . In each round t \u2208 [T ], the decision maker chooses xt \u2208 X , and subsequently observes a reward function ft : X \u2192 [0, 1], and a function ct : X \u2192 [\u22121, 1]m specifying the consumption or replenishment of each of the m resources. Each resource i \u2208 [m] is endowed with an initial budget of B to be spent over the T steps. 1 We denote by \u03c1 the per-iteration budget, which is such that B = T\u03c1, and we let \u03c1 := \u03c11 \u2208 Rm>0. For i \u2208 [m] and x \u2208 X , if ct,i(x) < 0 we say that at time t action x restores a positive amount to the budget available for the i-th resource. If ct,i(x) > 0, we say that action x at time t depletes some of the available budget for the i-th resource.\nLet \u03b3t := (ft, ct) be the input pair at time t, and \u03b3T := (\u03b31, \u03b32, . . . , \u03b3T ) be the sequence of inputs up to time T . The repeated decision making process stops at the end of the time horizon T . The goal of the decision maker is to maximize the cumulative reward \u2211T t=1 ft(xt) while satisfying the\n1For ease of notation we consider a uniform intial buget, but the case of different initial budgets easily follows from our results.\nresource constraints \u2211T t=1 ct,i(xt) \u2264 T \u00b7 \u03c1 for each i \u2208 [m]. Given two functions f : X \u2192 R and c : X \u2192 Rm, we denote by Lf,c : X \u00d7 Rm\u22650 \u2192 R the Lagrangian function defined as\nLf,c(x,\u03bb) := f(x) + \u3008\u03bb,\u03c1\u2212 c(x)\u3009 for all x \u2208 X ,\u03bb \u2208 Rm\u22650. Given X , the set of strategy mixtures \u039e is the set of probability measures on the Borel sets of X ."
+        },
+        {
+            "heading": "2.2 BASELINE ADVERSARIAL SETTING",
+            "text": "Given a sequence of inputs \u03b3T selected by an oblivious adversary, the baseline for the adversarial setting is OPT\u03b3 := supx\u2208X \u2211T t=1 ft(x), which is the total expected reward of the best fixed unconstrained strategy in hindsight belonging to X . Moreover, for any sequence of inputs \u03b3T , and t \u2208 [T ], let f\u0303t : X \u2192 [0, 1] and c\u0303t : X \u2192 [\u22121, 1]m be such that:\nf\u0303t(x) := 1 t \u2211t s=1 fs(x) and c\u0303t(x) := 1 t \u2211t s=1 cs(x), \u2200x \u2208 X . (2.1)\nThen, for t \u2208 [T ], we define OPTf\u0303t := supx\u2208X f\u0303t(x), and the baseline for the adversarial setting can be rewritten as OPT\u03b3 = T \u00b7OPTf\u0303T . In the setting with monotonic resource utilization and adversarial inputs, previous work usually employs weaker baselines (see, e.g., Immorlica et al. (2022); Castiglioni et al. (2022a;b)). For example, Castiglioni et al. (2022a) considers the reward attained by the best fixed strategy mixture until budget depletion, after which the void action is played. We show that, despite the stronger baseline, we match the state-of-the-art 1/\u03c1 competitive-ratio by Castiglioni et al. (2022a) when constraints are monotonic. We will work under the following standard assumption. Assumption 2.1. There exists a void action \u2205 \u2208 X and a constant \u03b2 \u2265 0 such that ct,i(\u2205) \u2264 \u2212\u03b2, for all resources i \u2208 [m] and t \u2208 [T ].\nNotice that when \u03b2 = 0 we recover the standard assumption of BwK (see, e.g., Badanidiyuru et al. (2018)). We will often parametrize regret bounds using \u03bd := \u03b2 + \u03c1. This parameter measures how much budget is available at each iteration, and how fast the available budget can be replenished."
+        },
+        {
+            "heading": "2.3 BASELINE STOCHASTIC SETTING",
+            "text": "In the stochastic version of the problem, each input \u03b3t = (ft, ct) is drawn i.i.d. from some fixed but unknown distribution P over a set of possible input pairs. Let f\u0304 : X \u2192 [0, 1] be the expected reward function, and c\u0304 : X \u2192 [\u22121, 1]m be the expected resource-consumption function (where both expectations are taken with respect to P).\nGiven two arbitrary measurable functions f : X \u2192 [0, 1], c : X \u2192 [\u22121, 1]m, we define the following linear program, which chooses the strategy mixture \u03be that maximizes the reward f , while keeping the expected consumption of every resource i \u2208 [m] given c below a target \u03c1:\nOPTLPf,c :=\n{ sup \u03be\u2208\u039e Ex\u223c\u03be[f(x)]\ns.t. Ex\u223c\u03be[c(x)] \u03c1 , (2.2)\nIn the stochastic setting, our baseline is OPTLP f\u0304 ,c\u0304 . It is well-known that T \u00b7 OPTLP f\u0304 ,c\u0304 is an upper bound on the expected reward of any algorithm (see, e.g., , (Badanidiyuru et al., 2018, Lemma 3.1) and (Kumar and Kleinberg, 2022, Lemma 2.1)). Lemma 2.2 (Lemma 2.1 of Kumar and Kleinberg (2022)). In the stochastic setting, the total expected reward of any algorithm is at most T \u00b7 OPTLP\nf\u0304 ,c\u0304 .\nIn the stochastic setting we make the same \u201cpositive drift\u201d assumption of Kumar and Kleinberg (2022), which is weaker than our Assumption 2.1 in the adversarial case. Assumption 2.3. There exists of a void action \u2205 \u2208 X such that, for all resources i \u2208 [m], it holds that E[ci(\u2205)] \u2264 \u2212\u03b2 and P[ci(\u2205) \u2264 0] = 1, where \u03b2 \u2265 0 and the expectation is with respect to the draw of the c from P."
+        },
+        {
+            "heading": "2.4 REGRET MINIMIZATION",
+            "text": "We will consider regret minimizers for a set W as generic algorithms that implements two functions: (i) the function NEXTELEMENT() returns an element wt \u2208 W , and (ii) the function\nAlgorithm 1 Primal-Dual template 1: Input: parameters B, T ; regret minimizers AP and AD 2: Initialization: B1,i \u2190 B, \u2200i \u2208 [m]; initialize AP,AD; TG = {\u2205}, T\u2205 = {\u2205}. 3: for t = 1, 2, . . . , T do 4: if \u2203 i \u2208 [m] : Bt,i < 1 then 5: T\u2205 \u2190 T\u2205 \u222a {t} 6: Primal action: xt \u2190 \u2205 7: Observe costs: Observe ct(\u2205) and update available resources: Bt+1 \u2190 Bt \u2212 ct(\u2205) 8: else 9: TG \u2190 TG \u222a {t} 10: Dual decision: \u03bbt \u2190 AD.NEXTELEMENT() 11: Primal decision: xt \u2190 AP.NEXTELEMENT() 12: Observe cost: Observe ct(xt) and update available resources: Bt+1 \u2190 Bt \u2212 ct(xt) 13: Primal update:\n\u2022 uPt (xt)\u2190 ft(xt) + \u3008\u03bbt,\u03c1\u2212 ct(xt)\u3009 \u2022 AP.OBSERVEUTILITY(uPt (xt))\n14: Dual update: \u2022 uDt : Rd 3 \u03bb 7\u2192 \u3008\u03bb, ct(xt)\u2212 \u03c1\u3009 \u2022 AD.OBSERVEUTILITY(uDt )\nOBSERVEUTILITY(\u00b7) which takes some feedback and updates the internal state of the regret minimizer. In the full-feedback model the regret minimizer observes as feedback a function ut : X \u2192 R, while in the bandit-feedback model it observes only the realized ut(wt). The standard objective of a regret minimizer is to control the cumulative regret with respect to a set Y \u2286 W defined as RT (Y) := supw\u2208Y \u2211T t=1(ut(w) \u2212 ut(wt)). In the following, we will also exploit a more general notion of regret, in which the regret minimizer suffers regret only in specific rounds. In particular, given a subset of rounds T \u2282 [T ] we define RT (Y) := supw\u2208Y \u2211 t\u2208T (ut(w)\u2212 ut(wt)). Then, we can recover common notions of regret such as standard (external) regret for which T = [T ], and weakly-adaptive regret for which RIT (Y) := supI=[t1,t2]\u2286[T ] RI(Y) Hazan and Seshadhri (2007). We remove the dependency from Y when Y =W (e.g., we write RT in place of RT (W))."
+        },
+        {
+            "heading": "3 PRIMAL-DUAL TEMPLATE",
+            "text": "We assume to have access to two regret minimizers with the following characteristic. A banditfeedback primal regret minimizer AP which outputs a strategy xt \u2208 X at each t, and subsequently receives as feedback the realized utility function uPt (xt) = ft(xt) + \u3008\u03bbt,\u03c1 \u2212 ct(xt)\u3009, and a fullfeedback dual regret minimizer AD that receives as input the utility function: uDt : \u03bb 7\u2192 \u3008\u03bb, ct(xt)\u2212 \u03c1\u3009. note that the dual regret minimizer always has full feedback by construction.2\nAlgorithm 1 summarizes the structure of our primal-dual template. For each t, if the available budget Bt,i is less than 1 for some resource i, the algorithm plays the void action \u2205 and updates the budget accordingly. This ensures that the budget will never fall below 0. Otherwise, the regret minimizer plays action xt at time t, which is determined by invoking NEXTELEMENT(). Then, uPt (xt) and u D t are observed, and the budget consumption is updated according to the realized costs ct. If the budget was at least 1, the internal state of the two regret minimizers is updated via OBSERVEUTILITY(\u00b7), on the basis of the feedback specified by the primal loss uPt (xt), and the dual loss function u D t . The algorithm terminates when the time horizon T is reached.\nWe partition the set of rounds in two disjoint sets TG \u2286 [T ] and T\u2205 \u2286 [T ]. The set TG := {t \u2208 [T ] : \u2200i \u2208 [m], Bt,i \u2265 1} includes all the rounds in which all the resources were at least 1, and hence the regret minimizers AP and AD were actually invoked. On the other hand, T\u2205 := {t \u2208 [T ] : \u2203i \u2208 [m], Bt,i < 1} is the set of rounds in which at least one resource is smaller than 1. Clearly, we have TG \u222a T\u2205 = [T ]. Then, let \u03c4 \u2208 T\u2205 be the last time in which the budget was strictly less then 1 for\n2We focus on the more challenging bandit-feedback setting. Our results easily extend to full-feedback.\nat least one resource, i.e., \u03c4 = max T\u2205. We partition TG in two sets TG,<\u03c4 and TG,>\u03c4 which are the rounds in TG before and after \u03c4 , respectively. Formally, TG,<\u03c4 := [\u03c4 ] \\ T\u2205, and TG,>\u03c4 := [T ] \\ [\u03c4 ]. We denote by RPT (resp., R D T ) the cumulative regret incurred by AP (resp., AD). Following the notation introduced in Section 2.4 we will write RPTG to denote the regret accumulated by the primal regret minizer over time steps in TG. Let D := {\u03bb \u2208 Rd+ : \u2016\u03bb\u20161 \u2264 1/\u03bd}. We consider the regret of the dual in the set of rounds TG,<\u03c4 and TG,>\u03c4 , with respect to the action set D. Formally, RDTG,<\u03c4 (D) = sup\u03bb\u2208D \u2211 t\u2208TG,<\u03c4 u D t (\u03bb)\u2212 uDt (\u03bbt). The term RDTG,>\u03c4 is defined analogously. Finally, let M := maxt \u2016\u03bbt\u20161 be the largest value of the `1-norm of dual multipliers over the time horizon."
+        },
+        {
+            "heading": "4 GENERAL GUARANTEES OF THE PRIMAL-DUAL TEMPLATE",
+            "text": "In this section, we provide no-regret guarantees of the general template described in Algorithm 1."
+        },
+        {
+            "heading": "4.1 ADVERSARIAL SETTING",
+            "text": "We start by describing the guarantees of Algorithm 1 in the adversarial setting. The idea is that, since \u03c4 corresponds to the last time in which at least one resource had Bt,i < 1, it must be the case that the primal \u201cspent a lot\u201d during the time intervals before \u03c4 in which it played (i.e., TG,<\u03c4 ). Ideally, the dual regret minimizer should adapt to this behavior and play a large \u03bb in TG,<\u03c4 , thereby attaining a large cumulative utility in TG,<\u03c4 . We show that the Lagrange multipliers in D are enough for this purpose. Then, as soon as we reach t > \u03c4 , the dual should adapt and start to play a small \u03bb. Indeed, during these rounds the primal regret minimizer gains resources and therefore the optimal dual strategy would be setting \u03bb = 0. The effectiveness of the dual regret minimizer in understanding in which phase it is playing, and in adapting to it by setting high/small penalties, is measured by the size of the regret terms RDTG,<\u03c4 (D) and R D TG,>\u03c4 (D). In particular, R D TG,<\u03c4 (D) (resp., R D TG,>\u03c4 (D)) is low if the dual regret minimizer behaves as expected before \u03c4 (resp., after \u03c4). Intuitively, if AD guarantees that those terms are small, then the dual regret minimizer is able to react quickly to the change in the behavior of the primal player before and after \u03c4 . As a byproduct of this, we show that the part of the primal\u2019s cumulative utility due to the Lagrangian penalties is sufficiently small. At the same time, we know that the primal regret minimizer has regret at most RPTG with respect to a strategy mixture that plays the optimal fixed unconstrained strategy with probability \u03bd/(1 + \u03b2), and the void action otherwise. This strategy mixture guarantees a \u03bd/(1 + \u03b2) fraction of the optimal utility without violating the constraints at any rounds. Formally, we can show the following.3\nTheorem 4.1. Let \u03b1 := \u03bd/(1 + \u03b2). In the adversarial setting, Algorithm 1 outputs a sequence of actions (xt)Tt=1 such that\u2211\nt\u2208[T ]\nft(xt) \u2265 \u03b1 \u00b7 OPT\u03b3 \u2212 ( 2\n\u03bd + RDTG,<\u03c4 (D) + R D TG,>\u03c4 (D) + R P TG\n) .\nNotice that, in the case of \u03b2 = 0, we recover the standard guarantees of adversarial bandits with knapsacks for the case in which B = \u2126(T ) Castiglioni et al. (2022a), where the competitive ratio \u03b1 is exactly \u03c1. The possibility of replenishing resources yields an improved competitive ratio.\nRemark. In order for Theorem 4.1 to provide a meaningful bound, we need the three regret terms on the right-hand side to be suitably upperbounded by some term sublinear in T (see Section 5). Since the time steps in TG are the only rounds in which AP is invoked, any standard regret minimizer can be used to bound RPTG . However, the same does not holds for A\nD. Indeed, we need a regret minimizer which can provide suitable regret upper bounds to RDTG,<\u03c4 (D) and R D TG,>\u03c4 (D), at the same time. One cannot simply bound RDTG,<\u03c4 (D) + R D TG,>\u03c4 (D) by R D TG(D), since the best action in the sets TG,<\u03c4 and TG,>\u03c4 may differ. Standard regret minimizers usually do not provide this guarantee, so we need special care in choosing AD. In particular, we need a weakly adaptive dual regret minimizer.\n3All omitted proofs can be found in the appendix."
+        },
+        {
+            "heading": "4.2 STOCHASTIC SETTING",
+            "text": "In this setting, we can exploit stochasticity of the environment to show that the expected utility of the primal under the sequence of realized inputs \u03b3 = (ft, ct)Tt=1 is close to the primal expected utility at (f\u0304 , c\u0304), and to provide a suitable upperbound to the amount by which each resource is replenished during T\u2205. Given \u03b4 \u2208 (0, 1], let ET,\u03b4 := \u221a 8T log (4mT/\u03b4). Lemma 4.2. For any \u03be \u2208 \u039e and \u03b4 \u2208 (0, 1], with probability at least 1\u2212 \u03b4, it holds that:\u2211 t\u2208T\u2205 ct,i(\u2205) \u2264 \u2212\u03b2|T\u2205|+MET,\u03b4, \u2200i \u2208 [m], and (4.1)\nEx\u223c\u03be [\u2211 t\u2208TG ft(x) + \u3008\u03bbt,\u03c1\u2212 ct(x)\u3009 ] \u2265 E x\u223c\u03be [\u2211 t\u2208TG f\u0304(x) + \u3008\u03bbt,\u03c1\u2212 c\u0304(x)\u3009 ] \u2212MET,\u03b4. (4.2)\nThen, we can prove the following regret bound. Theorem 4.3. Let the inputs (ft, ct) be i.i.d. samples from a fixed but unknown distribution P. For \u03b4 \u2208 (0, 1], we have that with probability at least 1\u2212 \u03b4, it holds\nT\u2211 t=1 ft(xt) \u2265 T \u00b7 OPTLPf\u0304 ,c\u0304 \u2212 ( 2 \u03bd + 1 \u03bd ET,\u03b4 + R D TG,<\u03c4 (D) + R D TG,>\u03c4 (D) + R P TG ) .\nThe proof follows a similar approach to the one of Theorem 4.1, with two main differences. First, we can now exploit standard concentration inequalities to relate realizations of random variables with their mean. Second, we exploit the fact that the primal has regret at most RPTG against an optimal solution to OPTLP\nf\u0304 ,c\u0304 , which is feasible in expectation and has an expected utility that matches the value\nof our baseline. This allows us to obtain competitive-ratio equal to 1 in the stochastic setting."
+        },
+        {
+            "heading": "5 CHOOSING APPROPRIATE REGRET MINIMIZERS",
+            "text": "In order to have meaningful guarantees in both the adversarial and stochastic setting, we need to choose the regret minimizers AP and AD so that RPTG , R D TG,<\u03c4 (D) and R D TG,>\u03c4 (D) all grow sublinearly in T . In the following section we will discuss two different scenarios, which differ in the amount of information which the decision maker is required to have. In Section 5.1 we are going to assume that the decision maker knows the per-round replenishment factor \u03b2. Then, in Section 5.2, we will show that this assumption can be removed by employing a primal regret minimizer AP with slightly stronger regret guarantees. In both cases, the dual regret minimizer AD has to be weakly adaptive, since both terms RDTG,<\u03c4 (D) and R D TG,>\u03c4 (D) need to be sublinear in T . On the other hand, we will make minimal assumptions on the primal regret minimizer AP. Its choice largely depends on the application considered, as we show in Section 6. In general, the primal regret minimizer must meet the minimal requirement of guaranteeing a sublinear regret upper bound EPT,\u03b4 with probability at least 1\u2212 \u03b4, when the adversarial rewards are in [0, 1]."
+        },
+        {
+            "heading": "5.1 IMPLEMENTING ALGORITHM 1 WITH KNOWN REPLENISHMENT FACTOR",
+            "text": "We start by assuming that the decision maker knows \u03b2 or, more generally, a lower bound \u03b2\u0303 on it. Therefore, the algorithm can compute \u03bd, or its lower bound. When \u03b2\u0303 is known, we can instantiate the regret minimizer AD to play on the set D\u0303 := {\u03bb \u2208 Rd+ : \u2016\u03bb\u20161 \u2264 1/\u03bd\u0303} \u2287 D, where \u03bd\u0303 := \u03b2\u0303 + \u03c1 \u2264 \u03bd. As discussed above, the dual regret minimizer on the set of Lagrange multipliers D must be weakly adaptive. This can be achieved via variations of the fixed share algorithm proposed by Herbster and Warmuth (1998). We will employ the generalized share algorithm of Bousquet and Warmuth (2002) and the analysis of Cesa-Bianchi et al. (2012), as AD has full feedback by construction.\nThe set D\u0303 can be written as D\u0303 = co {0, 1/\u03bd\u03031i with i \u2208 [m]}, where 1i is the i-th standard basis vector, and co denotes the convex hull. Since D \u2286 D\u0303, achieving no-weakly-adaptive regret with respect to D\u0303 implies the same result for D. Thus, instantiating the fixed-share algorithm on the (m+ 1)-simplex, and since the losses of AP are linear we can prove that: Lemma 5.1 ((Cesa-Bianchi et al., 2012, Corollary 2)). For any 0 < \u03b2\u0303 \u2264 \u03b2, there exists an algorithm that guarantees max ( RDTG,<\u03c4 (D),R D TG,>\u03c4 (D) ) \u2264 2\u03bd\u0303 \u221a T log (2mT ).\nSince the dual regret minimizer AD can play any Lagrange multiplier \u03bbt \u2208 D\u0303, we have that the rewards observed by the primal regret minimizer AP are in the range [0, 1 + 2/\u03bd\u0303] because it holds\nsup x\u2208X ,t\u2208[T ] |uPt (x)| \u2264 sup x\u2208X ,t\u2208[T ]\n{ |ft(x)|+ \u2016\u03bbt\u20161 \u00b7 \u2016\u03c1\u2212 ct(x)\u2016\u221e } \u2264 1 + 2\n\u03bd\u0303 \u2264 4 \u03bd\u0303 .\nWith probability at least \u03b4, the primal regret minimizer AP guarantees a regret EPT,\u03b4 against rewards in [0, 1]. Then, by re-scaling the realized rewards before giving them in input to the regret minimizer, we get a regret bound of 4\u03bd\u0303E P T against rewards u P t (\u00b7) that are in [0, 4/\u03bd\u0303]. This simple construction is applicable because the range of the rewards is known. By combining these observations we can easily recover the following corollary of Theorem 4.1 and Theorem 4.3.\nCorollary 5.2. Assume that the dual regret minimizer is generalized fixed share on D\u0303, and that the primal regret minimizer has regret at most EPTG,\u03b4 against losses in [0, 1] with probability at least 1\u2212 \u03b4, for \u03b4 \u2208 (0, 1]. In the adversarial setting, for any \u03b2\u0303 \u2264 \u03b2, with probability at least 1\u2212 \u03b4 Algorithm 1 guarantees that \u2211\nt\u2208[T ]\nft(xt) \u2265 \u03b1OPT\u03b3 \u2212 ( 2\n\u03bd +\n1\n\u03bd\u0303\n\u221a T log (2mT ) + 4\n\u03bd\u0303 EPTG,\u03b4\n) ,\nwhere \u03b1 = \u03bd/1+\u03b2. In the stochastic setting, with probability at least 1\u2212 2\u03b4, Algorithm 1 guarantees\u2211 t\u2208[T ] ft(xt) \u2265 T \u00b7 OPTLPf\u0304 ,c\u0304 \u2212 ( 2 \u03bd + 1 \u03bd ET,\u03b4 + 1 \u03bd\u0303 \u221a T log (2mT ) + 4 \u03bd\u0303 EPTG,\u03b4 ) ."
+        },
+        {
+            "heading": "5.2 IMPLEMENTING ALGORITHM 1 WITH UNKNOWN REPLENISHMENT FACTOR",
+            "text": "In this section we will show how to implement Algorithm 1 when no information about the per-round replenishment factor \u03b2 is available. This impacts both the primal and the dual regret minimizer. Differently from the previous section, we cannot instantiate the regret minimizer AD directly on D (or on a larger set D\u0303) since we do not know such set. Therefore, we need a dual regret minimizer that plays on Rm+ , but has sublinear weakly-adaptive regret with respect to Lagrange multipliers in D. To achieve this, we can use the Online Gradient Descent (OGD) algorithm, instantiated on Rm+ with starting point \u03bb0 = 0. Indeed, it is well known that OGD guarantees that the regret on any interval of rounds [t1, t2] \u2286 [T ] is upper bounded by the `2 distance between the point played at t1 and the comparator. In our setting this is equivalent to the following lemma (Hazan et al., 2016, Chapter 10). Lemma 5.3. For any TG \u2282 [T ] and any t1, t2 \u2208 TG, if the dual regret minimizer is OGD with learning rate \u03b7, we have that the regret with respect to \u03bb is upper bounded by\nRDTG\u2229[t1,...,t2]({\u03bb}) \u2264 \u2016\u03bb\u2212 \u03bbt1\u201622\n2\u03b7 +\n1 2 \u03b7mT.\nIn this setting, we also need additional assumptions on the primal regret minimizer AP. Formally we need an algorithm that satisfies the following condition. Condition 5.4. We assume that, for any T = [t1, t2] \u2286 [T ], the weakly-adaptive regret of AP facing adversarial losses with unknown range L is upper bounded by L2EPT,\u03b4 with probability at least 1\u2212 \u03b4, where EPT,\u03b4 is independent from the range of payoffs.\nIn order to provide the final regret bound for this setting, we need to show that the size of Lagrange multipliers remains bounded by a suitable term. Lemma 5.5. Assume that the dual regret minimizer is OGD on Rm+ with \u03b7 = (k1ET,\u03b4 + k2mEPT,\u03b4 + 2m \u221a T )\u22121, where k1, k2 are absolute constants, and the primal regret minimizer AP satisfies Condition 5.4. Then, both in the adversarial and stochastic setting, the Lagrange multipliers \u03bbt played by the dual regret minimizer AD are such that M := supt\u2208[T ] \u2016\u03bbt\u20161 \u2264 8m/\u03bd.\nThis result extends the similar result of Castiglioni et al. (2023, Theorem 6.2) to the case of multiple constraints. Lemma 5.5 allows us bound the regret RPTG of the primal, and the regret terms R D TG<\u03c4 (D) and RDTG>\u03c4 (D) of the dual regret minimizer. In particular, for what concerns the dual regret minimizer\nAD, we can bound the maximum distance between Lagrange multipliers which are played by AD. Then, we can bound the regret terms RDTG<\u03c4 (D) and R D TG>\u03c4 (D) via Lemma 5.3. Similarly, we can bound the regret of the primal through Condition 5.4. Using this observations, together with Theorem 4.1 and Theorem 4.3, we can extend Corollary 5.2 to the case of unknown \u03b2. Corollary 5.6. Assume that the dual regret minimizer is OGD on Rm+ with \u03b7 = (k1ET,\u03b4 +k2mEPT,\u03b4 + 2m \u221a T )\u22121, where k1, k2 are absolute constants, and the primal regret minimizer AP satisfies Condition 5.4. Then, in the adversarial setting, Algorithm 1 guarantees with probability 1\u2212 \u03b4 that\u2211 t\u2208[T ] ft(xt) \u2265 \u03b1 \u00b7 OPT\u03b3 \u2212 k3 m4 \u03bd2 ( EPT,\u03b4 + ET,\u03b4 ) ,\nwhere k3 is an absolute constant and \u03b1 = \u03bd/1+\u03b2. In the stochastic setting, there is an absolute constant k4 such that Algorithm 1 guarantees that, with probability at least 1\u2212 2\u03b4,\u2211\nt\u2208[T ]\nft(xt) \u2265 T \u00b7 OPTLPf\u0304 ,c\u0304 \u2212 k4 m4 \u03bd2 ( EPT,\u03b4 + ET,\u03b4 ) ."
+        },
+        {
+            "heading": "6 APPLICATIONS",
+            "text": "This section demonstrates the flexibility of our framework by studying three well motivated models: BwRK, inventory management, and revenue maximization in bilateral trade."
+        },
+        {
+            "heading": "6.1 BANDITS WITH REPLENISHABLE KNAPSACKS (BWRK)",
+            "text": "Consider the standard BwK problem: at each time step t, the learner selects an action it out of K actions (thus X = [K]), suffers a loss `t(it) \u2208 [0, 1] and incurs a cost vector ct(it) \u2208 [\u22121, 1]m that specifies the consumption of each one of its m resources. We focus on the most challenging scenario, in which the parameter \u03b2 is not known. We instantiate the primal-dual framework (Algorithm 1) using EXP3-SIX Neu (2015) as the primal regret minimizer, while online gradient descent is employed as the dual regret minimizer. Castiglioni et al. (2023) show that EXP3-SIX achieve weakly-adaptive regret L2O\u0303( \u221a KT ), where L is the range of the observed losses.\nFirst, let\u2019s consider the adversarial case, where losses and cost functions are generated by an oblivious adversary. Assumption 2.1 is verified when there exists a null action \u2205 that always yields non-negative resource replenishment (i.e., there exists \u03b2 \u2265 0 s.t. ct,j(\u2205) \u2264 \u2212\u03b2 for each resource j and time t). Theorem 6.1. Consider the BwRK problem in the adversarial setting. There exists an algorithm satisfying the following bound on the regret:\n\u03b1 \u00b7 OPT\u03b3 \u2212 \u2211 t\u2208[T ] ft(xt) \u2264 O\u0303 ( m4 \u03bd2 \u221a KT log ( 1 \u03b4 )) ,\nwith probability at least 1\u2212 \u03b4, where \u03b1 := \u03bd/(1 + \u03b2).\nThis is the first positive result for the BwRK problem in the adversarial setting.\nSecond, we consider a stochastic version, in which losses and cost vectors are drawn i.i.d. from an unknown distribution. In this setting, the void action assumption (Assumption 2.3) requires the existence of a distribution \u2205 \u2208 \u2206K over the actions such that, in expectation over the draws of the cost function, it verifies E[cj(\u2205)] \u2264 \u2212\u03b2 for all resources j4. The analysis of our primal-dual framework allows us to show that the same learning algorithm presented for the adversarial setting yields the following instance-independent results in the stochastic setting. Theorem 6.2. Consider the BwRK in the stochastic setting. There exists an algorithm satisfying, with probability at least 1\u2212 2\u03b4, the following bound on the regret:\nT \u00b7 OPTLPf\u0304 ,c\u0304 \u2212 T\u2211 t=1 ft(xt) \u2264 O\u0303 ( m4 \u03bd2 \u221a KT log ( 1 \u03b4 )) .\n4Note, the role of \u03b2 is played in Kumar and Kleinberg (2022) by the parameter \u03b4slack. Furthermore, there the authors make additional assumptions on the structure of the optimal LP and its solution.\nTheorem 6.2 provides the first instance-independent regret bound under i.i.d. inputs, and it complements the instance-dependent analysis by Kumar and Kleinberg (2022). In particular, in the stochastic setting, they provide a logarithmic instance-dependent bound on the regret of order O(Km2/\u22062 log T ), where \u2206 is a notion of suboptimality gap (already present in Li et al. (2021)), which in principle may be arbitrarily small. Although our work does not offer instance-dependent logarithmic bounds on the regret, we advance the study of the BwRK problem along three main directions: i) we design an algorithm which handles at the same time both stochastic and adversarial inputs (while Kumar and Kleinberg (2022) only deal with the stochastic input model), ii) our primal-dual approach is arguably simpler, and iii) we provide the first worst-case dependence on the time horizon T ."
+        },
+        {
+            "heading": "6.2 ECONOMIC APPLICATIONS AND DISCUSSION",
+            "text": "In the following, we describe two additional economic applications where our framework can be applied in the stochastic setting. We conclude the section by describing the challenges in extending these specific results to the adversarial setting.\nInventory management. As a simple application of our techniques, consider the following inventory management problem. Each day t, a shopkeeper is confronted with a decision: either open for business and attempt to sell the goods it has in the store, or travel to its supplier in order to restore its inventory. This simplified model captures many real world application that contemplates the trade-off between exploiting the available inventory, and \u201cskipping a turn\u201d to replenish it. For the sake of clarity we restrict ourselves to the case of a single resource and supplier, however this could be easily extended to more general instances. Formally, the goods in stock at day t are Bt \u2265 0, and the shopkeeper has a set two actions X = {o, s}. Action o corresponds to opening for business with reward rt(o) \u2208 [0, 1] and inventory consumption ct(o) \u2208 [0, 1], while action s corresponds to going to the supplier, with rt(s) \u2208 [\u22121, 0] and negative resource consumption ct(s) \u2208 [\u22121, 0] which both depend on the supplier\u2019s availability and current price. Clearly, it is possible to select action o only if Bt \u2265 1, while action s plays the role of the void action \u2205. We focus of the stochastic case in which E[ct(s)] \u2264 \u2212\u03b2, where \u03b2 is the expected amount of good available from the supplier. By employing EXP-SIX as in Section 6.1, this immediately yields a O\u0303( \u221a T ) regret bound via Corollary 5.6.\nBilateral trade. We consider the well known bilateral trade model (Vickrey, 1961; Myerson and Satterthwaite, 1983; Cesa-Bianchi et al., 2023): each day, the merchant posts two prices, a price pt \u2208 R+ and a price qt \u2208 R+ to a seller and a buyer of a good, respectively. The seller (resp., the buyer) has a private valuation of st \u2208 [0, 1] (resp., bt \u2208 [0, 1]). If the valuation st is smaller than pt, then the merchant buys one unit of good from the seller, while if the valuation bt is larger than the price qt (and there is some inventory left) then the merchant sells a unit of the good to the buyer. The merchant can only sell a good if Bt \u2265 1, i.e., the inventory has at least one unit of it. Moreover, we assume that the merchant has no initial budget, i.e., B1 = 0. The merchant\u2019s revenue at time t is revt(pt, qt) := (qt \u2212 pt)1[qt \u2264 bt]1[st \u2264 pt]. Similarly, for any t \u2208 [T ], the stock consumption is updated as follows: Bt+1 = Bt \u2212 1[qt \u2264 bt] + 1[st \u2264 pt]. Therefore, the strategy of choosing pt = 1 and qt > 1 surely increases the budget by one unit, and it has revenue revt(pt, qt) = \u22121. This strategy plays the role of the void action \u2205, with per-round replenishment \u03b2 = 1. Similarly to the example above, in the stochastic setting it is enough to translate and re-scale the revenue to satisfy all the assumptions of our algorithm. This immediately yields the O\u0303( \u221a T ) regret guarantees.\nChallenges of the adversarial setting. In the case in which rewards are allowed to be negative and inputs are adversarial, the simple simple trick of suitably re-scaling and translating the utilities is not applicable. This is due to the fact that our algorithm guarantees a multiplicative approximation of the benchmark and this multiplicative factor is not invariant with respect to translations. We leave as an open problem the question of how to handle application scenarios in which rewards may be negative in the adversarial setting. Addressing this challenge would likely necessitate the development of novel techniques to resolve the issue. We observe that the results for the adversarial setting would be preserved if we could provide a void action \u2205 that has non-negative reward and negative cost, but this is not usually the case in practical applications. Finally, it would be interesting to extend the simplified inventory-management model which we discussed to more complex models which have been proposed in the operations research literature (see, e.g., Chen et al. (2022); Chen and Simchi-Levi (2004))."
+        },
+        {
+            "heading": "A PROOFS OMITTED FROM SECTION 4.1",
+            "text": "Theorem 4.1. Let \u03b1 := \u03bd/(1 + \u03b2). In the adversarial setting, Algorithm 1 outputs a sequence of actions (xt)Tt=1 such that\u2211\nt\u2208[T ]\nft(xt) \u2265 \u03b1 \u00b7 OPT\u03b3 \u2212 ( 2\n\u03bd + RDTG,<\u03c4 (D) + R D TG,>\u03c4 (D) + R P TG\n) .\nProof. We divided the proof in two steps. First, we show that over the rounds TG in which the regret minimizers play the \u201clagrangified\u201d cumulative costs is controlled. Then, in the second step, we show that over the same set of rounds TG the \u201clagrangified\u201d utility is large. In order to simplify the notation, we will write RDTG,<\u03c4 (resp., R D TG,>\u03c4 ) in place of R D TG,<\u03c4 (D) (resp., R D TG,>\u03c4 (D)).\nPart 1. First, we show that in TG,<\u03c4 the budget spent by the decision maker is sufficiently high. Let i\u2217 be the resource that had the lowest budget in round \u03c4 \u2208 T\u2205. Summing the budget equation Bt+1,i\u2217 = Bt,i\u2217 \u2212 ct,i\u2217(xt) over t = {1, . . . , \u03c4 \u2212 1}, gives us\nB\u03c4,i\u2217 \u2212Bi\u2217 = \u2212 \u2211 t\u2264\u03c4\u22121 ct,i\u2217(xt).\nSince by definition B\u03c4,i\u2217 < 1 and B1,i\u2217 = B we get that:\u2211 t\u2264\u03c4\u22121 ct,i\u2217(xt) > B \u2212 1. (A.1)\nMoreover, in rounds t \u2208 T\u2205, since the budget was strictly less we have by construction that xt = \u2205, and thus ct,i\u2217(xt) \u2264 \u2212\u03b2. This readily implies that:\u2211\nt\u2208T\u2205\nct,i\u2217(xt) \u2264 \u2212\u03b2|T\u2205|. (A.2)\nBy combining Equation (A.1) and Equation (A.2) we obtain that:\u2211 t\u2208TG,<\u03c4 ct,i\u2217(xt) = \u2211 t\u2208[\u03c4 ] ct,i\u2217(xt)\u2212 \u2211 t\u2208T\u2205 ct,i\u2217(xt) (A.3)\n\u2265 B \u2212 2 + \u03b2|T\u2205|. (A.4) Since the budget spent in rounds TG,<\u03c4 is large, it must be the case that the dual regret minimizer AD collects a large cumulative utility in those rounds. Formally, the regret RDTG,<\u03c4 of A\nD on rounds TG,<\u03c4 with respect to \u03bb = 1\u03bd1i\u2217 reads as follows\u2211 t\u2208TG,<\u03c4 \u3008\u03bbt, ct(xt)\u2212 \u03c1\u3009 \u2265 1 \u03bd \u2211 t\u2208TG,<\u03c4 (ct,i\u2217(xt)\u2212 \u03c1i\u2217)\u2212 RDTG,<\u03c4\n\u2265 1 \u03bd (B \u2212 2 + \u03b2|T\u2205| \u2212 |TG,<\u03c4 |\u03c1i\u2217)\u2212 RDTG,<\u03c4 = 1\n\u03bd (\u03c1i\u2217T \u2212 2 + \u03b2|T\u2205| \u2212 |TG,<\u03c4 |\u03c1i\u2217)\u2212 RDTG,<\u03c4\n= 1\n\u03bd (\u03c1i\u2217(|TG,<\u03c4 |+ |T\u2205|+ |TG,>\u03c4 |)\u2212 2 + \u03b2|T\u2205| \u2212 |TG,<\u03c4 |\u03c1i\u2217)\u2212 RDTG,<\u03c4\n= 1\n\u03bd (\u03bd|T\u2205|+ \u03c1i\u2217 |TG,>\u03c4 | \u2212 2)\u2212 RDTG,<\u03c4\n\u2265 1 \u03bd (\u03bd|T\u2205| \u2212 2)\u2212 RDTG,<\u03c4 = |T\u2205| \u2212 2\n\u03bd \u2212 RDTG,<\u03c4 . (A.5)\nThen, by considering \u03bb = 0 and the definition of the regret on TG,>\u03c4 we get that the utility of dual is bounded by: \u2211\nt\u2208TG,>\u03c4\n\u3008\u03bbt, ct(xt)\u2212 \u03c1\u3009 \u2265 \u2212RDTG,>\u03c4 . (A.6)\nThus, by combining the inequalities of Equation (A.5) and Equation (A.6) we can conclude that:\n\u2211 t\u2208TG \u3008\u03bbt, ct(xt)\u2212 \u03c1\u3009 \u2265 |T\u2205| \u2212 2 \u03bd \u2212 RDTG,<\u03c4 \u2212 R D TG,>\u03c4 . (A.7)\nPart 2. Now, let x\u2217 be the best unconstrained strategy, i.e., x\u2217 \u2208 arg maxx\u2208X \u2211 t\u2208[T ] ft(x) and thus\u2211\nt\u2264T ft(x \u2217) := OPT\u03b3 .5 Consider the mixed strategy \u03be\u2217 \u2208 \u039e that randomizes between x\u2217 and \u2205,\nwith probability \u03c1+\u03b21+\u03b2 and 1\u2212\u03c1 1+\u03b2 , respetively. Then Ex\u223c\u03be\u2217 [\u2211 t\u2208TG\u3008\u03bbt,\u03c1\u2212 ct(x)\u3009 ] \u2265 0. This can be easily proved via the following chain of inequalities:\nE x\u223c\u03be\u2217 [\u2211 t\u2208TG \u3008\u03bbt,\u03c1\u2212 ct(x)\u3009 ] = \u03c1+ \u03b2 1 + \u03b2 \u2211 t\u2208TG \u3008\u03bbt,\u03c1\u2212 ct(x\u2217)\u3009+ 1\u2212 \u03c1 1 + \u03b2 \u2211 t\u2208TG \u3008\u03bbt,\u03c1\u2212 ct(\u2205)\u3009\n= \u2211 t\u2208TG \u3008\u03bbt,\u03c1\u3009 \u2212 \u03c1+ \u03b2 1 + \u03b2 \u2211 t\u2208TG \u3008\u03bbt, ct(x\u2217)\u3009 \u2212 1\u2212 \u03c1 1 + \u03b2 \u2211 t\u2208TG \u3008\u03bbt, ct(\u2205)\u3009\n\u2265 \u03c1 \u2211 t\u2208TG \u2016\u03bbt\u20161 \u2212 \u03c1+ \u03b2 1 + \u03b2 \u2211 t\u2208TG \u2016\u03bbt\u20161 + 1\u2212 \u03c1 1 + \u03b2 \u03b2 \u2211 t\u2208TG \u2016\u03bbt\u20161\n= ( \u03c1\u2212 \u03c1+ \u03b2\n1 + \u03b2 + \u03b2 1\u2212 \u03c1 1 + \u03b2 )\u2211 t\u2208TG \u2016\u03bbt\u20161\n= 0. (A.8)\nThen, we can use the defintion of the regret of the primal regret minimizer to find that:\nE x\u223c\u03be\u2217 [\u2211 t\u2208TG ft(x) + \u3008\u03bbt,\u03c1\u2212 ct(x)\u3009 ] \u2212 \u2211 t\u2208TG (ft(xt) + \u3008\u03bbt,\u03c1\u2212 ct(xt)\u3009) \u2264 RPTG , (A.9)\nand by rearranging and using the inequality of Equation (A.8) we have that:\u2211 t\u2208TG ft(xt) + \u3008\u03bbt,\u03c1\u2212 ct(xt)\u3009 \u2265 E x\u223c\u03be\u2217 [\u2211 t\u2208TG ft(x) ] \u2212 RPTG .\nBy building upon this inequality we obtain the following:\u2211 t\u2208TG ft(xt) + \u3008\u03bbt,\u03c1\u2212 ct(xt)\u3009 \u2265 E x\u223c\u03be\u2217 [\u2211 t\u2208TG ft(x) ] \u2212 RPTG\n= E x\u223c\u03be\u2217 \u2211 t\u2264T ft(x)\u2212 \u2211 t\u2208T\u2205 ft(x) \u2212 RPTG \u2265 E x\u223c\u03be\u2217 \u2211 t\u2264T ft(x)\n\u2212 |T\u2205| \u2212 RPTG = \u03c1+ \u03b2\n1 + \u03b2 \u2211 t\u2264T ft(x \u2217) + 1\u2212 \u03c1 1 + \u03b2 \u2211 t\u2264T ft(\u2205)\u2212 |T\u2205| \u2212 RPTG\n\u2265 \u03c1+ \u03b2 1 + \u03b2 \u2211 t\u2264T ft(x \u2217)\u2212 |T\u2205| \u2212 RPTG\n= \u03c1+ \u03b2\n1 + \u03b2 OPT\u03b3 \u2212 |T\u2205| \u2212 RPTG . (A.10)\n5For simplicity we replaced the supremum with the maximum. Results would continue to hold with sup with minor modifications.\nConcluding. Using the inequality of Equation (A.6) and the inequality of Equation (A.10) we have\u2211 t\u2264T ft(xt) \u2265 \u2211 t\u2208TG ft(xt)\n\u2265 \u2211 t\u2208TG \u3008\u03bbt, ct(xt)\u2212 \u03c1\u3009+ \u03c1+ \u03b2 1 + \u03b2 OPT\u03b3 \u2212 |T\u2205| \u2212 RPTG\n\u2265 |T\u2205| \u2212 2\n\u03bd \u2212 RDTG,<\u03c4 \u2212 R D TG,>\u03c4 +\n\u03c1+ \u03b2 1 + \u03b2 OPT\u03b3 \u2212 |T\u2205| \u2212 RPTG\n= \u03c1+ \u03b2\n1 + \u03b2 OPT\u03b3 \u2212\n2 \u03bd \u2212 RDTG,<\u03c4 \u2212 R D TG,>\u03c4 \u2212 R P TG ,\nwhich concludes the proof."
+        },
+        {
+            "heading": "B PROOFS OMITTED FROM SECTION 4.2",
+            "text": "Lemma 4.2. For any \u03be \u2208 \u039e and \u03b4 \u2208 (0, 1], with probability at least 1\u2212 \u03b4, it holds that:\u2211 t\u2208T\u2205 ct,i(\u2205) \u2264 \u2212\u03b2|T\u2205|+MET,\u03b4, \u2200i \u2208 [m], and (4.1)\nEx\u223c\u03be [\u2211 t\u2208TG ft(x) + \u3008\u03bbt,\u03c1\u2212 ct(x)\u3009 ] \u2265 E x\u223c\u03be [\u2211 t\u2208TG f\u0304(x) + \u3008\u03bbt,\u03c1\u2212 c\u0304(x)\u3009 ] \u2212MET,\u03b4. (4.2)\nProof. We start by proving that the inequality of Equation (4.1) holds with probability 1\u2212 \u03b4/2. Let K = |T\u2205|. Then, we can easily see that, for i \u2208 [m], with probability 1\u2212 \u03b4/(2mT )\u2211\nk\u2208[K]\n(ck,i(\u2205)\u2212 c\u0304i(\u2205)) \u2264 \u221a 2K log ( 4mT\n\u03b4\n) \u2264 \u221a 2T log ( 4mT\n\u03b4\n) ,\nwhere the first inequality holds by Hoeffding\u2019s bound. By taking a union bound over all possible lengths of T\u2205 (which are T ) and i \u2208 [m], we obtain that for all possible sets T\u2205 it holds:\u2211\nt\u2208T\u2205\n(ct,i(\u2205)\u2212 c\u0304i(\u2205)) \u2264 \u221a 2T log ( 4mT\n\u03b4 ) with probability at least 1\u2212 \u03b4/2. Then the proof of the inequality of Equation (4.1) is concluded by observing that: \u2211\nt\u2208T\u2205\nc\u0304i(\u2205) \u2264 \u2212\u03b2|T\u2205|,\nand that \u221a\n2T log (4mT/\u03b4) \u2264MET,\u03b4 . Equation (4.2) can be proved in a similar way. Indeed, for any fixed TG of size K = |TG|, and for any strategy mixture \u03be, by Hoeffding we have that with probability at least 1\u2212 \u03b4/2T the following holds\nE x\u223c\u03be [\u2211 t\u2208TG ft(x) + \u3008\u03bbt,\u03c1\u2212 ct(x)\u3009 ] \u2265 E x\u223c\u03be [\u2211 t\u2208TG f\u0304(x) + \u3008\u03bbt,\u03c1\u2212 c\u0304(x)\u3009 ] \u2212 (1 + 2M) \u221a K 2 log ( 4T \u03b4 )\n\u2265 E x\u223c\u03be [\u2211 t\u2208TG f\u0304(x) + \u3008\u03bbt,\u03c1\u2212 c\u0304(x)\u3009 ] \u2212 (1 + 2M) \u221a T 2 log ( 4T \u03b4 )\n\u2265 E x\u223c\u03be [\u2211 t\u2208TG f\u0304(x) + \u3008\u03bbt,\u03c1\u2212 c\u0304(x)\u3009 ] \u2212MET,\u03b4.\nBy taking a union bound over all possible T lengths of TG, we obtain that for all possible sets TG, the equation above holds with probability 1\u2212 \u03b4/2. The Lemma follows by a union bound on the two equations above, which hold separately with probability 1\u2212 \u03b4/2.\nTheorem 4.3. Let the inputs (ft, ct) be i.i.d. samples from a fixed but unknown distribution P. For \u03b4 \u2208 (0, 1], we have that with probability at least 1\u2212 \u03b4, it holds\nT\u2211 t=1 ft(xt) \u2265 T \u00b7 OPTLPf\u0304 ,c\u0304 \u2212 ( 2 \u03bd + 1 \u03bd ET,\u03b4 + R D TG,<\u03c4 (D) + R D TG,>\u03c4 (D) + R P TG ) .\nProof. The proof follows a similar approach to Theorem 4.1 with extra details regarding concentration inequalities to exploit stochasticity of the environment. We sketch here the proof for the sake of clarity. In order to simplify the notation of the proof, we will write RDTG,<\u03c4 (resp., R D TG,>\u03c4 ) in place of RDTG,<\u03c4 (D) (resp., R D TG,>\u03c4 (D)).\nPart 1. In the same fashion as the proof of Theorem 4.1, we can define i\u2217 to be the index of the resource that had budget less then 1 at round \u03c4 , and show that\u2211\nt\u2264\u03c4\u22121\nct,i\u2217(xt) > B \u2212 1, (B.1)\nwhich is exactly Equation (A.1) from Theorem 4.1. Moreover, in rounds t \u2208 T\u2205 \u2282 [\u03c4 ] we have that xt = \u2205, and by Equation (4.1) we obtain\u2211\nt\u2208T\u2205\nct,i\u2217(\u2205) \u2264 \u2212\u03b2|T\u2205|+ ET,\u03b4, (B.2)\nwhich follows Equation (A.1) from Theorem 4.1, with the addition of the ET,\u03b4 term (see definition in Section 4.2), due to the concentration inequality. Then, since [\u03c4 ] = T\u2205 \u222a TG,<\u03c4 , by combining Equation (B.1) and Equation (B.2) we can conclude that:\u2211\nt\u2208TG,<\u03c4 ct,i\u2217(xt) = \u2211 t\u2264\u03c4 ct,i\u2217(xt)\u2212 \u2211 t\u2208T\u2205 ct,i\u2217(xt) \u2265 B \u2212 2 + \u03b2|T\u2205| \u2212 ET,\u03b4. (B.3)\nThen, through a chain of inequalities similar to the one of Equation (A.5) we can conclude that\u2211 t\u2208TG,<\u03c4 \u3008\u03bbt, ct(xt)\u2212 \u03c1\u3009 \u2265 |T\u2205| \u2212 2 \u03bd \u2212 1 \u03bd ET,\u03b4 \u2212 RDTG,<\u03c4 . (B.4)\nThe same arguments used for Equation A.6 readily imply that\u2211 t\u2208TG \u3008\u03bbt, ct(xt)\u2212 \u03c1\u3009 \u2265 |T\u2205| \u2212 2 \u03bd \u2212 1 \u03bd ET,\u03b4 \u2212 RDTG,<\u03c4 \u2212 R D TG,>\u03c4 . (B.5)\nPart 2. Define \u03be\u2217 to be the optimal stochastic policy that achieves OPTLP f\u0304 ,c\u0304 = sup\u03be\u2208\u039e Ex\u223c\u03be[f\u0304(x)] and Ex\u223c\u03be[c(x)] \u03c1. By the definition of regret of AP on the rounds TG with respect to \u03be\u2217 the following holds \u2211\nt\u2208TG ft(xt) + \u3008\u03bbt,\u03c1\u2212 ct(xt)\u3009 \u2265 Ex\u223c\u03be\u2217 [\u2211 t\u2208TG ft(x) + \u3008\u03bbt,\u03c1\u2212 ct(x)\u3009 ] \u2212 RPTG\n\u2265 Ex\u223c\u03be\u2217 [\u2211 t\u2208TG f\u0304(x) + \u3008\u03bbt,\u03c1\u2212 c\u0304(x)\u3009 ] \u2212 RPTG \u2212 ET,\u03b4 \u2265 T \u00b7 OPTLPf\u0304 ,c\u0304 \u2212 |T\u2205| \u2212 R P TG \u2212 ET,\u03b4, (B.6)\nwhere we used Equation (4.1) in the first inequality, and [T ] = TG \u222a T\u2205 in the third one.\nConcluding. By combining Equation (B.5) and Equation (B.6) we can conclude that:\u2211 t\u2264T ft(xt) \u2265 T \u00b7 OPTLPf\u0304 ,c\u0304 \u2212 R P TG \u2212 2 \u03bd \u2212 1 \u03bd ET,\u03b4 \u2212 RDTG,<\u03c4 \u2212 R D TG,>\u03c4 . (B.7)\nwhich concludes the proof."
+        },
+        {
+            "heading": "C PROOFS OMITTED FROM SECTION 5",
+            "text": "Lemma 5.5. Assume that the dual regret minimizer is OGD on Rm+ with \u03b7 = (k1ET,\u03b4 + k2mEPT,\u03b4 + 2m \u221a T )\u22121, where k1, k2 are absolute constants, and the primal regret minimizer AP satisfies Condition 5.4. Then, both in the adversarial and stochastic setting, the Lagrange multipliers \u03bbt played by the dual regret minimizer AD are such that M := supt\u2208[T ] \u2016\u03bbt\u20161 \u2264 8m/\u03bd.\nProof. We will address the stochastic and adversarial case separately. First, we focus on the stochastic case. The adversarial case will follow via minor modifications.\nStochastic setting. We prove the theorem by contradiction. Suppose that there exists a round t2 such that \u2016\u03bbt2\u20161 \u2265 8m/\u03bd, and let t1 \u2208 [t2] be the the first round such that \u2016\u03bbt1\u20161 \u2265 1/\u03bd. Notice that the dual regret minimizer AD (i.e., OGD) guarantees that:\n\u2016\u03bbt1\u20161 \u2264 1 \u03bd +m\u03b7 \u2264 2 \u03bd and \u2016\u03bbt2\u20161 \u2264 8m \u03bd +m\u03b7 \u2264 9m \u03bd ,\nsince the dual losses are in [\u22121, 1]m, and by assumption \u2016\u03bbt1\u22121\u20161 \u2264 1/\u03bd and \u2016\u03bbt2\u22121\u20161 \u2264 8m/\u03bd. Hence, the range of payoffs of the primal regret minimizer |uPt | in the interval T := {t1, . . . , t2} can be bounded as follows\nsup x\u2208X ,t\u2208T |uPt (x)| \u2264 sup x\u2208X ,t\u2208T\n{ |ft(x)|+ \u2016\u03bbt\u20161 \u00b7 \u2016\u03c1\u2212 ct(x)\u2016\u221e } \u2264 1 + 29m\n\u03bd \u2264 19m \u03bd .\nTherefore, by assumption, the regret of the primal regret minimizer is at most: RPT \u2264 ( 19m\n\u03bd\n)2 EPT,\u03b4.\nSimilarly to the proof of Lemma 4.2, by applying a Hoeffding\u2019s bound to all the intervals and a union bound, we get that, with probability at least 1\u2212 \u03b4, it holds\u2211\nt\u2208T \u3008\u03bbt, ct(\u2205)\u3009 \u2264 \u2211 t\u2208T \u3008\u03bbt, c\u0304(\u2205)\u3009+ 9m \u03bd ET,\u03b4\n\u2264 \u2212\u03b2 \u2211 t\u2208T \u2016\u03bbt\u20161 + 9m \u03bd ET,\u03b4. (C.1)\nThen, by the no-regret property of the primal regret minimizer we have\u2211 t\u2208T (ft(xt)\u2212 \u3008\u03bbt, ct(xt)\u2212 \u03c1\u3009) \u2265 \u2211 t\u2208T (ft(\u2205)\u2212 \u3008\u03bbt, ct(\u2205)\u2212 \u03c1\u3009)\u2212 ( 19m \u03bd )2 EPT,\u03b4\n\u2265 \u2211 t\u2208T ft(\u2205) + \u03b2 \u2211 t\u2208T \u2016\u03bbt\u20161 + \u2211 t\u2208T \u3008\u03bbt,\u03c1\u3009 \u2212 ( 9m \u03bd ) ET,\u03b4 \u2212 ( 19m \u03bd )2 EPT,\u03b4\n\u2265 \u03bd \u2211 t\u2208T \u2016\u03bbt\u20161 \u2212 ( 9m \u03bd ) ET,\u03b4 \u2212 ( 19m \u03bd )2 EPT,\u03b4\n\u2265 (t2 \u2212 t1)\u2212 ( 9m\n\u03bd\n) ET,\u03b4 \u2212 ( 19m\n\u03bd\n)2 EPT,\u03b4, (C.2)\nwhere in the second inequality we use Equation (C.1) and in the last one we use that \u2016\u03bbt\u20161 \u2265 1/\u03bd for t \u2208 T . For each resource i \u2208 [m], we consider two cases: i) the dual regret minimizer never has to perform a projection operation during T , and ii) t\u0303i \u2208 T is the last time in which \u03bbti,i = 0. In both cases, we show that \u2211\nt\u2208T \u3008\u03bbt,\u03c1\u2212 ct(xt)\u3009 \u2264 \u2211 i\u2208[m] [ \u03bbt1,i \u2212 \u03bbt2,i \u03b7\u03bd ]\u2212 + 5m \u03bd2\u03b7 . (C.3)\nIn the first case, since we are using OGD as the dual regret minimizer and, by assumption, it never has to perform projections during T , it holds that for all resources i \u2208 [m]:\n\u03bbt2,i = \u03b7 \u2211 t\u2208T (ct,i(xt)\u2212 \u03c1) + \u03bbt1,i.\nNow consider the Lagrange multiplier \u03bb\u2217 such that, for each i \u2208 [m],\n\u03bb\u2217i :=\n{ 1/\u03bd if \u2211 t\u2208T (ct,i(xt)\u2212 \u03c1) \u2265 0\n0 otherwise . (C.4)\nBy exploiting Lemma 5.3 for a single component i \u2208 [m], we have that:\u2211 t\u2208T (\u03bb\u2217i \u2212 \u03bbt,i)(ct,i(xt)\u2212 \u03c1) \u2264 (\u03bb\u2217i \u2212 \u03bbt1,i)2 2\u03b7 + 1 2 \u03b7T, (C.5)\nwhich yields the following\u2211 t\u2208T \u03bbt,i \u00b7 (\u03c1\u2212 ct,i(xt)) \u2264 \u2211 t\u2208T \u03bb\u2217i \u00b7 (\u03c1\u2212 ct,i(xt)) + (\u03bb\u2217i \u2212 \u03bbt1,i)2 2\u03b7 + 1 2 \u03b7T\n\u2264 1 \u03bd\n[ \u03bbt1,i \u2212 \u03bbt2,i\n\u03b7\n]\u2212 + (\u03bb\u2217i \u2212 \u03bbt1,i)2\n2\u03b7 +\n1 2 \u03b7T. (C.6)\nThen, since \u2016\u03bbt1\u22121\u20161 \u2264 1/\u03bd by construction, it holds \u03bbt1\u22121,i \u2264 1/\u03bd. Hence, since the dual regret minimizer is OGD and its utilities are in [\u22121, 1]m, it holds\n\u03bbt1,i \u2264 1\n\u03bd + \u03b7. (C.7)\nThen, we have (\u03bb\u2217i \u2212 \u03bbt1,i)2\n2\u03b7 \u2264 (max{\u03bb \u2217 i , \u03bbt1,i}) 2 2\u03b7 \u2264 1 2\u03b7\n( 1\n\u03bd + \u03b7\n)2 .\nIt is easy to verify that for all \u03bd, T , and \u03b7 \u2264 1 2 \u221a T :6\n1\n2\u03b7\n( 1\n\u03bd + \u03b7\n)2 + 1\n2 \u03b7T \u2264 5 \u03bd2\u03b7 ,\nwhich implies that \u2211 t\u2208T \u03bbt,i, \u03c1\u2212 ct,i(xt) \u2264 1 \u03bd [ \u03bbt1,i \u2212 \u03bbt2,i \u03b7 ]\u2212 + 5 \u03bd2\u03b7 .\nIn the second case we define t\u0303i as the last time step t \u2208 [t1, t2] in which \u03bbt = 0. Thus, the following holds: \u03bbt2,i = \u03b7 \u2211\nt\u2208[t\u0303i,t2]\n(ct,i(xt)\u2212 \u03c1). (C.8)\nNow, consider the Lagrange multipliers \u03bbi,1 = 0 and \u03bbi,2 = 1\u03bd . By Lemma 5.3, we have that the regret of the dual regret minimizer with respect to 0 over [t1, t\u0303i] is bounded by:\u2211\nt\u2208[t1,t\u0303i\u22121]\n\u03bbt,i(\u03c1\u2212 ct,i(xt)) \u2264 ( \u03bb1,i \u2212 \u03bb\u2217i,1 )2 2\u03b7 + 1 2 \u03b7T \u2264 ( 1 \u03bd + \u03b7 )2 2\u03b7 + 1 2 \u03b7T, (C.9)\nwhere in the last inequality we use Equation (C.7).\nSimilarly, on the interval [t\u0303i + 1, t2] we have that the regret of the dual regret minimizer with respect to 1/\u03bd is bounded by\n\u2211 t\u2208[t\u0303i,t2] (\u03bbi,2 \u2212 \u03bbt,i) \u00b7 (ct,i(xt)\u2212 \u03c1) \u2264\n( \u03bb\u2217i,2 \u2212 \u03bbt\u0303i,i )2 2\u03b7 + 1 2 \u03b7T \u2264 1 2\u03b7 1 \u03bd2 + 1 2 \u03b7T,\n6Notice that the definition of \u03b7 satisfies \u03b7 \u2264 1 2 \u221a T .\nwhich can be rearranged into\u2211 t\u2208[t\u0303i,t2] \u03bbt,i \u00b7 (\u03c1\u2212 ct,i(xt)) \u2264 1 \u03bd \u2211 t\u2208[t\u0303i,t2] (\u03c1\u2212 ct,i(xt)) + 1 2\u03b7 1 \u03bd2 + 1 2 \u03b7T\n= \u2212\u03bbt2,i \u03b7\u03bd + 1 2\u03b7 1 \u03bd2 + 1 2 \u03b7T\n\u2264 [ \u03bbt1,i \u2212 \u03bbt2,i\n\u03b7\u03bd\n]\u2212 + 1\n2\u03b7\n1\n\u03bd2 +\n1 2 \u03b7T (C.10)\nwhere the equality follows from Equation (C.8) and the last inequality from \u2212x \u2264 min(y \u2212 x, 0) for x, y \u2265 0. Then by summing Equation (C.9) and Equation (C.10) we obtain\n\u2211 t\u2208[t1,t2] \u03bbt,i \u00b7 (\u03c1\u2212 ct,i(xt)) \u2264 [ \u03bbt1,i \u2212 \u03bbt2,i \u03b7\u03bd ]\u2212 + ( 1 \u03bd + \u03b7 )2 2\u03b7 + 1 2\u03b7\u03bd2 + \u03b7T. (C.11)\nIf we take \u03b7 \u2264 1 2 \u221a T , then the following inequality holds for all \u03bd and T :7( 1 \u03bd + \u03b7 )2 2\u03b7 + 1 2\u03b7\u03bd2 + \u03b7T \u2264 5 \u03bd2\u03b7 .\nThis concludes the second case and concludes the proof of Equation (C.3).\nNow we can sum over all resources i \u2208 [m] and conclude that:\u2211 t\u2208T \u3008\u03bbt,\u03c1\u2212 ct(xt)\u3009 \u2264 \u2211 i\u2208[m] [ \u03bbt1,i \u2212 \u03bbt2,i \u03b7\u03bd ]\u2212 + 5m \u03b7\u03bd2\n\u2264 \u2016\u03bbt1\u20161 \u2212 \u2016\u03bbt2\u20161 \u03b7\u03bd + 5m \u03b7\u03bd2\n\u2264 \u2212 6m \u03bd2\u03b7 + 5m \u03b7\u03bd2 = \u2212 m \u03bd2\u03b7 .\nFinally, the cumulative utility of the primal regret minimizer over T is bounded by\u2211 t\u2208[t1,t2] (ft(xt) + \u3008\u03bbt,\u03c1\u2212 ct(xt)\u3009) \u2264 (t2 \u2212 t1)\u2212 m \u03bd2\u03b7 . (C.12)\nBy putting Equation (C.2) and Equation (C.12) together we have that\n(t2 \u2212 t1)\u2212 m\n\u03bd2\u03b7 \u2265 (t2 \u2212 t1)\u2212\n( 9m\n\u03bd\n) ET,\u03b4 \u2212 ( 19m\n\u03bd\n)2 EPT,\u03b4\n\u2265 (t2 \u2212 t1)\u2212 ( 9m\n\u03bd\n) ET,\u03b4 \u2212 ( 19m\n\u03bd\n)2 EPT,\u03b4.\nHence,\nm \u03bd2\u03b7 \u2264 ( 9m \u03bd ) ET,\u03b4 + ( 19m \u03bd )2 EPT,\u03b4. (C.13)\nwhich holds by the assumption that there exists a time t2 such that \u2016\u03bbt2\u20161 \u2265 8m\u03bd .\n7Notice that the definition of \u03b7 satisfies \u03b7 \u2264 1 2 \u221a T .\nThus, if we set\n\u03b7 := (\n18ET,\u03b4 + 361mE P T,\u03b4 + 2m\n\u221a T )\u22121 ,\nwe reach a contradiction with Equation (C.13) by observing that\nm \u03bd2\u03b7 = m \u03bd2\n( 18ET,\u03b4 + 361mE P T,\u03b4 +m\u03bd \u221a T ) > ( 9m\n\u03bd\n) ET,\u03b4 + ( 19m\n\u03bd\n)2 EPT,\u03b4.\nThis concludes the proof for the stochastic setting.\nAdversarial setting. In the adversarial setting all the passages above still apply by setting ET,\u03b4 = 0. This is because, using Assumption 2.1, we can refrain from using the concentration inequality originating the term ET,\u03b4 .\nThis concludes the proof.\nCorollary 5.6. Assume that the dual regret minimizer is OGD on Rm+ with \u03b7 = (k1ET,\u03b4 +k2mEPT,\u03b4 + 2m \u221a T )\u22121, where k1, k2 are absolute constants, and the primal regret minimizer AP satisfies Condition 5.4. Then, in the adversarial setting, Algorithm 1 guarantees with probability 1\u2212 \u03b4 that\u2211 t\u2208[T ] ft(xt) \u2265 \u03b1 \u00b7 OPT\u03b3 \u2212 k3 m4 \u03bd2 ( EPT,\u03b4 + ET,\u03b4 ) ,\nwhere k3 is an absolute constant and \u03b1 = \u03bd/1+\u03b2. In the stochastic setting, there is an absolute constant k4 such that Algorithm 1 guarantees that, with probability at least 1\u2212 2\u03b4,\u2211\nt\u2208[T ]\nft(xt) \u2265 T \u00b7 OPTLPf\u0304 ,c\u0304 \u2212 k4 m4 \u03bd2 ( EPT,\u03b4 + ET,\u03b4 ) .\nProof. Lemma 5.5 allows us to bound the `1-norm of the Lagrange multipliers which are played by \u2016\u03bbt\u20161 \u2264 8m/\u03bd. This fact, by using Lemma 5.3, readily gives a bound on the terms RDTG<\u03c4 (D) and RDTG>\u03c4 (D) by observing that\nsup \u03bb,\u03bb\u2032,\n\u2016\u03bb\u20161,\u2016\u03bb\u2032\u20161\u2264 8m\u03bd ,\n\u2016\u03bb\u2212 \u03bb\u2032\u201622 \u2264 64m3\n\u03bd2 .\nThis, together with the definition of \u03b7 = (k1ET,\u03b4 + k2mE P T,\u03b4 + 2m\n\u221a T )\u22121 yields the bound\nmax(RDTG<\u03c4 ,R D TG>\u03c4 ) \u2264\n32m3\n\u03bd2 (k1ET,\u03b4 + k2mE\nP T,\u03b4 + 2m\n\u221a T ) + m\n2\nT\nk1ET,\u03b4 + k2mE P T,\u03b4 + 2m\n\u221a T\n= k1 32m3\n\u03bd2 ET,\u03b4 + k2\n32m4\n\u03bd2 EPT,\u03b4 +\n32m4\n\u03bd\n\u221a T + 1\n4\n\u221a T\n\u2264 k3 2\nm4\n\u03bd2\n( ET,\u03b4 + E P T,\u03b4 + \u221a T ) .\nThen, by Condition 5.4 and Lemma 5.5, the regret of the primal regret minimizer AP is bounded by: RPTG \u2264 ( 1 + 16m\n\u03bd\n)2 EPT (C.14)\n= k4 m2\n\u03bd2 EPT . (C.15)\nThis concludes the proof by leveraging Theorem 4.1 and Theorem 4.3."
+        }
+    ],
+    "year": 2023
+}

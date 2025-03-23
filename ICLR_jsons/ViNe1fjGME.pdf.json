@@ -1,0 +1,902 @@
+{
+    "abstractText": "Deep graph clustering has recently received significant attention due to its ability to enhance the representation learning capabilities of models in unsupervised scenarios. Nevertheless, deep clustering for temporal graphs, which could capture crucial dynamic interaction information, has not been fully explored. It means that in many clustering-oriented real-world scenarios, temporal graphs can only be processed as static graphs. This not only causes the loss of dynamic information but also triggers huge computational consumption. To solve the problem, we propose a general framework for deep Temporal Graph Clustering called TGC, which introduces deep clustering techniques to suit the interaction sequence-based batch-processing pattern of temporal graphs. In addition, we discuss differences between temporal graph clustering and static graph clustering from several levels. To verify the superiority of the proposed framework TGC, we conduct extensive experiments. The experimental results show that temporal graph clustering enables more flexibility in finding a balance between time and space requirements, and our framework can effectively improve the performance of existing temporal graph learning methods. The code is released: https://github.com/MGitHubL/ Deep-Temporal-Graph-Clustering.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Meng Liu"
+        },
+        {
+            "affiliations": [],
+            "name": "Yue Liu"
+        },
+        {
+            "affiliations": [],
+            "name": "Ke Liang"
+        },
+        {
+            "affiliations": [],
+            "name": "Wenxuan Tu"
+        },
+        {
+            "affiliations": [],
+            "name": "Siwei Wang"
+        },
+        {
+            "affiliations": [],
+            "name": "Sihang Zhou"
+        },
+        {
+            "affiliations": [],
+            "name": "Xinwang Liu"
+        }
+    ],
+    "id": "SP:2e2bacb9a62c58fd6bdc98f97be098b00c518d14",
+    "references": [
+        {
+            "authors": [
+                "Deyu Bo",
+                "Xiao Wang",
+                "Chuan Shi",
+                "Meiqi Zhu",
+                "Emiao Lu",
+                "Peng Cui"
+            ],
+            "title": "Structural deep clustering network",
+            "venue": "In Proceedings of the web conference 2020,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Zhan Bu",
+                "Hui-Jia Li",
+                "Jie Cao",
+                "Zhen Wang",
+                "Guangliang Gao"
+            ],
+            "title": "Dynamic cluster formation game for attributed graph clustering",
+            "venue": "IEEE transactions on cybernetics,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Shaosheng Cao",
+                "Wei Lu",
+                "Qiongkai Xu"
+            ],
+            "title": "Deep neural networks for learning graph representations",
+            "venue": "In Proceedings of the AAAI conference on artificial intelligence,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Ganqu Cui",
+                "Jie Zhou",
+                "Cheng Yang",
+                "Zhiyuan Liu"
+            ],
+            "title": "Adaptive graph encoder for attributed graph embedding",
+            "venue": "In Proceedings of the 26th ACM SIGKDD international conference on knowledge discovery & data mining,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Peng Cui",
+                "Xiao Wang",
+                "Jian Pei",
+                "Wenwu Zhu"
+            ],
+            "title": "A survey on network embedding",
+            "venue": "IEEE transactions on knowledge and data engineering,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Zeyu Cui",
+                "Zekun Li",
+                "Shu Wu",
+                "Xiaoyu Zhang",
+                "Qiang Liu",
+                "Liang Wang",
+                "Mengmeng Ai"
+            ],
+            "title": "Dygcn: Dynamic graph embedding with graph convolutional network",
+            "venue": "arXiv preprint arXiv:2104.02962,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Lun Du",
+                "Yun Wang",
+                "Guojie Song",
+                "Zhicong Lu",
+                "Junshan Wang"
+            ],
+            "title": "Dynamic network embedding: An extended approach for skip-gram based network embedding",
+            "venue": "In IJCAI,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Jianfei Gao",
+                "Bruno Ribeiro"
+            ],
+            "title": "On the equivalence between temporal and static graph representations for observational predictions",
+            "venue": "arXiv preprint arXiv:2103.07016,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Robert Gorke",
+                "Tanja Hartmann",
+                "Dorothea Wagner"
+            ],
+            "title": "Dynamic graph clustering using minimum-cut trees",
+            "venue": "In Algorithms and Data Structures: 11th International Symposium,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Robert Gorke",
+                "Pascal Maillard",
+                "Andrea Schumm",
+                "Christian Staudt",
+                "Dorothea Wagner"
+            ],
+            "title": "Dynamic graph clustering combining modularity and smoothness",
+            "venue": "Journal of Experimental Algorithmics (JEA),",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Aditya Grover",
+                "Jure Leskovec"
+            ],
+            "title": "node2vec: Scalable feature learning for networks",
+            "venue": "In Proceedings of the 22nd ACM SIGKDD international conference on Knowledge discovery and data mining,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Bronwyn H Hall",
+                "Adam B Jaffe",
+                "Manuel Trajtenberg"
+            ],
+            "title": "The nber patent citation data file: Lessons, insights and methodological tools",
+            "year": 2001
+        },
+        {
+            "authors": [
+                "Will Hamilton",
+                "Zhitao Ying",
+                "Jure Leskovec"
+            ],
+            "title": "Inductive representation learning on large graphs",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "William L Hamilton"
+            ],
+            "title": "Graph representation learning",
+            "venue": "Synthesis Lectures on Artifical Intelligence and Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Kaveh Hassani",
+                "Amir Hosein Khasahmadi"
+            ],
+            "title": "Contrastive multi-view representation learning on graphs",
+            "venue": "In International conference on machine learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Alan G Hawkes"
+            ],
+            "title": "Point spectra of some mutually exciting point processes",
+            "venue": "Journal of the Royal Statistical Society: Series B (Methodological),",
+            "year": 1971
+        },
+        {
+            "authors": [
+                "Dongxiao He",
+                "Tao Wang",
+                "Lu Zhai",
+                "Di Jin",
+                "Liang Yang",
+                "Yuxiao Huang",
+                "Zhiyong Feng",
+                "Philip Yu"
+            ],
+            "title": "Adversarial representation mechanism learning for network embedding",
+            "venue": "IEEE Transactions on Knowledge and Data Engineering,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Geoffrey E Hinton",
+                "Ruslan R Salakhutdinov"
+            ],
+            "title": "Reducing the dimensionality of data with neural networks",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "Thomas N Kipf",
+                "Max Welling"
+            ],
+            "title": "Variational graph auto-encoders",
+            "venue": "In Advances in neural information processing systems,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Solomon Kullback",
+                "Richard A Leibler"
+            ],
+            "title": "On information and sufficiency",
+            "venue": "The annals of mathematical statistics,",
+            "year": 1951
+        },
+        {
+            "authors": [
+                "Srijan Kumar",
+                "Xikun Zhang",
+                "Jure Leskovec"
+            ],
+            "title": "Predicting dynamic embedding trajectory in temporal interaction networks",
+            "venue": "In Proceedings of the 25th ACM SIGKDD international conference on knowledge discovery and data mining,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Kuan Li",
+                "Yang Liu",
+                "Xiang Ao",
+                "Qing He"
+            ],
+            "title": "Revisiting graph adversarial attack and defense from a data distribution perspective",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Tianpeng Li",
+                "Wenjun Wang",
+                "Pengfei Jiao",
+                "Yinghui Wang",
+                "Ruomeng Ding",
+                "Huaming Wu",
+                "Lin Pan",
+                "Di Jin"
+            ],
+            "title": "Exploring temporal community structure via network embedding",
+            "venue": "IEEE Transactions on Cybernetics,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ke Liang",
+                "Lingyuan Meng",
+                "Meng Liu",
+                "Yue Liu",
+                "Wenxuan Tu",
+                "Siwei Wang",
+                "Sihang Zhou",
+                "Xinwang Liu",
+                "Fuchun Sun"
+            ],
+            "title": "A survey of knowledge graph reasoning on graph types: Static, dynamic, and multimodal",
+            "venue": "arXiv preprint arXiv:2212.05767,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ke Liang",
+                "Yue Liu",
+                "Sihang Zhou",
+                "Wenxuan Tu",
+                "Yi Wen",
+                "Xihong Yang",
+                "Xiangjun Dong",
+                "Xinwang Liu"
+            ],
+            "title": "Knowledge graph contrastive learning based on relation-symmetrical structure",
+            "venue": "IEEE Transactions on Knowledge and Data Engineering,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ke Liang",
+                "Lingyuan Meng",
+                "Meng Liu",
+                "Yue Liu",
+                "Wenxuan Tu",
+                "Siwei Wang",
+                "Sihang Zhou",
+                "Xinwang Liu"
+            ],
+            "title": "Learn from relational correlations and periodic events for temporal knowledge graph reasoning",
+            "venue": "In Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yi Liang",
+                "Kaizhong Chen",
+                "Lan Yi",
+                "Xing Su",
+                "Xiaoming Jin"
+            ],
+            "title": "Degtec: A deep graph-temporal clustering framework for data-parallel job characterization in data centers",
+            "venue": "Future Generation Computer Systems,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Meng Liu",
+                "Yong Liu"
+            ],
+            "title": "Inductive representation learning in temporal networks via mining neighborhood and community influences",
+            "venue": "In Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Meng Liu",
+                "Ke Liang",
+                "Dayu Hu",
+                "Hao Yu",
+                "Yue Liu",
+                "Lingyuan Meng",
+                "Wenxuan Tu",
+                "Sihang Zhou",
+                "Xinwang Liu"
+            ],
+            "title": "Tmac: Temporal multi-modal graph learning for acoustic event classification",
+            "venue": "In Proceedings of the 31st ACM International Conference on Multimedia,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Meng Liu",
+                "Ke Liang",
+                "Bin Xiao",
+                "Sihang Zhou",
+                "Wenxuan Tu",
+                "Yue Liu",
+                "Xihong Yang",
+                "Xinwang Liu"
+            ],
+            "title": "Self-supervised temporal graph learning with temporal and structural intensity alignment",
+            "venue": "arXiv preprint arXiv:2302.07491,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yue Liu",
+                "Wenxuan Tu",
+                "Sihang Zhou",
+                "Xinwang Liu",
+                "Linxuan Song",
+                "Xihong Yang",
+                "En Zhu"
+            ],
+            "title": "Deep graph clustering via dual correlation reduction",
+            "venue": "In Proceedings of the AAAI Conference on Artificial Intelligence,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yue Liu",
+                "Jun Xia",
+                "Sihang Zhou",
+                "Siwei Wang",
+                "Xifeng Guo",
+                "Xihong Yang",
+                "Ke Liang",
+                "Wenxuan Tu",
+                "Z. Stan Li",
+                "Xinwang Liu"
+            ],
+            "title": "A survey of deep graph clustering: Taxonomy, challenge, and application",
+            "venue": "arXiv preprint arXiv:2211.12875,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yue Liu",
+                "Ke Liang",
+                "Jun Xia",
+                "Xihong Yang",
+                "Sihang Zhou",
+                "Meng Liu",
+                "Xinwang Liu",
+                "Stan Z Li"
+            ],
+            "title": "Reinforcement graph clustering with unknown cluster number",
+            "venue": "In Proceedings of the 31st ACM International Conference on Multimedia,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yuanfu Lu",
+                "Xiao Wang",
+                "Chuan Shi",
+                "Philip S Yu",
+                "Yanfang Ye"
+            ],
+            "title": "Temporal network embedding with micro-and macro-dynamics",
+            "venue": "In Proceedings of the 28th ACM international conference on information and knowledge management,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Rossana Mastrandrea",
+                "Julie Fournet",
+                "Alain Barrat"
+            ],
+            "title": "Contact patterns in a high school: a comparison between data collected using wearable sensors, contact diaries and friendship surveys",
+            "venue": "PloS one,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Catherine Matias",
+                "Vincent Miele"
+            ],
+            "title": "Statistical clustering of temporal networks through a dynamic stochastic block model",
+            "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Tomas Mikolov",
+                "Ilya Sutskever",
+                "Kai Chen",
+                "Greg S Corrado",
+                "Jeff Dean"
+            ],
+            "title": "Distributed representations of words and phrases and their compositionality",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Yujie Mo",
+                "Yuhuan Chen",
+                "Yajie Lei",
+                "Liang Peng",
+                "Xiaoshuang Shi",
+                "Changan Yuan",
+                "Xiaofeng Zhu"
+            ],
+            "title": "Multiplex graph representation learning via dual correlation reduction",
+            "venue": "IEEE Transactions on Knowledge and Data Engineering,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yujie Mo",
+                "Yajie Lei",
+                "Jialie Shen",
+                "Xiaoshuang Shi",
+                "Heng Tao Shen",
+                "Xiaofeng Zhu"
+            ],
+            "title": "Disentangled multiplex graph representation learning",
+            "venue": "In ICML,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Charini Nanayakkara",
+                "Peter Christen",
+                "Thilina Ranbaduge"
+            ],
+            "title": "Robust temporal graph clustering for group record linkage",
+            "venue": "Proceedings, Part II",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Shirui Pan",
+                "Ruiqi Hu",
+                "Guodong Long",
+                "Jing Jiang",
+                "Lina Yao",
+                "Chengqi Zhang"
+            ],
+            "title": "Adversarially regularized graph autoencoder for graph embedding",
+            "venue": "In Proceedings of the 27th International Joint Conference on Artificial Intelligence,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Aldo Pareja",
+                "Giacomo Domeniconi",
+                "Jie Chen",
+                "Tengfei Ma",
+                "Toyotaro Suzumura",
+                "Hiroki Kanezashi",
+                "Tim Kaler",
+                "Tao Schardl",
+                "Charles Leiserson"
+            ],
+            "title": "Evolvegcn: Evolving graph convolutional networks for dynamic graphs",
+            "venue": "In Proceedings of the AAAI conference on artificial intelligence,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Namyong Park",
+                "Ryan Rossi",
+                "Eunyee Koh",
+                "Iftikhar Ahamath Burhanuddin",
+                "Sungchul Kim",
+                "Fan Du",
+                "Nesreen Ahmed",
+                "Christos Faloutsos"
+            ],
+            "title": "Cgc: Contrastive graph clustering forcommunity detection and tracking",
+            "venue": "In Proceedings of the ACM Web Conference",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Bryan Perozzi",
+                "Rami Al-Rfou",
+                "Steven Skiena"
+            ],
+            "title": "Deepwalk: Online learning of social representations",
+            "venue": "In Proceedings of the 20th ACM SIGKDD international conference on Knowledge discovery and data mining,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Maria Giulia Preti",
+                "Thomas AW Bolton",
+                "Dimitri Van De Ville"
+            ],
+            "title": "The dynamic functional connectome: State-of-the-art and perspectives",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Emanuele Rossi",
+                "Ben Chamberlain",
+                "Fabrizio Frasca",
+                "Davide Eynard",
+                "Federico Monti",
+                "Michael Bronstein"
+            ],
+            "title": "Temporal graph networks for deep learning on dynamic graphs",
+            "venue": "arXiv preprint arXiv:2006.10637,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Boyu Ruan",
+                "Junhao Gan",
+                "Hao Wu",
+                "Anthony Wirth"
+            ],
+            "title": "Dynamic structural clustering on graphs",
+            "venue": "In Proceedings of the 2021 International Conference on Management of Data,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Aravind Sankar",
+                "Yanhong Wu",
+                "Liang Gou",
+                "Wei Zhang",
+                "Hao Yang"
+            ],
+            "title": "Dysat: Deep neural representation learning on dynamic graphs via self-attention networks",
+            "venue": "In Proceedings of the 13th international conference on web search and data mining,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Seyed Amjad Seyedi",
+                "Abdulrahman Lotfi",
+                "Parham Moradi",
+                "Nooruldeen Nasih Qader"
+            ],
+            "title": "Dynamic graph-based label propagation for density peaks clustering",
+            "venue": "Expert Systems with Applications,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Fei Tian",
+                "Bin Gao",
+                "Qing Cui",
+                "Enhong Chen",
+                "Tie-Yan Liu"
+            ],
+            "title": "Learning deep representations for graph clustering",
+            "venue": "In Proceedings of the AAAI Conference on Artificial Intelligence,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Rakshit Trivedi",
+                "Mehrdad Farajtabar",
+                "Prasenjeet Biswal",
+                "Hongyuan Zha"
+            ],
+            "title": "Dyrep: Learning representations over dynamic graphs",
+            "venue": "In International conference on learning representations,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Wenxuan Tu",
+                "Sihang Zhou",
+                "Xinwang Liu",
+                "Xifeng Guo",
+                "Zhiping Cai",
+                "En Zhu",
+                "Jieren Cheng"
+            ],
+            "title": "Deep fusion clustering network",
+            "venue": "In Proceedings of the AAAI Conference on Artificial Intelligence,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Laurens Van der Maaten",
+                "Geoffrey Hinton"
+            ],
+            "title": "Visualizing data using t-sne",
+            "venue": "Journal of machine learning research,",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "C Wang",
+                "S Pan",
+                "R Hu",
+                "G Long",
+                "J Jiang",
+                "C Zhang"
+            ],
+            "title": "Attributed graph clustering: A deep attentional embedding approach",
+            "venue": "In International Joint Conference on Artificial Intelligence. International Joint Conferences on Artificial Intelligence,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Kuansan Wang",
+                "Zhihong Shen",
+                "Chiyuan Huang",
+                "Chieh-Han Wu",
+                "Yuxiao Dong",
+                "Anshul Kanakia"
+            ],
+            "title": "Microsoft academic graph: When experts are not enough",
+            "venue": "Quantitative Science Studies,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yanbang Wang",
+                "Yen-Yu Chang",
+                "Yunyu Liu",
+                "Jure Leskovec",
+                "Pan Li"
+            ],
+            "title": "Inductive representation learning in temporal networks via causal anonymous walks",
+            "venue": "arXiv preprint arXiv:2101.05974,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Zhihao Wen",
+                "Yuan Fang"
+            ],
+            "title": "Trend: Temporal event and node dynamics for graph representation learning",
+            "venue": "In Proceedings of the ACM Web Conference 2022,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Hanrui Wu",
+                "Yuguang Yan",
+                "Michael Kwok-Po Ng"
+            ],
+            "title": "Hypergraph collaborative network on vertices and hyperedges",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Hanrui Wu",
+                "Andy Yip",
+                "Jinyi Long",
+                "Jia Zhang",
+                "Michael K. Ng"
+            ],
+            "title": "Simplicial complex neural networks",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2024
+        },
+        {
+            "authors": [
+                "Jiaming Wu",
+                "Meng Liu",
+                "Jiangting Fan",
+                "Yong Liu",
+                "Meng Han"
+            ],
+            "title": "Sagedy: A novel sampling and aggregating based representation learning approach for dynamic networks",
+            "venue": "In ICANN 2021: 30th International Conference on Artificial Neural Networks,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Da Xu",
+                "Chuanwei Ruan",
+                "Evren Korpeoglu",
+                "Sushant Kumar",
+                "Kannan Achan"
+            ],
+            "title": "Inductive representation learning on temporal graphs",
+            "venue": "In ICLR,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Dongkuan Xu",
+                "Wei Cheng",
+                "Dongsheng Luo",
+                "Xiao Liu",
+                "Xiang Zhang"
+            ],
+            "title": "Spatio-temporal attentive rnn for node classification in temporal attributed graphs",
+            "venue": "In IJCAI,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Carl Yang",
+                "Mengxiong Liu",
+                "Zongyi Wang",
+                "Liyuan Liu",
+                "Jiawei Han"
+            ],
+            "title": "Graph clustering with dynamic embedding",
+            "venue": "arXiv preprint arXiv:1712.08249,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Yuhang Yao",
+                "Carlee Joe-Wong"
+            ],
+            "title": "Interpretable clustering on dynamic graphs with recurrent graph neural networks",
+            "venue": "In Proceedings of the AAAI Conference on Artificial Intelligence,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jingyi You",
+                "Chenlong Hu",
+                "Hidetaka Kamigaito",
+                "Kotaro Funakoshi",
+                "Manabu Okumura"
+            ],
+            "title": "Robust dynamic clustering for temporal networks",
+            "venue": "In Proceedings of the 30th ACM International Conference on Information & Knowledge Management,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yuan Zuo",
+                "Guannan Liu",
+                "Hao Lin",
+                "Jia Guo",
+                "Xiaoqian Hu",
+                "Junjie Wu"
+            ],
+            "title": "Embedding temporal network via neighborhood formation",
+            "venue": "In Proceedings of the 24th ACM SIGKDD international conference on knowledge discovery & data mining,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Mo"
+            ],
+            "title": "Graph data can be classified into static and dynamic graphs based on the presence or absence of time information Liang et al",
+            "venue": "(He et al.,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "DeGTeC (Liang"
+            ],
+            "title": "2023c) is a data-parallel job framework for directed acyclic graphs, where the graph and temporal information are fully separated. DCFG (Bu et al., 2017) focuses on the dynamic cluster formation game in attribute graphs. DPC-DLP (Seyedi et al., 2019) considers the clustering task and uses KNN to propagate labels dynamically",
+            "year": 2019
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Graph clustering is an important part of the clustering task, which refers to clustering nodes on graphs. Graph (also called network) data is common in the real world (Cui et al., 2018; Liang et al., 2023a; Hamilton, 2020), such as citation graphs, knowledge graphs, e-commerce graphs, etc. In these graphs, graph clustering techniques can be used for many applications, such as game community discovery, financial anomaly detection, urban criminal prediction, social group analysis, etc.\nIn recent years, deep graph clustering has received significant attention due to its ability to enhance the representation learning capabilities of models in unsupervised scenarios. Nevertheless, existing deep graph clustering methods mainly focus on static graphs and neglect temporal graphs. Static graph clustering methods treat the graph as the fixed data structure without considering the dynamic changes in graph. This means that in many clustering-oriented real-world scenarios, temporal graph data can only be processed as static graphs. But in these scenarios, there are usually a lot of dynamic events, where relationships and identities of nodes are constantly changing. Thus the neglect of time may lead to the loss of useful dynamic information.\nCompared to static graphs, temporal graphs enable more fine observation of node dynamic interactions. However, existing temporal graph learning methods usually focus on link prediction rather than node clustering. This is because adjacency matrix-based deep graph clustering modules are no longer applicable to the batch-processing pattern based on the interaction sequence in temporal graphs. Thus we ask: what makes node clustering different between temporal graphs and static graphs? We attempt to answer this from the following perspectives.\n\u2217Corresponding Author: Xinwang Liu.\n(1) As shown in Fig. 1 (a), if there are several interactions between two nodes, the adjacency matrix can hardly reflect the dynamic changes, especially when these interactions belong to different timestamps. In contrast, temporal graphs utilize the interaction sequence (i.e., adjacency list) to store interactions. The existence of multiple interactions between nodes can be clearly represented by interaction sequence of the temporal graph, but it will be compressed into two forms of 0 or 1 in the adjacency matrix, i.e., it results in the absence of edges. This problem brings about a serious lack of information when there are frequent interactions between pairs of nodes.\n(2) Further, we can find in Fig. 1 (b), static graph methods usually train the whole adjacency matrix, which is not convenient enough for large-scale graphs (i.e., possible out-of-memory problem). By slicing the interaction sequence into multiple batches, temporal methods are naturally suitable for large-scale data processing (i.e., batch size can adjust by memory). And it also means that temporal methods can no longer take advantage of the node clustering modules based on the adjacency matrix.\n(3) Although there are a few static methods that split graph data into multiple sub-graphs to solve the out-of-memory problems, this still differs from temporal methods. The most important issue is that the loading of temporal graphs must strictly follow the chronological order, i.e., the earlier nodes cannot \u201csee\u201d the later nodes, as shown in Fig. 1 (c). Suppose there is an interaction between two nodes in a subgraph occurs in 2023, while an interaction between a subgraph and another subgraph occurs in 2020. So how do we reverse time the information from 2023 and pass it on in 2020? Therefore, we believe that our framework is a more appropriate solution in the field of temporal graphs. In this case, the temporal relationship of node interactions should still be taken into account during training.\nDue to these discrepancies, the difficulty of temporal graph clustering is to find the balance between interaction sequence-based batch-processing patterns and adjacency matrix-based node clustering modules. Nowadays, few works discuss it comprehensively. Although a few methods refer to temporal graph clustering, they are incomplete and we discuss them in the Appendix.\nDriven by this, we propose a general framework for Temporal Graph Clustering, called TGC. Such framework proposes two deep clustering modules (node assignment distribution and graph reconstruction) to suit the batch-processing pattern of temporal graphs. In addition, we discuss temporal graph clustering at several levels, including intuition, complexity, data, and experiment. To verify the superiority of the proposed framework TGC on unsupervised temporal graph representation learning, we conduct extensive experiments. The experimental results show that temporal graph clustering enables more flexibility in finding a balance between time and space requirements, and our framework can effectively improve the performance of existing temporal graph learning methods. In summary, our contributions are several-fold:\nProblem. We discuss the differences between temporal graph clustering and static graph clustering.To the best of our knowledge, our work is the first to comprehensively focus on deep temporal graph clustering.\nAlgorithm. A simple general framework TGC is proposed, which introduces two deep clustering modules to suit the interaction sequence-based batch-processing pattern of temporal graphs.\nDataset. We discuss another issue that hinders the development of temporal graph clustering, namely the lack of datasets, and collate or develop several effective datasets.\nEvaluation. We conduct several experiments to validate the clustering performance, flexibility, and transferability of TGC, and further elucidate the characteristics of temporal graph clustering."
+        },
+        {
+            "heading": "2 METHOD",
+            "text": "In this section, we first give the definitions of temporal graph clustering, and then describe the proposed framework TGC. Our framework contains two modules: a temporal module for time information mining, and a clustering module for node clustering. Here we introduce the classical HTNE (Zuo et al., 2018) method as the baseline of temporal loss, and further discuss the transferability of TGC on other methods in the experiments. For the clustering loss, we improve two node clustering technologies to fit temporal graphs, i.e., node-level distribution and batch-level reconstruction."
+        },
+        {
+            "heading": "2.1 PROBLEM DEFINITION",
+            "text": "If a graph contains timestamp records between node interactions, we call it a temporal graph. Definition 1. Temporal graph. Given a temporal graph G = (V,E, T ), where V denotes nodes and E denotes interactions. In temporal graphs, the concept of edges is replaced by interactions. Because although there is only one edge between two nodes, there may be multiple interactions that occur at different times. Multiple interactions between two nodes can be formulated as: Tx,y = {(x, y, t1), (x, y, t2), \u00b7 \u00b7 \u00b7 , (x, y, tn)}. If two nodes interact with each other, we call them neighbors. When a node\u2019s neighbors are sorted by interaction time, its historical neighbor sequence can be formulated as: Nx = {(y1, t1), (y2, t2), \u00b7 \u00b7 \u00b7 , (yl, tl)}.\nTemporal graph clustering aims to group nodes into different clusters on temporal graphs. Definition 2. Temporal graph clustering. Node clustering in the graph follows some rules: (1) nodes in a cluster are densely connected, and (2) nodes in different clusters are sparsely connected. Here we define K clusters to divide all nodes, i.e., C = {c1, c2, ..., cK}. Node embeddings are continuously optimized during training and then fed into the K-means algorithm for performance evaluation during testing."
+        },
+        {
+            "heading": "2.2 BASELINE TEMPORAL LOSS",
+            "text": "How to capture the dynamic information is the most important problem in temporal graphs. As a classical method, HTNE (Zuo et al., 2018) introduces the Hawkes process (Hawkes, 1971) to capture the dynamic information in graph evolution. Such a process argues that node future interaction are influenced by historical interactions and this influence decays over time. Given two nodes x and y interact at time t, their conditional interaction intensity \u03bb(x,y,t) can be formulated as follows.\n\u03bb(x,y,t) = \u00b5(x,y,t) + h(x,y,t) (1)\nAccording to Eq. 1, the conditional intensity can be divided into two parts: (1) the base intensity between two nodes without any external influences, i.e., \u00b5(x,y,t) = \u2212||ztx \u2212 zty||2, where ztx is the node embedding of x at time t, and (2) the hawkes intensity h(x,y,t) from historical interaction influences, which is weighted by node similarity in addition to decaying over time.\nh(x,y,t) = \u2211 i\u2208Nx \u03b1(i,y,t) \u00b7 \u00b5(i,y,t), \u03b1(i,y,t) = \u03c9(i,x) \u00b7 f(tc \u2212 ti) (2)\nHere, \u03c9(i,x) is the node similarity weight to evaluate a neighbor\u2019s importance in all neighbors. f(tc \u2212 ti) denotes the influences from neighbors decay with time, and the earlier the time, the less the influence. \u03b4t is a learnable parameter, tc denotes the current timestamp.\n\u03c9(i,x) = exp(\u00b5(i,x))\u2211\ni\u2032\u2208Nx exp(\u00b5(i\u2032,x)) , f(tc \u2212 ti) = exp(\u2212\u03b4t(tc \u2212 ti)) (3)\nFinally, given two nodes x and y interact at time t, their conditional intensity should be as large as possible, and the intensity of node x with any other node should be as small as possible. Since it requires a large amount of computation to calculate the intensities of all nodes, we introduce the negative sampling technology (Mikolov et al., 2013), which samples several unrelated nodes as negative samples. Thus the baseline temporal loss function can be calculated as follows, where P (x) is the negative sampling distribution that is positively correlated with the degree of node x.\nLtem = \u2212 log \u03c3(\u03bb(x,y,t))\u2212 \u2211\nn\u223cP (x)\nlog \u03c3(1\u2212 \u03bb(x,n,t)) (4)\nFor the above temporal information modeling, we introduce a classic HTNE method as the baseline without any additional changes. But the use of time alone is not enough to improve the performance of temporal graph clustering, so we propose clustering loss to compensate for this."
+        },
+        {
+            "heading": "2.3 IMPROVED CLUSTERING LOSS",
+            "text": "Compared with static graph clustering, temporal graph clustering faces the challenge that deep clustering modules based on static adjacency matrix are no longer applicable. Since temporal graph methods train data in batches, we propose two new batch-based modules for node clustering, i.e., node-level distribution and batch-level reconstruction."
+        },
+        {
+            "heading": "2.3.1 NODE-LEVEL DISTRIBUTION",
+            "text": "In this module, we focus on assigning all nodes to different clusters. Especially, for each node x and each cluster ck, we utilize the Student\u2019s t-distribution (Van der Maaten & Hinton, 2008) to measure their similarity.\nq(x,k,t) = (1 + ||z0x \u2212 ztck || 2/v)\u2212 v+1 2\u2211\ncj\u2208C(1 + ||z 0 x \u2212 ztcj ||2/v)\n\u2212 v+12 (5)\nHere q(x,k,t) denotes the probability of assigning node x to cluster ck, and v is the degrees of freedom (default value is 1) for Student\u2019s t-distribution (Bo et al., 2020). z0x denotes the initial feature of node x, ztck is one clustering center embedding initialized by K-means on initial node features.\nConsidering that q(x,k,t) and z0x need to be as reliable as possible, and not all temporal graph datasets provide original features to ensure such reliability. We select the classical method node2vec (Grover & Leskovec, 2016) to generate initial features for nodes by mining the graph structure, which is equivalent to the pre-training. Note that many graph clustering methods use classical model pre-train to generate initialized clustering centers, such as SDCN (Bo et al., 2020) utilizes AE, DFCN (Tu et al., 2021) and DCRN (Liu et al., 2022a) utilize GAE, etc. Our selection of node2vec is not deliberate, and can be replaced by any other methods.\nAfter calculating the initial probability, we aim to optimize the node embeddings by learning from the high-confidence assignments. In particular, we encourage all nodes to get closer to cluster centers, thus the target distribution p(x,k,t) at time t can be sharpened as follows.\np(x,k,t) = q2(x,k,t)/ \u2211 i\u2208V q(i,k,t)\u2211\ncj\u2208C(q 2 (x,j,t)/ \u2211 i\u2208V q(i,j,t))\n(6)\nThe target distribution squares and normalizes each node-cluster pair in the assignment distribution to encourage the assignments to have higher confidence, then we can consider it as the \u201ccorrect\u201d distribution. We introduce the KL divergence (Kullback & Leibler, 1951) to the node-level distribution loss, where the real-time assignment distribution is aligned with the target distribution.\nLnode = \u2211 ck\u2208C p(x,k,t) log p(x,k,t) q\u2032(x,k,t) (7)\nNote that q\u2032(x,k,t) is calculated from node embeddings and can change with the update of node embeddings. This loss function aims to encourage the real-time assignment distribution as close as possible to the target distribution, so that the node embeddings can be more suitable for clustering.\nThe calculation of the assignment distribution differs in the static and temporal graphs. In static graph clustering, all nodes are computed simultaneously for the distribution. However, there is a sequential order of interactions in temporal graphs, so we calculate the distribution of the nodes in each interaction by batches. Note that if a node has multiple interactions, its distribution will be calculated multiple times, which we consider as multiple calibrations for important nodes."
+        },
+        {
+            "heading": "2.3.2 BATCH-LEVEL RECONSTRUCTION",
+            "text": "Graph reconstruction also plays an important role in node clustering, which can be considered as the pretext task. Due to the batch training in temporal graph learning, the adjacency matrixbased reconstruction technology can hardly be applied in temporal methods. Thus we propose the batch-level module to simply simulate the adjacency relationships reconstruction.\nAs mentioned above, for each batch, we calculate the temporal conditional intensity between nodes x and y. To achieve that, we obtain the historical sequence Nx of x. It means that both target node y and neighbor nodes h \u2208 Nx have edges with x in the graph, i.e., their adjacency relations are all 1. In addition, in the temporal loss function (Eq. 4), we also sample some negative nodes n \u223c P (x), which have no edges with x in the real graph, i.e., their adjacency relations are all 0.\nBased on the adjacency relationships above, the embedding of these nodes should also follow this constraint. Thus we utilize the cosine similarity to measure the relationship between two node embeddings and constrain them as close to 1 or 0 as possible. The cosine similarity between two node embeddings can be calculated as cos(zx, zy) = z\u22a4x zy ||zx||\u00b7||zy|| .\nThis pseudo-reconstruction operation on batches, while not fully restoring the adjacency matrix reconstruction, uses as many nodes as possible that appear in the batch. It is equivalent to a simple reconstruction of the adjacency matrix without increasing the time complexity, which may provide a new idea for the problem that there is no adjacency matrix in batch processing of temporal graphs. Finally, the batch-level loss function can be formulated as follows.\nLbatch = |1\u2212 cos(ztx, zty)|+ |1\u2212 cos(ztx, zth)|+ |0\u2212 cos(ztx, ztn)| (8)\nThus the improved clustering loss function can be formulated as Lclu = Lnode + Lbatch."
+        },
+        {
+            "heading": "2.4 LOSS FUNCTION AND COMPLEXITY ANALYSIS",
+            "text": "Our total loss function includes temporal loss and clustering loss, which can be formulated as L = \u2211E (Ltem + Lclu). Note that the temporal graph is trained in batches, and this division of batches is not related to the number of nodes N , but to the length of the interaction sequence |E| (i.e., the total number of interactions). This means that the main complexity of the method for temporal graph clustering is O(|E|), rather than O(N2) for static graph clustering because the temporal graph method does not need to call the whole adjacency matrix. In other words, compared to static clustering, temporal clustering has the advantage of being more flexible and convenient for training:\n(1) In the vast majority of cases, |E| is smaller than N2 because the upper bound of |E| is N2 (when the graph is fully connected), which means that O(|E|) < O(N2) in most time. (2) In individual cases, there is a case where O(|E|) > O(N2), which means that there are multiple interactions between a large number of node pairs. This underscores the superiority of dynamic interaction sequences over adjacency matrix, as the latter compresses multiple interactions into a single edge, leading to a significant loss of information.\n(3) The above discussion applies not only to the time complexity but also to the space complexity. As the interaction sequence is arranged chronologically, it can be partitioned into multiple batches of varying sizes. The maximum batch size is primarily determined by the available memory of the deployed platform and can be dynamically adjusted to match the memory constraints. Therefore, TGC can be deployed on many platforms without strict memory requirements.\nThe different types of datasets mentioned above are all considered in our experiments, which have very different node degrees and sizes. Then, We conduct experiments and discussions around these datasets from multiple domains."
+        },
+        {
+            "heading": "3 DATASETS",
+            "text": "A factor limiting the development of temporal graph clustering is that it is difficult to find a dataset suitable for clustering. Although node clustering is an unsupervised task, we need to use node labels when verifying the experimental results. Most public temporal graph datasets suffer from the following problems: (1) Researchers mainly focus on link prediction without node labels. Thus many public datasets have no labels (such as Ubuntu, Math, Email, and Cloud). (2) Some datasets have only two labels (0 and 1), i.e., models on these datasets aim to predict whether a node is active at a certain timestamp. Node classification tasks on these datasets tend to be more binary-classification than multi-classification, thus these datasets are also not suitable for clustering tasks (such as Wiki, CollegeMsg, and Reddit). (3) Some datasets\u2019 labels do not match their own characteristics, e.g., different ratings of products by users can be considered as labels, but it is difficult to say that these\nlabels are more relevant to the product characteristics than the product category labels, thus leading to the poor performance of all methods on these datasets (such as Bitcoin, ML1M, Yelp, and Amazon).\nConstrained by these problems, as shown in Table 1, we select these suitable datasets from 40+ datasets: DBLP (Zuo et al., 2018) is a co-author graph from the DBLP website, which contains 10 research areas, i.e., 10 clusters. Each researcher is considered a node, and the collaborative relationships between them are considered interactions. Brain (Preti et al., 2017) is a human brain tissue connectivity graph, where the nodes represent tidy cubes of brain tissue, and the edges indicate connectivity. Patent (Hall et al., 2001) is a patent citation graph of US patents. Each patent belongs to six different types of patent categories. School (Mastrandrea et al., 2015) is a high school dataset that records the contact and friendship between school students. Although the number of students is small, they have many interactions throughout the day.\narXivAI and arXivCS (Wang et al., 2020) are two public citation graphs from the arXiv website, where papers are nodes, and citations are interactions. Note that these two datasets are developed by us large-scale temporal graph clustering, which record the academic citations on the arxiv website. Their original data are from the OGB benchmark (Wang et al., 2020), but are not applicable to temporal graph clustering. We extracted reference records from the original data to construct node interactions with timestamps and then find the corresponding node ids to construct the interaction sequence-style temporal graph.\nTo generate node labels suitable for clustering, we select the domain to which the paper belongs as its node label. Specifically, the arXiv website categorizes computer domains into 40 categories. We first identify the domains that correspond to the nodes, and then convert them into node labels. On the basis of arXivCS, we also construct the arXivAI dataset by extracting Top-5 relevant domains to AI from the original 40 domains and used them as the basis to extract the corresponding nodes and interactions.\nIn Table 1, Nodes denotes the node number, and Interactions denotes the interaction number. Note that we also report Edges, which represents the edge number in the adjacency matrix when we compress temporal graphs into static graphs for traditional graph clustering methods (As mentioned in Fig. 1, some duplicate interactions are missing). Complexity denotes the main complexity comparison between static graph clustering and temporal graph clustering, Timestamps means interaction time, K means the number of clusters (label categories), and Degree means node average degree. MinI and MaxI denote the maximum and minimum interaction times of nodes, respectively."
+        },
+        {
+            "heading": "4 EXPERIMENTS",
+            "text": "In this part, we discuss the experiment results. Due to the limitation of space, we present some of the descriptions and experiments in the appendix. Here we ask several important questions about the experiment: Q1: What are the advantages of TGC? Q2: Is the memory requirement for TGC really lower? Q3: Is TGC valid for existing temporal graph learning methods? Q4: What restricts the development of temporal graph clustering?"
+        },
+        {
+            "heading": "4.1 BASELINES",
+            "text": "To demonstrate the performance of TGC, we compare it with multiple state-of-the-art methods as baselines. In particular, we divide these methods into three categories: Classic methods refer to some early and highly influential methods, such as DeepWalk (Perozzi et al., 2014), AE (Hinton & Salakhutdinov, 2006), node2vec (Grover & Leskovec, 2016), GAE (Kipf & Welling, 2016), etc. Deep graph clustering methods refer to some methods that focus on clustering nodes on static graphs, such as MVGRL (Hassani & Khasahmadi, 2020), AGE (Cui et al., 2020), DAEGC (Wang et al., 2019), SDCN and SDCNQ (Bo et al., 2020), DFCN (Tu et al., 2021), etc. Temporal graph\nlearning methods refer to some methods that model temporal graphs without node clustering task, such as HTNE (Zuo et al., 2018), TGAT (Xu et al., 2020), JODIE (Kumar et al., 2019), TGN (Rossi et al., 2020), TREND (Wen & Fang, 2022), etc."
+        },
+        {
+            "heading": "4.2 NODE CLUSTERING PERFORMANCE",
+            "text": "Q1: What are the advantages of TGC? Answer: TGC is more adapted to high overlapping graphs and large-scale graphs. As shown in Table 2 and 3, we can observe that:\n(1) Although TGC may not perform optimally on all datasets, the aggregate results are leading. Especially on large-scale datasets, many static clustering methods face the out-of-memory (OOM) problem on GPU (we use NVIDIA RTX 3070 Ti), only SDCN benefits from a simpler architecture and can run on the CPU (not GPU). This is due to the overflow of adjacency matrix computation caused by the excessive number of nodes, and of course, the problem can be avoided by cutting subgraphs. Nevertheless, we also wish to point out that by training the graph in batches, temporal graph learning can naturally avoid the OOM problem. This in turn implies that temporal graph clustering is more flexible than static graph clustering on large-scale temporal graph datasets.\n(2) The performance varies between different datasets, which we believe is due to the datasets belonging to different fields. For example, the arXivCS dataset has 40 domains and some of which overlap, thus it is difficult to say that each category is distinctly different, so the performance is relatively low. On the contrary, node labels of the School dataset come from the class and gender that students are divided into. Students in the same class or sex often interact more frequently, which enables most methods to distinguish them clearly. Note that on the School dataset, almost all temporal methods achieve better performance than static methods. This echoes the complexity problem we analyzed above, as the only dataset where N2 < E, the dataset loses the vast majority of edges when we transfer it to the adjacency matrix, thus static methods face a large loss of valid information.\n(3) The slightly poor performance of temporal graph learning methods compared to deep graph clustering methods supports our claim that current temporal graph methods do not yet focus deeply on the clustering task. In addition, after considering the clustering task, TGC surpasses the static graph clustering method, also indicating that time information is indeed important and effective in the temporal graph clustering task. Note that these temporal methods achieve different results due to different settings, but we consider our TGC framework can effectively help them improve the clustering performance. Next, we will discuss TGC\u2019s memory usage and transferability.\n4.3 GPU MEMORY USAGE STUDY\nQ2: Is the memory requirement for TGC really lower? Answer: Compared to static graph clustering methods, TGC significantly reduces memory requirements.\nWe first compare the memory usage of static clustering methods and TGC on different datasets, which we sort by the number of nodes. As shown in Fig. 2, we report their max memory usage. As the node number increases, the memory usages of static methods become larger and larger, and eventually out-of-memory problem occurs.\nAt the same time, the memory usage of TGC is also gradually increasing, but the magnitude is small and it is still far from the OOM problem. As mentioned above, the main complexity O(|E|) of temporal methods is usually smaller than O(N2) of static methods. To name a few, for the arXivCS dataset with a large number of nodes and interactions, the memory usage of TGC is only 212.77 MB, while the memory usage of SDCN, the only one without OOM problem, is 6946.73 MB. For the Brain dataset with a small number of nodes and a large number of interactions, the memory usage of TGC (121.35 MB) is still smaller than SDCN (626.20 MB). We consider that for large-scale temporal graphs, TGC can be less concerned with memory usage, and thus can be deployed more flexibly to different platforms.\nWe further verify that TGC can flexibly adjust the batch size according to the memory. As we can see in Fig. 3, the runtime and memory footprint are basically inversely proportional on different timing diagram methods. This can also prove our conclusion that temporal graph clustering is able to find a balance between space requirements and time requirements. The only problem that occurs is the running time of TREND when the batch size is 10000, which increases rather than decreases. This is because the TREND model is designed to search for higher-order neighbors, a process that is done by the CPU. When the batch is larger, the number of nodes that have to wait for the CPU search result is also larger. Therefore, the increase in TREND\u2019s runtime on large batches is actually due to the increased computation by the CPU, rather than the GPU problem we usually consider. It also reflects the fact that TGC is flexible enough to find a balance between time consumption and space consumption according to actual requirements, either time for space or space for time is feasible."
+        },
+        {
+            "heading": "4.4 TRANSFERABILITY AND LIMITATION DISCUSSION",
+            "text": "Q3: Is TGC valid for existing temporal graph learning methods? Answer: TGC is a simple general framework that can improve the clustering performance of existing temporal graph learning methods.\nAs shown in Fig. 4, in addition to the baseline HTNE, we also add the TGC framework to TGN and TREND for comparison. Although TGC improves these methods differently, basically they are effective in improving their clustering performance. This means that TGC is a general framework that can be easily applied to different temporal graph methods.\nWe also want to ask Q4: What restricts the development of temporal graph clustering? Answer: (1) Few available datasets and (2) information loss without adjacency matrix.\nOn the one hand, as mentioned above, there are few available public datasets for temporal graph clustering. We collate a lot of raw data and transform them into temporal graphs, and we also discard many of them with low label confidence or incomplete labels. On the other hand, some global information is inevitably lost without adjacency matrix. Since temporal graph clustering is a novel task, there is still a lot of room for expansion of TGC. For example, how to further optimize module migration without adjacency matrix and how to adapt to the incomplete label problem in some graphs.\nThese issues limit the efficiency and performance of temporal graph clustering, and further exploration is required. In conclusion, although the development of temporal graph clustering is only in its infancy, we cannot ignore its possibility as a new solution.\nDue to space constraints, we also present some of the content in the Appendix, which includes the Related Work section and more experiment details (i.e., experimental settings, ablation study, and parameter sensitivity study)."
+        },
+        {
+            "heading": "5 DISCUSSION",
+            "text": "Here we make a summary statement in an attempt to bring out the focus of the paper:\n(1) The main contribution of this paper is not only to present a generalized framework, but also to attempt to introduce and explain the direction of temporal graph clustering in several ways (intuition, method, data, experiment, etc.).\n(2) We focus on temporal graph clustering because it offers a new possibility of clustering based on interaction sequences (adjacency lists) compared to clustering based on adjacency matrices in discrete dynamic or static graphs. Here, we group discrete dynamic and static graphs together because they both require the entire adjacency matrix to be read for training, which can pose a serious memory overflow problem.\n(3) Interaction sequence-based temporal graph clustering does not suffer from memory overflow because it switches to a batch processing model. By feeding the interaction records of nodes into the model in batches, it is possible to modify the batch size to avoid exceeding the memory. We therefore point out that temporal graph clustering is able to flexibly find a balance between temporal and spatial demands, which certainly provides new ideas for current graph clustering models.\n(4) Thus, what we want to show is not that temporal graph clustering performs better compared to other methods, but that it offers new horizons. Under this premise, even if there is a gap in the performance of temporal graph clustering compared to other methods, it does not detract from the benefits of its flexibility."
+        },
+        {
+            "heading": "6 CONCLUSION",
+            "text": "In this paper, we propose a general framework TGC for temporal graph clustering, which adapt clustering techniques to the interaction sequence-based batch-processing pattern of temporal graphs. To introduce temporal graph clustering as comprehensively as possible, we discuss the differences between temporal graph clustering and existing static graph clustering at several levels, including intuition, complexity, data, and experiments. Combining experiment results, we demonstrate the effectiveness of our TGC framework on existing temporal graph learning methods, and point out that temporal graph clustering enables more flexibility in finding a balance between time and space requirements. In the future, we will further focus on large-scale and K-free temporal graph clustering."
+        },
+        {
+            "heading": "ACKNOWLEDGMENTS",
+            "text": "This work was supported by the National Natural Science Foundation of China (Project No. 62325604, 62276271)."
+        },
+        {
+            "heading": "A RELATED WORK",
+            "text": "A.1 DEEP GRAPH CLUSTERING\nNode clustering, commonly known as graph clustering, is a classic and crucial unsupervised task in graph learning (Hamilton, 2020; Liu et al., 2022b). Recently, the utilization of deep learning techniques for graph clustering has emerged as a research trend, resulting in the development of numerous methods (Liu et al., 2023c; Li et al., 2023; Mo et al., 2023a).\nFor instance, GraphEncoder (Tian et al., 2014) generates a non-linear embedding of the original graph through stacked autoencoders, followed by the K-means module to compute the clustering performance. DNGR (Cao et al., 2016) extracts a low-dimensional vector representation for every vertex, capturing the structural information of the graph. By utilizing an attention network to capture the importance of neighboring nodes to a target node, DAEGC (Wang et al., 2019) encodes the topological structure and node content of a graph into a compact representation. ARGA (Pan et al., 2018) encodes the graph structure and node information into a concise embedding, which is then trained using a decoder to reconstruct the structure. MVGRL (Hassani & Khasahmadi, 2020) is a self-supervised method that generates node representations by contrasting structural views of graphs. AGE (Cui et al., 2020) applies a Laplacian smoothing filter, carefully designed to enhance the filtered features for better node embeddings. SDCN (Bo et al., 2020) introduces a structural deep clustering network tointegrate the structural information into deep clustering. DFCN (Tu et al., 2021) utilizes two sub-networks to process augmented graphs independently. DCRN (Liu et al., 2022a) proposes a dual correlation reduction module to reduce information correlation in a dual manner. CGC (Park et al., 2022) learns node embeddings and cluster assignments in a contrastive graph learning framework, where positive and negative samples are carefully selected in a multi-level scheme.\nThe majority of these methods are based on static graphs, where different modules match the adjacency matrix, with the most common being the soft assignment distribution and graph reconstruction Wu et al. (2023; 2024). However, the deep clustering for temporal graphs remains largely unexplored. Temporal graphs emphasize time information between nodes in interaction sequence, which is an important data form of dynamic graphs.\nA.2 TEMPORAL GRAPH LEARNING\nGraph data can be classified into static and dynamic graphs based on the presence or absence of time information Liang et al. (2022); Mo et al. (2023b). Traditional static graphs represent data in the form of an adjacency matrix, where samples are nodes and relationships between samples are edges (He et al., 2021). Various methods based on static graphs process the adjacency matrix in different ways to generate node embeddings, such as DeepWalk (Perozzi et al., 2014), which employs random walk to generate node representations. Node2vec (Grover & Leskovec, 2016) extends the random walk strategy to depth-first and breadth-first. AE (Hinton & Salakhutdinov, 2006) first proposes the auto-encoder framework, while GAE and VGAE (Kipf & Welling, 2016) further extend AE to graph data. GraphSAGE (Hamilton et al., 2017) is the first inductive method on graphs.\nDynamic graphs can be further classified into discrete graphs (discrete-time dynamic graphs, DTDGs) and temporal graphs (continuous-time dynamic graphs, CTDGs). Discrete graphs generate multiple static snapshots based on the fixed time interval, where each snapshot is considered as a static graph, and all snapshots are sorted chronologically (Gao & Ribeiro, 2021; Wu et al., 2021; Liang et al., 2023b). Discrete graph methods typically use the static model to learn each snapshot and then introduce RNN or attention modules to capturethe time information between different snapshots, such as EvolveGCN (Pareja et al., 2020) and DySAT (Sankar et al., 2020). In this case, discrete graphs can still be handled with common graph clustering technologies.\nUnlike discrete graphs, temporal graphs can observe each node interaction more clearly. Temporal graphs, also known as continuous-time dynamic graphs (CTDGs), discard the adjacency matrix form and record node interactions based on the sequence directly. Temporal graph methods can divide data into batches and then feed it into the model for a single batch. For instance, HTNE (Zuo et al., 2018) employs the Hawkes process (Hawkes, 1971) to model historical neighbors\u2019 influence. JODIE (Kumar et al., 2019) aims to predict future node embeddings with uncertain time intervals. DyRep (Trivedi et al., 2019) combines local propagation, self-propagation, and external information patterns\nto generate node embeddings. TGAT (Xu et al., 2020) encodes the time information and introduces the kernel function to decode it. TGN (Rossi et al., 2020) stores the historical memory of each node and then updates them after interactions. MNCI (Liu & Liu, 2021) considers both community influence and neighborhood influence to generate node representations inductively. TREND (Wen & Fang, 2022) utilizes a graph neural network module to model the conditional intensity between nodes. TMac (Liu et al., 2023a) introduces the multi-modal temporal graph network for audiovisual event classification.\nA.3 DIFFERENCE DISCUSSION\nIn fact, most temporal graph methods focus on link prediction rather than node clustering, which we attribute to the facts: On the one hand, temporal graph datasets rarely have corresponding node labels, and their data types are more suitable for targeting edges rather than nodes. On the other hand, the existing clustering techniques need to be adapted for the temporal graphs. Although there are very few methods that refer to the concept of temporal graph clustering from different perspectives, we should still point out that their description of temporal graph clustering is not sufficient:\n(1) CGC (Park et al., 2022) claims to conduct the experiment of temporal graph clustering, but in fact, the experiment is based on discrete dynamic graphs and only carries out on one dataset. We acknowledge that discrete graphs and temporal graphs are inter-convertible, but temporal graphs have a more granular way of observing data than discrete graphs. Discrete graphs have to be processed as static graphs for each snapshot, which means that it can hardly process large-scale graphs. In other words, even discrete dynamic graphs (equivalent to static graphs) with only one static snapshot can cause memory overflow problems, so discrete graphs with multiple static snapshots combined will only appear to be more problematic in this regard. Thus we cannot give up the novel data processing pattern of temporal graph methods, which is one of the implications of temporal graph clustering. As the same reason, DNE (Du et al., 2018), RTSC (You et al., 2021), DyGCN (Cui et al., 2021), and VGRGMM (Li et al., 2022) are successful on discrete graphs, but not applicable to temporal graphs.\n(2) GRACE (Yang et al., 2017) is a classical graph clustering method. Although its title includes \u201cdynamic embedding\u201d, it actually refers to dynamic self-adjustment, which is still a static graph. STAR (Xu et al., 2019) and above Yao et al. (Yao & Joe-Wong, 2021) focus on node classification in temporal graphs, which is a mismatch with the node clustering task.\n(3) Some methods claim to discuss clustering on dynamic or temporal graphs (Gorke et al., 2009; 2013; Matias & Miele, 2017; Nanayakkara et al., 2019; Ruan et al., 2021). However, they tend to use traditional machine learning or data mining algorithms rather than deep learning technologies, that we do not discuss here.\n(4) Some works contain keywords such as \u201ctemporal / dynamic graph clustering\u201d in the title but are less relevant to temporal graph. For example, DeGTeC (Liang et al., 2023c) is a data-parallel job framework for directed acyclic graphs, where the graph and temporal information are fully separated. DCFG (Bu et al., 2017) focuses on the dynamic cluster formation game in attribute graphs. DPC-DLP (Seyedi et al., 2019) considers the clustering task and uses KNN to propagate labels dynamically.\nThrough the introduction of some related work (more works will be described in Appendix), we consider that there is little comprehensive discussion of temporal graph clustering. With this motivation, we propose the general framework TGC and further discuss temporal graph clustering."
+        },
+        {
+            "heading": "B EXPERIMENTS",
+            "text": "B.1 EXPERIMENTAL SETTINGS\nWe conduct node clustering experiments on all datasets for all methods. First, we perform these models to generate node embeddings on all datasets, then utilize K-means to cluster these embeddings. We select Accuracy (ACC), Normalized Mutual Information (NMI), Average Rand Index (ARI), and macro F1-score (F1) as metrics.\nWe utilize Adam as the optimizer and select the value of hyper-parameters embedding dimension size d, batch size, historical sequence length l, negative sampling size Q, and learning rate as 128,\n1024, 3, 5, and 0.01, respectively. We set the epoch number T \u2264 200 on all datasets. For all baseline methods, we utilize their default parameter values.\nOur proposed TGC framework is implemented with PyTorch, and all models are running on NVIDIA RTX 3070Ti GPUs (8GB), 64GB RAM, 3.2GHz Intel i9-12900KF CPU.\nB.2 ABLATION STUDY\nTo verify the effectiveness of our proposed module in TGC, we conducted an ablation study experiment on three datasets. Our TGC method includes temporal loss and clustering loss, where the temporal loss is a classic basic module introduced by many works and has not been modified. Therefore, the ablation study focuses only on the clustering loss, including the node-level module and batch-level module. We remove one module at a time to verify its effectiveness. Specifically, if the model only retains the temporal loss, we name it \u201cTem\u201d. If the model includes an additional node-level or batch-level module on top of the temporal loss, we respectively name them \u201cTem+Node\u201d and \u201cTem+Batch\u201d. We compare these models with the full model \u201cTGC\u201d.\nAccording to Fig. 5, we observe that both the node-level and batch-level modules can effectively improve the performance of the model. In most cases, the node-level module has a greater effect on performance improvement than the batch-level module. The best performance is achieved when both modules are added to the model simultaneously. This suggests that the two modules we proposed can effectively enhance clustering performance, with the node-level module playing the most important role.\nB.3 PARAMETER SENSITIVITY STUDY\nIn this section, we analyze some hyper-parameters in TGC, including the historical sequence length, l, and the negative sampling number, Q.\nAs mentioned in the Problem Definition section, the historical sequence length, l, is an important hyper-parameter in temporal graph learning. In real-world graphs, the total number of neighbors may vary from node to node. To avoid computational inconvenience, we fix the sequence length, l, and select the latest l neighbors for all nodes in each batch, instead of all neighbors. Based on previous works (Zuo et al., 2018; Lu et al., 2019; Xu et al., 2020; Wang et al., 2021; Wen & Fang, 2022; Liu et al., 2023b) and our experiments, we select different values for l/Q, i.e., l/Q = 1/2/3/5/10, to verify the sensitivity of l and Q.\nAs shown in Figs. 6\u201311, we report the effects of different parameter settings. It can be found that:\n(1) TGC is relatively insensitive to different parameter settings, as the experimental results often fluctuate within a small range. This demonstrates the stability of our framework, which is not constrained by hyper-parameter settings.\n(2) Changing the parameters will inevitably have some impact on the experimental results, from which we can discover patterns. Regarding the historical neighbor sequence length, l, we find that larger values are not always better, which is consistent with our previous statement. When l is too small, the model may not obtain enough neighborhood information, resulting in poor performance. As l increases, the performance gradually improves, but after reaching a certain threshold, the performance decreases again. This is because an excessively long neighbor sequence considers very early neighbor nodes, which have little influence on the current interaction and instead introduce noise. This also reflects that time information is relatively important, and different considerations of time information will bring different changes in performance. In addition, we argue that the optimal length of l varies on different datasets, depending on the average degree of the dataset.\n(3) The selection of the number of negative samples, Q, for negative sampling has a high degree of uncertainty, which is not only related to the average node degree of different datasets but also affected by different model structures. Generally, choosing Q = 2/3/5 leads to better results, and the variation in Q does not have a significant impact. This is because we encourage the positive conditional intensity to be large enough, while also restricting negative intensities to be as small as possible. The ideal case is that negative intensities go to 0. In other words, as all of these negative intensities go to 0, no amount of negative samples will make much difference to the loss value. Therefore, the low sensitivity of TGC to Q precisely indicates that it can distinguish positive and negative samples well.\nIn summary, the TGC framework is not sensitive to the choice of hyper-parameters, and we set default values that can be used for all datasets, i.e., l = 3 and Q = 5, for convenience."
+        }
+    ],
+    "title": "DEEP TEMPORAL GRAPH CLUSTERING",
+    "year": 2024
+}

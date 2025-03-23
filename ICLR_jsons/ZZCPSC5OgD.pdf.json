@@ -1,0 +1,695 @@
+{
+    "abstractText": "Lip-to-speech involves generating a natural-sounding speech synchronized with a soundless video of a person talking. Despite recent advances, current methods still cannot produce high-quality speech with high levels of intelligibility for challenging and realistic datasets such as LRS3. In this work, we present LipVoicer, a novel method that generates high-quality speech, even for in-the-wild and rich datasets, by incorporating the text modality. Given a silent video, we first predict the spoken text using a pre-trained lip-reading network. We then condition a diffusion model on the video and use the extracted text through a classifier-guidance mechanism where a pre-trained automatic speech recognition (ASR) serves as the classifier. LipVoicer outperforms multiple lip-to-speech baselines on LRS2 and LRS3, which are in-the-wild datasets with hundreds of unique speakers in their test set and an unrestricted vocabulary. Moreover, our experiments show that the inclusion of the text modality plays a major role in the intelligibility of the produced speech, readily perceptible while listening, and is empirically reflected in the substantial reduction of the word error rate (WER) metric. We demonstrate the effectiveness of LipVoicer through human evaluation, which shows that it produces more natural and synchronized speech signals compared to competing methods. Finally, we created a demo showcasing LipVoicer\u2019s superiority in producing natural, synchronized, and intelligible speech, providing additional evidence of its effectiveness. Project page and code: https://github.com/yochaiye/LipVoicer",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "LIP READING"
+        },
+        {
+            "affiliations": [],
+            "name": "Yochai Yemini"
+        },
+        {
+            "affiliations": [],
+            "name": "Aviv Shamsian"
+        },
+        {
+            "affiliations": [],
+            "name": "Lior Bracha"
+        },
+        {
+            "affiliations": [],
+            "name": "Sharon Gannot"
+        },
+        {
+            "affiliations": [],
+            "name": "Ethan Fetaya"
+        }
+    ],
+    "id": "SP:a78db3e46e05cf79325a0ae30b4878cb6cf3b41c",
+    "references": [
+        {
+            "authors": [
+                "Triantafyllos Afouras",
+                "Joon Son Chung",
+                "Andrew Senior",
+                "Oriol Vinyals",
+                "Andrew Zisserman"
+            ],
+            "title": "Deep audio-visual speech recognition",
+            "venue": "In arXiv:1809.02108,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Triantafyllos Afouras",
+                "Joon Son Chung",
+                "Andrew Zisserman"
+            ],
+            "title": "LRS3-TED: a large-scale dataset for visual speech",
+            "venue": "recognition. arXiv,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Miko\u0142aj Bi\u0144kowski",
+                "Jeff Donahue",
+                "Sander Dieleman",
+                "Aidan Clark",
+                "Erich Elsen",
+                "Norman Casagrande",
+                "Luis C Cobo",
+                "Karen Simonyan"
+            ],
+            "title": "High fidelity speech synthesis with adversarial networks",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Zal\u00e1n Borsos",
+                "Rapha\u00ebl Marinier",
+                "Damien Vincent",
+                "Eugene Kharitonov",
+                "Olivier Pietquin",
+                "Matt Sharifi",
+                "Olivier Teboul",
+                "David Grangier",
+                "Marco Tagliasacchi",
+                "Neil Zeghidour"
+            ],
+            "title": "Audiolm: a language modeling approach to audio generation",
+            "venue": "arXiv preprint arXiv:2209.03143,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Maxime Burchi",
+                "Radu Timofte"
+            ],
+            "title": "Audio-visual efficient conformer for robust speech recognition",
+            "venue": "In Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV),",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Nanxin Chen",
+                "Yu Zhang",
+                "Heiga Zen",
+                "Ron J Weiss",
+                "Mohammad Norouzi",
+                "William Chan"
+            ],
+            "title": "Wavegrad: Estimating gradients for waveform generation",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jeongsoo Choi",
+                "Joanna Hong",
+                "Yong Man Ro"
+            ],
+            "title": "Diffv2s: Diffusion-based video-to-speech synthesis with vision-guided speaker embedding",
+            "venue": "arXiv preprint arXiv:2308.07787,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Jeongsoo Choi",
+                "Minsu Kim",
+                "Yong Man Ro"
+            ],
+            "title": "Intelligible lip-to-speech synthesis with speech units, 2023b",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "J.S. Chung",
+                "A. Zisserman"
+            ],
+            "title": "Out of time: automated lip sync in the wild",
+            "venue": "In Workshop on Multi-view Lip-reading,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Martin Cooke",
+                "Jon Barker",
+                "Stuart P. Cunningham",
+                "Xu Shao"
+            ],
+            "title": "An audio-visual corpus for speech perception and automatic speech recognition",
+            "venue": "The Journal of the Acoustical Society of America,",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "Alexandros Haliassos",
+                "Stavros Petridis",
+                "Bj\u00f6rn W. Schuller",
+                "Maja Pantic"
+            ],
+            "title": "SVTS: scalable video-to-speech synthesis",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Prafulla Dhariwal",
+                "Alexander Nichol"
+            ],
+            "title": "Diffusion models beat gans on image synthesis",
+            "venue": "Advances in Neural Information Processing Systems (NeurIPS),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Ruohan Gao",
+                "Kristen Grauman"
+            ],
+            "title": "Visualvoice: Audio-visual speech separation with cross-modal consistency",
+            "venue": "In CVPR,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Deepanway Ghosal",
+                "Navonil Majumder",
+                "Ambuj Mehrish",
+                "Soujanya Poria"
+            ],
+            "title": "Text-to-audio generation using instruction-tuned llm and latent diffusion model",
+            "venue": "arXiv preprint arXiv:2304.13731,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Karan Goel",
+                "Albert Gu",
+                "Chris Donahue",
+                "Christopher R\u00e9"
+            ],
+            "title": "It\u2019s raw! audio generation with state-space models",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Naomi Harte",
+                "Eoin Gillen"
+            ],
+            "title": "Tcd-timit: An audio-visual corpus of continuous speech",
+            "venue": "IEEE Transactions on Multimedia,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Michael Hassid",
+                "Michelle Tadmor Ramanovich",
+                "Brendan Shillingford",
+                "Miaosen Wang",
+                "Ye Jia",
+                "Tal Remez"
+            ],
+            "title": "More than words: In-the-wild visually-driven prosody for text-to-speech",
+            "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Kaiming He",
+                "Xiangyu Zhang",
+                "Shaoqing Ren",
+                "Jian Sun"
+            ],
+            "title": "Deep Residual Learning for Image Recognition",
+            "venue": "In Proceedings of 2016 IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Jonathan Ho",
+                "Tim Salimans"
+            ],
+            "title": "Classifier-free diffusion guidance",
+            "venue": "In NeurIPS Workshop on Deep Generative Models and Downstream Applications,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jonathan Ho",
+                "Ajay Jain",
+                "Pieter Abbeel"
+            ],
+            "title": "Denoising diffusion probabilistic models",
+            "venue": "Advances in Neural Information Processing Systems (NeurIPS),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Wei-Ning Hsu",
+                "Tal Remez",
+                "Bowen Shi",
+                "Jacob Donley",
+                "Yossi Adi"
+            ],
+            "title": "Revise: Self-supervised speech resynthesis with visual input for universal and generalized speech enhancement",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Myeonghun Jeong",
+                "Hyeongju Kim",
+                "Sung Jun Cheon",
+                "Byoung Jin Choi",
+                "Nam Soo Kim"
+            ],
+            "title": "Diff-tts: A denoising diffusion model for text-to-speech",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Nal Kalchbrenner",
+                "Erich Elsen",
+                "Karen Simonyan",
+                "Seb Noury",
+                "Norman Casagrande",
+                "Edward Lockhart",
+                "Florian Stimberg",
+                "Aaron Oord",
+                "Sander Dieleman",
+                "Koray Kavukcuoglu"
+            ],
+            "title": "Efficient neural audio synthesis",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Heeseung Kim",
+                "Sungwon Kim",
+                "Sungroh Yoon"
+            ],
+            "title": "Guided-TTS: A diffusion model for text-to-speech via classifier guidance",
+            "venue": "In Proceedings of the 39th International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Minsu Kim",
+                "Joanna Hong",
+                "Yong Man Ro"
+            ],
+            "title": "Lip to speech synthesis with visual context attentional gan",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Minsu Kim",
+                "Joanna Hong",
+                "Yong Man Ro"
+            ],
+            "title": "Lip-to-speech synthesis in the wild with multi-task learning",
+            "venue": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Davis E. King"
+            ],
+            "title": "Dlib-ml: A machine learning toolkit",
+            "venue": "Journal of Machine Learning Research,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Zhifeng Kong",
+                "Wei Ping",
+                "Jiaji Huang",
+                "Kexin Zhao",
+                "Bryan Catanzaro"
+            ],
+            "title": "Diffwave: A versatile diffusion model for audio synthesis",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Sang-gil Lee",
+                "Heeseung Kim",
+                "Chaehun Shin",
+                "Xu Tan",
+                "Chang Liu",
+                "Qi Meng",
+                "Tao Qin",
+                "Wei Chen",
+                "Sungroh Yoon",
+                "Tie-Yan Liu"
+            ],
+            "title": "Priorgrad: Improving conditional denoising diffusion models with data-dependent adaptive prior",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Ningning Ma",
+                "Xiangyu Zhang",
+                "Hai-Tao Zheng",
+                "Jian Sun"
+            ],
+            "title": "Shufflenet v2: Practical guidelines for efficient cnn architecture design",
+            "venue": "In Computer Vision \u2013 ECCV 2018,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Pingchuan Ma",
+                "Brais Mart\u00ednez",
+                "Stavros Petridis",
+                "Maja Pantic"
+            ],
+            "title": "Towards practical lipreading with distilled and efficient models",
+            "venue": "In IEEE International Conference on Acoustics, Speech and Signal Processing,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Pingchuan Ma",
+                "Stavros Petridis",
+                "Maja Pantic"
+            ],
+            "title": "Visual Speech Recognition for Multiple Languages in the Wild",
+            "venue": "Nature Machine Intelligence,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Pingchuan Ma",
+                "Alexandros Haliassos",
+                "Adriana Fernandez-Lopez",
+                "Honglie Chen",
+                "Stavros Petridis",
+                "Maja Pantic"
+            ],
+            "title": "Auto-avsr: Audio-visual speech recognition with automatic labels, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Rodrigo Mira",
+                "Konstantinos Vougioukas",
+                "Pingchuan Ma",
+                "Stavros Petridis",
+                "Bj\u00f6rn W Schuller",
+                "Maja Pantic"
+            ],
+            "title": "End-to-end video-to-speech synthesis using generative adversarial networks",
+            "venue": "IEEE Transactions on Cybernetics,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Daniel S. Park",
+                "William Chan",
+                "Yu Zhang",
+                "Chung-Cheng Chiu",
+                "Barret Zoph",
+                "Ekin D. Cubuk",
+                "Quoc V. Le"
+            ],
+            "title": "Specaugment: A simple data augmentation method for automatic speech recognition, 2019",
+            "venue": "URL http://arxiv.org/abs/1904.08779",
+            "year": 1904
+        },
+        {
+            "authors": [
+                "Hyun Joon Park",
+                "Seok Woo Yang",
+                "Jin Sob Kim",
+                "Wooseok Shin",
+                "Sung Won Han"
+            ],
+            "title": "Triaan-vc: Triple adaptive attention normalization for any-to-any voice conversion",
+            "venue": "arXiv preprint arXiv:2303.09057,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Wei Ping",
+                "Kainan Peng",
+                "Jitong Chen"
+            ],
+            "title": "Clarinet: Parallel wave generation in end-to-end text-tospeech",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Vadim Popov",
+                "Ivan Vovk",
+                "Vladimir Gogoryan",
+                "Tasnima Sadekova",
+                "Mikhail Kudinov"
+            ],
+            "title": "Grad-tts: A diffusion probabilistic model for text-to-speech",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "KR Prajwal",
+                "Rudrabha Mukhopadhyay",
+                "Vinay P Namboodiri",
+                "CV Jawahar"
+            ],
+            "title": "Learning individual speaking styles for accurate lip to speech synthesis",
+            "venue": "In Conference on Computer Vision and Pattern Recognition (CVPR),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Chandan K A Reddy",
+                "Vishak Gopal",
+                "Ross Cutler"
+            ],
+            "title": "Dnsmos p.835: A non-intrusive perceptual objective speech quality metric to evaluate noise suppressors",
+            "venue": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Bowen Shi",
+                "Wei-Ning Hsu",
+                "Kushal Lakhotia",
+                "Abdelrahman Mohamed"
+            ],
+            "title": "Learning audiovisual speech representation by masked multimodal cluster prediction",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Berrak Sisman",
+                "Junichi Yamagishi",
+                "Simon King",
+                "Haizhou Li"
+            ],
+            "title": "An overview of voice conversion and its challenges: From statistical modeling to deep learning",
+            "venue": "IEEE/ACM Trans. Audio, Speech and Lang. Proc.,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jiaqi Su",
+                "Zeyu Jin",
+                "Adam Finkelstein"
+            ],
+            "title": "Hifi-gan: High-fidelity denoising and dereverberation based on speech deep features in adversarial networks",
+            "venue": "In Interspeech,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yaniv Taigman",
+                "Lior Wolf",
+                "Adam Polyak",
+                "Eliya Nachmani"
+            ],
+            "title": "Voiceloop: Voice fitting and synthesis via a phonological loop",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Rafael Valle",
+                "Kevin J Shih",
+                "Ryan Prenger",
+                "Bryan Catanzaro"
+            ],
+            "title": "Flowtron: an autoregressive flowbased generative network for text-to-speech synthesis",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "A\u00e4ron van den Oord",
+                "Sander Dieleman",
+                "Heiga Zen",
+                "Karen Simonyan",
+                "Oriol Vinyals",
+                "Alex Graves",
+                "Nal Kalchbrenner",
+                "Andrew Senior",
+                "Koray Kavukcuoglu"
+            ],
+            "title": "Wavenet: A generative model for raw audio",
+            "venue": "In 9th ISCA Speech Synthesis Workshop,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Yuxuan Wang",
+                "RJ Skerry-Ryan",
+                "Daisy Stanton",
+                "Yonghui Wu",
+                "Ron J Weiss",
+                "Navdeep Jaitly",
+                "Zongheng Yang",
+                "Ying Xiao",
+                "Zhifeng Chen",
+                "Samy Bengio"
+            ],
+            "title": "Tacotron: Towards end-to-end speech synthesis",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Dongchao Yang",
+                "Jianwei Yu",
+                "Helin Wang",
+                "Wen Wang",
+                "Chao Weng",
+                "Yuexian Zou",
+                "Dong Yu"
+            ],
+            "title": "Diffsound: Discrete diffusion model for text-to-sound generation",
+            "venue": "IEEE/ACM Transactions on Audio, Speech, and Language Processing,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ryandhimas E. Zezario",
+                "Szu-Wei Fu",
+                "Chiou-Shann Fuh",
+                "Yu Tsao",
+                "Hsin-Min Wang"
+            ],
+            "title": "Stoi-net: A deep learning based non-intrusive speech intelligibility assessment model. 2020 Asia-Pacific Signal and Information Processing",
+            "venue": "Association Annual Summit and Conference (APSIPA ASC),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Ma"
+            ],
+            "title": "2018) network and then a TCN",
+            "venue": "Full details can be found in Ma et al",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Following Sisman"
+            ],
+            "title": "2020), we argue that using intrusive measures like PESQ and STOI in our problem is fundamentally incorrect. To exemplify it, we show that if we take a recording of a certain speaker, they cannot differentiate between the a noisy version of the recording and the same recording with the change of a speaker. To this end, we use the the following experiment: we took a speech signal x and created two versions",
+            "year": 2020
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "In the lip-to-speech task, we are given a soundless video of a person talking and are required to accurately and precisely generate the missing speech. Such a task may occur, e.g., when the speech signal is completely obfuscated due to background noises. This task poses a significant challenge as it requires the generated speech to satisfy multiple criteria. This includes intelligibility, synchronization with lip motion, naturalness, and alignment with the speaker\u2019s characteristics such as age, gender, accent, and more. Another major hurdle for lip-to-speech techniques is the ambiguities inherent in lip motion, as several phonemes can be attributed to the same lip movement sequence. Resolving these ambiguities requires the analysis of lip motion in a broader context within the video.\nGenerating speech from a silent video has seen significant progress in recent years, partly due to advancements made in deep generative models. Specifically in applications such as text-to-speech and mel-spectogram-to-audio (neural vocoder) (Kong et al., 2021; Kim et al., 2022). Despite these advancements, many lip-to-speech methods produce satisfying results only when applied to datasets with a limited number of speakers, and constrained vocabularies, like GRID (Cooke et al., 2006) and TCD-TIMIT (Harte & Gillen, 2015). Therefore, speech generation for silent videos in-the-wild still lags behind. We found that these methods struggle to reliably generate natural speech with a high degree of intelligibility on more challenging datasets like LRS2 (Afouras et al., 2018a) and LRS3 (Afouras et al., 2018b).\nIn this paper, we propose LipVoicer, a novel approach for producing high-quality speech for silent videos. The first and crucial part of LipVoicer is leveraging a lip-reading model at inference time,\nfor extracting the transcription of the speech we wish to generate. Next, we train a diffusion model, conditioned only on the video, to generate mel-spectrograms. The generation process at inference time is guided by both the video and the predicted transcription. Consequently, our model successfully intertwines the information conveyed by textual modality with the dynamics and characteristics of the speaker, captured by the diffusion model. Incorporating the inferred text has an additional benefit, as it allows LipVoicer to alleviate the lip motion ambiguity to a great extent. Finally, we use the DiffWave (Kong et al., 2021) neural vocoder to generate the raw audio. A diagram of with all of the components in our approach is depicted in Fig. 1 (except the vocoder). Some previous methods often use text to guide the generation process at train time. We, however, utilize it at inference time. The text, transcribed using a lip-reader, allows us to utilize guidance (Dhariwal & Nichol, 2021; Ho & Salimans, 2021) which ensures that the text of the generated audio corresponds to the target text.\nWe evaluate our LipVoicer model on the challenging LRS2 and LRS3 datasets. These datasets are \u201cin-the-wild\u201d videos, with hundreds of unique speakers and with an open vocabulary. We show that our proposed design leads to the best results on these datasets in both human evaluations as well as WER of an ASR system.\nTo the best of our knowledge, LipVoicer is the first method to use text inferred by lip-reading to enhance lip-to-speech synthesis. The inclusion of the text modality in inference removes the uncertainty of deciphering which of the possible candidate phonemes correspond to the lip motion. Additionally, it helps the diffusion model to focus on creating naturally synced speech. The speech generated by LipVoicer is intelligible, well synchronized to the video, and sounds natural. Finally, LipVoicer achieves state-of-the-art results for highly challenging in-the-wild datasets."
+        },
+        {
+            "heading": "2 BACKGROUND",
+            "text": ""
+        },
+        {
+            "heading": "2.1 DENOISING DIFFUSION PROBABILISTIC MODELS (DDPM)",
+            "text": "DDPM define a forward process that gradually turns the input into Gaussian noise, then learn the reverse process that tries to recover the input. Specifically, assume a training data point is sampled from the data distribution we wish to model x0 \u223c pdata(x). The forward process is defined as q(xt|xt\u22121) = N (xt| \u221a 1\u2212 \u03b2txt\u22121, \u03b2tI) where {\u03b21, ..., \u03b2t, ..., \u03b2T } is a pre-defined noise\nschedule. We can deduce from Gaussian properties that q(xt|x0) = N (xt| \u221a \u03b1\u0304tx0, (1\u2212 \u03b1\u0304t)I) with \u03b1\u0304t = \u03a0 t s=1\u03b1s, and \u03b1t = 1 \u2212 \u03b2t. A sample of xt can be obtained by sampling \u03f5 \u223c N (0, I), and\nusing the reparametrization trick, xt = \u221a \u03b1\u0304tx0 + \u221a 1\u2212 \u03b1\u0304t\u03f5. Under mild conditions, the distribution at the final step q(xT ) is approximately given by a standard Gaussian distribution.\nIn the reverse process proposed in Ho et al. (2020), p\u03b8(xt\u22121|xt) is then learned by a neural network that tries to approximate q(xt\u22121|xt,x0). In Ho et al. (2020) it was also shown that in order to learn p\u03b8(xt\u22121|xt) it is enough if our model\u2019s output \u03f5\u03b8(xt, t) is trained to recover the added noise \u03f5 used to generate xt from x0. The loss function used to train the diffusion model is Et,x0,\u03f5 [ ||\u03f5\u2212 \u03f5\u03b8(xt, t)||2 ] . At inference time, given xt and the inferred noise, we can sample from p\u03b8(xt\u22121|xt) by taking xt\u22121 =\n1\u221a \u03b1\u0304t ( xt \u2212 \u03b2t\u221a1\u2212\u03b1\u0304t \u03f5\u03b8(xt, t) ) + \u03b2tz where z \u223c N (0, I)."
+        },
+        {
+            "heading": "2.2 GUIDANCE",
+            "text": "One key feature in many diffusion models is the use of guidance for conditional generation. Guidance, both with or without a classifier, enables us to \u201cguide\u201d our iterative inference process to generate outputs that are more faithful to our conditioning information, e.g., in text-to-image, it helps enforce that the generated images match the prompt text.\nAssume we wish to sample from q(xt|c), xt is our sample at the current iteration, c is some context, and p(c|xt) is a pre-trained classifier. Our goal is to generate xt\u22121. The idea of classifier guidance (Dhariwal & Nichol, 2021) is to use the classifier to guide the diffusion process to generate outputs that have the right context c. Specifically, if the diffusion model returns \u03f5\u03b8(xt, t), the classifier guidance alters the noise term that will be used for the update to \u03f5\u0302 = \u03f5\u03b8(xt, t)\u2212 \u03c91 \u221a 1\u2212 \u03b1\u0304t\u2207xt log p(c|xt) where \u03c91 is a hyperparameter that controls the level of guidance.\nIn a later work (Ho & Salimans, 2021), a classifier-free guidance that removes the dependence on an existing classifier is proposed. In classifier-free guidance, we make two noise predictions, one with the conditioning context information, \u03f5\u03b8(xt, c, t), and one without it - \u03f5\u03b8(xt, t). We then use \u03f5\u0302 = \u03f5\u03b8(xt, c, t) + \u03c92(\u03f5\u03b8(xt, c, t) \u2212 \u03f5\u03b8(xt, t)) where the hyperparameter \u03c92 controls the guidance strength. This allows us to enhance the update directions that correspond to the context c."
+        },
+        {
+            "heading": "3 RELATED WORK",
+            "text": ""
+        },
+        {
+            "heading": "3.1 AUDIO GENERATION",
+            "text": "Following their success in image generation, diffusion models took a leading role as a neural vocoder and in text-to-speech. Examples include: WaveGrad (Chen et al., 2021), Diff-TTS (Jeong et al., 2021), DiffWave (Kong et al., 2021), Grad-TTS (Popov et al., 2021), PriorGrad (Lee et al., 2021), SaShiMi (Goel et al., 2022), Tango (Ghosal et al., 2023), and Diffsound (Yang et al., 2023). Other important audio generation models that do not rely on diffusion models include: WaveNet (van den Oord et al., 2016), HiFi-GAN (Su et al., 2020), Tacotron (Wang et al., 2017), VoiceLoop (Taigman et al., 2018), WaveRNN (Kalchbrenner et al., 2018), ClariNet (Ping et al., 2018), GAN-TTS (Bin\u0301kowski et al., 2019), Flowtron (Valle et al., 2021), and AudioLM (Borsos et al., 2022).\nWe note that despite the recent progress, unconditional speech generation quality is still unsatisfactory. Thus, some conditioning, e.g., text or mel-spectrogram, is required for high-quality speech generation. We also note that many audio generation models, and particularly lip-to-speech techniques, adopt a sequential approach. Namely, first generating the mel-spectrogram and then using it to generate the raw audio using a pre-trained vocoder."
+        },
+        {
+            "heading": "3.2 VISUAL SPEECH RECOGNITION",
+            "text": "The field of lip-to-text, also referred to as lip-reading, has seen significant progress in recent years, and multiple techniques are now available (Ma et al., 2022; Shi et al., 2022; Ma et al., 2023). Impressively, they can cope with adverse visual conditions, such as videos where the mouth of the speaker is only partly frontal, challenging lighting conditions and various languages. Use cases of visual speech recognition include resolving multi-talker simultaneous speech and transcribing archival silent films. In our context, using a powerful lip-reading system can help guide the lip-to-speech process."
+        },
+        {
+            "heading": "3.3 LIP-TO-SPEECH SYNTHESIS",
+            "text": "The task in this research area is to reconstruct the underlying speech signal from a silent talking-face video. A common approach to lip-to-speech includes a video encoder followed by a speech decoder that generates a mel-spectrogram, that is fed to a neural vocoder to generate the final time-domain audio. These techniques have garnered significant attention due to their potential applications in cases where the speech is missing or corrupted. This may occur, for example, due to strong background noise, or when the speech of a person located in the background of the video recording should be attended.\nPreliminary studies such as Lip2Wav (Prajwal et al., 2020), End-to-end GAN (Mira et al., 2022), VCA-GAN (Kim et al., 2021) focused on datasetes with limited vocabularies and a number of speakers. Subsequent works such as SVTS (de Mira et al., 2022) addressed more realistic in-the-wild datasets. Recent techniques tremendously improve performance by using AV-HuBERT (Shi et al., 2022) to represent speech by a set of discrete tokens, which are predicted from the video. In ReVISE (Hsu et al., 2022), the authors use AV-HuBERT architecture to generate the audio from the tokens using HiFi-GAN. Concurrently to our work, speech units are also used in Choi et al. (2023b). Also concurrent to LipVoicer, a diffusion-based method is proposed in Choi et al. (2023a).\nIn Lip2Speech (Kim et al., 2023), the authors use the ground truth text and a pre-trained ASR as an additional loss during training to try to enforce that the generated speech will have the correct text. We, however, use predicted text at inference time."
+        },
+        {
+            "heading": "4 LIPVOICER",
+            "text": "This section details our proposed LipVoicer scheme for lip-to-speech generation. Given a silent talking-face video V , LipVoicer generates a mel-spectrogram that corresponds to a high likelihood underlying speech signal. The proposed method comprises three main components:\n1. A mel-spectrogram generator (MelGen) that learns to create a mel-spectrogram image from V .\n2. A pre-trained lip-reading network that infers the most likely text from the silent video. 3. An ASR system that anchors the mel-spectrogram recovered by MelGen to the text predicted\nby the lip-reader.\nAt first, we train MelGen, a conditional denoising diffusion probabilistic models (DDPM) model trained to generate a mel-spectrogram waveform x conditioned on the video V without the text modality. We use classifier-free guidance to train MelGen (see Section 2.2). Similar to diffusionbased frameworks in text-to-speech, e.g. Jeong et al. (2021), we use a DiffWave (Kong et al., 2021) residual backbone for MelGen. When considering the representation for V , we wish for our representation to encapsulate all the needed information to generate the mel-spectrogram, i.e. the content (spoken words) and dynamics (accent, intonation) of the underlying speech, the timing of each part of speech, as well as the identity of the speaker, e.g. gender, age, etc. However, we wish to remove all irrelevant information to help train and remove unnecessary computational costs. To this end, V is preprocessed by creating a cropped mouth region video VL and randomly choosing a single full-face image IF . Notably, V corresponds to the content and dynamics, and IF relates to the speaker characteristics. The mouth cropping was implemented according to the procedure in Ma et al. (2022).\nTo extract features from VL and IF , we use an architecture similar to the one described in VisualVoice (Gao & Grauman, 2021), an audio-visual speech separation model. For IF , the face embedding\nf \u2208 RDf is computed using ResNet-18 (He et al., 2016) with the last two layers discarded. The lip video VL is encoded using a lip-reading architecture (Ma et al., 2021). It is composed of a 3D convolutional layer followed by ShuffleNet v2 (Ma et al., 2018) and then a temporal convolutional network (TCN), resulting in the lip video embedding m \u2208 RN\u00d7Dm , where N and Dm signify the number of frames and channels, respectively. In order to merge the face and lip video embeddings, f is replicated N times and concatenated to m, yielding the video embedding v \u2208 RN\u00d7D, where D = Df +Dm. Next, a DDPM is trained to generate the mel-spectrogram with and without the conditioning on the video embedding v following the classifier-free mechanism (Ho & Salimans, 2021).\nIn order to make MelGen perform well in scenarios characterized by an unconstrained vocabulary, at inference time we use the text modality as an additional source of guidance. In general, syllables uttered in a silent talking-face video can be ambiguous, and may consequently lead to an incoherent reconstructed speech. It can therefore be beneficial to harness recent advances in lip-reading and ground the generated mel-spectrogram to the text predicted by a pretrained lip-reading network. The question is how to best include this textual information in our framework. One could simply add it as a global conditioning, similar to IF ; however, this ignores the temporal information in the text. One could also try to align the text and the video, which is a complicated process that would introduce additional errors.\nTo circumvent the challenge of aligning text with video content, we employ text guidance by harnessing the classifier guidance approach (Dhariwal & Nichol, 2021), similarly to Kim et al. (2022). Using a powerful ASR model, we can compute \u2207x log p(tLR|x) needed for guidance, where tLR is the text predicted by a lip-reader. The inferred noise \u03f5\u0302 used in the inference update step of the diffusion model is thus modified by both classifier guidance and classifier-free guidance:\n\u03f5\u0302 = \u03f5mg(xt,VL, IF , \u03c91)\u2212 \u03c92 \u221a 1\u2212 \u03b1\u0304t\u2207xt log p(tLR|xt) , (1)\nwhere xt is the mel-spectrogram at time step t of the diffusion inference process, and\n\u03f5mg(xt,VL, IF , \u03c91) = (1 + \u03c91)\u03f5\u03b8(xt,VL, IF )\u2212 \u03c91\u03f5\u03b8(xt) (2) is the estimated diffusion noise at the output of MelGen, and \u03c91, \u03c92 are hyperparameters. Note that we use an ASR rather than audio-video ASR, namely xt is used as an input to the speech recognizer while the video signal is discarded in order to encourage the model to focus on audio generation.\nIn our experiments, we noticed that during the generation process, \u03f5mg was much larger in magnitude compared to\u2207xt log p(tLR|xt) which led to difficulties in correctly setting \u03c92 and to unsatisfactory mel-spectrogram estimates. To remedy this, we followed Kim et al. (2022) by introducing a gradient normalization factor, i.e. Eq. 1 becomes\n\u03f5\u0302 = \u03f5mg \u2212 \u03c92\u03b3t \u221a 1\u2212 \u03b1\u0304t\u2207xt log p(tLR|xt) (3)\nwhere\n\u03b3t = ||\u03f5mg||\u221a\n1\u2212 \u03b1\u0304t \u00b7 ||\u2207xt log p(tLR|xt)|| . (4)\nand || \u00b7 || is the Frobenius norm. The inference process is summarized in Algorithm 1 in the Appendix. Classifier guidance allows us to train MelGen that is solely conditioned on V , and use a pre-trained ASR to make the generated speech match tLR. As a result, the ASR is responsible for the precise words in the estimated speech, and MelGen provides the voice characteristics, synchronization between V and x, and the continuity of the speech. One additional advantage of this approach is the modularity and ease of substituting both the lip-to-text and the ASR modules. If one wishes to substitute these models with improved versions in the future, the process can be accomplished effortlessly without requiring any re-training. Finally, a DiffWave vocoder (Kong et al., 2021) is used to transform the reconstructed mel-spectrogram to a time-domain speech signal. Note that the vocoder does not appear in Fig. 1."
+        },
+        {
+            "heading": "5 EXPERIMENTS",
+            "text": "In this section, we compare LipVoicer to various lip-to-speech approaches. We use multiple datasets and learning setups to evaluate LipVoicer. To encourage future research and reproducibility, our source\ncode will be made publicly available. Additional ablation studies, experimental results on GRID, and complete details are provided in the Appendix. We also created the following website https: //lipvoicer.github.io containing sample videos generated by all compared approaches. We believe this is the best way to fully understand the performance gain of LipVoicer, and highly encourage the readers to visit.\nDatasets LipVoicer is compared against the baselines on the highly challenging datasets LRS2 (Afouras et al., 2018a) and LRS3 (Afouras et al., 2018b). LRS2 contains roughly 142,000 videos of British English in its train and pre-train splits, which amounts to 220 hours of speech by various speakers. In the test set, there are 1,243 videos. The train and pre-train sets of LRS3 comprise 9,000 different speakers, contributing 151,000 videos which are stretched across 430 hours of speech videos. There are 1,452 videos in the test split. The language spoken in LRS3 videos is English but with different accents, including non-native ones. We specifically select these in-the-wild datasets, LRS2 and LRS3, for their diverse range of real-world scenarios with variations in lighting conditions, speaker characteristics, speaking styles, and speaker-camera alignment. We train LipVoicer using the pretrain+train splits of LRS2 and LRS3 on each dataset separately, and evaluation is carried out on the full unseen test data splits. Note that both datasets also include transcriptions, but we do not use them for either training or inference.\nImplementation Details For predicting the text from the silent video at inference time, we use Ma et al. (2023) as our lip-reader for LRS2 and LRS3. It achieves a WER rate of 14.6% and 19.1% with respect to the ground truth text, respectively. The ASR deployed for applying classifier guidance was Burchi & Timofte (2023). We modified its architecture by adding the diffusion time step embedding to the conformer blocks and then fine-tuned on LRS2 and LRS3. Finally, for the sake of fairness, we employ a different ASR (Ma et al., 2023) to evaluate the WER of the speech generated by our method and the baselines. We notice some variability in the choice of the ASRs used for benchmarking among the baselines, which make it difficult to put the different methods on a common ground. We believe that Ma et al. (2023) can serve as a good candidate to be used in future studies, since it achieves state of the art results on LRS2 (1.5%) and LRS3 (1%) and a pre-trained model is publicly available. The rest of the implementation details for reproducing our experiments can be found in the Appendix.\nBaselines We compare LipVoicer with recent lip-to-speech synthesis baselines. The baseline methods include (1) SVTS (de Mira et al., 2022), a transformer-based video to mel-spectrogram generator with a pre-trained neural vocoder. (2) VCA-GAN (Kim et al., 2021), a GAN model with a visual context attention module that encodes global representations from local visual features. (3) Lip2Speech (Kim et al., 2023), a multi-task learning framework that incorporates ground truth text to form an additional loss to enforce the correspondence between the text predicted from the generated speech and the target text at train time. We trained VCA-GAN and Lip2Speech on LRS2 and LRS3, and used the LRS3 test files provided by the authors of SVTS to conduct the comparisons.\nUnfortunately, we could not include ReVISE (Hsu et al., 2022) in our full comparisons since the test files are unavailable for public access and training the method is too computationally heavy (32 GPUs were reported in ReVISE). Nevertheless, we used the ASR utilized in Hsu et al. (2022) to compare it to LipVoicer. Notably, in Hsu et al. (2022) it was reported that the ASR achieved WER score of 5.6% on the ground-truth test videos of LRS3, but we only managed to achieve 6.4% on the same data. While we are uncertain of the source of the degraded performance, we evaluated LipVoicer using this ASR and achieved WER score of 33.2% on LRS3, whereas ReVISE reported 33.9%. Additionally, we generated with LipVoicer the speech signals for the silent videos on the project page of ReVISE and incorporated the results in our demo website. We note that the speech units computed by AV-HuBERT are primarily learned in such a way that encourages speech continuity, and not any other explicit speech aspects (WER, intelligibility, etc.). We believe that this is the reason why ReVISE still has relatively high WER, although much lower than its previous competitors.\nMetrics Several metrics are used to evaluate the quality and intelligibility of our generated speech and compare it to the baseline methods. As the main goal of speech generation is to create a speech signal that sounds natural and intelligible to human listeners, our focus is on human evaluation measured by the mean opinion score (MOS). We also compare WER using a speech recognition model. Following Hsu et al. (2022); Hassid et al. (2021), we measure the synchronization between\nthe generated speech and the matching video with SyncNet (Chung & Zisserman, 2016) scores. Specifically, we report the temporal distance between audio and video (LSE-D) and the confidence scores (LSE-C). We use the pre-trained SyncNet model1 to calculate LSE-C and LSE-D.\nTo objectively quantify the quality and intelligibility of our scheme, we use DNSMOS (Reddy et al., 2022) and STOI-Net (Zezario et al., 2020). It is worth mentioning that previous studies on lip-to-speech synthesis have presented metrics that we believe are unsuitable for this task, and as a result, we refrained from including them in our main report. Specifically, they use short-time objective intelligibility (STOI) and perceptual evaluation of speech quality (PESQ). Both metrics are intrusive, namely, they are based on a comparison with the clean raw audio signal. While they are valuable for speech enhancement and speaker separation, in speech generation, it is not expected, even for a perfect model, to recreate the original audio. This may stem, for instance, from a variation of the pitch between the original speech and the reconstructed one (Sisman et al., 2020). Our goal is to generate a speech signal that matches the video, and not the original speech. In Appendix D, we provide an example that demonstrates the effectiveness of non-intrusive over intrusive metrics with regard to the lip-to-speech setup. In this sense, our problem is more related to voice conversion. For completeness, the Appendix also includes the PESQ and STOI scores of LipVoicer."
+        },
+        {
+            "heading": "5.1 HUMAN EVALUATION RESULTS",
+            "text": "Given 50 random samples from the test splits of LRS2 and LRS3 datasets (each), we used Amazon Mechanical Turk to rate the different approaches and the ground truth. The listeners were asked to rate the videos, on a scale of 1-5, for Intelligibility, Naturalness, Quality, and Synchronization. We note that we observed a non-negligible amount of noise in the scores of the human evaluators. We ameliorated this effect by having a large number (16) of distinct annotators per sample, and by having each annotator score all methods on a specific sample. We also filtered out Turkers who rated the ground-truth video with a score smaller than 4. This ensures that all methods compared are annotated by the exact same reliable set of annotators. We also note that for the SVTS (de Mira et al., 2022) baseline comparison, we used generated videos that were sent to us by the authors. As only LRS3 videos were available, we evaluate SVTS only on LRS3.\nTables 1 and 2 depict the MOS results on the LRS2 and LRS3 datasets. LipVoicer outperforms all three baseline methods: Lip2Speech, SVTS, and VCA-GAN. Not only that, it is also remarkably close to the ground truth scores. The questionnaire, screenshots of the task, and other implementation details are given in Appendix G.\n1https://github.com/joonson/syncnet_python"
+        },
+        {
+            "heading": "5.2 OBJECTIVE EVALUATION RESULTS",
+            "text": "We further evaluated our method with the objective metrics. For SVTS, we report WER and synchronization metrics only for LRS3, since the authors did not open-source their code and only released the generated test files for LRS3. From the WER scores, it is clear that our method significantly improves over competing baselines. From the STOI-Net and DNSMOS metrics it is apparent that LipVoicer generates much more intelligible and higher quality speech compared to the competitors. In addition to generating high-quality content, LipVoicer demonstrates commendable synchronization scores, ensuring that the generated speech aligns seamlessly with the accompanying video. Qualitative results may be found in the Appendix."
+        },
+        {
+            "heading": "5.3 ABLATION STUDY",
+            "text": "The architecture of LipVoicer requires several design choices: the values of w1, w2, the lip reading network and the ASR used for guidance. We conducted ablation studies examining the influence of the hyperparameters and the modules and evaluated it on LRS3. Tables 5 and 6 show the performance of LipVoicer for different values of w1 and w2, respectively. Several conclusions can be drawn from the results. We observe (w1 = \u22121) that classifier-free guidance has a decisive role in terms of WER, speech quality, and synchronization. Decreasing the weight of the ASR increases the WER, as expected, while the generated speech still sounds natural and synchronized. It is also clear that ASR guidance is vital, as without it (w2 = 0) the WER plunges from 21.4% to 86.2% on LRS3. Unsurprisingly, an excessive increase in the ASR weight only slightly degrades the WER, but is detrimental to the speech quality and synchronization. Interestingly, setting w2 = 1 or w2 = 1.5 leads to better synchronization compared to w2 = 0 (no ASR guidance). We postulate that this occurs since the predicted text also helps align the generated speech with the video.\nWith regard to the lip-reader choice, we see in Table 7 that when the ground-truth text is used, the best results are achieved. A less accurate lip-reader leads to worse WER but not speech quality. Synchronization is also impaired with worse lip-reading, probably due to the discrepancy between the lip motion and the predicted text. This ablation study means that by using a more powerful lip-readers, the performance of LipVoicer can be further improved. Ablation studies for the ASR performance, vocoder choice, using the face embedding and the amount of training data can be found in Appendix E."
+        },
+        {
+            "heading": "6 LIMITATIONS AND SOCIAL IMPACTS",
+            "text": "LipVoicer is a powerful lip-to-speech method that has the potential to bring about some social impacts. On the positive side, it can help restore missing or corrupt speech in important videos. However, there are also potential drawbacks to consider. The generated speech may introduce the risk of misrepresentation or manipulation. While we use a faithful lip-reading module, \u201cbad-faith actors\u201d can try to inject misleading text. Mitigating this potential risk is an important challenge but beyond the scope of this work."
+        },
+        {
+            "heading": "7 CONCLUSION",
+            "text": "In this paper, we present LipVoicer, a novel method that shows promising results in generating highquality speech from silent videos. LipVoicer achieves this by utilizing text inferred from a lip-reading model to guide the generation of natural audio. We train and test LipVoicer on multiple challenging datasets comprised of in-the-wild videos. We empirically show that text guidance is crucial to creating intelligible speech, as measured by the word error rate. Furthermore, we show through human evaluation that LipVoicer faithfully recovers the ground truth speech and surpasses recent baselines in intelligibility, naturalness, quality, and synchronization. The impressive achievements of LipVoicer in lip-to-speech synthesis not only advance the current state-of-the-art but also pave the way for intriguing future research directions in this domain."
+        },
+        {
+            "heading": "ACKNOWLEDGMENTS",
+            "text": "This project has received funding from the European Union\u2019s Horizon 2020 Research and Innovation Programme, Grant Agreement No. 871245, and was also supported in part by the Israeli Council for Higher Education, Data Science Program (\"Audience\" project) and Nvidia academic hardware grant."
+        },
+        {
+            "heading": "A FULL IMPLEMENTATION DETAILS",
+            "text": "In this section, we provide full details on the preprocessing, hyperparameters and architectures used for LipVoicer. Our implementation was written in PyTorch, and we used 4 NVIDIA GeForce RTX 2080 Ti for our experiments.\nA.1 VIDEO PREPROCESSING\nThe output of the preprocessing step of a silent talking-face video is a single face image and a mouth crop video. The latter is used by the lip-reading network, while both components are fed into the MelGen module. We use 25 fps videos. The face image is randomly chosen from the full-face video frames. The image is resized to the resolution of 224\u00d7 224. During training, brightness and color augmentations are applied as well. The mouth crop video is created by detecting and tracking 68 facial landmarks using dlib (King, 2009). The faces detected in the frames are then aligned to a mean reference face using a similarity transformation which removes rotation and scale differences. Next, a 96\u00d7 96 mouth region is cropped from each frame to form the mouth crop video. The last step is the conversion to a gray-scale video. In the training stage, a random 88\u00d7 88 crop is taken from the lip video and then horizontally flipped with probability 0.5. At inference time, we take a center 88\u00d7 88 crop without flipping.\nA.2 AUDIO PREPROCESSING\nIn LipVoicer, we need mel-spectrograms of real speech signals for training MelGen and the vocoder. They were computed by applying the following steps. First, 16KHz speech signals were extracted from the training videos of the benchmark datasets and normalized to have a maximum magnitude of 0.9. Subsequently, the short-time Fourier transform (STFT) for all experiments was calculated with window size and Discrete Time Fourier Transform (DTFT) length of 640 samples. The hop size between two successive windows was 160 samples. The STFT magnitude was used to compute 80 mel frequencies with 20Hz and 8KHz being the lowest and highest frequencies, respectively. The result was clipped to have a minimum value of 1e\u2212 5. The logarithm function was applied to compress the dynamic range. Finally, we linearly mapped the output of the previous step to roughly be in [\u22121, 1] by using the global minimum and maximum values across the entire training split.\nA.3 ARCHITECTURE\nA.3.1 MELGEN\nBackbone. The backbone architecture for MelGen is identical to DiffWave (Kong et al., 2021) but we change several parameters. Using the notations from Kong et al. (2021), the diffusion process has T = 400 steps. We set \u03b21 = 0.0001 and \u03b2T = 0.02, and use a linear noise schedule. The number of input and output channels is fixed to 80, to match the number of mel-spectrogram frequencies. We use 12 residual layers with 512 residual channels, and the dilation factor was set to 1 for all residual layers. We base our backbone architecture on the publicly available implementation2 of DiffWave, released by the authors of Goel et al. (2022).\nConditioner. As mentioned, the video embedding serves as the conditioner for MelGen. The face image analysis network takes in a 224\u00d7 224 image and comprises a ResNet-18 backbone with the last two layers scrapped, followed by a fully-connected layer which outputs a Df = 128 dimensional embedding vector. The lip motion analysis network receives a 88\u00d7 88 mouth crop of N consecutive frames. It consists of a 3D-convolutional layer with a 5\u00d7 7\u00d7 7 kernel, followed by a ShuffleNet-V2 (Ma et al., 2018) network and then a TCN. Full details can be found in Ma et al. (2021). The output of the TCN takes the dimension N \u00d7Dm where Dm = 512. The face embedding is replicated N times and concatenated to the lip motion embedding, such that the ultimate video embedding v has the size of N \u00d7 640. Similarly to Kong et al. (2021), we upsample the time axis of the video embedding by applying two layers of 2D convolutions. As each mel-spectrogram frame comprises 160 new samples, the audio sample rate is 16KHz and videos are sampled at 25 fps, we set the upsampling factor of each convolution layer to 2. Under this choice, the overall upsampling factor amounts to 4 which aligns the time resolution of the mel-spectrogram and the video.\n2https://github.com/albertfgu/diffwave-sashimi\nTraining. During training, MelGen generates mel-spectrograms covering 1 second conditioned on the matching video with the equivalent number of frames. It translates to 100 mel-spectrogram frames and hence the video comprises N = 25 frames. Note that at inference time, since the DiffWave backbone is based on convolutional layers, we take a video of an arbitrary number of frames. In our experiments, we managed to generate high-quality speech signals which were 18 seconds long. MelGen is trained with L1 loss on the diffusion noise prediction, without any additional loss terms. We trained on 1,000,000 mini-batches of 16 videos and used Adam optimizer with learning rate of 2e\u2212 4 without scheduling. For the classifier-free guidance mechanism, we follow Ho & Salimans (2021) by setting the dropout probability on the conditioning to 0.2. The null tokens for the face image and the lip motion video when the conditioning is dropped are randomly drawn in advance from a normal distribution.\nA.4 ASR CLASSIFIER\nAs mentioned, Burchi & Timofte (2023) was deployed as the ASR for guiding MelGen through the classifier guidance mechanism. We used the publicly available code and the pre-trained model released by the authors of Burchi & Timofte (2023), which was trained on the LRW, LRS2, and LRS3 datasets. In order to adapt their implementation to be compatible with LipVoicer, we added a diffusion time step embedding to the conformer blocks. The computation of the time step embedding is identical to Kong et al. (2021), i.e. we use the same positional encoding and two fully-connected layers which are shared across all conformer blocks. Each conformer applies an additional layerspecific fully-connected layer, and the result is summed with the input to the conformer block. In addition, since for LipVoicer, the ASR classifier receives mel-spectrograms noised by the diffusion process, we remove the mel-spectrogram and SpecAugment (Park et al., 2019) layers from the original implementation of the ASR. We finetune our modified ASR on the train+pretrain splits of LRS2 and LRS3 using connectionist temporal classification (CTC) loss, where the input is a mel-spectrogram from the training splits noised by the diffusion process and the target is the ground truth text. We used Adam optimizer with learning rate 1e\u2212 4 and akin to Burchi & Timofte (2023), we used batch size 0f 256 videos via mini-batches of size 64 and 4 accumulated steps.\nB INFERENCE\nWe summarize the inference process in Algorithm 1\nAlgorithm 1 Inference with LipVoicer 1: Given a silent video V 2: VL \u2190 lip video 3: IF \u2190 randomly chosen face frame from V 4: Predict the text tLR from VL with a lip-reader 5: Initialize xT \u223c N (0, I) 6: for t = T . . . 1 do 7: Compute \u03f5mg with classifier-free guidance 8: \u03f5mg(xt,VL, IF , \u03c91) = (1 + \u03c91)\u03f5\u03b8(xt,VL, IF )\u2212 \u03c91\u03f5\u03b8(xt) 9: Compute \u03f5\u0302 using classifier guidance 10: \u03b3t = ||\u03f5mg||\u221a 1\u2212\u03b1\u0304t\u00b7||\u2207xt log p(tLR|xt)|| 11: \u03f5\u0302 = \u03f5mg \u2212 \u03c92\u03b3t \u221a 1\u2212 \u03b1\u0304t\u2207xt log p(tLR|xt) 12: zT \u223c N (0, I) if t > 1, else z = 0 13: xt\u22121 =\n1\u221a \u03b1\u0304t ( xt \u2212 \u03b2t\u221a1\u2212\u03b1\u0304t \u03f5\u0302 ) + \u03b2tz\n14: end for 15: return x0"
+        },
+        {
+            "heading": "C GENERATING FULL DATASETS",
+            "text": "In the course of our experiments, we noticed that different choices of hyperparameters influenced the quality of the reconstructed speech. In particular, the hyperparameters of LipVoicer are the values\nof \u03c91, \u03c92 and tASR, where the latter denotes the diffusion time step of MelGen in which we start to apply the classifier guidance mechanism. When the ASR guidance was taken into account right from the start (tASR = 400), it led to degraded results. By using a hyperparameter grid search and listening tests, we eventually chose:\n\u2022 \u03c91 = 2, \u03c92 = 1.5, tASR = 270 for LRS3.\n\u2022 \u03c91 = 1.8, \u03c92 = 1.7, tASR = 230 for LRS2.\n\u2022 \u03c91 = 2.6, \u03c92 = 0.7, tASR = 300 for GRID.\nC.1 VOCODER\nWe adopt DiffWave (Dhariwal & Nichol, 2021) as our vocoder (converting mel-spectrograms to speech signals). We use the conditional variant of DiffWave with T = 50 (DiffWaveBASE) without changing the parameters of the architecture. We train the vocoder on 1,000,000 mini-batches with batch size 16 with a learning rate of 2e\u2212 4 without scheduling on audio taken from the training split of LRS3 only.\nD INTRUSIVE METRICS FOR LIP-TO-SPEECH\nFollowing Sisman et al. (2020), we argue that using intrusive measures like PESQ and STOI in our problem is fundamentally incorrect. To exemplify it, we show that if we take a recording of a certain speaker, they cannot differentiate between the a noisy version of the recording and the same recording with the change of a speaker. To this end, we use the the following experiment: we took a speech signal x and created two versions of it. One is y = x+ n, where n is a Gaussian noise with SNR=5dB. Second is z, the output of a voice conversion system (Park et al., 2023) where the input is x. In other words, z is identical to x with respect to the spoken words and their timing, but with a different yet fairly close voice. We computed the intrusive metrics PESQ, STOI, ESTOI and the non-intrusive ones DNSMOS and STOI-Net and received the results compiled in Table 8.\nThe intrusive metrics consider the voice converted version as equivalent to the highly noisy signal y, which is obviously wrong. For completeness, we also bring here the PESQ and STOI scores for LipVoicer and the baselines for LRS2 (Table 9) and LRS3 (Table10)."
+        },
+        {
+            "heading": "E ADDITIONAL ABLATION STUDIES",
+            "text": "E.1 ASR WER AND FACE EMBEDDING\nEvaluating the performance of LipVoicer with respect to the WER of the guiding ASR is presented in Table 11. It is clear that it is necessary for the ASR to be reliable. Table 12 provides objective metrics for the ablation study on using the face embedding. We implemented the ablated model by replacing the face embedding by the null embedding which is part of the classifier-free guidance mechanism. The full model is slightly better, possibly because the model was not trained when only the face image was replaced with the null embedding. The full model replaces the lip region video and the face image with null tokens simultaneously during training. In any case, the main aspect in which discarding of face embedding is manifested is the lack of personalized voice for each video.\nWe have uploaded to the demo page several examples which compare audio generated by the full and ablated models.\nE.2 VOCABULARY SIZE\nWe also wish to test the influence of the amount of training data, which entails a larger vocabulary. For LRS2 and LRS3, the vocabulary of the pretrain split is 2-3 times larger than the train split vocabulary. To this end, we conduct a MOS evaluation on LRS3 that compares LipVoicer which was trained on one of the following options: train+pretrain splits or the train split only. In addition, we test LipVoicer coupled with the following lip-reading networks and WER rates: (1) the ground-truth text (2) MA (Ma et al., 2023), achieving 19.1%. Comparing to the ground-truth text can better help understand the potential of our proposed method. We only use here the MOS test, since it is important to confirm that the audio quality is good before conducting objective tests which are covered in the main text.\nFor the ablation study, we randomly select 50 samples from the LRS3 test split and assign three different annotators per sample. Participants are presented with all methods at once when the order of appearance is randomized between samples (see Fig. 4). The average scores are presented in Table 13, and seem to indicate that a larger vocabulary does indeed leads to better performance. When only the train split used for training, using the ground-truth or predicted text results in equivalent performance.\nE.3 USING A DIFFERENT VOCODER\nWe compare here the metrics for LRS3 as computed on speech signals generated using HiFi-GAN Su et al. (2020) and DiffWave as the vocoders. Both vocoders used the exact same mel-spectrograms generated by LipVoicer. Both vocoders used the exact same mel-spectrograms generated by LipVoicer. Also note that the vocoders were trained on natural audio signals on not on mel-spectrograms generated by LipVoicer. We see in Table 14 that both options that use two different vocoders yield state-of-the-are results. This clearly indicates that the main and critical source of improvement is the mel-spectrograms generated by our method.\nE.4 QUALITATIVE RESULTS\nWe present a qualitative comparison between the mel-spectrograms generated by LipVoicer, the baselines, and the ground truth. The results, shown in Fig. 2, demonstrate that even for a relatively long utterance, the mel-spectrogram generated by LipVoicer visibly resembles that of the original\nvideo. While all approaches manage to successfully detect the beginning and the end of speech segments, LipVoicer is the only method that generates spectral content that is precisely aligned with the ground truth mel-spectrogram. The baselines, on the other hand, struggle to achieve this level of fidelity. Particularly, they fail to generate pitch information of the speech, which results in an unnatural voice and impairs the naturalness of the speech signal. This comparison provides valuable insights into the capabilities of LipVoicer to generate naturally looking spectrograms that are synchronized with the original video\u2019s mel-spectrograms.\nE.5 NATURALNESS-INTELLIGIBILITY TRADE-OFF\nAnother aspect of LipVoicer that should be taken into consideration is the influence of the ASR classifier on the quality of lip-to-speech performance. Occasionally, the speech signal recovered by MelGen, namely without the classifier guidance provided by the ASR, sounds more natural than the one generated by the full scheme, i.e. LipVoicer. In addition, the ASR guidance may lead to synchronization lapses when the predicted text does not significantly overlap with the ground truth text. However, as emerges from the results in Table 6, the inclusion of the ASR guidance has a crucial impact on the intelligibility of the speech. In particular, it results in an invaluable gain on the WER metric. This trade-off is also depicted in Fig. 3. The mel-spectrogram produced without applying classifier guidance presents smooth transitions. In this context, incorporating the ASR in the inference process degrades the mel-spectrogram, as can be seen by comparing Fig. 3b and Fig. 3c. However, the ASR guidance managed to reconstruct spectral content (right-hand side of the mel-spectrograms) more faithfully with respect to the setup where the ASR guidance is omitted. Consequently, while it may sometimes reduce the speech naturalness, in most cases the generated speech at the output of our method is of high quality, sounds natural, and is intelligible."
+        },
+        {
+            "heading": "F RESULTS FOR GRID DATASET",
+            "text": "In this section, we evaluate LipVoicer on the GRID dataset (Cooke et al., 2006). GRID is an audiovisual dataset comprising 33 speakers, where each speaker contributes 1,000 utterances. We adhere to the data split dictated by the lip-reading network (Ma et al., 2022). Since the code implementation for SVTS (de Mira et al., 2022) is not publicly available and the implementation for Lip2Speech (Kim et al., 2023) required significant modifications, we compare only to VCA-GAN (Kim et al., 2021). We evaluate in terms of MOS using the unseen split3, where 29 speakers are used for training and the rest (subjects 1,2, 20, 22) are reserved for the test split.\nWe randomly selected a total of 50 samples from 4 different unseen speakers. Each sample is ranked by 16 unique raters for quality, synchronization, intelligibility, and naturalness, on a scale from 1 to 5. The MOS scores are presented in Table 15. While VCA-GAN managed to achieve good\n3https://github.com/mpc001/Visual_Speech_Recognition_for_Multiple_ Languages/tree/master/benchmarks/GRID/labels\nsynchronization between the generated audio and the video, LipVoicer outperforms it on all other MOS benchmarks. In particular, we achieve a high level of naturalness and quality and the overall performance is very close to the ground truth speech scores. Audio samples which were randomly chosen can be found at https://lipvoicer.github.io/supp.html."
+        },
+        {
+            "heading": "G PROTOCOL FOR MOS EVALUATION",
+            "text": "We used the Amazon Mechanical Turk (AMT) platform to compare the different baseline methods to ours. Participants were asked to rate the videos, on a scale of 1-5, for Intelligibility, Naturalness, Quality, and Synchronization. Fig. 4 shows the task interface, where we simultaneously display to a single annotator the samples generated by (i) LipVoicer (ii) SVTS (iii) VCA-GAN (iv) Lip2Voice, as well as the (v) ground-truth video for calibration. The order of the methods is randomized from sample to sample to avoid bias. Each sample is evaluated by 16 distinct annotators. Having each annotator score all methods on a specific sample ensures that all methods compared are annotated by the exact same set of annotators. We take 50 random samples from the test splits of each dataset, LRS3, and LRS2.\nThe instruction for the task read as follows: Intelligibility evaluates how clear words in the synthetic speech sound. In other words, Can you understand the content easily? Naturalness evaluates how natural the speech is, compared to the actual human voice (e.g. synthetic speech might sound metallic or distorted). We say the sample is synced if there is no time lag between the video and the audio. Finally, Quality is the overall quality score for the speech signal given by the rater."
+        }
+    ],
+    "year": 2024
+}

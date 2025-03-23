@@ -1,0 +1,573 @@
+{
+    "abstractText": "Universal domain adaptation aims to align the classes and reduce the feature gap between the same category of the source and target domains. The target private category is set as the unknown class during the adaptation process, as it is not included in the source domain. However, most existing methods overlook the intra-class structure within a category, especially in cases where there exists significant concept shift between the samples belonging to the same category. When samples with large concept shifts are forced to be pushed together, it may negatively affect the adaptation performance. Moreover, from the interpretability aspect, it is unreasonable to align visual features with significant differences, such as fighter jets and civil aircraft, into the same category. Unfortunately, due to such semantic ambiguity and annotation cost, categories are not always classified in detail, making it difficult for the model to perform precise adaptation. To address these issues, we propose a novel Memory-Assisted Sub-Prototype Mining (MemSPM) method that can learn the differences between samples belonging to the same category and mine sub-classes when there exists significant concept shift between them. By doing so, our model learns a more reasonable feature space that enhances the transferability and reflects the inherent differences among samples annotated as the same category. We evaluate the effectiveness of our MemSPM method over multiple scenarios, including UniDA, OSDA, and PDA. Our method achieves state-of-the-art performance on four benchmarks in most cases.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Yuxiang Lai"
+        },
+        {
+            "affiliations": [],
+            "name": "Yi Zhou"
+        },
+        {
+            "affiliations": [],
+            "name": "Xinghong Liu"
+        },
+        {
+            "affiliations": [],
+            "name": "Tao Zhou"
+        }
+    ],
+    "id": "SP:2ae2e8eb8badb681c6da2d59d76da7b8f9c456ce",
+    "references": [
+        {
+            "authors": [
+                "S. Bucci",
+                "M.R. Loghmani",
+                "T. Tommasi"
+            ],
+            "title": "On the effectiveness of image rotation for open set domain adaptation",
+            "venue": "Proceedings of the European Conference on Computer Vision, pages 422\u2013438.",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "P.P. Busto",
+                "A. Iqbal",
+                "J. Gall"
+            ],
+            "title": "Open set domain adaptation for image and action recognition",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence, 42(2):413\u2013429.",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Z. Cao",
+                "L. Ma",
+                "M. Long",
+                "J. Wang"
+            ],
+            "title": "Partial adversarial domain adaptation",
+            "venue": "Proceedings of the European Conference on Computer Vision, pages 135\u2013150.",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Z. Cao",
+                "K. You",
+                "M. Long",
+                "J. Wang",
+                "Q. Yang"
+            ],
+            "title": "Learning to transfer examples for partial domain adaptation",
+            "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 2985\u20132994.",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "W. Chang",
+                "Y. Shi",
+                "H. Tuan",
+                "J. Wang"
+            ],
+            "title": "Unified optimal transport framework for universal domain adaptation",
+            "venue": "Koyejo, S., Mohamed, S., Agarwal, A., Belgrave, D., Cho, K., and Oh, A., editors, Advances in Neural Information Processing Systems, volume 35, pages 29512\u201329524. Curran Associates, Inc.",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "L. Chen",
+                "Y. Lou",
+                "J. He",
+                "T. Bai",
+                "M. Deng"
+            ],
+            "title": "Geometric anchor correspondence mining with uncertainty modeling for universal domain adaptation",
+            "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 16134\u201316143.",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Y. Chen",
+                "X. Zhu",
+                "S. Gong"
+            ],
+            "title": "Deep reconstruction-classification networks for unsupervised domain adaptation",
+            "venue": "Proceedings of the European Conference on Computer Vision, pages 597\u2013613.",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Y. Chen",
+                "X. Zhu",
+                "S. Gong"
+            ],
+            "title": "Semi-supervised deep learning with memory",
+            "venue": "Proceedings of the European Conference on Computer Vision, pages 268\u2013283.",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "A. Dosovitskiy",
+                "L. Beyer",
+                "A. Kolesnikov",
+                "D. Weissenborn",
+                "X. Zhai",
+                "T. Unterthiner",
+                "M. Dehghani",
+                "M. Minderer",
+                "G. Heigold",
+                "S Gelly"
+            ],
+            "title": "An image is worth 16x16 words: Transformers for image recognition",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "B. Fu",
+                "Z. Cao",
+                "M. Long",
+                "J. Wang"
+            ],
+            "title": "Learning to detect open classes for universal domain adaptation",
+            "venue": "Proceedings of the European Conference on Computer Vision, pages 567\u2013583.",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Y. Ganin",
+                "V. Lempitsky"
+            ],
+            "title": "Unsupervised domain adaptation by backpropagation",
+            "venue": "Bach, F. and Blei, D., editors, Proceedings of the 32nd International Conference on Machine Learning, volume 37 of Proceedings of Machine Learning Research, pages 1180\u20131189. PMLR.",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "D. Gong",
+                "L. Liu",
+                "V. Le",
+                "B. Saha",
+                "M.R. Mansour",
+                "S. Venkatesh",
+                "Hengel",
+                "A. v. d."
+            ],
+            "title": "Memorizing normality to detect anomaly: Memory-augmented deep autoencoder for unsupervised anomaly detection",
+            "venue": "Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 1705\u20131714.",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "A. Graves",
+                "G. Wayne",
+                "I. Danihelka"
+            ],
+            "title": "Neural turing machines",
+            "venue": "arXiv preprint arXiv:1410.5401.",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "T.M.H. Hsu",
+                "W.Y. Chen",
+                "Hou",
+                "C.-A.",
+                "Tsai",
+                "Y.-H.H.",
+                "Yeh",
+                "Y.-R.",
+                "Wang",
+                "Y.-C.F."
+            ],
+            "title": "Unsupervised domain adaptation with imbalanced cross-domain data",
+            "venue": "Proceedings of the IEEE International Conference on Computer Vision.",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "T. Kalluri",
+                "A. Sharma",
+                "M. Chandraker"
+            ],
+            "title": "Memsac: Memory augmented sample consistency for large scale domain adaptation",
+            "venue": "Proceedings of the European Conference on Computer Vision, pages 550\u2013568.",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "G. Kang",
+                "L. Jiang",
+                "Y. Yang",
+                "A.G. Hauptmann"
+            ],
+            "title": "Contrastive adaptation network for unsupervised domain adaptation",
+            "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition.",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "J.N. Kundu",
+                "S. Bhambri",
+                "A.R. Kulkarni",
+                "H. Sarkar",
+                "V Jampani"
+            ],
+            "title": "Subsidiary prototype alignment for universal domain adaptation",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "G. Li",
+                "G. Kang",
+                "Y. Zhu",
+                "Y. Wei",
+                "Y. Yang"
+            ],
+            "title": "Domain consensus clustering for universal domain adaptation",
+            "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 9757\u20139766.",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "J. Liang",
+                "D. Hu",
+                "J. Feng",
+                "R. He"
+            ],
+            "title": "Umad: Universal model adaptation under domain and category shift",
+            "venue": "arXiv preprint arXiv:2112.08553.",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "J. Liang",
+                "Y. Wang",
+                "D. Hu",
+                "R. He",
+                "J. Feng"
+            ],
+            "title": "A balanced and uncertainty-aware approach for partial domain adaptation",
+            "venue": "Proceedings of the European Conference on Computer Vision, pages 123\u2013140.",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "X. Liu",
+                "Y. Zhou",
+                "T. Zhou",
+                "J. Qin"
+            ],
+            "title": "Self-paced learning for open-set domain adaptation",
+            "venue": "Journal of Computer Research and Development, 60(8):1711\u20131726.",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Z. Liu",
+                "G. Chen",
+                "Z. Li",
+                "Y. Kang",
+                "S. Qu",
+                "C. Jiang"
+            ],
+            "title": "Psdc: A prototype-based shared-dummy classifier model for open-set domain adaptation",
+            "venue": "IEEE Transactions on Cybernetics.",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "A. Paszke",
+                "S. Gross",
+                "F. Massa",
+                "A. Lerer",
+                "J. Bradbury",
+                "G. Chanan",
+                "T. Killeen",
+                "Z. Lin",
+                "N. Gimelshein",
+                "L. Antiga",
+                "A. Desmaison",
+                "A. Kopf",
+                "E. Yang",
+                "Z. DeVito",
+                "M. Raison",
+                "A. Tejani",
+                "S. Chilamkurthy",
+                "B. Steiner",
+                "L. Fang",
+                "J. Bai",
+                "S. Chintala"
+            ],
+            "title": "Pytorch: An imperative style, high-performance deep learning library",
+            "venue": "Advances in Neural Information Processing Systems, volume 32. Curran Associates, Inc.",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "X. Peng",
+                "Q. Bai",
+                "X. Xia",
+                "Z. Huang",
+                "K. Saenko",
+                "B. Wang"
+            ],
+            "title": "Moment matching for multi-source domain adaptation",
+            "venue": "Proceedings of the IEEE/CVF International Conference on Computer Vision.",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "X. Peng",
+                "B. Usman",
+                "N. Kaushik",
+                "J. Hoffman",
+                "D. Wang",
+                "K. Saenko"
+            ],
+            "title": "Visda: The visual domain adaptation challenge",
+            "venue": "arXiv preprint arXiv:1710.06924.",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "S. Qu",
+                "T. Zou",
+                "F. R\u00f6hrbein",
+                "C. Lu",
+                "G. Chen",
+                "D. Tao",
+                "C. Jiang"
+            ],
+            "title": "Upcycling models under domain and category shift",
+            "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition.",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "A. Radford",
+                "J.W. Kim",
+                "C. Hallacy",
+                "A. Ramesh",
+                "G. Goh",
+                "S. Agarwal",
+                "G. Sastry",
+                "A. Askell",
+                "P. Mishkin",
+                "J. Clark",
+                "G. Krueger",
+                "I. Sutskever"
+            ],
+            "title": "Learning transferable visual models from natural language supervision",
+            "venue": "Meila, M. and Zhang, T., editors, Proceedings of the 38th International Conference on Machine Learning, volume 139 of Proceedings of Machine Learning Research, pages 8748\u20138763. PMLR.",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "J. Rae",
+                "J.J. Hunt",
+                "I. Danihelka",
+                "T. Harley",
+                "A.W. Senior",
+                "G. Wayne",
+                "A. Graves",
+                "T. Lillicrap"
+            ],
+            "title": "Scaling memory-augmented neural networks with sparse reads and writes",
+            "venue": "Lee, D., Sugiyama, M., Luxburg, U., Guyon, I., and Garnett, R., editors, Advances in Neural Information Processing Systems, volume 29. Curran Associates, Inc.",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "K. Saenko",
+                "B. Kulis",
+                "M. Fritz",
+                "T. Darrell"
+            ],
+            "title": "Adapting visual category models to new domains",
+            "venue": "Proceedings of the European Conference on Computer Vision, pages 213\u2013226.",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "K. Saito",
+                "D. Kim",
+                "S. Sclaroff",
+                "K. Saenko"
+            ],
+            "title": "Universal domain adaptation through self supervision",
+            "venue": "Larochelle, H., Ranzato, M., Hadsell, R., Balcan, M., and Lin, H., editors, Advances in Neural Information Processing Systems, volume 33, pages 16282\u201316292. Curran Associates, Inc.",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "K. Saito",
+                "K. Saenko"
+            ],
+            "title": "Ovanet: One-vs-all network for universal domain adaptation",
+            "venue": "Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 9000\u20139009.",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "K. Saito",
+                "K. Watanabe",
+                "Y. Ushiku",
+                "T. Harada"
+            ],
+            "title": "Maximum classifier discrepancy for unsupervised domain adaptation",
+            "venue": "Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition.",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "R. Shu",
+                "H.H. Bui",
+                "H. Narui",
+                "S. Ermon"
+            ],
+            "title": "A dirt-t approach to unsupervised domain adaptation",
+            "venue": "arXiv preprint arXiv:1802.08735.",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "S. Sukhbaatar",
+                "szlam",
+                "J. Weston",
+                "R. Fergus"
+            ],
+            "title": "End-to-end memory networks",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "H. Venkateswara",
+                "J. Eusebio",
+                "S. Chakraborty",
+                "S. Panchanathan"
+            ],
+            "title": "Deep hashing network for unsupervised domain adaptation",
+            "venue": "Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition.",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "K. You",
+                "M. Long",
+                "Z. Cao",
+                "J. Wang",
+                "M.I. Jordan"
+            ],
+            "title": "Universal domain adaptation",
+            "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 2720\u20132729.",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Y. Zhou",
+                "S. Bai",
+                "T. Zhou",
+                "Y. Zhang",
+                "H. Fu"
+            ],
+            "title": "Delving into local features for open-set domain adaptation in fundus image analysis",
+            "venue": "International Conference on Medical Image Computing and ComputerAssisted Intervention, pages 682\u2013692. Springer.",
+            "year": 2022
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Unsupervised Domain Adaptation (UDA) (Ganin and Lempitsky, 2015; Kang et al., 2019; Saito et al., 2018; Shu et al., 2018; Chen et al., 2016; Hsu et al., 2015; Kalluri et al., 2022) enables models trained on one dataset to be applied to related but different domains. Traditional UDA assumes a shared label space, limiting its applicability in diverse target distributions. Universal Domain Adaptation (UniDA) addresses these limitations by allowing the target domain to have a distinct label set. UniDA flexibly classifies target samples belonging to shared classes in the source label set, treating others as \"unknown.\" This approach, not relying on prior knowledge about target label sets, broadens the adaptability of domain-invariant feature learning across diverse domains.\nDespite being widely explored, most existing universal domain adaptation methods (Li et al., 2021; You et al., 2019; Saito and Saenko, 2021; Saito et al., 2020; Chang et al., 2022; Qu et al., 2023; Chen et al., 2022; Liang et al., 2021) overlook the internal structure intrinsically presented within each image category. These methods aim to align the common classes between the source and target domains for adaptation but usually train a model to learn the class \"prototype\" representing each annotated category. This is particularly controversial when significant concept shifts exist between samples belonging to the same category. These differences can lead to sub-optimal feature learning and adaptation if the intra-class structure is neglected during training. Since this type of semantic ambiguity without fine-grained category labels occurs in almost all of the DA benchmarks, all the methods will encounter this issue.\n\u2217Correspondence to Yi Zhou(YIZHOU.SZCN@GMAIL.COM)\nIn this paper, our objective is to propose a method that learns detailed intra-class distinctions and extracts \u2019sub-prototypes\u2019 to enhance alignment and adaptation. These sub-prototypes represent further subdivisions within each category-level prototype, corresponding to the \u2019sub-classes\u2019 of the annotated categories. Our approach revolves around employing a learnable memory structure to derive subprototypes for their respective sub-classes. This can optimize the construction and refinement of the feature space, bolstering the classifier\u2019s ability to distinguish class-wise relationships and improve the model\u2019s transferability across domains. As illustrated in Figure 1, the samples that are annotated as the same category often exhibit significant intra-class differences. However, previous work mainly forced them to align together for adaptation. Therefore, these methods are more likely to classify unknown classes into known classes incorrectly. Moreover, features of different sub-classes still have gaps in the feature space, making it unreasonable to align samples from distinct sub-classes, both from human perspectives and in the feature space. Aligning target domain samples at the sub-class level with source domain samples mitigates the drawback of aligning significantly different samples, making adaptation more reasonable.\nOur proposed approach, named memory-assisted sub-prototype mining (MemSPM), is inspired by the memory mechanism works (Gong et al., 2019; Chen et al., 2018; Sukhbaatar et al., 2015; Rae et al., 2016). In our approach, the memory generates sub-prototypes that embody sub-classes learned from the source domain. During testing of the target samples, the encoder produces embedding that is compared to source domain sub-prototypes learned in the memory. Subsequently, an embedding for the query sample is generated through weighted sub-prototype sampling in the memory. This results in reduced domain shift before the embedding is passed to the classifier. Our proposal of mining sub-prototypes, which are learned from the source domain memory, improves the universal domain adaptation performance by promoting more refined visual concept alignment.\nMemSPM approach has been evaluated on four benchmark datasets (Office-31 (Saenko et al., 2010), Office-Home (Venkateswara et al., 2017), VisDA (Peng et al., 2017), and Domain-Net (Peng et al., 2019)), under various category shift scenarios, including PDA, OSDA, and UniDA. Our MemSPM\nmethod achieves state-of-the-art performance in most cases. Moreover, we designed a visualization module for the sub-prototype learned by our memory to demonstrate the interpretability of MemSPM. Our contributions can be highlighted as follows:\n\u2022 We study UniDA problem from a new aspect, focusing on the negative impacts of ignoring intra-class structures within the same category when using one-hot labels.\n\u2022 We propose Memory-Assisted Sub-Prototype Mining(MemSPM), which explores the memory mechanism to learn sub-prototypes for improving the model\u2019s adaption performance and interpretability. Meanwhile, visualizations reveal the sub-prototypes stored in memory, which demonstrate the interpretability of the MemSPM approach.\n\u2022 Extensive experiments on four benchmarks verify the superior performance of our proposed MemSPM compared with previous works."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "Universal Domain Adaptation (UniDA). You et al. (2019) proposed Universal Adaptation Network (UAN) deal with the UniDA setting that the label set of the target domain is unknown. Li et al. (2021) proposed Domain Consensus Clustering to differentiate the private classes rather than treat the unknown classes as one class. Saito and Saenko (2021) suggested that using the minimum inter-class distance in the source domain as a threshold can be an effective approach for distinguishing between \u201cknown\u201d and \u201cunknown\u201d samples in the target domain. However, most existing methods (Li et al., 2021; You et al., 2019; Saito and Saenko, 2021; Saito et al., 2020; Chang et al., 2022; Qu et al., 2023; Chen et al., 2022; Liang et al., 2021; Liu et al., 2023; Zhou et al., 2022) overlook the intra-class distinction within the same category, especially there exists significant concept shift in same category.\nConcept of Prototypes. In prior research (Kundu et al., 2022; Liu et al., 2022), prototypes have been discussed, but they differ from our MemSPM. First, in Kundu et al. (2022), subsidiary prototypes lack complete semantic knowledge and cannot address concept shifts within categories. In contrast, our sub-prototype can represent a sub-class within a category. Second, the purpose of Liu et al. (2022) is distinct from MemSPM. They aim to differentiate unknown classes. In contrast, MemSPM identifies sub-classes within a category. More details are in Appendix C."
+        },
+        {
+            "heading": "3 PROPOSED METHODS",
+            "text": ""
+        },
+        {
+            "heading": "3.1 PRELIMINARIES",
+            "text": "In unsupervised domain adaptation, we are provided with labeled source samples Ds = {xsi , ysi )}n s i=1 and unlabeled target samples Dt = {(xti)}n t\ni=1. As the label set for each domain in UniDA setting may not be identical, we use Cs and Ct to represent label sets for the two domains, respectively. Then, we denote C = Cs \u2229 Ct as the common label set. C\u0302s, C\u0302t are denoted as the private label sets of the source domain and target domain, respectively. We aim to train a model on Ds and Dt to classify target samples into |C|+ 1 classes, where private samples are treated as unknown classes. Our method aims to address the issue of intra-class concept shift that often exists within the labeled categories in most datasets, which is overlooked by previous methods. Our method enables the model to learn an adaptive feature space that better aligns fine-grained sub-class concepts, taking into account the diversity present within each category. Let X denote the input query, Z denote the embedding extracted by the encoder, L denote the data labels, Z\u0302 denotes the embedding obtained from the memory, X\u0302 denote the visualization of the memory, L\u0302 denotes the prediction of the input query, and the K denotes the top-K relevant sub-prototypes, respectively. The overall pipeline is presented in Figure 2. More details will be described in the following sub-sections."
+        },
+        {
+            "heading": "3.2 INPUT-ORIENTED EMBEDDING VS. TASK-ORIENTED EMBEDDING",
+            "text": "Typically, the image feature extracted by a visual encoder is directly used for learning downstream tasks. We call this kind of feature input-oriented embedding. However, it heavily relies on the original image content. Since different samples of the same category always vary significantly in their visual\nfeatures, categorization based on the input-oriented embedding is sometimes unattainable. In our pipeline, we simply adopt a CLIP-based (Radford et al., 2021) pre-trained visual encoder to extract the input-oriented embeddings, which is not directly used for learning our downstream task.\nIn MemSPM, we propose to generate task-oriented embedding, which is obtained by serving inputoriented embedding as a query to retrieve the sub-prototypes from our memory unit. We define ffixedencode(\u00b7) : X \u2192 Z to represent the fixed pre-trained encoder and fUniDAclass (\u00b7) : Z\u0302 \u2192 L\u0302 to represent the UniDA classifier. The input-oriented embedding Z is used to retrieve the relevant sub-prototypes from the memory. The task-oriented embedding Z\u0302 is obtained using the retrieved sub-prototypes for classification tasks. In conventional ways, Z\u0302 = Z, which means Z\u0302 is obtained directly from Z. Our method obtains Z\u0302 by retrieving the sub-prototypes from the memory, which differentiates Z\u0302 from Z and reduces the domain-specific information from the target domain during testing phase. Therefore, the task-oriented information retrieved from memory will mainly have features from the source domain. Then, classifier can effectively classify, similar to how it works in source domain."
+        },
+        {
+            "heading": "3.3 MEMORY-ASSISTED SUB-PROTOTYPE MINING",
+            "text": "The memory module proposed in MemSPM consists of two key components: a memory unit responsible for learning sub-prototypes, and an attention-based addressing (Graves et al., 2014) operator to obtain better task-oriented representation Z\u0302 for the query, which is more domain-invariant."
+        },
+        {
+            "heading": "3.3.1 MEMORY STRUCTURE WITH PARTITIONED SUB-PROTOTYPE",
+            "text": "The memory structure in MemSPM is represented as a matrix denoted by M \u2208 RN\u00d7S\u00d7D, where N indicates the number of memory items stored, S refers to the number of sub-prototypes partitioned within each memory item, and D represents the dimension of each sub-prototype. The memory structure has learnable parameters and we use the uniform distribution to initialize memory items. For convenience, we assume D is the same to the dimension of Z \u2208 RC ( RD=RC). Let the vector mi,j , \u2200i \u2208 [N ] denote the i-th row of M , where [N ] denotes the set of integers from 1 to N , \u2200j \u2208 [S] denote the j-th sub-prototype of M items, where [S] denotes the set of integers from 1 to S. Each mi denotes a memory item. Given a embedding Z \u2208 RD, the memory module obtains Z\u0302 through a soft addressing vector W \u2208 R1\u00d7D as follows:\nZ\u0302sn = W \u00b7M = \u03a3dwd \u00b7mnsd (Einstein summation), (1) wi,j=si = argmaxj(wi,j), (2)\nwhere W is a vector with non-negative entries that indicate the maximum attention weight of each item\u2019s sub-prototype, si denotes the index of the sub-prototype in the i-th item, and wi,j=si denotes the i, j = si-th entry of W . The hyperparameter N determines the maximum capacity for memory items and the hyperparameter S defines the number of sub-prototypes in each memory item. The effect of different settings of hyper-parameters is evaluated in \u00a74."
+        },
+        {
+            "heading": "3.3.2 SUB-PROTOTYPE ADDRESSING AND RETRIEVING",
+            "text": "In MemSPM, the memory M is designed to learn the sub-prototypes to represent the input-oriented embedding Z. We define the memory as a content addressable memory (Gong et al., 2019; Chen et al., 2018; Sukhbaatar et al., 2015; Rae et al., 2016) that allows for direct referencing of the content of the memory being matched. The sub-prototype is retrieved by attention weights W which are computed based on the similarity between the sub-prototypes in the memory items and the input-oriented embedding Z. To calculate the weight wi,j , we use softmax operation:\nwi,j = exp(d(z,mi,j))\n\u03a3Nn=1\u03a3 S s=1 exp(d(z,mn,s))\n, (3)\nwhere d(\u00b7, \u00b7) denotes cosine similarity measurement. As indicated by Eq. 1 and 3, the memory module retrieves the sub-prototype that is most similar to Z from each memory item in order to obtain the new representation embedding Z\u0302. As a consequence of utilizing the adaptive threshold addressing technique(Section 3.3.3), only the top-K can be utilized to obtain a task-oriented embedding Z\u0302, that serves to represent the encoded embedding Z."
+        },
+        {
+            "heading": "3.3.3 ADAPTIVE THRESHOLD TECHNIQUE FOR MORE EFFICIENT MEMORY",
+            "text": "Limiting the number of sub-prototypes retrieved can enhance memory utilization and avoid negative impacts on unrelated sub-prototypes during model parameter updates. Despite the natural reduction in the number of selected memory items, the attention-based addressing mechanism may still lead to combining small attention-weight items into the output embedding Z\u0302, which has negative impact on the classifier and sub-prototypes in memory bank. Therefore, it is necessary to impose a mandatory quantity limit on the amount of the relevant sub-prototypes retrieved. To address this issue, we apply adaptive threshold operation to restrict the number of sub-prototypes retrieved in the forward process.\nw\u0302i,j=si =\n{ wi,j=si , wi,j=si > \u03bb\n0, other (4)\nwhere w\u0302i,j=si denotes the i, j = si-th entry of w\u0302, the \u03bb denotes the adaptive threshold:\n\u03bb = argmin(topk(wi)). (5)\nDirectly implementing backward for the discontinuous function in Eq. 4 is challenging. We utilize method (Gong et al., 2019) which rewrites operation using continuous ReLU activation function as:\nw\u0302i,j=si = max(wi,j=si \u2212 \u03bb, 0) \u00b7 wi,j=si\n|wi,j=si \u2212 \u03bb|+ \u03f5 , (6)\nwhere max(\u00b7, 0) is commonly referred to as the ReLU activation function, and \u03f5 is a small positive scalar. The prototype Z\u0302 will be obtained by Z\u0302 = W\u0302 \u00b7 M . The adaptive threshold addressing encourages model to represent embedding Z using fewer but more relevant sub-prototypes, leading to learning more effective features in memory and reducing the impact on irrelevant sub-prototypes."
+        },
+        {
+            "heading": "3.4 VISUALIZATION AND INTERPRETABILITY",
+            "text": "We denote funfixeddecode (\u00b7) : Z\u0302 \u2192 X\u0302 to represent the decoder. The decoder is trained to visualize what has been learned in the memory by taking the retrieved sub-prototype as input. From an interpretability perspective, each encoded embedding Z calculates the cosine similarity to find the\ntop-K fitting sub-prototype representation for the given input-oriented embedding. Then, these sub-prototypes are combined to represent the Z in Z\u0302. The sub-prototype in this process can be regarded as the visual description for the input embedding Z. In other words, the input image is much like the sub-classes represented by these sub-prototypes. In this way, samples with significant intra-class differences will be matched to different sub-prototypes, thereby distinguishing different sub-classes. The use of a reconstruction auxiliary task can visualize the sub-prototypes in memory to confirm whether our approach has learned intra-class differences for the annotated category. The results of this visualization are demonstrated in Figure 3."
+        },
+        {
+            "heading": "3.5 CYCLE-CONSISTENT ALIGNMENT AND ADAPTION",
+            "text": "Once the sub-prototypes are mined through memory learning, the method of cycle-consistent matching, inspired by DCC (Li et al., 2021), is employed to align the embedding Z\u0302. The cycle-consistent matching is preferred due to it can provide a better fit to the memory structure compared to other UniDA methods. The other method, One-vs-All Network (OVANet), proposed by Saito et al. (Saito and Saenko, 2021), needs to train the memory multiple times, which can lead to significant computational overhead. In brief, the Cycle-Consistent Alignment provides a solution by iteratively learning a consensus set of clusters between the two domains. The consensus clusters are identified based on the similarity of the prototypes, which is measured using a similarity metric. The similarity metric is calculated on the feature representations of the prototypes. For unknown classes, we set the size N of our memory during the initial phase to be larger than the number of possible sub-classes that may be learned in the source domain. This size is a hyperparameter that is adjusted based on the dataset size. Redundant sub-prototypes are invoked to represent the Z\u0302, when encountering unknown classes, allowing for an improved distance separation between unknown and known classes in feature space.\nTraining Objective. The adaptation loss in our training is similar to that of DCC, as LDA:\nLDA = Lce + \u03bb1Lcdd + \u03bb2Lreg , (7)\nwhere the Lce denotes the cross-entropy loss on source samples, Lcdd denotes the domain alignment loss, and Lreg denotes the regularize (more details in Appendix E). For the auxiliary reconstruction task, we add a mean-squared-error (MSE) loss function, denoted as Lrec:\nL = LDA + \u03bb3Lrec = Lce + \u03bb1Lcdd + \u03bb2Lreg + \u03bb3Lrec. (8)"
+        },
+        {
+            "heading": "4 EXPERIMENTS",
+            "text": ""
+        },
+        {
+            "heading": "4.1 DATASETS AND EVALUATION METRICS",
+            "text": "We first conduct the experiments in the UniDA setting (You et al., 2019) where private classes exist in both domains. Moreover, we also evaluate our approach on two other sub-cases, namely Open-Set Domain Adaptation (OSDA) and Partial Domain Adaptation (PDA).\nDatasets. Our experiments are conducted on four datasets: Office-31 (Saenko et al., 2010), which contains 4652 images from three domains (DSLR, Amazon, and Webcam); OfficeHome (Venkateswara et al., 2017), a more difficult dataset consisting of 15500 images across 65 categories and 4 domains (Artistic images, Clip-Art images, Product images, and Real-World images); VisDA (Peng et al., 2017), a large-scale dataset with a synthetic source domain of 15K images and a real-world target domain of 5K images; and DomainNet (Peng et al., 2019), the largest domain adaptation dataset with approximately 600,000 images. Similar to previous studies (Fu et al., 2020), we evaluate our model on three subsets of DomainNet (Painting, Real, and Sketch). Table 3: The division on label set,\nCommon Class (C) / Source-Private Class (C\u0302s) / Target Private Class (C\u0302t).\nDataset Class Split(C/C\u0302s/C\u0302t)PDA OSDA UniDA Office-31 10 / 21 / 0 10 / 0 / 11 10 / 10 / 11\nOfficeHome 25 / 40 / 0 25 / 0 / 40 10 / 5 / 50 VisDA 6 / 6 / 0 6 / 0 / 6 6 / 3 / 3 DomainNet \u2014\u2014 \u2014\u2014 150 / 50 / 145 As in previous work (Li et al., 2021; Saito et al., 2018; Busto et al., 2018; Cao et al., 2018; You et al., 2019), we divide the label set into three groups: common classes C, source-private classes C\u0302s, and target-private classes C\u0302t. The separation of classes for each of the four datasets is shown in Table 3 and is determined according to alphabetical order.\nEvaluation Metrics. We report the average results of three runs. For the PDA scenario, we calculate the classification accuracy over all target samples. The usual metrics adopted to evaluate OSDA are the average class accuracy over the known classes OS\u2217, and the accuracy of the unknown class UNK. In the OSDA and UniDA scenarios, we consider the balance between \u201cknown\u201d and \u201cunknown\u201d categories and report the H-score (Bucci et al., 2020):\nH-score = 2\u00d7 OS \u2217 \u00d7 UNK\nOS\u2217 + UNK , (9)\nwhich is the harmonic mean of the accuracy of \u201cknown\u201d and \u201cunknown\u201d samples.\nImplementation Details. Our implementation is based on PyTorch (Paszke et al., 2019). We use CLIP (Dosovitskiy et al., 2020) as the backbone pretrained by CLIP (Radford et al., 2021) for the MemSPM is hard to train with a randomly initialized encoder. The classifier consists of two fully-connected layers, which follow the previous design (Cao et al., 2018; You et al., 2019; Saito et al., 2018; Fu et al., 2020; Li et al., 2021). The weights in the L are empirically set as \u03bb1 = 0.1, \u03bb2 = 3 and \u03bb3 = 0.5 following DCC (Li et al., 2021). For a fair comparison, we also adopt CLIP as backbone for DCC (Li et al., 2021) and state-of-art method GLC (Qu et al., 2023). We use the official code of DCC (Li et al., 2021) and GLC (Qu et al., 2023) (Links in Appendix D). Regarding computational resources, MemSPM demonstrates efficient training on the Office-Home dataset using a single RTX 3090. The entire training process is completed within one day."
+        },
+        {
+            "heading": "4.2 COMPARISON WITH STATE-OF-THE-ARTS",
+            "text": "We compare our method with previous state-of-the-art algorithms in three sub-cases of unsupervised domain adaptation, namely, object-specific domain adaptation (OSDA), partial domain adaptation (PDA), and universal domain adaptation (UniDA).\nResults on UniDA. In the most challenging setting, i.e. UniDA, our MemSPM approach achieves state-of-the-art performance. Table 7 shows the results on DomainNet, VisDA, and Office-31, and the result of Office-Home is summarized in Table 2. We mainly compare with GLC and DCC using ViT-B/16 as the backbone. On Office-31, the MemSPM+DCC outperforms the previous state-of-art method GLC by 3.7% and surpasses the DCC by 6.4%. On visda, our method surpasses the DCC\nby a huge margin of 16.1%. Our method also surpasses the GLC by 9.9% and the DCC by 4.5% on DomainNet. On the Office-Home, we surpass the DCC by 9.8% and the GLC by 3.7%.\nResults on OSDA and PDA. In table 4 and table 5, we present the results on Office-Home, Office31, and VisDA under OSDA and PDA scenarios. In the OSDA scenario, MemSPM+DCC still achieves state-of-the-art performance. Specifically, MemSPM+DCC obtains 95.6% H-score on Office-31, with an improvement of 5.5% compared to GLC and 13.7% compared to DCC. In the PDA scenario, MemSPM still achieves comparable performance compared to methods tailored for PDA. The MemSPM+DCC surpasses the DCC by 8.1% on the VisDA."
+        },
+        {
+            "heading": "4.3 ABLATION STUDIES",
+            "text": "Visualization with Reconstruction and tSNE We first visualize what the memory learns from OfficeHome by sampling a single sub-prototype and adapting an auxiliary reconstruction task: X \u2192 X\u0302 . We also provide the tSNE of the Z\u0302 which retrieves the most related sub-prototypes. The visualization is shown in Figure 3. The tSNE visualization depicts the distribution of sub-classes within each category, indicative of MemSPM\u2019s successful mining of sub-prototypes. The reconstruction visualization shows what has been learned by MemSPM, demonstrating its ability to capture intra-class diversity.\nMemory-Assisted Sub-Prototype Mining (MemSPM) Impact. As shown in Tables 7, 2, 4, and 5, MemSPM+DCC outperforms DCC across UniDA, OSDA, and PDA scenarios. MemSPM significantly enhances DCC performance with CLIP as the backbone. CLIP is applied because MemSPM\u2019s memory module, with large latent space initialized by the random normal distribution, faces challenges in retrieving diverse sub-prototypes early in training.\nSensitivity to Hyper-parameters. We conducted experiments on the VisDA dataset under the UniDA setting to demonstrate the impact of hyperparameters S and N on the performance of our method. The impact of S is illustrated in Figure 3. When S \u2265 20, the performance reaches a comparable result; for the best performance on Office-Home, S \u2265 40 is achieved. At the same time, the performance of the model is not sensitive to the value of N , when S = 30. For parameter K, we conducted experiments with K = 1, signifying the selection of only the most relevant item. In the visualization results, the visualizations of memory items displayed meaningless images. The value of K is determined based on the attention values. During the design process, we observed that the fifth attention value is nearly zero. Consequently, we employ a top-K approach (K = 5) to filter out other noisy memory items. We will add these results analysis and visualizations to the revised manuscript.\nEffect of CLIP-based Feature. As shown in Table 6, we have conducted experiments to compare ViT-B/16 (pre-trained by CLIP), ViT-B/16 (pre-trained on ImageNet), and ViT-B/16 (without pretraining). The performance of MemSPM on Officehome using ViT-B/16 (ImageNet) is 76.7% (H-score), which is 7.5% lower than MemSPM using ViT-B/16 (pre-trained on CLIP). Additionally, the ViT-B/16 (without pre-training) only achieves 64.3%, which is 19.9% lower than that using ViT-B/16 (pre-trained on CLIP).\nEffect of Adaptive Threshold As shown in Table 6, to demonstrate the effectiveness of the adaptive threshold, we find a best-performed fixed threshold of 0.005 through experiments. It limits the memory to learn sub-prototypes, which only achieved 73.9% (H-score) on Officehome.\nEffect of Loss As shown in Table 6, we experimented with loss contributions. Lce for classification is essential; removing Lcdd led to a 4.4% drop (79.8%). Optimal coefficients for Lce (\u03bb1 = 0.1) and Lcdd (\u03bb2 = 3) achieves the best performance. The reconstruction loss (Lrec) slightly improved performance, mainly for visualizing sub-prototypes."
+        },
+        {
+            "heading": "5 CONCLUSION",
+            "text": "In this paper, we propose the Memory-Assisted Sub-Prototype Mining (MemSPM) method, which can learn the intra-class diversity by mining the sub-prototypes to represent the sub-classes. Compared with previous methods, which overlook the intra-class structure by using the one-hot label, our MemSPM can learn the class feature from a more subdivided sub-class perspective to improve adaptation performance. At the same time, the visualization of the tSNE and reconstruction demonstrates the sub-prototypes have been well learned as we expected. Our MemSPM method exhibits superior performance in most cases compared with previous state-of-the-art methods on four benchmarks."
+        },
+        {
+            "heading": "ACKNOWLEDGEMENT",
+            "text": "This work was partially supported by the National Natural Science Foundation of China (Grants No 62106043, 62172228), and the Natural Science Foundation of Jiangsu Province (Grants No BK20210225)."
+        },
+        {
+            "heading": "B LIMITATION",
+            "text": "Training the memory unit of MemSPM is challenging when adopting the commonly used ResNet-50 as the backbone. This is due to the memory unit\u2019s composition of massive randomly initialized tensors. During the early stage of training, there is a lack of discriminability in the input-oriented embedding, which leads to addressing only a few sub-prototypes. This decoupling of the memory unit from the input data necessitates using a better pre-trained model (ViT-B/16 pre-trained on CLIP) and fixing the encoder to reduce computation requirements. Additionally, the number of sub-prototypes in one memory item might need to be adjusted for the diversity of the category."
+        },
+        {
+            "heading": "C COMPARSION BETWEEN RELATED PROTOTYPE CONCEPTS",
+            "text": "The related concept of the prototype is mentioned in some previous works Kundu et al. (2022); Liu et al. (2022), there are clear differences between theirs and our MemSPM.\nFirst, the meaning of prototype is different between Kundu et al. (2022) and ours. In the Kundu et al. (2022), the subsidiary prototype is extracted from randomly cropped images, which means the subsidiary prototypes only represent the low-level, morphological, and partial features of the image. These subsidiary prototypes don\u2019t have complete semantic knowledge, and the method can\u2019t learn the concept shift in the same category. Moreover, they still used the labeled category directly for alignment and adaptation. These prototypes can\u2019t represent some part of the samples in one category.\nIn contrast, the MemSPM allows memory items to extract complete semantic knowledge and maintain domain-invariant knowledge. To accomplish this, we use input-oriented embedding, which involves comparing the entire image feature with memory items. The memory can then sample a task-oriented embedding that represents the semantic knowledge of the input-oriented embedding. Our approach is designed to obtain a domain-invariant and semantic feature for categories with significant domain shifts. As a result, each sub-prototype can represent a sub-class in one category.\nSecond, the purpose of Liu et al. (2022) is very different from our MemSPM. They aim to learn differences among unknown classes, which is like the DCC. It still extracts features and aligns the class across different domains directly based on one-hot labels, and is not concerned with the concept shift and difference in one category. However, our method can mine the sub-classes in one category when there exist significant concept shifts, reflecting the inherent differences among samples annotated as the same category. This helps universal adaptation with a more fine-grained alignment or to make significant decisions without human supervision.\nD IMPLEMENTATION DETAILS\nDCC. We use ViT-B/16 (Dosovitskiy et al., 2020) as the backbone. The classifier is made up of two FC layers. We use Nesterov momentum SGD to optimize the model, which has a momentum of 0.9 and a weight decay of 5e-4. The learning rate decreases by a factor of (1 + \u03b1 iN )\n\u2212\u03b2 , where i and N represent current and global iteration, respectively, and we set \u03b1 = 10 and \u03b2 = 0.75. We use a batch size of 36 and the initial learning rate is set as 1e-4 for Office-31, and 1e-3 for Office-Home and DomainNet. We use the settings detailed in Li et al. (2021). PyTorch Paszke et al. (2019) is used for implementation.\nGLC. We use ViT-B/16 (Dosovitskiy et al., 2020) as the backbone. The SGD optimizer with a momentum of 0.9 is used during the target model adaptation phase of GLC (Qu et al., 2023). The initial learning rate is set to 1e-3 for Office-Home and 1e-4 for both VisDA and DomainNet. The hyperparameter \u03c1 is fixed at 0.75 and |L| at 4 across all datasets, while \u03b7 is set to 0.3 for VisDA and 1.5 for Office-Home and DomainNet, which corresponds to the settings detailed in (Qu et al., 2023). PyTorch (Paszke et al., 2019) is used for implementation.\nExisting code used.\n\u2022 DCC (Li et al., 2021): https://github.com/Solacex/Domain-Consensus-Clustering\n\u2022 GLC (Qu et al., 2023): https://github.com/ispc-lab/GLC\n\u2022 PyTorch (Paszke et al., 2019): https://pytorch.org/\nExisting datasets used.\n\u2022 Office-31 (Saenko et al., 2010): https://www.cc.gatech.edu/\u00e2\u0301Lijjudy/domainadapt\n\u2022 Office-Home (Venkateswara et al., 2017): https://www.hemanthdv.org/officeHomeDataset.html\n\u2022 DomainNet (Peng et al., 2019): http://ai.bu.edu/M3SDA\n\u2022 VisDA (Peng et al., 2017): http://ai.bu.edu/visda-2017/\nCompute Requirements. For our experiments, we used a local desktop machine with an Intel Core i5-12490f, a single Nvidia RTX-3090 GPU, and 32GB of RAM. When we adapt the batch-size used in DCC (Li et al., 2021), our MemSPM only occupies 4GB of GPU memory during training as the result of fixing the encoder."
+        },
+        {
+            "heading": "E DETAILS OF DOMAIN CONSENSUS CLUSTERING",
+            "text": "Domain Consensus Clustering (DCC). They leverage Contrastive Domain Discrepancy (CDD) to facilitate the alignment over identified common samples in a class-aware style. They impose LCDD to minimize the intra-class discrepancies and enlarge the inter-class gap. Consequently, the enhanced discriminability, in turn, enables DCC to perform more accurate clustering. Details of CDD are provided in: https://openaccess.thecvf.com/content/CVPR2021/supplemental/ Li_Domain_Consensus_Clustering_CVPR_2021_supplemental.pdf."
+        },
+        {
+            "heading": "F DISCUSSION OF MOTIVATION",
+            "text": "Illustrated in Figure 1, our motivation arises from the recognition that samples annotated within the same category often exhibit significant intra-class differences and concept shifts. In Figure 1 (a), we visually depict this phenomenon, showcasing samples labeled as the class \"alarm clock\" further divided into three distinct sub-classes: desktop alarm clock, digital alarm clock, and wall alarm clock. Similarly, the class \"airplane\" encompasses multiple sub-classes, such as propeller planes and jet aircraft. This demonstrates that the semantic ambiguity and annotation cost lead to the inefficiency of class alignment. Previous methods often force samples with significant concept shifts to align together during adaptation, increasing the likelihood of misclassifying unknown classes into known classes. In contrast, our proposed method addresses this challenge by introducing sub-prototypes, refining the features of known classes by separating them into sub-classes, and reducing the risk of negative transfer.\nG VISUALIZATION\nWe provide more results of visualization in Figure 4 and Figure 5 to reveal sub-prototypes stored in the memory unit, which demonstrates that our MemSPM approach can learn the intra-class concept shift."
+        },
+        {
+            "heading": "H POTENTIAL SOCIETAL IMPACT",
+            "text": "Our finding of the intra-class concept shift may influence future work on domain adaption or other tasks. They can optimize the construction and refinement of the feature space by considering the intra-class distinction. The MemSPM also provides a method that can be used to demonstrate the interpretability of the model for further deployment. However, the utilization of the MemSPM method for illegal purposes may be facilitated by its increased availability to organizations or individuals.\nThe MemSPM method may be susceptible to adversarial attacks as all contemporary deep learning systems. Although we demonstrate increased performance and interpretability compared to the state-of-the-art methods, negative transfer is still possible in extreme cases of domain shift or category shift. Therefore, our technique should not be employed in critical applications or to make significant decisions without human supervision."
+        }
+    ],
+    "title": "MEMORY-ASSISTED SUB-PROTOTYPE MINING FOR UNIVERSAL DOMAIN ADAPTATION",
+    "year": 2024
+}

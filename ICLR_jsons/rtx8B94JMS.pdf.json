@@ -1,0 +1,667 @@
+{
+    "abstractText": "We present a novel variational framework for performing inference in (neural) stochastic differential equations (SDEs) driven by Markov-approximate fractional Brownian motion (fBM). SDEs offer a versatile tool for modeling real-world continuous-time dynamic systems with inherent noise and randomness. Combining SDEs with the powerful inference capabilities of variational methods, enables the learning of representative function distributions through stochastic gradient descent. However, conventional SDEs typically assume the underlying noise to follow a Brownian motion (BM), which hinders their ability to capture long-term dependencies. In contrast, fractional Brownian motion (fBM) extends BM to encompass non-Markovian dynamics, but existing methods for inferring fBM parameters are either computationally demanding or statistically inefficient. In this paper, building upon the Markov approximation of fBM, we derive the evidence lower bound essential for efficient variational inference of posterior path measures, drawing from the well-established field of stochastic analysis. Additionally, we provide a closed-form expression to determine optimal approximation coefficients. Furthermore, we propose the use of neural networks to learn the drift, diffusion and control terms within our variational posterior, leading to the variational training of neural-SDEs. In this framework, we also optimize the Hurst index, governing the nature of our fractional noise. Beyond validation on synthetic data, we contribute a novel architecture for variational latent video prediction,\u2014an approach that, to the best of our knowledge, enables the first variational neural-SDE application to video perception.",
+    "authors": [],
+    "id": "SP:39b133504b49af5eaceeb2082b38e108287f934d",
+    "references": [
+        {
+            "authors": [
+                "Aur\u00e9lien Alfonsi",
+                "Ahmed Kebaier"
+            ],
+            "title": "Approximation of stochastic volterra equations with kernels of completely monotone type",
+            "venue": "arXiv preprint arXiv:2102.13505,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Moayed Haji Ali",
+                "Andrew Bond",
+                "Tolga Birdal",
+                "Duygu Ceylan",
+                "Levent Karacan",
+                "Erkut Erdem",
+                "Aykut Erdem"
+            ],
+            "title": "Vidstyleode: Disentangled video editing via stylegan and neuralodes",
+            "venue": "In International Conference on Computer Vision (ICCV),",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Micha\u00ebl Allouche",
+                "St\u00e9phane Girard",
+                "Emmanuel Gobet"
+            ],
+            "title": "A generative model for fbm with deep relu neural networks",
+            "venue": "Journal of Complexity,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Alexis Asseman",
+                "Tomasz Kornuta",
+                "Ahmet Ozcan"
+            ],
+            "title": "Learning beyond simulated physics. In Modeling and Decision-making in the Spatiotemporal Domain Workshop, 2018",
+            "venue": "URL https: //openreview.net/pdf?id=HylajWsRF7",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Mohammad Babaeizadeh",
+                "Chelsea Finn",
+                "Dumitru Erhan",
+                "Roy H Campbell",
+                "Sergey Levine"
+            ],
+            "title": "Stochastic variational video prediction",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Roman Ring",
+                "Francisco Ruiz",
+                "Alvaro Sanchez",
+                "Laurent Sartran",
+                "Rosalia Schneider",
+                "Eren Sezener",
+                "Stephen Spencer",
+                "Srivatsan Srinivasan",
+                "Milo\u0161 Stanojevi\u0107",
+                "Wojciech Stokowiec",
+                "Luyu Wang",
+                "Guangyao Zhou",
+                "Fabio Viola"
+            ],
+            "title": "URL http: //github.com/deepmind",
+            "venue": "The DeepMind JAX Ecosystem,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Christian Bayer",
+                "Simon Breneis"
+            ],
+            "title": "Markovian approximations of stochastic volterra equations with the fractional kernel",
+            "venue": "Quantitative Finance,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Christopher M Bishop",
+                "Nasser M Nasrabadi"
+            ],
+            "title": "Pattern recognition and machine learning, volume",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "James Bradbury",
+                "Roy Frostig",
+                "Peter Hawkins",
+                "Matthew James Johnson",
+                "Chris Leary",
+                "Dougal Maclaurin",
+                "George Necula",
+                "Adam Paszke",
+                "Jake VanderPlas",
+                "Skye Wanderman-Milne",
+                "Qiao Zhang"
+            ],
+            "title": "JAX: composable transformations of Python+NumPy programs, 2018",
+            "venue": "URL http: //github.com/google/jax",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Philippe Carmona",
+                "Laure Coutin"
+            ],
+            "title": "Fractional brownian motion and the markov property",
+            "venue": "Electronic Communications in Probability [electronic only],",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Philippe Carmona",
+                "Laure Coutin"
+            ],
+            "title": "Simultaneous approximation of a family of (stochastic) differential equations",
+            "venue": "Unpublished, June,",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Philippe Carmona",
+                "Laure Coutin",
+                "G\u00e9rard Montseny"
+            ],
+            "title": "Approximation of some gaussian processes",
+            "venue": "Statistical inference for stochastic processes,",
+            "year": 2000
+        },
+        {
+            "authors": [
+                "Annie AM Cuyt",
+                "Vigdis Petersen",
+                "Brigitte Verdonk",
+                "Haakon Waadeland",
+                "William B Jones"
+            ],
+            "title": "Handbook of continued fractions for special functions",
+            "venue": "Springer Science & Business Media,",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "James Davidson",
+                "Nigar Hashimzade"
+            ],
+            "title": "Type i and type ii fractional brownian motions: A reconsideration",
+            "venue": "Computational Statistics & Data Analysis,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Emily Denton",
+                "Rob Fergus"
+            ],
+            "title": "Stochastic video generation with a learned prior",
+            "venue": "In International conference on machine learning,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Jean-Yves Franceschi",
+                "Edouard Delasalles",
+                "Micka\u00ebl Chen",
+                "Sylvain Lamprier",
+                "Patrick Gallinari"
+            ],
+            "title": "Stochastic latent residual video prediction",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Crispin W Gardiner"
+            ],
+            "title": "Handbook of stochastic methods, volume 3. springer Berlin",
+            "year": 1985
+        },
+        {
+            "authors": [
+                "Jim Gatheral",
+                "Thibault Jaisson",
+                "Mathieu Rosenbaum"
+            ],
+            "title": "Volatility is rough",
+            "venue": "Quantitative finance,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Zan Gojcic",
+                "Or Litany",
+                "Andreas Wieser",
+                "Leonidas J Guibas",
+                "Tolga Birdal"
+            ],
+            "title": "Weakly supervised learning of rigid 3d scene flow",
+            "venue": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Cade Gordon",
+                "Natalie Parde"
+            ],
+            "title": "Latent neural differential equations for video generation",
+            "venue": "In NeurIPS 2020 Workshop on Pre-registration in Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Joao Guerra",
+                "David Nualart"
+            ],
+            "title": "Stochastic differential equations driven by fractional brownian motion and standard brownian motion",
+            "venue": "Stochastic analysis and applications,",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Philipp Harms"
+            ],
+            "title": "Strong convergence rates for markovian representations of fractional processes",
+            "venue": "Discrete and Continuous Dynamical Systems-B,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Philipp Harms",
+                "David Stefanovits"
+            ],
+            "title": "Affine representations of fractional processes with applications in mathematical finance",
+            "venue": "Stochastic Processes and their Applications,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Kohei Hayashi",
+                "Kei Nakagawa"
+            ],
+            "title": "Fractional sde-net: Generation of time series data with long-term memory",
+            "venue": "IEEE 9th International Conference on Data Science and Advanced Analytics (DSAA),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jonathan Heek",
+                "Anselm Levskaya",
+                "Avital Oliver",
+                "Marvin Ritter",
+                "Bertrand Rondepierre",
+                "Andreas Steiner",
+                "Marc van Zee"
+            ],
+            "title": "Flax: A neural network library and ecosystem for JAX, 2023",
+            "venue": "URL http://github.com/google/flax",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Hilbert Johan Kappen",
+                "Hans Christian Ruiz"
+            ],
+            "title": "Adaptive importance sampling for control and inference",
+            "venue": "Journal of Statistical Physics,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Patrick Kidger"
+            ],
+            "title": "On Neural Differential Equations",
+            "venue": "PhD thesis, University of Oxford,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Patrick Kidger",
+                "James Foster",
+                "Xuechen Chen Li",
+                "Terry Lyons"
+            ],
+            "title": "Efficient and accurate gradients for neural sdes",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Diederik P Kingma",
+                "Jimmy Ba"
+            ],
+            "title": "Adam: A method for stochastic optimization",
+            "venue": "arXiv preprint arXiv:1412.6980,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Lingkai Kong",
+                "Jimeng Sun",
+                "Chao Zhang"
+            ],
+            "title": "Sde-net: equipping deep neural networks with uncertainty estimates",
+            "venue": "In Proceedings of the 37th International Conference on Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Xuechen Li",
+                "Ting-Kam Leonard Wong",
+                "Ricky TQ Chen",
+                "David K Duvenaud"
+            ],
+            "title": "Scalable gradients and variational inference for stochastic differential equations",
+            "venue": "In Symposium on Advances in Approximate Bayesian Inference,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Shujian Liao",
+                "Terry Lyons",
+                "Weixin Yang",
+                "Hao Ni"
+            ],
+            "title": "Learning stochastic differential equations using rnn with log signature features",
+            "year": 1908
+        },
+        {
+            "authors": [
+                "SC Lim",
+                "VM Sithi"
+            ],
+            "title": "Asymptotic properties of the fractional brownian motion of riemann-liouville type",
+            "venue": "Physics Letters A,",
+            "year": 1995
+        },
+        {
+            "authors": [
+                "Xuanqing Liu",
+                "Tesi Xiao",
+                "Si Si",
+                "Qin Cao",
+                "Sanjiv Kumar",
+                "Cho-Jui Hsieh"
+            ],
+            "title": "Neural sde: Stabilizing neural ode networks with stochastic noise",
+            "year": 1906
+        },
+        {
+            "authors": [
+                "Zhengxiong Luo",
+                "Dayou Chen",
+                "Yingya Zhang",
+                "Yan Huang",
+                "Liang Wang",
+                "Yujun Shen",
+                "Deli Zhao",
+                "Jingren Zhou",
+                "Tieniu Tan"
+            ],
+            "title": "Videofusion: Decomposed diffusion models for high-quality video generation",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Martin Lysy",
+                "Natesh S Pillai"
+            ],
+            "title": "Statistical inference for stochastic differential equations with memory",
+            "venue": "arXiv preprint arXiv:1307.1164,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Benoit B Mandelbrot",
+                "John W Van Ness"
+            ],
+            "title": "Fractional brownian motions, fractional noises and applications",
+            "venue": "SIAM review,",
+            "year": 1968
+        },
+        {
+            "authors": [
+                "Domenico Marinucci",
+                "Peter M Robinson"
+            ],
+            "title": "Alternative forms of fractional brownian motion",
+            "venue": "Journal of statistical planning and inference,",
+            "year": 1999
+        },
+        {
+            "authors": [
+                "James Morrill",
+                "Cristopher Salvi",
+                "Patrick Kidger",
+                "James Foster"
+            ],
+            "title": "Neural rough differential equations for long time series",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Manfred Opper"
+            ],
+            "title": "Variational inference for stochastic differential equations",
+            "venue": "Annalen der Physik,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Sunghyun Park",
+                "Kangyeol Kim",
+                "Junsoo Lee",
+                "Jaegul Choo",
+                "Joonseok Lee",
+                "Sookyung Kim",
+                "Edward Choi"
+            ],
+            "title": "Vid-ode: Continuous-time video generation with neural ordinary differential equation",
+            "venue": "In Proceedings of the AAAI Conference on Artificial Intelligence,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Romain-Fran\u00e7ois Peltier",
+                "Jacques L\u00e9vy V\u00e9hel"
+            ],
+            "title": "Multifractional Brownian motion: definition and preliminary results",
+            "venue": "PhD thesis,",
+            "year": 1995
+        },
+        {
+            "authors": [
+                "Carl Edward Rasmussen",
+                "Christopher KI Williams"
+            ],
+            "title": "Gaussian processes for machine learning, volume 1",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "Davis Rempe",
+                "Tolga Birdal",
+                "Yongheng Zhao",
+                "Zan Gojcic",
+                "Srinath Sridhar",
+                "Leonidas J. Guibas"
+            ],
+            "title": "Caspr: Learning canonical spatiotemporal point cloud representations",
+            "venue": "In Advances in Neural Information Processing Systems (NeurIPS),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Davis Rempe",
+                "Tolga Birdal",
+                "Aaron Hertzmann",
+                "Jimei Yang",
+                "Srinath Sridhar",
+                "Leonidas J Guibas"
+            ],
+            "title": "Humor: 3d human motion model for robust pose estimation",
+            "venue": "In Proceedings of the IEEE/CVF international conference on computer vision,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Tom Ryder",
+                "Andrew Golightly",
+                "A Stephen McGough",
+                "Dennis Prangle"
+            ],
+            "title": "Black-box variational inference for stochastic differential equations",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Evangelos A Theodorou"
+            ],
+            "title": "Nonlinear stochastic control and information theoretic dualities: Connections, interdependencies and thermodynamic interpretations",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Anh Tong",
+                "Thanh Nguyen-Tang",
+                "Toan Tran",
+                "Jaesik Choi"
+            ],
+            "title": "Learning fractional white noises in neural stochastic differential equations",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Luxuan Yang",
+                "Ting Gao",
+                "Yubin Lu",
+                "Jinqiao Duan",
+                "Tao Liu"
+            ],
+            "title": "Neural network stochastic differential equation models with applications to financial data forecasting",
+            "venue": "Applied Mathematical Modelling,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ruihan Yang",
+                "Prakhar Srivastava",
+                "Stephan Mandt"
+            ],
+            "title": "Diffusion probabilistic modeling for video generation",
+            "venue": "arXiv preprint arXiv:2203.09481,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Xiao Zhang",
+                "Wei Wei",
+                "Zhen Zhang",
+                "Lei Zhang",
+                "Wei Li"
+            ],
+            "title": "Milstein-driven neural stochastic differential equation model with uncertainty estimates",
+            "venue": "Pattern Recognition Letters,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Carmona",
+                "Coutin"
+            ],
+            "title": "1998b) show that \u03b3 dt > 1/2 leads to unstable integration of the OU\u2013process, where dt is the integration step. Care should be taken that \u03b3max dt < 1/2, either by decreasing \u03b3max or decreasing the integration step dt. Additionally, choosing large values for \u03b3 is undesirable for numerical reasons",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Tong"
+            ],
+            "title": "Brownian motion (fBM) is approximated as a a Gaussian process (GP), (ii) only the Type II representation of fBM is used as as an integral over increments of the Wiener process. Tong et al. (2022) perform a finite time discretization of the Type II integral to obtain a first approximation of the increments of fBM. In a second step, this approximate GP is further approximated using a sparse GP approach based on a smaller set of pseudo or",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "C COVARIANCES"
+            ],
+            "title": "The full derivation of covariances between some processes relevant to this work are described here. Fractional Brownian motion (Type II). Using It\u00f4 isometry (\u00d8ksendal",
+            "venue": "\u00d8ksendal,",
+            "year": 2003
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Our surroundings constantly evolve over time, influenced by several dynamic factors, manifesting in various forms, from the weather patterns and the ebb & flow of financial markets to the movements of objects & observers, and the subtle deformations that reshape our environments (Gojcic et al., 2021; Rempe et al., 2021). Stochastic differential equations (SDEs) provide a natural way to capture the randomness and continuous-time dynamics inherent in these real-world processes. To extract meaningful information about the underlying system, i.e. to infer the model parameters and to accurately predict the unobserved paths, variational inference (VI) (Bishop & Nasrabadi, 2006) is used as an efficient means, computing the posterior probability measure over paths (Opper, 2019; Li et al., 2020; Ryder et al., 2018)1.\nThe traditional application of SDEs assumes that the underlying noise processes are generated by standard Brownian motion (BM) with independent increments. Unfortunately, for many practical scenarios, BM falls short of capturing the full complexity and richness of the observed real data, which often contains long-range dependencies, rare events, and intricate temporal structures that cannot be faithfully represented by a Markovian process. The non-Markovian fractional Brownian motion (fBM) (Mandelbrot & Van Ness, 1968) extends BM to stationary increments with a more complex dependence structure, i.e. long-range dependence vs. roughness/regularity controlled by its Hurst index (Gatheral et al., 2018). Yet, despite its desirable properties, the computational challenges and intractability of analytically working with fBMs pose significant challenges for inference.\n1KL divergence between two SDEs over a finite time horizon has been well-explored in the control literature (Theodorou, 2015; Kappen & Ruiz, 2016).\nIn this paper, we begin by providing a tractable variational inference framework for SDEs driven by fractional Brownian motion (Types I & II). To this end, we benefit from the relatively under-explored Markov representation of fBM and path-wise approximate fBM through a linear combination of a finite number of Ornstein\u2013Uhlenbeck (OU) processes driven by a common noise (Carmona & Coutin, 1998a;b; Harms & Stefanovits, 2019). We further introduce a differentiable method to optimise for the associated coefficients and conjecture (as well as empirically validate) that this strong approximation enjoys super-polynomial convergence rates, allowing us to use a handful of processes even in complex problems.\nSuch Markov-isation also allows us to inherit the well-established tools of traditional SDEs including Girsanov\u2019s change of measure theorem (\u00d8ksendal & \u00d8ksendal, 2003), which we use to derive and maximise the corresponding evidence lower bound (ELBO) to yield posterior path measures as well as maximum likelihood estimates as illustrated in Fig. 1. We then use our framework in conjunction with neural networks to devise VI for neural-SDEs (Liu et al., 2019; Li et al., 2020) driven by the said fractional diffusion. We deploy this model along with a novel neural architecture for the task of enhanced video prediction. To the best of our knowledge, this is the first time either fractional or variational neural-SDEs are used to model videos. Our contributions are: \u2022 We make accessible the relatively uncharted Markovian embedding of the fBM and its strong\napproximation, to the machine learning community. This allows us to employ the traditional machinery of SDEs in working with non-Markovian systems. \u2022 We show how to balance the contribution of Markov processes by optimising for the combination coefficients in closed form. We further estimate the (time-dependent) Hurst index from data. \u2022 We derive the evidence lower bound for SDEs driven by approximate fBM of both Types I and II. \u2022 We model the drift, diffusion and control terms in our framework by neural networks, and propose\na novel architecture for video prediction. We will make our implementation publicly available upon publication."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "Fractional noises and neural-SDEs. fBM (Mandelbrot & Van Ness, 1968) was originally used for the simulation of rough volatility in finance (Gatheral et al., 2018). Using the Lemarie\u0301-Meyer wavelet representation, Allouche et al. (2022) provided a large probability bound on the deepfeedforward RELU network approximation of fBM, where up to log terms, a uniform error of O(N\u2212H) is achievable with log(N) hidden layers and O(N) parameters. Tong et al. (2022) approximated the fBM (only Type II) with sparse Gaussian processes. Unfortunately, they are limited to Euler-integration and to the case of H > 1/3. Their model was also not applied to videos. Recently, Yang et al. (2023) applied Levy driven neural-SDEs to times series prediction and Hayashi & Nakagawa (2022) considered neural-SDEs driven by fractional noise. Neither of those introduce a variational framework. Both Liao et al. (2019); Morrill et al. (2021) worked with rough path theory to model long time series via rough neural-SDEs. To the best of our knowledge, we are the firsts to devise a VI framework for neural-SDEs driven by a path-wise (strong) approximation of fBM.\nSDEs and visual understanding. Apart from the recent video diffusion models (Luo et al., 2023; Yang et al., 2022; Ho et al., 2022), SDEs for spatiotemporal visual generation is relatively unexplored. Park et al. (2021); Ali et al. (2023) used neural-ODEs to generate and manipulate videos while (Rempe et al., 2020) used neural-ODEs for temporal 3D point cloud modeling. SDENet (Kong\net al., 2020) and MDSDE-Net (Zhang et al., 2023) learned drift and diffusion networks for uncertainty estimation of images using out-of-distribution data. Tong et al. (2022) used approximatefBMs in score-based diffusion modeling for image generation. Gordon & Parde (2021) briefly evaluated different neural temporal models for video generation. While Babaeizadeh et al. (2018) used VI for video prediction, they did not employ SDEs. To the best of our knowledge, we are the firsts to use neural-SDEs in a variational framework for video understanding."
+        },
+        {
+            "heading": "3 BACKGROUND",
+            "text": "We first tailor and make accessible the fractional Brownian Motion (fBM) and its relatively less explored Markov approximations for the learning community. We then describe the SDEs driven by fBM and its approximation before delving into the inference. We leave the proofs to our appendix."
+        },
+        {
+            "heading": "3.1 FRACTIONAL BROWNIAN MOTION (FBM) & ITS MARKOV APPROXIMATION",
+            "text": "Definition 1 (Fractional Brownian Motion (Types I & II)). fBM is a self-similar, non-Markovian, non-martingale, zero-mean Gaussian process (BH(t))t\u2208[0,T ] for T > 0 with a covariance of either\nE [ B\n(I) H (t)B (I) H (s)\n] = 1\n2 (|t|2H + |s|2H \u2212 |t\u2212 s|2H) (Type I) (1) E [ B\n(II) H (t)B (II) H (s)\n] =\n1\n\u03932(H + 1/2) \u222b s 0 ((t\u2212 u)(s\u2212 u))H\u22121/2 du (Type II) (2)\nwhere t > s, 0 < H < 1 is the Hurst index, superscripts denote the types and \u0393 is the Gamma function.\nfBM recovers Brownian motion (BM) for H = 1/2 (regular diffusion) and generalizes it for other choices. The increments are (i) positively correlated for H > 1/2 (super-diffusion) where the tail behaviour is infinitely heavier than that of BM, and (ii) negatively correlated for H < 1/2 (subdiffusion), with variance E ( |B(I)H (t)\u2212B (I) H (s)|2 ) = |t \u2212 s|2H for Type I. The Type II model implies nonstationary increments of which the marginal distributions are dependent on the time relative to the start of the observed sample, i.e. all realizations would have to be found very close to the unconditional mean (i.e. , the origin) (Lim & Sithi, 1995; Davidson & Hashimzade, 2009).\nDefinition 2 (Integral representations of fBM). B(I,II)H admit the following integral forms due to the Mandelbrot van-Ness and Weyl representations, respectively (Mandelbrot & Van Ness, 1968):\nB (I) H (t) =\n1\n\u0393(H + 1/2) \u222b t \u2212\u221e [ K(I)(t, s) := ( (t\u2212 s)H\u22121/2 \u2212 (\u2212s)H\u22121/2+ )] dW (s) (3)\n= 1\n\u0393(H + 1/2) (\u222b 0 \u2212\u221e ( (t\u2212 s)H\u22121/2 \u2212 (\u2212s)H\u22121/2 ) dW (s) + \u222b t 0 (t\u2212 s)H\u22121/2 dW (s) )\nB (II) H (t) =\n1\n\u0393(H + 1/2) \u222b t 0 [ K(II)(t, s) := (t\u2212 s)H\u22121/2 ] dW (s) (4)\nwhere K(I) and K(II) are the kernels corresponding to Types I and II, respectively. Proposition 1 (Markov representation of fBM (Harms & Stefanovits, 2019)). The long memory processes B(I,II)H (t) can be represented by an infinite linear combination of Markov processes, all driven by the same Wiener noise, but with different time scales, defined by speed of mean reversion \u03b3. For both types we have representations of the form:\nBH(t) =  \u222b \u221e 0 (Y\u03b3(t)\u2212 Y\u03b3(0))\u00b5(\u03b3) d\u03b3, H < 1/2,\n\u2212 \u222b \u221e 0 \u2202\u03b3(Y\u03b3(t)\u2212 Y\u03b3(0))\u03bd(\u03b3) d\u03b3, H > 1/2 , (5)\nwhere \u00b5(\u03b3) = \u03b3\u2212(H+1/2)/ (\u0393(H + 1/2)\u0393(1/2\u2212H)) and \u03bd(\u03b3) = \u03b3\u2212(H\u22121/2)/(\u0393(H + 1/2) \u0393(3/2 \u2212 H)). Note, these non\u2013negative densities are not normalisable. To simplify notation,\nwe will drop explicit dependency on the types (I, II) in what follows. For each \u03b3 \u2265 0, and for both types I and II , the processes Y\u03b3(t) are OU processes which are solutions to the SDE dY\u03b3(t) = \u2212\u03b3Y\u03b3(t) dt+ dW (t). This SDE is solved by\nY\u03b3(t) = Y\u03b3(0)e \u2212\u03b3t + \u222b t 0 e\u2212\u03b3(t\u2212s) dW (s). (6)\n\u201dType I\u201d and \u201dType II\u201d differ in the initial conditions Y\u03b3(0). One can show that:\nY (I)\u03b3 (0) = \u222b 0 \u2212\u221e e\u03b3s dW (s) and Y (II)\u03b3 (0) = 0. (7)\nDefinition 3 (Markov approximation of fBM (MA-fBM)). Eq. (5) suggests that BH(t) could be well approximated by a Markov process B\u0302H(t) by (i) truncating the integrals at finite \u03b3 values (\u03b31...\u03b3K) and (ii) approximating the integral by a numerical quadrature as a finite linear combination involving quadrature points and weights {\u03c9k}. Changing the notation Y\u03b3k(t) \u2192 Yk(t):\nBH(t) \u2248 B\u0302H(t) \u2261 K\u2211\nk=1\n\u03c9k (Yk(t)\u2212 Yk(0)) , (8)\nwhere for fixed \u03b3k the choice of \u03c9k depends on H and the choice of \u201dType I\u201d or \u201dType II\u201d. For \u201dType II\u201d, we set Yk(0) = 0. Since Yk(t) is normally distributed (Harms & Stefanovits, 2019, Thm. 2.16) and can be assumed stationary for \u201dType I\u201d, we can simply sample ( Y\n(I 1 (0), . . . , Y (I) K (0) ) from a normal distribution with mean 0 and covariance Ci,j = 1/(\u03b3i + \u03b3j) (see Eq. (28)).\nThis strong approximation provably bounds the sample paths: Theorem 1 (Alfonsi & Kebaier (2021)). For rough kernels (H < 1/2) and {\u03c9k} following a Gaussian quadrature rule, there exists a constant c per every t \u2208 (0, T ) such that:\nE|B(II)H (t)\u2212 B\u0302 (II) H (t)| \u2264 O(K \u2212cH), where 1 < c \u2264 2, (9)\nas K \u2192 \u221e. Note that, in our setting, B(II)H (0) = B\u0302 (II) H (0) = 0.\nIn the literature, different choices of \u03b3k and \u03c9k have been proposed (Harms & Stefanovits, 2019; Carmona & Coutin, 1998a; Carmona et al., 2000) and for certain choices, it is possible to obtain a superpolynomial rate, as shown by Bayer & Breneis (2023) for the Type II case. As we will show in Sec. 4.1, choosing \u03b3k = rk\u2212n, k = 1, . . . ,K with n = (K + 1)/2 (Carmona & Coutin, 1998a), we will optimise {\u03c9k}k for both types, to get optimal rates."
+        },
+        {
+            "heading": "3.2 SDES DRIVEN BY (FRACTIONAL) BM",
+            "text": "Definition 4 (SDEs driven by BM (BMSDE)). A common generative model for stochastic dynamical systems considers a set of observational data D = {O1, . . . , ON}, where the Oi are generated (conditionally) independent at random at discrete times ti with a likelihood p\u03b8 (Oi | X(ti)). The prior information about the unobserved path {X(t); t \u2208 [0, T ]} of the latent process X(t) \u2208 RM is given by the assumption that X(t) fulfils the SDE:\ndX(t) = b\u03b8 (X(t), t) dt+ \u03c3\u03b8 (X(t), t) dW (t) (10) The drift function b\u03b8 (X, t) \u2208 RD models the deterministic part of the change dX(t) of the state variable X(t) during the infinitesimal time interval dt, whereas the diffusion matrix \u03c3\u03b8 (X(t), t) \u2208 RD\u00d7D (assumed to be symmetric and non\u2013singular, for simplicity) encodes the strength of the added Gaussian white noise process, where dW (t) \u2208 RD is the infinitesimal increment of a vector of independent Wiener processes during dt. Definition 5 (SDEs driven by fBM (fBMSDE)). Dfn. 4 can be formally extended to the case of fractional Brownian motion replacing dW (t) by dBH(t) (Guerra & Nualart, 2008):\ndX(t) = b\u03b8 (X(t), t) dt+ \u03c3\u03b8 (X(t), t) dBH(t). (11) Remark 1. Care must be taken in a proper definition of the diffusion part in the fBMSDE Eq. (11) and in developing appropriate numerical integrators for simulations, when the diffusion \u03c3\u03b8 (X(t), t) explicitly depends on the state X(t). Corresponding stochastic integrals of the Ito\u0302 type cannot be applied when H < 1/2 and other approaches (which are generalisations of the Stratonovich SDE for H = 12 ) are necessary (Lysy & Pillai, 2013)."
+        },
+        {
+            "heading": "4 METHOD",
+            "text": "Our goal is to extend variational inference (VI) Bishop & Nasrabadi (2006) to the case where the Wiener process in Eq. (10) is replaced by an fBM as in Dfn. 5. Unfortunately, the processes defined by Eq. (11) are not Markovian preventing us from resorting to the standard Girsanov change of measure approach known for \u201dordinary\u201d SDE to compute KL\u2013divergences and ELBO functionals needed for VI (Opper, 2019). While Tong et al. (2022) leverage sparse approximations for Gaussian processes, this makes BH conditioned on a finite but larger number of so\u2013called inducing variables. We take a completely different and conceptually simple approach to VI for fBMSDE based on the exact representation of BH(t) given in Prop. 1. To this end, we first show how the strong Markovapproximation in Dfn. 3 can be used to approximate an SDE driven by fBM, before delving into the VI for the Markov-Approximate fBMSDE. Definition 6 (Markov-Approximate fBMSDE (MA-fBMSDE)). Substituting the fBM, BH(t), in Dfn. 5 by the finite linear combination of OU-processes B\u0302H(t), we define MA-fBMSDE as:\ndX(t) = b\u03b8 (X(t), t) dt+ \u03c3\u03b8 (X(t), t) dB\u0302H(t), (12) where dB\u0302H(t) = \u2211K\nk=1 \u03c9k dYk(t) with dYk(t) = \u2212\u03b3kYk(t) dt+ dW (t) (cf. Dfn. 3). Proposition 2. X(t) can be augmented by the finite number of Markov processes Yk(t) (approximating BH(t)) to a higher dimensional state variable of the form Z(t) . = (X(t), Y1(t), . . . YK(t)) \u2208 RD(K+1), such that the joint process of the augmented system becomes Markovian and can be described by an \u2019ordinary\u2019 SDE:\ndZ(t) = h\u03b8 (Z(t), t) dt+\u03a3\u03b8 (Z(t), t) dW (t), (13)\nwhere the augmented drift vector h\u03b8 \u2208 RD\u00d7(K+1) and the diffusion matrix \u03a3\u03b8 (Z, t) \u2208 RD(K+1)\u00d7D are given by\nh\u03b8 (Z, t) =  b\u03b8 (X, t)\u2212 \u03c3\u03b8 (X, t) \u2211 k \u03c9k\u03b3kYk \u2212\u03b31Y1 . . .\n\u2212\u03b3KYK\n \u03a3\u03b8 (Z, t) =  \u03c9\u0304\u03c3\u03b8(X, t)\n1\u20d7 ... 1\u20d7  , (14) where 1\u20d7 = (1, 1, . . . , 1)\u22a4 \u2208 RD. We will refer to Eq. (13) as the variational prior.\nProof. Each of the D components of the vectors Yk use the same scalar weights \u03c9k \u2208 R. Also, note that each Yk is driven by the same vector of Wiener processes. Hence, we obtain the system of SDEs given by\ndX(t) = b\u03b8 (X(t), t) dt\u2212 \u03c3\u03b8 (X(t), t) \u2211 k \u03c9k\u03b3kYk(t) dt+ \u03c9\u0304\u03c3\u03b8 (X(t), t) dW (t)\ndYk(t) = \u2212\u03b3kYk(t) dt+ dW (t) for k = 1, . . . ,K (15)\nwhere \u03c9\u0304 .= \u2211\nk \u03c9k. This system of equations can be collectively represented in terms of the augmented variable Z(t) := (X(t), Y1(t), . . . YK(t)) \u2208 RD(K+1) leading to a single SDE specified by Eqs. (13) and (14).\nEq. (13) represents a standard SDE driven by Wiener noise allowing us to utilise the standard tools of stochastic analysis, such as the Girsanov change of measure theorem and derive the evidence lower bounds (ELBO) required for VI. This is what we will exactly do in the sequel. Proposition 3 (Controlled MA-fBMSDE). The paths of Eq. (13) can be steered by adding a control term u(X,Y1, . . . , YK , t) \u2208 RD that depends on all variables to be optimised, to the drift h\u03b8 resulting in the transformed SDE, a.k.a. the variational posterior:\ndZ\u0303(t) = ( h\u03b8 ( Z\u0303(t), t ) + \u03c3\u03b8(Z\u0303(t), t)u(Z\u0303(t), t) ) dt+\u03a3\u03b8 ( Z\u0303(t), t ) dW (t) (16)\nSketch of the proof. Using the fact that the posterior probability measure over paths Z\u0303(t) {Z\u0303(t); t \u2208 [0, T ]} is absolutely continuous w.r.t. the prior process, we apply the Girsanov theorem (cf. App. B.1) on Eq. (13) to write the new drift, from which the posterior SDE in Eq. (16) is obtained.\nWe will refer to Eq. (16) as the variational posterior. In what follows, we will assume a parametric form for the control function u(Z\u0303(t), t) \u2261 u\u03d5(Z\u0303(t), t) (as e.g. given by a neural network) and will devise a scheme for inferring the variational parameters (\u03b8, \u03d5), i.e. variational inference. Proposition 4 (Variational Inference for MA-fBMSDE). The variational parameters \u03d5 are optimised by minimising the KL\u2013divergence between the posterior and the prior, where the corresponding evidence lower bound (ELBO) to be maximised is:\nlog p (O1, O2, . . . , ON | \u03b8) \u2265 EZ\u0303u [ N\u2211 i=1 log p\u03b8 ( Oi | Z\u0303(ti) ) \u2212 \u222b T 0 1 2 \u2225\u2225\u2225u\u03d5 (Z\u0303(t), t)\u2225\u2225\u22252 dt] , (17)\nwhere the observations {Oi} are included by likelihoods p\u03b8 ( Oi | Z\u0303(ti) ) and the expectation is\ntaken over random paths of the approximate posterior process defined by (Eq. (16)).\nSketch of the proof. Since we can use Girsanov\u2019s theorem II (\u00d8ksendal & \u00d8ksendal, 2003), the variational bound derived in Li et al. (2020) (App. 9.6.1) directly applies.\nRemark 2. It is noteworthy that the measurements with their likelihoods p\u03b8 ( Oi | X\u0303(ti) ) depend\nonly on the component X\u0303(t) of the augmented state Z\u0303(t). The additional variables Yk(t) which are used to model the noise in the SDE are not directly observed. However, computation of the ELBO requires initial values for all state variables Z\u0303(0) (or their distribution). Hence, we sample Yk(0) in accordance with Dfn. 3."
+        },
+        {
+            "heading": "4.1 OPTIMISING THE APPROXIMATION",
+            "text": "We now present the details of our novel method for optimising our approximation B\u0302(I,II)H (t) for \u03c9k. To this end, we first follow Carmona & Coutin (1998a) and choose a geometric sequence of \u03b3k = (r\n1\u2212n, r2\u2212n, . . . , rK\u2212n), n = K+12 , r > 1. Rather than relying on methods of numerical quadrature, we consider a simple measure for the quality of the approximation over a fixed time interval [0, T ] which can be optimised analytically for both types I and II. Proposition 5 (Optimal \u03c9 .= [\u03c91, . . . , \u03c9K ] for B\u0302(I,II)(t)). The L2-error of our approximation\nE(I,II)(\u03c9) = \u222b T 0 E [( B\u0302 (I,II) H (t)\u2212B (I,II) H (t) )2] dt (18)\nis minimized at A(I,II)\u03c9 = b(I,II), where\nA (I) i,j =\n2T + e \u2212\u03b3iT\u22121\n\u03b3i + e \u2212\u03b3jT\u22121 \u03b3j \u03b3i + \u03b3j , A (II) i,j = T + e \u2212(\u03b3i+\u03b3j)T\u22121 \u03b3i+\u03b3j \u03b3i + \u03b3j (19)\nb (I) k =\n2T\n\u03b3 H+1/2 k\n\u2212 T H+1/2\n\u03b3k\u0393(H + 3/2) +\ne\u2212\u03b3kT \u2212Q(H + 1/2, \u03b3kT )e\u03b3kT\n\u03b3 H+3/2 k\n(20)\nb (II) k =\nT\n\u03b3 H+1/2 k\nP (H + 1/2, \u03b3kT )\u2212 H + 1/2\n\u03b3 H+3/2 k\nP (H + 3/2, \u03b3kT ). (21)\nP (z, x) = 1\u0393(z) \u222b x 0 tz\u22121e\u2212t dt is the regularized lower incomplete gamma function and Q(z, x) =\n1 \u0393(z) \u222b\u221e x tz\u22121e\u2212t dt is the regularized upper incomplete gamma function.\nSketch of the proof. By expanding the L2-error we find a tractable quadratic form of the criterion: E(I,II)(\u03c9) = \u222b T 0 E [( B\u0302 (I,II) H (t)\u2212B (I,II) H (t) )2] dt (22)\n= \u222b T 0 ( E [ B\u0302 (I,II) H (t) 2 ] + E [ B (I,II) H (t) 2 ] \u2212 2E [ B\u0302 (I,II) H (t)B (I,II) H (t) ]) dt = \u03c9TA(I,II)\u03c9 \u2212 2b(I,II) T \u03c9 + const,\nwhose non-trivial minimum is attained as the solution to the system of equations A(I,II)\u03c9 = b(I,II). We refer the reader to App. D.2 for the full proof and derivation."
+        },
+        {
+            "heading": "5 EXPERIMENTS",
+            "text": "We implemented our method in JAX (Bradbury et al., 2018), using Diffrax (Kidger, 2021) for SDE solvers, Optax (Babuschkin et al., 2020) for optimization, Diffrax (Babuschkin et al., 2020) for distributions and Flax (Heek et al., 2023) for neural networks. Unlike Tong et al. (2022) our approach is agnostic to discretization and the choice of the solver. Hence, in all experiments we can use the Stratonovich\u2013Milstein solver, cf. App. E for more details.\nRecovering the fractional Ornstein\u2013Uhlenbeck bridge. Applying our method on linear problems, allows comparing empirical results to analytical formulations derived e.g. using Gaussian process methodology Rasmussen et al. (2006). We begin by assessing the reconstruction capability of our method on a fractional Ornstein\u2013Uhlenbeck (fOU) bridge, that is an OU\u2013process driven by fBM: dX(t) = \u2212\u03b8X(t) dt+dBH , starting at X(0) = 0 and conditioned to end at X(T ) = 0. Following the rules of Gaussian process regression (Rasmussen et al., 2006, Eq. 2.24), we have an analytical expression for the posterior covariance:\nE [ X\u0303(t)2 ] = K(t, t)\u2212 [K(t, 0) K(t, T )] [ K(0, 0) K(T, 0) K(0, T ) K(T, T ) + \u03c32 ]\u22121 [ K(0, t) K(T, t) ] (23)\nwhere K(t, \u03c4) is the prior kernel and the observation noise is 0 for X(0) and \u03c3 for X(T ). If \u03b8 = 0, K(t, \u03c4) = E [BH(t)BH(\u03c4)] (Eq. (1)) and if \u03b8 > 0 and H > 1/2, the kernel admits the following form (Lysy & Pillai, 2013, Appendix A):\nK(t, \u03c4) = (2H2 \u2212H)\n2\u03b8\n( e\u2212\u03b8|t\u2212\u03c4 | [ \u0393(2H \u2212 1) + \u0393(2H \u2212 1, |t\u2212 \u03c4 |)\n\u03b82H\u22121 + \u222b |t\u2212\u03c4 | 0 e\u03b8uu2H\u22122 du ]) (24)\nwhere \u0393(z, x) = \u222b\u221e x\ntz\u22121e\u2212tdt is the upper incomplete Gamma function. This allows us to compare the true posterior variance with the empirical variance of a model that is trained by maximizing the ELBO. for a data point X(T ) = 0. As this is equivalent to the analytical result (Eq. (23)), we can compare the variances over time. As plotted in Fig. 2, for various H and \u03b8 values, our VI can correctly recover the posterior variance, cf. App. F for additional results.\nEstimating time-dependent Hurst index. Since our method of optimizing \u03c9k is tractable and differentiable, we can directly optimize a parameterized H by maximizing the ELBO. Also a time\u2013 dependent Hurst index H(t) can be modelled, leading to multifractional Brownian Motion (Peltier & Ve\u0301hel, 1995). We directly compare with a toy problem presented in (Tong et al., 2022, Sec. 5.2). We use the same model for H(t), a neural network with one hidden layer of 10 neurons and activation function tanh, and a final sigmoid activation, and the same input [sin(t), cos(t), t]. We use B\u0302\n(II) H since their method is Type II. Fig. 3 shows a reasonable estimation of H(t), which is more accurate than the result from Tong et al. (2022), cf.App. E for more details.\nLatent video models To assess the video modelling capabilities of our framework, we train models on stochastic video datasets. The prior drift h\u03b8, diffusion \u03c3\u03b8 and control term u are parameterized\nby neural networks. The prior model is used as a stochastic video predictor, where we condition on the first N frames to predict the next frames in the sequence. More intuitively, the posterior model reconstructs the given sequence of frames, while minimizing the control actions of u. This leads to a prior that will model the dataset, so that the posterior will be able to model the specific data sequence during training with minimal u input. It is paramount that the control function u receives relevant information during the SDE integration, so that it can steer the SDE in the right direction. See Fig. 4 for a schematic explanation of our model and App. E for a detailed explanation of submodel architectures and hyperparameters.\nWe evaluate the stochastic video predictions by sampling 100 predictions and reporting the Peak Signal-to-Noise Ratio (PSNR) of the best sample, calculated frame-wise and averaged over time. This is the same approach as Franceschi et al. (2020) which allows a direct comparison. Furthermore, we report the ELBO on the test set, indicating how well the model has captured the data.\nWe train models on Stochastic Moving MNIST (Denton & Fergus, 2018), a video dataset where two MNIST numbers move on a canvas and bounce off the edge with random velocity in a random direction. Our MA-fBM driven model is on par with closely related discrete-time methods such as SVG (Denton & Fergus, 2018) or SLRVP Franceschi et al. (2020), in terms of PSNR, and is better than the BM baseline in terms of PSNR and ELBO (Tab. 1).\nThe Hurst index was optimized during training, and reached H = 0.90 at convergence (long-term memory), indicating that MA-fBM is better suited to the data than BM.\nTable 2: Double pendulum.\nModel ELBO PSNR\nBM \u2212545.13 26.11 MA-fBM \u2212636.61 27.09\nWe also report results on a real-world video dataset of a double pendulum (Asseman et al., 2018), where we investigate whether the chaotic behaviour can be modelled by an SDE driven by fBM. Our MA-fBM driven model is better than the BM baseline, both for the test set ELBO as for the PSNR metric (Tab. 2).\nThe Hurst index reached a value of H = 0.93 at convergence. See Fig. 5 for stochastic video predictions and App. F.3 for additional qualitative results.\n5.1 ABLATIONS & FURTHER STUDIES\nNumerical study of the Markov approximation. By numerically evaluating the criterion E(II) we can investigate the effect of K, the number of OU\u2013processes, on the quality of the approximation. Fig. 6 indicates that the approximation error diminishes by increasing K. However, after a certain threshold the criterion saturates, depending on H . Adding more processes, especially for low H brings diminishing returns. The rapid convergence evidenced in this empirical result well agrees with the theoretical findings of (Bayer & Breneis, 2023) especially for the rough processes where H < 1/2, as recalled in Thm. 1.\nMSE of the generated trajectories for MA-fBM and for varying K. On a more practical level, we take integration and numerical errors into account by simulating paths using MA-fBM and comparing to paths of the true integral driven by the same Wiener noise. This is only possible for Type II, as for Type I one would need to start the integration from \u2212\u221e. Paths are generated from t = 0 to t = 10, with 4000 integration steps for the approximation and 40000 for the true integral. We generate the paths over a range of Hurst indices and different K values. For each setting, 16 paths are sampled. Our approach for optimising \u03c9k values (Sec. 4.1) is compared to a baseline where \u03c9k is derived by a piece-wise approximation of the Laplace integral (cf. App. D.1). Fig. 7 shows\nconsiderably better results in favor of our approach. Increasing K has a rapid positive impact on the accuracy of the approximation with diminishing returns, further confirming our theoretical insights in Sec. 3. We provide examples of individual trajectories generated in this experiment in App. F.1.\nImpact of K and the #parameters on inference time. We investigate the factors that influence the training time in Fig. 8, where K OU\u2013processes are gradually included to systems with increasing number of network parameters. Note that, since our approximation is driven by 1 Wiener process, and the control function u(Z\u0303(t), t) is scalar, the impact on computational load of including more processes is limited and the run-time is still dominated by the size of the neural networks. This is good news as different applications might demand different number of OU\u2013processes."
+        },
+        {
+            "heading": "6 CONCLUSION",
+            "text": "In this paper, we have proposed a new approach for performing variational inference on stochastic differential equations driven by fractional Brownian motion (fBM). We began by uncovering the relatively unexplored Markov representation of fBM, allowing us to approximate non-Markovian paths using a linear combination of Wiener processes. This approximation enabled us to derive evidence lower bounds through Girsanov\u2019s change of measure, yielding posterior path measures as well as likelihood estimates. We also solved for optimal coefficients for combining these processes, in closed form. Our diverse experimental study, spanning fOU bridges and Hurst index estimation, have consistently validated the effectiveness of our approach. Moreover, our novel, continuoustime architecture, powered by Markov-approximate fBM driven neural-SDEs, has demonstrated improvements in video prediction, particularly when inferring the Hurst parameter during inference.\nLimitations and future work. In our experiments, we observed increased computational overhead for larger time horizons due to SDE integration, although the expansion of the number of processes incurred minimal runtime costs. We have also observed super-polynomial convergence empirically and recalled weaker polynomial rates in the literature. Our Markov approximation still lacks a tight convergence bound. Our future work will also extend our framework to (fractional) Levy processes, which offer enhanced capabilities for modeling heavy-tailed noise/data distributions."
+        },
+        {
+            "heading": "ETHICS STATEMENT",
+            "text": "Our work is driven by a dedication to the advancement of knowledge and the betterment of society. While being largely theoretical, similar to many works advancing artificial intelligence, our work deserves an ethical consideration, which we present below.\nAll of our experiments were either run on publicly available datasets or on data that is synthetically generated. No human or animal subjects have been involved at any stage of this work. Our models are designed to enhance the understanding and prediction of real-world processes without causing harm or perpetuating unjust biases, unless provided in the datasets. While we do not foresee any issue with methodological bias, we have not analyzed the inherent biases of our algorithm and there might be implications in applications demanding utmost fairness.\nWe aptly acknowledge the contributions of researchers whose work laid the foundation for our own. Proper citations and credit are given to previous studies and authors. All authors declare that there are no conflicts of interest that could compromise the impartiality and objectivity of this research. All authors have reviewed and approved the final manuscript before submission."
+        },
+        {
+            "heading": "REPRODUCIBILITY STATEMENT",
+            "text": "We are committed to transparency in research and for this reason will make our implementation publicly available upon publication. To demonstrate our dedication, we have submitted all source code as part of the appendix. Considerable parts involve: (i) the Markov approximation and optimisation of the \u03c9k coefficients; (ii) maximising ELBO to perform variational inference between the prior dZ(t) and the posterior dZ\u0302(t) and (iii) the novel neural-SDE based video prediction architecture making use of all our contributions."
+        },
+        {
+            "heading": "APPENDIX",
+            "text": ""
+        },
+        {
+            "heading": "A FURTHER DISCUSSIONS",
+            "text": "Difference between a Type I and a Type II fBM. Type I, also called Mandelbrot-Van Ness or \u2019standard\u2019 fBM is the most prevalent definition of fBM. Type II, also called Riemann-Liouville fBM, is historically most used in econometric literature. As can be seen in the integral definitions (Eqs. (3) and (4)), Type II omits the first integral from \u2212\u221e to 0 in the definition of Type I. So Type II is, in a sense, a simplification. Yet, to the best of our knowledge, its covariance (Eq. (2)) has no simple analytical expression. On the other hand, the Type I covariance is the straightforward, well known Eq. (1).\nAs described by Lim & Sithi (1995); Marinucci & Robinson (1999) the main difference is that Type I has stationary increments, and Type II has non-stationary increments. This means that Type II has a larger emphasis on the origin t = 0, which might not be favourable for some applications. For example, if during training we sample a sequence from a video dataset at a random start point, this t = 0 has no special or distinguished meaning and should not be treated differently by the driving fBM process. In other words, Type I ensures a shift in time has no effect on its increments. However, this is not the case for Type II. This difference is relevant for our framework, since the increments are driving the SDE.\nOptimal choices for \u03c9 and \u03b3 values. Regarding the Type II case, there are different ways of determining \u03b3k and \u03c9k in the literature (Carmona & Coutin, 1998a; Bayer & Breneis, 2023; Harms & Stefanovits, 2019) some of which can lead to super-polynomial convergence (Bayer & Breneis, 2023) under certain assumptions, while more general choices are still shown to converge, though with a weaker rate (Alfonsi & Kebaier, 2021) while still being strong (path-wise) and of arbitrarily high polynomial order (Harms, 2020). Some of these works state that such geometric choice of the quadrature intervals simplifies the proofs while being not optimal and smarter choices can exist (even with better rate of convergence). This is the reason why we believe that our computationally tractable, closed form expressions which optimally solve for these values lead to good, super-polynomial convergence both for types II and I (since the first type also admits a similar type of analysis).\nPractical considerations for choosing \u03b3k. Defining \u03b3k as (1/\u03b3max, . . . , \u03b3max) is a convenient way to indicate some practical considerations for choosing \u03b3k. Carmona & Coutin (1998b) show that \u03b3 dt > 1/2 leads to unstable integration of the OU\u2013process, where dt is the integration step. Care should be taken that \u03b3max dt < 1/2, either by decreasing \u03b3max or decreasing the integration step dt. Additionally, choosing large values for \u03b3 is undesirable for numerical reasons. Especially when using lower precision, numerical overflow can be a problem. Since an OU\u2013process reaches equilibrium after time 1/\u03b3, a practical lower bound for \u03b3max is the length of the modelled sequences. This ensures that memory of the MA-fBM process is modelled for at least the length of the sequence.\nTime horizon for optimising \u03c9k. The closed form expressions for \u03c9k are in function of H and the time horizon T (Prop. 5). Since the criterion is defined over the time interval [0, T ], it makes sense to choose T equal to the typical (or maximal) length of sequences in the modelled dataset. Specifically for \u201dType I\u201d, we advise to choose T at two or three times the modelled sequence length, as at t = 0, this process is already at equilibrium, and its \u2019history\u2019 should be accounted for in the criterion. We have observed better empirical results when choosing T at a multiple of the sequence length.\nFurther clarification on the distinction with Tong et al. (2022). Our work mainly differs with Tong et al. (2022) in two ways: (i) fractional Brownian motion (fBM) is approximated as a a Gaussian process (GP), (ii) only the Type II representation of fBM is used as as an integral over increments of the Wiener process. Tong et al. (2022) perform a finite time discretization of the Type II integral to obtain a first approximation of the increments of fBM. In a second step, this approximate GP is further approximated using a sparse GP approach based on a smaller set of pseudo or inducing points which are distributed over time. Conditioned on the inducing points, samples from the sparse GP are independent random variables at each discrete time point. Finally, this (conditioned) white noise process is further interpreted in terms of the Euler discretization of an ordinary\nSDE leading to effective drift and diffusions. For the latter SDE, one can apply Girsanov\u2019s theorem and the corresponding ELBO (conditioned on the inducing points) to perform inference.\nNote, that their current derivation of effective drift and diffusion relies on the Euler discretization of SDE. For higher order SDE solvers, the approximation has to be adapted, which requires new derivations. As a main difference, in our paper, the approximation is not based on the discretization in the time domain but of the discretization of an integral representation (Prop. 1) over a spectrum of decay constants of Ornstein-Uhlenbeck (OU) processes (driven by the same Wiener noise). Since each OU process already represents a noise process with temporal correlations, we can expect that a linear combination of a small number of such processes can yield a good approximation of the covariance of fBM over some given time interval. Our approximation leads to a system of SDEs (without conditioning) for which the ELBO can be easily obtained. Since the time discretization of the resulting SDE is performed after the OU approximation, any SDE solver can be directly applied. With this flexibility, in our paper, we have chosen the second order Stratonovich\u2013Milstein solver.\nState dependent diffusions. For the case, where the diffusion \u03c3(X, t) explicitly depends on the state variable X , our Markovian approximation results in a \u2019standard\u2019 white noise SDE for the augmented system. As such, it does not suffer from problems with proper definitions of stochastic integrals as compared to the original SDE driven by fBM for such cases. Hence, a straightforward Ito\u0302\u2013interpretation of our augmented SDE is, in principle, possible. This might indicate, at first glance, that simple numerical solvers such as Euler\u2019s method could be sufficient for simulating the augmented SDE required for computing posterior expectations for the ELBO. While this point needs further theoretical investigation, preliminary simulations for for simple models with state dependent diffusions indicate that an Euler approximation (in accordance with known results for direct simulations of SDE driven by fBM (Lysy & Pillai, 2013)) quickly lead to deviations from known analytical results. Hence, for state dependent diffusions, we resort to the Stratonovich interpretation of the augmented system and use corresponding higher order solvers Kidger (2021)2. This approach yields excellent (pathwise) agreements with exact analytical results as we show in Sec. 5. Although the ELBO for SDE is derived from Girsanov\u2019s change of measure theorem for Ito\u0302\u2013SDE, by the known correspondence (resulting in a change of drift functions, when diffusions are state dependent) (Gardiner et al., 1985) between Ito\u0302 and Stratonovich SDE we conclude that within this approach, optimisation of the ELBO with respect to model parameters will also yield the corresponding estimates for the Stratonovich interpretation.\nOn initial values for \u201dType I\u201d. The initial values for \u201dType I\u201d can be understood as resulting from an OU\u2013process which was started at some negative time t \u2192 \u2212\u221e so that\nY (I) k (0) = \u222b 0 \u2212\u221e e\u03b3ks dW (s) (25)\nand Y (I)k (0) can be considered as samples from the joint stationary distribution. Because the stationary distribution is normal (Harms & Stefanovits, 2019, Theorem 2.16) we can simply sample initial states of the Yk(t) processes for Type I with covariance E [Yi(0)Yj(0)]. Using Ito\u0302 isometry (\u00d8ksendal & \u00d8ksendal, 2003):\nE [Yi(0)Yj(0)] = E [\u222b 0\n\u2212\u221e e\u03b3is dW (s) \u222b 0 \u2212\u221e e\u03b3js dW (s) ] (26)\n= \u222b 0 \u2212\u221e e(\u03b3i+\u03b3j)s ds (27)\n= 1\n\u03b3i + \u03b3j . (28)\n2see e.g. https://docs.kidger.site/diffrax/usage/how-to-choose-a-solver/ #stochastic-differential-equations"
+        },
+        {
+            "heading": "B PROOFS AND FURTHER THEORETICAL DETAILS",
+            "text": ""
+        },
+        {
+            "heading": "B.1 THE GIRSANOV THEOREM II AND THE KL DIVERGENCE OF MEASURES",
+            "text": "We now state the variation II of the Girsanov theorem (\u00d8ksendal & \u00d8ksendal, 2003) in our notation. Let X(t) \u2208 Rn be an Ito\u0302 process w.r.t. measure P of the form:\ndX(t) = b\u03b8 (X(t), t) dt+ \u03c3\u03b8 (X(t), t) dW (t), (29)\nwhere 0 \u2264 t \u2264 T , W (t) \u2208 Rm, b\u03b8 (X(t), t) \u2208 Rn and \u03c3\u03b8 (X(t), t) \u2208 Rn\u00d7m. Define a measure Q via:\ndQ dP = MT := exp [ \u2212 \u222b T 0 u(X(t), t) dW (t)\u2212 1 2 \u222b T 0 u2(X(t), t) dt ] . (30)\nThen\nW \u2032(t) := \u222b T 0 u(X(t), t) dt+W (T ) (31)\nis a Brownian motion w.r.t. Q and the process X(t) has the following representation in terms of B\u2032(t):\ndX(t) = \u03b1\u03b8 (X(t), t) dt+ \u03c3\u03b8 (X(t), t) dW \u2032(t), (32)\nwhere the new drift is:\n\u03b1\u03b8 (X(t), t) = b\u03b8 (X(t), t)\u2212 \u03c3\u03b8 (X(t), t)u (X(t), t) . (33)\nWe can also rewrite the Radon\u2013Nykodim derivative in Eq. (30) as\ndQ dP = exp [\u222b T 0 u (X(t), t) dW (t)\u2212 1 2 \u222b T 0 u2 (X(t), t) dt ] (34)\n= exp [\u222b T 0 u (X(t), t) (dW \u2032(t) + u (X(t), t) dt)\u2212 1 2 \u222b T 0 u (X(t), t) dt ] (35)\n= exp [\u222b T 0 u (X(t), t) dW \u2032(t) + 1 2 \u222b T 0 u (X(t), t) dt ] . (36)\nThus, similar to Li et al. (2020), we get the KL divergence\nEQ\n[ ln dQ\ndP\n] = 1\n2 \u222b T 0 EQ[u 2 (X(t), t)] dt. (37)"
+        },
+        {
+            "heading": "C COVARIANCES",
+            "text": "The full derivation of covariances between some processes relevant to this work are described here.\nFractional Brownian motion (Type II). Using Ito\u0302 isometry (\u00d8ksendal & \u00d8ksendal, 2003) we know that for t > s\nE [\u222b t\n0 (t\u2212 u)H\u22121/2dWu \u222b s 0 (s\u2212 u)H\u22121/2dWu ] = \u222b s 0 ((t\u2212 u)(s\u2212 u))H\u22121/2 du (38)\nThus\nE [ B\n(II) H (t)B (II) H (s)\n] =\n1\n\u03932(H + 1/2) \u222b s 0 ((t\u2212 u)(s\u2212 u))H\u22121/2 du (39)\nOU\u2013processes driven by the same Wiener process. Observe two Ornstein\u2013Uhlenbeck processes driven by the same Wiener process:{\ndYi(t) = \u2212\u03b3iYi(t) dt+ dW (t) dYj(t) = \u2212\u03b3jYj(t) dt+ dW (t)\n(40)\nTheir covariance can be written as:\nCov(Yi(t), Yj(t)) = E [(Yi(t)\u2212 E [Yi(t)])(Yj(t)\u2212 E [Yj(t)])] (41) = E [Yi(t)Yj(t)] (42)\n= E [\u222b t\n0\ne\u2212\u03b3i(t\u2212s) dW (s) \u222b t 0 e\u2212\u03b3j(t\u2212s) dW (s) ] (43)\n= \u222b t 0 e\u2212(\u03b3i+\u03b3j)(t\u2212s) ds (44)\n= 1 \u03b3i + \u03b3j \u2212 e\n\u2212(\u03b3i+\u03b3j)t \u03b3i + \u03b3j (45)\nwhere Eq. (44) is obtained following the Ito\u0302 isometry (\u00d8ksendal & \u00d8ksendal, 2003).\nMarkov approximated fractional Brownian motion (Type I). Recall that (Dfn. 3)\nB\u0302 (I) H (t) = \u2211 k \u03c9k(Yk(t)\u2212 Yk(0))\nwhere (Eq. (6))\nYk(t)\u2212 Yk(0) = Yk(0)(e\u2212\u03b3kt \u2212 1) + \u222b t 0 e\u2212\u03b3k(t\u2212s) dW (s)\nand E[Yi(0)Yj(0)] = 1\u03b3i+\u03b3j (Eq. (28)). For t > \u03c4 :\nE [ B\u0302\n(I) H (t)B\u0302 (I) H (\u03c4)\n] = E [(\u2211 k \u03c9k (Yk(t)\u2212 Yk(0)) )(\u2211 k \u03c9k (Yk(\u03c4)\u2212 Yk(0)) )] (46)\n= \u2211 i,j \u03c9i\u03c9jE[(Yi(t)\u2212 Yi(0)) (Yj(\u03c4)\u2212 Yj(0))] (47)\n= \u2211 i,j \u03c9i\u03c9jE [( Yi(0)(e \u2212\u03b3it \u2212 1) + \u222b t 0 e\u2212\u03b3i(t\u2212s) dW (s) ) (48)\n\u00b7 ( Yj(0)(e \u2212\u03b3j\u03c4 \u2212 1) + \u222b \u03c4 0 e\u2212\u03b3j(\u03c4\u2212s) dW (s) )] = \u2211 i,j \u03c9i\u03c9j ( E [Yi(0)Yj(0)] (e\u2212\u03b3it \u2212 1)(e\u2212\u03b3j\u03c4 \u2212 1) (49)\n+ \u222b \u03c4 0 (e\u2212\u03b3i(t\u2212s)e\u2212\u03b3j(\u03c4\u2212s) ds ) = \u2211 i,j \u03c9i\u03c9j 1\u2212 e\u2212\u03b3it \u2212 e\u2212\u03b3j\u03c4 + e\u2212\u03b3i(t\u2212\u03c4) \u03b3i + \u03b3j (50)\nMarkov approximated fractional Brownian motion (Type II). Recall that (Dfn. 3)\nB\u0302 (II) H (t) = \u2211 k \u03c9kYk(t), Yk(0) = 0, k = 1, . . . ,K\nand for t > \u03c4 :\nE [ B\u0302\n(II) H (t)B\u0302 (II) H (\u03c4)\n] = E [(\u2211 k \u03c9kYk(t) )( K\u2211 k=1 \u03c9kYk(\u03c4) )] (51)\n= \u2211 i,j \u03c9i\u03c9jE[Yi(t)Yj(\u03c4)] (52)\n= \u2211 i,j \u03c9i\u03c9jE [\u222b t 0 e\u2212\u03b3i(t\u2212s) dW (s) \u222b \u03c4 0 e\u2212\u03b3j(\u03c4\u2212s) dW (s) ] (53)\n= \u2211 i,j \u03c9i\u03c9j \u222b \u03c4 0 e\u2212\u03b3i(t\u2212s)\u2212\u03b3j(\u03c4\u2212s)ds (54)\n= \u2211 i,j \u03c9i\u03c9j ( e\u2212\u03b3i(t\u2212\u03c4) \u03b3i + \u03b3j \u2212 e \u2212\u03b3it\u2212\u03b3j\u03c4 \u03b3i + \u03b3j ) (55)\nfBM and MA-fBM (Type I). Since (Dfn. 3)\nB\u0302 (I) H (t) = \u2211 k \u03c9k(Yk(t)\u2212 Yk(0))\nwhere (Eq. (6))\nYk(t)\u2212 Yk(0) = Yk(0)(e\u2212\u03b3kt \u2212 1) + \u222b t 0 e\u2212\u03b3k(t\u2212s) dW (s)\nand (Eq. (25))\nYk(0) = \u222b 0 \u2212\u221e e\u03b3ks dW (s) .\nwe can write\nB\u0302 (I) H (t) = \u2211 k \u03c9k ( (e\u2212\u03b3kt \u2212 1) \u222b 0 \u2212\u221e e\u03b3ks dW (s) + \u222b t 0 e\u2212\u03b3k(t\u2212s) dW (s) ) . (56)\nThis leads to the following derivation (using Ito\u0302 isometry (\u00d8ksendal & \u00d8ksendal, 2003)): E [ B\u0302\n(I) H (t)B (I) H (t)\n] =\n1\n\u0393(H + 1/2) \u2211 k \u03c9kE [(\u222b 0 \u2212\u221e ( (t\u2212 s)H\u22121/2 \u2212 (\u2212s)H\u22121/2 ) dW (s)\n+ \u222b t 0 (t\u2212 s)H\u22121/2 dW (s) )\n\u00b7 ( (e\u2212\u03b3kt \u2212 1) \u222b 0 \u2212\u221e e\u03b3ks dW (s) + \u222b t 0 e\u2212\u03b3k(t\u2212s) dW (s) )] (57)\n= 1\n\u0393(H + 1/2) \u2211 k \u03c9k\n( (e\u2212\u03b3kt \u2212 1) \u222b 0 \u2212\u221e ( (t\u2212 s)H\u22121/2 \u2212 (\u2212s)H\u22121/2 ) e\u03b3ks ds\n+ \u222b t 0 (t\u2212 s)H\u22121/2e\u2212\u03b3k(t\u2212s) ds ) (58)\n= \u2211 k \u03c9k 2\u2212 e\u2212\u03b3kt \u2212Q(H + 1/2, \u03b3kt)e\u03b3kt \u03b3 H+1/2 k\n(59)\nwhere Q(z, x) = 1\u0393(z) \u222b\u221e x tz\u22121e\u2212t dt is the regularized upper incomplete gamma function.\nfBM and MA-fBM (Type II).\nE [ B\u0302\n(II) H (t)B (II) H (t)\n] =\n1\n\u0393(H + 1/2) \u2211 k \u03c9kE [\u222b t 0 e\u2212\u03b3k(t\u2212s) dW (s) \u222b t 0 (t\u2212 s)H\u22121/2 ds ] (60)\n= 1\n\u0393(H + 1/2) \u2211 k \u03c9k \u222b t 0 e\u2212\u03b3k(t\u2212s)(t\u2212 s)H\u22121/2 ds (61)\n= \u2211 k \u03c9k P (H + 1/2, \u03b3kt) \u03b3 H+1/2 k\n(62)\nwhere P (z, x) = 1\u0393(z) \u222b x 0 tz\u22121e\u2212t dt is the regularized lower incomplete gamma function.\nD CHOOSING \u03c9k VALUES"
+        },
+        {
+            "heading": "D.1 BASELINE",
+            "text": "To approximate the integral in equation (8) for H < 1/2 we do a piece-wise linear approximation of the integral between the known Yk(t) values:\nK\u2211 k=1 \u03c9kYk(t) = K\u22121\u2211 k=1 \u222b \u03b3k+1 \u03b3k ( \u03b3k+1 \u2212 \u03b3 \u03b3k+1 \u2212 \u03b3k Yk(t) + \u03b3 \u2212 \u03b3k \u03b3k+1 \u2212 \u03b3k Yk+1(t) ) \u00b5(\u03b3) d\u03b3 (63)\nFor H > 1/2 we approximate \u2202\u03b3Y\u03b3(t) with finite differences:\nK\u2211 k=1 \u03c9kYk(t) = K\u22121\u2211 k=1 \u2212Yk+1(t)\u2212 Yk(t) \u03b3k+1 \u2212 \u03b3k \u222b \u03b3k+1 \u03b3k \u03bd(\u03b3) d\u03b3 (64)\nThis leads to the following proposal for \u03c9k:\n\u03c9k = \n1\n\u0393(\u03b1)\u0393(1\u2212 \u03b1)\n( 1k>1 \u03b32\u2212\u03b1k \u2212\u03b3 2\u2212\u03b1 k\u22121 2\u2212\u03b1 \u2212 \u03b3k\u22121 \u03b31\u2212\u03b1k \u2212\u03b3 1\u2212\u03b1 k\u22121\n1\u2212\u03b1 \u03b3k \u2212 \u03b3k\u22121\n+1k<K \u03b3k+1\n\u03b31\u2212\u03b1k+1 \u2212\u03b3 1\u2212\u03b1 k 1\u2212\u03b1 \u2212 \u03b32\u2212\u03b1k+1 \u2212\u03b3 2\u2212\u03b1 k\n2\u2212\u03b1 \u03b3k+1 \u2212 \u03b3k\n) , H < 1/2\n\u22121 (2\u2212 \u03b1)\u0393(\u03b1)\u0393(2\u2212 \u03b1)\n( 1k>1 \u03b32\u2212\u03b1k \u2212 \u03b3 2\u2212\u03b1 k\u22121\n\u03b3k \u2212 \u03b3k\u22121 \u2212 1k<K\n\u03b32\u2212\u03b1k+1 \u2212 \u03b3 2\u2212\u03b1 k\n\u03b3k+1 \u2212 \u03b3k\n) , H > 1/2\n(65)\nwhere \u03b1 = H + 1/2.\nD.2 A PROOF FOR THE OPTIMIZED \u03c9k VALUES\nTo optimize \u03c9k values, we first provide a closed form expression for the approximation error and then show how we can solve for the \u03c9k that minimize this error.\nType I. We will start by optimizing \u03c9k for Type I. Consider the error:\nE(I)(\u03c9) = \u222b T 0 E [( B\u0302 (I) H (t)\u2212B (I) H (t) )2] (66)\n= \u222b T 0 ( E [ B\u0302 (I) H (t) 2 ] + E [ B (I) H (t) 2 ] \u2212 2E [ B\u0302 (I) H (t)B (I) H (t) ]) dt (67)\nUsing Eqs. (1), (50) and (59) E(I)(\u03c9) = \u222b T 0 (\u2211 i,j \u03c9i\u03c9j 2\u2212 e\u2212\u03b3it \u2212 e\u2212\u03b3jt \u03b3i + \u03b3j + t2H\n\u2212 2 \u2211 k \u03c9k 2\u2212 e\u2212\u03b3kt \u2212Q (H + 1/2, \u03b3kt) e\u03b3kt \u03b3 H+1/2 k ) dt (68)\n= \u2211 i,j \u03c9i\u03c9j 2T + e \u2212\u03b3iT\u22121 \u03b3i + e \u2212\u03b3jT\u22121 \u03b3j \u03b3i + \u03b3j + T 2H+1 2H + 1\n\u2212 2 \u2211 k \u03c9k\n( 2T\n\u03b3 H+1/2 k\n\u2212 T H+1/2\n\u03b3k\u0393(H + 3/2) +\ne\u2212\u03b3kT \u2212Q (H + 1/2, \u03b3kT ) e\u03b3kT\n\u03b3 H+3/2 k\n) (69)\nThis leads to the quadratic form E(I)(\u03c9) = \u03c9TA(I)\u03c9 \u2212 2b(I)T\u03c9 + c(I) with\nA (I) i,j =\n2T + e \u2212\u03b3iT\u22121\n\u03b3i + e \u2212\u03b3jT\u22121 \u03b3j \u03b3i + \u03b3j (70)\nb (I) k =\n2T\n\u03b3 H+1/2 k\n\u2212 T H+1/2\n\u03b3k\u0393(H + 3/2) +\ne\u2212\u03b3kT \u2212Q(H + 1/2, \u03b3kT )e\u03b3kT\n\u03b3 H+3/2 k\n(71)\nc(I) = T 2H+1\n2H + 1 . (72)\nType II. We now repeat a similar procedure for the Type II. E(II)(\u03c9) = \u222b T 0 E [( B\u0302 (II) H (t)\u2212B (II) H (t) )2] dt (73)\n= \u222b T 0 ( E [ B\u0302 (II) H (t) 2 ] + E [ B (II) H (t) 2 ] \u2212 2E [ B\u0302 (II) H (t)B (II) H (t) ]) dt (74)\nUsing Eqs. (2), (55) and (62) E(II)(\u03c9) = \u222b T 0 \u2211 i,j \u03c9i\u03c9j 1\u2212 e\u2212(\u03b3i+\u03b3j)t \u03b3i + \u03b3j +\nt2H\n2H\u0393(H + 1/2)2 \u2212 2 \u2211 k \u03c9k P (H + 1/2, \u03b3kt) \u03b3 H+1/2 k dt\n(75)\n= \u2211 i,j \u03c9i\u03c9j T + e \u2212(\u03b3i+\u03b3j)T\u22121 \u03b3i+\u03b3j \u03b3i + \u03b3j +\nT 2H+1\n2H(2H + 1)\u0393(H + 1/2)2 (76)\n\u2212 2 \u2211 k \u03c9k\n( T\n\u03b3 H+1/2 k\nP (H + 1/2, \u03b3kT )\u2212 H + 1/2\n\u03b3 H+3/2 k\nP (H + 3/2, \u03b3kT )\n) (77)\nThis leads to the quadratic form E(II)(\u03c9) = \u03c9TA(II)\u03c9 \u2212 2b(II)T\u03c9 + c(II) with\nA (II) i,j =\nT + e \u2212(\u03b3i+\u03b3j)T\u22121\n\u03b3i+\u03b3j\n\u03b3i + \u03b3j (78)\nb (II) k =\nT\n\u03b3 H+1/2 k\nP (H + 1/2, \u03b3kT )\u2212 H + 1/2\n\u03b3 H+3/2 k\nP (H + 3/2, \u03b3kT ) (79)\nc(II) = T 2H+1\n2H(2H + 1)\u0393(H + 1/2)2 . (80)\nExactly one solution for \u03c9. There is exactly one solution if A(I,II) is positive definite, which is defined as\n\u03c9TA(I,II)\u03c9 > 0 for all \u03c9 \u2208 RK \\ {0} . (81)\nRecall that\n\u03c9TA(I,II)\u03c9 = \u222b T 0 E [ B\u0302 (I,II) H (t) 2 ] dt (82)\nthus there is exactly one solution if\u222b T 0 E [ B\u0302 (I,II) H (t) 2 ] dt > 0 for all \u03c9 \u2208 RK \\ {0}, . (83)\nRecall that B\u0302(I,II)H (t) is a linear combination of K Ornstein-Uhlenbeck processes with speed of mean reversion \u03b3k driven by the same Brownian motion. Under the trivial conditions that \u03b3i \u0338= \u03b3j (so they can not cancel out) and \u03b3k < \u221e, this will never be 0. Hence the last inequality holds unless B\u0302\n(I,II) H (t) = 0. This concludes the proof.\nD.3 NUMERICALLY STABLE IMPLEMENTATION OF Q(z, x)ex\nThe term Q(H + 1/2, \u03b3kT )e\u03b3kT in Prop. 5 leads to numerical instability, since \u03b3kT is typically a high number (for the highest \u03b3k). On the other hand, Q(H + 1/2, \u03b3kT ) is a low number for high \u03b3kT . Our stable implementation makes use of a continued fraction (Cuyt et al., 2008, eq. (12.6.17)), using the \u2019Kettenbruch\u2019 notation (Cuyt et al., 2008, sec. 1.1) for continued fractions:\nQ(H + 1/2, \u03b3kT )e \u03b3kT =\n\u0393(H + 1/2, \u03b3kT )\n\u0393(H + 1/2) e\u03b3kT (84)\n= 1\n\u0393(H + 1/2)(\u03b3kT )H+1/2\n\u221e K\nm=1\n( am(H + 1/2)/(\u03b3kT )\n1\n) (85)\nwhere am(a) is given by\na1(a) = 1, a2j(a) = j \u2212 a, a2j+1(a) = j, j \u2265 1 (86) In practice we observe better accuracy with the original equation for \u03b3kT < 10, where it is still stable, and only need 5 fractions to approximate the equation for \u03b3kT > 10."
+        },
+        {
+            "heading": "E DETAILS ON MODEL ARCHITECTURES & HYPERPARAMETERS",
+            "text": ""
+        },
+        {
+            "heading": "E.1 FOU BRIDGE",
+            "text": "For all experiments, K = 5 and \u03b3k = ( 120 , . . . , 20). We use \u201dType I\u201d and the optimal definitions for \u03c9k, with a time horizon T = 6. The control function is a neural network with two hidden layers of each 1000 neurons, with tanh activation function. Its input is represented as [sin t, cos t,X(t), Y1(t), . . . , YK(t)]. The control function is initialized so that its output is 0 at the start of training. Models are trained for 2000 training steps with a batch size of 32. We use the Adam (Kingma & Ba, 2014) optimizer with fixed learning rate 10\u22123. We use the Stratonovich\u2013 Milstein SDE solver (Kidger, 2021) with an integration step of 0.01. The length of the bridge T = 2 and observation noise \u03c3 = 0.1."
+        },
+        {
+            "heading": "E.2 TIME DEPENDENT HURST INDEX",
+            "text": "We directly compare our method with the data and estimate found in the published codebase of Tong et al. (2022)3. We choose K = 5 and \u03b3k = ( 120 , . . . , 20) and use \u201dType II\u201d (to match the data and noise type in Tong et al. (2022)). The optimal definitions for \u03c9k, with time horizon T = 2 are used. The control function is a neural network with two hidden layers of each 1000 neurons, with tanh activation function. Its input is represented as [sin t, cos t, sin 2t, cos 2t, . . . , sin 5t, cos 5t,X(t), Y1(t), . . . , YK(t)]. The model is trained for 1000 training steps with a batch size of 4. We use the Adam (Kingma & Ba, 2014) optimizer with a learning rate 3 \u00d7 10\u22123, scheduled with cosine decay to 3 \u00d7 10\u22124 by the end of training. We use the Stratonovich-Milstein SDE solver (Kidger, 2021). The integration step is 0.005 and observation noise \u03c3 = 0.025 (both identical to Tong et al. (2022)).\n3https://github.com/anh-tong/fractional_neural_sde/blob/7565a2/ fractional_neural_sde/example.ipynb"
+        },
+        {
+            "heading": "E.3 LATENT VIDEO MODEL",
+            "text": "Stochastic moving MNIST. For the MA-fBM model, K = 5 and \u03b3k = ( 120 , . . . , 20). We use \u201dType I\u201d and the corresponding definitions for \u03c9k, with a time horizon T = 2.4. For the BM model, K = 1, \u03b31 = 0 and \u03c9 = 1, which naturally corresponds to white Brownian motion. The number of latent dimensions D = 6.\nThe encoder model consists of four blocks, containing a convolution layer, maxpool, groupnorm and SiLU activation. Each block reduces spatial dimension by 2, and the number of features in each block is (64, 128, 256, 256). The last output is flattened and is the input of a dense layer, with h as output with 64 features.\nThe median over the time axis of h is fed into a two layers neural network to produce the static content vector w. Since the median is permutation invariant, w contains no dynamic information, only static information. w also has 64 features.\nThe context model consists of two subsequent 1\u2212D convolutions in the temporal dimension. Thus, information is shared over different frames, which is necessary for inference. The output of this model is g.\nTo start the SDE integration, we need an initial state that is conditioned on the data. We define a three layer neural network model that receives (g1, h1, h2, h3) and outputs the parameters of the posterior distribution qx1 of the initial state of the SDE. x1 is sampled from qx1 , which we model as a diagonal Normal distribution. The parameters of a prior model px1 are also optimized, and the Kullback-Leibler divergence DKL(px1 , qx1) is added to the loss function. This approach for training neural SDEs is similar to others in literature (Li et al., 2020).\nThe prior drift b\u03b8(X, t) and the control function u(Z(t), t) have the same architecture, a neural network with two hidden layers of each 200 neurons, with tanh activation functions. The shared diffusion \u03c3\u03b8(X, t) is implemented so that the noise is commutative to allow Milstein solvers (Li et al., 2020; Kidger et al., 2021), i.e. \u03c3\u03b8(X, t) is diagonal and the i-th component on the diagonal only receives Xi(t) as input, where we have defined D separate neural networks for each component. Each neural network has two layers with 200 neurons and tanh activations.\nb\u03b8 and \u03c3\u03b8 receive X(t) as input. The control function a concatenated vector of (X(t), Y1(t), . . . , YK(t), g(t)). g(t) is a linear interpolation of g at time t. This enables the control function to use appropriate information to be able to steer the process correctly.\nThe resulting states x after integration of the SDE are fed, together with the static content vector w in the decoder model. The decoder model has first a dense layer. The outputs of this first layer are shaped in a 4 \u00d7 4 spatial grad. Subsequently, four blocks with a convolution layer, groupnorm, a spatial nearest neighbour upsampling layer and a SiLU activation. Thus, the model reaches the correct resolution of 64 \u00d7 64. Two additional convolution layers with SiLU activation and a final sigmoid activation complete the decoder model.\nWe train on sequences of 25 frames, with a time length of 2.4 (0.1 per frame). The frames have resolution 64 \u00d7 64 and 1 color channel. Each model was trained for 187500 training steps with a batch size of 32. We use the Adam (Kingma & Ba, 2014) optimizer with fixed learning rate 3\u00d710\u22124. We use the Stratonovich\u2013Milstein SDE solver (Kidger, 2021) with an integration step of 0.033 (3 integration steps per data frame). Models were trained on a single NVIDIA GeForce RTX 4090, which takes around 39 hours for one model.\nDouble pendulum. We use the train-test split from the original dataset (Asseman et al., 2018). The videos are recorded with a high speed camera, we used every 10th frame to increase the challenge of the dataset. We resized the frames to a resolution of 128 \u00d7 128 resolution. Therefore, we added one block to the encoder and decoder model to achieve this resolution, compared to the model for stochastic moving MNIST. We did not use the static content vector w, since there is minimal static information in this dataset, and used D = 8 latent dimensions. The models were trained for 124916 training steps, and we trained around 32 hours for one model. Beyond these outlined differences, all other details are equal to the stochastic moving MNIST model."
+        },
+        {
+            "heading": "F ADDITIONAL EXPERIMENTAL RESULTS",
+            "text": ""
+        },
+        {
+            "heading": "F.1 GENERATED TRAJECTORIES OF MA-FBM FOR VARYING K",
+            "text": "Included here are some of the trajectories used to calculate the MSE of the generated trajectories for MA-fBM for varying K (Fig. 7). We show trajectories of MA-fBM with our approach (Sec. 4.1) and the baseline method (cf. App. D.1) for choosing \u03c9k. True paths are plotted in black, the approximations with varying K in a color-scale as indicated in the legends, see Figs. 9 to 12 and 14 to 16. Our method quickly converges to the true path for increasing K, while much slower for the baseline method."
+        },
+        {
+            "heading": "F.2 FOU BRIDGE",
+            "text": "Fig. 17 shows additional results of the fractional Ornstein\u2013Uhlenbeck bridge. The variances are calculated with Eq. (23), and Eq. (24) for \u03b8 > 0 and H > 1/2 or Eq. (1) for \u03b8 = 0. Note that we do not have a useful covariance equation for \u03b8 > 0 and H < 1/2 (Lysy & Pillai, 2013), so this setting is not included in the experiments.\nF.3 VIDEO MODELS\nOn the choice of video datasets. We conducted experiments on two video datasets: Stochastic Moving MNIST (SM-MNIST) (Denton & Fergus, 2018) and the real video dataset of a chaotic double pendulum (Asseman et al., 2018).\nSM-MNIST and the double pendulum dataset contain different forms of nuisances and present different challenges to our stochastic model. First, SM-MNIST digits move with a constant velocity along a trajectory until they hit at wall at which point they bounce off with a random speed and direction. This sudden event intersperses the deterministic motion with moments of uncertainty, i.e. each time a digit hits a wall. This is the reason why a stochastic model fits better than an ODE and unlike BM, our noise can model the smooth and correlated trajectory simply by raising the Hurst index.\nOn the other hand, the double pendulum dataset is actually governed by a set of coupled ordinary differential equations. However, despite being a simple physical system, it exhibits a rich dynamic behavior with a strong sensitivity to initial conditions and noises in the environment (motion of the air in the room, sound vibrations, vibration of the table due to coupling with the pendulum etc.). Combined with the chaotic nature of the system, this creates a major challenge for any model based upon smooth ODEs. Our model on the other hand heavy lifts this difficulty onto the (fractional) stochastic noise, leading to a more appropriate model. As shown in Tab. 2, our model outperforms the BM baseline also in this dataset.\nFigs. 18 and 19 show the posterior reconstructions of models trained on the Stochastic Moving MNIST and the double pendulum dataset respectively. Fig. 20 shows stochastic video prediction samples of Stochastic Moving MNIST.\nB M\n(1 )\nB M\n(2 )\nB M\n(3 )\nB M\n(4 )\nM A\n-f B\nM (1\n)\nM A\n-f B\nM (2\n)\nM A\n-f B\nM (3\n)\nM A\n-f B\nM (4\n)\nFi gu\nre 20\n: St\noc ha\nst ic\npr ed\nic tio\nns us\nin g\nth e\ntr ai\nne d\npr io\nr of\na m\nod el\ndr iv\nen by\nB M\nan d\na m\nod el\ndr iv\nen by\nM A\n-f B\nM ,w\nhe re\nth e\nin iti\nal st\nat e\nis co\nnd iti\non ed\non th e sa m e da ta .F ou rs am pl es ar e sh ow n fo re ac h m od el .T he M A -f B M sa m pl es sh ow m or e di ve rs e m ov em en ts ,t hu s be tte rc ap tu ri ng th e dy na m ic s in th e da ta .T he B M sa m pl es ar e m or e si m ila r, in di ca tin g a le ss po w er fu lp ri or w as le ar ne d."
+        }
+    ],
+    "year": 2023
+}

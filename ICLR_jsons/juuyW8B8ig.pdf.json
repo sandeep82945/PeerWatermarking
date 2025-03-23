@@ -1,0 +1,718 @@
+{
+    "abstractText": "Our understanding of the visual world is centered around various concept axes, characterizing different aspects of visual entities. While different concept axes can be easily specified by language, e.g., color, the exact visual nuances along each axis often exceed the limitations of linguistic articulations, e.g., a particular style of painting. In this work, our goal is to learn a language-informed visual concept representation, by simply distilling large pre-trained vision-language models. Specifically, we train a set of concept encoders to encode the information pertinent to a set of language-informed concept axes, with an objective of reproducing the input image through a pre-trained Text-to-Image (T2I) model. To encourage better disentanglement of different concept encoders, we anchor the concept embeddings to a set of text embeddings obtained from a pre-trained Visual Question Answering (VQA) model. At inference time, the model extracts concept embeddings along various axes from new test images, which can be remixed to generate images with novel compositions of visual concepts. With a lightweight test-time finetuning procedure, it can also generalize to novel concepts unseen at training. Project page at https://cs.stanford.edu/ \u0303yzzhang/projects/concept-axes.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Sharon Lee"
+        },
+        {
+            "affiliations": [],
+            "name": "Yunzhi Zhang"
+        },
+        {
+            "affiliations": [],
+            "name": "Shangzhe Wu"
+        },
+        {
+            "affiliations": [],
+            "name": "Jiajun Wu"
+        }
+    ],
+    "id": "SP:f1ec9dafa06c971a9a2338b922bc377250fc9ba0",
+    "references": [
+        {
+            "authors": [
+                "Moab Arar",
+                "Rinon Gal",
+                "Yuval Atzmon",
+                "Gal Chechik",
+                "Daniel Cohen-Or",
+                "Ariel Shamir",
+                "Amit H Bermano"
+            ],
+            "title": "Domain-agnostic tuning-encoder for fast personalization of text-to-image models",
+            "venue": "arXiv preprint arXiv:2307.06925,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Omri Avrahami",
+                "Kfir Aberman",
+                "Ohad Fried",
+                "Daniel Cohen-Or",
+                "Dani Lischinski"
+            ],
+            "title": "Break-a-scene: Extracting multiple concepts from a single image",
+            "venue": "SIGGRAPH Asia,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Andrew Brock",
+                "Jeff Donahue",
+                "Karen Simonyan"
+            ],
+            "title": "Large scale gan training for high fidelity natural image synthesis",
+            "venue": "arXiv preprint arXiv:1809.11096,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Tim Brooks",
+                "Aleksander Holynski",
+                "Alexei A. Efros"
+            ],
+            "title": "Instructpix2pix: Learning to follow image editing instructions",
+            "venue": "In CVPR,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Tom Brown",
+                "Benjamin Mann",
+                "Nick Ryder",
+                "Melanie Subbiah",
+                "Jared D Kaplan",
+                "Prafulla Dhariwal",
+                "Arvind Neelakantan",
+                "Pranav Shyam",
+                "Girish Sastry",
+                "Amanda Askell"
+            ],
+            "title": "Language models are few-shot learners",
+            "venue": "NeurIPS,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Hila Chefer",
+                "Yuval Alaluf",
+                "Yael Vinker",
+                "Lior Wolf",
+                "Daniel Cohen-Or"
+            ],
+            "title": "Attend-and-excite: Attention-based semantic guidance for text-to-image diffusion models, 2023a",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Hila Chefer",
+                "Oran Lang",
+                "Mor Geva",
+                "Volodymyr Polosukhin",
+                "Assaf Shocher",
+                "Michal Irani",
+                "Inbar Mosseri",
+                "Lior Wolf"
+            ],
+            "title": "The hidden language of diffusion models",
+            "venue": "arXiv preprint arXiv:2306.00966,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Xi Chen",
+                "Yan Duan",
+                "Rein Houthooft",
+                "John Schulman",
+                "Ilya Sutskever",
+                "Pieter Abbeel"
+            ],
+            "title": "Infogan: Interpretable representation learning by information maximizing generative adversarial",
+            "venue": "nets. NeurIPS,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Jacob Devlin",
+                "Ming-Wei Chang",
+                "Kenton Lee",
+                "Kristina Toutanova. Bert"
+            ],
+            "title": "Pre-training of deep bidirectional transformers for language understanding",
+            "venue": "arXiv preprint arXiv:1810.04805,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Alexey Dosovitskiy",
+                "Lucas Beyer",
+                "Alexander Kolesnikov",
+                "Dirk Weissenborn",
+                "Xiaohua Zhai",
+                "Thomas Unterthiner",
+                "Mostafa Dehghani",
+                "Matthias Minderer",
+                "Georg Heigold",
+                "Sylvain Gelly",
+                "Jakob Uszkoreit",
+                "Neil Houlsby"
+            ],
+            "title": "An image is worth 16x16 words: Transformers for image recognition at scale, 2021",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Dave Epstein",
+                "Allan Jabri",
+                "Ben Poole",
+                "Alexei A. Efros",
+                "Aleksander Holynski"
+            ],
+            "title": "Diffusion selfguidance for controllable image generation",
+            "venue": "NeurIPS,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Li Fei-Fei",
+                "R. Fergus",
+                "P. Perona"
+            ],
+            "title": "One-shot learning of object categories",
+            "venue": "IEEE TPAMI,",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "R. Fergus",
+                "L. Fei-Fei",
+                "P. Perona",
+                "A. Zisserman"
+            ],
+            "title": "Learning object categories from google\u2019s image search",
+            "venue": "In ICCV,",
+            "year": 2005
+        },
+        {
+            "authors": [
+                "Rinon Gal",
+                "Yuval Alaluf",
+                "Yuval Atzmon",
+                "Or Patashnik",
+                "Amit H. Bermano",
+                "Gal Chechik",
+                "Daniel Cohen-Or"
+            ],
+            "title": "An image is worth one word: Personalizing text-to-image generation using textual inversion, 2022",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Rinon Gal",
+                "Moab Arar",
+                "Yuval Atzmon",
+                "Amit H. Bermano",
+                "Gal Chechik",
+                "Daniel Cohen-Or"
+            ],
+            "title": "Encoder-based domain tuning for fast personalization of text-to-image models",
+            "venue": "ACM Trans. Graph.,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ross Girshick",
+                "Jeff Donahue",
+                "Trevor Darrell",
+                "Jitendra Malik"
+            ],
+            "title": "Rich feature hierarchies for accurate object detection and semantic segmentation",
+            "venue": "In CVPR,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Ian Goodfellow",
+                "Jean Pouget-Abadie",
+                "Mehdi Mirza",
+                "Bing Xu",
+                "David Warde-Farley",
+                "Sherjil Ozair",
+                "Aaron Courville",
+                "Yoshua Bengio"
+            ],
+            "title": "Generative adversarial nets",
+            "venue": "NeurIPS,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Chi Han",
+                "Jiayuan Mao",
+                "Chuang Gan",
+                "Josh Tenenbaum",
+                "Jiajun Wu"
+            ],
+            "title": "Visual concept-metaconcept learning",
+            "venue": "In NeurIPS,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Erik H\u00e4rk\u00f6nen",
+                "Aaron Hertzmann",
+                "Jaakko Lehtinen",
+                "Sylvain Paris"
+            ],
+            "title": "Ganspace: Discovering interpretable gan controls",
+            "venue": "NeurIPS,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Amir Hertz",
+                "Ron Mokady",
+                "Jay Tenenbaum",
+                "Kfir Aberman",
+                "Yael Pritch",
+                "Daniel Cohen-Or"
+            ],
+            "title": "Prompt-to-prompt image editing with cross attention control",
+            "venue": "arXiv preprint arXiv:2208.01626,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Aaron Hertzmann",
+                "Charles E Jacobs",
+                "Nuria Oliver",
+                "Brian Curless",
+                "David H Salesin"
+            ],
+            "title": "Image analogies",
+            "venue": "In SIGGRAPH,",
+            "year": 2001
+        },
+        {
+            "authors": [
+                "Irina Higgins",
+                "Loic Matthey",
+                "Arka Pal",
+                "Christopher Burgess",
+                "Xavier Glorot",
+                "Matthew Botvinick",
+                "Shakir Mohamed",
+                "Alexander Lerchner"
+            ],
+            "title": "beta-VAE: Learning basic visual concepts with a constrained variational framework",
+            "venue": "In ICLR,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Kyle Hsu",
+                "Will Dorrell",
+                "James C.R. Whittington",
+                "Jiajun Wu",
+                "Chelsea Finn"
+            ],
+            "title": "Disentanglement via latent quantization",
+            "venue": "In NeurIPS,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Tero Karras",
+                "Samuli Laine",
+                "Timo Aila"
+            ],
+            "title": "A style-based generator architecture for generative adversarial networks",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Alex Krizhevsky",
+                "Ilya Sutskever",
+                "Geoffrey E Hinton"
+            ],
+            "title": "Imagenet classification with deep convolutional neural networks",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Dongxu Li",
+                "Junnan Li",
+                "Steven CH Hoi"
+            ],
+            "title": "Blip-diffusion: Pre-trained subject representation for controllable text-to-image generation and editing",
+            "venue": "arXiv preprint arXiv:2305.14720,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Junnan Li",
+                "Dongxu Li",
+                "Silvio Savarese",
+                "Steven Hoi"
+            ],
+            "title": "BLIP-2: bootstrapping language-image pre-training with frozen image encoders and large language models",
+            "venue": "In ICML,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Nan Liu",
+                "Shuang Li",
+                "Yilun Du",
+                "Antonio Torralba",
+                "Joshua B Tenenbaum"
+            ],
+            "title": "Compositional visual generation with composable diffusion models",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Nan Liu",
+                "Yilun Du",
+                "Shuang Li",
+                "Joshua B Tenenbaum",
+                "Antonio Torralba"
+            ],
+            "title": "Unsupervised compositional concepts discovery with text-to-image generative models",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ilya Loshchilov",
+                "Frank Hutter"
+            ],
+            "title": "Decoupled weight decay regularization",
+            "venue": "arXiv preprint arXiv:1711.05101,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Jiayuan Mao",
+                "Chuang Gan",
+                "Pushmeet Kohli",
+                "Joshua B Tenenbaum",
+                "Jiajun Wu"
+            ],
+            "title": "The neurosymbolic concept learner: Interpreting scenes, words, and sentences from natural supervision",
+            "venue": "In ICLR,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Ron Mokady",
+                "Amir Hertz",
+                "Kfir Aberman",
+                "Yael Pritch",
+                "Daniel Cohen-Or"
+            ],
+            "title": "Null-text inversion for editing real images using guided diffusion models",
+            "venue": "arXiv preprint arXiv:2211.09794,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Alec Radford",
+                "Jong Wook Kim",
+                "Chris Hallacy",
+                "Aditya Ramesh",
+                "Gabriel Goh",
+                "Sandhini Agarwal",
+                "Girish Sastry",
+                "Amanda Askell",
+                "Pamela Mishkin",
+                "Jack Clark",
+                "Gretchen Krueger",
+                "Ilya Sutskever"
+            ],
+            "title": "Learning transferable visual models from natural language supervision, 2021",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Colin Raffel",
+                "Noam Shazeer",
+                "Adam Roberts",
+                "Katherine Lee",
+                "Sharan Narang",
+                "Michael Matena",
+                "Yanqi Zhou",
+                "Wei Li",
+                "Peter J Liu"
+            ],
+            "title": "Exploring the limits of transfer learning with a unified text-to-text transformer",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Aditya Ramesh",
+                "Mikhail Pavlov",
+                "Gabriel Goh",
+                "Scott Gray",
+                "Chelsea Voss",
+                "Alec Radford",
+                "Mark Chen",
+                "Ilya Sutskever"
+            ],
+            "title": "Zero-shot text-to-image generation",
+            "venue": "In ICML,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Aditya Ramesh",
+                "Prafulla Dhariwal",
+                "Alex Nichol",
+                "Casey Chu",
+                "Mark Chen"
+            ],
+            "title": "Hierarchical textconditional image generation with clip latents",
+            "venue": "arXiv preprint arXiv:2204.06125,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Kanchana Ranasinghe",
+                "Michael Ryoo"
+            ],
+            "title": "Language-based action concept spaces improve video self-supervised learning",
+            "venue": "NeurIPS,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Robin Rombach",
+                "Andreas Blattmann",
+                "Dominik Lorenz",
+                "Patrick Esser",
+                "Bj\u00f6rn Ommer"
+            ],
+            "title": "Highresolution image synthesis with latent diffusion models",
+            "venue": "In CVPR,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Nataniel Ruiz",
+                "Yuanzhen Li",
+                "Varun Jampani",
+                "Yael Pritch",
+                "Michael Rubinstein",
+                "Kfir Aberman"
+            ],
+            "title": "Dreambooth: Fine tuning text-to-image diffusion models for subject-driven generation",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Olga Russakovsky",
+                "Jia Deng",
+                "Hao Su",
+                "Jonathan Krause",
+                "Sanjeev Satheesh",
+                "Sean Ma",
+                "Zhiheng Huang",
+                "Andrej Karpathy",
+                "Aditya Khosla",
+                "Michael Bernstein"
+            ],
+            "title": "Imagenet large scale visual recognition challenge",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Donald G Saari"
+            ],
+            "title": "Selecting a voting method: the case for the borda count",
+            "venue": "Constitutional Political Economy,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Chitwan Saharia",
+                "William Chan",
+                "Saurabh Saxena",
+                "Lala Li",
+                "Jay Whang",
+                "Emily L Denton",
+                "Kamyar Ghasemipour",
+                "Raphael Gontijo Lopes",
+                "Burcu Karagol Ayan",
+                "Tim Salimans"
+            ],
+            "title": "Photorealistic text-to-image diffusion models with deep language understanding",
+            "venue": "NeurIPS,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Christoph Schuhmann",
+                "Romain Beaumont",
+                "Richard Vencu",
+                "Cade Gordon",
+                "Ross Wightman",
+                "Mehdi Cherti",
+                "Theo Coombes",
+                "Aarush Katta",
+                "Clayton Mullis",
+                "Mitchell Wortsman"
+            ],
+            "title": "Laion-5b: An open large-scale dataset for training next generation image-text models",
+            "venue": "NeurIPS,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ad\u00e9la \u0160ubrtov\u00e1",
+                "Michal Luk\u00e1\u010d",
+                "Jan \u010cech",
+                "David Futschik",
+                "Eli Shechtman",
+                "Daniel S\u1ef3kora"
+            ],
+            "title": "Diffusion image analogies",
+            "venue": "In SIGGRAPH,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yael Vinker",
+                "Andrey Voynov",
+                "Daniel Cohen-Or",
+                "Ariel Shamir"
+            ],
+            "title": "Concept decomposition for visual exploration and inspiration",
+            "venue": "arXiv preprint arXiv:2305.18203,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Andrey Voynov",
+                "Artem Babenko"
+            ],
+            "title": "Unsupervised discovery of interpretable directions in the gan latent space",
+            "venue": "In ICML,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Bing Xu",
+                "Naiyan Wang",
+                "Tianqi Chen",
+                "Mu Li"
+            ],
+            "title": "Empirical evaluation of rectified activations in convolutional network",
+            "venue": "arXiv preprint arXiv:1505.00853,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Jiahui Yu",
+                "Yuanzhong Xu",
+                "Jing Yu Koh",
+                "Thang Luong",
+                "Gunjan Baid",
+                "Zirui Wang",
+                "Vijay Vasudevan",
+                "Alexander Ku",
+                "Yinfei Yang",
+                "Burcu Karagol Ayan"
+            ],
+            "title": "Scaling autoregressive models for contentrich text-to-image generation",
+            "venue": "arXiv preprint arXiv:2206.10789,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yiwu Zhong",
+                "Jing Shi",
+                "Jianwei Yang",
+                "Chenliang Xu",
+                "Yin Li"
+            ],
+            "title": "Learning to generate scene graph from natural language supervision",
+            "venue": "In ICCV,",
+            "year": 2021
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "In order to make sense of the myriad visual entities in the world, humans develop an abstracted generative model of them and organize the underlying sources of variation into visual concepts, such as different colors or different types of objects. Designing systems that can recognize visual concepts within images as humans do has been a longstanding goal in the fields of computer vision and artificial intelligence (Russakovsky et al., 2015; Krizhevsky et al., 2012; Girshick et al., 2014).\nTo facilitate efficient reasoning and communication of these concepts, humans created symbolic depictions that have evolved into natural language. Such natural language grounding of visual data has been instrumental in the recent proliferation of powerful large vision-language models that are capable of semantically identifying objects in images (Radford et al., 2021; Kirillov et al., 2023) or generating photo-realistic images from arbitrary text prompts (Ramesh et al., 2021; Rombach et al., 2022; Saharia et al., 2022; Yu et al., 2022). While different concept axes can be easily specified by words, such as category and style, it is much less intuitive to delineate the subtleties of low-level visual nuances along each axis using language, such as one particular style of a painting.\nIn this work, our goal is to distill from large pre-trained vision-language models a function that extracts visual concepts along a set of language-specified concept axes from images. As illustrated in Figure 1, once these concepts are extracted, we can recompose them across different image instances at inference time to produce new images with novel concept combinations. To learn this function, rather than collecting a large-scale dataset of human annotations for each specific visual concept, we design a language-informed visual concept representation, and simply distill from a pre-trained Text-to-Image (T2I) generation model. There are three fundamental properties we seek in this visual concept representation.\nFirst, unlike T2I generation, which relies on generic words as visual concept descriptors, we would like to capture fine-grained visual nuances using continuous concept embeddings. One common technique is to invert the text-to-image generation process by optimizing an embedding with the objective of reproducing a given input image using a pre-trained T2I model, often referred to as Textual Inversion (Gal et al., 2022). However, most existing Textual Inversion methods (Gal et al.,\n\u2217Equal contribution; alphabetically ordered.\n\u201ca photo of red banana\u201d \u201ca photo of <color> <category>\u201d<color><category>\nRecompositionSourceVanilla text prompt\nO ur s B as el in e\nFigure 2: Learned Disentangled Concept Embeddings Improve Compositionality. Left: Vanilla text-to-image model may fail to adhere to text prompts of uncommon combinations of concepts even with prompt engineering, e.g. \u201cred banana\u201d. Right: With the same backbone T2I generator, our learned disentangled concept embeddings greatly enhance concept compositionality.\n2022) optimize embeddings for individual image instances independently, overlooking the shared nature of visual concepts across instances. For instance, the concept of \u201cred\u201d is shared between a \u201cred apple\u201d and a \u201cred dress\u201d. Moreover, the concepts of \u201cred\u201d and \u201cyellow\u201d also are instances of the property of color.\nHence, the second desired property of the visual concept representation is to preserve such common concept structures among various visual instances. Instead of optimizing on individual image instances independently, we design a set of concept encoders, where each encoder learns to encode the visual characteristics of an input image pertaining to one concept axis specified by language. This ensures that the inverted concept embeddings can be shared across different instances and remixed to generate new images.\nThe third crucial aspect of this representation is to ascertain that different concept axes are disentangled, allowing for changes to be made specifically on single concept axis without modifying other axes. To do so, we reuse the disentangled nature of linguistic concepts and ground the predictions to a set of discrete text anchors in the concept embeddings space, which can be obtained by querying a pre-trained generic Visual Question Answering (VQA) model, e.g., BLIP-2 (Li et al., 2023b). This soft anchoring constraint significantly improves the disentanglement of concept embeddings across different axes while still retaining sufficient leeway to capture nuanced visual variations that BLIP-2 struggles to discern, e.g., the style of an art piece in Figure 6.\nPutting these ideas together, we design a generic framework for learning disentangled and compositional visual concepts grounded to linguistic structures by exploiting pre-trained text-to-image generation and visual question answering models. We show that these concept encoders can be trained purely on synthetic images generated by a pre-trained T2I model, and extract concept embeddings from real images at test time, which capture the fine-grained visual nuances.\nOur contributions can be summarized as follows:\n1. We propose a generic framework for learning language-informed visual concepts by simply distilling pretrained vision-language models.\n2. At inference time, the trained concept encoders extract concept embeddings from a test image, which can be remixed to generate images with novel compositions of concepts.\n3. Using a light-weight test-time finetuning procedure, these encoders can also be quickly adapted to extract novel concepts unseen during training.\n4. Experiments show that this visual concept representation achieves better disentanglement and compositionality, compared to text-based prompting baselines, as shown in Figures 2 and 6."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": ""
+        },
+        {
+            "heading": "2.1 VISUAL CONCEPT LEARNING",
+            "text": "Designing learning-based systems to discover various visual concepts in natural images has been a long-standing goal in machine perception and intelligence. Early attempts typically rely on extensive semantic annotations done by humans, such as object classification (Barnard et al., 2003; FeiFei et al., 2006; Fergus et al., 2005), which were later epitomized by the effort of ImageNet (Russakovsky et al., 2015). Visual concepts are intrinsically linked to concepts in language, and such end-to-end supervised learning paradigms can be seen as learning a direct mapping between visual concepts and discrete linguistic concepts. Other approaches attempt to better exploit this inherent structure in language by constructing a structured representation of visual concepts such as scene graphs (Zhong et al., 2021) and symbolic programs (Mao et al., 2019; Han et al., 2019).\nMore recently, the success of natural language modeling (Devlin et al., 2018; Brown et al., 2020; Raffel et al., 2020) has paved the way for grounding visual concepts to open vocabularies, unlike category labels or fixed symbolic programs, by training large Vision-Language Models (VLMs) on massive image captioning datasets (Schuhmann et al., 2022). This has powered recent Text-to-Image (T2I) generation models to turn linguistic concepts from free-form text prompts into photo-realistic images (Rombach et al., 2022; Saharia et al., 2022). These T2I models have been leveraged by Personalization methods for extracting individual visual concepts from one or a few images. This is done by either by optimizing token embeddings (Gal et al., 2022; Vinker et al., 2023; Avrahami et al., 2023; Chefer et al., 2023b; Liu et al., 2023), finetuning the backbone denoiser (Ruiz et al., 2023), or training additional encoders for amortized optimization (Gal et al., 2023; Arar et al., 2023; Li et al., 2023a). We also distill visual concepts from a pre-trained T2I model, but unlike existing works, we train encoders to adhere to a set of language-specified concept axes, preserving the disentangled and compositional nature of language. Ranasinghe & Ryoo (2023) also explores language-defined concepts but focuses on video action recognition tasks while we focus on image generation.\nA separate line of work focuses on unsupervised visual concept disentanglement without explicitly leveraging language, typically by simply imposing information constraints in the latent space of a generative model, like VAEs and GANs (Higgins et al., 2017; Chen et al., 2016; Hsu et al., 2023). Here, we are interested in learning visual concepts that are explicitly grounded to language."
+        },
+        {
+            "heading": "2.2 CONTROLLABLE IMAGE GENERATION",
+            "text": "The success of GAN-based image generation (Goodfellow et al., 2014; Brock et al., 2018; Karras et al., 2019) has spawned a series of works that discover controllable directions in the GAN latent space (Voynov & Babenko, 2020; Ha\u0308rko\u0308nen et al., 2020). More recently, the advancements of diffusion-based T2I models have unlocked new possibilities for controllable image generation, where photo-realistic images can be generated from free-form text prompts. Recent works proposed to further improve the alignment of image samples and input text conditions by manipulating attention maps within T2I models (Chefer et al., 2023a; Epstein et al., 2023). Another form of controllable image generation is compositional generation. Liu et al. (2022) proposes to improve the quality of T2I diffusion models for composing multiple pre-given concepts, specified via text prompts, by modifying the inference procedure. In this work, instead of assuming that concepts are given and are in a text format, we tackle the task of identifying disentangled concepts which can be used for composition.\nImage generation can also be controlled with image analogies (S\u030cubrtova\u0301 et al., 2023; Hertzmann et al., 2001), a form of visual prompting. These works typically do not explicitly extracts visual concepts from inputs unlike ours. In this work, we amalgamate both visual prompts and text queries, employing them as the editing interface."
+        },
+        {
+            "heading": "3 METHOD",
+            "text": "Fig. 3 gives an overview of our proposed learning framework. Our goal in this work is to extract visual concepts from images along a number of concept axes specified by language, such as\ncategory, color, and material, so as to enable the flexible composition of concepts into high-quality image generations.\nTo achieve this, we train a set of visual concept encoders by distilling concept guidance from pretrained vision-language models. Specifically, the encoders are trained to extract concept embeddings from an image in order to fulfill two objectives. First, they should be recomposed to explain the input image through a pretrained text-to-image (T2I) generation model, given a concept-axis-informed text prompt. Second, these visual concept embeddings should be anchored to the corresponding text embeddings obtained from a pre-trained visual question answering (VQA) model, further exploiting the disentangled nature of linguistic concepts for better disentanglement of visual concepts."
+        },
+        {
+            "heading": "3.1 VISUAL CONCEPT ENCODING BY INVERTING TEXT-TO-IMAGE GENERATION",
+            "text": "Our understanding of the visual world is centered around various concept axes, to which we have often assigned words due to their significance in communication and reasoning. This vision-language grounding has fueled recent explosion of text-to-image generation models (Rombach et al., 2022; Saharia et al., 2022; Ramesh et al., 2022), allowing them to generate photo-realistic images with various combinations of concepts defined by words.\nHere, we are interested in the reverse direction of text-to-image generation, where the goal is to extract language-grounded visual concepts present in natural images. Specifically, given K concept axes of interest defined by language, we would like to learn K concept encoders {fk(\u00b7)}Kk=1, each of which extracts a concept representation ek = fk(x) along a concept axis from an input image x.\nIn order to train these concept encoders {fk(\u00b7)}, instead of relying on extensive human labeling, we opt to exploit the vision-language grounding embedded within large pre-trained T2I generation models. Using the technique of Textual Inversion (Gal et al., 2022), one can optimize a token embedding <*> to capture a visual entity in a given image, through the objective of regenerating the image with the T2I model from a text template, such as \u201ca photo of <*>\u201d. Here, we adopt a similar objective, but instead of inverting a specific embedding capturing the overall \u201cidentity\u201d of an individual image instance, we would like to predict embeddings ek that are grounded to a number of meaningful concept axes, using an axis-informed text template, such as \u201ca photo of <e1> with <e2> color and <e3> material\u201d. This allows the extracted concept embeddings to be shared across different images, encapsulating the common visual characteristics pertinent to one concept axis.\nSpecifically, given an image x, the concept encoders {fk(\u00b7)} extract a set of concept embeddings {ek \u2208 RD}, which have the same dimension D as the text embeddings so that they can be directly inserted into the text embeddings of the axis-informed text template. To simplify the notations, let f\u03b3(\u00b7) denote the function that takes in the image and produces the final sequence of embeddings\nof the template and the predicted concept embeddings, and \u03b3 be the parameters of all the encoders which will be optimized during training. Let c\u03b8 be the part of the T2I model\u2019s text encoder that takes in a sequence of text embeddings and outputs a conditioning vector for the T2I model\u2019s denoising network \u03f5\u0302\u03b8, where \u03b8 denotes network parameters. We use DeepFloyd (StabilityAI; Saharia et al., 2022) as the backbone T2I model, which utilizes a pre-trained T5 model (Raffel et al., 2020) as the text encoder, and keep the parameters \u03b8 frozen in all experiments. To train the encoders, we reuse the training objective for the backbone diffusion model:\nLrecon(x; \u03b3) = E\u03f5\u223cN (0,I),t\u223cU([0,1]) [ \u2225\u03f5\u0302\u03b8(x, t, c\u03b8(f\u03b3(x)))\u2212 \u03f5\u222522 ] , (1)\nwhere the noise \u03f5 is sampled from a standardmultivariate Gaussian distribution and the timestep t is sampled from a uniform distribution in [0, 1]. Minimizing Lrecon amounts to finding concept embeddings within the space of the pre-trained T2I model that can best reproduce the input image x, resembling a \u201creconstrucion\u201d objective.\nCompared to per-instance token optimization in vanilla Textual Inversion, the advantages of training these concept encoders are two-fold. First, the concept embedding space is naturally shared across different image instances, encapsulating the common understanding of the corresponding concept axes. Second, it makes training more efficient by amortizing the optimization across all instances, and more crucially, it allows for test-time inference in a feed-forward pass."
+        },
+        {
+            "heading": "3.2 CONCEPT DISENTANGLEMENT USING TEXT ANCHORS",
+            "text": "The objective of Lrecon ensures that the extracted concept embeddings can sufficiently reconstruct the concept of a given image through a pre-trained text-to-image generation model. However, with this loss alone, there is little guarantee that each embedding encodes only the information pertinent to a particular concept axis. In practice, we found that this baseline results in poor disentanglement of different concept axes when remixing the concept embeddings to generate new images, potentially due to the imprecise vision-language grounding in the pre-trained T2I model. For instance, as shown in Figure 8, the extracted category embedding <e1> for \u201cred berries\u201d cannot be remixed with various color embeddings <e2> e.g., \u201corange\u201d, as <e1> is highly entangled with the concept of a \u201cred\u201d color due to the bias in natural images.\nTo encourage better disentanglement of different concept axes, we further incorporate a sparse set of text anchors into the concept embedding space. Along each concept axis like color, we have often named some prominent modes, such as \u201cred\u201d or \u201cyellow\u201d, and these text labels entail clearly disentangled concepts. Therefore, we would like to reuse this disentangled nature of linguistic concepts to improve the disentanglement of visual concepts. To this end, we make use of the text predictions from a pre-trained Visual Question Answering (VQA) model, BLIP-2 (Li et al., 2023b), as pseudo ground-truth anchors for the concept embeddings.\nSpecifically, for each training image x and for each concept axis of interest (e.g., color) indexed by k, we query the BLIP-2 model \u03a8 with the image x and a question qk in natural language that is specific to this concept axis, e.g., \u201cwhat is the color of the object in the image\u201d. Denote the answer from BLIP-2, also in the form of natural language, as \u03a8(x, qk). We encode this answer with the pre-trained text encoder c\u03b8 to obtain a text embedding e\u0303k = c\u03b8(\u03a8(x, qk)). The prediction of our concept encoders fk,\u03b3 is encouraged to stay close to this anchor text embedding:\nLanchork (x; \u03b3) = \u2225fk,\u03b3(x)\u2212 e\u0303k\u222522, where e\u0303k = c\u03b8(\u03a8(x, qk)). (2)\nIt is crucial to highlight that we use these BLIP-2 predictions only as anchors by assigning a small weight to this anchor loss Lanchork during training. Otherwise, the embeddings predicted by the concept encoders could easily collapse to a set of discrete text embeddings and fail to capture the visual nuances in images."
+        },
+        {
+            "heading": "3.3 TRAINING AND INFERENCE",
+            "text": "Training. Given a collection of training images D containing various combinations of concepts along each axis, the final objective to train the concept encoders consists of the two parts:\nLtotal(\u03b3) = Ex\u223cD [ Lrecon(x; \u03b3) +\nK\u2211 k=1 \u03bbkLanchork (x; \u03b3)\n] . (3)\nInference. At inference time, given a new test image, the concept encoders extract embeddings {ek} capturing its characteristics along each concept axis of interest. These embeddings can be remixed across different images, or be replaced by embeddings converted from explicit words, to produce images with new compositions of visual concepts through the backbone T2I generator.\nGeneralization to Unseen Concepts via Test-Time Finetuning. While the encoders can precisely extract an axis-specific concept that has been seen during training from a new test image, they tend to be less robust to concepts unseen at training. However, with a lightweight test-time optimization procedure, where we use only the reconstruction objective Lrecon to update the parameters for all encoders, \u03b3, these encoders can generalize to novel concepts unseen during training. Note that Lanchor is omitted here in order to capture the visual nuances without over-committing to the coarse text anchors. After training, the encoders have learned to generate outputs within a relatively narrow region of the embedding space, which allows the model to adapt to the test images shown in Figure 5 within around 600 iterations while maintaining disentanglement and compositional capability."
+        },
+        {
+            "heading": "4 EXPERIMENTS",
+            "text": ""
+        },
+        {
+            "heading": "4.1 EXPERIMENT SETUP",
+            "text": "Training Data Generation. We train the concept encoders only using synthetic images generated by DeepFloyd from 5 different domains, including fruits, figurines, furniture, art, and clothing. More details of our dataset can be found in A.2. For each dataset, we consider 2-3 concept axes, such as category, color, material, style, and season. For example, considering category and color for the fruits dataset, we generate training images by prompting DeepFloyd with text prompts describing varying combinations of categories and colors, e.g. \u201ca photo of an apple which is red in color\u201d. Note that these text prompts are used only for data generation and not for training, as they may not be reliable (Figure 2). On average, we obtain 669 training images for each dataset.\nImplementation Details. Inspired by Gal et al. (2023), we leverage a pre-trained CLIP ViT/L14 model for image encoding (Radford et al., 2021; Dosovitskiy et al., 2021), which was trained with a contrastive objective aligning image and text features, and hence well-suited for our task. We extract image features from CLIP ViT and train K separate concept encoders fk on top of the features, which share the same architecture but maintains separate weights. Specifically, we take the [CLS] tokens from each CLIP layer and process each token with a distinct linear layer. This is different from Gal et al. (2023), which extracts [CLS] tokens from every other layer and uses a single shared linear layer for all token features. The transformed features are then aggregated with average pooling followed by a LeakyReLU (Xu et al., 2015) activation, and passed into another linear layer that produces the final predicted concept embeddings.\nTo ground the concept embeddings to the concept axes, we adapt the text templates from CLIP (Radford et al., 2021), which were originally used to assemble captions with class categories from ImageNet (Russakovsky et al., 2015). For training, we use AdamW (Loshchilov & Hutter, 2017) optimizer with learning rate 0.02, and randomly flip the images horizontally. For test-time finetuning, we use the AdamW optimizer with learning rate 0.001. We set \u03bbk = 0.0001 (Equation (3)) for the category axis and \u03bb = 0.001 for others. We use IF-I-XL from DeepFloyd as the backbone model, with training resolution 64 \u00d7 64. Training on one dataset takes approximately 12 hours on one NVIDIA GeForce RTX 3090 GPU. Generated images are upsampled 256 \u00d7 256 using IF-II-L for visualization purpose."
+        },
+        {
+            "heading": "4.2 QUALITATIVE RESULTS",
+            "text": "Visual Concept Extraction, Recomposition and Extrapolation. Once trained, the concept encoders can extract disentangled concept embeddings specific to each concept axis from different test images, which can recomposed to generate new images with various concept compositions. As shown in Figure 4, across various datasets, our method is able to recompose axis-specific visual concepts from different images and consistently generate new images depicting the recomposed concepts. More examples can be found in Appendix A.1, where images generated from individual decomposed concept embeddings are also presented.\nThis disentangled concept representation also allows us to extrapolate along a particular concept axis for visual exploration, as shown in Figure 7. For instance, we can ask BLIP-2 \u201cwhat is the style\nof the painting?\u201d in an image, and prompt GPT-4 (OpenAI, 2023) to name a few alternatives. We can then recompose the text embeddings of these alternative styles with our concept embeddings and generate images to visualize these variants. Representing concepts as continuous embeddings further enables concept interpolations. Details and results are shown in Appendix A.6.\nGeneralization to Unseen Concepts via Test-Time Finetuning. Although the encoders have only seen a limited range of concepts during training due to the small size of the training dataset, it can be quickly adapted to unseen concepts with the lightweight test-time finetuning procedure in Section 3.3, as shown in Figure 5. For instance, after 600 finetuning iterations, the model can extract the specific style of the dog painting unseen at training and compose it with the content from other images. It can also capture nuanced colors e.g. yellow-ish-orange and transfer them to other objects."
+        },
+        {
+            "heading": "4.3 COMPARISON WITH PRIOR WORKS",
+            "text": "Qualitative Comparisons While this task of image generation with disentangled visual concepts is new, we identified prior work that is capable of text-based image editing and generation, and establish a side-by-side comparison on the task of visual concept editing. Specifically, given an image x, for example, of a teal-colored apple in Figure 6, the task is to generate a new image x\u0302ek\u2192e\u2032k with one concept axis k (e.g. category) modified by a text prompt, from <ek> to <e \u2032 k>, while preserving other axes {i|i \u0338= k} from the input. We compare to two existing methods. Null-text Inversion (Mokady et al., 2022) performs concept editing by first inverting the input image to token embeddings of Stable-Diffusion (Saharia et al., 2022) and then applying Prompt-to-Prompt (Hertz et al., 2022), which modifies cross attention maps for editing, a process that leads to pixel-aligned editing results. InstructPix2Pix (Brooks et al., 2023) is a conditional diffusion model for text-based image editing. Since it is trained on data curated with Prompt-to-Prompt for supervision, it also tends to generate pixel-aligned results. We also design a naive baseline for this task, where we query BLIP-2 for a text description of the attributes to be retained from the test image, and combine the answer with a target concept to generate the final recomposed image. As shown in Figure 6, our method achieves better recomposition results, whereas baseline methods fail to disentangle the desired axis-specific concepts from input images, and therefore struggle to faithfully reproduce the desired concepts from the image and the text.\nQuantitative Comparisons. We also conduct quantitative evaluations on the task of text-based visual concept editing and compare with prior work. Specifically, we record the ground-truth text\nprompts y that we used to generate each training image x, and manually filter out the inconsistent pairs. For each concept axis k, we randomly select a target label <e\u2032k> from a set of candidates that different from the one in the original prompt <ek>. We then measure the alignment score between the modified image x\u0302ek\u2192e\u2032k with the modified text prompt yek\u2192e\u2032k using CLIP (Radford et al., 2021), following Gal et al. (2022). We also break down the score to each individual axis, by computing the alignment of the image to a prompt specifying only one axis, e.g. \u201ca photo of <e\u2032k>\u201d. All results are summarized in Table 1. Our method captures the characteristics of category particularly well and outperforms others in changing category or preserving category while changing color, which highlights its ability to extract disentangled concepts allowing for flexible compositions. InstructPix2Pix is more effective in changing color, but tends to do poorly in preserving the category, as seen in Figure 6. More details on our quantitative results can be found in A.4.\nWe further conduct a human evaluation. Each participant is presented the results from all three methods in a random order together with the editing instruction, and asked to rank them considering both realism and faithfulness to the instruction (see Appendix A.3 for details). We aggregate the responses from 20 people and report the average average score normalized to 0-1 in Table 1. More details of our setup can be found in A.3."
+        },
+        {
+            "heading": "4.4 ABLATIONS",
+            "text": "We conduct an ablation study to understand the effects of the proposed encoder (as opposed perinstance optimization) and the text anchoring loss Lanchork . We use the same evaluation dataset and the CLIP-alignment metric as described in Section 4.3. As shown in Fig. 8 and Table 1, removing Lanchork and the encoders deteriorates disentanglement of the different concept axes due to severe overfitting, resulting in poor recomposition results. More results are included in the Appendix."
+        },
+        {
+            "heading": "5 CONCLUSION",
+            "text": "In this paper, we have presented a framework for learning language-informed visual concepts from images, by simply distilling from pre-trained vision-language models. After training, the concept encoders extract disentangled concept embeddings along various concept axes specified by language, which can be remixed or edited to generate images with novel concept compositions. We conduct thorough evaluations both quantitatively and qualitatively, and demonstrate that our approach yields superior results in visual concept editing compared to prior work."
+        },
+        {
+            "heading": "ACKNOWLEDGMENTS",
+            "text": "We thank Kyle Hsu, Joy Hsu, and Stephen Tian for their detailed comments and feedback. This work is in part supported by NSF RI #2211258 and #2338203, ONR MURI N00014-22-1-2740, ONR N00014-23-1-2355, AFOSR YIP FA9550-23-1-0127, the Stanford Institute for Human-Centered AI (HAI), Amazon, J.P. Morgan, and Samsung."
+        },
+        {
+            "heading": "A APPENDIX",
+            "text": "A.1 MORE QUALITATIVE RESULTS\nMore qualitative results for concept extraction and recomposition are shown in Figures 9 to 13. Across various datasets, our method achieves superior disentanglement and recomposition results.\nA.2 DATASETS\nWe use 5 training datasets for the experiments. The concept axes in interest, together with ground truth words used in the text prompt for DeepFloyd to generate the training data, are listed below.\nFruit Dataset. Category: Cherry, Apple, Banana, Mango, Strawberry, Pineapple, Lemon, Raspberry Color: Red, Blue, Green, Purple, Black, Yellow, Orange\nArt Dataset. Category: Beach, Tree, Apple, Cat, Dog, Face, City, Hill, Sky, Car, Bike, House, Castle, Chair Style: Charcoal, Oil, Paint, Acrylic, Crayon, Pastel\nFigurine Dataset. Category: Ball, Block, Statue Color: Red, Blue, Green, Yellow, White, Cream, Purple, Pink Material: Plastic, Fur, Wood, Metal, Leather\nClothing Dataset. Category: Shirt, Pants, Shoes, Dress, Cap Color: Red, Yellow, Green, Purple, White, Cream Season: Spring, Summer, Fall, Winter\nFurniture Dataset. Category: Chair, Table, Bench\nColor: Red, Orange, Yellow, Green, Blue, Purple, Black, White Material: Wood, Metal, Plastic\nA.3 HUMAN EVALUATION\nIn the user study, we create a questionnaire where users are asked to choose the image that matches our test setting: given an image prompt and text instruction, users rank images that best represents both the image prompt and text instruction. Here, we randomly sample 12 data points from the evaluation dataset for color editing and 12 for category editing. We collected the questionnaire responses from 20 users. Our score follows the Borda point metric (Saari, 2023) where 1st, 2nd, and 3rd would receive 2, 1, and 0 point(s) respectively, allowing us to differentiate rankings of 3, 2, 2 and 2, 1, 1. We then calculate the average scores over both the number of questions and participants, and subsequently normalize these values to a 0\u2212 1 scale. Results are shown in 1. A set of instructions Figure 14 are presented to the respondents before the user study. Then, they are presented with the 24 questions of color and category editing tasks. Example questions are shown in Figures 15 and 16.\nA.4 QUANTITATIVE ANALYSIS.\nFigure 17 analyzes the mean and standard deviation of CLIP scores introduced in Section 4.3. Our method achieves the best score with a low variance for both the category (left) and the overall (right) metric, and stays competitive on the color (metric).\nA.5 DATASET LABELLING WITH BLIP\nIn our approach, we employ BLIP in order to annotate each image with its respective category and attributes. To achieve this, we query BLIP for each image, with one question for each attribute or category. For example, for an image of a red wooden table, we would ask BLIP what is the name of the item, what material it is made of, and what color it is.\nDuring the pre-training stage, items corresponding to identical prompts and therefore the same placeholder tokens are aggregated by taking the most commonly occurring BLIP answer for each category or attribute. For example, if we have 8 images of red wooden tables, and one of them is misclassified as a red plastic table, we would still label it with \u2018red\u2019, \u2018wood\u2019, and \u2018table\u2019 for color, material, and category respectively.\nA.6 INTERPOLATION OF CONCEPT EMBEDDINGS\nWe further demonstrate concept interpolation results. By interpolating between two concept embeddings, our model can generate meaningful images depicting gradual changes from one concept to another, such as the hybrid fruit of cherries and bananas shown in Figure 18. To interpolate between two input images, first, we extract CLIP features for both images, giving us two vectors of size 12 \u00d7 1024. We interpolate the two vectors using Spherical interpolation (SLERP). Specif-\nically, given two normalized vectors Anorm and Bnorm of dimensions 12 \u00d7 1024, we compute the dot product to find the cosine of the angle \u03b8 between them as cos(\u03b8) = Anorm \u00b7 Bnorm. For 12 interpolation points, each point i is calculated using \u03b1i = i11 and the interpolated vector is slerp(A,B, \u03b1i) = sin((1\u2212\u03b1i)\u03b8) sin(\u03b8) Anorm+ sin(\u03b1i\u03b8) sin(\u03b8) Bnorm. This ensures the resultant vectors maintain a constant magnitude.\nWith a set of trained encoders, each encoder takes in the interpolated CLIP features, and their outputs are combined with a training-time textual template to generate the interpolation results as shown in Figures 18 and 19.\nInput Images\n<style>\n<subject>\n<subject> + <style>\nInterpolation Points\nInput Images\n<style>\n<subject>\n<subject> + <style>\nInterpolation Points\nFigure 19: Interpolation on Art dataset.\nB INFERENCE ON REAL-WORLD IMAGES\nDespite being trained on images generated by diffusion-based models, the concept encoders generalize well to diverse, complex real-world images, including unseen types of object category, material, and color from casual photo captures (Figures 20 to 23) and unseen types of artwork style (Figures 5 and 24)."
+        },
+        {
+            "heading": "C THE EFFECT OF THE ANCHOR LOSS",
+            "text": "During training time, the anchor loss (Equation (2)) encourages the encoder predictions to converge to a meaningful subspace within the word embedding space Gal et al. (2023). This ensures that these embeddings can be readily visualized by a pre-trained text-to-image generation model, and improves the compositionality across different concept axes, as shown in Figure 6.\nEmpirically, we find that simply setting a small weight on this loss can effectively achieve this objective, allowing the model to capture nuances along each axis, without collapsing to the word embeddings. In Figure 25, we empirically show such examples, where we compare the concept embeddings predicted by the color encoder to the text embedding of the training-time BLIP-2 label, e.g. \u201cblue\u201d from Figure 25, and the former preserves the specific color of the input image while the latter does not."
+        },
+        {
+            "heading": "D EXTENSION WITH NEW CONCEPT AXES",
+            "text": "We show that we are able to extend to additional concept axes by training new concept encoders without retraining the existing ones. In the experiments shown in Figures 26 and 27, given two trained encoders for category and color and the corresponding training dataset, we train the material encoder while keeping the other two frozen. We show that such procedural training maintains the disentanglement of the frozen encoders while allowing the framework to extend to a new concept axis."
+        },
+        {
+            "heading": "E ADDITIONAL BASELINE COMPARISONS",
+            "text": "In Figure 28, we provide additional qualitative examples accompanying the experiments in Table 1. From these visual examples, we observed that the color nuances captured by ours are more accurate compared to the BLIP-2 baseline. However, since the CLIP-based metric specified in Section 4.3 cannot fully capture the minute differences, the BLIP-2 baseline still achieves comparable scores to our method despite this evident gap in visual results.\nTo quantify such visual differences in colors, we compare the color of a 16 \u00d7 16 centered patch from the input image and the image generated by the method being evaluated, both of resolution 64 \u00d7 64, and report the L2 error of the mean color of the two patches. We report the average of metric across all examples in Figure 28 in Table 2. Results suggest that our method captures colors more accurately compared to the baselines."
+        },
+        {
+            "heading": "F DISCUSSION ON TEXTUAL INVERSION",
+            "text": "As discussed in Section 3.1, compared to directly using text as inputs for image generation, using techniques like Textual Inversion (Gal et al., 2022), our model is able to capture more nuanced visual details of a particular image with continuous embeddings, instead of discrete words. This can be illustrated in the empirical results in Figures 6, 8 and 28, which show that our method preserves the nuances from input images more accurately than the BLIP-2 baseline which uses texts for conditional generation.\nF.1 LIMITATIONS\nGiven a few concept axes specified by language, the current model is able to learn disentangled concept embeddings for various concept remixing and editing tasks. However, this requires that the concept axes are given a priori to the model, which limits the generality of the concept space that can be captured by the model. Moreover, we train separate encoders for each concept axis, which does not make full use of the inherent hierarchical structure of these concept axes."
+        }
+    ],
+    "title": "LANGUAGE-INFORMED VISUAL CONCEPT LEARNING",
+    "year": 2024
+}

@@ -1,0 +1,580 @@
+{
+    "abstractText": "Policy gradient methods hold great potential for solving complex continuous control tasks. Still, their training efficiency can be improved by exploiting structure within the optimization problem. Recent work indicates that supervised learning can be accelerated by leveraging the fact that gradients lie in a low-dimensional and slowly-changing subspace. In this paper, we conduct a thorough evaluation of this phenomenon for two popular deep policy gradient methods on various simulated benchmark tasks. Our results demonstrate the existence of such gradient subspaces despite the continuously changing data distribution inherent to reinforcement learning. These findings reveal promising directions for future work on more efficient reinforcement learning, e.g., through improving parameter-space exploration or enabling second-order optimization.",
+    "authors": [],
+    "id": "SP:b35f640e9ea0cf222ee896874c83f902f78c1b12",
+    "references": [
+        {
+            "authors": [
+                "Susan Amin",
+                "Maziar Gomrokchi",
+                "Harsh Satija",
+                "Herke van Hoof",
+                "Doina Precup"
+            ],
+            "title": "A survey of exploration methods in reinforcement learning",
+            "venue": "arXiv preprint arXiv:2109.00157,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yunke Ao",
+                "Le Chen",
+                "Florian Tschopp",
+                "Michel Breyer",
+                "Roland Siegwart",
+                "Andrei Cramariuc"
+            ],
+            "title": "Unified data collection for visual-inertial calibration via deep reinforcement learning",
+            "venue": "In 2022 International Conference on Robotics and Automation (ICRA),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Johan Bjorck",
+                "Carla P Gomes",
+                "Kilian Q Weinberger"
+            ],
+            "title": "Is high variance unavoidable in RL? a case study in continuous control",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Xuxi Chen",
+                "Tianlong Chen",
+                "Yu Cheng",
+                "Weizhu Chen",
+                "Ahmed Awadallah",
+                "Zhangyang Wang"
+            ],
+            "title": "Scalable learning to optimize: A learned optimizer can train big models",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Xuxin Cheng",
+                "Kexin Shi",
+                "Ananye Agarwal",
+                "Deepak Pathak"
+            ],
+            "title": "Extreme parkour with legged robots",
+            "venue": "arXiv preprint arXiv:2309.14341,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Jarek Duda"
+            ],
+            "title": "Improving SGD convergence by tracing multiple promising directions and estimating distance to minimum",
+            "venue": "arXiv preprint arXiv:1901.11457,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Michael Everett",
+                "Yu Fan Chen",
+                "Jonathan P How"
+            ],
+            "title": "Motion planning among dynamic, decisionmaking agents with deep reinforcement learning",
+            "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS),",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Martin Gauch",
+                "Maximilian Beck",
+                "Thomas Adler",
+                "Dmytro Kotsur",
+                "Stefan Fiel",
+                "Hamid Eghbal-zadeh",
+                "Johannes Brandstetter",
+                "Johannes Kofler",
+                "Markus Holzleitner",
+                "Werner Zellinger"
+            ],
+            "title": "Few-shot learning by dimensionality reduction in gradient space",
+            "venue": "In Conference on Lifelong Learning Agents,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jean-Baptiste Gaya",
+                "Laure Soulier",
+                "Ludovic Denoyer"
+            ],
+            "title": "Learning a subspace of policies for online adaptation in reinforcement learning",
+            "venue": "In International Conference of Learning Representations (ICLR),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jean-Baptiste Gaya",
+                "Thang Doan",
+                "Lucas Caccia",
+                "Laure Soulier",
+                "Ludovic Denoyer",
+                "Roberta Raileanu"
+            ],
+            "title": "Building a subspace of policies for scalable continual learning",
+            "venue": "In International Conference of Learning Representations (ICLR),",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Frithjof Gressmann",
+                "Zach Eaton-Rosen",
+                "Carlo Luschi"
+            ],
+            "title": "Improving neural network training in low dimensional random bases",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Shixiang Gu",
+                "Ethan Holly",
+                "Timothy Lillicrap",
+                "Sergey Levine"
+            ],
+            "title": "Deep reinforcement learning for robotic manipulation with asynchronous off-policy updates",
+            "venue": "IEEE international conference on robotics and automation (ICRA),",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Guy Gur-Ari",
+                "Daniel A Roberts",
+                "Ethan Dyer"
+            ],
+            "title": "Gradient descent happens in a tiny subspace",
+            "venue": "arXiv preprint arXiv:1812.04754,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Tuomas Haarnoja",
+                "Aurick Zhou",
+                "Pieter Abbeel",
+                "Sergey Levine"
+            ],
+            "title": "Soft Actor-Critic: Off-policy maximum entropy deep reinforcement learning with a stochastic actor",
+            "venue": "In International conference on machine learning,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Andrew Ilyas",
+                "Logan Engstrom",
+                "Shibani Santurkar",
+                "Dimitris Tsipras",
+                "Firdaus Janoos",
+                "Larry Rudolph",
+                "Aleksander Madry"
+            ],
+            "title": "A closer look at deep policy gradients",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Sham Kakade",
+                "John Langford"
+            ],
+            "title": "Approximately optimal approximate reinforcement learning",
+            "venue": "In Proceedings of the Nineteenth International Conference on Machine Learning,",
+            "year": 2002
+        },
+        {
+            "authors": [
+                "Dmitry Kalashnikov",
+                "Alex Irpan",
+                "Peter Pastor",
+                "Julian Ibarz",
+                "Alexander Herzog",
+                "Eric Jang",
+                "Deirdre Quillen",
+                "Ethan Holly",
+                "Mrinal Kalakrishnan",
+                "Vincent Vanhoucke"
+            ],
+            "title": "QT-Opt: Scalable deep reinforcement learning for vision-based robotic manipulation",
+            "venue": "arXiv preprint arXiv:1806.10293,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Elia Kaufmann",
+                "Leonard Bauersfeld",
+                "Antonio Loquercio",
+                "Matthias M\u00fcller",
+                "Vladlen Koltun",
+                "Davide Scaramuzza"
+            ],
+            "title": "Champion-level drone racing using deep reinforcement learning",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Diederik P Kingma",
+                "Jimmy Ba"
+            ],
+            "title": "Adam: A method for stochastic optimization",
+            "venue": "arXiv preprint arXiv:1412.6980,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Brett W Larsen",
+                "Stanislav Fort",
+                "Nic Becker",
+                "Surya Ganguli"
+            ],
+            "title": "How many degrees of freedom do we need to train deep networks: a loss landscape perspective",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Charline Le Lan",
+                "Joshua Greaves",
+                "Jesse Farebrother",
+                "Mark Rowland",
+                "Fabian Pedregosa",
+                "Rishabh Agarwal",
+                "Marc G Bellemare"
+            ],
+            "title": "A novel stochastic gradient descent algorithm for learning principal subspaces",
+            "venue": "In International Conference on Artificial Intelligence and Statistics,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Richard B Lehoucq",
+                "Danny C Sorensen",
+                "Chao Yang"
+            ],
+            "title": "ARPACK users\u2019 guide: solution of largescale eigenvalue problems with implicitly restarted Arnoldi methods",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Chunyuan Li",
+                "Heerad Farkhoor",
+                "Rosanne Liu",
+                "Jason Yosinski"
+            ],
+            "title": "Measuring the intrinsic dimension of objective landscapes",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Tao Li",
+                "Lei Tan",
+                "Zhehao Huang",
+                "Qinghua Tao",
+                "Yipeng Liu",
+                "Xiaolin Huang"
+            ],
+            "title": "Low dimensional trajectory hypothesis is true: DNNs can be trained in tiny subspaces",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Tao Li",
+                "Yingwen Wu",
+                "Sizhe Chen",
+                "Kun Fang",
+                "Xiaolin Huang"
+            ],
+            "title": "Subspace adversarial training",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Niru Maheswaranathan",
+                "Luke Metz",
+                "George Tucker",
+                "Dami Choi",
+                "Jascha Sohl-Dickstein"
+            ],
+            "title": "Guided evolutionary strategies: Augmenting random search with surrogate gradients",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Volodymyr Mnih",
+                "Koray Kavukcuoglu",
+                "David Silver",
+                "Alex Graves",
+                "Ioannis Antonoglou",
+                "Daan Wierstra",
+                "Martin Riedmiller"
+            ],
+            "title": "Playing Atari with deep reinforcement learning",
+            "venue": "arXiv preprint arXiv:1312.5602,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Supratik Paul",
+                "Vitaly Kurin",
+                "Shimon Whiteson"
+            ],
+            "title": "Fast efficient hyperparameter tuning for policy gradient methods",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Jan Peters",
+                "Stefan Schaal"
+            ],
+            "title": "Reinforcement learning of motor skills with policy gradients",
+            "venue": "Neural networks,",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Matthias Plappert",
+                "Marcin Andrychowicz",
+                "Alex Ray",
+                "Bob McGrew",
+                "Bowen Baker",
+                "Glenn Powell",
+                "Jonas Schneider",
+                "Josh Tobin",
+                "Maciek Chociej",
+                "Peter Welinder"
+            ],
+            "title": "Multi-goal reinforcement learning: Challenging robotics environments and request for research",
+            "venue": "arXiv preprint arXiv:1802.09464,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Matthias Plappert",
+                "Rein Houthooft",
+                "Prafulla Dhariwal",
+                "Szymon Sidor",
+                "Richard Y Chen",
+                "Xi Chen",
+                "Tamim Asfour",
+                "Pieter Abbeel",
+                "Marcin Andrychowicz"
+            ],
+            "title": "Parameter space noise for exploration",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Antonin Raffin",
+                "Ashley Hill",
+                "Adam Gleave",
+                "Anssi Kanervisto",
+                "Maximilian Ernestus",
+                "Noah Dormann"
+            ],
+            "title": "Stable-Baselines3: Reliable reinforcement learning implementations",
+            "venue": "The Journal of Machine Learning Research,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Thomas R\u00fcckstiess",
+                "Frank Sehnke",
+                "Tom Schaul",
+                "Daan Wierstra",
+                "Yi Sun",
+                "J\u00fcrgen Schmidhuber"
+            ],
+            "title": "Exploring parameter space in reinforcement",
+            "venue": "learning. Paladyn,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Tim Salimans",
+                "Jonathan Ho",
+                "Xi Chen",
+                "Szymon Sidor",
+                "Ilya Sutskever"
+            ],
+            "title": "Evolution strategies as a scalable alternative to reinforcement learning",
+            "venue": "arXiv preprint arXiv:1703.03864,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "John Schulman",
+                "Filip Wolski",
+                "Prafulla Dhariwal",
+                "Alec Radford",
+                "Oleg Klimov"
+            ],
+            "title": "Proximal policy optimization algorithms",
+            "venue": "arXiv preprint arXiv:1707.06347,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Pierre Schumacher",
+                "Daniel Haeufle",
+                "Dieter B\u00fcchler",
+                "Syn Schmitt",
+                "Georg Martius"
+            ],
+            "title": "DEP-RL: Embodied exploration for reinforcement learning in overactuated and musculoskeletal systems",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jascha Sohl-Dickstein",
+                "Ben Poole",
+                "Surya Ganguli"
+            ],
+            "title": "Fast large-scale optimization by unifying stochastic gradient and quasi-Newton methods",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Ryan Sullivan",
+                "Jordan K Terry",
+                "Benjamin Black",
+                "John P Dickerson"
+            ],
+            "title": "Cliff diving: Exploring reward surfaces in reinforcement learning environments",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Mark Tuddenham",
+                "Adam Pr\u00fcgel-Bennett",
+                "Jonathan Hare"
+            ],
+            "title": "Quasi-newton\u2019s method in the class gradient defined high-curvature subspace",
+            "venue": "arXiv preprint arXiv:2012.01938,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Saran Tunyasuvunakool",
+                "Alistair Muldal",
+                "Yotam Doron",
+                "Siqi Liu",
+                "Steven Bohez",
+                "Josh Merel",
+                "Tom Erez",
+                "Timothy Lillicrap",
+                "Nicolas Heess",
+                "Yuval Tassa"
+            ],
+            "title": "dm control: Software and tasks for continuous control",
+            "venue": "Software Impacts,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Oriol Vinyals",
+                "Daniel Povey"
+            ],
+            "title": "Krylov subspace descent for deep learning",
+            "venue": "In Artificial intelligence and statistics,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Yingxue Zhou",
+                "Steven Wu",
+                "Arindam Banerjee"
+            ],
+            "title": "Bypassing the ambient dimension: Private SGD with gradient subspace identification",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2020
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Deep reinforcement learning (RL) has marked significant achievements in solving numerous challenging problems, ranging from Atari games (Mnih et al., 2013) to various real robotic challenges, such as contact-rich manipulation (Gu et al., 2017; Kalashnikov et al., 2018), complex planning problems (Everett et al., 2018; Ao et al., 2022), and hard-to-control dynamic tasks (Cheng et al., 2023; Kaufmann et al., 2023). Despite these notable successes, deep RL methods are often brittle, especially when learning from scratch, using function approximators with a multitude of parameters, and persistently altering data distributions \u2014 a setting notoriously hard for optimization. While potentially advantageous, deep RL in its vanilla form operates under the premise of limited prior knowledge and structural information about the problem and instead resorts to learning from experience by directly interacting with its environment.\nRecent advances in supervised learning (SL) introduce more structured optimization procedures by identifying and harnessing gradient subspaces (Gur-Ari et al., 2018). These approaches reveal that the gradients utilized for neural network optimization reside in a low-dimensional, slowly-changing subspace (Vinyals & Povey, 2012; Li et al., 2022a; Gauch et al., 2022; Duda, 2019). Exploiting this structure has garnered attention since it enables the optimization to be carried out in this reduceddimensional subspace, yielding enhanced efficiency with minimal, if any, loss in performance.\nDespite the promise of subspaces in SL, their adoption in deep RL has remained limited. A straightforward way to transfer these principles is to find lower-dimensional subspaces in policy gradient approaches (Peters & Schaal, 2008). Policy gradient (PG) methods directly estimate the gradient of the RL objective \u2207\u03b8J(\u03b8) to update the policy\u2019s parameters \u03b8 using some form of stochastic gradient descent (SGD). Since most SL approaches using subspaces enter at the level of the SGD optimization, PG algorithms would be a natural choice to leverage the knowledge about subspaces from SL in the RL context. Nevertheless, in RL, subspaces have primarily been explored within the realm of evolutionary strategies (Maheswaranathan et al., 2019; Li et al., 2018), representation learning (Le Lan et al., 2023), and transfer learning (Gaya et al., 2022). A possible explanation is the constantly changing data distribution of RL due to continual exploration that seems to hinder the identification of gradient subspaces. The limited body of studies using subspaces in PG algorithms underlines the need for a more profound discussion in this domain.\nThis paper conducts a comprehensive empirical evaluation of gradient subspaces in the context of PG algorithms, assessing their properties across various simulated RL benchmarks. Our experiments reveal several key findings: (i) there exist parameter-space directions that exhibit significantly larger curvature compared to the other parameter-space directions, (ii) the gradients live in the subspace\nspanned by these directions, and (iii) the subspace remains relatively stable throughout the RL training. Additionally, we analyze the gradients of the critic \u2013 an integral part of the PG estimation in actor-critic methods \u2013 and observe that the critic subspace often exhibits less variability and retains a larger portion of its gradient compared to the actor subspace. We also test the robustness of PG subspaces regarding mini-batch approximations of the gradient that are used in practice during training and evaluate a similar mini-batch approximation of the Hessian. Lastly, we explore the extent to which the variation in the data distribution influences the aforementioned subspace analysis by conducting the experiments with both an on-policy as well as an off-policy algorithm, the latter of which reuses previously collected data for training.\nBy shedding light on subspaces in deep RL, this paper aims to provide valuable insights that can enhance RL performance even beyond the first-order optimization in PG studied here, potentially advancing parameter-space exploration or enabling second-order optimization. The code for our experiments is available on the project website.\nWe begin by reviewing existing literature on subspace approaches to SL and RL in Section 2, followed by a recapitulation of the RL preliminaries in Section 3 to better understand the analysis of gradient subspaces in RL performed in Section 4. Section 5 concludes this work with a discussion about the results and the potential implications of our work."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "Numerous works have studied the use of gradient subspaces in SL. These works can be roughly divided into informed and random subspace approaches.\nInformed gradient subspaces in supervised learning Informed methods identify the subspace from some part of the training process. For instance, Gur-Ari et al. (2018) show that the gradients used for neural network optimization lie in a low-dimensional subspace of the parameter-space directions with the highest curvature in the loss. Furthermore, they show that this subspace changes slowly throughout the training. Recent work has highlighted numerous benefits of these insights. Li et al. (2022a) apply principal component analysis (PCA) on the network parameters at previous checkpoints and use the top principal components as subspace. They apply SGD and BFGS algorithms in the subspace and demonstrate superior learning performance compared to training in the original parameter space. Similarly, Tuddenham et al. (2020) propose to use a BFGS method in a low-dimensional subspace defined by the full-batch gradients with respect to the individual classification labels. They apply their method to classification and use the set of full-batch gradients for samples from each individual class as gradient subspace. Sohl-Dickstein et al. (2014) construct a second-order Taylor approximation of individual loss terms efficiently in a low-dimensional subspace that captures recently observed gradients. With this approximation, the overall loss is a sum of quadratic functions that can be optimized in closed form. Chen et al. (2022) utilize insights about the low-dimensional subspaces to learn an optimizer that scales to high-dimensional parameter spaces. Traditionally, learned optimizers are limited in scale by the high output dimensionality of the network. By outputting parameter updates in the low-dimensional subspace, Chen et al. circumvent this challenge and efficiently learn to optimize large neural networks. Gauch et al. (2022) apply the knowledge of low-dimensional gradient subspace to few-shot adaptation by identifying a suitable subspace on the training task and utilizing it for efficient finetuning on the test task. Likewise, Zhou et al. (2020) tackle differential privacy by identifying a gradient subspace on a public dataset and projecting gradients calculated from the private dataset into this subspace. Adding noise in the subspace instead of the parameter space lowers the error bound to be linear in the number of subspace dimensions instead of the parameter dimensions. Li et al. (2022b) tackle an overfitting problem of adversarial training by identifying a gradient subspace in an early training phase before overfitting occurs. By projecting later gradients into this subspace, they enforce training dynamics similar to the early training phase, which mitigates the overfitting problem.\nRandom gradient subspaces in supervised learning Gressmann et al. (2020) describe different modifications to improve neural network training in random subspaces, like resampling the subspace regularly and splitting the network into multiple components with individual subspaces. They utilize these subspaces to reduce the communication overhead in a distributed learning setting by sending the parameter updates as low-dimensional subspace coefficients. Li et al. (2018) quantify\nthe difficulty of a learning task by the dimensionality of the subspace needed to reach good performance. Larsen et al. (2021) compare informed and random subspaces and find that with informed subspaces, typically significantly fewer dimensions are needed for training. Furthermore, they note the benefit of first training in the original space for some time before starting subspace training, as this increases the probability of the subspace intersecting low-loss regions in the parameter space.\nSubspace approaches to reinforcement learning Only a handful of works use subspaces for RL. Li et al. (2018) sample random subspaces of the parameter space to find the lowest dimensional subspace without significant loss in performance. To that end, the authors optimize the value function of deep Q-networks (DQN) (Mnih et al., 2013) as well as the population distribution -\u2013 a distribution over the policy parameters \u2014 of evolutionary strategies (ES) (Salimans et al., 2017), using the subspace-adapted version of SGD. Maheswaranathan et al. (2019) define a search distribution for ES that is elongated along an informed subspace spanned by surrogate gradients. Despite not being an RL approach (but optimizing over policies within the ES framework), this work still reveals the important insight that the policy is only indirectly affected in these scenarios. Gaya et al. (2022) enable improved generalization in online RL by learning a subspace of policies. Recently, they extended their method to scale favorably to continual learning settings (Gaya et al., 2023). Both works consider the subspace of policy parameters rather than the subspace of policy gradients."
+        },
+        {
+            "heading": "3 PRELIMINARIES",
+            "text": "This section introduces the mathematical background and notation used throughout the paper. Furthermore, we briefly describe the two RL algorithms that we will analyze in Section 4."
+        },
+        {
+            "heading": "3.1 MATHEMATICAL BACKGROUND & NOTATION",
+            "text": "For a given objective function J(\u03b8), we use g = \u2202\u2202\u03b8J(\u03b8) \u2208 R n to denote the gradient of a model with respect to its parameters \u03b8 and H = \u2202 2\n\u22022\u03b8J(\u03b8) \u2208 R n\u00d7n to denote the corresponding Hessian matrix.\nWe use vi to denote the ith largest eigenvector of H . Note that we use \u201cith largest eigenvector\u201d as shorthand for \u201ceigenvector with respect to the ith largest eigenvalue\u201d. Since H is symmetric, all eigenvectors are orthogonal to each other, and we assume ||vi|| = 1. In this work, we investigate projections of gradients into lower-dimensional subspaces, i.e., mappings from Rn to Rk with k \u226a n. These mappings are defined by a projection matrix P \u2208 Rk\u00d7n. g\u0302 = P g \u2208 Rk denotes the projection of g into the subspace and g\u0303 = P+g\u0302 \u2208 Rn is the mapping of g\u0302 back to the original dimensionality that minimizes the projection error ||g \u2212 g\u0303||. Here, P+ denotes the pseudoinverse of P . If the projection matrix is semi-orthogonal, i.e., the columns are orthogonal and norm one, the pseudoinverse simplifies to the transpose P+ = PT . The matrix of the k largest eigenvectors P = (v1, . . . , vk)T is one example of such a semi-orthogonal matrix."
+        },
+        {
+            "heading": "3.2 REINFORCEMENT LEARNING",
+            "text": "We consider tasks formulated as Markov decision processes (MDPs), defined by the tuple (S,A, p, r). Here, S and A are the state and action spaces, respectively. The transition dynamics p : S \u00d7A\u00d7S \u2192 [0, \u221e) define the probability density of evolving from one state to another. At each timestep the agent receives a scalar reward r : S \u00d7 A \u2192 R. A stochastic policy, \u03c0\u03b8(at | st), defines a mapping from state st to a probability distribution over actions at. RL aims to find an optimal policy \u03c0\u2217, maximizing the expected cumulative return, discounted by \u03b3 \u2208 [0, 1]. The value function V \u03c0(s) represents the expected (discounted) cumulative reward from state s following policy \u03c0, and the action value function Q\u03c0(s, a) denotes the expected (discounted) cumulative reward for taking action a in state s and then following \u03c0. The advantage function A\u03c0(s, a) = Q\u03c0(s, a) \u2212 V \u03c0(s) quantifies the relative benefit of taking an action a in state s over the average action according to policy \u03c0.\nRL algorithms generally can be divided into two styles of learning. On-policy methods, like Proximal Policy Optimization (PPO) (Schulman et al., 2017), only use data generated from the current policy for updates. In contrast, off-policy algorithms, such as Soft Actor-Critic (SAC) (Haarnoja et al., 2018) leverage data collected from different policies, such as old iterations of the policy."
+        },
+        {
+            "heading": "3.2.1 PROXIMAL POLICY OPTIMIZATION",
+            "text": "On-policy PG methods typically optimize the policy \u03c0\u03b8 via an objective such as J(\u03b8) = E\u03c0\u03b8 [ \u03c0\u03b8(at | st)A\u0302t ] = E\u03c0old [ rt(\u03b8)A\u0302t ] with rt(\u03b8) = \u03c0\u03b8(at|st) \u03c0old(at|st) and A\u0302t being an estimator of the advantage function at timestep t and \u03c0old denotes the policy before the update (Kakade & Langford, 2002). However, optimizing this objective can result in excessively large updates, leading to instabilities and possibly divergence. Proximal Policy Optimization (PPO) (Schulman et al., 2017) is an on-policy actor-critic algorithm designed to address this issue by clipping the probability ratio rt(\u03b8) to the interval [1\u2212 \u03f5, 1+ \u03f5], which removes the incentive for moving rt(\u03b8) outside the interval, resulting in the following actor loss.\nJPPOactor(\u03b8) = E\u03c0old [ min ( rt(\u03b8)A\u0302t, clip (rt(\u03b8), 1\u2212 \u03f5, 1 + \u03f5) A\u0302t )] (1)\nThe advantage estimation A\u0302t = \u03b4t+(\u03b3\u03bb)\u03b4t+1+ \u00b7 \u00b7 \u00b7+(\u03b3\u03bb)T\u2212t+1\u03b4T\u22121 with \u03b4t = rt+\u03b3V\u03d5(st+1)\u2212 V\u03d5(st) uses a learned value function V\u03d5, which acts as a critic. The hyperparameter \u03bb determines the trade-off between observed rewards and estimated values. The critic is trained to minimize the mean squared error between the predicted value and the discounted sum of future episode rewards V targett = \u2211t+T \u03c4=t \u03b3\n\u03c4\u2212tr\u03c4 . JPPOcritic(\u03d5) = E [ (V\u03d5(st)\u2212 V targett )2 ] (2)"
+        },
+        {
+            "heading": "3.2.2 SOFT ACTOR-CRITIC",
+            "text": "Soft Actor-Critic (SAC) (Haarnoja et al., 2018) is a policy gradient algorithm that integrates the maximum entropy reinforcement learning framework with the actor-critic approach. As such, it optimizes a trade-off between the expected return and the policy\u2019s entropy. It is an off-policy algorithm and, as such, stores transitions in a replay buffer D, which it samples from during optimization. To that end, SAC modifies the targets for the learned Q-function Q\u03d5 to include a term that incentivizes policies with large entropy Q\u0302t = rt + \u03b3(Q\u03d5(st+1,at+1)\u2212 log \u03c0\u03b8(at+1 | st+1)), resulting in the following critic loss.\nJSACcritic(\u03d5) = ED,\u03c0\u03b8 [ 1\n2\n( Q\u03d5(st,at)\u2212 Q\u0302t )2] (3)\nNote that SAC, in its original formulation, trains an additional value function and a second Qfunction, but we omitted these details for brevity. The algorithm then trains the actor to minimize the KL-divergence between the policy and the exponential of the learned Q-function.\nJSACactor(\u03b8) = ED [ DKL ( \u03c0\u03b8(\u00b7 | st) \u2225\u2225\u2225\u2225 exp(Q\u03d5(st, \u00b7))Z\u03d5(st) )]\n(4)\nZ\u03d5(st) denotes the normalization to make the right side of the KL-divergence a proper distribution. Optimizing this loss increases the probability of actions with high value under the Q-function."
+        },
+        {
+            "heading": "4 GRADIENT SUBSPACES IN POLICY GRADIENT ALGORITHMS",
+            "text": "In Section 2, we have highlighted several works from SL that utilize low-dimensional, slowlychanging gradient subspaces for improving the learning performance or as an analysis tool. Naturally, we would like to transfer these benefits to policy gradient algorithms. The training in RL is significantly less stationary than in the supervised setting (Bjorck et al., 2022). As the RL agent changes, the data distribution shifts since the agent continuously interacts with its environment when collecting the data. Furthermore, the value of a state also depends on the agent\u2019s behavior in future states. Thus, the targets for the actor and critic networks change constantly. These crucial differences between SL and RL underscore the need to analyze to which extent insights about gradient subspaces transfer between these settings.\nThe analysis presented in this section focuses on two policy gradient algorithms: PPO (Schulman et al., 2017) and SAC (Haarnoja et al., 2018), which are popular instantiations of on-policy and offpolicy RL. We apply the algorithms to twelve benchmark tasks from OpenAI Gym (Brockman et al.,\n2016), Gym Robotics (Plappert et al., 2018a), and the DeepMind Control (DMC) Suite (Tunyasuvunakool et al., 2020). Our code builds upon the algorithm implementations of Stable Baselines3 (Raffin et al., 2021). The learning curves are displayed in Appendix B. We ran each experiment for 10 random seeds and plot the mean and standard deviation for all results Sections 4.2 and 4.3. Due to space constraints, in the following sections, we only show analysis results for selected tasks. Detailed results for all twelve tasks can be found in Appendix C. Moreover, we conduct an evaluation of the impact of the RL algorithm\u2019s hyperparameters on the gradient subspace in Appendix D.\nFor the following analyses, we calculate Hessian eigenvectors of the loss with respect to the network parameters via the Lanczos method (Lehoucq et al., 1998) since it is an efficient method for estimating the top eigenvectors that avoids explicitly constructing the Hessian matrix. Since we can only estimate the Hessian from data, we use a large number of state-action pairs to obtain precise estimates of the eigenvectors of the true Hessian, similar to how Ilyas et al. (2020) estimate the true policy gradient. For PPO, we collect 106 on-policy samples. This would, however, not be faithful to the diverse distribution of off-policy data that SAC uses for training. To match this data distribution for the analysis, we save the replay buffer during training and use the data of the complete replay buffer for estimating the Hessian. Note that the replay buffer also has a capacity of 106 samples but is not completely filled at the beginning of training.\nAs mentioned in Section 3, SAC and PPO each train two different networks, an actor and a critic. We, therefore, conduct our analysis for each network individually. To verify that there exist directions with high curvature spanning a subspace that stays relatively stable throughout the training and that contains the gradient, we check three conditions:\ni) There exist parameter-space directions of significantly larger curvature in the actor/critic loss than the other directions.\nii) The actor/critic gradient, to a large extent, is contained in the subspace spanned by these directions.\niii) The subspaces for the actor and critic networks change slowly throughout the training."
+        },
+        {
+            "heading": "4.1 THE LOSS CURVATURE IS LARGE IN A FEW PARAMETER-SPACE DIRECTIONS",
+            "text": "The Hessian matrix describes the curvature of a function, with the eigenvectors being the directions of maximum and minimum curvature. The corresponding eigenvalues describe the magnitude of the curvature along these directions. Therefore, we verify condition i) by plotting the spectrum of Hessian eigenvalues for the actor and critic loss of PPO relative to the respective model parameters in Figure 1. The plots show that there are a few large eigenvalues for both the actor and critic loss. All remaining eigenvalues are distributed close to zero. These plots confirm that there are a few directions with significantly larger curvature; in other words, the problem is ill-conditioned."
+        },
+        {
+            "heading": "4.2 THE GRADIENT LIES IN THE HIGH-CURVATURE SUBSPACE",
+            "text": "To verify condition ii) that the high-curvature subspace contains the gradients of the respective loss, we measure how much of these gradients can be represented in the subspace. Let Pk \u2208 Rk\u00d7n be the\n0.0\n0.2\n0.4\n0.6\n0.8\n1.0\nGr ad\nie nt\nsu bs\npa ce\nfr ac\ntio n\nPPO SAC Ant PPO SAC Finger-spin\nPPO SAC LunarLanderContinuous\nPPO SAC Walker2D\nInitial phase Precise gradient, precise Hessian\nTraining phase Mini-batch gradient, precise Hessian\nConvergence phase Mini-batch gradient, mini-batch Hessian\n0.00\n0.25\n0.50\n0.75 1.00 Gr ad ie nt su bs pa ce fr\nac tio\nn\nPPO SAC Ant\nPPO SAC Finger-spin\nPPO SAC LunarLanderContinuous\nPPO SAC Walker2D\n(a) Actor\n0.00\n0.25\n0.50\n0.75\n1.00\nGr ad\nie nt\nsu bs\npa ce\nfr ac\ntio n\nPPO SAC Ant\nPPO SAC Finger-spin\nPPO SAC LunarLanderContinuous\nPPO SAC Walker2D\n(b) Critic\nFigure 2: The fraction Sfrac of the gradient that lies within the high curvature subspace spanned by the 100 largest Hessian eigenvectors. Results are displayed for the actor (top) and critic (bottom) of PPO and SAC on the Ant, Finger-spin, LunarLanderContinuous, and Walker2D tasks. To account for the changes in the subspace throughout the training, the quantity is plotted for three different phases of the RL training: initial, training, and convergence by averaging the results for all timesteps that fall into each individual phase. The results demonstrate that a significant fraction of the gradient lies within the high curvature subspace, but the extent to which the gradient is contained in the subspace depends on the algorithm, task, and training phase. Even with low-sample estimates for the gradient and Hessian, the gradient subspace fraction is still considerable.\nsemi-orthogonal matrix that projects into the high-curvature subspace. Pk consists row-wise of the k largest Hessian eigenvectors. We compute the relative projection error, i.e., the relative difference between the original gradient g \u2208 Rn and the projected gradient g\u0303 = P+k Pkg that is the result of mapping into the high-curvature subspace and back into the original space. The fraction of the gradient that can be represented in the subspace is given by\nSfrac(Pk, g) = 1\u2212 ||g\u0303 \u2212 g||2\n||g||2 , (5)\nwhich simplifies to the following gradient subspace fraction criterion of Gur-Ari et al. (2018).\nSfrac(Pk, g) = ||Pk g||2\n||g||2 (6)\nWe derive this equality in Appendix A. Note that 0 \u2264 Sfrac(Pk, g) \u2264 1 holds, where Sfrac(Pk, g) = 1 implies that the subspace perfectly contains the gradient, while Sfrac(Pk, g) = 0 means that the gradient lies entirely outside the subspace. Due to the normalization by ||g||, this criterion is invariant to the scale of the gradient, which enables comparing gradient subspaces of different models and models at different stages of the training.\nTo evaluate how the gradient subspace fraction evolves over time, we evaluate the gradient subspace fraction at checkpoints every 50,000 steps during the RL training. To compactly visualize this data, we split the training into three phases: initial, training, and convergence, and for each phase, we average the results of all timesteps of that phase. Since the algorithms require a different number of timesteps for solving each of the environments and reach different performance levels, we define the following heuristic criterion for the training phases. We first smooth the learning curves by averaging over a sliding window and compute the maximum episode return Rmax over the smoothed curve. Next, we calculate the improvement relative to the episode return Rinit of the initial policy at each\ntimestep t of the smoothed learning curve as\n\u2206R(t) = R(t)\u2212Rinit Rmax \u2212Rinit . (7)\nWe define the end of the initial phase as the timestep when the agent reaches 10% of the total improvement, i.e., \u2206R(t) \u2265 0.1, for the first time. Similarly, we define the start of the convergence phase as the first timestep at which it reaches 90% of the total improvement, i.e., \u2206R(t) \u2265 0.9. We choose k = 100 as subspace dimensionality since this subspace already largely captures the gradients, and the first 100 eigenvectors can still be calculated reasonably efficiently with the Lanczos method. Appendix C displays results for different subspace sizes. With the tuned hyperparameters from RL Baselines3 Zoo that we use for training, the PPO actor and critic usually contain around 5,000 parameters, and the SAC actor and critic around 70,000 and 140,000 parameters (2 Q-networks a\u0300 70,000 parameters), respectively. Hence, the subspace dimensionality is around 2% the size of the parameters for PPO and around 0.14% and 0.07% for SAC.\nWe consider a precise approximation of the true gradient computed with 106 state-action pairs for PPO and the full replay buffer for SAC. We denote this approximation as precise gradient and the low-sample gradient used during regular RL training as mini-batch gradient. In a similar manner, we denote the Hessian estimated on the large dataset as precise Hessian and the estimate from 2048 samples as mini-batch Hessian. We choose 2048 samples for the mini-batch Hessian since that is the amount of data that PPO with default hyperparameters collects for the policy updates. Hence, this is a realistic setting for estimating the subspace during training.\nFigure 2 shows the value of the gradient subspace fraction Sfrac(Pk, g) for PPO and SAC on four different tasks, divided into the three training phases. Note that for an uninformed random projection, the gradient subspace fraction would be k/n in expectation, i.e., the ratio of the original and subspace dimensionalities (0.02 for PPO and 0.0014 / 0.0007 for SAC). The results in Figure 2 show a significantly higher gradient subspace fraction, which means that the gradients computed by PPO and SAC lie to a large extent in the high-curvature subspace. For PPO, we observe that the fraction of the gradient in the subspace is considerably higher for the critic than for the actor. Furthermore, the gradient subspace fraction is also often markedly higher for SAC than for PPO. This finding is particularly significant since the subspace size corresponds to a significantly lower percentage of the parameter dimensionality for SAC than for PPO. We hypothesize that the effect is caused by the off-policy nature of SAC. In the off-policy setting, the training distribution for the networks changes slowly since the optimization reuses previous data. In this regard, SAC is closer than PPO to the supervised learning setting, where the data distribution is fixed and for which Gur-Ari et al. (2018) report high gradient subspace fractions. Still, the subspace fraction for PPO is significant, considering that the dimensionality of the subspace is merely 2% of the original parameter space. Furthermore, for PPO, the subspace fraction often improves after the initial phase. Similarly, GurAri et al. (2018) report for the supervised learning setting that the gradient moves into the subspace only after some initial steps.\nMoreover, the precise gradient, computed with a large number of samples, tends to lie slightly better in the subspace than the mini-batch gradient. The noise resulting from the low-sample approximation seems to slightly push the gradient out of the subspace. However, since the difference is typically small, the gradient subspace is still valid for the low-sample gradient estimates used during RL training. Lastly, even the subspace identified with the mini-batch Hessian captures the gradient to a significant extent. This property is crucial since it implies that we do not need access to the precise Hessian, which is costly to compute and might require additional data. Instead, we can already obtain a reasonable gradient subspace from the mini-batch Hessian."
+        },
+        {
+            "heading": "4.3 THE HIGH-CURVATURE SUBSPACE CHANGES SLOWLY THROUGHOUT THE TRAINING",
+            "text": "So far, we have verified that the gradients of the actor and critic losses optimized by PPO and SAC lie to a large extent in the subspace spanned by the top eigenvectors of the Hessian with respect to the current parameters. However, even though there are relatively efficient methods for computing the top Hessian eigenvectors without explicitly constructing the Hessian matrix, calculating these eigenvectors at every step would be computationally expensive. Ideally, we would like to identify a subspace once that remains constant throughout the training. In practice, the gradient subspace will not stay exactly the same during the training, but if it changes slowly, it is possible to reuse\nt1\n0.0 0.2 0.4 0.6 0.8 1.0 t2 \u00d7106\n0.0\n0.2\n0.4\n0.6\n0.8 1.0\nSu\nbs\npa\nce\no\nve rla p\nPPO, actor PPO, critic SAC, actor SAC, critic\nt1\n0.0 0.5 1.0 1.5 2.0 2.5 3.0 t2 \u00d7106\n0.0 0.2 0.4 0.6 0.8 1.0 Su bs pa ce o ve rla p\n(a) Ant\nt1\n0.0 .2 0.4 0.6 0.8 1.0 t2 \u00d7106\n0.0 0.2 0.4 0.6 0.8 1.0 Su bs pa ce o ve rla p\n(b) Finger-spin\nt1\n0.0 0.2 0.4 0.6 0.8 1.0 t2 \u00d7106\n0.0 0.2 0.4 0.6 0.8 1.0 Su bs pa ce o ve rla p\n(c) LunarLanderCont.\nt1\n0.0 0.5 1.0 1.5 2.0 2.5 3.0 t2 \u00d7106\n0.0 0.2 0.4 0.6 0.8 1.0 Su bs pa ce o ve rla p\n(d) Walker2D\nFigure 3: Evolution of the overlap between the high-curvature subspace identified at an early timestep t1 = 100,000 and later timesteps for the actor and critic of PPO and SAC. While the overlap between the subspaces degrades over large numbers of timesteps, there is still a considerable overlap at the end of the training, indicating that information about the gradient subspace at earlier timesteps can be reused for identifying the subspace at later timesteps.\nknowledge from earlier timesteps and update the subspace at a lower frequency. To that end, we investigate condition iii) by calculating the subspace overlap, defined by Gur-Ari et al. (2018). The subspace overlap between subspaces identified at different timesteps t1 and t2 is specified as\nSoverlap\n( P\n(t1) k , P (t2) k\n) = 1\nk k\u2211 i=1 \u2225\u2225\u2225P (t1)k v(t2)i \u2225\u2225\u22252 = 1k k\u2211 i=1 Sfrac ( P (t1) k , v (t2) i ) , (8)\nwhere v(t)i is the ith largest eigenvector at timestep t. P (t) k = ( v (t) 1 , . . . , v (t) k )T denotes the projection matrix from the full parameter space to the high-curvature subspace, identified at timestep t. Similar to Equation (5), the criterion measures how much of the original vector is preserved during the projection into the subspace. For the subspace overlap, however, we use the projection matrix at timestep t1 not to project the gradient but rather project the Hessian eigenvectors that span the high-curvature subspace identified at a later timestep t2 of the training. This criterion, thus, measures how much the gradient subspace changes between these timesteps. Note that we assume the eigenvectors v(t)i to be normalized to one and therefore do not normalize by the eigenvector length.\nGur-Ari et al. (2018) showed in the supervised setting that the gradient subspace stabilizes only after some initial update steps. Therefore, we choose the timestep t1 at which we identify the projection matrix as t1 = 100,000 since this is still relatively early in the training, but the gradient subspace should already have stabilized reasonably well. As in Section 4.2, we use k = 100 as subspace dimensionality. The analysis results in Figure 3 show that the subspace overlap reduces the further apart the two timesteps t1 and t2 are, but in all cases, the subspace overlap remains considerably above zero, implying that information of previous subspaces can be reused at later timesteps. If the two timesteps are close to each other, the overlap is considerable. Similar to the gradient subspace fraction in Section 4.2, the subspace overlap is often more pronounced for the critic than the actor.\nThe SAC results for Ant and Walker2D show a small drop in the subspace overlap at 1.1 million steps. At this timestep, the data from timestep t1 in the replay buffer is replaced completely by new data. The drop, therefore, is an indicator that a changing data distribution has a negative effect on the subspace overlap. Note that this is not captured by the plots for the Finger-spin and LunarLanderContinuous tasks since the algorithms converge before reaching 1 million timesteps, and, thus, we only plot the analysis results up to this timestep. Moreover, the subspace overlap tends to be larger for SAC than PPO for timesteps close to the original timestep t1 but smaller for timesteps further away. We hypothesize that this is due to two opposing effects: 1) The data distribution changes more slowly, which we found to be beneficial in terms of subspace overlap. 2) The networks of SAC are significantly larger and, hence, there are more dimensions in which the subspace might change. The results above indicate that effect 1) has a stronger influence early, while effect 2) dominates later on."
+        },
+        {
+            "heading": "5 CONCLUSION",
+            "text": "In this work, we showed that findings from the SL literature about low-dimensional gradient subspaces transfer to the RL setting. Despite the continuously changing data distribution inherent to\nRL, the gradients of the actor and critic networks of PPO and SAC lie in a low-dimensional, slowlychanging subspace of high curvature. We demonstrated that this property holds for both on-policy and off-policy learning, even though the distribution shift in the training data for the networks is particularly severe in the on-policy setting."
+        },
+        {
+            "heading": "5.1 HIGH-CURVATURE SUBSPACES EXPLAIN CLIFFS IN REWARD LANDSCAPES",
+            "text": "Sullivan et al. (2022) investigate visualizations of the reward landscapes around policies optimized by PPO. Reward landscapes describe the resulting cumulative rewards over the space of policy parameters. They observe empirically that these landscapes feature \u201ccliffs\u201d in policy gradient direction. When changing the parameters in this direction, the cumulative reward increases for small steps but drops sharply beyond this increase. In random directions, these cliffs do not seem to occur. The results from Section 4.2 constitute a likely explanation of this phenomenon. The cliffs that the authors describe can be interpreted as signs of large curvature in the reward landscape.\nOur analysis demonstrates that the policy gradient is prone to lie in a high-curvature direction of the policy loss. Sullivan et al. investigate the cumulative reward, which is different from the policy loss that we analyze in this work. However, one of the fundamental assumptions of policy gradient methods is that there is a strong link between the policy loss and the cumulative reward. Therefore, it seems natural that high curvature in the policy loss also manifests as high curvature in the cumulative reward. Clearly, there is no such influence for random directions, so the curvature in gradient direction is most likely higher than in random directions."
+        },
+        {
+            "heading": "5.2 POTENTIAL OF GRADIENT SUBSPACES IN REINFORCEMENT LEARNING",
+            "text": "Leveraging properties of gradient subspaces has proven beneficial in numerous works in SL, e.g., (Li et al., 2022a; Chen et al., 2022; Gauch et al., 2022; Zhou et al., 2020; Li et al., 2022b). The analyses in this paper demonstrate that similar subspaces can be found in popular policy gradient algorithms. In the following, we outline two opportunities for harnessing the properties of gradient subspaces and bringing the discussed benefits to RL.\nOptimization in the subspace While the network architectures commonly used in reinforcement learning are small compared to the models used in other fields of machine learning, the dimensionality of the optimization problem is still considerable. Widely used optimizers, like Adam (Kingma & Ba, 2014), often rely only on gradient information, as computing the Hessian at every timestep would be computationally very demanding in high dimensions. However, in Section 4.1, we have seen that the optimization problem is ill-conditioned. Second-order methods, like Newton\u2019s method, are known to be well-suited for ill-conditioned problems (Nocedal & Wright, 1999). With the insights of this paper, it seems feasible to reduce the dimensionality of the optimization problems in RL algorithms by optimizing in the low-dimensional subspace instead of the original parameter space. The low dimensionality of the resulting optimization problems would enable computing and inverting the Hessian matrix efficiently and make second-order optimization methods feasible.\nGuiding parameter-space exploration The quality of the exploration actions significantly impacts the performance of RL algorithms (Amin et al., 2021). Most RL algorithms explore by applying uncorrelated noise to the actions produced by the policy. However, this often leads to inefficient exploration, particularly in over-actuated systems, where correlated actuation is crucial (Schumacher et al., 2022). A viable alternative is to apply exploration noise to the policy parameters instead (Ru\u0308ckstiess et al., 2010; Plappert et al., 2018b). This approach results in a more directed exploration and can be viewed as exploring strategies similar to the current policy.\nIn Section 4, we observed that the gradients utilized by policy gradient methods predominantly lie within a small subspace of all parameter-space directions. As typical parameter-space exploration does not consider the properties of the training gradient when inducing parameter noise, only a small fraction of it might actually push the policy parameters along directions that are relevant to the task. Considering that the optimization mostly occurs in a restricted subspace, it might be advantageous to limit exploration to these directions. Sampling parameter noise only in the high-curvature subspace constitutes one possible way of focusing exploration on parameter-space directions informative to the optimization."
+        },
+        {
+            "heading": "6 REPRODUCIBILITY",
+            "text": "We applied our analyses to well-known, publicly available benchmark tasks and utilized popular, publicly available implementations of the RL algorithms from Stable-Baselines3 (Raffin, 2020). Further experimental details like the learning curves of the algorithms and the fine-grained analysis results for the entire training are displayed in Appendices B and C, respectively. Furthermore, we published the code for the analyses to allow reproduction of our experiments here."
+        },
+        {
+            "heading": "A DERIVATION OF THE GRADIENT SUBSPACE FRACTION OBJECTIVE",
+            "text": "In this section, we derive Equation (6). Recall that Pk = (v1, . . . , vk)T \u2208 Rk\u00d7n is the matrix of the k largest Hessian eigenvectors, which is semi-orthogonal. We use g\u0303 = P+k Pk g \u2208 Rn to denote the projection of the gradient g into the subspace and back to its original dimensionality. In the following derivation, we drop the subscript k of matrix Pk for ease of notation.\nSfrac(P, g) = 1\u2212 ||g\u0303 \u2212 g||2\n||g||2 (9)\n= 1\u2212 ||P +Pg \u2212 g||2\n||g||2 (10)\n= 1\u2212 ||P TPg \u2212 g||2\n||g||2 (11)\n= 1\u2212 (P TPg \u2212 g)T (PTPg \u2212 g)\ngT g (12)\n= 1\u2212 (g TPTP \u2212 gT )(PTPg \u2212 g)\ngT g (13)\n= 1\u2212 g TPTPPTPg \u2212 2gTPTPg + gT g\ngT g (14)\n= 1\u2212 g TPTPg \u2212 2gTPTPg + gT g\ngT g (15)\n= 1\u2212 g T g \u2212 gTPTPg\ngT g (16)\n= gT g \u2212 gT g + gTPTPg\ngT g (17)\n= gTPTPg\ngT g (18)\n= (Pg)TPg\ngT g (19)\n= ||Pg||2\n||g||2 (20)\nNote that we used the fact that the pseudo-inverse of a semi-orthogonal matrix P is equal to its transpose P+ = PT in step (11). Furthermore, we use the property PTP = I of semi-orthogonal matrices in step (15)."
+        },
+        {
+            "heading": "B LEARNING CURVES",
+            "text": "0.0 0.2 0.4 0.6 0.8 1.0 Environment steps \u00d7106\n0\n250\n500\n750\n1000\nCu m\nul at\niv e\nre wa\nrd\nPPO SAC\n0.0 0.5 1.0 1.5 2.0 2.5 3.0 Environment steps \u00d7106\n0\n1500\n3000\n4500\n6000\nCu m\nul at\niv e\nre wa\nrd\n(a) Ant\n0.0 0.2 0.4 0.6 0.8 1.0 Environment steps \u00d7106\n0\n250\n500\n750\n1000\nCu m\nul at\niv e\nre wa\nrd\n(b) Ball in cup\n0.0 0.5 1.0 1.5 2.0 2.5 3.0 Environment steps \u00d7106\n150\n0\n150\n300\nCu m\nul at\niv e\nre wa\nrd\n(c) BipedalWalker\n0 1 2 3 4 5 Environment steps \u00d7105\n45\n30\n15\n0\nCu m\nul at\niv e\nre wa\nrd\n(d) FetchReach\n0.0 0.2 0.4 0.6 0.8 1.0 Environment steps \u00d7106\n0\n200\n400\n600\n800 1000 Cu m ul at iv e re wa rd\n(e) Finger-spin\n0.0 0.5 1.0 1.5 2.0 2.5 3.0 Environment steps \u00d7106\n0.0 0.3 0.6 0.9 1.2 1.5 Cu m ul at iv e re wa rd\n\u00d7104\n(f) HalfCheetah\n0.00 0.25 0.50 0.75 1.00 1.25 1.50 Environment steps \u00d7106\n0\n800\n1600\n2400\n3200\n4000\nCu m\nul at\niv e\nre wa\nrd\n(g) Hopper\n0.0 0.2 0.4 0.6 0.8 1.0 Environment steps \u00d7106\n300\n150\n0\n150\n300\nCu m\nul at\niv e\nre wa\nrd\n(h) LunarLanderContinuous\n0.0 0.5 1.0 1.5 2.0 2.5 3.0 Environment steps\u00d7105\n1600\n1200\n800\n400\n0\nCu m\nul at\niv e\nre wa\nrd\n(i) Pendulum\n0 1 2 3 4 5 Environment steps \u00d7105\n60\n45\n30\n15\n0\nCu m\nul at\niv e\nre wa\nrd\n(j) Reacher\n0.0 0.6 1.2 1.8 2.4 3.0 Environment steps \u00d7106\n0\n80\n160\n240\n320\n400\nCu m\nul at\niv e\nre wa\nrd\n(k) Swimmer\n0.0 0.5 1.0 1.5 2.0 2.5 3.0 Environment steps \u00d7106\n0\n1500\n3000\n4500\n6000\nCu m\nul at\niv e\nre wa\nrd\n(l) Walker2D\nFigure 4: Learning curves for PPO and SAC on tasks from the DeepMind Control Suite (Tunyasuvunakool et al., 2020), OpenAI Gym (Brockman et al., 2016), and Gym Robotics (Plappert et al., 2018a). We use the algorithm implementations of Stable Baselines3 (Raffin et al., 2021). We use tuned hyperparameters from RL Baselines3 Zoo (Raffin, 2020) for the Gym tasks and hyperparameters tuned by random search over 50 configurations for the DMC and Gym Robotics tasks. Results are averaged over ten random seeds; shaded areas represent the standard deviation across seeds."
+        },
+        {
+            "heading": "C DETAILED ANALYSIS RESULTS FOR ALL TASKS",
+            "text": "D IMPACT OF SUBOPTIMAL HYPERPARAMETERS\nHyperparameters typically have a significant impact on the learning performance of policy gradient algorithms (Paul et al., 2019). In Section 4.2, we analyzed the gradient subspace for training runs with tuned hyperparameter configurations. However, which hyperparameters work well for a given problem is typically not known a priori. Finding good hyperparameters often involves running numerous RL trainings, which might be infeasible when training on real-world tasks. For our insights to be valuable for such real-world settings, it is crucial that suitable gradient subspaces can also be identified for training runs with suboptimal hyperparameters. Therefore, in this section, we investigate the robustness of the gradient subspace with respect to suboptimal hyperparameters. To get a set of hyperparameters that are realistic but potentially suboptimal, we sample hyperparameter configurations from the ranges that are found frequently in the tuned hyperparameters of RL Baselines3 Zoo (Raffin, 2020). Particularly, we draw the samples from the sets given in Table 1. Note that these are also the bounds we use when sampling configurations for hyperparameter tuning.\nWe sampled a total of 50 hyperparameter configurations per algorithm and task. Figure 9 displays the distribution over the maximum cumulative reward that these hyperparameter configurations achieve. As expected, the variance in the performance is large across the hyperparameter configurations. While some configurations reach performance levels comparable to the tuned configuration, most sampled configurations converge to suboptimal behaviors.\nTo display the values of the gradient subspace fraction and the subspace overlap compactly for all configurations, we compress the results for each training run to a single scalar. For the gradient subspace fraction, we compute the mean of the criterion over the timesteps. Regarding the subspace overlap, we choose the early timestep t1 = 100,000 in accordance to the experiments in Section 4.3. However, taking the mean over the remaining timesteps would not be faithful to how the subspace would likely be utilized in downstream applications. Instead of identifying the gradient subspace once and using it for the rest of the training, such methods would likely update the gradient subspace after a given number of gradient steps. The rate of this update would likely depend on the exact way that the subspace is utilized. For this analysis, we choose t2 = 150,000, so that the timestep\nUnder review as a conference paper at ICLR 2024\nTuned configurations (mean)\nTuned configurations (mean)\nTuned configurations (mean)\nUnder review as a conference paper at ICLR 2024\nTuned configurations (mean)\nTuned configurations (mean)\ndifference of t2 \u2212 t1 = 50,000 steps is significantly shorter than the total length of the training, but the number of gradient steps is large enough that the subspace could change.\nThe results for the gradient subspace fraction and the subspace overlap for random hyperparameters are visualized in Figure 10 and Figure 11, respectively. Figure 10a shows for SAC\u2019s actor that the gradient is well contained in the subspace for all random hyperparameter configurations. For PPO\u2019s actor, the spread in the gradient subspace fraction is significantly higher. As shown in Figure 10b, the gradient subspace fraction for the critic is very high for all hyperparameter configurations. These results suggest that gradient subspaces can be utilized in SAC independently of the hyperparameter setting, while PPO\u2019s actor might require more considerations.\nFigure 11 shows that there is a significant spread in the subspace overlap for the random hyperparameter configurations, which indicates that potential downstream applications might need to update the gradient subspace more frequently, depending on the hyperparameters."
+        }
+    ],
+    "title": "IDENTIFYING POLICY GRADIENT SUBSPACES",
+    "year": 2023
+}

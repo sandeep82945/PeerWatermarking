@@ -1,0 +1,703 @@
+{
+    "abstractText": "We seek to uncover the latent interest units from behavioral data to better learn user preferences under the VAE framework. Existing practices tend to ignore the multiple facets of item characteristics, which may not capture it at appropriate granularity. Moreover, current studies equate the granularity of item space to that of user interests, which we postulate is not ideal as user interests would likely map to a small subset of item space. In addition, the compositionality of user interests has received inadequate attention, preventing the modeling of interactions between explanatory factors driving a user\u2019s decision. To resolve this, we propose to align user interests with multi-faceted item characteristics. First, we involve prototype-based representation learning to discover item characteristics along multiple facets. Second, we compose user interests from uncovered item characteristics via binding mechanism, separating the granularity of user preferences from that of item space. Third, we design a dedicated bi-directional binding block, aiding the derivation of compositional user interests. On real-world datasets, the experimental results demonstrate the strong performance of our proposed method compared to a series of baselines.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Nhu-Thuat Tran"
+        },
+        {
+            "affiliations": [],
+            "name": "Hady W. Lauw"
+        }
+    ],
+    "id": "SP:bd5beb1a90d2966c8c06e218bc9848cfad5bfba3",
+    "references": [
+        {
+            "authors": [
+                "Shilong Bao",
+                "Qianqian Xu",
+                "Zhiyong Yang",
+                "Yuan He",
+                "Xiaochun Cao",
+                "Qingming Huang"
+            ],
+            "title": "The minority matters: A diversity-promoting collaborative metric learning algorithm",
+            "venue": "NeurIPS,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yoshua Bengio",
+                "Aaron Courville",
+                "Pascal Vincent"
+            ],
+            "title": "Representation learning: A review and new perspectives",
+            "venue": "IEEE Trans. Pattern Anal. Mach. Intell.,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Yukuo Cen",
+                "Jianwei Zhang",
+                "Xu Zou",
+                "Chang Zhou",
+                "Hongxia Yang",
+                "Jie Tang"
+            ],
+            "title": "Controllable multi-interest framework for recommendation",
+            "venue": "In KDD,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Michael Chang",
+                "Thomas L. Griffiths",
+                "Sergey Levine"
+            ],
+            "title": "Object representations as fixed points: Training iterative refinement algorithms with implicit differentiation",
+            "venue": "NeurIPS,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Tian Qi Chen",
+                "Xuechen Li",
+                "Roger Grosse",
+                "David Duvenaud"
+            ],
+            "title": "Isolating sources of disentanglement in variational autoencoders, 2018",
+            "venue": "URL https://openreview.net/forum?id= BJdMRoCIf",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Klaus Greff",
+                "Sjoerd van Steenkiste",
+                "J\u00fcrgen Schmidhuber"
+            ],
+            "title": "On the binding problem in artificial neural networks",
+            "venue": "CoRR, abs/2012.05208,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Xiangnan He",
+                "Kuan Deng",
+                "Xiang Wang",
+                "Yan Li",
+                "YongDong Zhang",
+                "Meng Wang"
+            ],
+            "title": "Lightgcn: Simplifying and powering graph convolution network for recommendation",
+            "venue": "In SIGIR,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Irina Higgins",
+                "Loic Matthey",
+                "Arka Pal",
+                "Christopher Burgess",
+                "Xavier Glorot",
+                "Matthew Botvinick",
+                "Shakir Mohamed",
+                "Alexander Lerchner"
+            ],
+            "title": "beta-VAE: Learning basic visual concepts with a constrained variational framework",
+            "venue": "In ICLR,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Prateek Jain",
+                "Raghu Meka",
+                "Inderjit S. Dhillon"
+            ],
+            "title": "Simultaneous unsupervised learning of disparate clusterings",
+            "venue": "In Proceedings of the 2008 SIAM International Conference on Data Mining (SDM),",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Eric Jang",
+                "Shixiang Gu",
+                "Ben Poole"
+            ],
+            "title": "Categorical reparameterization with gumbel-softmax",
+            "venue": "In 5th International Conference on Learning Representations,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Baoxiong Jia",
+                "Yu Liu",
+                "Siyuan Huang"
+            ],
+            "title": "Improving object-centric learning with query optimization",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Hyunjik Kim",
+                "Andriy Mnih"
+            ],
+            "title": "Disentangling by factorising",
+            "venue": "In Proceedings of the 35th International Conference on Machine Learning,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Chao Li",
+                "Zhiyuan Liu",
+                "Mengmeng Wu",
+                "Yuchi Xu",
+                "Huan Zhao",
+                "Pipei Huang",
+                "Guoliang Kang",
+                "Qiwei Chen",
+                "Wei Li",
+                "Dik Lun Lee"
+            ],
+            "title": "Multi-interest network with dynamic routing for recommendation at tmall",
+            "venue": "In CIKM,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Dawen Liang",
+                "Rahul G. Krishnan",
+                "Matthew D. Hoffman",
+                "Tony Jebara"
+            ],
+            "title": "Variational autoencoders for collaborative filtering",
+            "venue": "In Proceedings of the 2018 World Wide Web Conference,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Zihan Lin",
+                "Changxin Tian",
+                "Yupeng Hou",
+                "Wayne Xin Zhao"
+            ],
+            "title": "Improving graph collaborative filtering with neighborhood-enriched contrastive learning",
+            "venue": "In Proceedings of the ACM Web Conference",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Francesco Locatello",
+                "Stefan Bauer",
+                "Mario Lucic",
+                "Gunnar Raetsch",
+                "Sylvain Gelly",
+                "Bernhard Sch\u00f6lkopf",
+                "Olivier Bachem"
+            ],
+            "title": "Challenging common assumptions in the unsupervised learning of disentangled representations",
+            "venue": "In Proceedings of the 36th International Conference on Machine Learning,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Francesco Locatello",
+                "Dirk Weissenborn",
+                "Thomas Unterthiner",
+                "Aravindh Mahendran",
+                "Georg Heigold",
+                "Jakob Uszkoreit",
+                "Alexey Dosovitskiy",
+                "Thomas Kipf"
+            ],
+            "title": "Object-centric learning with slot attention",
+            "venue": "In NeurIPS,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jianxin Ma",
+                "Chang Zhou",
+                "Peng Cui",
+                "Hongxia Yang",
+                "Wenwu Zhu"
+            ],
+            "title": "Learning disentangled representations for recommendation",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Jianxin Ma",
+                "Chang Zhou",
+                "Hongxia Yang",
+                "Peng Cui",
+                "Xin Wang",
+                "Wenwu Zhu"
+            ],
+            "title": "Disentangled selfsupervision in sequential recommenders",
+            "venue": "In Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Chris J. Maddison",
+                "Andriy Mnih",
+                "Yee Whye Teh"
+            ],
+            "title": "The concrete distribution: A continuous relaxation of discrete random variables",
+            "venue": "In 5th International Conference on Learning Representations,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Kelong Mao",
+                "Jieming Zhu",
+                "Jinpeng Wang",
+                "Quanyu Dai",
+                "Zhenhua Dong",
+                "Xi Xiao",
+                "Xiuqiang He"
+            ],
+            "title": "Simplex: A simple and strong baseline for collaborative filtering",
+            "venue": "In CIKM,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Kelong Mao",
+                "Jieming Zhu",
+                "Xi Xiao",
+                "Biao Lu",
+                "Zhaowei Wang",
+                "Xiuqiang He"
+            ],
+            "title": "Ultragcn: Ultra simplification of graph convolutional networks for recommendation",
+            "venue": "In CIKM,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Xubin Ren",
+                "Lianghao Xia",
+                "Jiashu Zhao",
+                "Dawei Yin",
+                "Chao Huang"
+            ],
+            "title": "Disentangled contrastive collaborative filtering",
+            "venue": "In SIGIR,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Suvash Sedhain",
+                "Aditya Krishna Menon",
+                "Scott Sanner",
+                "Lexing Xie"
+            ],
+            "title": "Autorec: Autoencoders meet collaborative filtering",
+            "venue": "In Proceedings of the 24th International Conference on World Wide Web, WWW \u201915 Companion,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Ilya Shenbin",
+                "Anton Alekseev",
+                "Elena Tutubalina",
+                "Valentin Malykh",
+                "Sergey I. Nikolenko"
+            ],
+            "title": "Recvae: A new variational autoencoder for top-n recommendations with implicit feedback",
+            "venue": "In WSDM,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Gautam Singh",
+                "Fei Deng",
+                "Sungjin Ahn"
+            ],
+            "title": "Illiterate DALL-e learns to compose",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Gautam Singh",
+                "Yeongbin Kim",
+                "Sungjin Ahn"
+            ],
+            "title": "Neural systematic binder",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yan-Martin Tamm",
+                "Rinchin Damdinov",
+                "Alexey Vasilev"
+            ],
+            "title": "Quality metrics in recommender systems: Do we calculate metrics consistently",
+            "venue": "In Fifteenth ACM Conference on Recommender Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Qiaoyu Tan",
+                "Jianwei Zhang",
+                "Jiangchao Yao",
+                "Ninghao Liu",
+                "Jingren Zhou",
+                "Hongxia Yang",
+                "Xia Hu"
+            ],
+            "title": "Sparse-interest network for sequential recommendation",
+            "venue": "In WSDM,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Y. Tan",
+                "C. Yang",
+                "X. Wei",
+                "Y. Ma",
+                "X. Zheng"
+            ],
+            "title": "Multi-facet recommender networks with spherical optimization",
+            "venue": "IEEE 37th International Conference on Data Engineering (ICDE),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Nhu-Thuat Tran",
+                "Hady W. Lauw"
+            ],
+            "title": "Aligning dual disentangled user representations from ratings and textual content",
+            "venue": "In KDD,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Laurens van der Maaten",
+                "Geoffrey Hinton"
+            ],
+            "title": "Visualizing data using t-sne",
+            "venue": "Journal of Machine Learning Research,",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Chenyang Wang",
+                "Zhefan Wang",
+                "Yankai Liu",
+                "Yang Ge",
+                "Weizhi Ma",
+                "Min Zhang",
+                "Yiqun Liu",
+                "Junlan Feng",
+                "Chao Deng",
+                "Shaoping Ma"
+            ],
+            "title": "Target interest distillation for multi-interest recommendation",
+            "venue": "In CIKM,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Chenyang Wang",
+                "Yuanqing Yu",
+                "Weizhi Ma",
+                "Min Zhang",
+                "Chong Chen",
+                "Yiqun Liu",
+                "Shaoping Ma"
+            ],
+            "title": "Towards representation alignment and uniformity in collaborative filtering",
+            "venue": "In KDD,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Xiang Wang",
+                "Xiangnan He",
+                "Meng Wang",
+                "Fuli Feng",
+                "Tat-Seng Chua"
+            ],
+            "title": "Neural graph collaborative filtering",
+            "venue": "In SIGIR, pp",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Xiang Wang",
+                "Hongye Jin",
+                "An Zhang",
+                "Xiangnan He",
+                "Tong Xu",
+                "Tat-Seng Chua"
+            ],
+            "title": "Disentangled graph collaborative filtering",
+            "venue": "In SIGIR,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Xin Wang",
+                "Hong Chen",
+                "Yuwei Zhou",
+                "Jianxin Ma",
+                "Wenwu Zhu"
+            ],
+            "title": "Disentangled representation learning for recommendation",
+            "venue": "IEEE TPAMI,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Xin Wang",
+                "Zirui Pan",
+                "Yuwei Zhou",
+                "Hong Chen",
+                "Chendi Ge",
+                "Wenwu Zhu"
+            ],
+            "title": "Curriculum codisentangled representation learning across multiple environments for social recommendation",
+            "venue": "In ICML,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Xing Wang",
+                "Guoxian Yu",
+                "Carlotta Domeniconi",
+                "Jun Wang",
+                "Zhiwen Yu",
+                "Zili Zhang"
+            ],
+            "title": "Multiple co-clusterings",
+            "venue": "IEEE ICDM,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Xing Wang",
+                "Jun Wang",
+                "Carlotta Domeniconi",
+                "Guoxian Yu",
+                "Guoqiang Xiao",
+                "Maozu Guo"
+            ],
+            "title": "Multiple independent subspace clusterings",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Yifan Wang",
+                "Yiping Song",
+                "Shuai Li",
+                "Chaoran Cheng",
+                "Wei Ju",
+                "Ming Zhang",
+                "Sheng Wang"
+            ],
+            "title": "Disencite: Graph-based disentangled representation learning for context-specific citation generation",
+            "venue": "In AAAI,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Zhikai Wang",
+                "Yanyan Shen"
+            ],
+            "title": "Time-aware multi-interest capsule network for sequential recommendation",
+            "venue": "In SDM,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jason Weston",
+                "Ron J. Weiss",
+                "Hector Yee"
+            ],
+            "title": "Nonlinear latent factorization by embedding multiple user interests",
+            "venue": "In ACM RecSys, pp",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Zhibo Xiao",
+                "Luwei Yang",
+                "Wen Jiang",
+                "Yi Wei",
+                "Yi Hu",
+                "Hao Wang"
+            ],
+            "title": "Deep multi-interest network for click-through rate prediction",
+            "venue": "In CIKM,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Shixin Yao",
+                "Guoxian Yu",
+                "Jun Wang",
+                "Carlotta Domeniconi",
+                "Xiangliang Zhang"
+            ],
+            "title": "Multi-view multiple clustering",
+            "venue": "In IJCAI,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Junliang Yu",
+                "Hongzhi Yin",
+                "Xin Xia",
+                "Tong Chen",
+                "Lizhen Cui",
+                "Quoc Viet Hung Nguyen"
+            ],
+            "title": "Are graph augmentations necessary? simple graph contrastive learning for recommendation",
+            "venue": "In SIGIR,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Shengyu Zhang",
+                "Lingxiao Yang",
+                "Dong Yao",
+                "Yujie Lu",
+                "Fuli Feng",
+                "Zhou Zhao",
+                "Tat-seng Chua",
+                "Fei Wu"
+            ],
+            "title": "Learning to re-contrast, re-attend, re-construct for multi-interest recommendation",
+            "venue": "In The Web Conference,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yin Zhang",
+                "Ziwei Zhu",
+                "Yun He",
+                "James Caverlee"
+            ],
+            "title": "Content-collaborative disentanglement representation learning for enhanced recommendation",
+            "venue": "In ACM RecSys,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Handong Zhao",
+                "Zhengming Ding",
+                "Yun Fu"
+            ],
+            "title": "Multi-view clustering via deep matrix factorization",
+            "venue": "Proceedings of the AAAI Conference on Artificial Intelligence,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Sen Zhao",
+                "Wei Wei",
+                "Ding Zou",
+                "Xianling Mao"
+            ],
+            "title": "Multi-view intent disentangle graph networks for bundle recommendation",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Wayne Xin Zhao",
+                "Junhua Chen",
+                "Pengfei Wang",
+                "Qi Gu",
+                "Ji-Rong Wen"
+            ],
+            "title": "Revisiting alternative experimental settings for evaluating top-n item recommendation algorithms",
+            "venue": "In CIKM,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yu Zheng",
+                "Chen Gao",
+                "Xiang Li",
+                "Xiangnan He",
+                "Yong Li",
+                "Depeng Jin"
+            ],
+            "title": "Disentangling user interest and conformity for recommendation with causal embedding",
+            "venue": "In Proceedings of the Web Conference",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yu Zheng",
+                "Chen Gao",
+                "Jianxin Chang",
+                "Yanan Niu",
+                "Yang Song",
+                "Depeng Jin",
+                "Yong Li"
+            ],
+            "title": "Disentangling long and short-term interests for recommendation",
+            "venue": "In Proceedings of the ACM Web Conference",
+            "year": 2022
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Preference learning lies at the heart of Collaborative Filtering (CF). A common thread among many CF models Sedhain et al. (2015); Liang et al. (2018); Wang et al. (2019a); He et al. (2020) is rendering a single vector for preference representation, ignoring the fact that user preferences are complex and diverse. Thus, discovering hidden factors behind user preferences could provide insights into what governs consumption patterns of users and thereby boosting the recommendation performance.\nNonetheless, preference learning is considerably challenging because of its unstructured nature. In natural language, one can consider a word or a token as a modular unit. However, in CF, we first need to obtain such \u2018units\u2018, i.e., by deriving multiple vectors, each is a unit, of user\u2019s preferences. Yet it is quite elusive what structure and level of granularity these preference units should appropriately be, and more importantly, how to obtain them in unsupervised setting based only on observed behavior data.\nOne means to derive a preference \u2018unit\u2019 is by grouping related items into a cluster that represents a meaningful interest, then aggregating item representations to produce interest representation and finally, jointly learning item grouping and recommendation under Variational AutoEncoder (VAE) framework Ma et al. (2019); Tran & Lauw (2022); Wang et al. (2023a). Marrying item grouping-based interest derivation with VAE inherits the best of both worlds. For one, multiple item groups increase representation capacity of VAE to capture multiple intentions of users behind consumption behaviors Ma et al. (2019). For another, interest derivation process inherits VAE\u2019s strengths, including non-linear probabilistic modeling, multinomial likelihood as a proxy of ranking loss, and information-theoretic regularization term, which are shown to boost the recommendation accuracy Liang et al. (2018).\nDespite showing improvement to a degree, existing VAE-based recommendation models involving item grouping for interest derivation has several shortcomings. First, these studies ignore that items may be grouped by arbitrary characteristics, owing to their many facets. For example, as depicted in Figure 1, shoes can be grouped by multiple facets, e.g., brand, color or top height. Thus, a more fine-grained structure that focuses on each facet would better reflect item space structure. Second, the assumption that the number of interests per user equals the number of item groups is sub-optimal as a\nuser only interacts with small subset of items among the whole item space. Third, the compositionality of user interests has received less attention, which may not capture the complexity of user\u2019s interest.\nTowards addressing these shortcomings, we introduce FACETVAE, which stands for FACETed Variational AutoEncoder, distinguishing itself by three key innovations. Firstly, to fully reveal the structure of item space so as to better align with user interests, we discover multiple groups underlying item space along multiple dimensions via prototype-based representation. For example, three dimensions to group items in Figure 1 are brand, color or top height. Secondly, under each dimension, we aggregate representations of user-adopted items belonging to a specific group, e.g., shoes assigned to Nike group under band dimension. The output is an array of low-level user interests towards multiple item characteristics. These low-level interests are ingredients to construct compositional (high-level) user interests. By this design, we separate the number of user interests from that of item space granularity. Thirdly, we introduce a novel bi-directional binding block to better derive compositional user interests, which includes prototype competition to explain low-level interests and low-level interests competition to attend high-level interests.\nContributions. The primary contributions of this paper are three-fold. First, we propose to discover item space structure under a multiple-facet lens to better derive compositional user interests from uncovered item characteristics. Second, we introduce FACETVAE to improve VAE-based preference learning. Our novelties include identifying multi-faceted item structure, binding compositional user interests and bi-directional user interest binding. Third, we extensively conduct experiments on real-world datasets to demonstrate the state-of-the-art recommendation accuracy of FACETVAE. In addition, we provide a qualitative analysis to ease the understanding of FACETVAE\u2019s inner working."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "Multi-interest user modeling. The most popular method is item grouping, which has been explored for Collaborative Filtering (CF) Ma et al. (2019), CF with side information Tran & Lauw (2022); Wang et al. (2023a) and sequential recommendation Li et al. (2019); Cen et al. (2020); Xiao et al. (2020); Tan et al. (2021a); Zhang et al. (2022); Wang & Shen (2022); Wang et al. (2022a). The second method relies on representation learning on graph, i.e., DGCF Wang et al. (2020) divides user (item) representation into K factors then uses routing mechanism to aggregate information from neighbors to obtain multiple interests of user (item), DCCF Ren et al. (2023) leverages intent prototypes to aggregate global context information at a graph embedding layer. The third method projects user embedding vector into multiple spaces, each captures one aspect of their preferences Weston et al. (2013); Tan et al. (2021b); Bao et al. (2022). Our work falls into item grouping-based approach yet is more generalized by multi-faceted disentangling and binding compositional user interests.\nDisentangled representation learning. The idea is to discover the factors of variation underlying data Bengio et al. (2013). This principle has been applied in CF Ma et al. (2019); Wang et al. (2020); Ren et al. (2023), sequential recommendation Ma et al. (2020); Zheng et al. (2021; 2022), side information-aware recommendation Zhang et al. (2020); Tran & Lauw (2022); Wang et al. (2023a;b),\ncitation recommendation Wang et al. (2022c), bundle recommendation Zhao et al. (2022). Our work is close to MacridVAE Ma et al. (2019), DGCF Wang et al. (2020) and DCCF Ren et al. (2023). The proposed FACETVAE and MacridVAE have in common micro-disentanglement, which does not appear in DGCF and DCCF. FACETVAE generalizes MacridVAE by disentangling item space under multifaceted lens. Furthermore, FACETVAE binds low-level user\u2019s interests into compositional ones, which is another novelty. FACETVAE also relates to disentangling representation\u2019s dimensions Higgins et al. (2017); Kim & Mnih (2018); Chen et al. (2018); Locatello et al. (2019). Not only do we disentangle single vector representation, but we also discover multiple clusters of item space under multiple facets.\nMultiple clusters discovery. Prior arts on discovering multiple clusters under data Jain et al. (2008); Zhao et al. (2017); Wang et al. (2018; 2019b); Yao et al. (2019) optimize a clustering objective, merely aiming at grouping data points and therefore, they are widely different from ours. For one, our clustering process is guided by a recommendation objective. For another, prior works assume each data point is from a concept while we assume that each item interacts with different concepts (prototypes of facets) to derive representation for a data point (a user).\nBinding problem in neural network. The idea is to group relevant low-level features into semantically meaningful high-level ones Greff et al. (2020), which has some commonality with ours. A related problem is object-centric learning, aiming to derive representations for multiple objects in the input image Locatello et al. (2020); Singh et al. (2022); Chang et al. (2022); Singh et al. (2023); Jia et al. (2023). Our motivation differs from those of these mentioned works as we aim to derive user\u2019s interests from their adoptions for collaborative filtering task."
+        },
+        {
+            "heading": "3 PRELIMINARIES",
+            "text": "Our problem follows the typical settings of collaborative filtering, including M users and N items. Let yui = 1 be an observed interaction between user u and item i and y u i = 0 means no interaction has been recorded between the two. Let xu = {i : yui = 1} be the set of interacted items of u. The target is to predict the probability that a user u will interact with an item i based on u\u2019s past interactions.\nProblem Formulation. There exist complex patterns driving user\u2019s item adoption behaviors. Thus, uncovering these hidden explanatory factors would not only enhance interpretability of user preferences but also provides pathway to improve recommendation task. As such, we seek for a set of K vectors zu = {zuk \u2208 Rd}Kk=1 representing K interests of user and K is a pre-defined number. Multi-interest modeling under VAE framework. We briefly describe a representative work MacridVAE Ma et al. (2019) for illustration. MacridVAE involves three main steps, item grouping, user interest aggregating, and decoding and learning. First, a set of K prototypes m \u2208 RK\u00d7d is employed to group N items T \u2208 RN\u00d7K into K groups, generating assignment matrix C \u2208 RN\u00d7K . Prototypes are randomly initialized and learned in data-driven manner. Second, given C and context matrix E \u2208 RN\u00d7denc , MacridVAE aggregates a user\u2019s adopted items belonging to a specific cluster to produce a set of vectors {huk}Kk=11. Then an interest vector is sampled from Gaussian distribution with parameters estimated via a neural network \u03c6, i.e., (auk ,b u k) = \u03c6(h u k) \u2200k = 1, 2, ...,K.\nC = \u03d5( T\u00b7m T\n\u03c4 \u00b7||T||2\u00b7||m||2 ) =\u21d2 (a u k ,b u k) = \u03c6( \u2211 i\u2208xu Cik\u00b7Ei\u221a\u2211 i\u2208xu (Cik)2 ) =\u21d2 zuk \u223c N ( auk ||auk ||2 , [diag(\u03c30 \u00b7 exp(\u2212 12b u k))] 2)\n\u03d5 is Gumbel-Softmax Jang et al. (2017); Maddison et al. (2017) to approximate one-hot vector, i.e., if item i belongs to cluster k then Cik \u2248 1 and Cij \u2248 0 \u2200j \u0338= k. \u03c4 is a temperature hyper-parameter to obtain more skewed distribution. \u03c30 is a hyper-parameter with value around 0.1. Thirdly, decoder predicts score r(zuk) then normalize to obtain probability of user-item interaction.\nr(zuk) = exp( zuk \u00b7 (Ti)T\n\u03c4dec \u00b7 ||zuk ||2 \u00b7 ||Ti||2 ) =\u21d2 p(yui |xu,C) =\n\u2211K k=1 Cikr(z\nu k)\u2211N\ni=1 \u2211K k=1 Cikr(zuk)\nAssignment matrix C is used to weight the prediction, i.e., if item i probably belongs to kth cluster, the predicted score of item i by kth interest will be given the corresponding weight. The final prediction score is summed over predictions of K user interests. Finally, MacridVAE\u2019s learning objective includes two terms: cross-entropy loss to reconstruct observed user-item interactions and KullbackLeibler divergence to regularize variational distribution of user interests with prior distribution.\n1We skip bias vector when calculating huk to ease understanding.\nLimitations. Existing VAE methods that seek to discover user interests via prototype-based item grouping have three main shortcomings. First, multiple facets underlying item space are inadequately uncovered. As in Figure 1, it requires to uncover three facets (color, brand, top height) as well as facet-wise item groups, e.g., Nike vs. Adidas under brand facet, to fully model item space. Second, the assumption that the granularity of item space equals to that of user interests, causes a dilemma. On the one hand, a large number of item groups is required to model item space structure yet it is exaggerated to model user interests as a user often only consumes a small subset of item space. On the other hand, while a small number of item groups is reasonable for modeling user interests, it is insufficient to capture item space structure, which might be multi-faceted as in Figure 1. Third, the complexity of user interests has received inadequate attention. As multiple factors may influence a user\u2019s decision, the compositionality of user interests is crucial when deriving interest representations."
+        },
+        {
+            "heading": "4 MULTI-FACETED PROTOTYPICAL USER INTERESTS LEARNING",
+            "text": "Figure 2 illustrates FACETVAE, a solution for the mentioned shortcomings. The key innovations are i) discovering item space structure along multiple facets; ii) binding compositional user interests from discovered item characteristics; iii) composing user interests via a bi-directional binding block."
+        },
+        {
+            "heading": "4.1 MULTI-FACETED ITEM SPACE STRUCTURE DISCOVERING",
+            "text": "We aim at capturing the granularity of item space to better infer user preferences, e.g., uncovering three facets (color, brand, top height) and their corresponding granularity, e.g., Adidas vs. Nike shoes under brand facet in Figure 1. These facets are assumed to be latent and to be uncovered unsupervisedly.\nTo realize, we infer a set of F matrices C = {Cf}Ff=1, assuming F facets underlying item space. Each Cf \u2208 RN\u00d7J represents clustering of N items to J clusters under facet f . Here, we assume J item groups under each facet. It is straightforward to apply our method when the number of item groups under each facet differs. Moreover, due to the inaccessibility to the prior information about facets behind data, we have assumed uniform facet distribution. This naturally holds as facets underlying item space simultaneously exists. Multi-faceted item grouping brings two salient benefits.\nEfficiently modeling item space. As illustrated in Figure 1 (a), one can use single facets to group items. However, it requires the exaggerated number of groups, which scales exponentially with the number of facets and the number of clusters per facet, i.e., J1\u00d7J2\u00d7 ...\u00d7JF assuming Jf groups under f th facet. Contrarily, multi-faceted item grouping only requires J1+J2+...+JF groups, a linear function of Jf .\nComposition of multiple facets. As being driven by many factors, user interests might include multiple item characteristics, e.g., white low top Nike shoes or green high top Adidas shoes. Multi-faceted item grouping enables composing such complicated interests from discovered items characteristics.\nConcretely, we involve P \u2208 RF\u00d7J\u00d7d as the prototype collection of F facets, Pf \u2208 RJ\u00d7d be the prototypes under f th facet. Prototypes are expected to convey a specific characteristic of item space. For example, under brand facet, there are two prototypes Adidas and Nike. We assume these prototypes are latent. They are updated in a data-driven manner and then used to aggregate items having the same characteristic. In real-world scenarios where item category knowledge is available, one could embed semantic information into these prototypes by classifying them into the corresponding category labels. We perform facet-wise item grouping by estimating the assignment score of item i to cluster j under f as\nCfij = \u03d5([sfi1, sfi2, ..., sfiJ ]); sfij = TTi Pfj/(\u03c4 \u00b7 ||Ti||2 \u00b7 ||Pfj ||2) (1)\nFollowing Ma et al. (2019), \u03d5 is Gumbel-Softmax Maddison et al. (2017); Jang et al. (2017) to approximate one-hot vector of the cluster distribution Cfi \u2208 RJ of item i under facet f . sfij is based on cosine similarity between item embedding vector Ti \u2208 Rd and prototype Pfj \u2208 Rd and || \u00b7 ||2 is L2 norm. Using cosine similarity prevents all items are associated to a cluster with highest magnitude ||Pfj ||2. \u03c4 is the temperature to concentrate the weight to the most similar cluster. By calculating Equation 1 for F facets and N items, we obtain assignment score matrix C \u2208 RF\u00d7N\u00d7J .\nThe output of Equation 1 satisfies \u2211J\nj=1 Cfij = 1 and Cfij \u2265 0. This naturally creates a competition between J clusters, i.e., they compete to other J \u2212 1 clusters for attending to an item i. For example, under color facet in Figure 1, if green shoes are tied to cluster J , i.e., the assignment score of green shoes to cluster J is high, which results in lower assignment scores of green shoes to other clusters. Therefore, the nature of this competition enables grouping related items into meaningful clusters."
+        },
+        {
+            "heading": "4.2 BINDING COMPOSITIONAL USER INTEREST REPRESENTATIONS",
+            "text": "This section presents the derivation of user interests from the uncovered item space structure.\nLow-level user interest representation. Intuitively, if a user adopts an item belonging to a specific group, it is likely that they are interested in item characteristic captured by that group, motivating us to derive user interest representation based on item group clues. The output is called low-level as it is supposed to capture a single item characteristic, e.g., Nike shoes under brand facet.\nLet hufj \u2208 Rd enc be low-level interest of user u towards characteristic j under facet f . hufj is derived from user u\u2019s interacted items given cluster distribution Cf , bias benc \u2208 Rd enc , activation function \u03b30\nhufj = \u03b30( \u2211 i\u2208xu Cfij \u00b7 Ei/ \u221a Z + benc) with Z = \u2211 i\u2208xu (Cfij)2 (2)\nEi \u2208 Rd enc is the context vector used to derive interests. For simplicity, a default setting is denc = d. Hu = {hufj} F,J f=1,j=1 \u2208 RF\u00d7J\u00d7d enc captures J low-level user\u2019s interests underlying F facets.\nHigh-level user interest representation. A user\u2019s decision is driven by multiple factors, e.g., brand and/or color when they buy a new pair of shoes. Thus, modeling the composition of factors having influence on a user\u2019s decision is essential. We regard Hu as the ingredients to compose high-level user\u2019s interests. Formally, we employ a set of K prototypes denoted by Q \u2208 RK\u00d7d. Q will retrieve low-level user interests from Hu and then compose them into K high-level user interests.\nNevertheless, this is non-trivial task for a couple of reasons. For one, it demands a dedicated mechanism that wisely binds low-level user interests. For example, low top and high top shoes should be assigned to two different high-level interests as a pair of shoes do not simultaneously contain these two characteristics. For another, high-level interests are required to be distinct to capture the diversity of user preferences and alleviate the negative effect of noisy and redundant interests.\nBi-directional binding block. We present bi-directional binding mechanism as a solution. Not only does it bind high-level user interests over low-level ones, but also it enables competition between\nlow-level interests to attend to high-level counterparts. Given Q and Hu, our binding block works as\nAufjk = 1\n2 [softmax 1,2,...,K (sim(hufj , w(Qk))/\u03c40) + softmax 1,2,...,J (sim(hufj , w(Qk))/\u03c4)]\nvuk = \u03b3( F\u2211 f 1\u221a F \u00d7 J J\u2211 j Aufjkh u fj) \u2200k = 1, 2, ...,K\n(3)\nw is a linear projection. sim(\u00b7, \u00b7) is cosine similarity. \u03c40, \u03c4 are hyper-parameters. \u03b3 is activation function. Each facet has the same weight 1/ \u221a F \u00d7 J , modeling prior belief of uniform facet distribution.\nAufjk is the binding score of low-level interest j under facet f to high-level interest k, consisting of the softmax over K prototypes and the softmax over J clusters. Firstly, as output of softmax over K prototypes are non-negative and sums to 1, this requires K prototypes to compete to attend low-level interests from Hu. Thus, it encourages high-level interests to be different from others to capture the diversity of user\u2019s preferences. Secondly, softmax over J clusters under each facet f creates another competition between J clusters, which constraints each prototype to mainly bind to one item characteristic. This constraint enables wisely binding for more interpretable interests, e.g., low top and high top shoes are tied to different high-level interests as it is unnatural to combine these two features into one interest.\nAfter obtaining high-level interest representation of u, we calculate an item-interest score matrix as\nBuik = softmax 1,2,...,K (\n\u2211 f,j Cfij \u00d7 A\nu fjk\u221a\nF \u00d7 J ),Bu = {Buik} N,K i=1,k=1 \u2208 R N\u00d7K (4)\nUntil now we have C showing us the relations between items and clusters and Au capturing the relations between clusters and user u\u2019s interests. Therefore, Bu in Equation 4 describes the relations between items and user u\u2019s interests, which is used in prediction step in Equation 6."
+        },
+        {
+            "heading": "4.3 MODEL LEARNING",
+            "text": "Micro disentanglement. We follow the common practice in VAE literature Higgins et al. (2017); Ma et al. (2019) to derive micro-disentanglement, i.e., disentangling dimensions of an interest representation. Firstly, vuk in Equation 3 is processed by encoder g0 : Rd\nenc \u2192 R2d to estimate the parameters of variational distribution \u00b5uk \u2208 Rd and \u03c3uk \u2208 Rd as following\n(auk ,b u k) = g 0(vuk) =\u21d2 \u00b5uk = auk/||auk ||2; \u03c3uk = \u03c30 \u00b7 exp(\u2212 1\n2 buk) (5)\n\u03c30\u2019s value is around 0.1 Ma et al. (2019). The final representation of kth interest of user u, i.e., zuk \u2208 Rd, is sampled from Gaussian distribution with estimated parameters, i.e., zuk \u223c N (\u00b5uk , [diag(\u03c3uk )]2) \u2200k = 1, 2, ...,K. A regularization term based on KullbackLeibler (KL) divergence is added to match the estimated variational distribution with prior distribution, i.e., DKL(q(zu|xu,C)||p(zu)). In which, q(zu|xu,C) = \u220fK k=1 q(z\nu k |xu,C) =\u220fK\nk=1 N (\u00b5uk , [diag(\u03c3uk )]2) is variational distribution and p(zu) = N (0, (\u03c30)2I) is factorized prior distribution to achieve micro-disentanglement. DKL(q||p) \u2192 0 when q and p matches. Decoder. Given {zuk}Kk=1, decoder predicts the probability that user u interacts with item i as\np(yui ) =\n\u2211K k=1 B\nu ikr(zuk)\u2211N\ni=1 \u2211K k=1 B u ikr(zuk)\nwith r(zuk) = exp(sim(z u k ,Ti)/\u03c4dec) (6)\nTi is item i\u2019s vector. sim(\u00b7, \u00b7) is cosine similarity. \u03c4dec is the temperature hyper-parameter. p(yui ) is normalized over N items. Buik from Equation 4 is used to weight the prediction of an item, i.e., higher weight is given to an item provided its higher level of similarity with current interest.\nLearning objective. FACETVAE minimizes an objective summing over a batch of user Buser\nL = \u2211\nu\u2208Buser [Lurecon + Lureg] = \u2211 u\u2208Buser [ N\u2211 i=1 \u2212yui ln(p(yui )) + \u03b2DKL(q(zu|xu,C)||p(zu))] (7)\nFor each user, Lurecon is to reconstruct the observed interactions of user u via cross-entropy loss as p(yui ) follows categorical distribution. Lureg is a regularization term as described in Section 4.3. A hyper-parameter \u03b2 is introduced to control the influence of regularization objective versus the recommendation objective, similar to Multi-VAE Liang et al. (2018) and MacridVAE Ma et al. (2019)."
+        },
+        {
+            "heading": "5 EXPERIMENTS",
+            "text": "Datasets. We consider three real-world datasets: i) MovieLens-1M (ML-1M)2 (6,035 users, 3,126 movies, 574,376 ratings); ii) CiteULike-a3 (5,551 users, 16,945 ariticles, 204,929 interactions); iii) Yelp4 (29,111 users, 22,121 businesses, 1,052,627 reviews). We regard movies/articles/businesses as items and ratings/reviews as interactions. Code & data are included in supplements for reproducibility.\nCompetitors. We compare FACETVAE against closely related baselines, i.e., disentangled representation MacridVAE Ma et al. (2019), DGCF Wang et al. (2020), DCCF Ren et al. (2023); multi-vector user representation DPCML Bao et al. (2022); VAE-based RecVAE Shenbin et al. (2020). We also include recently developed Collaborative Filtering models, i.e., contrastive learning NCL Lin et al. (2022), SimGCL Yu et al. (2022), representation theory-based DirectAU Wang et al. (2022b), graphbased UltraGCN Mao et al. (2021b), cosine-contrastive loss-based SimpleX Mao et al. (2021a).\nHyper-parameter settings. To ensure fair comparison, we tune the hyper-parameters of baselines following original papers. Dimension d = 64 and the number of user interests K = 4, where applicable, are fixed for all models. The details of hyper-parameter tuning is presented in supplementary materials.\nMetrics. We report full ranking evaluation Zhao et al. (2020) of Recall and Normalized Discounted Cumulative Gain (NDCG) Tamm et al. (2021) as recommendation metrics. Both metrics are truncated at top 20 and top 50. Recall and NDCG are abbreviated as R and N in tables, respectively."
+        },
+        {
+            "heading": "5.1 RECOMMENDATION PERFORMANCE COMPARISON",
+            "text": "Table 1 summarizes the recommendation performance of FACETVAE and baselines. The experimental results show that FACETVAE achieves significantly higher accuracy than those of baselines on CiteULike-a and Yelp. On ML-1M, FACETVAE demonstrates better performance than RecVAE, the best baseline, w.r.t. 3 out of 4 metrics. Notably, FACETVAE only requires roughly 1/3 of RecVAE\u2019s number of parameters to get the reported results, demonstrating the efficiency of FACETVAE.\nThere are two key takeaways. First, VAE-based models are top performing on all chosen datasets, demonstrating the strength of VAE framework that FACETVAE inherits. For example, on CiteULike-a and Yelp, MacridVAE achieves much better performance than both disentangled/multi-interest modeling models (DGCF, DPCML, DCCF) and single representation models (SimpleX, DirectAU, SimGCL, inter alia). On ML-1M, despite modeling user interest as a single vector, RecVAE outperforms DGCF, DCCF and DPCML which disentangle multiple factors of user interests. Second, prototype-based representation learning plays the key role in modeling multiple user interests under VAE framework. This is evidenced by the markedly performance gap between MacridVAE (using prototype-based representation) and RecVAE (without prototype-based representation) on CiteULike-a and Yelp. FACETVAE\n2https://grouplens.org/datasets/movielens/ 3http://wanghao.in/CDL.htm 4https://www.yelp.com/dataset\ngeneralizes MacridVAE via disentangling prototype-based representation under multi-faceted lens, achieving higher accuracy than both MacridVAE and RecVAE on three datasets."
+        },
+        {
+            "heading": "5.2 MODEL STUDIES",
+            "text": "Efficiency Analysis. FACETVAE and the closest baseline MacridVAE are bounded by the computational cost of grouping N items into clusters. While it is O(KN) complexity in MacridVAE given K clusters, that of FACETVAE is O(FJN + FJK). In which O(FJN) is the complexity of grouping items under F facets each has J clusters and O(FJK) is the complexity of binding block. Despite requiring higher computational demand, i.e., F \u00d7 J is larger than K, FACETVAE\u2019s complexity is still a linear function of number of items N as binding block\u2019s complexity does not depend on N . More importantly, FACETVAE achieves significantly higher accuracy than MacridVAE thanks to multi-faceted item grouping. To verify, we report the running time of FACETVAE and MacridVAE on Yelp dataset. On the other datasets, the running time of two models are roughly the same. For MacridVAE, K is 16 as it produces the best results. For FACETVAE, K is 8 achieving higher Recall and comparable NDCG compared to MacridVAE (as presented in supplementary materials). Then, the training time (second/epoch) and inference time (second) of FACETVAE are 10.068s and 2.311s, respectively. Those of MacridVAE are 9.736s and 1.963s, respectively. Clearly, FACETVAE only requires slightly higher running time than MacridVAE yet achieves better overall performance.\nMulti-faceted item space disentangling. We fix the total number of prototypes used to group items is 12 then we vary F and J satisfying F \u00d7 J = 12. When F = 1, it reduces to single-faceted item grouping. Table 2 presents the results. The key takeaways are first, grouping item space under multiple facets, i.e., F > 1, results in overall higher recommendation accuracy, demonstrating its ability to discover fine-grained structure of item space. Second, setting F and J of which JF is large, e.g., F = 3, J = 4 or F = 4, J = 3, generally results in better performance. These results are consistent with our hypothesis in Section 4.1 that the number of item characteristics FACETVAE can discover is up to JF . The more item characteristics are discovered, the better modeling user interest is.\nItem space disentangling visualization. We visualize the item groups produced by FACETVAE in Figure 3 to qualitatively examine whether FACETVAE can discover multi-faceted item space structure. We use t-SNE van der Maaten & Hinton (2008) to visualize item representations on\n2D space. Evidently, the neighbors of items, i.e., those with the same color, across facets vary, demonstrating that FACETVAE is capable of disentangling multi-faceted item space.\nLow-level vs. high-level user interests. Table 3 presents results when using low-level and high-level user interests (Section 4.2) for recommendation. Clearly, leveraging high-level user interests results in higher accuracy as they are more expressive than low-level ones. For instance, using 4 high-level user interests leads to much better accuracy than using 9 low-level user interests on CiteULike-a and ML-1M. On Yelp, we observe the same trend yet it depends on the setting of binding block.\nAnalysis of binding block. We also study binding block via reported results in Table 3. Firstly, bi-directional binding obviously achieves larger performance than uni-directional counterpart, i.e., performing softmax over K prototypes or J clusters only. Secondly, bi-directional binding\u2019s effect is datadependent. While softmax over K prototypes has stronger influence on ML-1M than softmax over J clusters, we observe the opposite trend on CiteULike-a. On Yelp, this effect is metric-dependent.\nInterpretability of user\u2019s interests. We study the interpretability of user\u2019s interests produced by FACETVAE. After training, we retrieve three items with highest score predicted by each interest of a user (see Equation 6) in Table 4. These examples suggest that FACETVAE has the potential to discover the multiple interpretable interests of users. However, we note that user\u2019s interests are derived in an unsupervised manner, which may result in one interest with many items dominates the less popular ones or ambiguous interests.\nDue to limited space, we present more experimental results to understand FACETVAE, including analysis of number of user interests K, values of F and J versus recommendation performance and the influence of micro-disentanglement on recommendation accuracy, in supplementary materials."
+        },
+        {
+            "heading": "6 CONCLUSION",
+            "text": "We introduce FACETVAE to resolve shortcomings of VAE-based disentangled recommendation models, including inadequately item space discovering, same level of granularity between user interests and item space assumption, which causes a dilemma and improperly user interest complexity handling. FACETVAE is characterized by three main innovations 1) disentangling item space under multi-faceted manner, 2) binding compositional user interests from low-level ones discovered from item space and 3) effectively binding user interests via bi-directional binding block. Future work extending FACETVAE includes improving the efficiency of multi-faceted item grouping and discovering the number of facets and the number of clusters per facet in a data-driven manner."
+        },
+        {
+            "heading": "ACKNOWLEDGMENTS",
+            "text": "This research/project is supported by the National Research Foundation, Singapore under its AI Singapore Programme (AISG Award No: AISG2-RP-2021-020)."
+        }
+    ],
+    "title": "LEARNING MULTI-FACETED PROTOTYPICAL USER INTERESTS",
+    "year": 2024
+}

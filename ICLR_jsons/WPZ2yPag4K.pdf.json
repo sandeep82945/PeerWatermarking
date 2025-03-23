@@ -1,0 +1,587 @@
+{
+    "abstractText": "The fluency and creativity of large pre-trained language models (LLMs) have led to their widespread use, sometimes even as a replacement for traditional search engines. Yet language models are prone to making convincing but factually inaccurate claims, often referred to as \u2018hallucinations.\u2019 These errors can inadvertently spread misinformation or harmfully perpetuate misconceptions. Further, manual fact-checking of model responses is a time-consuming process, making human factuality labels expensive to acquire. In this work, we fine-tune language models to be more factual, without human labeling and targeting more open-ended generation settings than past work. We leverage two key recent innovations in NLP to do so. First, several recent works have proposed methods for judging the factuality of open-ended text by measuring consistency with an external knowledge base or simply a large model\u2019s confidence scores. Second, the direct preference optimization algorithm enables straightforward fine-tuning of language models on objectives other than supervised imitation, using a preference ranking over possible model responses. We show that learning from automatically generated factuality preference rankings, generated either through existing retrieval systems or our novel retrieval-free approach, significantly improves the factuality (percent of generated claims that are correct) of Llama-2 on held-out topics compared with RLHF or decoding strategies targeted at factuality. At 7B scale, compared to Llama-2-chat, we observe 58% and 40% reduction in factual error rate when generating biographies and answering medical questions, respectively.",
+    "authors": [],
+    "id": "SP:bbea520658d99fdcade0ad38a75ca1b5f1085a04",
+    "references": [
+        {
+            "authors": [
+                "Ayush Agrawal",
+                "Mirac Suzgun",
+                "Lester Mackey",
+                "Adam Tauman Kalai"
+            ],
+            "title": "Do language models know when they\u2019re hallucinating references?, 2023",
+            "venue": "arXiv preprint arxiv:2305.18248",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Amos Azaria",
+                "Tom Mitchell"
+            ],
+            "title": "The internal state of an LLM knows when its lying",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ralph Allan Bradley",
+                "Milton E Terry"
+            ],
+            "title": "Rank analysis of incomplete block designs: I. the method of paired comparisons",
+            "year": 1952
+        },
+        {
+            "authors": [
+                "S\u00e9bastien Bubeck",
+                "Varun Chandrasekaran",
+                "Ronen Eldan",
+                "Johannes Gehrke",
+                "Eric Horvitz",
+                "Ece Kamar",
+                "Peter Lee",
+                "Yin Tat Lee",
+                "Yuanzhi Li",
+                "Scott Lundberg",
+                "Harsha Nori",
+                "Hamid Palangi",
+                "Marco Tulio Ribeiro",
+                "Yi Zhang"
+            ],
+            "title": "Sparks of artificial general intelligence: Early experiments with gpt-4, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Meng Cao",
+                "Yue Dong",
+                "Jackie Cheung"
+            ],
+            "title": "Hallucinated but factual! inspecting the factuality of hallucinations in abstractive summarization. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+            "venue": "URL https://aclanthology.org/2022.acl-long.236",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Hung-Ting Chen",
+                "Michael Zhang",
+                "Eunsol Choi"
+            ],
+            "title": "Rich knowledge sources bring complex knowledge conflicts: Recalibrating models to reflect conflicting evidence",
+            "venue": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Chantzis",
+                "Elizabeth Barnes",
+                "Ariel Herbert-Voss",
+                "William H. Guss",
+                "Alex Nichol",
+                "Igor Babuschkin",
+                "S. Arun Balaji",
+                "Shantanu Jain",
+                "Andrew Carr",
+                "Jan Leike",
+                "Joshua Achiam",
+                "Vedant Misra",
+                "Evan Morikawa",
+                "Alec Radford",
+                "Matthew M. Knight",
+                "Miles Brundage",
+                "Mira Murati",
+                "Katie Mayer",
+                "Peter Welinder",
+                "Bob McGrew",
+                "Dario Amodei",
+                "Sam McCandlish",
+                "Ilya Sutskever",
+                "Wojciech Zaremba"
+            ],
+            "title": "Evaluating large language models trained on",
+            "venue": "code. ArXiv,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "I-Chun Chern",
+                "Steffi Chern",
+                "Shiqi Chen",
+                "Weizhe Yuan",
+                "Kehua Feng",
+                "Chunting Zhou",
+                "Junxian He",
+                "Graham Neubig",
+                "Pengfei Liu"
+            ],
+            "title": "Factool: Factuality detection in generative ai \u2013 a tool augmented framework for multi-task and multi-domain scenarios, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Paul F Christiano",
+                "Jan Leike",
+                "Tom Brown",
+                "Miljan Martic",
+                "Shane Legg",
+                "Dario Amodei"
+            ],
+            "title": "Deep reinforcement learning from human preferences",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Yung-Sung Chuang",
+                "Yujia Xie",
+                "Hongyin Luo",
+                "Yoon Kim",
+                "James Glass",
+                "Pengcheng He"
+            ],
+            "title": "Dola: Decoding by contrasting layers improves factuality in large language models, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Adam Roberts",
+                "Denny Zhou",
+                "Quoc V. Le",
+                "Jason Wei"
+            ],
+            "title": "Scaling instruction-finetuned language models, 2022",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Shehzaad Dhuliawala",
+                "Mojtaba Komeili",
+                "Jing Xu",
+                "Roberta Raileanu",
+                "Xian Li",
+                "Asli Celikyilmaz",
+                "Jason Weston"
+            ],
+            "title": "Chain-of-verification reduces hallucination in large language models, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Leo Gao",
+                "John Schulman",
+                "Jacob Hilton"
+            ],
+            "title": "Scaling laws for reward model overoptimization, 2022",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Luyu Gao",
+                "Zhuyun Dai",
+                "Panupong Pasupat",
+                "Anthony Chen",
+                "Arun Tejasvi Chaganty",
+                "Yicheng Fan",
+                "Vincent Y. Zhao",
+                "Ni Lao",
+                "Hongrae Lee",
+                "Da-Cheng Juan",
+                "Kelvin Guu"
+            ],
+            "title": "Rarr: Researching and revising what language models say, using language models, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Matthew Honnibal",
+                "Ines Montani"
+            ],
+            "title": "spaCy 2: Natural language understanding with Bloom embeddings, convolutional neural networks and incremental parsing",
+            "venue": "To appear,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Brown",
+                "Jack Clark",
+                "Nicholas Joseph",
+                "Ben Mann",
+                "Sam McCandlish",
+                "Chris Olah",
+                "Jared Kaplan"
+            ],
+            "title": "Language models (mostly) know what they know, 2022. URL http://arxiv.org/ abs/2207.05221",
+            "venue": "Arxiv arxiv:2207.05221",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Lorenz Kuhn",
+                "Yarin Gal",
+                "Sebastian Farquhar"
+            ],
+            "title": "Semantic uncertainty: Linguistic invariances for uncertainty estimation in natural language generation, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Kenneth Li",
+                "Oam Patel",
+                "Fernanda Vi\u00e9gas",
+                "Hanspeter Pfister",
+                "Martin Wattenberg"
+            ],
+            "title": "Inference-time intervention: Eliciting truthful answers from a language model, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Shayne Longpre",
+                "Kartik Perisetla",
+                "Anthony Chen",
+                "Nikhil Ramesh",
+                "Chris DuBois",
+                "Sameer Singh"
+            ],
+            "title": "Entity-based knowledge conflicts in question answering, 2022",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ximing Lu",
+                "Sean Welleck",
+                "Jack Hessel",
+                "Liwei Jiang",
+                "Lianhui Qin",
+                "Peter West",
+                "Prithviraj Ammanabrolu",
+                "Yejin Choi"
+            ],
+            "title": "QUARK: Controllable text generation with reinforced unlearning",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Bill MacCartney",
+                "Christopher D. Manning"
+            ],
+            "title": "Modeling semantic containment and exclusion in natural language inference",
+            "venue": "In Proceedings of the 22nd International Conference on Computational Linguistics (Coling",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Alex Mallen",
+                "Akari Asai",
+                "Victor Zhong",
+                "Rajarshi Das",
+                "Daniel Khashabi",
+                "Hannaneh Hajishirzi"
+            ],
+            "title": "When not to trust language models: Investigating effectiveness of parametric and non-parametric memories. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Potsawee Manakul",
+                "Adian Liusie",
+                "Mark J.F. Gales"
+            ],
+            "title": "Selfcheckgpt: Zero-resource black-box hallucination detection for generative large language models, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Joshua Maynez",
+                "Shashi Narayan",
+                "Bernd Bohnet",
+                "Ryan McDonald"
+            ],
+            "title": "On faithfulness and factuality in abstractive summarization",
+            "venue": "In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pp. 1906\u20131919,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Sewon Min",
+                "Kalpesh Krishna",
+                "Xinxi Lyu",
+                "Mike Lewis",
+                "Wen tau Yih",
+                "Pang Wei Koh",
+                "Mohit Iyyer",
+                "Luke Zettlemoyer",
+                "Hannaneh Hajishirzi"
+            ],
+            "title": "Factscore: Fine-grained atomic evaluation of factual precision in long form text generation, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Niels M\u00fcndler",
+                "Jingxuan He",
+                "Slobodan Jenko",
+                "Martin Vechev"
+            ],
+            "title": "Self-contradictory hallucinations of large language models: Evaluation, detection and mitigation, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Long Ouyang",
+                "Jeff Wu",
+                "Xu Jiang",
+                "Diogo Almeida",
+                "Carroll L. Wainwright",
+                "Pamela Mishkin",
+                "Chong Zhang",
+                "Sandhini Agarwal",
+                "Katarina Slama",
+                "Alex Ray",
+                "John Schulman",
+                "Jacob Hilton",
+                "Fraser Kelton",
+                "Luke Miller",
+                "Maddie Simens",
+                "Amanda Askell",
+                "Peter Welinder",
+                "Paul Christiano",
+                "Jan Leike",
+                "Ryan Lowe"
+            ],
+            "title": "Training language models to follow instructions with human feedback, 2022",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Liangming Pan",
+                "Michael Saxon",
+                "Wenda Xu",
+                "Deepak Nathani",
+                "Xinyi Wang",
+                "William Yang Wang"
+            ],
+            "title": "Automatically correcting large language models: Surveying the landscape of diverse selfcorrection strategies, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Baolin Peng",
+                "Michel Galley",
+                "Pengcheng He",
+                "Hao Cheng",
+                "Yujia Xie",
+                "Yu Hu",
+                "Qiuyuan Huang",
+                "Lars Liden",
+                "Zhou Yu",
+                "Weizhu Chen",
+                "Jianfeng Gao"
+            ],
+            "title": "Check your facts and try again: Improving large language models with external knowledge and automated feedback, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Rafael Rafailov",
+                "Archit Sharma",
+                "Eric Mitchell",
+                "Stefano Ermon",
+                "Christopher D. Manning",
+                "Chelsea Finn"
+            ],
+            "title": "Direct preference optimization: Your language model is secretly a reward model, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Rajkumar Ramamurthy",
+                "Prithviraj Ammanabrolu",
+                "Kiant\u00e9 Brantley",
+                "Jack Hessel",
+                "Rafet Sifa",
+                "Christian Bauckhage",
+                "Hannaneh Hajishirzi",
+                "Yejin Choi"
+            ],
+            "title": "Is reinforcement learning (not) for natural language processing?: Benchmarks, baselines, and building blocks for natural language policy optimization. 2022",
+            "venue": "URL https://arxiv.org/abs/2210.01241",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Anna Rohrbach",
+                "Lisa Anne Hendricks",
+                "Kaylee Burns",
+                "Trevor Darrell",
+                "Kate Saenko"
+            ],
+            "title": "Object hallucination in image captioning",
+            "venue": "Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "John Schulman",
+                "Filip Wolski",
+                "Prafulla Dhariwal",
+                "Alec Radford",
+                "Oleg Klimov"
+            ],
+            "title": "Proximal policy optimization algorithms, 2017",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Chenglei Si",
+                "Zhe Gan",
+                "Zhengyuan Yang",
+                "Shuohang Wang",
+                "Jianfeng Wang",
+                "Jordan Boyd-Graber",
+                "Lijuan Wang"
+            ],
+            "title": "Prompting gpt-3 to be reliable, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Nisan Stiennon",
+                "Long Ouyang",
+                "Jeff Wu",
+                "Daniel M. Ziegler",
+                "Ryan Lowe",
+                "Chelsea Voss",
+                "Alec Radford",
+                "Dario Amodei",
+                "Paul Christiano"
+            ],
+            "title": "Learning to summarize from human feedback",
+            "venue": "Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Katherine Tian",
+                "Eric Mitchell",
+                "Allan Zhou",
+                "Archit Sharma",
+                "Rafael Rafailov",
+                "Huaxiu Yao",
+                "Chelsea Finn",
+                "Christopher D. Manning"
+            ],
+            "title": "Just ask for calibration: Strategies for eliciting calibrated confidence scores from language models fine-tuned with human feedback, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Hugo Touvron",
+                "Thibaut Lavril",
+                "Gautier Izacard",
+                "Xavier Martinet",
+                "Marie-Anne Lachaux",
+                "Timoth\u00e9e Lacroix",
+                "Baptiste Rozi\u00e8re",
+                "Naman Goyal",
+                "Eric Hambro",
+                "Faisal Azhar",
+                "Aurelien Rodriguez",
+                "Armand Joulin",
+                "Edouard Grave",
+                "Guillaume Lample"
+            ],
+            "title": "Llama: Open and efficient foundation language models, 2023a",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Christiano",
+                "Geoffrey Irving"
+            ],
+            "title": "Fine-tuning language models from human preferences, 2020",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "\u2018Lady Bird"
+            ],
+            "title": "Gerwig has written and directed a number of acclaimed independent films, such as \u2018Frances Ha\u2019 and \u2018Mistress America.\u2019 FactTune-MC Greta Gerwig is an American actress and filmmaker. She was born in 1983 in Sacramento, California, and raised in Stanford, California and New York City",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "of Jackie Kennedy"
+            ],
+            "title": "Her directorial debut is the 2012 movie, Lady Bird, which was nominated for the Academy Award for Best Picture",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "FactTune-MC Mukesh"
+            ],
+            "title": "Ambani is an Indian businessman and the CEO of Reliance Industries. He is the richest person in India and the 19th richest person in the world. Ambani was born in 1957 in Aden, Yemen. He moved to India with his family",
+            "year": 1958
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Recent developments in training large language models (LLMs), particularly methods that learn from rankings over responses such as reinforcement learning from human feedback (RLHF) (Christiano et al., 2017; Ziegler et al., 2020; Ouyang et al., 2022), have enabled the development of powerful, engaging dialogue agents. State-of-the-art LLMs are pre-trained on a vast amount of knowledge in large datasets (Touvron et al., 2023a;b) and further fine-tuned to apply this knowledge to follow diverse instructions or complete more specific tasks (Chung et al., 2022; Chen et al., 2021). However, despite these large language models\u2019 exposure to diverse datasets, they are prone to confidently generating incorrect claims. One recent study shows that GPT-3.5 (ChatGPT) produces false citations more often than not when asked to provide the authors of a given study (Agrawal et al., 2023). Nonetheless, other research has demonstrated that in simple question-answering settings, large language models do exhibit systematic markers of uncertainty that indicate their factually unreliable statements (Kadavath et al., 2022; Tian et al., 2023). These results suggest that language models internally represent the limits of their knowledge, leading us to ask: Can language models be fine-tuned to leverage this internal awareness, to avoid making untrue statements in the first place?\nA key source of difficulty in training factual models comes in specifying an objective that adequately captures factuality. As an example, maximum likelihood, the most common objective for pre-training language models, does not always encourage factual predictions. Consider the question \u201cWhere was Yo-Yo Ma born?\u201d A model that continues by near-deterministically producing the text \u201cidk, probably Paris?\u201d is nearly always correct, but receives extremely high loss if the pre-training data contains any other response to the question. On the other hand, a model that hedges probability mass over many possible phrasings and many possible locations (including incorrect ones, like\n*Equal contribution.\nAntarctica) will likely receive much lower loss, as any response observed in the training data will be assigned at least some non-trivial probability. Because the pre-training objective may reward \u2018smearing\u2019 probability mass over many possible responses, language models may generate incorrect statements if they underfit the training data or if asked questions that require knowledge not contained in the pre-training data.\nIn principle, reinforcement learning-based objectives can avoid the failures of existing pre-training objectives through the appropriate choice of a reward function that penalizes factually incorrect statements. However, accurately computing such a reward function can be expensive. Obtaining human labels of factuality is time-consuming and costly; Min et al. (2023) report that professional fact-checkers took approximately 9 minutes to fact-check a single model-generated biography of a well-known individual; it cost about $2,000 to annotate 505 biographies.\nIn light of these challenges, we leverage recent advances in estimating truthfulness without human intervention: a) reference-based automated fact-checking methods that evaluate the extent to which an external knowledge base supports the claims in a piece of text (Min et al., 2023; Chern et al., 2023) and b) reference-free truthfulness evaluations that use a model\u2019s own confidence as a proxy for truthfulness, inspired by Kuhn et al. (2023). Using these truthfulness measures and a dataset of unlabeled prompts (e.g., \u201cWrite a biography of Yo-Yo Ma.\u201d), we sample pairs of completions from a pre-trained model and annotate them with a preference label denoting which has a lower rate of factual errors. Using the recently proposed Direct Preference Optimization (Rafailov et al., 2023) algorithm, we can stably and efficiently learn from such data. Ultimately, this pipeline enables us to fine-tune off-the-shelf language models to produce factual errors less often (with or without a reference knowledge base). See Figure 1 for an overview of our factuality tuning pipeline.\nOur primary contribution is a straightforward approach to optimizing language models for factuality in long-form text generation without human annotation. We validate this approach on two benchmark datasets for evaluating factuality, targeted at generating biographies of popular figures and answering open-ended questions about medical conditions. We find that fine-tuning for factuality outperforms conventional RLHF and produces complementary benefits to LLM decoding strategies that aim to increase factuality. Further, we find qualitative differences in the result of learning from preference pairs scored with reference-based and reference-free truthfulness estimation. Overall, we find that learning factuality from automatically constructed preference pairs is a cost-effective way to increase model factuality without human intervention, reducing the error rate for claims generated by Llama models by over 50% for biographies and 20\u201330% for medical questions."
+        },
+        {
+            "heading": "2 PRELIMINARIES",
+            "text": "Our approach to fine-tuning directly for improved factuality uses the framework of reinforcement learning from preferences over candidate actions or responses. In this section, we provide an overview of reinforcement learning in the context of language models, as well as the specific algorithm we use for preference-based RL, direct preference optimization (Rafailov et al., 2023).\nFine-tuning language models with reinforcement learning. Reinforcement learning (RL) has proven to be an effective approach to fine-tuning language models to extract complex, useful behaviors from their pre-trained weights. In the context of RL, a language model policy \u03c0\u03b8 (typically an autoregressive Transformer) produces a conditional distribution \u03c0\u03b8(y | x) over responses y given an input query x (both x and y are text sequences). The goal of reinforcement learning is to maximize\nthe average reward of outputs generated by the policy, where a reward function r(x, y) assigns a scalar score to an input-output pair that determines its desirability. However, past works have observed that fine-tuning language models with an objective of unconstrained reward maximization can lead to overoptimization (Gao et al., 2022), that is, a policy that achieves high reward through exploitation of the idiosyncrasies of the reward function that are not aligned with the intended behavior. The most commonly-used objective in practice therefore combines reward maximization with a KL-divergence penalty between the language model and its initialization:\nmax \u03c0\u03b8\nEx\u223cDp,y\u223c\u03c0\u03b8(y|x) [ r(x, y)\u2212 \u03b2 log \u03c0\u03b8(y | x) \u03c0ref(y | x) ]\n(1)\nwhere Dp is some dataset of prompts, \u03c0ref is the reference model, usually the result of performing some supervised fine-tuning on a pre-trained model using demonstration data, and \u03b2 is a coefficient that controls the trade-off between reward and divergence (Ouyang et al., 2022; Bai et al., 2022; Stiennon et al., 2020). Optimizing this objective aligns the model with the reward function without deviating too far from the pre-trained reference model, reducing overoptimization. In practice, the most common algorithm used to optimize this objective for language models is proximal policy optimization (PPO; Schulman et al. (2017)), although some variants exist (Ramamurthy et al., 2022; Lu et al., 2022). However, these algorithms are quite complex to implement and tune (Zheng et al., 2023) and require online sampling during training, substantially increasing training time.\nRL from preferences with direct preference optimization (DPO). Most large language models fine-tuned with Eq. 1 optimize a reward function that is learned from a dataset of preference rankings over possible model outputs. The DPO algorithm simplifies RL on language models for this special case (Rafailov et al., 2023), using a dataset of preference pairs D = {x(i), y(i)w , y(i)l }Ni=1 of prompts x and candidate responses yw and yl (typically sampled from \u03c0ref), where yw is preferred over yl (denoted yw \u227b yl). The probability of observing a particular preference pair is assumed to follow a Bradley-Terry model (Bradley & Terry, 1952):\np(yw \u227b yl) = \u03c3(r(x, yw)\u2212 r(x, yl)) (2)\nwhere \u03c3 is the sigmoid function and r(x, y) is an unobserved reward or scoring function. Rafailov et al. (2023) show that the optimal policy \u03c0\u2217 for the problem in Eq. 1 can be found by optimizing a simple classification loss computed directly on the preference data:\nLDPO(\u03c0\u03b8;\u03c0ref) = \u2212E(x,yw,yl)\u223cD [ log \u03c3 ( \u03b2 log\n\u03c0\u03b8(yw | x) \u03c0ref(yw | x) \u2212 \u03b2 log \u03c0\u03b8(yl | x) \u03c0ref(yl | x)\n)] (3)\nDPO enables learning \u03c0\u03b8 from a fixed dataset of preferences, without fitting an explicit reward function or sampling from the policy in the loop of training. These advantages make DPO an attractive choice for fine-tuning language models for objectives other than imitation. However, a challenge remains in constructing preference pairs that encourage greater factuality."
+        },
+        {
+            "heading": "3 CONSTRUCTING PREFERENCES ENCOURAGING FACTUALITY IN LONG-FORM TEXT",
+            "text": "While existing preference learning algorithms like DPO enable efficient, stable learning from objectives other than maximum likelihood, they require data in the form of preferences over possible responses to a prompt. In this section, we propose two classes of approaches to generating such preferences without human labeling effort. One class leverages existing methods to determine consistency with external reference texts as a measure of truthfulness; we propose another, which leverages calibrated model probabilities themselves as a proxy for truthfulness. For both approaches, we are computing an estimated truthfulness score over the claims in each generated response; the response with higher average truthfulness is taken as the preferred response. See Figure 2 for an overview of both procedures for truthfulness scoring. Note that truthfulness scoring is needed only at training time; at test time, we can sample from the model in the normal manner."
+        },
+        {
+            "heading": "3.1 REFERENCE-BASED TRUTHFULNESS ESTIMATION",
+            "text": "An intuitive approach to estimating truthfulness is by estimating the consistency of a given piece of text with a reliable reference text or knowledge base. Several recent works have introduced\nsuch evaluation criteria; for example, FactScore (Min et al., 2023) uses Wikipedia as reference knowledge, and FacTool (Chern et al., 2023) uses Google Search Results. These measures show high agreement with human judgments of factuality, making them attractive sources of truth for preference data construction. Due to the relatively consistent and high quality of Wikipedia articles, we elect to use FactScore as a representative method of reference-based truthfulness scoring.\nTo evaluate a piece of text, FactScore first extracts a list of the atomic claims present in the text using GPT-3.5.1 For each atomic claim, a smaller, more efficient model such as a Llama-1-7B model (Touvron et al., 2023a) that has been fine-tuned for fact-checking is then used to perform natural language inference (MacCartney & Manning, 2008) to determine if a claim is supported by the reference text. The passage\u2019s truthfulness score is the fraction of the extracted atomic claims that are estimated to be supported by the reference text.\nWe note that reference-based truthfulness has the key limitation that it requires access to relevant, high-quality reference texts against which to measure consistency. Such a requirement may limit applicability to domains where ground truth documents are not known and accurate retrieval is difficult, such as in niche domains or less-structured tasks. Further, reference-based truthfulness estimation requires a reliable model to determine if an atomic claim is supported by the article. In light of these limitations, we propose a reference-free approach to estimating truthfulness of open-ended text, which avoids the need for retrieving external knowledge and checking consistency."
+        },
+        {
+            "heading": "3.2 REFERENCE-FREE CONFIDENCE-BASED TRUTHFULNESS ESTIMATION",
+            "text": "To eliminate the need for external knowledge, we leverage the fact that large language models are well-calibrated (Kadavath et al., 2022; Tian et al., 2023); that is, a large language model\u2019s confidence in a generated answer is highly correlated with the probability that the answer is correct. However, an open-ended passage might contain many facts, as well as particular stylistic choices that will have a significant impact on the total probability a model assigns to the text. Therefore, we first perform a claim extraction step, as in reference-based methods, and compute the average confidence of the model over all extracted factual claims as the final truthfulness score. The model used for computing confidence scores essentially takes the place of the reference text datastore.\nMore concretely, we first extract atomic claims from the text using GPT-3.5. We then use GPT-3.5 to convert each claim to a question testing knowledge of the particular fact. Careful rephrasing is necessary to ensure that the rephrased question is unambiguous; for example, the claim \u201cYo-Yo Ma plays the cello\u201d should be converted to the question \u201cWhat instrument does Yo-Yo Ma play?\u201d rather than just \u201cWhat does Yo-Yo Ma play?\u201d as the latter question admits answers of the wrong type. If we were to use the second prompt, a model might assign 50% of its probability on \u201ccello\u201d and 50%\n1https://platform.openai.com/docs/models/gpt-3-5\n2 4 6 10\n12\n14\n16\n18\nCo rre\nct fa\nct s p\ner re\nsp on\nse\nStrict improvement vs. SFT\nSt ric\nt i m\npr ov\nem en\nt v s.\nSF T\nSFT\nITI\nDOLA\nRLHF\nFactTune-FS\nFactTune-MC\nBios\n4 6 8\n10\n11\n12\n13\nSFT\nITI\nDOLA RLHF\nFactTune-FS\nFactTune-MC\nMedicalQA\nIncorrect facts per response\nFigure 3: Factuality tuning (FactTune FS) is the only method that can produce a strict improvement (shaded area) in factuality over the SFT model for the biography generation and medical question-answering problems. That is, only factuality tuning with FactScore-generated preferences (FS) simultaneously increases the number of correct statements and decreases the number of incorrect statements. Other approaches either increase the number of correct statements at the cost of more incorrect statements, or reduce the number of incorrect statements at the cost of fewer correct statements. Factuality tuning with model confidence-generated preferences (MC) lies just outside the strict improvement region.\nof its probability on \u201cbasketball.\u201d However, the model\u2019s low confidence is caused by the ambiguity of the question, not low confidence in the instrument that Yo-Yo Ma plays. We detail the prompts used for question generation in Appendix A.2.\nAfter each claim is converted to a minimally ambiguous question, we resample an answer 20 times, typically from the base model (e.g. Llama-1-7B) that is fine-tuned, to estimate the model\u2019s uncertainty over the answer. We use a few-shot prompt to encourage well-formed answers. We bin these answers by equivalence, using either heuristic string matching of the responses or using GPT-3.5 to assess if the answers are semantically equivalent, inspired by Kuhn et al. (2023). Our heuristic string match checks whether the words in the answer, excluding stop words, are the same. We compare these choices in Section 4.4. The fraction of responses falling into the largest bin is the final truthfulness score used for the fact, essentially representing the model\u2019s confidence for this fact.\nIn Section 4.4 we also evaluate a simpler approach to extracting atomic facts, by simply using named entities identified by a classifier (Honnibal & Montani, 2017). This approach avoids using an external large language model for claim extraction and question rephrasing; instead, we simply resample the tokens in the original named entity in the response 20 times, binning them into buckets with equivalence checking, and again measure the fraction of responses falling into the largest bin as the confidence score."
+        },
+        {
+            "heading": "3.3 FACTUALITY TUNING: PUTTING IT ALL TOGETHER",
+            "text": "Given a choice of truthfulness estimator, we can now construct a preference dataset for factuality tuning a given language model from a set of unlabeled prompts. First, we sample n multiple candidate responses for each prompt from the model with simple temperature sampling with temperature 1.0 (using few-shot prompting for models that have not been fine-tuned). For each response, we then compute the truthfulness score with the chosen estimator (reference-based or reference-free). Finally, for all ( n 2 ) pairs of responses to each prompt, we simply choose the response with the higher\ntruthfulness score as the preferred response. For a set of m prompts, we ultimately generate m ( n 2 ) \u2212k preference pairs, where k is the number of pairs with equal scores. Finally, we fine-tune the model using the DPO pipeline, using all model responses as targets for the SFT stage."
+        },
+        {
+            "heading": "4 EXPERIMENTS",
+            "text": "Our experiments evaluate the extent to which factuality can be learned through preference-based reinforcement learning, using the fully automated preference-generation pipeline described in Section 3. We call the model fine-tuned with our reference-based metric FactTune-FS and the model fine-\ntuned with our model confidence-based score, which is completely reference-free, FactTune-MC. For all of our experiments, samples for model confidence are taken from Llama-1-7b.\nDatasets. We conduct our experiments on two tasks: generating biographies and medical questionanswering. For biographies, we generated a dataset consisting of 355 diverse well-known individuals (296 train, 59 test) with 10 short-paragraph biographies each. For medical question answering, we used a dataset of 200 diverse common medical conditions (150 train, 50 test) with 6 questions about each condition and 6 short-paragraph answers per question. The prompts were generated with GPT3.5, and the answers were sampled from Llama-1-7B using a few-shot prompt for each dataset. We found that our procedure consistently resulted in well-formed and informative responses, albeit with possible factual errors. Because FactScore uses retrieval against a given Wikipedia article, we generate data based on individuals and medical conditions that have Wikipedia pages. See Table 1 for the summary stats and examples from our datasets.\nBaselines. We compare factuality tuning with inference-time intervention (Li et al., 2023, ITI) and decoding by contrasting layers (Chuang et al., 2023, DOLA), applied to the SFT model for each task. For ITI, we supervise the training of the linear probes with FactScore labels: we take batches of atomic facts extracted from the training samples and bias the models\u2019 activations from the incorrect to correct atomic facts to determine the direction of the intervention. In the case of Llama-2, we also compare against \u2018standard\u2019 RLHF with human preference labels (Touvron et al., 2023b).\nEvaluation. To evaluate each generated response, we follow the FactScore procedure to extract the number of correct and incorrect facts. Then, to check that the model responses are still relevant and helpful after actuality fine-tuning, we also use GPT-3.5 to determine whether each fact is relevant to the question or not (using the prompt in Appendix A.2). For biographies, we observed that essentially 100% of facts were relevant to the individual, so we skip the relevance computation to save costs. For each dataset, we report the number of correct and relevant facts (# Correct), the number of inaccuracies (# Incorrect), and the proportion of correct relevant facts out of the total number of extracted facts (% Correct). Note that the total number of facts may vary between generations. We validate our evaluation metrics in Sec. A.1."
+        },
+        {
+            "heading": "4.1 FINE-TUNING FOR FACTUALITY ACROSS DOMAINS",
+            "text": "In this section, we apply our methodology for learning factuality to Llama-1-7b and Llama-2-7b in multiple domains. We show the results in Table 2. Learning from reference-based factualityscored pairs (FactTune-FS) consistently improves factual accuracy compared to RLHF models and decoding-based factuality baselines by at least 23% on biographies and 12% on medical questionanswering. FactTune-FS reduces the number of factual errors and maintains no more than a slight decrease, if not increase, in the amount of correct information generated. Factuality tuning from model-confidence scores (FactTune-MC) also reduces error rate and improves the factuality of RLHF models on both datasets, without any external reference information."
+        },
+        {
+            "heading": "4.2 FINE-TUNING CHAT MODELS FOR FACTUALITY",
+            "text": "Most widely used practical chatbots today are LMs trained with RLHF to follow diverse instructions in a way that is helpful to users. In this section, we investigate the ability of our human-free factuality tuning method to improve the factuality of RLHF chat models. Using Llama-2-7b-Chat, we find that fine-tuning an RLHF LM with both factuality and semantic entropy-based rewards can further improve its factuality without significantly decreasing the total number of facts, as shown in Table 3. In other words, factuality tuning can be composed with RLHF to further improve the factuality of chat models.\nWhile our quantitative metrics demonstrate a clear increase in factual accuracy, we also investigate how factuality fine-tuning impacts other aspects of model performance and generalizes. Using GPT4 as a judge, we find that FactTune can improve factuality without decreasing fluency compared to the SFT model (examples in Appendix Tables 8-9). GPT-4 chooses FactTune as more fluent on 50% of samples (n=40), while a baseline method for factuality, DOLA, is rated as more fluent on 34% of samples (n=40), often due to repetition. Additionally, FactTune has a more objective rather than conversational writing style compared to the SFT model on 77.5% of Llama-1 samples (n=40) and 65.6% of Llama2 samples (n=32) as judged by GPT-4. Lastly, we find that fine-tuning for factuality generalizes across datasets. Fine-tuning Llama-2-Chat on biographies to evaluate on MedicalQA and vice versa (OOD FactTune-FS) improves the factuality more than RLHF (Table 3)."
+        },
+        {
+            "heading": "4.3 COMPLEMENTARY BENEFITS OF FACTUALITY TUNING AND DECODING-TIME",
+            "text": "FACTUALITY INTERVENTIONS\nBesides fine-tuning for factuality, multiple existing works aim to improve LLM factuality through inference time interventions to either the decoding process or the model parameters themselves. We explore the possibility of applying both of these types of methods together, i.e., using factualityboosting decoding methods on a model fine-tuned with our factuality tuning procedure. In Table 4 we present the results of stacking both approaches. We find that in most cases, DOLA can even further increase the accuracy of factuality fine-tuned models, with one exception for Llama-2 on the biography task. While not a comprehensive evaluation of combining methods for improving factuality, this result suggests that different approaches to enhancing factuality may operate through complementary mechanisms."
+        },
+        {
+            "heading": "4.4 IMPACT OF DESIGN DECISIONS OF OPEN-ENDED MODEL CONFIDENCE SCORING",
+            "text": "We consider the impacts of different choices for each step in computing a reference-free truthfulness score for factuality tuning: sampling, confidence metric, and equivalence matching.\nFirst, for the resampling procedure, one approach (Atomic) is to convert each extracted atomic fact into a corresponding \u2018atomic question\u2019 using GPT-3.5, then sample answers to each question from the base LLM. Another approach (Entity) extracts entities (named entities for Biographies, noun chunks for Medical QA using nltk) and re-sampling the extracted entity in-line. Atomic question extraction has the potential to be more comprehensive and precise, while named entity extraction is a less expensive proxy. In Table 5, we observe that atomic question extraction generally outperforms named entity extraction, although the difference in accuracy on Medical QA is small.\nNext, we study the choice of confidence metric. The results in Table 5 show that the choice of metric between maximum confidence\u2014the probability of the largest semantic sample bin\u2014or the entropy over the semantic bins varies, but maximum confidence provides a noticeable improvement to biographies under the atomic question setting.\nFinally, when binning samples, we consider replacing the heuristic equivalence match with an equivalence check by GPT-3.5. Surprisingly, using GPT-3.5 to determine equivalence between two samples produces worse-performing preference pairs than using a simple string matching heuristic described in Section 3.2. We suspect that this effect can potentially be caused by the following: our heuristic equivalence match consistently underestimates semantic entropy across all examples, while GPT-3.5 matching could either over or underestimate samples, resulting in noisier preference pairs, even if GPT-3.5 equivalence check scores are closer to the true semantic entropy on average. GPT-4 could reduce this error, but we do not provide results due to its cost."
+        },
+        {
+            "heading": "5 RELATED WORK",
+            "text": "Many works have identified reducing factual errors (sometimes called \u2018hallucinations\u2019) as a key challenge for building more reliable language models (Lewis et al., 2020; Kadavath et al., 2022; Zhang et al., 2023), even for the most powerful language models (Bubeck et al., 2023). Other use of the term \u2018hallucination\u2019 refers to summarization or translation system outputs not supported by the reference text (Maynez et al., 2020; Zhang et al., 2020) even if they are factual (Cao et al., 2022). Other work uses \u2018hallucination\u2019 to describe vision-language models producing outputs not grounded in a visual input, e.g., a captioning system describing an object that doesn\u2019t exist in the image (Rohrbach et al., 2018). In our case, we focus on statements that are factually incorrect (or, inconsistent with a set of \u2018authoritative\u2019 texts, such as Wikipedia).\nSeveral works describe methods for detecting likely factual errors through sensitivity to perturbations in the prompt (Xu et al., 2023), high diversity of responses under resampling (Kadavath et al., 2022; Mu\u0308ndler et al., 2023; Kuhn et al., 2023; Manakul et al., 2023), or inconsistency with external knowledge sources (Min et al., 2023; Chern et al., 2023), or properties of internal activations (Azaria & Mitchell, 2023). Others go beyond detecting errors, correcting them after they have been generated (Peng et al., 2023; Gao et al., 2023; Dhuliawala et al., 2023). These approaches typically rely on retrieving relevant data from a trusted knowledge base and use another LLM to verify consistency; however, retrieval-based methods face key challenges, namely reliable resolution of conflicts between parametric and retrieved knowledge (Longpre et al., 2022; Chen et al., 2022) as well as maintaining improvements in factuality as model size increases (Mallen et al., 2023). Further, retrieval-based methods add significant system complexity; the most common open-source consumer language models thus use purely parametric models (Touvron et al., 2023a). The FactScore variant of our approach uses retrieval only during training, avoiding inference time complexity. In principle, any existing criterion could be used to generate preferences (see ;\u0327 we aim to show that even choosing relatively simple criteria leads to substantial improvements in factuality.\nMost similar to ours, some approaches attempt to prevent the generation of factual errors in the first place, using prompting strategies (Si et al., 2023) or perturbing the internal representations of the model (Chuang et al., 2023; Li et al., 2023). Unlike using a fixed heuristic for identifying an internal \u2018factuality\u2019 dimension, we optimize directly for the end goal of generating factual statements, which we find shows a greater improvement in factuality. Finally, while most past work has focused on short-form NLG tasks like short-form question-answering (Kadavath et al., 2022), we explore ways to measure model confidence over factual information in long-form, unstructured text and estimate truthfulness in a reference-free manner (i.e., don\u2019t require any external knowledge base or annotations)."
+        },
+        {
+            "heading": "6 CONCLUSION",
+            "text": "In this paper, we show a practical, effective strategy to improve a language model\u2019s ability to generate factual content, specifically focusing on long-form generations. We develop and study two different approaches to estimating the truthfulness of long-form text and optimize for these criteria using preference-based learning. In addition to existing reference-based truthfulness estimators that leverage external knowledge to establish the truth of a particular statement, we introduce a novel reference-free procedure for estimating truthfulness that uses the language model\u2019s own uncertainty as an indication of factuality. Our experiments show that fine-tuning a language model with either criterion reliably reduces the number of incorrect facts (i.e. hallucinations) that the model generates. Reference-free approaches like the one we introduced provide a particularly scalable self-supervision strategy to improve factuality, eliminating the need for a reference corpus of \u2018gold\u2019 texts.\nThe experimental results suggest a number of avenues for future work. First, because of the limited research and thus the limited benchmarks on the factuality of long-form language model generations, we proposed two new tasks to benchmark our approach. These tasks are representative of but do not fully cover the range of scenarios where we would hope to improve factuality. Furthermore, our experiments provide evidence for improving the factuality of dialogue models that are already finetuned with RLHF, but still leave open the question of how best to combine typical RLHF rewards and approaches with factuality rankings. Similarly, exploring additional ways to combine factuality tuning with existing methods for improving factuality, such as in our factuality tuning + DOLA experiment, may be a fruitful direction for future research. Further, future work might explore alternative approaches to constructing factuality preferences, such as using self-correction (Pan et al., 2023). Finally, we explore only 7B models in this work. Scaling up our factuality tuning recipe to larger models (and larger preference datasets) may reduce hallucinations even further.\nReproducibility Statement. We explain the steps of our fine-tuning method in Section 3. In Section 4.1, we provide details on the dataset (dataset statistics, how it was generated, and examples), as well as how the evaluation is completed and how we implemented the baselines. In the experiment subsections and captions, we provide additional implementation or reporting details. In the appendix, we provide the exact GPT-3.5 prompts used for the extraction steps of our reference-free scoring method. An anonymized implementation of our experiments can be provided during the review period."
+        },
+        {
+            "heading": "A APPENDIX",
+            "text": "A.1 VALIDATING METRICS FOR FACTUALITY\nOur experiments primarily use counts of correct and incorrect facts computed by FactScore as the main evaluation metrics, as FactScore is automated and has been shown to exhibit good agreement with human fact-checkers (Min et al., 2023). Nonetheless, we aim to verify that our results are not specific or overfit to the FactScore criterion. In this section, we provide an evaluation with (1) human evaluators hired through Prolific.co2 and (2) GPT-4.\nTo acquire human fact-checking results, we provide each human evaluator with a prompt, a generated response, and the title of the Wikipedia article they should use for fact-checking the response. We ask the human study participants to count the total number of facts and the number of incorrect facts in the response, and we divide these to obtain the human-rated accuracy. We provide the results in Table 6, where on average humans rated our FactTune-FS model for both datasets significantly higher than the SFT model.\nFurther, we ask GPT-4 to evaluate the factuality of a given response by counting the number of factual errors. We observe that the GPT-4 model ratings and FactScore model ratings are highly correlated, and GPT-4 provides another evaluation metric that demonstrates that FactTune-FS significantly reduces average error compared to the SFT models on both datasets (see Figure 4). Taken together, these results suggest that the improvements in factuality are not the result of exploitation of our evaluation protocol.\nA.2 PROMPTS\nTable 7 contains the prompts used with GPT-3.5 to convert statements into questions for model confidence-based truthfulness estimation.\nA.3 SAMPLE MODEL GENERATIONS\nSee Tables 8 and 9 for samples generated by several different models. After factuality tuning, the model does produce somewhat terser responses.\n2Human evaluators were compensated at an estimated hourly rate of $16-18."
+        }
+    ],
+    "title": "FINE-TUNING LANGUAGE MODELS FOR FACTUALITY REDUCES HALLUCINATION",
+    "year": 2023
+}

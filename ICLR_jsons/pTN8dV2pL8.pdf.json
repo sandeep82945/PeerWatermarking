@@ -1,0 +1,608 @@
+{
+    "abstractText": "Learning surfaces from neural radiance field (NeRF) became a rising topic in Multi-View Stereo (MVS). Recent Signed Distance Function (SDF)\u2013based methods demonstrated their ability to reconstruct accurate 3D shapes of Lambertian scenes. However, their results on reflective scenes are unsatisfactory due to the entanglement of specular radiance and complicated geometry. To address the challenges, we propose a Gaussian-based representation of normals in SDF fields. Supervised by polarization priors, this representation guides the learning of geometry behind the specular reflection and captures more details than existing methods. Moreover, we propose a reweighting strategy in the optimization process to alleviate the noise issue of polarization priors. To validate the effectiveness of our design, we capture polarimetric information, and ground truth meshes in additional reflective scenes with various geometry. We also evaluated our framework on the PANDORA dataset. Comparisons prove our method outperforms existing neural 3D reconstruction methods in reflective scenes by a large margin.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "NOISY POLAR"
+        },
+        {
+            "affiliations": [],
+            "name": "IZATION PRIORS"
+        },
+        {
+            "affiliations": [],
+            "name": "Yang LI"
+        },
+        {
+            "affiliations": [],
+            "name": "Ruizheng WU"
+        },
+        {
+            "affiliations": [],
+            "name": "Jiyong LI"
+        },
+        {
+            "affiliations": [],
+            "name": "Yingcong CHEN"
+        }
+    ],
+    "id": "SP:9199683ce6edaf8304ea619362744dbe69dfc1ba",
+    "references": [
+        {
+            "authors": [
+                "Marco Ament",
+                "Carsten Dachsbacher"
+            ],
+            "title": "Anisotropic ambient volume shading",
+            "venue": "IEEE Transactions on Visualization and Computer Graphics,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Gary A Atkinson",
+                "Edwin R Hancock"
+            ],
+            "title": "Recovery of surface orientation from diffuse polarization",
+            "venue": "IEEE Transactions on Image Processing,",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "David C Banks"
+            ],
+            "title": "Illumination in diverse codimensions",
+            "venue": "In SIGGRAPH, pp",
+            "year": 1994
+        },
+        {
+            "authors": [
+                "Jonathan T. Barron",
+                "Ben Mildenhall",
+                "Matthew Tancik",
+                "Peter Hedman",
+                "Ricardo Martin-Brualla",
+                "Pratul P. Srinivasan"
+            ],
+            "title": "Mip-nerf: A multiscale representation for anti-aliasing neural radiance fields",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "J. Berkmann",
+                "T. Caelli"
+            ],
+            "title": "Computation of surface geometry and segmentation using covariance techniques",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 1994
+        },
+        {
+            "authors": [
+                "Christoph Bregler",
+                "Aaron Hertzmann",
+                "Henning Biermann"
+            ],
+            "title": "Recovering non-rigid 3d shape from image streams",
+            "venue": "In CVPR, pp",
+            "year": 2000
+        },
+        {
+            "authors": [
+                "Guangcheng Chen",
+                "Li He",
+                "Yisheng Guan",
+                "Hong Zhang"
+            ],
+            "title": "Perspective phase angle model for polarimetric 3d reconstruction",
+            "venue": "In ECCV,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Xiaozhi Chen",
+                "Huimin Ma",
+                "Ji Wan",
+                "Bo Li",
+                "Tian Xia"
+            ],
+            "title": "Multi-view 3d object detection network for autonomous driving",
+            "venue": "In CVPR,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Yi Ping Chen",
+                "Ming Der Yang"
+            ],
+            "title": "Micro-scale manufacture of 3d printing",
+            "venue": "In Applied Mechanics and Materials,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Edward Collett"
+            ],
+            "title": "Field guide to polarization",
+            "venue": "In SPIE,",
+            "year": 2005
+        },
+        {
+            "authors": [
+                "Robert L. Cook",
+                "Kenneth E. Torrance"
+            ],
+            "title": "A reflectance model for computer graphics",
+            "venue": "In SIGGRAPH,",
+            "year": 1981
+        },
+        {
+            "authors": [
+                "Zhaopeng Cui",
+                "Jinwei Gu",
+                "Boxin Shi",
+                "Ping Tan",
+                "Jan Kautz"
+            ],
+            "title": "Polarimetric multi-view stereo",
+            "venue": "In CVPR,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Fran\u00e7ois Darmon",
+                "B\u00e9n\u00e9dicte Bascle",
+                "Jean-Cl\u00e9ment Devaux",
+                "Pascal Monasse",
+                "Mathieu Aubry"
+            ],
+            "title": "Improving neural implicit surfaces geometry with patch warping",
+            "venue": "In CVPR,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Akshat Dave",
+                "Yongyi Zhao",
+                "Ashok Veeraraghavan"
+            ],
+            "title": "Pandora: Polarization-aided neural decomposition of radiance",
+            "venue": "arXiv preprint arXiv:2203.13458,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "James J Foster",
+                "Shelby E Temple",
+                "Martin J How",
+                "Ilse M Daly",
+                "Camilla R Sharkey",
+                "David Wilby",
+                "Nicholas W Roberts"
+            ],
+            "title": "Polarisation vision: overcoming challenges of working with a property of light we barely see",
+            "venue": "The Science of Nature,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Qiancheng Fu",
+                "Qingshan Xu",
+                "Yew-Soon Ong",
+                "Wenbing Tao"
+            ],
+            "title": "Geo-neus: Geometry-consistent neural implicit surfaces learning for multi-view reconstruction",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yoshiki Fukao",
+                "Ryo Kawahara",
+                "Shohei Nobuhara",
+                "Ko Nishino"
+            ],
+            "title": "Polarimetric normal stereo",
+            "venue": "In CVPR,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yasutaka Furukawa",
+                "Brian Curless",
+                "Steven M Seitz",
+                "Richard Szeliski"
+            ],
+            "title": "Towards internet-scale multi-view stereo",
+            "venue": "In CVPR, pp",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Yasutaka Furukawa",
+                "Carlos Hern\u00e1ndez"
+            ],
+            "title": "Multi-view stereo: A tutorial",
+            "venue": "Foundations and Trends\u00ae in Computer Graphics and Vision,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Silvano Galliani",
+                "Katrin Lasinger",
+                "Konrad Schindler"
+            ],
+            "title": "Massively parallel multiview stereopsis by surface normal diffusion",
+            "venue": "In ICCV, pp",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Wenhang Ge",
+                "Tao Hu",
+                "Haoyu Zhao",
+                "Shu Liu",
+                "Ying-Cong Chen"
+            ],
+            "title": "Ref-neus: Ambiguity-reduced neural implicit surface learning for multi-view reconstruction with reflection",
+            "venue": "arXiv preprint arXiv:2303.10840,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Amos Gropp",
+                "Lior Yariv",
+                "Niv Haim",
+                "Matan Atzmon",
+                "Yaron Lipman"
+            ],
+            "title": "Implicit geometric regularization for learning shapes",
+            "venue": "arXiv preprint arXiv:2002.10099,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Xiaojie Guo",
+                "Xiaochun Cao",
+                "Yi Ma"
+            ],
+            "title": "Robust separation of reflection from multiple images",
+            "venue": "In CVPR, pp",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Inseung Hwang",
+                "Daniel S. Jeon",
+                "Adolfo Mu\u00f1oz",
+                "Diego Gutierrez",
+                "Xin Tong",
+                "Min H. Kim"
+            ],
+            "title": "Sparse ellipsometry: Portable acquisition of polarimetric svbrdf and shape with unstructured flash",
+            "venue": "photography. TOG,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Achuta Kadambi",
+                "Vage Taamazyan",
+                "Boxin Shi",
+                "Ramesh Raskar"
+            ],
+            "title": "Polarized 3d: High-quality depth sensing with polarization cues",
+            "venue": "In ICCV,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "James T Kajiya",
+                "Brian P Von Herzen"
+            ],
+            "title": "Ray tracing volume densities",
+            "venue": "ACM SIGGRAPH computer graphics,",
+            "year": 1984
+        },
+        {
+            "authors": [
+                "Soma Kajiyama",
+                "Taihe Piao",
+                "Ryo Kawahara",
+                "Takahiro Okabe"
+            ],
+            "title": "Separating partially-polarized diffuse and specular reflection components under unpolarized light sources",
+            "venue": "In WACV,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Bernhard Kerbl",
+                "Georgios Kopanas",
+                "Thomas Leimk\u00fchler",
+                "George Drettakis"
+            ],
+            "title": "3d gaussian splatting for real-time radiance field rendering",
+            "venue": "ACM Transactions on Graphics,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Virginia Klema",
+                "Alan Laub"
+            ],
+            "title": "The singular value decomposition: Its computation and some applications",
+            "venue": "IEEE Transactions on automatic control,",
+            "year": 1980
+        },
+        {
+            "authors": [
+                "Yuan Liu",
+                "Peng Wang",
+                "Cheng Lin",
+                "Xiaoxiao Long",
+                "Jiepeng Wang",
+                "Lingjie Liu",
+                "Taku Komura",
+                "Wenping Wang"
+            ],
+            "title": "Nero: Neural geometry and brdf reconstruction of reflective objects from multiview images",
+            "venue": "In SIGGRAPH,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "William E Lorensen",
+                "Harvey E Cline"
+            ],
+            "title": "Marching cubes: A high resolution 3d surface construction algorithm. In Seminal graphics: pioneering efforts that shaped the field",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Nelson Max"
+            ],
+            "title": "Optical models for direct volume rendering",
+            "venue": "IEEE Transactions on Visualization and Computer Graphics,",
+            "year": 1995
+        },
+        {
+            "authors": [
+                "Lars Mescheder",
+                "Michael Oechsle",
+                "Michael Niemeyer",
+                "Sebastian Nowozin",
+                "Andreas Geiger"
+            ],
+            "title": "Occupancy networks: Learning 3d reconstruction in function space",
+            "venue": "In CVPR,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Ben Mildenhall",
+                "Pratul P. Srinivasan",
+                "Matthew Tancik",
+                "Jonathan T. Barron",
+                "Ravi Ramamoorthi",
+                "Ren Ng"
+            ],
+            "title": "Nerf: Representing scenes as neural radiance fields for view synthesis",
+            "venue": "In ECCV,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Merlin Nimier-David",
+                "Delio Vicini",
+                "Tizian Zeltner",
+                "Wenzel Jakob"
+            ],
+            "title": "Mitsuba 2: A retargetable forward and inverse renderer",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Michael Oechsle",
+                "Songyou Peng",
+                "Andreas Geiger"
+            ],
+            "title": "Unisurf: Unifying neural implicit surfaces and radiance fields for multi-view reconstruction",
+            "venue": "In ICCV,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Johannes L Sch\u00f6nberger",
+                "Enliang Zheng",
+                "Jan-Michael Frahm",
+                "Marc Pollefeys"
+            ],
+            "title": "Pixelwise view selection for unstructured multi-view stereo",
+            "venue": "In ECCV,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Johannes Lutz Sch\u00f6nberger",
+                "Enliang Zheng",
+                "Marc Pollefeys",
+                "Jan-Michael Frahm"
+            ],
+            "title": "Pixelwise view selection for unstructured multi-view stereo",
+            "venue": "In ECCV,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Bruce D Smith",
+                "Stan H Ward"
+            ],
+            "title": "On the computation of polarization ellipse parameters. Geophysics",
+            "year": 1974
+        },
+        {
+            "authors": [
+                "Dor Verbin",
+                "Peter Hedman",
+                "Ben Mildenhall",
+                "Todd Zickler",
+                "Jonathan T Barron",
+                "Pratul P Srinivasan"
+            ],
+            "title": "Ref-nerf: Structured view-dependent appearance for neural radiance fields",
+            "venue": "In CVPR,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Peng Wang",
+                "Lingjie Liu",
+                "Yuan Liu",
+                "Christian Theobalt",
+                "Taku Komura",
+                "Wenping Wang"
+            ],
+            "title": "Neus: Learning neural implicit surfaces by volume rendering for multi-view reconstruction",
+            "venue": "arXiv preprint arXiv:2106.10689,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Zhi-Qin John Xu",
+                "Yaoyu Zhang",
+                "Tao Luo",
+                "Yanyang Xiao",
+                "Zheng Ma"
+            ],
+            "title": "Frequency principle: Fourier analysis sheds light on deep neural networks",
+            "year": 1901
+        },
+        {
+            "authors": [
+                "Kai Zhang",
+                "Fujun Luan",
+                "Qianqian Wang",
+                "Kavita Bala",
+                "Noah Snavely"
+            ],
+            "title": "PhySG: Inverse rendering with spherical gaussians for physics-based material editing and relighting",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jinyu Zhao",
+                "Yusuke Monno",
+                "Masatoshi Okutomi"
+            ],
+            "title": "Polarimetric multi-view inverse rendering",
+            "venue": "In ECCV,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Dave"
+            ],
+            "title": "The primal polarization information captured in one shot is a four-directional polarization image obtained by using four directional linear polarizers at angles of 0\u25e6",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "R. W"
+            ],
+            "title": "However, the perspective project matrix of normals is quite different from points. For 3D points, the transform is non-linear projecting points to the image plane. On the contrary, the projection of normals is proven",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ref-NeRF Verbin"
+            ],
+            "title": "2022) is a state-of-the-art method for reflective object rendering. However, its mesh is inaccessible, and the normals are noisy due to the Integrated Position Encoding (IPE), so we did not involve it in the overall comparison. Instead, we show an example of the Cat scene to show the incomparable normals in Fig.10",
+            "year": 2022
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Reconstructing 3D shapes from 2D images (Furukawa et al., 2015) is a fundamental problem in computer vision and graphics, with downstream applications such as 3D printing (Chen & Yang, 2014), autonomous driving (Chen et al., 2017), and Computer Aided Design (Furukawa et al., 2010). Although diffuse objects are precisely reconstructed, reflective and textured-less scenes remain challenging. Traditional Multi-View Stereo (MVS) methods (Bregler et al., 2000) rely on stereo matching across views, which is hindered in the presence of specular surfaces and texture absence. Recent methods utilizing implicit neural representation learning for 3D reconstruction have shown promising accuracy (Mescheder et al., 2019; Yariv et al., 2021), yet they overlook the specular reflection between light rays and surfaces, failing to adequately handle glossy objects with high-frequency specular reflection.\nExisting methods (Zhang et al., 2021; Liu et al., 2023; Dave et al., 2022) attempt to separate specular reflection components from radiance to improve the reconstruction process. These methods model the interaction of light rays and surfaces by Bidirectional Reflectance Distribution Functions (BRDFs) and estimate them by neural networks. However, the inverse problem posed by BRDFs formulation is highly ill-posed (Guo et al., 2014), and low-frequency bias (Xu et al., 2019) of neural BRDFs making the learned geometry over-smoothed (Liu et al., 2023). Therefore, high-frequency geometry with specular reflection shown in Fig. 1 (a) is intractable for them. Besides, a few methods employ polarization priors to facilitate the learning of specular reflection because they reveal information about surface normals. However, polarization information is always concentrated in\nspecular-dominant regions and noisy in diffuse regions (Kajiyama et al., 2023), making the reconstruction process in diffuse-dominant regions distorted.\nFaced with the bias of neural BRDF and noise issues of polarization priors, we present a novel perspective for reconstructing the detailed geometry of reflective objects. Our key idea is to extend the geometry representation from scalar SDFs to Gaussian fields of normals supervised by polarization priors. Given a surface point, the normals within its neighborhood are approximated by a 3D Gaussian. And it\u2019s a more informative representation of geometry. The mean shows the overall (low-frequency) orientation of the surface, while the covariance captures high-frequency details. Coincidentally, the representation can be splatted into the image plane as 2D Gaussians, as illustrated in Fig. 1 (b). The splatting skips the disentangled specular radiance. Learning of the 2D Gaussians can be directly supervised by the polarization information about surface normals. Hence, it circumvents the separation of complex geometry and specular reflection and manages to learn detailed geometry.\nFurthermore, to tackle the noise issues of polarization priors, we introduce a Degree of Polarization (DoP) based reweighting strategy. This strategy adaptively balances the supervision of radiance and polarization priors, enhancing the reconstructing accuracy in diffuse-dominant regions.\nIn summary, our contributions are as follows:\n\u2022 We propose a novel polarization-based Gaussian representation of detailed geometry to guide the learning of geometry behind specular reflection.\n\u2022 We propose a DoP reweighing strategy to alleviate noise and imbalance distribution problems of polarization priors.\n\u2022 We collect a new challenging multi-view dataset consisting of both radiance and polarimetric images with more diverse and challenging scenes."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": ""
+        },
+        {
+            "heading": "2.1 MULTI-VIEW 3D RECONSTRUCTION",
+            "text": "Traditional Multi-view Stereo focuses on the extraction of cross-view features to generate 3D points. (Scho\u0308nberger et al., 2016; Galliani et al., 2015) try to estimate the depth map of the observed scene with multi-view consistency and fuse the depth maps into dense point clouds. These methods suffer from accumulating errors due to complex pipelines, and features are hard to be extracted from reflective objects. (Mescheder et al., 2019) explicitly models the objects\u2019 occupancy in a voxel grid to guarantee a complete object model is created. However, the resolution of the voxel limits the accuracy of the reconstructed surface. Recently, the success of NeRF (Mildenhall et al., 2020), which uses a simple MLP to encode the color and density information for a scene, inspired researchers to resort to implicit representation for multi-view 3D reconstruction. The representative works are Unisurf (Oechsle et al., 2021), NeuS (Wang et al., 2021), and VolSDF (Yariv et al., 2021), which exploit an MLP to model a Signed Distance Function (SDF) for a target scene. These methods optimize the implicit representation, i.e., SDF, by minimizing the MSE loss between the rendered pixel\u2019s radiance value and the corresponding pixel\u2019s radiance value in GT images. Such a paradigm works\nwell with Lambertian surfaces. However, only view-conditioned radiance fields fail in reflective scenes."
+        },
+        {
+            "heading": "2.2 BRDF FOR REFLECTIVE OBJECTS RECONSTRUCTION",
+            "text": "In the regions with complex geometry, BRDFs always exhibit high-frequency variations due to the normals terms, while the low-frequency implicit bias of neural networks (Xu et al., 2019) disables neural BRDFs from predicting these abrupt changes. It always results in over-smoothed geometry. For example, NeRO (Liu et al., 2023) adopts Micro-facet BRDF (Cook & Torrance, 1981) parameterized by material and normal distribution terms. Although its results of smooth mirror-like objects are excellent, the spatial continuity of neural BRDF is a barrier to the combination of complex geometry and specular reflection. In the regions with complex geometry, sole multi-view images with disentangled radiance result in severe ill-posedness of the inverse problem, as is shown in Fig. 1 (a). Moreover, explicit estimation of anisotropic normals distribution has been used in rendering delicate objects, such as anisotropy shading of hairs (Banks, 1994), to improve the perception of orientation and shapes (Ament & Dachsbacher, 2015). However, anisotropic normals distribution in neural SDFs for 3D reconstruction remains under-defined and non-trivial. Our method proposes 3D Gaussians, of which anisotropic 3D covariance is more informative than the scalar normals distribution term in NeRO. The latter only measures the concentration of normals at a surface point."
+        },
+        {
+            "heading": "2.3 MULTI-VIEW 3D RECONSTRUCTION WITH POLARIZATION",
+            "text": "Polarization prior reveals the azimuth angle of the surface normal, i.e., the angle between the normal projection onto the image plane and the positive x-axis of the image. Shape-from-polarization has been investigated by other papers (Atkinson & Hancock, 2006; Foster et al., 2018; Fukao et al., 2021; Cui et al., 2017; Kadambi et al., 2015; Zhao et al., 2020) before the invention of neural 3D reconstruction. But most of them are focused on common scenes. For example, PMVIR (Zhao et al., 2020) exploits the relation of the polarization angle and the azimuth angle of normals but with only Lambert shading, and thus it cannot treat reflective objects at all. Neural 3D Reconstruction with polarization priors has also been explored. Sparse Ellipsometry (Hwang et al., 2022) develops a device to capture polarimetric information and 3D shapes concurrently. However, their reconstruction is always disturbed by the noise in diffuse-dominant regions. For example, PANDORA (Dave et al., 2022) extends radiance in BRDF into polarimetric dimensions while the geometry of diffuse regions cannot be learned properly."
+        },
+        {
+            "heading": "2.4 GAUSSIANS IN 3D SCENE REPRESENTATION",
+            "text": "Gaussians are used to represent the attributes of 3D scenes. Mip-NeRF (Barron et al., 2021) encodes Gaussian regions of space rather than infinitesimal points for anti-aliasing. (Zwicker et al., 2001) proposes Gaussian splatting that taking volume data as 3D Gaussians and nearly projects the 3D Gaussian to the 2D one (Kerbl et al., 2023). (Kerbl et al., 2023) implements the splatting pipeline on the NeRF for real-time rendering. In numerical geometry, (Berkmann & Caelli, 1994) calculates the covariance matrix from the projections of the normal vectors to highlight the edges and local geometry of surfaces. Inspired by them, we demonstrate a further fact that taking surface normals as 3D Gaussians and going through a similar splatting pipeline would exactly be transformed into 2D Gaussians. Our 2D Gaussians are coincidentally available for polarization priors. Thus, supervised by polarization priors, the learned 3D Gaussians capture more details, which represent the average orientation of normals by means and the changes within the neighborhood by covariance matrices."
+        },
+        {
+            "heading": "3 METHODS",
+            "text": ""
+        },
+        {
+            "heading": "3.1 PRELIMINARY OF POLARIZATION",
+            "text": "Here, we introduce the concept of polarization and its mathematical relation to surface normals projected to the captured images. The prior contributes to the disentanglement of specular radiance and geometry.\nPolarimetry describes the vibration status of light waves. Since light is a type of transverse wave that only oscillates in the plane perpendicular to the light path (Collett, 2005), the full polarimetric cues of rays are always represented by planar ellipses (Smith & Ward, 1974). The magnitude of vectors inside these ellipses alludes to the amplitude of the light wave vibration along the vectors, as shown in Fig. 2. Common light sources, such as sunlight and LED spotlights, emit unpolarized light, i.e., the light vibrates equally in all directions. In our captured scenes, objects are mostly illuminated directly by light sources, so we assume that the incident light is unpolarized. During reflection, the vibration in each direction is absorbed unequally, and unpolarized incident light turns into partially polarized reflected light captured by polarization cameras. The Angle of Polarization (AoP) and Degree of Polarization (DoP) are two cues of the polarization ellipse functionally related to projected surface normals at the points of reflection, which can be formulated as:\n\u03c6(i, j) = 1\n2 arctan\ns2(i, j) s1(i, j) , \u03c1(i, j) =\n\u221a s21(i, j) + s 2 2(i, j)\ns0(i, j) , {\u03c6,\u03c1} \u2208 RH\u00d7W , (1)\nwhere \u03c6,\u03c1 are AoP and DoP, (i, j) is the pixel index, and s = [s0, s1, s2, s3] is Stokes vector directly calculated from polarization capture. Generally, in specularity-dominant regions, the relation between projected normals and AoP is fixed as Fig 2(b) and the equation \u03c8 + \u03c0\n2 \u2261 \u03c6 mod \u03c0.\nMoreover, DoP is significantly higher in these regions. Details of polarization analysis are shown in the Appendix."
+        },
+        {
+            "heading": "3.2 GAUSSIAN GUIDED POLARIMETRIC NEURAL 3D RECONSTRUCTION PIPELINE",
+            "text": "Polarimetric neural 3D reconstruction refers to reconstructing surfaces by neural implicit surface learning, given N calibrated multi-view images X = {Ci}Ni=1 with pixel-aligned polarization priors Y = {\u03c6i,\u03c1i}Ni=1. First, we introduce a general pipeline of learning surface by volume rendering, taking NeuS (Wang et al., 2021) as an example. Sec. 3.2.2 introduces the 3D Gaussian of surface normals and its transforms to 2D Gaussian in the image plane. It represents the geometry of surface points more precisely and thus can separate detailed geometry from high-frequency specular radiance. 3.2.3 presents our full optimization containing radiance loss and Gaussian loss, which measures the gap between these 2D Gaussians and polarization priors. We propose a DoP reweighing strategy to alleviate the aforementioned noise and imbalanced distribution of polarization priors. It balances the influence of radiance and polarimetric cues adaptively. Finally, Sec. An overview of the entire framework is shown in Fig. 3."
+        },
+        {
+            "heading": "3.2.1 LEARNING SURFACE BY VOLUME RENDERING",
+            "text": "NeRF (Mildenhall et al., 2020) proposed a novel render pipeline with a combination of spatial neural radiance fields and volume rendering (Kajiya & Von Herzen, 1984) to synthesize high-quality novel view images. Unlike traditional explicit meshes, the representation of 3D scenes in NeRF\nis decomposed into spatial-dependent density fields and radiance fields depending on both spatial position and viewing direction. Then, the color of an arbitrary pixel with a ray r = o + td passed through can be rendered by volume composition along the ray:\nC\u0302(r) = K\u2211 k=1 Ti\u03b1ici(ri,d), Ti = exp (\u2212 i\u22121\u2211 j=1 \u03b1j\u03b4j), \u03b1j = 1\u2212 exp (\u2212\u03c3j(rj)\u03b4j), (2)\n, whereK points {x|o+tid}Ki=1 on the ray are sampled. \u03c3i and ci are approximated volume density and radiance predicted by neural networks with position x and viewing direction d as inputs. \u03b4i is the length of sampled interval [ti\u22121, ti]. \u03b1i and Ti denote the transmittance and alpha value of points, and by them the final color is alpha composited (Max, 1995). The neural network is optimized by the mean square error between the ground truth color C(r) in the image and the rendered color C\u0302(r).\nDespite realistic novel view images, the geometry of scenes extracted from learned density fields is inaccurate with floating artifacts since the shape is not defined in the density field. NeuS (Wang et al., 2021) defines surfaces as the zero-level set of Signed Distance Field (SDF), and density is derived from SDF:\n[d(xi), f(xi)] = f(xi), \u03b1i = max\n( \u03a6s (d (xi))\u2212 \u03a6s (d (xi+1))\n\u03a6s (d (xi)) , 0\n) , ci = c(xi,ni,d, fi), (3)\nwhere c and f are the geometry network and radiance network, d(xi) is the signed distance to the surface and fi = f(xi) is the geometry feature. \u03b1i is defined by SDF with Laplace distribution \u03a6s (x) = (1 + e\n\u2212sx)\u22121, where the variance s is a trainable parameter. The volume rendering process is analogous to NeRF, while the radiance network takes normals ni = \u2207xd(xi) and geometry feature fi as additional inputs."
+        },
+        {
+            "heading": "3.2.2 GAUSSIAN SPLATTING OF NORMALS",
+            "text": "Neural SDF-based 3D reconstruction excels at smooth Lambertian objects. With neural BRDF defining the specular reflection between rays and surfaces, smooth surfaces of reflective objects can also be properly learned. However, the low-frequency implicit bias of neural networks (Xu et al., 2019) is a barrier for both of them to recover delicate geometry behind specular reflection, such as abrupt normal changes in NeRO (Liu et al., 2023). Thus, we propose a 3D Gaussian estimation of distributions of normals as an additional representation of geometry details. We show how it can be splatted to the image plane, making it available for 2D polarization supervision.\nInstead of separate vectors assigned to each point, the normal within the neighborhood of an arbitrary position xi is assumed as a Gaussian:\nG(x|xi) = N (n(xi),\u03a3(xi)) = 1\n(2\u03c0) 3 2 |\u03a3(xi)| 1 2\nexp ( \u22121 2 (x\u2212 n(xi))T\u03a3(xi)\u22121(x\u2212 n(xi)) ) , z\n(4) where n \u2208 R3 is the normal, and \u03a3 \u2208 R3\u00d73 is the covariance of the Gaussian. Given a ray with discretization {xi|x+ tid}Kk=1, additional M positions within the neighborhood are super-sampled\nto estimate the covariance. In this paper, M is 6 containing xi\u22121, xi+1 and four positions around the ray. Hence, the unbiased estimation of Gaussian can be formulated as:\nG\u0302(x|xi) = N (n(xi), \u03a3\u0302(xi)) = N n(xi), 1 M \u2212 1 M\u2211 j=1 ( n(xji )\u2212 n(xi) )( n(xji )\u2212 n(xi) )T , (5)\nwhere n(xji ) = \u2207xd(x j i ),n(x j i ) \u2208 R3. However, those 3D Gaussians are not accessible in captured 2D images, and volume rendering in Sec. 3.2.1 only takes 3D scalar fields into account, making the projection of 3D Gaussians non-trivial. Alternatively, (Zwicker et al., 2001) presents a splatting approach treating colors in 3D space as Gaussian kernels and visualizing them on the image plane. We apply analogous transforms and further prove our normal-based 3D Gaussians are exactly splatted to 2D Gaussians. Given a viewpoint, the transform can be formulated as:\nG\u0302(x|xi)p = N (JWn(xi),JW\u03a3\u0302(xi))WTJT) = N ([\nnp(xi) 0\n] , [ \u03a3\u0302p(xi)\n0\n]) , (6)\nwhere W \u2208 R3\u00d73, J \u2208 R3\u00d73 are viewing transform matrix and normal projection matrix (Chen et al., 2022), respectively. Derivation of them is shown in the Appendix. It shows that only the first two rows of the transformed mean vector and the upper 2 \u00d7 2 square block of the transformed covariance matrix remain non-zero, splatting 3D Gaussians to 2D Gaussians in the image plane. For simplification, 2D Gaussians are also denoted by G\u0302(x|xi)p = N (np(xi), \u03a3\u0302p(xi)), where np \u2208 R2, \u03a3\u0302p(xi)) \u2208 R2\u00d72. Moreover, the SVD of the covariance matrix \u03a3\u0302p = V\u0302\u039b\u0302V\u0302T circumvents the ill-posedness of the covariance matrix and reveals its relation to anisotropic normal distribution. Intuitively, if the geometry appears smooth from the imaging perspective, then the corresponding normals of the neighborhood will be projected to similar vectors, resulting in an insignificant deviation of the eigenvalues. Otherwise, the deviation would be significant. Eigenvectors also show the local shape of the position, as shown in Fig. 4 (e). Finally, all 2D Gaussians on the ray passing through the pixel u is composited by volume rendering:\nG\u0302(u) = N\n( K\u2211\nk=1\nTi\u03b1inp(xi), K\u2211 k=1 Ti\u03b1i\u03a3\u0302p(xi)\n) = N (np(u), \u03a3\u0302p(u)), (7)\nwhere Ti and \u03b1i are in Eq. 2. np(u) \u2208 R2, \u03a3\u0302p(u) \u2208 R2\u00d72. The mean of 3D Gaussians n(xi), which is splatted to np(u), represents the overall orientation of xi. And the covariance \u03a3\u0302(xi)) and splatted \u03a3\u0302p(u)) in the image model the high-frequency details. In this way, our representation captures more details than NeuS and other methods based on the neural BRDF parameterized by isotropic normals distribution. Another main strength of those 2D Gaussians is direct supervision by polarization priors, which is introduced in Sec. 3.2.3."
+        },
+        {
+            "heading": "3.2.3 OPTIMIZATION WITH REWEIGHTED POLARIZATION PRIORS",
+            "text": "The 2D Gaussian in Sec. 3.2.2 can be directly extracted from AoP priors {\u03c6i}Ni=1 in Eq. 1 by:\nG\u0303p(u|ui) =N (n\u0303p(ui), \u03a3\u0303p(ui))\n=N sv(\u03c8(ui)), 1 M \u2032 \u2212 1 M \u2032\u2211 j=1 ( v(\u03c8(uji ))\u2212 v(\u03c8(ui))) )( v(\u03c8(uji ))\u2212 v(\u03c8(ui))) )T , (8)\nwhere u(j)i = (x (j) i )p is the corresponding pixel index of (super-sampled) points on the ray. Therefore, M \u2032 = 4 since xi\u22121 and xi+1 are on the same ray as xi. v(\u03b8) represents a 2D unitary vector rotated by \u03b8. \u03a8 \u2261 \u03c6 + \u03c02 mod \u03c0 is the azimuth angle of normals, derived from the AoP in Eq. 1. And s is a scale factor. Similar to Sec. 3.2.2, the estimated covariance matrix is decomposed into \u03a3\u0303 = V\u0303\u039b\u0303V\u0303T. We define the degree of anisotropy (DoA) of those 2D Gaussians as \u039b0\u039b1 . 2D Gaussians saturated by DoA are visualized in Fig. 4 (e). In this Fig, color is concentrated to and coherent along the edges of the scene. It shows DoA is higher in the region with complicated geometry and surface changes most dramatically along singular vectors of covariance. Before optimization, the polarization prior AoP is reweighted by DoP to alleviate the aforementioned observational noise and imbalanced distribution problem in Sec. 1. The noise of AoP is mainly generated by diffuse reflection because it\u2019s always weakly polarized (Kajiyama et al., 2023). The DoP in diffusedominant regions is significantly lower than specular-dominant ones, as shown in Fig. 4 (c) and (d). Thus, the reweighted AoP defined as \u03c6 \u00b7 \u03c1 is proposed as an alternative supervision with less noise. Meanwhile, radiance is disentangled with surroundings in specular reflection dominant areas. To adaptively balance radiance and polarization priors, our full loss function during reconstructing is defined as:\nL =\u03b1(1\u2212 \u03c1)Lcolor + \u03b2\u03c1(Lmean + Lcov) + \u03b3Leik + \u03b4Lmask, Lcolor = \u2225 C\u0302(u)\u2212C(u) \u22252, Lmean =\u2225 \u03c6\u0302(np(u))\u2212\u03c6(u) \u22251,\nLcov = (\u2225\u2225\u2225\u2225\u2225\u039b\u03021\u039b\u03020 \u2212 \u039b\u03031\u039b\u03030 \u2225\u2225\u2225\u2225\u2225 1 + \u03b2\u2032 < V\u0302, V\u0303 > ) (u), Leik = 1 K K\u2211 i=1 (\u2225\u2207xd(xi)\u22252 \u2212 1)2, (9)\nwhere Lcolor and Lmask are the radiance rendering loss and the BCE loss of object masks in NeuS (Wang et al., 2021). Splatted 2D Gaussians is supervised by \u03c8(u) and \u03a3\u0303p(u) in Eq. 8. \u03c6\u0302(np(u)) \u2261 \u03c8(u) + \u03c02 mod \u03c0 and \u03c8 is the azimuth angle of normals. The supervision of radiance and polarization priors are reweighted by the DoP \u03c1. Especially, only Anisotropy (ratio of singular values) and eigenvectors are supervised to avoid scaling and numerical issues. If the local shape is like a plane, normals will change smoothly in all directions, and the Anisotropy approaches 1. If there are some details like edges, normals tend to change abruptly and exhibit directionality, represented by eigenvectors. Leik is a regularization term of the gradient of SDF widely used (Gropp et al., 2020). \u03b1, \u03b2, \u03b3 and \u03b4 are hyper-parameters."
+        },
+        {
+            "heading": "4 EXPERIMENTS",
+            "text": "To evaluate the effectiveness of our method, we tested GNeRP on objects from multiple scenes and compared them with existing state-of-the-art neural 3D reconstruction methods.\nPolRef Dataset The methods are evaluated on the PANDORA dataset (Dave et al., 2022) and captured scenes by ourselves. The PANDORA includes 3 reflective objects (Owl, Blackvase, and Gnome) with polarization priors. However, their ground truth shapes are unavailable for quantitative evaluation. Moreover, the diversity of materials, geometry, and illumination is not enough for overall comparisons. Only the geometry of the Gnome scene is complicated but less reflective. Only a mirror-like ball in the Blackvase reflects surroundings other than highlights. Other common datasets, including Shiny Blender (Verbin et al., 2022), lack polarization priors for our method. To comprehensively evaluate the performance of 3D reconstruction methods, a new challenging multi-view dataset named PolRef was collected, consisting of objects with reflective and less-textured surfaces captured with various illumination. Radiance images and aligned polarization priors were captured in one shot using polarization cameras. To obtain precise and complete ground truth shapes, objects were produced using SLA 3D printers, with an accuracy tolerance of \u00b10.1mm. Detailed descrip-\ntions are shown in the Appendix. The dataset will be released to facilitate further research on 3D reconstruction in more challenging scenes in the future.\nExperimental Settings GNeRP is built upon NeuS (Wang et al., 2021). The geometry network and radiance network in Fig. 3 is the same as that of NeuS. Since the covariance loss Lcovin Eq. 9 refines the details of the geometry, it will not be activated during the initial 50K steps. The model is trained for 200k iterations and takes about 6 hours on a server with 4 NVIDIA RTX 3090 Ti GPUs for the reconstruction. After optimization, the meshes are extracted from learned SDF by Marching Cubes (Lorensen & Cline, 1998) with a resolution of 5123. The hyper-parameter settings are shown in the Appendix D.3."
+        },
+        {
+            "heading": "4.1 COMPARISON WITH STATE-OF-THE-ART METHODS",
+            "text": "We conducted the comparison of reconstruction accuracy between our methods and several state-ofthe-art methods, including baseline methods for neural 3D reconstruction (Unisurf (Oechsle et al., 2021), VolSDF (Yariv et al., 2021), and NeuS (Wang et al., 2021)), two view-consistency based methods (NeuralWarp (Darmon et al., 2022) and Geo-NeuS (Fu et al., 2022)), two new methods for reconstruction of reflective objects (NeRO (Liu et al., 2023) and Ref-NeuS (Ge et al., 2023)), and a polarization-based method (PANDORA (Dave et al., 2022)).\nA qualitative comparison between our method and state-of-the-art methods specially designed for reflective objects is shown in Fig. 7, which demonstrates that our method significantly improves the geometry details and accuracy of normals. In the Ironman scene, NeRO reconstructed an oversmoothed geometry. Due to the spatial continuity of neural BRDF, it failed to reconstruct the highfrequency armor details with abrupt normal changes. The shape of Ref-NeuS is more accurate, but the sole scalar SDF is not able to predict the geometry details. The duck scene is more reflective with a combination of highlights and reflection of surroundings. Although Ref-NeuS detected the reflective regions, it was still misled by the environment radiance and reconstructing concave holes. The results of PANDORA are over-smoothed in Ironman and disturbed by noise in polarization priors in Duck. Additional comparisons of different scenes are shown in the Appendix. We conduct\nquantitative comparisons on the four scenes with ground truth meshes in our dataset. The evaluation metric is Chamfer Distance according to NeuS (Wang et al., 2021) and Unisurf (Oechsle et al., 2021). Scores are reported in Table 1, which shows our method reconstructs more precise meshes in all four scenes. NeRO (Liu et al., 2023) needs environment information to calculate occlusion loss, and Unisurf also learns occupancy from backgrounds. Training them with masks failed directly, so we report the scores without masks in Tab. 1 denoted by *. Geo-NeuS needs sparse points from Structure-from-Motion (SfM) Scho\u0308nberger et al. (2016) to calculate SDF loss and select the pairs based on SfM for the warping process. We did the sparse reconstruction in COLMAP and followed the pairs selection method in NeuralWarp. Full polarimetric acquisition (Stokes vector [s0, s1, s2], see in the Appendix) is required by PANDORA. We processed the raw polarization capture to follow its data conventions. Sparse reconstruction of reflective scenes was noisy and incomplete, resulting in the worst accuracy by Geo-NeuS and NeuralWarp. Ref-NeuS demonstrated comparable scores on all scenes, but our method still outperformed."
+        },
+        {
+            "heading": "4.2 ABLATION STUDY",
+            "text": "To validate the effectiveness of the proposed modules, we test the following three settings as shown in Tab. 2. W/Lmean refers to the naive supervision of \u03c6 and azimuth angle of normals in SDF. Due to the noise, the results are worse. W/Lmean refers to the polarization supervision with only covariance. The reconstruction is focused on details and results in the worst scores. W/ ReW. Lmean indicates the reweighted losses (1\u2212 \u03c1)Lcolor + \u03c1Lmean. Similarly, w/ReW. Lcov represents (1\u2212 \u03c1)Lcolor + \u03c1Lcov. The reweighting does improve the efficiency of polarization priors. Finally, the full setting shows the best scores. Additional visualization is shown in the Appendix."
+        },
+        {
+            "heading": "5 CONCLUSION",
+            "text": "We propose GNeRP to reconstruct the detailed geometry of reflective scenes. In GNeRP, we propose a new Gaussian-based representation of normals and introduce polarization priors to supervise it. We propose a DoP reweighing strategy to resolve noise issues in polarization priors. We collect a new, challenging multi-view dataset with non-Lambertian scenes to evaluate existing methods more comprehensively. Experimental results demonstrate the superiority of our method."
+        },
+        {
+            "heading": "A METHOD DETAILS",
+            "text": "A.1 POLARIZATION ANALYSIS\nThe primal polarization information captured in one shot is a four-directional polarization image obtained by using four directional linear polarizers at angles of 0\u25e6, 45\u25e6, 90\u25e6, and 135\u25e6. After the demosaicing process, the four directional images can be denoted as I0, I45, I90, and I135 respectively. For computational efficiency, the Stokes representation is widely used, such as in PANDORA Dave et al. (2022), which is defined as follows:\nS =  s0s1s2 s3  =  I0 + I90I0 \u2212 I90I45 \u2212 I135 0  , I \u2208 RH\u00d7W\u00d73. (10) It is noted that the fourth component of Stokes vector is zero because it represents circular polarization, which is not captured by linear polarizers. The vector also covers radiance information, which can be derived as:\nIrad = 1\n2 s0. (11)\nHowever, the Stokes vector is always noisy and redundant for 3D reconstruction. This is because, in addition to the orientation of surfaces, the Stokes vector is affected by environmental variables and the nature of objects. These variables include, but are not limited to, illumination, roughness, and material properties. PANDORA Dave et al. (2022) supervises the full vector for inverse rendering, but it\u2019s unnecessary for learning geometry only. Therefore, we refine the Stokes vector into the AoP and DoP cues, as they are most related to the geometry within the Stokes vector. Calculating AoP and DoP from Stokes vector can be formulated as follows:\n\u03c6(i, j) = 1\n2 arctan\ns2(i, j)\ns1(i, j)\n\u03c1(i, j) =\n\u221a s1(i, j)2 + s2(i, j)2\ns0(i, j)\n, {\u03c6,\u03c1} \u2208 RH\u00d7W , (12)\nwhere \u03c6(i, j) is the AoP at the pixel (i, j), lying in the interval of [0, \u03c0]. And \u03c1(i, j) is the DoP ranging from 0 to 1.\nA.2 PERSPECTIVE TRANSFORM OF GAUSSIANS\nSimilar to (Zwicker et al., 2001), transforms of 3D Gaussians to 2D Gaussians are performed based on the lemma:\nLemma 1 Given a 3D affine transform u = \u03a6(x) = Mx+ c, a 3D Gaussian G(x) = N (\u00b5,\u03a3) is transformed into: G\u2032 (u) = N (\u03a6(\u00b5),M\u03a3MT ) (13) It can be proven by replacing x with \u03a6\u22121(u).\nDuring the imaging, points in the world space are projected to 2D pixels through the view transform matrix and perspective projection matrix. The view transform converts the world coordinates to the camera ones. It can be formulated as \u03a6(x) = Rx + t, where R is a rotation matrix and t is a translation vector. For bound normals, the translation will not change their orientation, and thus the corresponding matrix W = R. However, the perspective project matrix of normals is quite different from points. For 3D points, the transform is non-linear projecting points to the image plane. On the contrary, the projection of normals is proven to be linear, which can be formulated as (Chen et al., 2022):\nz\u00d7 (v \u00d7 n) = [\u2212vznx + vxnz,\u2212vzny + vynz, 0]T = [ \u2212vz 0 vx 0 \u2212vz vy 0 0 0 ] n = Jn, (14)\nwhere n is the normal vector, v is the vector points to the location of the normal vector, i.e., the direction of the ray, and z = [0, 0, 1]T . Since both of the view transform and projection in Eq. 14 are affine, the structure of Gaussian holds. Moreover, the last row of J is all-zero, making only the upper 2 \u00d7 2 square block of JMJT and the first two rows of Jx are non-zero. It explains the last term in Eq. 6.\nA.3 GAUSSIANS ESTIMATION AND DECOMPOSITION\nGiven a normal vector of a 3D point n(xi) with normal vectors of super-sampled points with the neighborhood {n(xji )}Mj=1, a 3D Gaussian N (n(xi), \u03a3\u0302(xi)) can be estimated by Eq.5. Then, the 3D Gaussian is transformed into the camera coordinates N (np(xi), \u03a3\u0302p(xi)) by Eq. 6. Finally, all 3D Gaussians along the same ray are composited into a 2D Gaussian N (np(u), \u03a3\u0302p(u)) in the pixel u by volume rendering in Eq. 7, where xi = o(u) + tid(u). Then Singular Value Decomposition (SVD) (Klema & Laub, 1980) is performed to get \u039b\u0302(u):\n\u03a3\u0302p(u) = V\u0302\u039b\u0302V\u0302 T(u) (15)\nFor 2D polarization priors, 2D Gaussians are estimated by Eq. 8. For the sample xji , the corresponding 2D pixel can be located by the ray xji = o + tid\nj since dj and the pixel uj is bijective. From the AoP \u03c6(u), we can derive the orientation of the projected normal vector \u03c8. It\u2019s represented by:\ns \u00b7 v(\u03c8(uj)) = [cos(\u03c8(uj), sin(\u03c8(uj)]T , \u03c8(uj) = ( \u03c6(uj) + \u03c0\n2 ) mod \u03c0 , (16)\nwhere s is the scale factor equal to the magnitude of the projected normal vector. Through Eq. 8, 2D Gaussians of polarization images can be estimated. Finally the same SVD is performed to get \u039b\u0303."
+        },
+        {
+            "heading": "B POLREF DATASET",
+            "text": "Since ground truth geometry is inaccessible in the most of existing polarimetric multi-view datasets, we sampled a new dataset named PolRef Dataset to evaluate our method comprehensively. The dataset is split into real captured scenes and synthetic scenes.\nDataset Collection The dataset consists of 8 scenes (Ironman, Snorlax, Duck, Cow, Cat, Vase, Bunny, and Dragon). For real scenes, the capture pipeline is illustrated in Fig. 6 (a). Radiance images and aligned polarimetric priors were captured in one shot using polarization cameras (LUCID PHX050S-Q and HIKIVISION MV-CH050-10UP). We captured multiple views around the object. The objects were put on a calibration disk designed for 360\u25e6 capture to get poses. The data processing formulation to extract polarization priors is listed in Sec. A.1. To obtain precise and complete ground truth shapes, 4 objects (Ironman, Snorlax, Duck, and Cow) were produced using SLA 3D printers, with an accuracy tolerance of \u00b10.1mm, given STL files as ground truth shapes. To enhance the diversity of the dataset, two non-3D printed objects were also included in the data collection process. Moreover, to increase the diversity and evaluate our method more comprehensively, synthetic data (Bunny and Dragon) is generated using the Mitsuba renderer (Nimier-David et al., 2019). Mitsuba is able to render polarization priors (Stokes vectors) from meshes with pre-defined attributes of scenes, as illustrated in Fig. 6 (b). In addition to polarization priors, ground truth normal maps\nare accessible through rendering, making the evaluation of normals accuracy available. The dataset will be released to facilitate further research on 3D reconstruction in more challenging scenes in the future.\nEvaluation Protocol For real and synthetic datasets, the accuracy of reconstructed meshes is measured by Chamfer Distance (CD), which can be formulated as:\nCD(P1, P2) = 1\n2n n\u2211 i=1 |xi \u2212Nearest (xi, P2)|+ 1 2m n\u2211 j=1 |xj \u2212Nearest (xj , P1)| , (17)\nwhere xi is the vertex, n,m are the number of vertices in meshes, and Nearest(x, P ) = argminx\u2032\u2208P \u2225x\u2212 x\u2032\u2225 is nearest neighboring function. Mean Angular Error (MAE) of normals is introduced to the evaluation of synthetic data since ground truth normals are available, which can be formulated as:\nMAE(n\u0302,n) = 1\nNM arccos\n( n\u0302ji \u00b7 n j i\n\u2225n\u0302ji\u2225\u2225n j i\u2225\n) , (18)\nwhere nji is the ground truth normal vector at the pixel i in the view j, and N , M are the number of views and pixels, respectively. Compared to CD, MAE is more sensitive to details of shapes, where normals change abruptly."
+        },
+        {
+            "heading": "C ADDITIONAL COMPARISONS WITH EXISTING METHODS",
+            "text": "C.1 VISUAL COMPARISON ON PANDORA DATASET\nVisual comparison is shown in Fig. 7. In the Owl scene, all baseline methods fail to reconstruct feathers, of which surfaces are mistakenly concave. Because baseline methods recognize dark radiance as the cue of deeper surface points. In the Black Vase and Cat scenes, Unisurf and NeuS suffer from severe shape-radiance ambiguity as they cannot disentangle specular reflection with surface color and wrongly reconstruct the shapes of reflected scenes. VolSDF distinguishes reflection and color more clearly than them but still worse than our method in glossy areas, as shown in the Cat scene. In the Vase scene, even though we have tried as many combinations of hyper-parameters as we can, Unisurf still fails to reconstruct rough geometry. VolSDF isn\u2019t able to find correct surface points from dark radiance, as the hole of the vase is wrongly recognized as a convex surface. The reflection area is also distorted in the shape reconstructed by NeuS. Collectively, our method outperforms baseline methods by a large margin in all four scenes.\nC.2 COMPARISON ON SYNTHETIC POLREF DATASET\nWe also evaluated our method on the generated dataset. In contrast to real datasets, ground truth normal maps are accessible in generated scenes, so we introduced the Mean Angular Error (MAE) of normals as an additional evaluation metric. Compared to Chamfer Distance (CD), MAE can reflect the accuracy of reconstructed details better. Results demonstrate that our method still outperforms existing methods for reconstructing reflective objects. Tab. 3 shows our method outperforms both\nin mesh distance (CD) and accuracy of normals (MAE) quantitatively. Visualization of normals is shown in Fig. 8. Similar to other experiments, the normals reconstructed by existing methods always be over-smoothed, resulting in a lack of details. For instance, the scale details of the dragon scene are omitted in other methods, particularly in the NeRO method. PANDORA fails in both scenes because estimating Stokes vectors with these complex geometries is challenging.\nC.3 VISUAL COMPARISON ON DIFFUSE DATASET\nTo validate the generalization ability of our method, evaluation of diffuse-dominant objects is conducted on the Camera scene captured in PMVIR (Zhao et al., 2020). Visual comparison with our baseline method NeuS is shown in Fig. 9. Quantitative comparisons are unavailable since the ground truth mesh isn\u2019t collected in the dataset.\nAs is shown in the figure, our method reconstructs more details of small structures such as buttons, knobs, and slots of the camera. It proves our method can handle diffuse objects concurrently.\nC.4 VISUAL COMPARISON OF NORMALS WITH REF-NERF\nRef-NeRF Verbin et al. (2022) is a state-of-the-art method for reflective object rendering. However, its mesh is inaccessible, and the normals are noisy due to the Integrated Position Encoding (IPE), so we did not involve it in the overall comparison. Instead, we show an example of the Cat scene to show the incomparable normals in Fig.10."
+        },
+        {
+            "heading": "D ADDITIONAL ABLATION ANALYSIS",
+            "text": "D.1 VISUALIZATION OF EFFECTIVENESS OF DOP REWEIGHTING\nDoP efficiently alleviates the noise in polarization prior. One of the most significant scenes is Gnome in the PANDORA dataset, as is shown in Fig. 11.\nD.2 VISUALIZATION OF EFFECTIVENESS OF COVARIANCE\nLmean is our key design regarding to Gaussians of normals. In our experiments, it significantly improves the reconstruction of abrupt normal changes at the mouth of the Duck. It\u2019s shown in Fig. 12.\nD.3 ABLATION STUDY OF HYPER-PARAMETERS\nIn our experiments, hyperparameters include weights of loss functions (\u03b1, \u03b2, \u03b3, and \u03b4) and the number of super-sampled points M . \u03b3 and \u03b4 are fixed at 0.1 to follow previous methods. \u03b2 and \u03b2\u2032\nare fixed at 0.1. However, \u03b1 is set to either 0.1 or 1, depending on the overall ratio of reflection regions. Increased reflection regions indicate a decrease in the reliability of radiance cues, and therefore, the value of \u03b1 should be decreased.\nD.3.1 WEIGHT OF RADIANCE LOSS\nWe test different weights of the radiance loss function on the Bunny scene. Results are shown in Fig. 13. Fig. 13 (d) demonstrates that if \u03b1 is too low, the method cannot extract efficient radiance\ncues, and then the regions with less polarization prior are incorrectly interpreted as holes.\nD.3.2 NUMBER OF SUPER-SAMPLING WITHIN NEIGHBORHOOD\nIn the paper, M = 6 additional points within the neighborhood of xi are sampled for simplification. To validate the robustness of this choice, we sampled double points around the ray. Results are shown in Tab. 4. It shows that increasing M will not enhance the accuracy significantly.\nScene M = 6 M = 10"
+        },
+        {
+            "heading": "E LIMITATION",
+            "text": "We observe that a major limitation of our method is that the reconstruction relies on polarimetric imaging. As illustrated in Fig. 6, radiance images and polarization priors are generated through polarimetric imaging. Moreover, due to hardware limitations, the imaging quality of polarimetric cameras is generally slightly lower compared to regular RGB cameras, and it is more prone to noise in shaded scenes. Furthermore, existing acceleration techniques for NeRF, such as Instant-NGP and Voxel, have not been incorporated into this method. As a result, the training and inference speed of the model is lower compared to existing NGP-based methods.\nE.1 FAILURE CASE\nWe present a failure case in Fig. 14. The region bounded by the boxes is shaded by self-occlusion, making the extraction of polarimetric cues noisy shown in the middle sub-figure. Moreover, the radiance is too dim to learn geometry properly. Consequently, a wrong dent exists in the region of the reconstructed mesh."
+        }
+    ],
+    "title": "GNERP: GAUSSIAN-GUIDED NEURAL RECONSTRUC-",
+    "year": 2024
+}

@@ -1,0 +1,991 @@
+{
+    "abstractText": "Human visual recognition system shows astonishing capability of compressing visual information into a set of tokens containing rich representations without label supervision. One critical driving principle behind it is perceptual grouping (Palmer, 2002; Wagemans et al., 2012; Herzog, 2018). Despite being widely used in computer vision in the early 2010s, it remains a mystery whether perceptual grouping can be leveraged to derive a neural visual recognition backbone that generates as powerful representations. In this paper, we propose the Perceptual Group Tokenizer, a model that entirely relies on grouping operations to extract visual features and perform self-supervised representation learning, where a series of grouping operations are used to iteratively hypothesize the context for pixels or superpixels to refine feature representations. We show that the proposed model can achieve competitive performance compared to state-of-the-art vision architectures, and inherits desirable properties including adaptive computation without re-training, and interpretability. Specifically, Perceptual Group Tokenizer achieves 80.3% on ImageNet-1K self-supervised learning benchmark with linear probe evaluation, establishing a new milestone for this paradigm.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Zhiwei Deng"
+        },
+        {
+            "affiliations": [],
+            "name": "Ting Chen"
+        },
+        {
+            "affiliations": [],
+            "name": "Yang Li"
+        }
+    ],
+    "id": "SP:c083485c79bfe30d104bcd642e57bd1e560d1fef",
+    "references": [
+        {
+            "authors": [
+                "Alexander A Alemi",
+                "Ian Fischer",
+                "Joshua V Dillon",
+                "Kevin Murphy"
+            ],
+            "title": "Deep variational information bottleneck",
+            "venue": "arXiv preprint arXiv:1612.00410,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Pablo Arbel\u00e1ez",
+                "Jordi Pont-Tuset",
+                "Jonathan T Barron",
+                "Ferran Marques",
+                "Jitendra Malik"
+            ],
+            "title": "Multiscale combinatorial grouping",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Hangbo Bao",
+                "Li Dong",
+                "Songhao Piao",
+                "Furu Wei"
+            ],
+            "title": "Beit: Bert pre-training of image transformers",
+            "venue": "arXiv preprint arXiv:2106.08254,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "David Bau",
+                "Bolei Zhou",
+                "Aditya Khosla",
+                "Aude Oliva",
+                "Antonio Torralba"
+            ],
+            "title": "Network dissection: Quantifying interpretability of deep visual representations",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Ondrej Biza",
+                "Sjoerd van Steenkiste",
+                "Mehdi SM Sajjadi",
+                "Gamaleldin F Elsayed",
+                "Aravindh Mahendran",
+                "Thomas Kipf"
+            ],
+            "title": "Invariant slot attention: Object discovery with slot-centric reference frames",
+            "venue": "arXiv preprint arXiv:2302.04973,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Daniel Bolya",
+                "Cheng-Yang Fu",
+                "Xiaoliang Dai",
+                "Peizhao Zhang",
+                "Christoph Feichtenhofer",
+                "Judy Hoffman"
+            ],
+            "title": "Token merging: Your vit but faster",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Christopher P Burgess",
+                "Loic Matthey",
+                "Nicholas Watters",
+                "Rishabh Kabra",
+                "Irina Higgins",
+                "Matt Botvinick",
+                "Alexander Lerchner. Monet"
+            ],
+            "title": "Unsupervised scene decomposition and representation",
+            "year": 1901
+        },
+        {
+            "authors": [
+                "Mathilde Caron",
+                "Ishan Misra",
+                "Julien Mairal",
+                "Priya Goyal",
+                "Piotr Bojanowski",
+                "Armand Joulin"
+            ],
+            "title": "Unsupervised learning of visual features by contrasting cluster assignments",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Mathilde Caron",
+                "Hugo Touvron",
+                "Ishan Misra",
+                "Herv\u00e9 J\u00e9gou",
+                "Julien Mairal",
+                "Piotr Bojanowski",
+                "Armand Joulin"
+            ],
+            "title": "Emerging properties in self-supervised vision transformers",
+            "venue": "In Proceedings of the IEEE/CVF international conference on computer vision,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Michael Chang",
+                "Tom Griffiths",
+                "Sergey Levine"
+            ],
+            "title": "Object representations as fixed points: Training iterative refinement algorithms with implicit differentiation",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Liang-Chieh Chen",
+                "George Papandreou",
+                "Iasonas Kokkinos",
+                "Kevin Murphy",
+                "Alan L Yuille"
+            ],
+            "title": "Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs",
+            "venue": "IEEE transactions on pattern analysis and machine intelligence,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Ting Chen",
+                "Simon Kornblith",
+                "Mohammad Norouzi",
+                "Geoffrey Hinton"
+            ],
+            "title": "A simple framework for contrastive learning of visual representations",
+            "venue": "In International conference on machine learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Ting Chen",
+                "Simon Kornblith",
+                "Kevin Swersky",
+                "Mohammad Norouzi",
+                "Geoffrey E Hinton"
+            ],
+            "title": "Big self-supervised models are strong semi-supervised learners",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Laura Culp",
+                "Sara Sabour",
+                "Geoffrey E Hinton"
+            ],
+            "title": "Testing glom\u2019s ability to infer wholes from ambiguous parts",
+            "venue": "arXiv preprint arXiv:2211.16564,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Navneet Dalal",
+                "Bill Triggs"
+            ],
+            "title": "Histograms of oriented gradients for human detection",
+            "venue": "IEEE computer society conference on computer vision and pattern recognition (CVPR\u201905),",
+            "year": 2005
+        },
+        {
+            "authors": [
+                "Tri Dao",
+                "Dan Fu",
+                "Stefano Ermon",
+                "Atri Rudra",
+                "Christopher R\u00e9"
+            ],
+            "title": "Flashattention: Fast and memoryefficient exact attention with io-awareness",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Laurent Dinh",
+                "Jascha Sohl-Dickstein",
+                "Samy Bengio"
+            ],
+            "title": "Density estimation using real nvp",
+            "venue": "arXiv preprint arXiv:1605.08803,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Alexey Dosovitskiy",
+                "Lucas Beyer",
+                "Alexander Kolesnikov",
+                "Dirk Weissenborn",
+                "Xiaohua Zhai",
+                "Thomas Unterthiner",
+                "Mostafa Dehghani",
+                "Matthias Minderer",
+                "Georg Heigold",
+                "Sylvain Gelly"
+            ],
+            "title": "An image is worth 16x16 words: Transformers for image recognition at scale",
+            "venue": "arXiv preprint arXiv:2010.11929,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Gamaleldin Elsayed",
+                "Aravindh Mahendran",
+                "Sjoerd van Steenkiste",
+                "Klaus Greff",
+                "Michael C Mozer",
+                "Thomas Kipf. Savi"
+            ],
+            "title": "Towards end-to-end object-centric learning from real-world videos",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jean-Bastien Grill",
+                "Florian Strub",
+                "Florent Altch\u00e9",
+                "Corentin Tallec",
+                "Pierre Richemond",
+                "Elena Buchatskaya",
+                "Carl Doersch",
+                "Bernardo Avila Pires",
+                "Zhaohan Guo",
+                "Mohammad Gheshlaghi Azar"
+            ],
+            "title": "Bootstrap your own latent-a new approach to self-supervised learning",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Kaiming He",
+                "Xiangyu Zhang",
+                "Shaoqing Ren",
+                "Jian Sun"
+            ],
+            "title": "Deep residual learning for image recognition",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Kaiming He",
+                "Xinlei Chen",
+                "Saining Xie",
+                "Yanghao Li",
+                "Piotr Doll\u00e1r",
+                "Ross Girshick"
+            ],
+            "title": "Masked autoencoders are scalable vision learners",
+            "venue": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Olivier J H\u00e9naff",
+                "Skanda Koppula",
+                "Evan Shelhamer",
+                "Daniel Zoran",
+                "Andrew Jaegle",
+                "Andrew Zisserman",
+                "Jo\u00e3o Carreira",
+                "Relja Arandjelovi\u0107"
+            ],
+            "title": "Object discovery and representation networks",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Michael H Herzog"
+            ],
+            "title": "Perceptual grouping",
+            "venue": "Current Biology,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Geoffrey Hinton"
+            ],
+            "title": "How to represent part-whole hierarchies in a neural network",
+            "venue": "Neural Computation,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jonathan Ho",
+                "Ajay Jain",
+                "Pieter Abbeel"
+            ],
+            "title": "Denoising diffusion probabilistic models",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Allan Jabri",
+                "David Fleet",
+                "Ting Chen"
+            ],
+            "title": "Scalable adaptive computation for iterative generation",
+            "venue": "arXiv preprint arXiv:2212.11972,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Andrew Jaegle",
+                "Sebastian Borgeaud",
+                "Jean-Baptiste Alayrac",
+                "Carl Doersch",
+                "Catalin Ionescu",
+                "David Ding",
+                "Skanda Koppula",
+                "Daniel Zoran",
+                "Andrew Brock",
+                "Evan Shelhamer"
+            ],
+            "title": "Perceiver io: A general architecture for structured inputs & outputs",
+            "venue": "arXiv preprint arXiv:2107.14795,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Tsung-Wei Ke",
+                "Stella X Yu"
+            ],
+            "title": "Cast: Concurrent recognition and segmentation with adaptive segment tokens",
+            "venue": "arXiv preprint arXiv:2210.00314,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Junkyung Kim",
+                "Drew Linsley",
+                "Kalpit Thakkar",
+                "Thomas Serre"
+            ],
+            "title": "Disentangling neural mechanisms for perceptual grouping",
+            "venue": "arXiv preprint arXiv:1906.01558,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Diederik P Kingma",
+                "Max Welling"
+            ],
+            "title": "Auto-encoding variational bayes",
+            "venue": "arXiv preprint arXiv:1312.6114,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Diederik P Kingma",
+                "Max Welling"
+            ],
+            "title": "Auto-encoding variational bayes, 2022",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Durk P Kingma",
+                "Prafulla Dhariwal"
+            ],
+            "title": "Glow: Generative flow with invertible 1x1 convolutions",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Philipp Kr\u00e4henb\u00fchl",
+                "Vladlen Koltun"
+            ],
+            "title": "Efficient inference in fully connected crfs with gaussian edge potentials",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Alex Krizhevsky",
+                "Ilya Sutskever",
+                "Geoffrey E Hinton"
+            ],
+            "title": "Imagenet classification with deep convolutional neural networks",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Yann LeCun",
+                "L\u00e9on Bottou",
+                "Yoshua Bengio",
+                "Patrick Haffner"
+            ],
+            "title": "Gradient-based learning applied to document recognition",
+            "venue": "Proceedings of the IEEE,",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Alex Levinshtein",
+                "Cristian Sminchisescu",
+                "Sven Dickinson"
+            ],
+            "title": "Multiscale symmetric part detection and grouping",
+            "venue": "International journal of computer vision,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Kai Liu",
+                "Tianyi Wu",
+                "Cong Liu",
+                "Guodong Guo"
+            ],
+            "title": "Dynamic group transformer: A general vision transformer backbone with dynamic group attention",
+            "venue": "arXiv preprint arXiv:2203.03937,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ze Liu",
+                "Yutong Lin",
+                "Yue Cao",
+                "Han Hu",
+                "Yixuan Wei",
+                "Zheng Zhang",
+                "Stephen Lin",
+                "Baining Guo"
+            ],
+            "title": "Swin transformer: Hierarchical vision transformer using shifted windows",
+            "venue": "In Proceedings of the IEEE/CVF international conference on computer vision,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Zhuang Liu",
+                "Hanzi Mao",
+                "Chao-Yuan Wu",
+                "Christoph Feichtenhofer",
+                "Trevor Darrell",
+                "Saining Xie. A convnet for the"
+            ],
+            "title": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pp",
+            "venue": "11976\u201311986, 2022b.",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Francesco Locatello",
+                "Dirk Weissenborn",
+                "Thomas Unterthiner",
+                "Aravindh Mahendran",
+                "Georg Heigold",
+                "Jakob Uszkoreit",
+                "Alexey Dosovitskiy",
+                "Thomas Kipf"
+            ],
+            "title": "Object-centric learning with slot attention",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Ilya Loshchilov",
+                "Frank Hutter"
+            ],
+            "title": "Fixing weight decay regularization in adam",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "David G Lowe"
+            ],
+            "title": "Distinctive image features from scale-invariant keypoints",
+            "venue": "International journal of computer vision,",
+            "year": 2004
+        },
+        {
+            "authors": [
+                "Xu Ma",
+                "Yuqian Zhou",
+                "Huan Wang",
+                "Can Qin",
+                "Bin Sun",
+                "Chang Liu",
+                "Yun Fu"
+            ],
+            "title": "Image as set of points",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yi Ma",
+                "Harm Derksen",
+                "Wei Hong",
+                "John Wright"
+            ],
+            "title": "Segmentation of multivariate mixed data via lossy data coding and compression",
+            "venue": "IEEE transactions on pattern analysis and machine intelligence,",
+            "year": 2007
+        },
+        {
+            "authors": [
+                "Joe Marino",
+                "Yisong Yue",
+                "Stephan Mandt"
+            ],
+            "title": "Iterative amortized inference",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Aaron van den Oord",
+                "Yazhe Li",
+                "Oriol Vinyals"
+            ],
+            "title": "Representation learning with contrastive predictive coding",
+            "venue": "arXiv preprint arXiv:1807.03748,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Maxime Oquab",
+                "Timoth\u00e9e Darcet",
+                "Th\u00e9o Moutakanni",
+                "Huy Vo",
+                "Marc Szafraniec",
+                "Vasil Khalidov",
+                "Pierre Fernandez",
+                "Daniel Haziza",
+                "Francisco Massa",
+                "Alaaeldin El-Nouby"
+            ],
+            "title": "Dinov2: Learning robust visual features without supervision",
+            "venue": "arXiv preprint arXiv:2304.07193,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Stephen E Palmer"
+            ],
+            "title": "Perceptual grouping: It\u2019s later than you think",
+            "venue": "Current Directions in Psychological Science,",
+            "year": 2002
+        },
+        {
+            "authors": [
+                "Zhiliang Peng",
+                "Li Dong",
+                "Hangbo Bao",
+                "Qixiang Ye",
+                "Furu Wei"
+            ],
+            "title": "Beit v2: Masked image modeling with vector-quantized visual tokenizers",
+            "venue": "arXiv preprint arXiv:2208.06366,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jordi Pont-Tuset",
+                "Pablo Arbelaez",
+                "Jonathan T Barron",
+                "Ferran Marques",
+                "Jitendra Malik"
+            ],
+            "title": "Multiscale combinatorial grouping for image segmentation and object proposal generation",
+            "venue": "IEEE transactions on pattern analysis and machine intelligence,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Haozhi Qi",
+                "Chong You",
+                "Xiaolong Wang",
+                "Yi Ma",
+                "Jitendra Malik"
+            ],
+            "title": "Deep isometric learning for visual recognition",
+            "venue": "In International conference on machine learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yongming Rao",
+                "Wenliang Zhao",
+                "Benlin Liu",
+                "Jiwen Lu",
+                "Jie Zhou",
+                "Cho-Jui Hsieh"
+            ],
+            "title": "Dynamicvit: Efficient vision transformers with dynamic token sparsification",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Sid Reddy",
+                "Anca Dragan",
+                "Sergey Levine"
+            ],
+            "title": "Pragmatic image compression for human-in-the-loop decision-making",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Edward Rosten",
+                "Reid Porter",
+                "Tom Drummond"
+            ],
+            "title": "Faster and better: A machine learning approach to corner detection",
+            "venue": "IEEE transactions on pattern analysis and machine intelligence,",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Olga Russakovsky",
+                "Jia Deng",
+                "Hao Su",
+                "Jonathan Krause",
+                "Sanjeev Satheesh",
+                "Sean Ma",
+                "Zhiheng Huang",
+                "Andrej Karpathy",
+                "Aditya Khosla",
+                "Michael Bernstein"
+            ],
+            "title": "Imagenet large scale visual recognition challenge",
+            "venue": "International journal of computer vision,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Maximilian Seitzer",
+                "Max Horn",
+                "Andrii Zadaianchuk",
+                "Dominik Zietlow",
+                "Tianjun Xiao",
+                "Carl-Johann Simon-Gabriel",
+                "Tong He",
+                "Zheng Zhang",
+                "Bernhard Sch\u00f6lkopf",
+                "Thomas Brox"
+            ],
+            "title": "Bridging the gap to real-world object-centric learning",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jianbo Shi",
+                "Jitendra Malik"
+            ],
+            "title": "Normalized cuts and image segmentation",
+            "venue": "IEEE Transactions on pattern analysis and machine intelligence,",
+            "year": 2000
+        },
+        {
+            "authors": [
+                "Karen Simonyan",
+                "Andrew Zisserman"
+            ],
+            "title": "Very deep convolutional networks for large-scale image recognition",
+            "venue": "arXiv preprint arXiv:1409.1556,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Christian Szegedy",
+                "Wei Liu",
+                "Yangqing Jia",
+                "Pierre Sermanet",
+                "Scott Reed",
+                "Dragomir Anguelov",
+                "Dumitru Erhan",
+                "Vincent Vanhoucke",
+                "Andrew Rabinovich"
+            ],
+            "title": "Going deeper with convolutions",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Mingxing Tan",
+                "Quoc Le"
+            ],
+            "title": "Efficientnet: Rethinking model scaling for convolutional neural networks",
+            "venue": "In International conference on machine learning,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Yonglong Tian",
+                "Dilip Krishnan",
+                "Phillip Isola"
+            ],
+            "title": "Contrastive multiview coding",
+            "venue": "In Computer Vision\u2013ECCV 2020: 16th European Conference,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Hugo Touvron",
+                "Matthieu Cord",
+                "Matthijs Douze",
+                "Francisco Massa",
+                "Alexandre Sablayrolles",
+                "Herv\u00e9 J\u00e9gou"
+            ],
+            "title": "Training data-efficient image transformers & distillation through attention",
+            "venue": "In International conference on machine learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jasper RR Uijlings",
+                "Koen EA Van De Sande",
+                "Theo Gevers",
+                "Arnold WM Smeulders"
+            ],
+            "title": "Selective search for object recognition",
+            "venue": "International journal of computer vision,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Ashish Vaswani",
+                "Noam Shazeer",
+                "Niki Parmar",
+                "Jakob Uszkoreit",
+                "Llion Jones",
+                "Aidan N Gomez",
+                "\u0141ukasz Kaiser",
+                "Illia Polosukhin"
+            ],
+            "title": "Attention is all you need",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Johan Wagemans",
+                "James H Elder",
+                "Michael Kubovy",
+                "Stephen E Palmer",
+                "Mary A Peterson",
+                "Manish Singh",
+                "R\u00fcdiger Von der Heydt"
+            ],
+            "title": "A century of gestalt psychology in visual perception: I. perceptual grouping and figure\u2013ground organization",
+            "venue": "Psychological bulletin,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Ziyi Wu",
+                "Nikita Dvornik",
+                "Klaus Greff",
+                "Thomas Kipf",
+                "Animesh Garg"
+            ],
+            "title": "Slotformer: Unsupervised visual dynamics simulation with object-centric models",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jiarui Xu",
+                "Shalini De Mello",
+                "Sifei Liu",
+                "Wonmin Byeon",
+                "Thomas Breuel",
+                "Jan Kautz",
+                "Xiaolong Wang"
+            ],
+            "title": "Groupvit: Semantic segmentation emerges from text supervision",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Hongxu Yin",
+                "Arash Vahdat",
+                "Jose M Alvarez",
+                "Arun Mallya",
+                "Jan Kautz",
+                "Pavlo Molchanov"
+            ],
+            "title": "A-vit: Adaptive tokens for efficient vision transformer",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jason Yosinski",
+                "Jeff Clune",
+                "Anh Nguyen",
+                "Thomas Fuchs",
+                "Hod Lipson"
+            ],
+            "title": "Understanding neural networks through deep visualization",
+            "venue": "arXiv preprint arXiv:1506.06579,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Matthew D Zeiler",
+                "Rob Fergus"
+            ],
+            "title": "Visualizing and understanding convolutional networks",
+            "venue": "In Computer Vision\u2013ECCV 2014: 13th European Conference,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Sixiao Zheng",
+                "Jiachen Lu",
+                "Hengshuang Zhao",
+                "Xiatian Zhu",
+                "Zekun Luo",
+                "Yabiao Wang",
+                "Yanwei Fu",
+                "Jianfeng Feng",
+                "Tao Xiang",
+                "Philip HS Torr"
+            ],
+            "title": "Rethinking semantic segmentation from a sequence-to-sequence perspective with transformers",
+            "venue": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Bolei Zhou",
+                "Aditya Khosla",
+                "Agata Lapedriza",
+                "Aude Oliva",
+                "Antonio Torralba"
+            ],
+            "title": "Object detectors emerge in deep scene cnns",
+            "venue": "arXiv preprint arXiv:1412.6856,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Jinghao Zhou",
+                "Chen Wei",
+                "Huiyu Wang",
+                "Wei Shen",
+                "Cihang Xie",
+                "Alan Yuille",
+                "Tao Kong"
+            ],
+            "title": "ibot: Image bert pre-training with online tokenizer",
+            "venue": "arXiv preprint arXiv:2111.07832,",
+            "year": 2021
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Visual recognition mechanisms matter. The pursuit of advanced vision algorithms that encode an image to meaningful representations dates back to late 80s, with two paradigms marking the progress over the past 40 years: feature detection (LeCun et al., 1998; Lowe, 2004; He et al., 2016; Liu et al., 2022b) and perceptual grouping (Shi & Malik, 2000; Uijlings et al., 2013; Arbela\u0301ez et al., 2014), where feature detection focuses on specific distinctive patterns, while perceptual grouping considers similarities among all pixels to produce a compact set of tokens as proxies for image representation. Ever since the surge of deep learning, feature detection has predominated the vision field and become the main principle behind representation learning backbone designs and made impressive progress (Simonyan & Zisserman, 2014; Szegedy et al., 2015; He et al., 2016; Chen et al., 2017; Tan & Le, 2019; Qi et al., 2020; Liu et al., 2022b). The success of the former paradigm is, although striking, raising the question of whether perceptual grouping can also be used as the driving principle to construct a visual recognition model.\nDifferent from detecting and selecting distinctive features, perceptual grouping emphasizes on learning feature space where similarity of all pixels can be effectively measured (Uijlings et al., 2013; Arbela\u0301ez et al., 2014). With such a feature space, semantically meaningful objects and regions can be easily discovered with a simple grouping algorithm and used as a compact set to represent an image (Uijlings et al., 2013; Arbela\u0301ez et al., 2014; Locatello et al., 2020). This indicates that image understanding is essentially \u201cpixel space tokenization\u201d, and being able to produce generalizable feature representations is tightly connected to whether the correct contextual pixels are binded together (Hinton, 2022; Culp et al., 2022).\nThe intriguing properties of perceptual grouping, including natural object discovery, deep connections with information theory and compression (Ma et al., 2007), and association with biological vision system (Herzog, 2018) or cognitive science explanations (Palmer, 2002), have led to a strong revival recently under deep learning frameworks (Locatello et al., 2020; Elsayed et al., 2022; Xu et al., 2022; Wu et al., 2022; Biza et al., 2023). However, these methods are either still focusing on small or toy datasets (Locatello et al., 2020; Chang et al., 2022; Biza et al., 2023), or used as an auxilliary component (Xu et al., 2022; Ke & Yu, 2022; Seitzer et al., 2022) to strengthen exist-\ning vision architectures for increased interpretability. Whether perceptual grouping can be used to build models and learn representations that are as informative and expressive as those learned by state-of-the-art vision architectures remains an open question.\nIn this paper, we propose Perceptual Group Tokenizer, a model trained under a self-supervised learning framework, which builds visual representation entirely based on perceptual grouping operations. Given an image, the core of our model is to understand each pixel or patch through hypothesizing its contexts with grouping operations. Starting from given input patches, the grouping operation performs an iterative binding process onto a set of randomly sampled group tokens to determine the affinity groups based on similarities. The group tokens are then used as hypothesized contexts to refine the feature representation for the image. We show that applying this simple principle can already produce expressive representations and works well with self-supervised pretraining on a large vision dataset.\nThe grouping operation is also closely related to self-attention, a highly popular method commonly used in modern vision backbones. We build connection between the proposed grouping operation and self-attention and show that, if group tokens are treated as communication channels, self attention can potentially automatically emerge during learning processes as a special case, while the grouping operation can produce even richer interactions among tokens. Under this viewpoint, ViT (Dosovitskiy et al., 2020) can be considered as a grouping backbone, with a fixed number of grouping slots equal to the number of input tokens, and the binding is achieved through stacking more than one layer with non-shared weights. This provides one explanation on why grouping mechanism can be effective on visual representation learning and has the potential to be a promising competitive paradigm for vision architecture designs.\nThe primary contribution of this work is proposing a new architecture derived purely by perceptual grouping that achieves competitive performance compared to other state-of-the-art architectures on self-supervised learning benchmarks, contributing to a new paradigm of developing vision architectures. The model has several key differences and advantages over ViT, including (1) explicit separating out the \u201cgroup token\u201d concept to allow for automatic image parsing and flexible customization on the number of groups without being binded to the number of patches; (2) much less peak memory usage during inference time given the same number of input tokens; (3) adaptive computation without re-training the model, leading to flexible usage according to domains and computes."
+        },
+        {
+            "heading": "2 RELATED WORKS",
+            "text": "Vision architectures. There are two main frameworks for vision backbones. The first framework is Convolutioinal neural networks, which rely on local filters, sliding windows and translational equivariance to perform representation learning. Since the introduction of ConvNets in 1980s, ConvNet was repopularized by AlexNet (Krizhevsky et al., 2012). The line of ConvNet is a classical inheritance from traditional feature detection methods (Lowe, 2004; Dalal & Triggs, 2005; Rosten et al., 2008), where instead of hand crafting features, an overcomplete set of filters are automatically learned to obtain high-response regions. The object understanding is built along the depth axis (Simonyan & Zisserman, 2014; Szegedy et al., 2015; He et al., 2016), with early layers capturing low-level parts and higher-level layers producing object structure representations (Zeiler & Fergus, 2014; Zhou et al., 2014; Yosinski et al., 2015; Bau et al., 2017). In the feature detection framework,\nnot every pixel is worth being used depending on particular tasks, leading to difficulty in obtaining representation for each pixel.\nRecently, Vision Transformer (ViT) (Dosovitskiy et al., 2020), a second vision backbone framework, shows impressive performance and has surpassed ConvNet on visual recognition. The core of ViT is the iterative applying of self-attention operations (Vaswani et al., 2017; Dosovitskiy et al., 2020). A direct usage of ViT on small patches (thus a high-resolution grid) is extremely computationally expensive due to its associated quadratic cost. Therefore, a common practice is often partitioning the image into large non-overlapping patches (Dosovitskiy et al., 2020; Touvron et al., 2021), or constrain the operation to local regions (Liu et al., 2021).\nSelf-supervised learning. The field of representation learning has seen significant interest in selfsupervised learning during the past few years. The main evaluation results using linear probe on ImageNet benchmarks is approaching the results obtained by supervised learning (Oquab et al., 2023). Contrastive representation learning is the early method that shows promising results (Oord et al., 2018; Chen et al., 2020a; Tian et al., 2020). BYOL (Grill et al., 2020) and DINO (Caron et al., 2021) propose to use a moving average target of an online network to perform self representation matching. Masked image modeling also shows to be effective on representation learning, where the masking is either at the pixel level (He et al., 2022) or the learned codebook level (Bao et al., 2021).\nObject discovery. The perceptual grouping is essentially performing \u201cobject and stuff\u201d discovery in the pixel space. It has broad connections with the early works in computer vision (Shi & Malik, 2000; Uijlings et al., 2013; Levinshtein et al., 2013; Arbela\u0301ez et al., 2014; Pont-Tuset et al., 2016), the recent progress on object-centric representation (Burgess et al., 2019; Locatello et al., 2020; Chang et al., 2022; Hinton, 2022; He\u0301naff et al., 2022; Culp et al., 2022; Elsayed et al., 2022), and biological or neural mechanisms on perceptual grouping (Palmer, 2002; Wagemans et al., 2012; Herzog, 2018; Kim et al., 2019). Despite the early popularity of perceptual grouping methods on various computer vision tasks (Shi & Malik, 2000; Uijlings et al., 2013; Levinshtein et al., 2013; Kra\u0308henbu\u0308hl & Koltun, 2011), it has not attracted significant attention until several recent works that apply it as a side component on top of another main backbone (Seitzer et al., 2022; Liu et al., 2022a; Xu et al., 2022; Ke & Yu, 2022). Some relevant works demonstrate alternative possibilities in architecture design, but only uses cross attention without refining the patch feature space (Jaegle et al., 2021), or apply it on diffusion tasks (Jabri et al., 2022). Other methods also attempt to use ad-hoc sparsification methods on top of ViT (Rao et al., 2021; Yin et al., 2022; Bolya et al., 2023) for efficiency and are orthogonal to our work. A most related work (Ma et al., 2023) focuses on supervised learning and relies on fixed-center pooling and less standard operations. In our proposed model, we adopt a design as ViT except for self attention, and highlight several key technical contributions, including multi-grouping with multi-seeding, adaptive computation without re-training, and other design choices for self-supervised representation learning."
+        },
+        {
+            "heading": "3 MODELS",
+            "text": "In this section, we introduce Perceptual Group Tokenizer (PGT), a visual recognition architecture entirely driven by perceptual grouping principles. We discuss the core operations for grouping in section 3.1, the building blocks and network architectures in section 3.2, the loss function used for self-supervised learning in section 3.3, and the connections with other models in section 3.4."
+        },
+        {
+            "heading": "3.1 PERCEPTUAL GROUPING",
+            "text": "We start with introducing notations for our method. Given an image x \u2208 RH\u00d7W\u00d7C , we first reshape it as a sequence of small patches1. Each patch xp \u2208 Rh\u00d7w\u00d7c has spatial shape h\u00d7w, where h H and w W , leading to N = HWhw number of patches per image. To represent a patch, we embed it into a high-dimensional vector h \u2208 Rd. The set of embedded tokens {hi}N is referred to as input tokens in later parts, and used as inputs for the following grouping blocks.\nFeature refinement through hypothesizing contexts. Individual pixels do not have meanings without putting it into contexts. At a high level, image understanding or feature learning is equivalent to binding the correct contextual pixels at all locations. The core idea of our model is to generate many (e.g. over-complete w.r.t number of objects in the image) hypothesized contexts and use the\n1We use 4\u00d74 patches as inputs in this work. Note that our method is generalizable to either pure pixels or other forms of superpixels given a proper patch-to-vector embedding layer."
+        },
+        {
+            "heading": "Patches",
+            "text": "hypothesized contexts as cues to refine the feature representation of each patch. This process is achieved through a grouping module. Given input tokens {hi}N , the grouping module starts from a set of random samples (referred as group tokens) from a random distribution, then performs binding process to aggregate information from input tokens to the group tokens, and ends up with a set of group tokens c\u2217 = {c\u2217j}Mj=1 representing hypothesized contexts among input tokens. The relation between hi and cj is soft assigment, indicating how likely an input token belongs to that context. Note that there are often various ways of generating groupings for an image, e.g. different semantics, colors, textures, etc., we propose the \u201cmulti-grouping operation\u201d to hypothesize rich contexts for tokens. The overall model is shown in figure 2.\nMulti-grouping operation. The building block of our model is the multi-grouping operation G, which contains multiple heads to perform the binding process in parallel. This design encourages the model to consider multiple ways of generating groups under different projection spaces. Each head owns a separate Gaussian distribution with learnable means and variance, similar to (Kingma & Welling, 2013; Locatello et al., 2020). Starting from a set of randomly sampled initial group tokens c (0) HEAD \u223c pINIT(\u00b7), the grouping operation uses doubly normalized attention weights to aggregate information from h, and the produced group tokens c(1)HEAD are used for the next round binding. The attention normalization and feature projection are performed in all heads separately.\nc (1) HEAD = G(c (0) HEAD,h; \u03b8) (1)\n\u00b7 \u00b7 \u00b7 c\u2217HEAD = c (K) HEAD = G(c (K\u22121) HEAD ,h; \u03b8) (2)\nwhere after K steps the final group tokens c\u2217 = c(K) is obtained, and \u03b8 is learnable parameters in G. The grouping operator is summarized in algorithm 1.\nThe sampling distribution pINIT(\u00b7) for initializing group tokens c(0)HEAD needs to be lightweight. We explore two variations: (1) Gaussian distribution p(\u00b5HEAD,\u03c3HEAD) with learnable means and variance, and a one-step normalizing flow module that transforms a unit Gaussian noise to a sample that follows more complex distributions. More details can be found in the appendix in section A.1\nImplicit differentiation. The iterative grouping process unrolls K steps per operation and leads to heavy burden in the training computation graph. Instead of explicitly backpropagating through the unrolled graph, we follow (Chang et al., 2022) and treat the multi-grouping process as a fixed point iteration per head. The gradient in the backpropagation is approximated using first-order Neumann series, which can be simply achieved by detaching the output before the final iteration."
+        },
+        {
+            "heading": "3.2 NETWORK ARCHITECTURE",
+            "text": "Similar to standard ViT, our model refines the hidden representation h using L model layers. We use hl to denote the representation after each layer, and explain the design in this section.\nAlgorithm 1 Multi-grouping operation using G. def multi_grouping(h_key, h_value, steps, num_tokens, num_heads): \"\"\" Input tensors:\nh_key and h_value are projected multi-head tensors with shape [num_heads x N x d]. \"\"\" # Initial M group tokens. group_tokens = sampling_distribution(nsamples=num_tokens, choice=\u2019Gaussian\u2019) # or \u2019Flow\u2019 group_tokens = group_tokens.reshape(num_heads, num_tokens, d) #[num_heads x M x d]\n# Binding process. for step in range(steps): # Implicit differentiation. if step == steps - 1: group_tokens = stop_gradient(group_tokens)\n\"\"\" The following is a one-step grouping operation. \"\"\" # Attention operation for group assignment. attn_matrix = attention(group_tokens, h_key) #[num_heads x N x M] attn_matrix /= attn_matrix.sum(-2, keep_dim=True) h_updates = einsum(\"hij,hid->hjd\", attn_matrix, h_value) #[num_heads x M x d] group_tokens = gru_cell(h_updates, group_tokens) # Grouped mlp/layernorm performs independent mlp/layernorm for each head. group_tokens = grouped_mlp(grouped_layer_norm(group_tokens)) + group_tokens\nreturn group_tokens\nGrouping layer. Each grouping layer takes in hl\u22121 as input, and uses the grouping operation in equation 1 to generate group tokens c\u2217HEAD = {c\u2217j,HEAD}Mj=1. To use the group tokens to provide context for each hl\u22121i , we perform another attention operation to obtain the attention matrix (only normalized over group token axis) A \u2208 RN\u00d7M representing the assignment from input tokens to group tokens, and aggregate the feature back to the input token space:\nhlHEAD = A[c \u2217 1,HEAD; c \u2217 2,HEAD; ...; c \u2217 M,HEAD] (3)\nhl = Linear([hlHEAD1 ; ...h l HEADH ]) (4) hl = hl\u22121 + MLP(LN(hl)) (5)\nThis layer definition follows the standard ViT layer as close as possible, where features from each head are aggregated through concatenation and a linear layer transformation. Each token h is further refined using a follow up multi-layer perceptron.\nGrouping blocks. Similar to previous architecture designs (He et al., 2016; Liu et al., 2021). we define blocks for the model. One block contains multiple grouping layers that share the same hyperparameters setups, i.e. the number of group tokens, and group token dimensions. The full model contains three grouping blocks. This increases the flexibility when exploring model design spaces."
+        },
+        {
+            "heading": "3.3 SELF-SUPERVISION LOSS",
+            "text": "We strictly follow the student-teacher self-supervision loss (Caron et al., 2021; Oquab et al., 2023), and use a moving average of online network (student model) as the teacher model to perform representation learning. To summarize group tokens outputed from the final layer, we use one multi-head attention layer with a learnable token to attend to all group tokens. The produced single vector is treated as the feature representation for the image and is input to the loss function.\n3.4 DISCUSSION\nOur proposed model, perceptual group tokenizer, does not contain self-attention operations and purely relies on grouping operations. In this section, we link the grouping process to several techniques and discuss the rationale on why this model can be effective on representation learning.\nGroup tokens as \u201ccommunication channels\u201d. The core of feature representation learning is how information is exchanged among pixels. In perceptual grouping backbones, we can consider the set of group tokens as communication\nchannels, where information from different input tokens are aggregated in various ways. Each group token represents a high-order channel that links input tokens with high affinity under certain projected space to exchange information among them. As a thought experiment, if each input token is\nsolely assigned to a different group token (given enough group tokens), then the perceptual grouping layer is equivalent to one self attention layer (up to some engineering design difference). While self attention layers mainly rely on pairwise communications, grouping operation, hypothetically, can automatically learn and emerge both pairwise and higher-order information exchange through the group token communication channels. This can also be linked to traditional factor graphs in probabilistic graphical models. Through the lens of that, grouping is forming factor nodes automatically through the learning processes. With a properly designed loss and grouping operation, it has the potential to be more effective if adopting a per-layer comparison with self-attention operations.\nEfficiency. Due to the flexibility in customizing number of group tokens (controlled by initial number of samples), grouping operation does not require a strict O(N2) operation and is O(NM) on complexity. Furthermore, we show that in inference time, number of group tokens can even be adaptively customized, given an already trained model."
+        },
+        {
+            "heading": "4 EXPERIMENTS",
+            "text": "We evaluate the representation learned by our model on standard benchmarks based on the ImageNet-1K dataset. We also explore and analyze the design space of perceptual group tokenizer in section 4.2, investigate its adaptive computation ability in section 4.3, demonstrate its generalization ability on semantic segmentation in section 4.4, and visualize learned attentions in section 4.5."
+        },
+        {
+            "heading": "4.1 MAIN RESULTS",
+            "text": "Setup. The widely-adopted standard benchmark for evaluating self-supervised learning methods is ImageNet ILSVRC-2012 (ImageNet-1K) (Russakovsky et al., 2015). Performance of models are measured by top-1 classification accuracy. The pre-trained backbones are frozen, with a linear classifier trained on top. For fair comparison, we follow the standard data augmentation used in (Caron et al., 2021), with the same number of global views and local views. The model is optimized using AdamW (Loshchilov & Hutter, 2018) with learning rate 0.0005 and 1024 batch size for 600 epochs, trained with TPUv5 for 21k core hrs (512 cores for 41 hrs). We use 4\u00d74 patches as image tokens, which keeps as much details as possible while maintaining reasonable computation costs.\nArchitecture details. In the experiments, we mainly evaluate two variants of PGT: the main model and a tiny version for exploring design choices. On the ImageNet-1K benchmark, we report the performance metrics of our main model. Three grouping blocks are used, with 10 grouping layers in each block. The dimension for input token is 384, with 256 group tokens per layer. The dimensions for group tokens are 98, 192, and 288 for the three blocks, respectively. There are 6 grouping heads used. For number of grouping iterations, we observe three rounds are sufficient to achieve good performance. The MLP hidden size for each layer is 384 as well, i.e., the MLP multiplication factor is 1. The final multihead attention layer uses a learnable token with 2048 dimensions to summarize all group tokens outputs from the model.\nThe main results are summarized in table 1. We mainly compare with ResNet and ViT backbones, the two main stream vision architectures to show that perceptual grouping architecture can also achieve competitive results on the challenging ImageNet-1K benchmark. Although our model is trained with 256 group tokens, the model can use different numbers of group tokens in inference (more experiments in section 4.2). We evalaute PGT with 256, 512, and 1024 number of group tokens and observe that the model can achieve 80.3% top-1 accuracy, showing the self-supervised learned feature of PGT is as good as the ones learned by ViT architectures."
+        },
+        {
+            "heading": "4.2 ABLATIONS",
+            "text": "To explore design choices of PGT, we use a tiny version of PGT with 3 blocks, 2 layer in each block (6 layers in total), 256 hidden size for input tokens, and 3 number of grouping iterations. The learnable token in MAP head has 512 dimensions. There are \u223c10M parameters in this PGT-tiny. Group token layouts. Given a fixed number of budget on group tokens, we explore three choices on how they should be arranged across grouping blocks and layers: descend, flat and ascend. Intuitively, more group tokens will have higher capacity of capturing smaller parts and detailed visual features, while less group tokens are more prone to carry global information. As shown in table 2 bottom row, flat or descend number of group tokens performs the best. In practice, we find that using flat (same number of group tokens in three grouping blocks) version achieves better training stability.\nGroup token dimension shapes. Similar to token number arrangements, we explore how group token dimensions should be set. Under three choices, progressively increasing the dimension size in the later layers performs the best, shown in first row of table 2. This also aligns with the intuition that later layers contain more information and requires higher capacity to represent groups.\nMulti-grouping vs single grouping. We further test whether multi-head grouping helps improve performance. As a fair comparison, we use 6 heads and 128 group tokens per head for a multigrouping model, and 1 head with 6\u00d7128 group tokens for a single grouping model. We find that adopting multi-head design can improve the performance from 62.2% to 66.3%, a 4.1% accuracy boosts, showing that having multiple heads indeed helps with representation learning.\nGrouping distribution entropy. Will grouping process collapse to some specific group token during training? We visualize the entropy of marginal distribution over tokens p(c) and conditional distribution p(c|x) in figure 4. Interestingly, we observe that conditional probability, i.e. the assignment to group tokens, tends to become more certain during training, while the marginal distribution remains having descend entropy, indicating collapses not happening in training.\nPeak memory usage. As discusssed in section 3.4, given the same number of tokens, the grouping operation uses less memory than the self-attention operation. We show the percentage of peak memory usage in PGTG-B compared to ViT-B with the same patch size (4\u00d74) in table 3. The\nusage is obtained from the forward inference graph, as in practice the underlying complex hardware optimizer is a less accurate measurement and varies across infrastructures."
+        },
+        {
+            "heading": "4.3 OUT-OF-DISTRIBUTION ADAPTIVE COMPUTATION",
+            "text": "One surprising and powerful ability of PGT is adaptive computation. For example, given a model trained using M1 group tokens per layer, one can choose to use M2 group tokens in inference, where M2 6= M1. This is because that the initial seeding group tokens are drawn from a probabilistic distribution, and the number of samples can be customized. This property leads to a highly customizable inference without re-training the model. When M1 6= M2, the model copes with an out-of-distribution (OOD) problem where test time setting is different from training. We observe surprisingly strong generalization with our model. Specifically, with more tokens M2 > M1 in inference, the performance can actually outperform the setting (M2 =M1) used in training, even if it is OOD for the model.\nThe results for OOD adaptive computation are summarized in table 4. We mainly test PGTG-Tiny with a grid evaluation that varies the number of group tokens in trainingM and the number of group tokens in inference N , and also show the main model\u2019s results in the last row. When using the main model PGTG-B to perform adaptive inference, with only 12.5% of the number of group tokens compared to training, the performance can still be maintained at 72.1% with only a \u223c8% drop on top-1 accuracy. The adaptive computation ability is important for both general image understanding where images have varying number of objects and need different numbers of groups, and scenarios where test-time computational resource is constrained. This flexibility is an important advantage that grouping backbones hold.\nnumbers are the best results."
+        },
+        {
+            "heading": "4.4 DOWNSTREAM TASK TRANSFER: SEMANTIC SEGMENTATION ON ADE20K",
+            "text": "To evaluate the generalizability of pretrained feature produced by PGT, we test the transfer performance of semantic segmentation with ADE20k. Following the standard setup, we finetune our\nmodel with the same data augmentation for 128 epoch. The baseline method uses DINO + ViTB/16 (Zheng et al., 2021). For our model, we add one linear classification layer after the pre-trained PGTG-B for fine-tuning. To adapt to more objects and complex scenes in the segmentation datasets, we use 1024 group tokens for inference, benefiting from the adaptive computation ability of our model. We find that our model can obtain 45.1% on mean IoU while the baseline achieves 44.1% (Bao et al., 2021), leading to a 1.0% improvements."
+        },
+        {
+            "heading": "4.5 GROUPING VISUALIZATION",
+            "text": "We visualize the attention maps calculated between group tokens and input tokens in figure 4.5. We find that (1) using multiple grouping heads can capture different information within each head. For example, in layer 0, the first head captures light and color, second head focuses on only spatial locations, and the third head potentially relies on textures; (2) group tokens can capture different semantic parts, for example, in the first image, group tokens separate apple, jar, handle, and background. In the second image, camel, legs, camel hump, and human are separately grouped. Compared to standard ViT in DINO (Caron et al., 2021) where only a single foreground can be extracted using [CLS] token, our model can flexibly group different parts given an image, leading to a set of tokens that are potentially more meaningful and customizable. Note that the grouping results are still different from human\u2019s vision, and sometimes generates parts that seem to be \u201cfragmented\u201d. This is possibly due to the \u201cparts-to-whole with data augmentation\u201d training loss. Human vision, in contrast, is sensitive to moving objects and trained within a 4D space. Nevertheless, we believe with a similar dataset, environment and loss design, our grouping model can potentially produce groupings more coherent and sensitive to boundaries and moving objects."
+        },
+        {
+            "heading": "5 CONCLUSION",
+            "text": "In this paper, we propose Perceptual Group Tokenizer (PGT), a new visual recognition architecture entirely built through perceptual grouping principles. The proposed model shows strong performance on self-supervised learning benchmark ImageNet-1K with linear probe evaluation, and has desirable properties such as adaptive computation and high model interpretability in each operation. This work can enable a new paradigm for designing visual recognition backbones, and we hope to inspire more research progress along this direction. One limitation of the proposed model is its relatively expensive computation cost due to the iterative grouping processes. This can be potentially addressed by other grouping operations, such as those grouping operations with closed-form solutions, which is a promising direction for the future work."
+        },
+        {
+            "heading": "A APPENDIX",
+            "text": ""
+        },
+        {
+            "heading": "A.1 LEARNABLE SAMPLING DISTRIBUTIONS",
+            "text": "Our proposed Perceptual Group Tokenizer (PGT) model initializes a set of group tokens through sampling from a distribution. This set of group tokens then serve as the initial \u201cseeding\u201d for the grouping process. We explore two methods to serve as the initial distribution: learnable Gaussian distribution and Normalizing Flows. We would like the extra cost of the grouping process to be minimal, therefore, use two light-weighted versions."
+        },
+        {
+            "heading": "A.1.1 GAUSSIAN",
+            "text": "Similar to the standard usage of learnable Gaussians in generative model literature (Kingma & Welling, 2022; Ho et al., 2020), we use the reparameterization to perform a learnable sampling process: c = \u00b5+ \u03c3 \u2217 , where is drawn from a unit Gaussian N (0, I)\nA.1.2 FLOW\nAs Gaussian distribution might have limitations in covering complex distribution shapes, especially in the high-dimentional space, we also explore a version with one step of affine coupling flow transformation (Dinh et al., 2016). Since we only require the differentiable sampling procedure and do not need to compute the determinant of Jacobian matrix, we directly apply the transformation without splitting the dimensions by half:\nc = a \u2217 + b (6) (log s, t) = MLP(c) (7)\ns = exp(log s) (8) c = s \u2217 c+ t (9)\nwhere is drawn from a unit Gaussian N (0, I). This transformation is simply a re-scaling and translation (similar to Gaussian) but conditioned on per sample . More details are in (Dinh et al., 2016; Kingma & Dhariwal, 2018). We only apply one step of this transformation, leading to minimal parameter increase and negligible inference time difference."
+        },
+        {
+            "heading": "A.2 MODEL ANALYSIS",
+            "text": "In this section, we add more analysis on our model\u2019s performance and computational costs."
+        },
+        {
+            "heading": "A.2.1 GROUPING ENTROPY",
+            "text": "Grouping distribution entropy. The main paper has discussed and shown the grouping distribution entropy curves on several layers. In the appendix, we demonstrate curves from more layers in figure 6 and figure 7, where the first one is marginal distribution and second one is conditional distribution."
+        },
+        {
+            "heading": "A.2.2 GROUPING ITERATIONS",
+            "text": "In our backbone, we find that more grouping iterations will lead to a better performance. We explore the number of grouping iterations on the PGT-Tiny model and PGTG-B-256. On the tiny version, we find the model achieves 61.4, 63.8, and 65.1 on the linear probe evaluation with number of interations is 1, 2, and 3. For the main model, the performances are 79.3, 79.6, and 79.7 respectively. The model\u2019s increased depth potentially helps with the lack of grouping iterations in the deep model. But in general, having the grouping process is still important in obtaining higher performance.\nA.2.3 INFERENCE TIME\nWe also profile our model\u2019s inference time, compared with ViT-B with 4x4 patches (the same amount tokens) for ablation study on the grouping operation. Note that our model and framework are built upon a complex infrastructure that uses XLA and other hardware accelerator to optimize speed. We find varying number of group tokens only lead to small influence. PGT-B-256 has 640 im/sec/core and ViT-B/4 has 680 im/sec/core. Using smaller number of grouping iterations can speed up the inference to 710 im/sec/core (2 iter2) and 820 im/sec/core (1 iter).\nNote that this is only due to the specialty of the underlying infrastructure. In general, having less number of group tokens should still increase the inference speed, since the attention operation is a key computation bottleneck for vision models."
+        },
+        {
+            "heading": "A.2.4 GFLOPS",
+            "text": "In table A.2.4, we show the gflops for our model under various inference budgets. Note that, as pointed in other works (Dao et al., 2022), gflops often do not fully reflect the model\u2019s computation performance. Due to that our model needs iterative grouping process, it\u2019ll increase the gflops count. But as shown in peak memory usage and inference time, the model\u2019s computation costs are either similar are much less."
+        },
+        {
+            "heading": "A.2.5 PROBABILISTIC PERSPECTIVE OF GROUPING OPERATIONS",
+            "text": "Due to the probabilistic nature, our model is also quite compatible with a full \u201ctreatment\u201d with the variational inference framework, which can provide certain backup for our grouping operations already in the current model. We can treat the group token embeddings c as the latent variables, where the grouping process uses iterative amortized inference (Marino et al., 2018) to refine the latent variable. The grouping modules, including GRU, MLP, attention, and other layers are designed\nto better infer the embeddings (latent variables). The training signal is a pragmatic loss (instead of reconstruction loss), which has been demonstrated in (Reddy et al., 2021; Alemi et al., 2016). The key differences are: (1) there is no sampling in each inference step; (2) the regularization from unit Gaussian distribution is set to zero. We do believe a full probabilistic treatment of the perceptual grouping architecture can be a very interesting next step."
+        },
+        {
+            "heading": "A.2.6 MORE VISUALIZATIONS",
+            "text": "In this section, we show more visualizations of the attention maps for generated group tokens by Perceptual Group Tokenizers in figure 8, 9 and 10."
+        }
+    ],
+    "title": "PERCEPTUAL GROUP TOKENIZER: BUILDING PERCEPTION WITH ITERATIVE GROUPING",
+    "year": 2024
+}

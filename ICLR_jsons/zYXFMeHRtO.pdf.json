@@ -1,0 +1,648 @@
+{
+    "abstractText": "In this paper, we introduce FROSTER, an effective framework for openvocabulary action recognition. The CLIP model has achieved remarkable success in a range of image-based tasks, benefiting from its strong generalization capability stemming from pretaining on massive image-text pairs. However, applying CLIP directly to the open-vocabulary action recognition task is challenging due to the absence of temporal information in CLIP\u2019s pretraining. Further, fine-tuning CLIP on action recognition datasets may lead to overfitting and hinder its generalizability, resulting in unsatisfactory results when dealing with unseen actions. To address these issues, FROSTER employs a residual feature distillation approach to ensure that CLIP retains its generalization capability while effectively adapting to the action recognition task. Specifically, the residual feature distillation treats the frozen CLIP model as a teacher to maintain the generalizability exhibited by the original CLIP and supervises the feature learning for the extraction of video-specific features to bridge the gap between images and videos. Meanwhile, it uses a residual sub-network for feature distillation to reach a balance between the two distinct objectives of learning generalizable and video-specific features. We extensively evaluate FROSTER on open-vocabulary action recognition benchmarks under both base-to-novel and cross-dataset settings. FROSTER consistently achieves state-of-the-art performance on all datasets across the board. Project page: https://visual-ai.github.io/froster.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "FROZEN CLIP"
+        },
+        {
+            "affiliations": [],
+            "name": "A STRONG TEACHER"
+        },
+        {
+            "affiliations": [],
+            "name": "Xiaohu Huang"
+        },
+        {
+            "affiliations": [],
+            "name": "Hao Zhou"
+        },
+        {
+            "affiliations": [],
+            "name": "Kun Yao"
+        },
+        {
+            "affiliations": [],
+            "name": "Kai Han"
+        }
+    ],
+    "id": "SP:8a534233a2378a029c7a5d0ea1e96588c93a11be",
+    "references": [
+        {
+            "authors": [
+                "Joao Carreira",
+                "Andrew Zisserman"
+            ],
+            "title": "Quo vadis, action recognition? a new model and the kinetics dataset",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Joao Carreira",
+                "Eric Noland",
+                "Andras Banki-Horvath",
+                "Chloe Hillier",
+                "Andrew Zisserman"
+            ],
+            "title": "A short note about kinetics-600",
+            "venue": "Arxiv e-prints,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Shizhe Chen",
+                "Dong Huang"
+            ],
+            "title": "Elaborative rehearsal for zero-shot action recognition",
+            "venue": "In ICCV,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Shoufa Chen",
+                "Chongjian Ge",
+                "Zhan Tong",
+                "Jiangliu Wang",
+                "Yibing Song",
+                "Jue Wang",
+                "Ping Luo"
+            ],
+            "title": "Adaptformer: Adapting vision transformers for scalable visual recognition",
+            "venue": "NeurIPS,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yudong Chen",
+                "Sen Wang",
+                "Jiajun Liu",
+                "Xuwei Xu",
+                "Frank de Hoog",
+                "Zi Huang"
+            ],
+            "title": "Improved feature distillation via projector ensemble",
+            "venue": "NeurIPS,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Wenliang Dai",
+                "Lu Hou",
+                "Lifeng Shang",
+                "Xin Jiang",
+                "Qun Liu",
+                "Pascale Fung"
+            ],
+            "title": "Enabling multimodal generation on clip via vision-language knowledge distillation",
+            "venue": "Arxiv e-prints,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Xiang Deng",
+                "Zhongfei Zhang"
+            ],
+            "title": "Comprehensive knowledge distillation with causal intervention",
+            "venue": "In NeurIPS,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Alexey Dosovitskiy",
+                "Lucas Beyer",
+                "Alexander Kolesnikov",
+                "Dirk Weissenborn",
+                "Xiaohua Zhai",
+                "Thomas Unterthiner",
+                "Mostafa Dehghani",
+                "Matthias Minderer",
+                "Georg Heigold",
+                "Sylvain Gelly"
+            ],
+            "title": "An image is worth 16x16 words: Transformers for image recognition at scale",
+            "venue": "Arxiv e-prints,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Christoph Feichtenhofer",
+                "Haoqi Fan",
+                "Jitendra Malik",
+                "Kaiming He"
+            ],
+            "title": "Slowfast networks for video recognition",
+            "venue": "In ICCV,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Raghav Goyal",
+                "Samira Ebrahimi Kahou",
+                "Vincent Michalski",
+                "Joanna Materzynska",
+                "Susanne Westphal",
+                "Heuna Kim",
+                "Valentin Haenel",
+                "Ingo Fruend",
+                "Peter Yianilos",
+                "Moritz Mueller-Freitag"
+            ],
+            "title": "The\u201d something something\u201d video database for learning and evaluating visual common sense",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Kaiming He",
+                "Xiangyu Zhang",
+                "Shaoqing Ren",
+                "Jian Sun"
+            ],
+            "title": "Deep residual learning for image recognition",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Dan Hendrycks",
+                "Kevin Gimpel"
+            ],
+            "title": "Gaussian error linear units (gelus)",
+            "venue": "Arxiv e-prints,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Geoffrey Hinton",
+                "Oriol Vinyals",
+                "Jeff Dean"
+            ],
+            "title": "Distilling the knowledge in a neural network",
+            "venue": "Arxiv e-prints,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Neil Houlsby",
+                "Andrei Giurgiu",
+                "Stanislaw Jastrzebski",
+                "Bruna Morrone",
+                "Quentin De Laroussilhe",
+                "Andrea Gesmundo",
+                "Mona Attariyan",
+                "Sylvain Gelly"
+            ],
+            "title": "Parameter-efficient transfer learning for nlp",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Edward J Hu",
+                "Yelong Shen",
+                "Phillip Wallis",
+                "Zeyuan Allen-Zhu",
+                "Yuanzhi Li",
+                "Shean Wang",
+                "Lu Wang",
+                "Weizhu Chen"
+            ],
+            "title": "Lora: Low-rank adaptation of large language models",
+            "venue": "Arxiv e-prints,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Gabriel Ilharco",
+                "Mitchell Wortsman",
+                "Samir Yitzhak Gadre",
+                "Shuran Song",
+                "Hannaneh Hajishirzi",
+                "Simon Kornblith",
+                "Ali Farhadi",
+                "Ludwig Schmidt"
+            ],
+            "title": "Patching open-vocabulary models by interpolating weights",
+            "venue": "NeurIPS,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Shuiwang Ji",
+                "Wei Xu",
+                "Ming Yang",
+                "Kai Yu"
+            ],
+            "title": "3d convolutional neural networks for human action recognition",
+            "venue": "IEEE TPAMI,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Chao Jia",
+                "Yinfei Yang",
+                "Ye Xia",
+                "Yi-Ting Chen",
+                "Zarana Parekh",
+                "Hieu Pham",
+                "Quoc Le",
+                "Yun-Hsuan Sung",
+                "Zhen Li",
+                "Tom Duerig"
+            ],
+            "title": "Scaling up visual and vision-language representation learning with noisy text supervision",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Chen Ju",
+                "Tengda Han",
+                "Kunhao Zheng",
+                "Ya Zhang",
+                "Weidi Xie"
+            ],
+            "title": "Prompting visual-language models for efficient video understanding",
+            "venue": "In ECCV,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "James Kirkpatrick",
+                "Razvan Pascanu",
+                "Neil Rabinowitz",
+                "Joel Veness",
+                "Guillaume Desjardins",
+                "Andrei A Rusu",
+                "Kieran Milan",
+                "John Quan",
+                "Tiago Ramalho",
+                "Agnieszka Grabska-Barwinska"
+            ],
+            "title": "Overcoming catastrophic forgetting in neural networks",
+            "venue": "In National Academy of Sciences,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Hildegard Kuehne",
+                "Hueihan Jhuang",
+                "Est\u0131\u0301baliz Garrote",
+                "Tomaso Poggio",
+                "Thomas Serre"
+            ],
+            "title": "Hmdb: a large video database for human motion recognition",
+            "venue": "In ICCV,",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Ji Lin",
+                "Chuang Gan",
+                "Song Han"
+            ],
+            "title": "Tsm: Temporal shift module for efficient video understanding",
+            "venue": "In ICCV,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Ruyang Liu",
+                "Jingjia Huang",
+                "Ge Li",
+                "Jiashi Feng",
+                "Xinglong Wu",
+                "Thomas H Li"
+            ],
+            "title": "Revisiting temporal modeling for clip-based image-to-video knowledge transferring",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Huaishao Luo",
+                "Lei Ji",
+                "Ming Zhong",
+                "Yang Chen",
+                "Wen Lei",
+                "Nan Duan",
+                "Tianrui Li"
+            ],
+            "title": "Clip4clip: An empirical study of clip for end to end video clip retrieval and captioning",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Sachin Mehta",
+                "Mohammad Rastegari"
+            ],
+            "title": "Separable self-attention for mobile vision transformers",
+            "venue": "Arxiv e-prints,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Liliane Momeni",
+                "Mathilde Caron",
+                "Arsha Nagrani",
+                "Andrew Zisserman",
+                "Cordelia Schmid"
+            ],
+            "title": "Verbs in action: Improving verb understanding in video-language models",
+            "venue": "Arxiv e-prints,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Bolin Ni",
+                "Houwen Peng",
+                "Minghao Chen",
+                "Songyang Zhang",
+                "Gaofeng Meng",
+                "Jianlong Fu",
+                "Shiming Xiang",
+                "Haibin Ling"
+            ],
+            "title": "Expanding language-image pretrained models for general video recognition",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Junting Pan",
+                "Ziyi Lin",
+                "Xiatian Zhu",
+                "Jing Shao",
+                "Hongsheng Li"
+            ],
+            "title": "St-adapter: Parameter-efficient image-to-video transfer learning",
+            "venue": "In NeurIPS,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jungin Park",
+                "Jiyoung Lee",
+                "Kwanghoon Sohn"
+            ],
+            "title": "Dual-path adaptation from image to video transformers",
+            "venue": "In CVPR,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Renjing Pei",
+                "Jianzhuang Liu",
+                "Weimian Li",
+                "Bin Shao",
+                "Songcen Xu",
+                "Peng Dai",
+                "Juwei Lu",
+                "Youliang Yan"
+            ],
+            "title": "Clipping: Distilling clip-based models with a student base for video-language retrieval",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Alec Radford",
+                "Jong Wook Kim",
+                "Chris Hallacy",
+                "Aditya Ramesh",
+                "Gabriel Goh",
+                "Sandhini Agarwal",
+                "Girish Sastry",
+                "Amanda Askell",
+                "Pamela Mishkin",
+                "Jack Clark"
+            ],
+            "title": "Learning transferable visual models from natural language supervision",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Hanoona Rasheed",
+                "Muhammad Uzair Khattak",
+                "Muhammad Maaz",
+                "Salman Khan",
+                "Fahad Shahbaz Khan"
+            ],
+            "title": "Fine-tuned clip models are efficient video learners",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Adriana Romero",
+                "Nicolas Ballas",
+                "Samira Ebrahimi Kahou",
+                "Antoine Chassang",
+                "Carlo Gatta",
+                "Yoshua Bengio"
+            ],
+            "title": "Fitnets: Hints for thin deep nets",
+            "venue": "Arxiv e-prints,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Khurram Soomro",
+                "Amir Roshan Zamir",
+                "Mubarak Shah"
+            ],
+            "title": "Ucf101: A dataset of 101 human actions classes from videos in the wild",
+            "venue": "Arxiv e-prints,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Frederick Tung",
+                "Greg Mori"
+            ],
+            "title": "Similarity-preserving knowledge distillation",
+            "venue": "In ICCV,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Limin Wang",
+                "Yuanjun Xiong",
+                "Zhe Wang",
+                "Yu Qiao",
+                "Dahua Lin",
+                "Xiaoou Tang",
+                "Luc Van Gool"
+            ],
+            "title": "Temporal segment networks: Towards good practices for deep action recognition",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Mengmeng Wang",
+                "Jiazheng Xing",
+                "Yong Liu"
+            ],
+            "title": "Actionclip: A new paradigm for video action recognition",
+            "venue": "Arxiv e-prints,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Syed Talal Wasim",
+                "Muzammal Naseer",
+                "Salman Khan",
+                "Fahad Shahbaz Khan",
+                "Mubarak Shah"
+            ],
+            "title": "Vita-clip: Video and text adaptive clip via multimodal prompting",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Zejia Weng",
+                "Xitong Yang",
+                "Ang Li",
+                "Zuxuan Wu",
+                "Yu-Gang Jiang"
+            ],
+            "title": "Open-vclip: Transforming clip to an open-vocabulary video model via interpolated weight optimization",
+            "venue": "In ICML,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Wenhao Wu",
+                "Zhun Sun",
+                "Wanli Ouyang"
+            ],
+            "title": "Revisiting classifier: Transferring vision-language models for video recognition",
+            "venue": "In AAAI,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Wangmeng Xiang",
+                "Chao Li",
+                "Yuxuan Zhou",
+                "Biao Wang",
+                "Lei Zhang"
+            ],
+            "title": "Generative action description prompts for skeleton-based action recognition",
+            "venue": "In ICCV,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Jing Yang",
+                "Brais Martinez",
+                "Adrian Bulat",
+                "Georgios Tzimiropoulos"
+            ],
+            "title": "Knowledge distillation via softmax regression representation learning",
+            "venue": "In ICLR,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Taojiannan Yang",
+                "Yi Zhu",
+                "Yusheng Xie",
+                "Aston Zhang",
+                "Chen Chen",
+                "Mu Li"
+            ],
+            "title": "Aim: Adapting image models for efficient video action recognition",
+            "venue": "Arxiv e-prints,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Friedemann Zenke",
+                "Ben Poole",
+                "Surya Ganguli"
+            ],
+            "title": "Continual learning through synaptic intelligence",
+            "venue": "In ICML,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Yue Zhao",
+                "Ishan Misra",
+                "Philipp Kr\u00e4henb\u00fchl",
+                "Rohit Girdhar"
+            ],
+            "title": "Learning video representations from large language models",
+            "venue": "In CVPR,",
+            "year": 2023
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Open-vocabulary action recognition aims to recognize action categories that may not have been seen during training. The study of action recognition was dominated by pure vision based methods, such as (Ji et al., 2012; Carreira & Zisserman, 2017; Wang et al., 2016; Feichtenhofer et al., 2019; Lin et al., 2019), which assumes a closed-set setting where the models are trained and evaluated on a set of fixed and predefined action categories. Recently, the emergence of large-scale visionlanguage models, such as CLIP (Radford et al., 2021) and ALIGN (Jia et al., 2021), has enabled image classification on an open vocabulary of categories. Inspired by this success, attempts have been made to apply the CLIP model to action recognition by processing the video frame-by-frame, as CLIP was pretrained on image-text pairs. However, directly utilizing pretrained CLIP models yields sub-optimal performance, as these models lack access to video-text data during pretraining. To bridge the domain gap between images and videos, methods have been proposed to fine-tune the CLIP model (Wang et al., 2021; Liu et al., 2023; Rasheed et al., 2023) or utilize efficient adaption/prompting techniques (Chen et al., 2022a; Yang et al., 2023; Ju et al., 2022; Wasim et al., 2023; Ni et al., 2022) to extract video-specific knowledge. While these methods have achieved success in the closed-set setting, their performance is inferior when it comes to unseen categories (see Tab. 1). In Fig. 1, we compare the frozen CLIP and three CLIP-adapted video models, namely Action CLIP (Wang et al., 2021), AIM (Yang et al., 2023) and ST-Adapter (Pan et al., 2022), in an openvocabulary setting. These models are fine-tuned (except for the frozen CLIP) on Kinetics-400 (Carreira & Zisserman, 2017) but evaluated on UCF-101 (Soomro et al., 2012), HMDB-51 (Kuehne\n\u2020Corresponding author.\net al., 2011), and Kinetics-600 (Carreira et al., 2018) (shared categories with Kinetics-400 are excluded). Compared to the frozen CLIP, we observe that the tuned models achieve higher performance on UCF-101 and HMDB-51, but achieve inferior performance on Kinetics-600. This observation indicates that the generalization capacity of tuned models varies across different datasets. Further, using text features of category names, we measure the semantic distances between the training set (Kinetics-400) and testing sets (UCF-101, HMDB-51, and Kinetics-600). We find that, for testing sets that are more semantically similar to the training set (i.e., UCF-101 and HMDB-51), the tuned models exhibit improvements over the frozen CLIP. However, when it comes to the semantically less similar dataset, namely Kinetics-600, which demands stronger generalizability, the performance of all tuned models deteriorates compared to the frozen CLIP. This suggests a decline in generalizability after fine-tuning. Based on these observations, we believe that a CLIP-based video model should possess the following properties: (1) The CLIP model should acquire video-specific knowledge to bridge the gap between images and videos, effectively addressing the challenges posed by the image-to-video domain transition. This entails adapting the model to understand and extract meaningful information from video data, taking into account temporal dynamics and context. (2) It is crucial to preserve the strong generalization capability of the pretrained CLIP model within the video model. This ensures that the video model can effectively generalize across different video datasets and tasks, leveraging the learned representations from the pretraining phase. To validate the hypothesis made above, we evaluate the performance of each adapted model by ensembling it with the frozen CLIP by summing up their respective outputs. The results in Fig. 1 demonstrate that the ensemble models exhibit significant improvements across all datasets, indicating their efficacy as open-vocabulary classifiers. However, the naive approach of ensembling models results in notable additional computational costs due to inferring two models simultaneously. This limitation hinders practical applications in real-world scenarios. Therefore, it is imperative to explore methods for consolidating the ensemble model\u2019s knowledge into a single model, mitigating the computational burden.\nTo this end, we propose FROSTER, a simple yet effective framework for open-vocabulary action recognition, which effectively learns feature representation that is both video-specific and generalizable. As shown in Fig. 2, \u2018video-specific\u2019 is achieved through common classification-based finetuning, while \u2018generalizable\u2019 is achieved by using frozen CLIP as a teacher to impart pretrained knowledge to the tuned model, inspired by knowledge distillation techniques (Hinton et al., 2015; Romero et al., 2014). The distillation process is akin to a regularization term that ensures the tuned features do not diverge too far from the frozen ones. Having two distinct objectives, we need to balance the feature learning between them. For instance, if we enforce the tuned features to be overly close to the frozen features, it may hinder the video-specific learning to fit the video data. Conversely, if we overemphasize video-specific learning, the generalizable capacity in the tuned model might be lost. To address this issue, we propose a residual feature distillation approach to balance feature learning between the two joint objectives. Taking inspiration from the model patching method (Ilharco et al., 2022), a prior study (Weng et al., 2023) develops an open-vocabulary action recognition model through weight interpolation between the fine-tuned model and the frozen CLIP. This approach bears some resemblance of motivation to ours. Nevertheless, the weight interpolation technique necessitates the fine-tuned model and frozen CLIP to possess identical weight dimensions, thereby restricting its applicability across diverse network architectures (e.g., adapter-based CLIP models). Also, methods (Zenke et al., 2017; Kirkpatrick et al., 2017) that penalize the updates of the pretrained layers are not applicable to the adapter-based methods since the pretrained layers are frozen. We thoroughly evaluate the effectiveness of FROSTER on the two open-vocabulary settings, namely cross-dataset and base-to-novel, using the Kinectics-400 (Carreira & Zisserman, 2017), Kinetics600 (Carreira et al., 2018), UCF-101 (Soomro et al., 2012), HMDB-51 (Kuehne et al., 2011), and Something-to-Something V2 (Goyal et al., 2017) datasets. The cross-dataset evaluation protocol tests models on a different dataset, while the base-to-novel evaluation protocol evaluates their ability to recognize unseen action categories within the same dataset. We couple FROSTER with different video recognition networks. In all cases, FROSTER demonstrates superior performance, showcasing its effectiveness and versatility. The main contribution of this paper can be summarized as follows: Firstly, we introduce FROSTER, a simple yet effective framework for open-vocabulary action recognition. It can effectively learn feature representation that is both video-specific and generalizable. Secondly, we introduce a residual feature distillation approach to balance feature learning in both objectives. This technique mitigates potential conflicts and enables the model to achieve both goals simultaneously. Thirdly, we demonstrate the superiority of FROSTER through extensive evaluations on cross-dataset and base-to-novel settings across Kinectics-400, Kinetics-600, UCF-101, HMDB-51, and Something-to-Something V2 datasets with various network architectures."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": ""
+        },
+        {
+            "heading": "2.1 CLIP-BASED ACTION RECOGNITION",
+            "text": "Inspired by the strong representation of the pretrained CLIP model, many video recognition approaches have been proposed based on CLIP. These works can generally be categorized into two types: full fine-tuning (Wang et al., 2021; Liu et al., 2023; Rasheed et al., 2023) and partial finetuning (Chen et al., 2022a; Ni et al., 2022; Pan et al., 2022; Yang et al., 2023; Park et al., 2023). For full fine-tuning methods, ActionCLIP (Wang et al., 2021) is the first to introduce CLIP into video recognition, fine-tuning the CLIP model and applying additional temporal layers to model motion. Similarly, STAN (Liu et al., 2023) uses an auxiliary network to extract temporal features based on CLIP. ViFi-CLIP (Rasheed et al., 2023) shows that simply fine-tuning both the vision and the text encoders are also effective for action recognition. For partial fine-tuning, a common practice is to freeze the pretrained model parameters and introduce extra parameters for training. Inspired by the parameter-efficient fine-tuning in Natural Language Processing (Houlsby et al., 2019; Hu et al., 2021), Adaptformer (Chen et al., 2022a), X-CLIP (Ni et al., 2022), ST-Adapter (Pan et al., 2022), AIM (Yang et al., 2023), and DUALPATH (Park et al., 2023) employ lightweight adapters to transfer knowledge from the image to the video domain. Similarly, VPT (Ju et al., 2022) and Vita-CLIP (Wasim et al., 2023) leverage learnable prompts to improve the recognition performance. Although these two types of methods have shown promise in the closed-set setting, their performance is not satisfactory in open-vocabulary settings, as shown in Fig. 1. Recently, Open-\nVCLIP (Weng et al., 2023) targets the open-vocabulary setting, yet its reliance on weight interpolation constrains its applicability to networks having exactly the same weight dimensions. In contrast, our proposed framework distills knowledge from CLIP by enforcing feature consistency, without constraining the network architectures, thereby being compatible with diverse networks."
+        },
+        {
+            "heading": "2.2 FEATURE-BASED KNOWLEDGE DISTILLATION",
+            "text": "Knowledge distillation is a technique that involves transferring knowledge from a teacher model to a student model. The mainstream distillation methods can be broadly categorized as logits-based (Hinton et al., 2015), similarity-based (Tung & Mori, 2019), and feature-based (Romero et al., 2014). Feature-based distillation has been shown to provide clearer optimization targets and outperforms the other two approaches (Chen et al., 2022b). Recently, the feature-based distillation method has been applied in CLIP-based models, e.g., CLIPPING (Pei et al., 2023) and VLKD (Dai et al., 2022). CLIPPING focuses on model compression, which aims to fully transfer the knowledge from Clip4clip (Luo et al., 2022) (a large teacher model) to MobileViT-v2 (Mehta & Rastegari, 2022) (a small student model). The method is tailored for the aforementioned architectures and can not generalize to other architectures. VLKD concentrates on aligning the features of the language model to the CLIP model and subsequently integrating them to be a multi-modal generator. All of these methods aim to distill the same knowledge from one model to another. Differently, in our case, we have two objectives: maintaining the generalization capability of a pretrained CLIP and effectively adapting from image to video tasks. To achieve our goals, we propose a novel approach, called residual feature distillation, which allows flexibly adapting features from images to videos, while not sacrificing the generalization capability of the pretrained CLIP."
+        },
+        {
+            "heading": "3 METHOD",
+            "text": "The overall pipeline of FROSTER consists of two key components, namely, model finetuning to bridge the gap between image and video tasks, and knowledge distillation to maintain the generalizability of the pretrained CLIP. In the following, we first introduce the preliminary in Sec. 3.1, followed by our method in Sec. 3.2."
+        },
+        {
+            "heading": "3.1 PRELIMINARY",
+            "text": ""
+        },
+        {
+            "heading": "3.1.1 ACTION RECOGNITION WITH CLIP",
+            "text": "Owing to the strong representation stemming from pretraining on massive image-text pairs, CLIP has become a foundation model, which has been increasingly applied to various downstream tasks. Utilizing CLIP for video recognition is straightforward: one can simply use the CLIP model to process each frame individually and then average their outputs for prediction. Consider the CLIP model with ViT (Dosovitskiy et al., 2020) architecture. Given a video xi \u2208 RT\u00d73\u00d7H\u00d7W with T frames and each frame is with the spatial dimension of H\u00d7W , we can directly feed it into the visual encoder fv of CLIP, which can be written as:\nzv,if = fv(xi), (1)\nwhere the visual feature zv,if \u2208 RT\u00d7C and C denotes the feature dimension of the [CLS] token in ViT. The feature of [CLS] token embeds representation of the whole frame. To obtain the video-level representation, we employ a simple average pooling on all zv,if from different frames to obtain the global embedding vector zv,if \u2208 RC . Regarding text processing, a common practice is to embed the action categories in pre-defined templates (e.g., \u201cA video of []\u201d) as the input. Consider an embedded action tj , we can obtain the text features z t,j f with the text encoder ft as:\nzt,jf = ft(tj), (2)\nwhere zt,jf \u2208 RC . During training, the learning objective is to maximize the image-text representation similarity between zv,if and z t,j f corresponding to the same class. However, the text data may be scarce when fine-tuning the text encoder if we just use the template-embedded action names as text inputs. To alleviate this issue, following Xiang et al. (2023); Momeni et al. (2023); Zhao et al. (2023), we adopt GPT3.5 to enrich the action names with more auxiliary descriptions, which can be viewed as text data augmentation during training. The implementation details are given in Sec. 4."
+        },
+        {
+            "heading": "3.1.2 FEATURE-BASED DISTILLATION",
+            "text": "The feature-based distillation (Romero et al., 2014; Deng & Zhang, 2021; Yang et al., 2020; Chen et al., 2022b) is achieved by enforcing the feature consistency between the teacher and student models, with loss functions such as L2 loss:\nLFD = 1\nN N\u2211 i \u2225\u2225\u2225f (t)v (xi)\u2212 f (s)v (xi)\u2225\u2225\u2225 2 , (3)\nwhere f (t)v , f (s) v , and N denote the teacher model, student model, and batch size respectively.\nIn this paper, the objective of feature distillation is to maintain generalizability in the fine-tuned model, which is crucial for open-vocabulary recognition."
+        },
+        {
+            "heading": "3.2 FROSTER",
+            "text": "Video-specific fine-tuning. For model fine-tuning, following Eq. (1) and Eq. (2), by feeding the video-text inputs into the tuned model g, we can obtain the tuned visual features zv,ig \u2208 RC and textual features zt,jg \u2208 RC as:\nzv,ig = gv(xi), zt,jg = gt(tj), (4)\nwhere gv and gt denote the visual and textual encoders of the tuned model, respectively. By calculating the feature similarities between each video and texts of all categories, we can predict the category yi for each video. Given the ground truth y\u0302i, we use a cross-entropy loss for videospecific learning:\nLCE = \u2212 1\nN N\u2211 i K\u2211 j y\u0302i,j log yi,j , (5)\nwhere K denotes the total number of classes. Residual feature distillation. Taking the frozen CLIP as the teacher, two common ways to realize feature-based distillation are illustrated Fig. 3 (a) (Chen et al., 2022b) and Fig. 3 (b) (Deng & Zhang, 2021; Yang et al., 2020). Here, for simplicity, we use zg and zf to denote zvg (z t g) and z v f (z t f ). As shown in Fig. 3 (a), since the output feature dimensions of the tuned model and the frozen CLIP stay the same, we can directly conduct feature distillation between them without feature projection. However, this supervision expects the tuned features zg to remain the same as the pretrained ones zf , which prohibits zg from learning video-specific knowledge. Another possible way (as in Fig. 3 (b)) is to apply a projector to map zg from the student space to the teacher space. This can relax the constraints on zg for better fitting the video data. However, under such a condition, this distillation loss would be too loose for zg to keep close with zf , thereby limiting its generalizability. Therefore, we need to find a trade-off between the above two methods, considering both learning objectives.\nInspired by the residual design of ResNet (He et al., 2016) for reducing optimization difficulty in deep networks, we propose a modified residual network for balancing the two learning objectives when conducting distillation. The intuition behind the design is to allow the tuned features to effectively receive supervision from generalized ones while also being video-specific. As in Fig. 3 (c), we apply a modified residual network h on zg to transform its representation with a two-layer MLP projector and an identity mapping:\nz\u0302g = h(zg) = zg + \u03b1\u00d7W2(\u03c3(W1(zg))), (6)\nwhere W1 \u2208 RC\u00d7C , W2 \u2208 RC\u00d7C , \u03c3 denotes GELU (Hendrycks & Gimpel, 2016) function, and \u03b1 is a balancing coefficient. In this way, our design enjoys three major benefits: (1) Since there exists an identity mapping in the transformation Eq. (6), the generalizable target zf can directly guide the generalizable learning of zg , which is similar to Fig. 3 (a). But differently, given the projected term \u03b1 \u00d7 W2(\u03c3(W1(zg))), we do not enforce zg to be the same as zf , which makes it flexible for zg to fit the video data. (2) \u03b1 is an important factor in balancing the learning in two objectives. If we set it as a small number, the learned embedding space for zg is largely constrained by the teacher model, otherwise zg may overfit the video data and impair generalizability. In experiments, we find that setting \u03b1 as a relatively small number (e.g., 0.1) leads to better performance than a large one. This phenomenon suggests that the pretrained CLIP already possesses strong representation, thus we only need to slightly adjust it to transfer from images to videos. (3) Inspired by the initialization strategy in Hu et al. (2021), to make sure z\u0302g is learned starting from the pretrained status, we initialize the parameters of the second fully connected layer W2 as zeros. Therefore, at the beginning of fine-tuning, z\u0302g only contains zg and gradually gets updated. This notably improves the training stability. Loss function. After obtaining the transformed vectors z\u0302vg and z\u0302tg , we can use the frozen CLIP as the teacher to distill knowledge. The distillation loss for vision and text features can be written as:\nLvFD = N\u2211 i \u2225fv(xi)\u2212 hv(gv(xi))\u22252 ,\nLtFD = K\u2211 j \u2225ft(tj)\u2212 ht(gt(tj))\u22252 ,\nLFD = L v FD + L t FD.\n(7)\nThe overall learning objective is then the combination of classification and distillation losses:\nL = LCE + \u03b2LFD, (8)\nwhere \u03b2 is a balancing coefficient."
+        },
+        {
+            "heading": "4 EXPERIMENT",
+            "text": "Experimental setting. Following the common practice in the literature, we adopt two experimental settings: base-to-novel and cross-dataset evaluation. Base-to-novel: Under this setting, for each dataset, we divide the class vocabulary into two non-overlapping sets, i.e., the base set YB and novel set YN , where YB \u2229 YN = \u2205. The models are trained on samples from YB , and evaluated on testing samples from YB \u222a YN . Cross-dataset: Under this setting, we train the models on a source dataset with the class vocabulary set as YS and evaluate them on a target dataset with another vocabulary set as YT , where |YS \u222a YT | \u2265 |YS \u2229 YT |. We evaluate our method using the common UCF-101 dataset (Soomro et al., 2012), HMDB-51 dataset (Kuehne et al., 2011), Kinetics-400 (K400) dataset (Carreira & Zisserman, 2017), Kinetics-600 (K-600) dataset (Carreira et al., 2018), and Something-to-Something V2 (SSv2) dataset (Goyal et al., 2017). K-400 and K-600 are largescale action recognition datasets with 400 and 600 action classes, respectively. UCF-101 consists of 13,320 video clips from 101 action classes, and HMDB-51 includes 6,849 videos from 51 action classes. SSv2 contains 174 fine-grained action classes. We follow the literature (e.g., Rasheed et al. (2023); Ni et al. (2022); Weng et al. (2023)) to conduct experiments under the two settings and report the average top-1 accuracy.\nArchitectures. We use CLIP with ViT-B/16 vision encoder for all experiments. As for the tuned model, we adopt VCLIP (Weng et al., 2023), fully fine-tuned CLIP, Action CLIP (Wang et al., 2021), Adaptformer (Chen et al., 2022a), AIM (Yang et al., 2023), and ST-Adapter (Pan et al., 2022) to verify the effectiveness of our method. Unless stated otherwise, we use VCLIP for our experiments.\nText augmentation. To enrich the category names with more details for training, we adopt GPT3.5 to generate helpful descriptions using the instruction: \u201cPlease describe this action in the video []\u201d. We find that such a simple instruction is effective in providing extra text for training. For instance, the action \u201cbrushing teeth\u201d is augmented to \u201cThe video teaches the process of brushing teeth, which involves using a toothbrush and toothpaste to clean and maintain oral hygiene\u201d. More experimental details can be found in Appendix A.1."
+        },
+        {
+            "heading": "4.1 COMPARISON WITH STATE-OF-THE-ART METHODS",
+            "text": "Base-to-novel. In Tab. 1, we compare our method with the previous methods under the base-tonovel setting. From the results, three notable findings are summarized: (1) Compared with some adapted models (Action CLIP, X-CLIP and VPT), the frozen CLIP is still competitive, especially on the novel sets of K-400, HMDB-51, and UCF-101, indicating its strong generalizability. (2) FROSTER achieves the best performance over all datasets for both the base and novel sets, validating its capacity to be video-specific and generalizable. (3) Compared to the baseline (VCLIP), our method can achieve consistent achievements on all base and novel categories, which further verifies its effectiveness. (4) On K-400, HMDB-51, and UCF-101, FROSTER achieves larger improvements on the novel sets over the base sets. This demonstrates its great potential to be applied in openworld applications. Besides, we observe that the performance gains achieved on the novel set of SSv2 are relatively modest compared to other datasets. Given the fine-grained nature of SSv2, it requires a stronger temporal awareness of the model to perform well on this dataset. As no crossframe temporal information was used during the CLIP pretraining, it is still challenging for CLIP to generalize well on the fine-grained actions. This could potentially also explain why the performance of all other methods is significantly lower on SSv2 compared to other datasets.\nCross-dataset. In Tab. 2, we compare our method with the previous methods under the crossdataset setting. We notice that, on the most generalizability demanding dataset, i.e., K-600, the frozen CLIP outperforms most of the other methods, further demonstrating its superior generalizability over the adapted video CLIP models. FROSTER achieves the best performance over all datasets compared with the fully-finetuning methods (ActionCLIP and ViFi-CLIP), adapterbased methods (X-CLIP, AIM, and ST-Adapter), prompting method (VPT), and weight interpolation method (Open-VCLIP), demonstrating its strong generalizabilty."
+        },
+        {
+            "heading": "4.2 DIAGNOSTIC STUDY",
+            "text": "Effectiveness with different networks. In Tab. 3, we apply FROSTER with two types of CLIPbased video models, i.e., fully-tuned and adapter-based. We notice that: (1) For all the networks, FROSTER can effectively improve performance, highlighting its broad applicability. Empirically, we find that FROSTER achieves larger improvements on K-600, which is a more generalizability-\ndemanding dataset compared with UCF-101 and HMDB-51. (2) Combining with FROSTER, fully fine-tuned models can generally achieve better results than the adapter-based methods. This improvement might be attributed to the fitting capacity of more trainable parameters, which afford greater flexibility for attaining both video-specific and generalizable learning objectives than the adapter-based models.\nEffectiveness of residual feature distillation. In Tab. 4, we conduct experiments to verify the effectiveness of our distillation design (see Fig. 3). It is notable that: (1) For both the vision and text encoders when applying distillation methods (see Exp. B - D and Exp. F - H), they can effectively improve recognition performance compared with not using them (see Exp. A and Exp. E). This phenomenon verifies the useful generalizable knowledge in the frozen CLIP. (2) By comparing Exp. B and C (or Exp. F and G), we find that using a projector for feature distillation achieves inferior performance than not using it, which indicates that the projector may hinder the distillation supervision, which degrades the generalizable capacity. (3) Using the proposed residual feature distillation method achieves the best performance (see Exp. D and Exp. H), verifying its superiority over the other two widely used methods for balancing video-specific and generalizable learning. (4) By comparing Exp. I and J, we can see that the simple class name enriching technique can effectively improve the action recognition performance.\nAttention visualization. As shown in Fig. 4, we notice that frozen CLIP tends to focus on the background regions instead of the moving objects. In contrast, the fine-tuned VCLIP exhibits attention towards the key semantic elements (e.g., bottle and cup). Further, our method attends to the moving parts more (e.g., hands), while considering also the helpful background information (e.g., sink and table).\nInputs\nFrozen CLIP\nVCLIP\nFROSTER\nFigure 4: Attention visualization of attention correlations between [CLS] and image tokens of the action \u201cpour\u201d. Our method focuses on moving objects and informative backgrounds.\n0\n5\n10\n15\n20\n25\nFine-tuned\nCLIP\nVCLIP AIM ST-Adapter Adapter\nFormer\nAction CLIP\nR el\na ti\nv e\nP er\nfo rm\na n\nce I\nm p\nro v\nem en\nt\nUCF (0.805) HMDB (0.771) K-600 (0.721)\nFigure 5: Relative improvements of different methods when combined with FROSTER. The number next to the legend for each dataset indicates the dataset\u2019s similarity with K-400 using Hausdorff distance (cosine similarity).\nDataset semantic distance v.s. performance improvements. To study the relationship between dataset semantic distances and performance improvements, we measure the semantic distances between the training and testing datasets by comparing text features of action class names between datasets. Figure 5 presents the relative improvements on different testing datasets by different models. We observe that greater improvements are attained on datasets that require more generalizability, i.e., K-600. This finding serves as additional evidence of the efficacy of FROSTER in enhancing generalizable capacity. Please refer to the appendix for additional experiments and visualizations."
+        },
+        {
+            "heading": "5 CONCLUSION",
+            "text": "In this paper, we present FROSTER, a simple yet effective framework designed to tackle the openvocabulary video recognition task. FROSTER achieves the dual objective of being video-specific and generalizable. To accomplish this, we introduce a frozen CLIP model as a teacher model to facilitate generalization. Additionally, we propose a residual feature distillation method to balance feature learning in both objectives. FROSTER is compatible with various network architectures and has been extensively evaluated on base-to-novel and cross-dataset evaluation settings using largescale video datasets, demonstrating its effectiveness."
+        },
+        {
+            "heading": "ACKNOWLEDGMENTS",
+            "text": "This work is supported by Hong Kong Research Grant Council - Early Career Scheme (Grant No. 27208022), National Natural Science Foundation of China (Grant No. 62306251), and HKU Seed Fund for Basic Research."
+        },
+        {
+            "heading": "A APPENDIX",
+            "text": "A.1 MORE EXPERIMENTAL DETAILS\nDatasets. We evaluate our method using the common UCF-101 (Soomro et al., 2012), HMDB51 (Kuehne et al., 2011), Kinetics-400 (K-400) (Carreira & Zisserman, 2017), Kinetics-600 (K600) (Carreira et al., 2018), and Something-to-Something V2 (SSv2) (Goyal et al., 2017) datasets. (1) K-400 & K-600 are large-scale action recognition datasets, containing 400 and 600 action classes, respectively. K-400 includes 240k training and 20k validation samples, while the K-600 dataset is an extension of the K-400, which has 410k training and 29k validation samples. K-600 contains 220 non-overlapped categories compared to K-400. Each sample is a YouTube video clip representing a human action. (2) UCF-101 consists of 13,320 video clips from 101 action classes, where 9,537 samples are used as the training set and the remaining 3,783 samples are used for testing. Officially, there are three training/testing splits. The dataset includes a variety of human activities and is widely used for benchmarking in human action recognition research. The videos vary in length but are generally short. (3) HMDB-51 (Kuehne et al., 2011) includes 6,849 videos from 51 action classes and has more than 101 samples per class. Similar to UCF-101, there are also three official training/testing splits. The dataset comprises a diverse range of sources, including movies, public databases, and YouTube videos, offering a broad range of human actions and interactions. (4) SSv2 contains 174 fine-grained action classes, which are mostly related to actions performed with daily objects. In total, there are 168,913 video clips for training and 24,777 video clips for testing. This dataset is unique in its focus on human-object dynamics, thereby is known as a temporal-challenging dataset.\nEvaluation metrics. We follow the literature (e.g., Rasheed et al. (2023); Ni et al. (2022); Weng et al. (2023)) to conduct experiments under the two experimental settings. For the base-to-novel setting, we conduct experiments on UCF-101, HMDB-51, K-400, and K-600, and report the average top-1 accuracy. The action classes are separated into base and novel classes for each dataset. Frequent classes are used as the base classes while less frequent classes are used as novel classes. The models are trained on samples from base classes in the raw training split in each dataset and evaluated on samples from novel classes in the raw validation split. 16 video clips are sampled for each base class for training. Three different base sets are constructed for each dataset and used to train the model separately. The resulting models are evaluated on the same novel set and we report the average results using models trained on three different base sets. During testing, HMDB-51 and UCF-101 datasets have three validation splits in the raw data. However, in the base-to-novel setting being used here, only the samples from novel classes in the first split are used for evaluation. On the other hand, K-400 and SSv2 datasets have only one validation split in the raw data, and the samples from the novel classes in the entire split are used for evaluation here. For the cross-dateset setting, the models are trained on K-400 (Carreira & Zisserman, 2017), and evaluated on UCF-101 (Soomro et al., 2012), HMDB-51 (Kuehne et al., 2011), and K-600 (Carreira et al., 2018). For HMDB-51 and UCF-101, the methods are evaluated using their respective three validation splits in the raw data, and we report the average top-1 accuracy on these splits as well as the performance variance. For K-600, the methods are evaluated on the 220 categories that do not exist in K-400. We report the average top-1 accuracy over three randomly sampled splits used in Ni et al. (2022); Rasheed et al. (2023); Weng et al. (2023), with each split containing 160 categories.\nTraining configurations. The initial learning rate is set to 3.33 \u00d7 10\u22126 and is decayed using the cosine scheduler. For base-to-novel evaluation, we train each model for 12 epochs and set the first 2 epochs for warming up. Differently, for cross-dataset evaluation, since we have larger training data, we train the models for 22 epochs with the first 2 epochs as a warm-up. The hyper-parameters \u03b1 and \u03b2 are set as 0.1 and 2. During training, each video is uniformly sampled with 8 frames. During testing, we sample 3 video clips (8 frames per clip) with 1 crop (\u201c3 \u00d7 1\u201d views) of each video and ensemble the outputs with an average summation. Following Open-VCLIP (Weng et al., 2023), when testing, we average the models learned in different epochs to improve generalizability for the cross-dataset setting. We use 8 \u00d7 A100 GPUs to conduct all the experiments.\nA.2 DIAGNOSTIC EXPERIMENTS\nImpacts of the zero initialization. As shown in Tab. 5, we notice that zero initialization can improve the performance since it enables a starting point just like the pretrained CLIP which gets updated smoothly.\nImpacts of the weight \u03b1. As shown in Tab. 6, we conduct experiments by setting \u03b1 to 1.0, 0.5, 0.1, and 0.05, respectively. We find that smaller \u03b1 generally obtains better results, which indicates that the video-specific learning should be well-constrained. For the performance trade-off on different datasets, we set \u03b1 as 0.1.\nTable 5: Impacts of the zero initialization of W2.\nMethod UCF* HMDB* K-600\nOurs w/o Zero Init. 84.7 54.1 74.4\u00b11.0 Ours w/ Zero Init. 85.0 54.5 74.8\u00b10.9\nTable 6: Impacts the value of \u03b1.\n\u03b1 UCF* HMDB* K-600\n1.0 84.7 53.1 73.2\u00b11.0 0.5 84.8 53.9 74.0 \u00b10.9 0.1 85.0 54.5 74.8\u00b10.9\n0.05 85.1 54.8 74.3\u00b10.9"
+        },
+        {
+            "heading": "1 84.7 54.3 74.0\u00b11.0",
+            "text": ""
+        },
+        {
+            "heading": "2 85.0 54.8 74.8\u00b10.9",
+            "text": ""
+        },
+        {
+            "heading": "3 85.0 54.1 75.0\u00b11.0",
+            "text": "Impacts of the coefficients \u03b2. In Tab. 7, we experiment with different values for \u03b2 by setting it to 1, 2, and 3, respectively. We can see that the variance among different values is not large and choose \u03b2 = 2 to be our default choice.\nA.3 VISUALIZATION RESULTS\nIn Fig. 6-Fig. 9, we present more qualitative comparison. Overall, our model attends to informative regions related to the action for more reliable recognition. For example, in Fig. 6, our method effectively captures the movements of the woman\u2019s mouth to extract the motion features relevant to \u201cchew\u201d; in Fig. 7, our model attends to the human legs when recognizing \u201cpush\u201d.\nInputs\nFrozen CLIP\nVCLIP\nFROSTER\nChew\nFigure 6: Attention maps for \u201cchew\u201d. (1) The frozen CLIP attends to the background. (2) The tuned VCLIP attends to the face and forehead. (3) FROSTER attends to the mouth, which is more relevant to the action.\nInputs\nFrozen CLIP\nVCLIP\nFROSTER\nPush\nFigure 7: Attention maps for \u201cpush\u201d. (1) The frozen CLIP attends to the surrounding stuff around the baby. (2) The tuned VCLIP attends to the clothing of the baby. (3) FROSTER attends to the legs of the baby, which are more relevant to the action.\nInputs\nFrozen CLIP\nVCLIP\nFROSTER\nFencing\nFigure 8: Visualization of attention maps for action \u201cfencing\u201d. (2) The frozen CLIP attends to the background, e.g., the ground. (2) The tuned VCLIP learns to focus on the moving body parts. (3) FROSTER attends to the arms and legs, which are more relevant to the action.\nInputs\nFrozen CLIP\nVCLIP\nFROSTER\nHit\nFigure 9: Attention maps for \u201chit\u201d. (1) The frozen CLIP attends to the ground and sky. (2) The tuned VCLIP attends to the person\u2019s pelvic region and the ground. (3) FROSTER attends to the person\u2019s hands and the hammer, which are more relevant to the action."
+        }
+    ],
+    "year": 2024
+}

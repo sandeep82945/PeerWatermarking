@@ -1,0 +1,941 @@
+{
+    "abstractText": "The key challenge in the noisy intermediate-scale quantum era is finding useful circuits compatible with current device limitations. Variational quantum algorithms (VQAs) offer a potential solution by fixing the circuit architecture and optimizing individual gate parameters in an external loop. However, parameter optimization can become intractable, and the overall performance of the algorithm depends heavily on the initially chosen circuit architecture. Several quantum architecture search (QAS) algorithms have been developed to design useful circuit architectures automatically. In the case of parameter optimization alone, noise effects have been observed to dramatically influence the performance of the optimizer and final outcomes, which is a key line of study. However, the effects of noise on the architecture search, which could be just as critical, are poorly understood. This work addresses this gap by introducing a curriculum-based reinforcement learning QAS (CRLQAS) algorithm designed to tackle challenges in realistic VQA deployment. The algorithm incorporates (i) a 3D architecture encoding and restrictions on environment dynamics to explore the search space of possible circuits efficiently, (ii) an episode halting scheme to steer the agent to find shorter circuits, and (iii) a novel variant of simultaneous perturbation stochastic approximation as an optimizer for faster convergence. To facilitate studies, we developed an optimized simulator for our algorithm, significantly improving computational efficiency in simulating noisy quantum circuits by employing the Pauli-transfer matrix formalism in the Pauli-Liouville basis. Numerical experiments focusing on quantum chemistry tasks demonstrate that CRLQAS outperforms existing QAS algorithms across several metrics in both noiseless and noisy environments.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "WARE ERRORS"
+        },
+        {
+            "affiliations": [],
+            "name": "Yash J. Patel"
+        },
+        {
+            "affiliations": [],
+            "name": "Akash Kundu"
+        },
+        {
+            "affiliations": [],
+            "name": "Mateusz Ostaszewski"
+        },
+        {
+            "affiliations": [],
+            "name": "Xavier Bonet-Monroig"
+        },
+        {
+            "affiliations": [],
+            "name": "Vedran Dunjko"
+        },
+        {
+            "affiliations": [],
+            "name": "Onur Danaci"
+        }
+    ],
+    "id": "SP:b560bf094d403045a3413e78dbf5b7bc92b061df",
+    "references": [
+        {
+            "authors": [
+                "Gabriele Agliardi",
+                "Enrico Prati"
+            ],
+            "title": "Optimized quantum generative adversarial networks for distribution loading",
+            "venue": "IEEE International Conference on Quantum Computing and Engineering (QCE),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Panagiotis G Anastasiou",
+                "Yanzhu Chen",
+                "Nicholas J Mayhall",
+                "Edwin Barnes",
+                "Sophia E Economou"
+            ],
+            "title": "Tetris-adapt-vqe: An adaptive algorithm that yields shallower, denser circuit ans\u00e4tze",
+            "venue": "arXiv preprint arXiv:2209.10562,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yazan Arouri",
+                "Mohammad Sayyafzadeh"
+            ],
+            "title": "An accelerated gradient algorithm for well control optimization",
+            "venue": "Journal of Petroleum Science and Engineering,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jeongho Bang",
+                "Seokwon Yoo"
+            ],
+            "title": "A genetic-algorithm-based method to find unitary transformations for any desired quantum computation and application to a one-bit oracle decision problem",
+            "venue": "Journal of the Korean Physical Society,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Ville Bergholm",
+                "Josh Izaac",
+                "Maria Schuld",
+                "Christian Gogolin",
+                "Shahnawaz Ahmed",
+                "Vishnu Ajith",
+                "M Sohaib Alam",
+                "Guillermo Alonso-Linaje",
+                "B AkashNarayanan",
+                "Ali Asadi"
+            ],
+            "title": "Pennylane: Automatic differentiation of hybrid quantum-classical computations",
+            "venue": "arXiv preprint arXiv:1811.04968,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "M Bilkis",
+                "Mar\u00eda Cerezo",
+                "Guillaume Verdon",
+                "Patrick J Coles",
+                "Lukasz Cincio"
+            ],
+            "title": "A semi-agnostic ansatz with variable structure for quantum machine learning",
+            "venue": "arXiv preprint arXiv:2103.06712,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Patrick Billingsley"
+            ],
+            "title": "Probability and measure",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Carsten Blank",
+                "Daniel K Park",
+                "June-Koo Kevin Rhee",
+                "Francesco Petruccione"
+            ],
+            "title": "Quantum classifier with tailored quantum kernel",
+            "venue": "npj Quantum Information,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Xavier Bonet-Monroig",
+                "Hao Wang",
+                "Diederick Vermetten",
+                "Bruno Senjean",
+                "Charles Moussa",
+                "Thomas B\u00e4ck",
+                "Vedran Dunjko",
+                "Thomas E O\u2019Brien"
+            ],
+            "title": "Performance comparison of optimization methods on variational quantum algorithms",
+            "venue": "Physical Review A,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "James Bradbury",
+                "Roy Frostig",
+                "Peter Hawkins",
+                "Matthew James Johnson",
+                "Chris Leary",
+                "Dougal Maclaurin",
+                "George Necula",
+                "Adam Paszke",
+                "Jake VanderPlas",
+                "Skye Wanderman-Milne",
+                "Qiao Zhang"
+            ],
+            "title": "JAX: composable transformations of Python+NumPy programs, 2018",
+            "venue": "URL http: //github.com/google/jax",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Heinz-Peter Breuer",
+                "Francesco Petruccione"
+            ],
+            "title": "The theory of open quantum systems",
+            "year": 2002
+        },
+        {
+            "authors": [
+                "Chris Cade",
+                "Lana Mineh",
+                "Ashley Montanaro",
+                "Stasja Stanisic"
+            ],
+            "title": "Strategies for solving the fermihubbard model on near-term quantum computers",
+            "venue": "Physical Review B,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "M. Cerezo",
+                "Andrew Arrasmith",
+                "Ryan Babbush",
+                "Simon C. Benjamin",
+                "Suguru Endo",
+                "Keisuke Fujii",
+                "Jarrod R. McClean",
+                "Kosuke Mitarai",
+                "Xiao Yuan",
+                "Lukasz Cincio"
+            ],
+            "title": "Variational quantum algorithms",
+            "venue": "Nature Reviews Physics,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "D Chivilikhin",
+                "A Samarin",
+                "V Ulyantsev",
+                "I Iorsh",
+                "AR Oganov"
+            ],
+            "title": "Kyriienko. Mog-vqe: Multiobjective genetic variational quantum eigensolver",
+            "venue": "arXiv preprint arXiv:2007.04424,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jerry M Chow",
+                "Jay M Gambetta",
+                "Antonio D Corcoles",
+                "Seth T Merkel",
+                "John A Smolin",
+                "Chad Rigetti",
+                "S Poletto",
+                "George A Keefe",
+                "Mary B Rothwell",
+                "John R Rozen"
+            ],
+            "title": "Universal quantum gate set approaching fault-tolerant thresholds with superconducting qubits",
+            "venue": "Physical review letters,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Edward R Dougherty"
+            ],
+            "title": "Probability and statistics for the engineering, computing, and physical sciences",
+            "year": 1990
+        },
+        {
+            "authors": [
+                "Yuxuan Du",
+                "Tao Huang",
+                "Shan You",
+                "Min-Hsiu Hsieh",
+                "Dacheng Tao"
+            ],
+            "title": "Quantum circuit architecture search for variational quantum algorithms",
+            "venue": "npj Quantum Information,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Edward Farhi",
+                "Jeffrey Goldstone",
+                "Sam Gutmann"
+            ],
+            "title": "A quantum approximate optimization algorithm",
+            "venue": "arXiv preprint arXiv:1411.4028,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Enrico Fontana",
+                "Nathan Fitzpatrick",
+                "David Mu\u00f1oz Ramo",
+                "Ross Duncan",
+                "Ivan Rungger"
+            ],
+            "title": "Evaluating the noise resilience of variational quantum algorithms",
+            "venue": "Physical Review A,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Enrico Fontana",
+                "M Cerezo",
+                "Andrew Arrasmith",
+                "Ivan Rungger",
+                "Patrick J Coles"
+            ],
+            "title": "Non-trivial symmetries in quantum landscapes and their resilience to quantum noise",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Enrico Fontana",
+                "Manuel S Rudolph",
+                "Ross Duncan",
+                "Ivan Rungger",
+                "Cristina C\u00eerstoiu"
+            ],
+            "title": "Classical simulations of noisy variational quantum circuits",
+            "venue": "arXiv preprint arXiv:2306.05400,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Daniel Greenbaum"
+            ],
+            "title": "Introduction to quantum gate set tomography",
+            "venue": "arXiv preprint arXiv:1509.02921,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Harper R Grimsley",
+                "Sophia E Economou",
+                "Edwin Barnes",
+                "Nicholas J Mayhall"
+            ],
+            "title": "An adaptive variational algorithm for exact molecular simulations on a quantum computer",
+            "venue": "Nature comm.,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Emil Julius Gumbel"
+            ],
+            "title": "Statistical theory of extreme values and some practical applications: a series of lectures, volume 33",
+            "venue": "US Government Printing Office,",
+            "year": 1948
+        },
+        {
+            "authors": [
+                "Charles R Harris",
+                "K Jarrod Millman",
+                "St\u00e9fan J Van Der Walt",
+                "Ralf Gommers",
+                "Pauli Virtanen",
+                "David Cournapeau",
+                "Eric Wieser",
+                "Julian Taylor",
+                "Sebastian Berg",
+                "Nathaniel J Smith"
+            ],
+            "title": "Array programming with numpy",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Pascual Jordan",
+                "Eugene Paul Wigner"
+            ],
+            "title": "\u00dcber das paulische \u00e4quivalenzverbot",
+            "year": 1993
+        },
+        {
+            "authors": [
+                "Abhinav Kandala",
+                "Antonio Mezzacapo",
+                "Kristan Temme",
+                "Maika Takita",
+                "Markus Brink",
+                "Jerry M Chow",
+                "Jay M Gambetta"
+            ],
+            "title": "Hardware-efficient variational quantum eigensolver for small molecules and quantum magnets",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Diederik P Kingma",
+                "Jimmy Ba"
+            ],
+            "title": "Adam: A method for stochastic optimization",
+            "venue": "arXiv preprint arXiv:1412.6980,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Philip Krantz",
+                "Morten Kjaergaard",
+                "Fei Yan",
+                "Terry P Orlando",
+                "Simon Gustavsson",
+                "William D Oliver"
+            ],
+            "title": "A quantum engineer\u2019s guide to superconducting qubits",
+            "venue": "Applied physics reviews,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "En-Jui Kuo",
+                "Yao-Lung L Fang",
+                "Samuel Yen-Chi Chen"
+            ],
+            "title": "Quantum architecture search via deep reinforcement learning",
+            "venue": "arXiv preprint arXiv:2104.07715,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Zhaoqi Leng",
+                "Pranav Mundada",
+                "Saeed Ghadimi",
+                "Andrew Houck"
+            ],
+            "title": "Robust and efficient algorithms for high-dimensional black-box quantum optimization",
+            "year": 1910
+        },
+        {
+            "authors": [
+                "Gushu Li",
+                "Yufei Ding",
+                "Yuan Xie"
+            ],
+            "title": "Tackling the qubit mapping problem for nisq-era quantum devices",
+            "venue": "In Proceedings of the Twenty-Fourth International Conference on Architectural Support for Programming Languages and Operating Systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Junyu Liu",
+                "Frederik Wilde",
+                "Antonio Anna Mele",
+                "Liang Jiang",
+                "Jens Eisert"
+            ],
+            "title": "Noise can be helpful for variational quantum algorithms",
+            "venue": "arXiv preprint arXiv:2210.06723,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Manuel L\u00f3pez-Ib\u00e1\u00f1ez",
+                "J\u00e9r\u00e9mie Dubois-Lacoste",
+                "Leslie P\u00e9rez C\u00e1ceres",
+                "Mauro Birattari",
+                "Thomas St\u00fctzle"
+            ],
+            "title": "The irace package: Iterated racing for automatic algorithm configuration",
+            "venue": "Operations Research Perspectives,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Jarrod R McClean",
+                "Jonathan Romero",
+                "Ryan Babbush",
+                "Al\u00e1n Aspuru-Guzik"
+            ],
+            "title": "The theory of variational hybrid quantum-classical algorithms",
+            "venue": "New J. Phys.,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Jarrod R McClean",
+                "Nicholas C Rubin",
+                "Kevin J Sung",
+                "Ian D Kivlichan",
+                "Xavier Bonet-Monroig",
+                "Yudong Cao",
+                "Chengyu Dai",
+                "E Schuyler Fried",
+                "Craig Gidney",
+                "Brendan Gimby"
+            ],
+            "title": "Openfermion: the electronic structure package for quantum computers",
+            "venue": "Quantum Science and Technology,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Michael A Nielsen",
+                "Isaac L Chuang"
+            ],
+            "title": "Quantum computation and quantum information",
+            "venue": "Cambridge university press,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Rom\u00e1n Or\u00fas"
+            ],
+            "title": "A practical introduction to tensor networks: Matrix product states and projected entangled pair states",
+            "venue": "Annals of physics,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Mateusz Ostaszewski",
+                "Edward Grant",
+                "Marcello Benedetti"
+            ],
+            "title": "Structure optimization for parameterized quantum circuits",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Mateusz Ostaszewski",
+                "Lea M Trenkwalder",
+                "Wojciech Masarczyk",
+                "Eleanor Scerri",
+                "Vedran Dunjko"
+            ],
+            "title": "Reinforcement learning for optimization of variational quantum circuit architectures",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Thomas E O\u2019Brien",
+                "B Tarasinski",
+                "Leo DiCarlo"
+            ],
+            "title": "Density-matrix simulation of small surface codes under current and projected experimental noise. npj",
+            "venue": "Quantum Information,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Adam Paszke",
+                "Sam Gross",
+                "Francisco Massa",
+                "Adam Lerer",
+                "James Bradbury",
+                "Gregory Chanan",
+                "Trevor Killeen",
+                "Zeming Lin",
+                "Natalia Gimelshein",
+                "Luca Antiga"
+            ],
+            "title": "Pytorch: An imperative style, highperformance deep learning library",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Alberto Peruzzo",
+                "Jarrod McClean",
+                "Peter Shadbolt",
+                "Man-Hong Yung",
+                "Xiao-Qi Zhou",
+                "Peter J Love",
+                "Al\u00e1n Aspuru-Guzik",
+                "Jeremy L"
+            ],
+            "title": "O\u2019brien. A variational eigenvalue solver on a photonic quantum processor",
+            "venue": "Nature communications,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "V\u00e1clav Poto\u010dek",
+                "Alan P Reynolds",
+                "Alessandro Fedrizzi",
+                "David W Corne"
+            ],
+            "title": "Multi-objective evolutionary algorithms for quantum circuit discovery",
+            "venue": "arXiv preprint arXiv:1812.04458,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Michael JD Powell"
+            ],
+            "title": "A direct search optimization method that models the objective and constraint functions by linear interpolation",
+            "year": 1994
+        },
+        {
+            "authors": [
+                "Matteo G Pozzi",
+                "Steven J Herbert",
+                "Akash Sengupta",
+                "Robert D Mullins"
+            ],
+            "title": "Using reinforcement learning to perform qubit routing in quantum compilers",
+            "venue": "ACM Transactions on Quantum Computing,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "John Preskill"
+            ],
+            "title": "Quantum computing in the nisq era",
+            "venue": "and beyond. Quantum,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Patrick Rall",
+                "Daniel Liang",
+                "Jeremy Cook",
+                "William Kretschmer"
+            ],
+            "title": "Simulation of qubit quantum circuits via pauli propagation",
+            "venue": "Physical Review A,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Arthur G Rattew",
+                "Shaohan Hu",
+                "Marco Pistoia",
+                "Richard Chen",
+                "Steve Wood"
+            ],
+            "title": "A domain-agnostic, noise-resistant, hardware-efficient evolutionary variational quantum eigensolver",
+            "year": 1910
+        },
+        {
+            "authors": [
+                "Florian Rehm",
+                "Sofia Vallecorsa",
+                "Kerstin Borras",
+                "Dirk Kr\u00fccker",
+                "Michele Grossi",
+                "Valle Varo"
+            ],
+            "title": "Precise image generation on current noisy quantum computing devices",
+            "venue": "Quantum Science and Technology,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Manuel S Rudolph",
+                "Enrico Fontana",
+                "Zo\u00eb Holmes",
+                "Lukasz Cincio"
+            ],
+            "title": "Classical surrogate simulation of quantum systems with lowesa",
+            "venue": "arXiv preprint arXiv:2308.09109,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Amit Sabne"
+            ],
+            "title": "Xla: Compiling machine learning for peak performance",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jacob T Seeley",
+                "Martin J Richard",
+                "Peter J Love"
+            ],
+            "title": "The bravyi-kitaev transformation for quantum computation of electronic structure",
+            "venue": "The Journal of chemical physics,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Kunal Sharma",
+                "Sumeet Khatri",
+                "Marco Cerezo",
+                "Patrick J Coles"
+            ],
+            "title": "Noise resilience of variational quantum compiling",
+            "venue": "New Journal of Physics,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Animesh Sinha",
+                "Utkarsh Azad",
+                "Harjinder Singh"
+            ],
+            "title": "Qubit routing using graph neural network aided monte carlo tree search",
+            "venue": "In Proceedings of the AAAI Conference on Artificial Intelligence,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "John C Slater"
+            ],
+            "title": "A simplification of the hartree-fock method",
+            "venue": "Physical review,",
+            "year": 1951
+        },
+        {
+            "authors": [
+                "James C Spall"
+            ],
+            "title": "A stochastic approximation technique for generating maximum likelihood parameter estimates",
+            "venue": "American control conference,",
+            "year": 1987
+        },
+        {
+            "authors": [
+                "Richard S Sutton",
+                "Andrew G Barto"
+            ],
+            "title": "Reinforcement learning: An introduction",
+            "venue": "MIT press,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Yasunari Suzuki",
+                "Yoshiaki Kawase",
+                "Yuya Masumura",
+                "Yuria Hiraga",
+                "Masahiro Nakadai",
+                "Jiabao Chen",
+                "Ken M Nakanishi",
+                "Kosuke Mitarai",
+                "Ryosuke Imai",
+                "Shiro Tamiya"
+            ],
+            "title": "Qulacs: a fast and versatile quantum circuit simulator for research",
+            "venue": "purpose. Quantum,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Ho Lun Tang",
+                "VO Shkolnikov",
+                "George S Barron",
+                "Harper R Grimsley",
+                "Nicholas J Mayhall",
+                "Edwin Barnes",
+                "Sophia E Economou"
+            ],
+            "title": "qubit-adapt-vqe: An adaptive algorithm for constructing hardware-efficient ans\u00e4tze on a quantum processor",
+            "venue": "PRX Quantum,",
+            "year": 2031
+        },
+        {
+            "authors": [
+                "Pauli Virtanen",
+                "Ralf Gommers",
+                "Travis E Oliphant",
+                "Matt Haberland",
+                "Tyler Reddy",
+                "David Cournapeau",
+                "Evgeni Burovski",
+                "Pearu Peterson",
+                "Warren Weckesser",
+                "Jonathan Bright"
+            ],
+            "title": "Scipy 1.0: fundamental algorithms for scientific computing in python",
+            "venue": "Nature methods,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Hanrui Wang",
+                "Yongshan Ding",
+                "Jiaqi Gu",
+                "Yujun Lin",
+                "David Z Pan",
+                "Frederic T Chong",
+                "Song Han"
+            ],
+            "title": "Quantumnas: Noise-adaptive search for robust quantum circuits",
+            "venue": "IEEE International Symposium on High-Performance Computer Architecture (HPCA),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Samson Wang",
+                "Enrico Fontana",
+                "Marco Cerezo",
+                "Kunal Sharma",
+                "Akira Sone",
+                "Lukasz Cincio",
+                "Patrick J Coles"
+            ],
+            "title": "Noise-induced barren plateaus in variational quantum algorithms",
+            "venue": "Nature communications,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Colin P Williams",
+                "Alexander G Gray"
+            ],
+            "title": "Automated design of quantum circuits",
+            "venue": "In NASA International Conference on Quantum Computing and Quantum Communications,",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Christopher J Wood",
+                "Jacob D Biamonte",
+                "David G Cory"
+            ],
+            "title": "Tensor networks and graphical calculus for open quantum systems",
+            "venue": "arXiv preprint arXiv:1111.6950,",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Wenjie Wu",
+                "Ge Yan",
+                "Xudong Lu",
+                "Kaisen Pan",
+                "Junchi Yan"
+            ],
+            "title": "Quantumdarts: Differentiable quantum architecture search for variational quantum algorithms",
+            "venue": "International Conference on Machine Learning.,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Shi-Xin Zhang",
+                "Chang-Yu Hsieh",
+                "Shengyu Zhang",
+                "Hong Yao"
+            ],
+            "title": "Differentiable quantum architecture search",
+            "venue": "Quantum Science and Technology,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "F N.A"
+            ],
+            "title": "SPECIFICS FOR ADAM-SPSA We implement a version of simultaneous perturbation stochastic approximation (SPSA) that was not implemented in the context of VQE before. It combines stochastic gradient estimates of SPSA (Spall, 1987) with adaptive moment estimation (Adam) (Kingma",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "O\u2019Brien"
+            ],
+            "title": "A standard quaternary notation of these bases is used to construct multi-qubit Pauli strings, Pi. To acquire the expansion coefficients in this basis, the Hilbert-Schmidt norm, \u27e8A|B",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Fontana"
+            ],
+            "title": "2023). However, we successfully implemented fast, dense matrix-vector multiplication-based algorithms for both noiseless and noisy cases. To guide the simulator on the gates to be implemented, we provide it with a NumPy array (Harris et al., 2020) of dimension ng \u00d7 2. The first column enumerates the subsequent gates or PTMs",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Appendix H"
+            ],
+            "title": "This trend becomes more pronounced with the addition of noise channels following gate implementations (i.e., an increase in the noise model number), leading to an exponential increase in the number of Kraus operations. In terms of quantitative results, for depth 13, JAX-PTM yields an improvement of up to a 2.65-, 3.9-, and 9.93-fold over Qulacs_4 noise model in 2",
+            "year": 2000
+        },
+        {
+            "authors": [
+                "Rattew"
+            ],
+            "title": "2019) presents numerical results for their EA-based QAS method within chemical accuracy, while (Wang et al., 2022) evaluates their one-shot super-circuit method under simulated circuit noise, significantly impacting estimation accuracy (Rattew et al., 2019) proposed Evolutionary Variational Quantum Eigensolver (EVQE) that uses evolutionary programming techniques to dynamically generate and optimize quantum circuits",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Rattew"
+            ],
+            "title": "2019), the best-observed depth and CNOT gate count were approximately 35 and 40, respectively (exact numbers not explicitly stated in the paper). During EVQE training, the achieved error was slightly less than 1\u00d7 10\u22123 (no exact number provided). On the other hand, CRLQAS (IA, wo-RH) in median statistics achieves 8 \u00d7 10\u22124 error with depth and CNOT gate count",
+            "year": 2019
+        }
+    ],
+    "sections": [
+        {
+            "text": "The key challenge in the noisy intermediate-scale quantum era is finding useful circuits compatible with current device limitations. Variational quantum algorithms (VQAs) offer a potential solution by fixing the circuit architecture and optimizing individual gate parameters in an external loop. However, parameter optimization can become intractable, and the overall performance of the algorithm depends heavily on the initially chosen circuit architecture. Several quantum architecture search (QAS) algorithms have been developed to design useful circuit architectures automatically. In the case of parameter optimization alone, noise effects have been observed to dramatically influence the performance of the optimizer and final outcomes, which is a key line of study. However, the effects of noise on the architecture search, which could be just as critical, are poorly understood. This work addresses this gap by introducing a curriculum-based reinforcement learning QAS (CRLQAS) algorithm designed to tackle challenges in realistic VQA deployment. The algorithm incorporates (i) a 3D architecture encoding and restrictions on environment dynamics to explore the search space of possible circuits efficiently, (ii) an episode halting scheme to steer the agent to find shorter circuits, and (iii) a novel variant of simultaneous perturbation stochastic approximation as an optimizer for faster convergence. To facilitate studies, we developed an optimized simulator for our algorithm, significantly improving computational efficiency in simulating noisy quantum circuits by employing the Pauli-transfer matrix formalism in the Pauli-Liouville basis. Numerical experiments focusing on quantum chemistry tasks demonstrate that CRLQAS outperforms existing QAS algorithms across several metrics in both noiseless and noisy environments."
+        },
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "The past decade has witnessed dramatic progress in the study and development of quantum processing units, prompting extensive exploration of the capabilities of Noisy Intermediate-Scale Quantum (NISQ) hardware (Preskill, 2018). To account for the stringent limitations of NISQ devices, variational quantum algorithms (VQAs) (Peruzzo et al., 2014; Farhi et al., 2014; McClean et al., 2016; Cerezo et al., 2021) were developed as a suitable way to exploit them.\nIn essence, VQAs consist of three building blocks: a parameterized quantum circuit (PQC) or ansatz, a quantum observable allowing the definition of a cost function, and a classical optimization routine that tunes the parameters of the PQC to minimize the cost function. Each of the building blocks corresponds to an active area of research to understand the capabilities of VQAs.\nOne such promising VQA with an application in quantum chemistry is variational quantum eigensolver (VQE). In VQE, the objective is to find the ground state energy of a chemical Hamiltonian H by minimizing the energy\nE(\u03b8\u20d7) = min \u03b8\u20d7\n( \u27e8\u03c8(\u03b8\u20d7)|H|\u03c8(\u03b8\u20d7)\u27e9 ) . (1)\nThe trial state |\u03c8(\u03b8\u20d7)\u27e9 is prepared by applying a PQC U(\u03b8\u20d7) to the initial state |\u03c8initial\u27e9, where \u03b8\u20d7 specify the rotation angles of the local unitary operators in the circuit. The structure of this circuit significantly impacts the success of the algorithm. Traditionally, in VQAs, the structure of the PQC is fixed before initiating the algorithm and is often motivated by physical (Peruzzo et al., 2014) or hardware (Kandala et al., 2017) considerations. However, fixing the structure of the PQC within VQA may impose a substantial limitation on exploring the relevant parts of the Hilbert space. To circumvent such limitations, recent attention has turned towards automatically constructing PQC through quantum architecture search (QAS) (Grimsley et al., 2019; Tang et al., 2021; Anastasiou et al., 2022; Zhang et al., 2022). This approach removes the necessity for domain-specific knowledge and often yields superior PQCs tailored for specific VQAs. Given a finite pool of quantum gates, the objective of QAS is to find an optimal arrangement of quantum gates to construct a PQC (and its corresponding unitary U(\u03b8\u20d7opt), where \u03b8\u20d7opt are optimal parameters) which minimizes the cost function (see Eq. 1).\nOne such proposal to tackle the QAS problem is to employ reinforcement learning (RL) (Ostaszewski et al., 2021b; Kuo et al., 2021), where the PQCs are defined as a sequence of actions generated by a trainable policy. The value of the quantum cost function (optimized independently via a classical optimizer) serves as an intermittent signal for the final reward function. This reward function then guides policy updates to maximize expected returns and select optimal actions for subsequent steps.\nUp to the completion of this work, most algorithms for QAS have been formulated under the assumption of an idealized quantum computer, free from physical noise and endowed with all-to-all qubit connectivity. However, it is essential to recognize that the QAS problem becomes even more daunting in light of the constraints imposed by current NISQ devices (Du et al., 2022). According to (Wang et al., 2021), the impact of noise on the trainability of VQAs in the context of QAS is multifaceted.\nFirst and foremost, noise induces the phenomenon of barren plateaus, causing gradients within the cost function landscapes to vanish, thereby impeding optimization. Moreover, quantum noise introduces additional complexity by transforming certain instances of exponentially occurring global minima into local optima, posing a substantial challenge to trainability (Fontana et al., 2022). Additionally, noise alters the cost landscape to an extent that the optimal parameters for the noisy landscape may no longer align with the optimal parameters for the noiseless landscape (Sharma et al., 2020). In addition to the influence of physical noise on the landscape, the finite sampling noise hinders the performance of classical optimizers working on that landscape, raising the necessity of optimizers robust to such conditions (Bonet-Monroig et al., 2023). Overall, the adverse effects in-\nduced by the quantum noise demand swift simulation of numerous queries from noisy landscapes and robust classical optimization strategies operating under these conditions.\nPerforming experiments that assess the performance of QAS algorithms in the presence of noise, though computationally demanding, is a critical step toward understanding and ultimately overcoming the challenges presented by real-world quantum hardware.\nThe contribution of our work is two-fold. Firstly, we introduce the curriculum-based reinforcement learning QAS (CRLQAS) method depicted in Fig. 1. Secondly, we provide an optimized machinery for CRLQAS that effectively simulates realistic noise\u2014a crucial element for testing and enhancing our method for quantum chemistry problems on larger system sizes. The machinery uses offline computation of Pauli-transfer matrices (PTM) and GPU based JAX framework to accelerate computations by up to six-fold. To further improve the learning process of CRLQAS, we introduce several key components:\n(1) A mechanism, namely, illegal actions preventing invalid sequences of gates. (2) A random halting procedure to steer the agent to learn gate-efficient circuits. (3) A tensor-based binary circuit encoding that captures the essence of the depth of the PQC\nand enables all-to-all qubit connectivity. (4) Two variants of simultaneous perturbation stochastic approximation (SPSA) algorithm that\nuse adaptive momentum (Adam) and a variable measurement sample budget for faster convergence rate and robustness.\nBy leveraging strategies (1)\u2013(4), we achieve chemical accuracy for a class of chemical Hamiltonians with better accuracy by maintaining both gate and depth efficiency in noisy and noiseless scenarios. Our numerical demonstrations often establish CRLQAS as the superior approach compared to existing QAS methods within the context of VQE across a spectrum of metrics."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "There is a growing body of research in the field of QAS aimed at enhancing the efficiency and performance of quantum algorithms. Several key themes emerge from related works, encompassing QAS, optimization strategies, and the application of RL to quantum computing.\nEvolutionary and Genetic algorithms Existing literature has explored various strategies to automate the design of quantum circuits. Evolutionary algorithms (EAs), particularly genetic algorithms (GAs), have been utilized to evolve quantum circuits (Williams & Gray, 1998). While GAs demonstrate the capability to evolve simple quantum circuits, such as quantum error correction codes or quantum adders (Bang & Yoo, 2014; Potoc\u030cek et al., 2018; Chivilikhin et al., 2020; Bilkis et al., 2021), they face limitations in handling parameterized rotation gates. They are also known to be sensitive to gene length and candidate gate set size.\nSampling-based algorithms As a step forward, sampling-based learning algorithms have been introduced to sample circuits from candidate sets, addressing the QAS problem for ground state energy estimation (Grimsley et al., 2019; Tang et al., 2021).In (Zhang et al., 2022), the authors utilize Monte Carlo sampling to search for PQCs on QFT and Max-Cut problems. In (Du et al., 2022), a QCAS method based on supernet and weight sharing strategy was introduced to better estimate energy for quantum chemistry tasks. However, in the presence of hardware noise, this method fails to estimate the ground state energy within a precision to make realistic chemistry predictions. Meanwhile, (Wu et al., 2023) uses the Gumbel-Softmax technique (Gumbel, 1948) to sample quantum circuits and benchmark their algorithm on VQAs, including quantum chemistry tasks.\nReinforcement-learning-based algorithms RL techniques have also been applied to tackle the QAS problem for VQAs. Typically, such approaches employ a carefully designed reward function to train the agent to choose suitable gates. (Ostaszewski et al., 2021a) employed double deep Q-network (DDQN) to estimate the ground state of the 4- and 6-qubit LiH molecules. RL has also been used to address the qubit routing problem (Li et al., 2019; Sinha et al., 2022; Pozzi et al., 2022). These works aim to minimize circuit depth through qubit routing using RL techniques. Additionally, (Kuo et al., 2021) have employed RL to test their algorithms on 2-qubit Bell state and 3-qubit GHZ state in the presence of hardware noise. We summarize the relevant QAS methods for the ground state energy estimation task in Appendix K."
+        },
+        {
+            "heading": "3 CURRICULUM REINFORCEMENT LEARNING ALGORITHM",
+            "text": "We give an overview of the CRLQAS algorithm to construct PQCs for a VQA task, wherein we present state and action representations and the reward function used in this work. Later, we also describe the features of CRLQAS, which yields better performance across several metrics.\nIn the CRLQAS environment, the agent starts every episode with an empty circuit. It then sequentially appends the gates to the intermediate circuit until the maximum number of actions has been reached. At every time step of the episode, the state corresponds to a circuit and an action to append a gate to that circuit. As we employ deep RL methods, we encode states and actions in a way that is amenable to neural networks. Thus, each state is represented by a newly introduced tensor-based binary encoding of the gate structure of the PQC, which we describe in Sec. 3.3. For our simulations to construct the circuits, we consider the gate set consisting of Controlled-NOT (CNOT) and 1-qubit parameterized rotation gates (RX,RY,RZ). We consciously omit the use of the continuous parameters of rotation gates and only utilize the estimated energy of the circuit in the state representation of the RL agent.\nTo encode the actions, we use a one-hot encoding scheme as in (Ostaszewski et al., 2021b) with CNOT and rotation gates represented by two integers. For CNOT, these values specify the positions of control and target qubits, respectively. In contrast, for the rotation gates, the first value specifies the qubit register, and the second indicates the rotation axis (the enumeration of the position starts from 0). For an N -qubit quantum state, the total number of actions is 3N + 2 ( N 2 ) , where the first term comes from the choice of selecting the rotation gates and the latter from choosing CNOTs.\nTo steer the agent towards the target, we use the same reward function R at every time step t of an episode, as in (Ostaszewski et al., 2021b). The reward function R defined as,\nR =  5 if Ct < \u03be, \u22125 if t \u2265 T es and Ct \u2265 \u03be, max ( Ct\u22121\u2212Ct Ct\u22121\u2212Cmin ,\u22121 ) otherwise (2)\nwhere Ct refers to the value of the cost function C at each step, \u03be is a user-defined threshold value and T es denotes the total number of steps s allowed for an episode e. T e s can also be understood as the maximum number of actions allowed per episode. Note that the extreme reward values (\u00b15) signal the end of an episode, leading to two stopping conditions: exceeding the threshold \u03be or reaching the maximum number of actions. For quantum chemistry tasks, the threshold \u03be is typically set to 1.6\u00d7 10\u22123 as it defines the precision such that realistic chemical predictions can be made. The goal of the agent is to obtain an estimated value of Cmin within such precision.\nThe continuous parameters \u03b8\u20d7 of the quantum circuit that describes the cost function C are optimized separately using a classical optimizer to obtain the reward R. The choice of the classical optimizer is critical for the RL agent\u2019s success in the environment. The nature of the CRLQAS reward function depends on the cost function evaluation. The cost function evaluation can be deterministic or stochastic based on both the classical optimizer and quantum noise. Stochastic optimizers, like SPSA, tend to converge toward different parameters, resulting in different function values across multiple trials, even when initialized identically. Moreover, the quantum noise may also lead to different function values even with the same parameters.\nWe consider both environment types (details discussed in Sec. 4) and successfully validate the effectiveness of novel features introduced in this work for the CRLQAS method. The results of our ablation study to identify the features that standout in CRLQAS can be found in Appendix E. In the next section, we describe the features of this method. We adopt the \u201cfeedback-driven curriculum learning\u201d approach from the (Ostaszewski et al., 2021b) which is elaborated in the Appendix B.1."
+        },
+        {
+            "heading": "3.1 ILLEGAL ACTIONS FOR THE RL AGENT",
+            "text": "As QAS is a hard combinatorial problem with a large search space, pruning the search space is beneficial for the agent to find circuits with different structures. Hence, we introduce a simple mechanism, namely, illegal actions to narrow down the search space significantly. The mechanism uses the property that quantum gates are unitary, and hence, when two similar gates act on the same qubit(s), they cancel out. An elaborate discussion on the implementation of the illegal actions mechanism is provided in Appendix B.2."
+        },
+        {
+            "heading": "3.2 RANDOM HALTING OF THE RL ENVIRONMENT",
+            "text": "In the CRLQAS algorithm, the total number of actions executed by the agent within an episode, denoted as T es , is set using multiple hyperparameters. The hyperparameter, nact, determines an upper limit on the total actions in an episode, meaning T es \u2264 nact. If the agent is not interrupted by any of the schemes mentioned in the paper, it selects a maximum of T es = nact actions (gates).\nIf the RL agent finds a circuit that estimates an energy value (upon optimizing parameters) lower than this threshold, the episode is halted abruptly leading to T es < nact. When employing the random halting (RH) scheme, both the curricula and a stochastic sampling procedure then influence the episode length. We use samples from the negative binomial distribution to determine the cap on the total number of actions per episode, T es , at the beginning of each episode (Dougherty, 1990). The probability mass function of this distribution is\nPr (X = nfail) = ( nact \u2212 1 nfail ) pnfail(1\u2212 p)nact\u2212nfail , (3)\nwhere nact represents the hyperparameter for the total number of allowed actions per episode, and in this context, it is the total number of Bernoulli trials as well. Also, nfail denotes the number of failed Bernoulli trials, and the p denotes the probability of a Bernoulli trial to fail, which we provide as another hyperparameter. The probability mass function given above yields the probability of having nfail failed Bernoulli trials given nact total trials and p failure probability. In practice, we sample T es \u223c nfail as a random number based on the failure probability, and the total number of experiments is determined via inverse transform sampling implemented in NumPy (Harris et al., 2020). This inverse sampling generates a number within the range T es \u223c [0, nact], and we obtain this number at the outset of each episode.\nThe primary motivation for integrating RH into CRLQAS is to enable the agent to adapt to shorterlength episodes, thereby facilitating the agent\u2019s ability to discover more compact circuits in early successful episodes, even if it occasionally leads to a delay in achieving the first successful episode."
+        },
+        {
+            "heading": "3.3 TENSOR-BASED BINARY CIRCUIT ENCODING",
+            "text": "Several QAS algorithms often require the compact representation of the circuit, also commonly known as encoding, as it allows for modification, comparison, and exploration of quantum circuits. Hence, the choice of encoding plays a vital role in efficiently maneuvering the search space and uncovering efficient and novel quantum circuits.\nWe provide the agent with a complete description of the circuit by employing a binary encoding scheme that captures the structural aspects of the PQC, specifically, the ordering of the gates. To keep the dimension of the input tensor constant throughout an episode, the tensor must be prepared for the deepest quantum circuit that can be generated.\nFor constructing a tensor representation of the circuit, we initially specify the hyperparameter nact, which determines the maximum number of allowed actions (i.e., gates) in all episodes. We now define the moment of a PQC, which is crucial for understanding the tensor representation. The moment or layer of a quantum circuit represents all gates that can execute simultaneously; essentially, it is a set of operations acting on different qubits in parallel. The number of these moments determines the depth of the circuit. We represent PQCs with 3D tensors such that each matrix (2D \u201cslice\u201d) represents a different moment of the circuit, and the other dimension represents the depth (see Fig. 1). We use the maximum number of actions parameter, nact, at a given episode as an upper bound on the depth of the circuit. We give this upper bound for the extreme case where all the actions are implemented as 1-qubit gates appended to the same qubit. As a result, at each episode, we initialize an empty circuit of depth nact by defining a [nact \u00d7 ((N + 3)\u00d7N)] dimensional tensor of all zeros. Here N is the number of qubits. Each moment or layer in the circuit is depicted through a matrix of dimensions ((N + 3)\u00d7N). In this matrix, the initial N rows showcase the locations of the control and target qubits for the CNOT gates applied during that specific moment. Following these, the subsequent three rows indicate the positions of 1-qubit rotation gates RX, RY, and RZ, respectively. The visualization of such an encoding for a toy circuit is depicted in Appendix B.3."
+        },
+        {
+            "heading": "3.4 ADAM-SPSA ALGORITHM WITH VARYING SAMPLES",
+            "text": "In the realm of VQE within a limited measurement sample budget, several variants of simultaneous perturbation stochastic approximation (SPSA) have displayed robustness towards finite sample\n(shot) noise (Cade et al., 2020; Bonet-Monroig et al., 2023). One such family of variants, multistage SPSA, reset the decaying parameters while tuning the allowed measurement sample (shot) budget between stages. Implementing a moment adaptation subroutine in classical ML, such as Adam (Kingma & Ba, 2014), alongside standard gradient descent, increases robustness and convergence rates. This combination has also shown promise in the domain of quantum optimal control for pulse optimization (Leng et al., 2019).\nWe investigate multi-stage variants of such an Adam-SPSA algorithm, exploring different shot budgets and continuous versus reset of decay parameters (after every stage). In doing so, we empirically observed increased robustness and faster convergence rates of a 3-stage Adam-SPSA with continuously decaying parameters. We note that this particular observation is novel and was not discovered before to the best of our knowledge. In Appendix F, we present empirical results demonstrating the convergence of this Adam-SPSA variant across VQE tasks involving various qubit numbers and shot budgets. Leveraging these enhancements, we managed to halve the number of function evaluations, thereby significantly reducing the evaluation time for RL training under physical noise."
+        },
+        {
+            "heading": "3.5 FAST GPU SIMULATION OF NOISY ENVIRONMENTS",
+            "text": "Most QAS algorithms require a considerable amount of noisy function evaluations unless a trainingfree algorithm is used. However, computing these evaluations becomes challenging within modernday simulation frameworks, particularly due to the method of noise simulation known as the Kraus operator sum formalism. This formalism hinders the use of fast simulation methods tailored for noiseless scenarios. Consequently, with an increase in qubits and gates, simulations are hindered not only by the curse of dimensionality associated with dense matrix multiplications but also by the exponential increase in the number of noise channels and their corresponding Kraus operators.\nMost importantly, this computational overhead needs to be paid online (during training and parameter optimization within episodes) at each step (see Appendix H). To mitigate this, the Pauli-transfer matrix (PTM) formalism is applied, allowing the fusion of noise channels with their respective gates to be precomputed offline, eliminating the need for recompilation at each step. In conjunction with PTMs, we employ GPU computation coupled with just-in-time (JIT) compiled functions in JAX (Bradbury et al., 2018), yielding up to a six-fold improvement in RL training while simulating noisy quantum circuits (see Appendix I)."
+        },
+        {
+            "heading": "4 EXPERIMENTS",
+            "text": "Our objective is to assess the performance of CRLQAS described in Sec. 3 to find circuits that are accurate and can overcome hardware noise. We benchmark CRLQAS for the task of finding ground-state energies via variational quantum eigensolvers (VQE) of three molecules, Hydrogen (H2), Lithium Hydride (LiH) and Water (H2O). For all three molecules, we use their representation in the minimal STO-3G basis, mapped to qubits through Jordan-Wigner and Parity transformations (Ostaszewski et al., 2021b; Wu et al., 2023). To simplify the computational task, we use symmetries of the problem to taper off qubits, thus calculating the ground-state energies of 2-qubit H2 (H2 \u2212 2), 3-qubit H2 (H2 \u2212 3), and 4-qubit H2 (H2 \u2212 4), 4-qubit LiH (LiH\u2212 4) and 6-qubit LiH (LiH \u2212 6) and 8-qubit H2O (H2O \u2212 8) (see Appendix L for description of molecules). Additionally, we use hardware noise profiles from publicly available resources IBM (Corporation, 2023) to implement noisy models of varying complexity and run experiments on the first three qubit systems. The relevant details about the implementation of the CRLQAS method and its hyperparameters are outlined in Appendix C.\nIn the subsequent subsection outlining noisy simulations, the RL agent consistently receives signals as noisy energies during training, guiding its action choices. However, while post-processing the data of the trained agent, we only assess energies in a noiseless scenario to determine the success or failure of an episode. An ablation study to identify the features that standout within the CRLQAS method in both noiseless and noisy settings can be found in Table 3 of Appendix E. Our analysis reveals that incorporating illegal actions without random halting prompts the agent to achieve a positive signal (a successful episode) early on, albeit resulting in larger circuits. Conversely, introducing random halting encourages the agent to discover shorter circuits, there is a trade-off as the agent receives the positive signal at a later stage."
+        },
+        {
+            "heading": "4.1 NOISY SIMULATION",
+            "text": "To simulate molecules, we consider a realistic noisy setting without drift, employing the noise profile of the IBM Mumbai (see Appendix H ) and IBM Ourense (Du et al., 2022) quantum devices. Despite not considering drift time-scales of quantum computers, our experiments on a real quantum device (see Appendix J) corroborate a hypothesis previously noted in (Rehm et al., 2023), that classical simulations of noisy quantum circuit evaluations closely resemble actual hardware behavior, particularly under low noise levels. When noise is present, estimated cost function values for given parameters differ from those in noiseless scenarios. This discrepancy challenges leveraging prior domain knowledge (like ground state energies) for configuring rewards and curriculum mechanisms in RL training. Notably, our CRLQAS algorithm does not rely on prior knowledge of the true ground state energy value. Instead, it employs a curriculum-based learning method that dynamically adapts to the problem difficulty based on the performance of the agent. This approach makes the agent self-sufficient and allows it to accumulate knowledge at a pace determined by its performance.\nWe first simulate all the molecules in the noiseless scenario and then in the presence of shot noise. Subsequently, we incorporate the noise profile from the IBM Mumbai device, setting the 1-, and 2-qubit depolarizing noise to (i) the median, (ii) the maximum value, and (iii) 10 times the maximum noise value. Our findings, illustrated in Fig. 2, demonstrate the impact of noise levels on the quantum circuit statistics (like depth, number of gates, and parameter count) to solve the ground state energy estimation problem via VQE for H2 \u2212 2, H2 \u2212 3, H2 \u2212 4 and LiH \u2212 4. Our results empirically verify a commonly expressed hypothesis: an increase in noise levels corresponds to an increase in the number of gates and parameters in the circuit (Sharma et al., 2020; Fontana et al., 2021).\nMoreover, we conduct a comparative analysis between CRLQAS and the QCAS method (Du et al., 2022). With equivalent noise settings and connectivity constraints of IBM Ourense, our findings indicate that CRLQAS efficiently determines the ground state energy of H2\u22124, yielding\u22121.136Ha,\nin contrast to the reported minimum energy of \u22120.963Ha in (Du et al., 2022). Detailed data in Table 2 outlines the minimum energy and the number of gates for H2\u22124. We also perform a noiseless simulation of the circuit presented in (Du et al., 2022), yielding an energy error of 1.9\u00d7 10\u22122 (with 16 gates). In contrast, CRLQAS achieves significantly superior energy errors of 8 \u00d7 10\u22125 (with RH, 32 gates) and 1.5\u00d7 10\u22125 (without RH, 40 gates), demonstrating improvements by three orders of magnitude. Upon closer inspection of all the successful episodes during post-processing of the trained agent\u2019s data (i.e., searching for an intermediate step where the energy error is just below chemical accuracy) for H2 \u2212 4, we observed that CRLQAS indeed achieves an energy error of 2.8\u00d7 10\u22124 (with RH) and 5.5\u00d7 10\u22124 (without RH) respectively, while utilizing only 10 gates. In Fig. 3, we present the learning curves of the agent from our simulations for LiH\u2212 4 with 1-qubit depolarizing noise strength of 0.1\u00d710\u22122 and 106 sampling noise. The illustration tracks two crucial values using the optimal parameters discovered in the noisy setting: the noisy and noiseless energies, obtained by evaluating their respective cost functions for those parameters. The left panel depicts that in the presence of noise, the energy error closely aligns with the threshold curve and decreases with it. This trend indicates the learning trajectory of the agent, where it learns to construct circuits that minimize the noisy energy error. Conversely, in the right panel, the energy behaviour does not mimic the threshold curve for the noiseless scenario. Notably, it even passes chemical accuracy despite the threshold being well above it. This divergence suggests that minimizing the noisy energy does not necessarily result in minimizing the noiseless energy, and vice versa.\nWe also trained RL agents to solve the ground state energy estimation problem via VQE for LiH\u22124 in two additional noisy settings. In the first setting, we employ 1-, and 2-qubit depolarizing channels of strength 0.1 \u00d7 10\u22122 and 0.5 \u00d7 10\u22122, respectively. In the second, we utilized the median noise profile of IBM Mumbai device. Unfortunately, the agent fails to achieve chemical accuracy in these noisy settings. In the first setting, the agent attained a minimum noiseless error of 3.4\u00d710\u22123 (trained for only 5000 episodes). In the latter scenario, it reached 3.3\u00d7 10\u22123 (trained for 15000 episodes)."
+        },
+        {
+            "heading": "4.2 NOISELESS SIMULATION",
+            "text": "We now present the analyses for noiseless settings. This is due to the considerable challenge of scaling noisy QAS beyond four qubits within the scope of this work. The exponential increase in computational cost with the number of qubits makes it exceptionally difficult to handle billions of queries to the noisy cost functions.\nTo analyze the scaling performance of CRLQAS method, we assess its performance for H2 \u2212 4, LiH\u2212 4, LiH\u2212 6 and H2O\u2212 8 molecules in comparison to quantumDARTS (Wu et al., 2023) and modified variant of qubit-ADAPT-VQE (Tang et al., 2021). The results are presented in Table 1. Our results demonstrate that for H2 \u2212 4, LiH \u2212 4, and LiH \u2212 6, CRLQAS surpasses these other QAS methods, producing not only more compact circuits but also achieving lower absolute energy\nerrors. Furthermore, in (Ostaszewski et al., 2021b), for the LiH \u2212 6 molecule, their RL algorithm achieves chemical accuracy only in 7 out of 10 independent seeds. Conversely, utilizing CRLQAS with the same molecule, we achieve solutions across all seeds, showcasing the enhanced stability of CRLQAS in contrast to the RL method of (Ostaszewski et al., 2021b).\nIt should be noted that we utilized a modified qubit-ADAPT-VQE in our simulations for comparative analysis. Specifically, we replace the typically large fermionic pool of operators with a parameterized gate set consisting of\n{RX,RY,RZ,RZZ,RYXXY,RXXYY,Controlled-RYXXY,Controlled-RXXYY}. (4) The energy errors reported in Table 1 were computed by simulating qubit-ADAPT-VQE in Hartree Fock state (Slater, 1951) for 100 ADAPT-VQE iterations with Adam optimizer (learning rate = 0.1\u00d7 10\u22122, and 500 optimization iterations). Notably, for LiH\u2212 6 and H2O\u2212 8, it fails to improve over the Hartree Fock state, repetitively applying the same gate in all iterations, thus resulting in zero values for parameters, depth, and gates. Finally, we emphasize that we exempt ourselves from doing a fine hyperparameter tuning of qubit-ADAPT-VQE, which might improve its performance."
+        },
+        {
+            "heading": "5 CONCLUSION",
+            "text": "We developed a curriculum-based reinforcement learning QAS (CRLQAS) algorithm, specifically optimized to tackle the unique challenges of deploying VQE in realistic noisy quantum environments. Our main contribution lies in introducing CRLQAS and analyzing its performance across different quantum noise profiles sourced from real IBM quantum devices like IBM Ourense and IBM Mumbai. Our method achieved the ground-state energy within the precision defined by chemical accuracy while suggesting circuits characterized by minimal gate counts and depths, thereby establishing state-of-the-art performance in the sub-field of quantum architecture search (QAS).\nWe introduced a depth-aware tensor-based 3D encoding for the agent\u2019s state description of the quantum circuit, illegal actions to reduce the agent\u2019s search space and to avoid consecutive application of similar quantum gate, a random halting mechanism steering the agent to find shorter circuits, and a novel variant of the simultaneous perturbation stochastic approximation (SPSA) algorithm to reduce the energy function evaluations in the presence of noise.\nOur numerical experiments focused on quantum chemistry tasks and demonstrated that CRLQAS outperforms existing QAS algorithms across noiseless and noisy environments for H2 (2-, 3-, and 4-qubit), LiH (4-, and 6-qubit) and H2O (8-qubit) molecule. In pursuit of these experiments, we significantly enhanced the efficiency of simulating realistic noisy quantum circuits by employing the PTM formalism in the Pauli-Liouville basis, thereby fusing gates with their respective noise models and values.\nIn essence, owing to the notable adaptability of our approach and a significant six-fold speed-up due to PTM formalism, our approach holds potential for applications in QAS for combinatorial optimization, quantum machine learning, reinforcement learning for quantum computing and quantum reinforcement learning. We have outlined limitations and future work in Appendix A."
+        },
+        {
+            "heading": "ACKNOWLEDGEMENTS",
+            "text": "YJP and OD would like to thank Stefano Polla and Hao Wang for the helpful discussions. YJP and VD acknowledge support from TotalEnergies. AK would like to acknowledge support from the Polish National Science Center under the grant agreement 2019/33/B/ST6/02011, and MO would like to acknowledge support from the Polish National Science Center under the grant agreement 2020/39/B/ST6/01511 and from Warsaw University of Technology within the Excellence Initiative: Research University (IDUB) programme. XBM acknowledges funding from the Quantum Software Consortium. VD and OD were supported by the Dutch Research Council (NWO/OCW), as part of the Quantum Software Consortium programmes (project number 024.003.037 and NGF.1582.22.031). This work was also supported by the Dutch National Growth Fund (NGF), as part of the Quantum Delta NL programme. The computational results presented here have been achieved in part using the ALICE HPC infrastructure of Leiden University and SURF Snellius HPC infrastructure (SURF Cooperative grant no. EINF-6793).\nREPRODUCIBILITY\nTo ensure the reproducibility of our work, we provide detailed descriptions of the experimental configurations and hyperparameters for the CRLQAS method and Adam-SPSA optimizer in Appendix C and Appendix F, respectively. Additionally, information about the noise profiles of the IBMQ device and molecular systems is available in Appendix G and Appendix L, respectively. A comprehensive discussion of the noise models examined in our study and practical aspects of their software implementation can be found in Appendix H and Appendix I. The source code for all experiments conducted in this manuscript is accessible here: https://anonymous.4open. science/r/CRLQAS/."
+        },
+        {
+            "heading": "A LIMITATIONS AND FUTURE WORK",
+            "text": "Computational Demands The training process for the agent is computationally demanding, posing challenges both in terms of evaluating quantum circuits on a quantum computer and training the algorithm on classical devices. This limitation warrants further exploration for more efficient computational strategies.\nEvolution of RL Methods Reinforcement learning (RL) methods are continually evolving, and while promising, they face challenges related to sample efficiency, stability, and sensitivity. Recognizing these evolving aspects is crucial for refining the proposed algorithm and addressing its limitations.\nValidation on Real Quantum Hardware A limitation of this work is the absence of validation on real quantum hardware due to current cost constraints. Future research should include experimentation on practical quantum devices to assess the algorithm\u2019s performance in real-world scenarios.\nScalability Challenges The proposed algorithm\u2019s scalability to larger quantum circuits, more complex quantum chemistry problems, or different noise models is a potential limitation that requires thorough investigation. Current experiments train the agent from scratch, necessitating exploration for scalability improvements.\nTransfer Learning Exploration Investigate the feasibility of transfer learning for the proposed algorithm, particularly in the context of different molecules and various noise scenarios. This exploration aims to enhance the algorithm\u2019s adaptability and generalization across diverse quantum tasks.\nApplication Scenarios Enhancement Explore more applicable scenarios, such as pre-training the algorithm on simulations and fine-tuning on real quantum devices. This approach can potentially improve the algorithm\u2019s efficiency and performance in practical quantum computing applications."
+        },
+        {
+            "heading": "B DESCRIPTION OF CRLQAS COMPONENTS",
+            "text": "B.1 FEEDBACK-DRIVEN CURRICULUM LEARNING\nThe moving threshold technique (see Fig. 4) is a feedback-driven curriculum learning method introduced in (Ostaszewski et al., 2021b). During the learning process the agent pursues a parameter \u03be2 that marks the lowest energy known by the agent so far and updates a threshold parameter with respect to this parameter based on some rules. In the beginning, the \u03be2 parameter is set to a hyperparameter \u03be1. If the agent finds an energy value lower than the current one, it updates \u03be2 to this new energy value. Another hyperparameter \u201cfake minimum energy\u201d \u00b5, a proxy to the lower bound of attainable ground state energy is set as a target for the agent1. We compute this proxy by taking the summation of absolute values of Pauli string coefficients stemming from the Hamiltonian. In the absence of amortization, the algorithm shifts the threshold to |\u00b5 \u2212 \u03be2| for the new \u03be2. In the presence of amortization, however, it adds a parameter to that threshold as |\u00b5 \u2212 \u03be2| + \u03b4, where \u03b4 is the amortization hyperparameter. In the meantime, the agent continues its exploration with subsequent actions and episodes and records the number of successful actions. Here, there are two rules at play. The first rule greedily shifts the threshold to |\u00b5\u2212 \u03be2| after G episodes. Here G is a hyperparameter as well. The second rule slowly decreases the threshold parameter each time there is a successful episode by subtracting a factor of \u03b4/\u03ba. Here \u03ba is the radius of shifts, also a hyperparameter. Upon setting the threshold to |\u00b5\u2212\u03be2|, if the agent fails to improve the energy value in consecutive episodes the threshold is increased back to |\u00b5\u2212\u03be2|+\u03b4, as demonstrated in Fig. 4. This way the agent is given an opportunity to trace its steps back if it was stuck in a local minimum.\nNotably, this method does not require any prior knowledge regarding the true value of the ground state energy and does not impose any specific constraints on the initial threshold value, unlike existing QAS methods in the literature.\n1One can set the target of the agent to such a value for VQE because from Rayleigh\u2019s variational principle, the agent theoretically can never attain an energy below the true ground state energy.\nB.2 ILLEGAL ACTIONS FOR RL AGENT\nThe illegal actions (IA) scheme is an adaptation we developed in this work to prevent the RL agent from choosing actions that either revert or add redundancy to the effect of the previous actions. In our context, each action involves appending a gate to a qubit wire within the circuit. This scheme relies on two heuristics.\nThe first heuristic centers on the nature of unitary matrices within quantum gates. When adding a unitary (gate) to a qubit wire at a certain circuit moment (layer), appending the same unitary to the same wire in the subsequent moment effectively negates the former\u2019s effect. This multiplication results in an identity matrix or an idling operation. Our CRLQAS algorithm is designed to progress forward, consistently increasing the total number of gates in the circuit by appending gates. It does not retract or prune gates dynamically. To restrict redundant idling operations and enhance the RL agent\u2019s exploration efficiency, the first rule of IA prohibits adding a CNOT gate on specific wires if the same gate was appended to those wires in the previous layer.\nThe second heuristic focuses on 1-qubit rotations. When optimizing the parameter of a 1-qubit rotation gate to a certain value \u03b8\u2217 at a given moment, appending the same rotation gate to the same wire in the next moment introduces redundancy from an optimization perspective. As our CRLQAS continuously optimizes at each step, subsequent rotation gates with the same angle will yield redundant values. Thus, the second rule of IA prevents adding a 1-qubit rotation gate (e.g., RX, RY, RZ) if the same gate was appended to that wire in the previous layer. The RL agent must remain informed about the disallowed actions via a subroutine when it is about to choose an action (gate). Below, we provide implementation details for this IA subroutine.\nWhen the agent is determining its next action, the subroutine scans the three-dimensional tensor representing the circuit to identify the previously added gates. It then translates this information into action numbers based on the number of qubits N , presenting it in a format understandable by the RL agent. An example of such a list can be exemplified as the following.\nAillegal = [CNOT (i, j,N) ,RX (k,N) . . . ] (5)\nHere i and j denote the ctrl and targ qubit wires of a CNOT gate for N qubits, and the k denotes the wire where RX gate was appended. For example, when N = 4, i = 0, j = 1 and k = 2 the list takes the following form.\nAillegal = [CNOT (0, 1, 4) ,RX (2, 4) . . . ] \u2192 [12, 6 . . . ] (6) Since the first N \u00d7 3 actions are reserved for three 1-qubit rotation directions acting on N qubits in our numbering convention, the action number for RX (2, 4) is 6 in the Eq. 6. Similarly, we use a ctrl major numbering convention, the action number for the CNOT (0, 1, 4) gate is given as 12 as the first action after an array of 1-qubit rotation gate actions. During the selection of the next action, the RL agent updates the Q-table of Q-values corresponding to these action numbers based on the current RL state (quantum circuit) by utilizing a DQN. Without the IA scheme, the agent would typically choose the action with the highest Q-value. However, with the IA scheme, the agent identifies illegal actions using the subroutine\u2019s provided list and updates their Q-values to\u2212\u221e in the\nQ-table. Consequently, when the agent selects actions based on the highest Q-values, those actions with \u2212\u221e Q-values (i.e., illegal actions) are effectively discarded.\nB.3 ILLUSTRATION OF TENSOR BASED ENCODING"
+        },
+        {
+            "heading": "C CRLQAS IMPLEMENTATION & HYPERPARAMETERS",
+            "text": "In our experiments, we employed the Double deep-Q network (DDQN) algorithm with variable step sizes in the n-step trajectory roll-out update (Sutton & Barto, 2018). For noiseless experiments involving simple molecules with low qubit numbers, such as H2 \u2212 2, H2 \u2212 3, H2 \u2212 4, and LiH\u2212 4, we used a single step, n = 1. For noisy simulations of simple molecules, such as H2 \u2212 2, H2 \u2212 3 with the IBM Mumbai noise model, and H2 \u2212 4 with the IBM Ourense noise model, we used n = 5 steps. Conversely, for noiseless simulations of complex molecules LiH \u2212 6 and H2O \u2212 8, and for the relatively challenging task of simulating LiH \u2212 4 with the IBM Mumbai noise model, we employed n = 6 steps.\nIn these configurations, we set the discount factor (\u03b3) to 0.88. We implemented an \u03f5-greedy policy for selecting random actions, with \u03f5 decaying by a factor of 0.99995 per step from an initial value of \u03f5 = 1 until it reached a minimum value of \u03f5 = 0.05. The memory replay buffer size was fixed at 20000, and the target network in the DQN training process2 was updated after every 500 actions. In the curriculum learning strategy, we implemented a testing phase after every 100 training episodes. In this testing phase we set the randomness factor to \u03f5 = 0 to halt the random exploration, and ensure a set of deterministic actions. We exclude the experiences acquired in this phase from the memory replay buffer. We greedily adjusted the threshold after G = 500 episodes for both noiseless and noisy 2-, 3-, and 4-qubit problems. Conversely, for 6-, and 8-qubit problems, the threshold underwent adjustments every G = 2000 episodes, with an amortization radius set at \u03b4 = 0.0001. This amortization radius decreased by \u03b4/\u03ba = 0.00001 after every 50 successfully solved episodes, beginning from an initial threshold value of \u03be1 = 0.005.\nWe conducted simulations of noiseless quantum circuits using the Qulacs library on CPU (Suzuki et al., 2021). For the simulations of noisy quantum circuits, we utilized the JAX library on two computing clusters equipped with NVIDIA-A100 GPUs (Bradbury et al., 2018). In experiments without\n2The neural network was trained using Adam optimizer (Kingma & Ba, 2014).\nfinite-sampling (shot) noise, we employed the gradient-free COBYLA optimizer (Powell, 1994) with default hyperparameter settings from Scipy (Virtanen et al., 2020) and 1000 iterations to optimize circuit parameters at each step of the RL episode. In the presence of shot noise, we employed the m-stage Adam-SPSA (where m is an integer) developed in this work. Specifically, we used m = 1 stage Adam-SPSA for two and three qubit problems, and m = 3 stages for four qubit problems. Unlike the local optimization approach for circuit parameters, where only the angles of the latest appended parametrized gate are optimized, we adopted a global optimization approach (Ostaszewski et al., 2021b). In each step, we used the circuit parameters from the previous step as initial values, but we optimized all the parameters.\nThe hyperparameters of the Double deep-Q network algorithm were selected through coarse grain search. The employed network architecture consisted of fully connected network with 5 hidden layers, each with 1000 neurons for the noiseless 4-qubit case, 2000 neurons for the 6-qubit case, and 5000 neurons for the 8-qubit case. In the noisy case, however, we employed 1000 neurons at each layer for the 2-, and 3-qubit problems, while the number of neurons per layer ranged upto 2000 neurons for the 4-qubit problem depending on the complexity of the problem. Simulating 1-qubit depolarizing noise required only 1000 neurons per layer, but the noise model of IBM-Mumbai devices required up to 2000 neurons for the 4-qubit problem. Similarly, in the noiseless case, we capped the maximum number of gates at 40 for 4-qubit problems, 70 for 6-qubit problem, and 250 for 8-qubit problem. In the noisy case, we capped the maximum number of gates at 40 for 2-, and 3-qubit problems, but it ranged up to 60 gates for the 4-qubit problems depending on the complexity of the noise model."
+        },
+        {
+            "heading": "D COMPARISON WITH QCAS (DU ET AL., 2022)",
+            "text": ""
+        },
+        {
+            "heading": "E ABLATION STUDY OF DIFFERENT COMPONENTS OF CRLQAS",
+            "text": ""
+        },
+        {
+            "heading": "F SPECIFICS FOR ADAM-SPSA",
+            "text": "We implement a version of simultaneous perturbation stochastic approximation (SPSA) that was not implemented in the context of VQE before. It combines stochastic gradient estimates of SPSA (Spall, 1987) with adaptive moment estimation (Adam) (Kingma & Ba, 2014) leading to more stability and faster convergence while retaining the noise robustness of SPSA. To estimate a gradient term at a given iteration, the SPSA algorithm randomly samples a number of angles amount of binary directions from the Rademacher distribution, denoted by \u2206k. By adding and subtracting these shifts from the current set of angles \u03b8\u00b1 = \u03b8 \u00b1\u2206k, we acquire two sets of angles such that we evaluate the cost function twice (two function evaluations per iteration) there to acquire the stochastic gradient approximation \u2207Jk = g+k \u2212g \u2212 k\n2ck\u2206k . Then the algorithm proceeds similarly to standard gradient\ndescent \u03b8k+1 = \u03b8k \u2212 ak\u2207Jk, with the exception of both parameter shift scaling parameters ck and the learning rates ak decay at each iteration k slowly with respect to hyperparameters \u03b1, a, c, \u03b3sp.\nSimilar to incorporating adaptive moment terms (parameter adaptation and momentum) in gradient descent optimization, we integrate these terms with the stochastic gradient estimate from SPSA. In this integration, three additional hyperparameters, namely \u03b21, \u03b22, and \u03bb, are introduced to govern the adaptation and momentum terms. In the quantum context, Adam enables the utilization of gradient information from previous iterations in classical post-processing, without relying on additional quantum queries, thereby enhancing robustness and convergence rates. After testing multiple variants of SPSA in a well-known problem of VQE through hardware efficient ansatz (Agliardi & Prati, 2022; Arouri & Sayyafzadeh, 2020; Kandala et al., 2017), we found the variant used in (Leng et al., 2019) to be the most stable. Throughout this work, we refer to this specific variant as AdamSPSA (Leng et al., 2019). In this version of Adam-SPSA, the momentum term \u03b21 undergoes updates\nat each iteration using the \u03bb scaling hyperparameter, ensuring numerical stability. Conversely, the other momentum term \u03b22 remains constant. The pseudo-code for Adam-SPSA is outlined in Alg. 12, with the newly introduced Adam momentum components highlighted in green.\nIn the presence of finite sampling (or shot) noise, keeping the number of measurement samples, Nshots, constant throughout the training is named 1-stage optimization (Cade et al., 2020; BonetMonroig et al., 2023). Similarly, a 3-stage version of vanilla SPSA is proposed in (Cade et al., 2020; Bonet-Monroig et al., 2023) such that the number of measurement samples is increased at each phase. In the 3-stage optimizers, the first phase is implemented with a shot budget of N (1)shots = Nshots/10 for a function evaluation budget of n (1) f , the second with a shot budget of N (2) shots = Nshots for a function evaluation budget of n (2) f , and the third with a shot budget of N (3) shots = 10Nshots for a function evaluation budget of n (3) f . The 3-stage SPSA algorithm introduced in these papers resets the decaying hyperparameters to their default values during transitions between stages.\nIn this work, we propose a 3-stage Adam-SPSA where the decaying hyperparameters are continuously evolving (i.e., not reset to defaults) while changing between stages such that the momentum of the iterations from higher measurement samples can be utilized in the later stages. Our proposed algorithm also reports the latest function evaluation as the best function evaluation, unlike the others. After examining various versions of SPSA, considering factors like the inclusion of Adam, and experimenting with or without parameter reset, we observed that the SPSA variants without parameter reset are constrained to use the best function evaluation because they significantly diverge from the solution after a certain number of iterations. Our simulations empirically show that the continuity of hyperparameters between stages leads the algorithm to converge towards the optimum while Adam increases the rate of such convergence.\nWe conducted experiments involving various variants of 1-, and 3-stage SPSA, both with and without Adam, and with and without parameter reset. The evaluation was performed on 2-, 3-, 4-, and 6-qubit systems utilizing the VQE approach with a hardware-efficient ansatz of depth 10. For the 2-qubit problem addressing H2 \u2212 2, we employ 103 samples. Similarly, the 3-qubit problem targeting H2 \u2212 3 utilizes 104 samples, and the 4-qubit problem for LiH-4 employs 106 samples. Lastly, the 6-qubit problem dealing with LiH-6 utilizes 108 samples in each function evaluation. We fine-tuned the hyperparameters of the SPSA variants for these problems using an evolutionary algorithm-based stochastic hyperparameter optimizer library called IRACE in R (L\u00f3pez-Ib\u00e1\u00f1ez et al., 2016). The final hyperparameters used in the experiments are outlined in Table 4. Specifically, we tuned the hyperparameters within the following ranges for each hyperparameter: a \u2208 [0.01, 2], \u03b1 \u2208 [0, 1], c \u2208 [0.01, 2], \u03b3sp \u2208 [0, 1/6], \u03bb \u2208 [0.01, 0.999], and \u03b21, \u03b22 \u2208 [0.6, 0.999]. For running the IRACE algorithm, we allocated 2500 evaluations of the hyperparameters as the total budget. We implemented a single run of IRACE using this budget, and utilized the F-test to eliminate worse configurations.\nAfter the hyperparameter optimization, we executed each combination (for each SPSA variant and each problem) in 100 independent runs for the qubit systems described above. Both Fig. 6 and Fig. 7 illustrate the optimization traces of SPSA variants with 1-, and 3-stage sampling strategy, respec-\nAlgorithm 1: Simultaneous Perturbation Stochastic Approximation with Adam (Adam-SPSA) Input : Initial parameter vector \u03b8, Objective function f(\u03b8), Number of iterations K Output : Optimal parameter vector \u03b8\u2217 Hyperparameters: a, \u03b1, c, \u03b3sp, \u03bb, \u03b21, \u03b22\n1 Initialize momentum parameters to zero: m, v \u2190 0 2 for k = 1 to K do 3 Compute the scaling parameters ak \u2190 a(k+1)\u03b1 , ck \u2190 c (k+1)\u03b3sp 4 Compute the hyperparameter \u03b21,k \u2190 \u03b21(k+1)\u03bb 5 Randomly choose a perturbation vector \u2206k with elements \u00b11 6 Evaluate objective function gradients: g+k \u2190 f(\u03b8 + ck\u2206k) and g \u2212 k \u2190 f(\u03b8 \u2212 ck\u2206k) 7 Compute gradient estimate: \u2207Jk \u2190 g+k \u2212g \u2212 k 2ck\u2206k 8 Biased update of moment parameters m and v: m\u2190 \u03b21,km+ (1\u2212 \u03b21,k)\u2207Jk, v \u2190 \u03b22v + (1\u2212 \u03b22)(\u2207Jk)2 9 Unbiased computation of moment parameters m\u0302 and v\u0302: m\u0302\u2190 m\n1\u2212\u03b2k+11,k , v\u0302 \u2190 v\n1\u2212\u03b2k+12 10 Update gradient estimate: \u2207Jk \u2190 m\u0302\u221av\u0302+k 11 Update parameters: \u03b8 \u2190 \u03b8 \u2212 ak\u2207Jk 12 return \u03b8\u2217 = \u03b8\ntively. The colors show the results of the vanilla SPSA (brown and black) and Adam-SPSA (orange and grey). The thick lines (black and grey) on top of individual optimization traces indicates the median of 100 independent runs. The markers (brown and orange) refer to the final candidates of\nSPSA (Adam-SPSA) after every optimization run. The error bars are one-sigma standard-error of 100 independent runs. The y-axis in both the figures is given in log-scale. In Fig. 7, the left and right panels showcase the resetting and continuous evolution of 3-stage SPSA (Adam-SPSA) hyperpa-\nrameters, respectively. Note that the number of iterations (maximum function evaluations) outlined in Table 4 are different than the hyperparameters generated for this systematic benchmarking study.\nIn both 1-, and 3-stage Adam-SPSA, unlike the vanilla SPSA without Adam momentum, the convergence towards the minima is qualitatively much faster. In 3-stage variants, as seen in Fig. 7, this convergence behaviour is also apparent quantitatively (especially in LiH \u2212 4 and LiH \u2212 6), though the differences are marginal and inconclusive for the 1-stage in Fig. 6 (except for LiH \u2212 6 until 700 iterations). Moreover, for 3-stage variants, we observe that the variant with resetting of hyperparameters (left panel in Fig. 7) tend to diverge from the optimal cost function values after a certain number of iterations only to converge back to the optima after training for longer. We noted this convergence behavior is at odds with the fast convergence rates we are looking for in our RL training. In contrast, the variant with continuous evolution of hyperparameters (right panel in Fig. 7) do not suffer from this draw back as the cost function values consistently went lower with the number of iterations without making a sharp turn away from the optima. Utilizing these insights from our analysis of various SPSA variants, we employ 1- and 3-stage Adam-SPSA (with continuous evolution of hyperparameters) in our noisy experiments. This helps cut down the total number of function evaluations by half, thereby doubling the speed of our RL training. This improvement at the algorithm level helped us simulate noisy systems that suffer from computational complexity and large run times.\nG IBM MUMBAI DEVICE NOISE CALIBRATION DATA"
+        },
+        {
+            "heading": "H DETAILS OF QUANTUM NOISE MODELS",
+            "text": "We implemented multiple noise models of varying complexity to serve as a testbed for evaluating the proposed CRLQAS method. Initially, we modeled sampling (or shot) noise as independently and identically distributed random variables sampled from a Gaussian distribution with zero mean (Bonet-Monroig et al., 2023; Liu et al., 2022). Secondly, we modeled gate infidelities of 1- , and 2-qubit gates as 1-, and 2-qubit depolarizing channels (Nielsen & Chuang, 2010). Thirdly, we incorporated two physical models for state preparation and measurement (SPAM) noise. State preparation errors were modeled by considering initial states as thermal states due to the residual thermal population of transmons. Read-out errors were modeled as bit-flip channels applied at the end of the circuit. Lastly, we modeled thermal relaxation and decoherence using the thermal relaxation channel, especially when relaxation times T1 were smaller than the coherence time T2 (Blank et al., 2020).\nWe manually specified parameters for the first two noise models. Subsequently, we obtained noise parameters from the benchmarks of the IBM Mumbai device on August 8, 2023, to create more realistic noise models. By obtaining Kraus matrices for the gates and noise channels, we computed Pauli-transfer matrices (PTMs) offline, eliminating the need for online computations during experiments. We combined the PTMs of gate implementations with those of subsequent noise channels, effectively obtaining noisy gate PTMs.\nH.1 SAMPLING NOISE\nThe VQE cost function, denoted as C(\u03b8) in Eq. 1, can be expressed in terms of random variables Xi = ciPi. In this scenario, with given parameters \u03b8\u20d7 and the observable (chemical Hamiltonian)\nH = \u2211\ni ciPi, then the cost represents the mean of the sum of n such random variables:\nC(\u03b8) = n\u2211 i=1 \u27e8Xi\u27e9 = n\u2211 i=1 ci\u27e8Pi\u27e9 (7)\nIn real quantum devices, users have access to a finite sample estimator. The expectation value of each Pauli string is estimated as P i through multiple state preparations, basis transformations, and measurements. For each instance, the initial state is reset, and the quantum state undergoes a basis transformation into the computational basis of the given Pauli string to compute a bit-string sample. These bit-strings are sampled M times (shots) to estimate the eigenvalues P i with a variance of Var(Pi) = 1/M . Using these estimatesXi = ciP i, and given parameters \u03b8 and shots per observable M , the estimator for the cost function is as follows:\nC\u0304(\u03b8,M) = n\u2211 i=1 X\u0304i = n\u2211 i=1 ciP\u0304i (8)\nHere, the difference between each Pauli-string estimate and the expectation value is denoted by a random variable \u03b5i(M) = P i \u2212 \u27e8Pi\u27e9, drawn from the binomial distribution with variance Var(Pi) (Bonet-Monroig et al., 2023). Assuming Pauli string observables are measured independently, they can be modeled as independent and identically distributed (i.i.d.) random variables (Bonet-Monroig et al., 2023). In that case, the variance of C(\u03b8\u20d7,M) can be propagated directly as follows:\ns2n = Var [ C\u0304 ] = n\u2211 i=1 c2i\u03c3 2 i = 1 M n\u2211 i=1 c2i (9)\nAccording to the Central Limit Theorem, in the limit n \u2192 \u221e, the difference between the true cost function and its finite-sample-based estimator converges to a normal distribution centered around zero mean (Billingsley, 2017):\nlim n\u2192\u221e n\u2211 i=1 ci ( P\u0304i \u2212 \u27e8Pi\u27e9 ) = lim n\u2192\u221e n\u2211 i=1 ci\u03b5i(M) \u223c N (0, sn) (10)\nThis expression illustrates that, in the limit where the chemical Hamiltonian has numerous Paulistring terms (n\u226b 1), sampling Pauli-string estimation errors from the normal distribution \u03b5(M) \u223c N (0, 1\u221a\nM ) is a reasonable approximation compared to the binomial distribution. This approxima-\ntion serves as a computationally efficient model for sampling (shot) noise and is consistent with other literature (Liu et al., 2022).\nH.2 PAULI-TRANSFER MATRICES\nA density matrix \u03c1, a complex-valued object of dimension 2N \u00d7 2N for N qubits, can represent both the quantum statistics of a single quantum state \u03c1 = |\u03c8\u27e9 \u27e8\u03c8| (known as a pure state) and the statistics of a classical ensemble of multiple quantum states \u03c1 = \u2211 i pi |\u03c8i\u27e9 \u27e8\u03c8i| (known as a mixed state). In the case of mixed states, each constituent quantum state |\u03c8i\u27e9 occurs with a probability pi, which sums up to unity. This happens because coupling with external processes like measurement or thermal relaxation, applies a (non)unitary process to the quantum state with some probability (Breuer & Petruccione, 2002). Both the unitary processes, normally acting in closed quantum systems, and the above-mentioned processes can be represented by quantum channels \u039b. These channels are completely positive trace-preserving (CPTP) operators in the 2N dimensional Hilbert space, mapping a density matrix to another, \u039b : C2N\u00d72N 7\u2192 C2N\u00d72N . A quantum channel \u039b acting on \u03c1 is conventionally represented using Kraus matrices Ki:\n\u039b (\u03c1) = \u2211 i Ki\u03c1K \u2020 i (11)\nThe Kraus matrix usually has the form Ki = \u221a piAi. In the case of a unitary channel (e.g., a quantum gate in a closed system), only a single unitary matrix Ai is applied with a unit probability (pi = 1), keeping the quantum state pure. In open, noisy systems, (non)unitary operations Ai are applied with probabilities pi < 1, resulting in a classical mixture of possible outcomes (i.e., a mixed state). In digital quantum computers, physical noise is typically represented by applying the unitary\nchannel of a gate on a qubit, followed by the application of various quantum channels representing gate noise on the same qubit. It is computationally advantageous to represent each of these channel applications as a matrix product, requiring vectorization of the density matrix through algebraic manipulation.\n\u03c1 = \u2211 i,j \u03c1i,j |i\u27e9 \u27e8j| \u2192 |\u03c1\u27e9Choi = \u03a6 \u22121(\u03c1) = \u2211 i,j \u03c1i,j |i\u27e9 \u2297 |j\u27e9 (12)\nHere, representing the computational basis states given in outer-product format |i\u27e9 \u27e8j| instead of the tensor product |i\u27e9 \u2297 |j\u27e9, allows for vectorization in the column-major order of the density matrix. This unrolling operation of the matrix, denoted as \u201cvec\u201d (\u03a6\u22121(\u00b7)), results in the Choi representation of the density matrix. Conversely, the rolling operation back in the column-major order is known as \u201cunvec\u201d (\u03a6(\u00b7)) (Wood et al., 2011). The isomorphism \u03a6\u22121 is a mapping from C2N\u00d72N to C22N in column-major ordering, and vice versa (Blank et al., 2020). In this isomorphism, the application of Kraus matrices can be expressed as a single matrix product:\n\u03b5(\u03c1) = Tr1 { \u039b ( \u03c1T \u2297 I )} (13)\nHere, the Choi matrix (or super-operator) \u03b5 of a channel \u039b is obtained by tracing out the subspace of identity I . This matrix then can be used to evolve quantum states under the influence of a quantum channel by matrix-vector multiplications, |\u03c1\u2032\u27e9Choi = \u03b5\u039b \u00b7 |\u03c1\u27e9Choi. In the context of processes characterization (Chow et al., 2012) and classical simulation of variational quantum algorithm landscapes (Rall et al., 2019; Fontana et al., 2023; Rudolph et al., 2023) that involve measurements using the Pauli-Liouville bases instead of the computational bases for the vectorization and super-operator representation (Pauli-transfer Matrix, PTM) have an extra computational advantage. In this formalism, the state, the observable, and the channel super-operators are written either using the Pauli basis set Bpauli = 1\u221a2 {I,X, Y, Z} or the 0xy1 basis set B0xy1 = { (I + Z)/2, X/ \u221a 2, Y \u221a 2, (I \u2212 Z)/2 } (O\u2019Brien et al., 2017; Greenbaum, 2015). A standard quaternary notation of these bases is used to construct multi-qubit Pauli strings, Pi. To acquire the expansion coefficients in this basis, the Hilbert-Schmidt norm, \u27e8A|B\u27e9 = Tr ( A\u2020B ) , is utilized.\n\u03c1 = \u2211 i ciPi \u2192 ci = |\u03c1\u27e9i = Tr (Pi\u03c1)\nO = \u2211 i diPi \u2192 di = |O\u27e9i = Tr (PiO)\nR\u039b[i, j] = Tr {Pi\u039b (Pj)} \u2192 \u039b (Pj) = \u2211 i KiPjK \u2020 i (14)\nHere, |\u03c1\u27e9 and |O\u27e9 represent the vector representation of the state and a physical observer (e.g., Hamiltonian) in Pauli-Liouville basis. The i-th element of these vectors is denoted by ci and di, which are scalars. WhileR\u039b[i, j] represents the PTM element at the i-th row and j-th column. In this formalism, the channel PTMs can both propagate the initial state forward (Schrodinger propagation) or propagate the observable backward (Heisenberg propagation) to acquire the final expectation via matrix-vector multiplications (Rall et al., 2019; O\u2019Brien et al., 2017; Fontana et al., 2022; 2023). These vectorization and super-operator schemes enable fusing gate channels with the subsequent noise channels offline (ahead of the simulations for RL training). The PTM of a noisy gate is given by fusing the PTMs of K channels acting on the qubit after the PTM of the gate G as R\u0303G = R\u039bK\u22121 \u25e6R\u039bK\u22122 \u00b7 \u00b7 \u00b7 \u25e6R\u039b0 \u25e6RG. In our simulations, we use 0xy1 bases for N -qubit PTMs, due to their similarity with noiseless 2N -qubit state-vector simulation, and we apply the noise models of the real devices with actual parameters we describe in the following sub-sections.\nH.3 DEPOLARIZING CHANNEL\nWe model the gate infidelities as 1-qubit or 2-qubit depolarizing channels (Nielsen & Chuang, 2010). The depolarizing channels can be represented using density matrix formalism, \u03c1, and Kraus matrices, Ki. Specifically, a 1-qubit depolarizing channel, \u039b (dep) p,q , acting on qubit q with an error probability (or the noise strength, gate infidelity, etc.) p, is defined as follows:\n\u039b(dep)p,q (\u03c1) = ( 1\u2212 3p4 ) \u03c1+ p4 (Xq\u03c1Xq + Yq\u03c1Yq + Zq\u03c1Zq) (15)\nIn the expression above, \u039b(dep)p,q (\u03c1) represents the channel\u2019s application on the density matrix, and Xq , Yq , Zq denote the Pauli operators acting on qubit q. The qubit is left unaffected with a probability of ( 1\u2212 3p4 ) , and with a probability of p4 , it undergoes an amplitude bit-flip (Xq\u03c1Xq), a phase-flip (Zq\u03c1Zq), or a combination thereof (Yq\u03c1Yq).\nInitially, we apply this noise model with the probability parameter pone = 0.1 \u00d7 10\u22122 upon implementation of each 1-qubit gate. In other words, a 1-qubit depolarizing channel of the strength pone = 0.1\u00d7 10\u22122 is initially utilized to model the rotation gate infidelities. Subsequently, we apply this model to both the control and target qubits, qctrl and qtarg, during the implementation of the 2-qubit control NOT gate CNOT(qctrl, qtarg). In this case, a 2-qubit depolarizing channel is used to model the CNOT gate infidelity, applying this 2-qubit noise model with a probability (or strength) parameter ptwo = 0.5\u00d7 10\u22122. To model gate infidelities in various IBM devices, we employed the following parameters. For IBM Mumbai device (see Table 5), the median 1-qubit gate infidelity was represented by pmedianone = 2.44 \u00d7 10\u22124, and the median 2-qubit gate infidelity was represented by pmediantwo = 8.25 \u00d7 10\u22123. Additionally, the maximum 1-qubit gate infidelity was denoted as pmaxone = 1.45 \u00d7 10\u22123, and the maximum 2-qubit gate infidelity was denoted as pmaxtwo = 2.30 \u00d7 10\u22122. We also created a more noisy scenario by scaling these maximum infidelities by ten folds, resulting in p10maxone = 10 \u00d7 pmaxone and p10maxtwo = 10 \u00d7 pmaxtwo . These parameters, representing median, max, and 10 \u00d7 max infidelity strengths, were applied as depolarizing channel strengths uniformly across all qubits and gates in their respective experiments, assuming full device connectivity. The data for the IBM Mumbai device was collected on August 8, 2023.\nIn contrast, for the IBM Ourense device, we considered individual gate infidelity information while also factoring the qubit connectivity of the device. The qubits 0 \u2212 1 \u2212 2 \u2212 3 with 1-qubit infidelities were set as follows: p0one = 5.22\u00d7 10\u22124, p1one = 4.14\u00d7 10\u22124, p2one = 1.84\u00d7 10\u22124, and p3one = 4.3\u00d710\u22124. For 2-qubit gates involving qubit 1 and its neighbours, the corresponding 2-qubit depolarizing channel strengths were determined as p01two = 9.55 \u00d7 10\u22123, p12two = 9.44 \u00d7 10\u22123, and p13two = 1.25\u00d7 10\u22122. The device data used for IBM Ourense was sourced from (Du et al., 2022).\nH.4 READOUT ERRORS AS BIT-FLIP CHANNEL\nWe incorporate readout errors into our model, inspired by (Blank et al., 2020), treating them as bitflip (amplitude flip) operations applied just before the measurement (Nielsen & Chuang, 2010). The bit-flip channel, representing the readout error with strength p on qubit q, is characterized by the following Kraus representation.\n\u039b(bf)p,q (\u03c1) = (1\u2212 p) \u03c1+ pXq\u03c1Xq (16) In this scenario, the qubit q has a probability of 1\u2212p to retain its current state, and with a probability p, it flips its amplitude, akin to a \u03c0 rotation around the x-axis in the Bloch sphere. Again, noise profiles of two different IBM devices were implemented.\nFirstly, we uniformly apply readout noise levels obtained from IBM Mumbai devices, categorized as median and max, to all qubits in our experiments. The readout error strengths for IBM Mumbai device are denoted as pmedianro = 2.25 \u00d7 10\u22122 and pmaxro = 8.7 \u00d7 10\u22122, acquired on August 8, 2023, as listed in Table 5. For the 10\u00d7max experiments, we use 87% readout errors, as ten times the max readout errors rendered VQE experiments unfeasible due to signal loss.\nSecondly, we account for readout errors of qubits 0 \u2212 1 \u2212 2 \u2212 3 from the IBM Ourense device (Blank et al., 2020). The corresponding error values are p0ro = 1.65\u00d710\u22122, p1ro = 2.38\u00d710\u22122, p2ro = 1.57\u00d7 10\u22122, and p3ro = 3.95\u00d7 10\u22122.\nH.4.1 STATE PREPARATION ERRORS AND THERMAL RELAXATION CHANNEL\nThe state preparation errors in transmon qubits are due to residue thermal populations that can be modelled as thermal states (Krantz et al., 2019). A transmon qubit, a quantum anharmonic oscillator in the truncated Hilbert space, can be modeled as a k-level quantum system (a qudit) with unequal level spacing such that the subspace of the first two levels is reserved for computation. A widely used approximate model is a qutrit (where the infinite-dimensional Hilbert space is truncated to k = 3) where the ground state energy is set to be zero, E0 = 0, the first excited state is determined by the qubit frequency (\u03c9) parameter, E0 = \u210f\u03c9, and the second excited state is determined by\nthe anharmonicity parameter (\u03b4, typically a negative number), E2 = \u210f (2\u03c9 + \u03b4). Given the fridge temperature T , the initial quantum state of a qubit with residual thermal populations is the following.\n\u03c10Z = |0\u27e9 \u27e80|+ exp ( \u2212 E1 kBT ) |1\u27e9 \u27e81|+ exp ( \u2212 E2 kBT ) |2\u27e9 \u27e82|\nHere \u03c10 denotes the initial thermal state, kB and \u210f denote the Boltzmann and reduced Planck constants, and Z denotes the equipartition function Z = 1 + exp ( \u2212 E1kBT ) + exp ( \u2212 E2kBT ) . The prob-\nability of the quantum state being initially in the excited state is given as pe = exp ( \u2212 E1kBT ) /Z. In our experiments, we used \u03c9mumbai = 4.894GHz, \u03b4mumbai = \u22120.33GHz for the IBM Mumbai device and we used \u03c9ourense = 5GHz, \u03b4ourense = \u22120.33GHz for the IBM Ourense device to acquire these parameters.\nEach time qubits are reset, the decoherence, which is caused by coupling of the quantum system to external degrees of freedom such as stray fields, allows computations to run for a certain amount of time (coherence time) before the strictly quantum mechanical properties are lost. The thermal relaxation time, T1, measures how long it takes for a qubit that is initially prepared in the excited state |1\u27e9 (the North pole of the Bloch sphere) to decay back to the ground state |0\u27e9 (the South pole of the Bloch sphere) (Krantz et al., 2019). The phase-coherence time, T2, measures how long it takes to lose the phase information. When a qubit is initially prepared on the equator of the Bloch sphere, such as a |+\u27e9 state, it can not be distinguished from other states on the equator, such as a |\u2212\u27e9 state, due to being end up in a classical mixture of these states after T2. These thermal relaxation and decoherence processes do not happen instantly after T1 and T2 amount of time, but the qubits experience them rather gradually as 1-, and 2-qubit gate implementations also take a finite amount of time, \u2206tone and \u2206ttwo, hindering the perfect implementation of these gates beside the gate infidelities. These gradual processes can be modeled as quantum channels that follow the application of 1-, and 2-qubit gates (Blank et al., 2020). The effect of the thermal relaxation channels depends on how good the initial state is prepared or the excited state probability, pe, decoherence times T1 and T2 of the quantum hardware in hand, and how fast the gates are implemented \u2206tone and \u2206ttwo (for values see Table 5). For these gate durations, we can define thermal relaxation and dephasing gate error rates \u03f5T1 = exp { \u2212\u2206tT1 } and \u03f5T2 = exp { \u2212\u2206tT2 } . Using these, we can define the qubit reset probability preset = 1\u2212 \u03f5T1 , and the following probabilities.\npid = 1\u2212 pz \u2212 pr0 \u2212 pr1 pz = (1\u2212 preset) ( 1\u2212 \u03f5T1\u03f5\u22121T2 ) /2\npr0 = (1\u2212 pe) preset pr1 = pepreset (17)\nHere pr0 gives the probability that qubit resets to the ground state |0\u27e9, pr1 gives the probability qubit resets to the excited state |1\u27e9, pz gives the probability that qubit in the ground state is hit by a phaseflip operation Z, and pid gives the probability that qubit in the ground state is hit by an identity gate I . The regimes where T2 \u2264 T1 and T2 > T1 have different channel representations (Blank et al., 2020). The Kraus representation for the thermal-relaxation channel (TRC) acting on the qubit q when T2 \u2264 T1 follows the probabilities described above.\nK0 = \u221a pidI\nK2 = \u221a pr0 2 I + Z 2\nK4 = \u221a pr1 2 X + iY 2\nK1 = \u221a pzZ\nK3 = \u221a pr0 2 X \u2212 iY 2\nK5 = \u221a pr1 2 I \u2212 Z 2\nIn this regime, TRC has amplitude and phase-damping terms. Here K2 (K5) operator resets the qubit to |0\u27e9 (|1\u27e9) with probability pr0 (pr1 ). Similarly K3 (K4) operator relaxes (excites) the qubit into |0\u27e9 (|1\u27e9) with probability pr0 (pr1 ). While K0 and K1 implement I and Z with their respective probabilities. In the T2 > T1 regime, the quantum channel is represented by the following Choi\nmatrix (Blank et al., 2020).\n\u039b =  1\u2212 pr1 0 0 \u03f5T2 0 pr1 0 0 0 0 pr0 0\n\u03f5T2 0 0 1\u2212 pr0\n (18)\nThe eigendecomposition and \u201cunvec\u201d operations yield Kraus matrices K\u03bb = \u221a \u03bb\u03a6(v\u03bb). For the T2 > T1 regime, we use the analytically computed Kraus matrices given in Pennylane software library (Bergholm et al., 2018). To compute these, the T1 and T2 times of IBM Mumbai and IBM Ourense devices we use are the following. The ones for Mumbai devices are the median values of the data acquisition date T1 = 122.28\u00b5s, T2 = 167.2\u00b5s, (see Table 5). And, the ones for Ourense devices are, T 01 = 75.75\u00b5s, T 0 2 = 50.81\u00b5s, T 1 1 = 78.47\u00b5s, T 1 2 = 27.56\u00b5s, T 2 1 = 101.51\u00b5s, T 22 = 107\u00b5s, and T 3 1 = 79.54\u00b5s, T 3 2 = 78.38\u00b5s (see (Du et al., 2022))."
+        },
+        {
+            "heading": "I SOFTWARE LEVEL SIMULATION OPTIMIZATION",
+            "text": "Our RL agent training involves billions of queries to the classical simulator, incurring substantial time and computational costs. In each episode, unless terminated by the random halting protocol or by reaching a threshold value before the final action, the RL agent executes a series of actions nact (an integer). During each action i, where i \u2208 [nact], the agent appends a new 1-, or 2-qubit gate to a quantum circuit. At the simulator level, this corresponds to compiling n(i)g = n (i) oqg + n (i) tqg gates applied by the agent until action i. Here, n(i)g represents the total number of gates implemented during cost function evaluation (subsequent matrix-vector multiplications) at action i, such that at the final action i = nact, a total of nact = n (nact) g gates are applied. Additionally, n (i) oqg and n (i) tqg denote the number of 1-, and 2-qubit gates compiled during action i. The cost function evaluation takes t(i)feval \u2248 tfeval amount of time for each action i. The value of t (i) feval can be approximated as an intermediate value of tfeval even though the function evaluation time cumulatively increases with i. Furthermore, at each action i, classical optimizers require nfeval cost function evaluations. Given a total of ne episodes, training an RL agent roughly consumes ne \u00d7 nact \u00d7 nfeval \u00d7 tfeval time, with an additional 20 seconds per episode for neural network training on an NVIDIA-A100 GPU.\nAs of the completion of this work, Qulacs remains the most efficient classical simulation framework for Python-based quantum circuit evaluations. This efficiency is derived from effective memoryaccess, swift linear algebra facilitated by C++ SIMD optimizations, and an underlying algorithm that handles horizontal and vertical gate fusions for named gates in noiseless scenarios (Suzuki et al., 2021). However, the advantage of using Qulacs in our experiments diminishes when transitioning to noisy simulations using the Kraus operator sum formalism, as the algorithmic benefits related to gate fusions are not as prominent in this context. The total number of dense Kraus matrix multiplications is defined as nkm = 2 (noqgnoqcnok + 2ntqgntqcntk). Here, noqc represents the number of 1-qubit channels following 1-qubit gates, and nok denotes the number of Kraus matrices in these 1-qubit channels. Similarly, ntqc indicates the number of 2-qubit channels following 2-qubit gates, and ntk specifies the number of Kraus matrices in these 2-qubit channels. It is important to note that the term for 2-qubit channels is multiplied by two, as different noise channels need to be applied at each qubit during an evolution. Additionally, the overall number is multiplied by two because the density matrix must be affected both from the left and the right by Kraus matrices. For mathematical implementations of these operations, please refer to Appendix H.\nCrucially, these noise simulations are performed online (during simulation) each time. As the number of qubits and gates increases, the cost function evaluation times (tfeval) grow exponentially. This results in RL training times escalating from the scale of days in the noiseless case to months in the noisy case, rendering it impractical to obtain prompt feedback from the training, even for basic unit tests and hyperparameter optimization. To address these challenges, we precomputed the Paulitransfer matrices (PTMs) of the noisy gates before simulations and developed a GPU-based simulation framework in JAX (Python) (Bradbury et al., 2018). Due to time constraints, we were unable to implement the backward or forward propagation algorithms for sparse Paulis as prescribed in (Rall\net al., 2019; Fontana et al., 2023). However, we successfully implemented fast, dense matrix-vector multiplication-based algorithms for both noiseless and noisy cases.\nTo guide the simulator on the gates to be implemented, we provide it with a NumPy array (Harris et al., 2020) of dimension ng \u00d7 2. The first column enumerates the subsequent gates or PTMs in ascending order, with the first element corresponding to the first gate, and so forth. The second column contains the variational parameters to be implemented, with parameters for non-parametric gates set to zero. We also provide the positions (row numbers) of this instructions array to facilitate updating parameters in the correct order outside closed-circuit GPU computations occurring in XLA (accelerated linear algebra library) (Sabne, 2020). A just-in-time (JIT) compiled JAX function reads these instructions (in XLA) and, for each row (or instruction), generates a unitary matrix or PTM using the gate number and angle. Subsequently, another JIT-compiled function takes a vector from the previous iteration and the matrix constructed by the previous function, returning a new vector after multiplication. One level higher, another JIT-compiled function iterates through these matrixvector multiplications (forward propagation) row by row using JAX\u2019s native foriloop, carrying the vector from the previous iteration until the end of the circuit. Finally, another JIT-compiled function takes over this vector and either performs an inner product operation \u03c8\u2020H\u03c8 for dense Hamiltonians in noiseless simulations or a dot product \u27e8H|\u03c1\u27e9 for Hamiltonian vectors in noisy cases. All these functions are merged into a single JIT-compiled expectation value computation subroutine. When the user queries this subroutine with a new set of angles, it first updates the variational parameters of the instructions array, then feeds this array to the JIT-compiled subroutine (running on GPU using XLA instructions) to obtain a real number output. Due to the asynchronous nature of GPU computing and the current limitations of XLA, which require static tensor geometries as input and outputs, these computational subroutines need to run concurrently with static input-output shapes to leverage computational benefits. Our implementation takes these aspects into account. These subroutines could be further integrated with sparse Pauli algorithms (Rall et al., 2019; Fontana et al., 2023) or tensor network methods (Or\u00fas, 2014) to extend the scalability of these noiseless and noisy simulations in terms of qubit numbers and gate counts. However, we leave this avenue for exploration in future work.\nIn Fig. 8, we evaluate the performance of different simulators implementing various noise models as the hardware-efficient ansatz depths increase (i.e., with growing gate counts) for different qubit system sizes. Noise models are identified by cumulative numbers that increase with the addition of noise channels after their respective gates. Initially, noise model \u201c0\u201d represents the noiseless simulator. Subsequently, noise model \u201c1\u201d introduces a 1-qubit depolarizing channel after each 1-qubit gate. Building on this, noise model \u201c2\u201d adds a depolarizing channel to each \u201cctrl\u201d and \u201ctarget\u201d qubit of the CNOT gate after post-implementation. Further extensions include noise model \u201c3\u201d introducing a 1-qubit thermal relaxation channel after each 1-qubit gate, and noise model \u201c4\u201d which, on top of noise model \u201c3\u201d adds a thermal relaxation channel to each \u201cctrl\u201d and \u201ctarget\u201d qubit of the CNOT gate. While Qulacs exhibits optimal evaluation times in the noiseless case for all qubit numbers, the advantage diminishes with the inclusion of any noise channel, especially as gate count and the number of dense matrix multiplications increase due to Kraus operator sum formalism (see\nAppendix H). This trend becomes more pronounced with the addition of noise channels following gate implementations (i.e., an increase in the noise model number), leading to an exponential increase in the number of Kraus operations. In terms of quantitative results, for depth 13, JAX-PTM yields an improvement of up to a 2.65-, 3.9-, and 9.93-fold over Qulacs_4 noise model in 2-, 3-, and 4-qubit problems, respectively. We acquired these statistics from 20000 independent runs.\nIn Fig. 9, we show the RL episode times concerning different noise models and software, without implementing any random halting or early stopping of episodes, allowing each to proceed up to a gate count of 40. We ran the RL training for each of these scenarios for 200 episodes once. The neural network training takes approximately 20 seconds per episode. Again, in terms of quantitative results, we observe an improvement of up to a 1.34-, 1.59-, and 3.85-fold over Qulacs_4 noise model in 2-, 3-, and 4-qubit problems, respectively. However, excluding the neural network training time, the improvement was more pronounced. We observed a 2-, 2.9-, and 5.74-fold speed-up for the above problems, respectively.\nIn conclusion, the use of PTMs enabled us to transform the N -qubit noisy simulation problem, regardless of the number of noise channels, into the 2N -qubit noiseless simulation problem involving dense matrix-vector multiplications. Utilizing JIT-compilation and GPU computation capabilities in JAX, we achieved up to six-fold improvement in RL training while simulating noisy circuits. This enhancement allowed us to successfully train RL agents for QAS problem under the effect of quantum device noise."
+        },
+        {
+            "heading": "J BEHAVIOURAL DIFFERENCE OF REAL DEVICE & CLASSICAL NOISY SIMULATION",
+            "text": "Recent studies suggest that despite device drift, low-level hardware noise in quantum machine learning tasks yields outcomes where real hardware and simulations demonstrate comparable behavior (Rehm et al., 2023). Our comparative experiment on IBM Lagos device and the classical simulation of its noise profile3 aligns with these findings in our context as well. Using the circuit generated by CRLQAS method for a 4-qubit H2 molecule (see Fig. 10), we validated our hypothesis by comparing measured expectation values on the device to the classical noise model used in simulations of CRLQAS. Fig. 11 showcases that the expectation values of Pauli strings align within one-sigma standard deviation error bars. The expectation values were computed individually for each Pauli string which allowed for fine-grained analysis. It is noteworthy that the full Hamiltonian expectation values also exhibit similar trends, with a measurement of \u22120.0615 \u00b1 0.5295 on IBM Lagos and \u22120.0335 \u00b1 0.5294 on the noisy simulator. Our experiments were executed using the Qiskit Runtime IBM Client API.\n3We performed the classical simulation of the IBM Lagos noise profile based on the calibration data of November 16, 2023."
+        },
+        {
+            "heading": "K COMPARISON TO OTHER QAS METHODS",
+            "text": "We compare our method CRLQAS to a modified variant of qubit-ADAPT VQE (Tang et al., 2021), quantumDARTS (Wu et al., 2023) and RLQAS (Ostaszewski et al., 2021b) in noiseless experiments (see Table 1 and Table 3). For noisy experiments, we compare to QCAS (Du et al., 2022) (see Table 2). While there is a substantial amount of literature on quantum architecture search (QAS), replicating the performance of some methods is challenging due to the lack of unified experimental settings. Moreover, the purpose of this work was to establish the limits of RL methods in combination with noisy intermediate-scale quantum hardware. Nonetheless, we provide an overview of reported results and corresponding settings of the ground state estimation task for some QAS approaches.\nIn the QAS literature, we identified two works that include the ground state energy estimation problem in their experiments. (Rattew et al., 2019) presents numerical results for their EA-based QAS method within chemical accuracy, while (Wang et al., 2022) evaluates their one-shot super-circuit method under simulated circuit noise, significantly impacting estimation accuracy\n(Rattew et al., 2019) proposed Evolutionary Variational Quantum Eigensolver (EVQE) that uses evolutionary programming techniques to dynamically generate and optimize quantum circuits (by adding or removing gates). The gate set in this algorithm is composed of 1-qubit universal gates and 2-qubit controlled universal gates, which after the optimization, are decomposed into CNOT gates and 1-qubit universal rotation gates. The noiseless experiments involved two molecules, a 6-qubit LiH with varying interatomic bond distances and a 7-qubit BeH2 with a bond distance of 1.3\u00c5. In\nthe noiseless case, examining Fig. 3 in (Rattew et al., 2019), the best-observed depth and CNOT gate count were approximately 35 and 40, respectively (exact numbers not explicitly stated in the paper). During EVQE training, the achieved error was slightly less than 1\u00d7 10\u22123 (no exact number provided). On the other hand, CRLQAS (IA, wo-RH) in median statistics achieves 8 \u00d7 10\u22124 error with depth and CNOT gate count of 27 and 30, respectively (see Table 3). For the noisy experiment (where noise profiles were simulated using the Qiskit Aer QASM simulator) with a 4-qubit LiH at a bond distance of 2.2\u00c5, referencing Fig. 7 in (Rattew et al., 2019), the averaged noisy energy error, depth, and number of CNOT gates over five seeds were approximately 0.036Ha, 8, and 6, respectively. In our case, we achieved a slightly improved noisy error of 0.0356Ha with an average of 1.33 CNOT gates and a depth of 10 across three seeds. Although the mean noisy errors and depth are comparable, CRLQAS produces a quantum circuit with fewer CNOT gates.\n(Wang et al., 2022) introduced the TorchQuantum framework based on PyTorch (Paszke et al., 2019) and develops the QuantumNAS algorithm, a one-shot super-circuit method designed for finding noise-adaptive quantum circuits in VQA tasks. This technique involves sharing gate parameters among sub-circuits after one shot training to accelerate circuit evaluation. However, optimizing the super-circuit poses a challenge, and furthermore, there is a weak correlation in performances between sub-circuits with inherited parameters and those with optimal parameters from individual training. Our attempt to compare with (Wang et al., 2022) was hindered by the lack of essential information for a comprehensive analysis. More specifically, details about molecular geometries and quantum circuits prevented us from conducting a quantitative experiment for comparison, as it would require running their algorithm from scratch for the molecules considered in our study. Given that we already compared to the QCAS (Du et al., 2022) algorithm (see Table 2), which is similar to QuantumNAS, and considering the aforementioned reasons, we did not include this work in our comparative experiments. However, a qualitative comparison was possible for the H2 molecule in a 2-qubit system. Examining Fig. 17, the best result achieved in their experiments had an energy error of 0.1Ha. In our H2 simulations, we achieved a mean noisy energy error over three independent seeds of 1.116\u00d710\u22123\u00b13.41\u00d710\u22124 (for IBM Mumbaimedian), which is three orders of magnitude better than their results. Additionally, we outperformed them for IBM Mumbai max and 10 times max noise levels, with mean noisy energy errors of 0.907\u00b1 0.008 and 0.0912\u00b1 0.004, respectively. Unfortunately, the manuscript does not provide information about the number of gates, depth, or parameters achieved for this experiment."
+        },
+        {
+            "heading": "L LIST OF MOLECULES",
+            "text": "Given the geometrical description of the molecule, and using the Born-Oppenheimer approximation, we fix a finite basis set, in our case STO-3G, to discretize the system. Subsequently, we utilize the OPENFERMION open-source electronic structure package (McClean et al., 2020), with PSI4 serving as the backend computational chemistry software, to generate the molecular Hamiltonians. We describe the essential details to generate the Hamiltonians in Table 6 below."
+        }
+    ],
+    "title": "CURRICULUM REINFORCEMENT LEARNING FOR QUANTUM ARCHITECTURE SEARCH UNDER HARD-",
+    "year": 2024
+}

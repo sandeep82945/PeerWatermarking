@@ -1,0 +1,1078 @@
+{
+    "abstractText": "Out-of-distribution (OOD) generalization is critical for machine learning models deployed in the real world. However, achieving this can be fundamentally challenging, as it requires the ability to learn invariant features across different domains or environments. In this paper, we propose a novel framework HYPO (HYPerspherical OOD generalization) that provably learns domain-invariant representations in a hyperspherical space. In particular, our hyperspherical learning algorithm is guided by intra-class variation and inter-class separation principles\u2014ensuring that features from the same class (across different training domains) are closely aligned with their class prototypes, while different class prototypes are maximally separated. We further provide theoretical justifications on how our prototypical learning objective improves the OOD generalization bound. Through extensive experiments on challenging OOD benchmarks, we demonstrate that our approach outperforms competitive baselines and achieves superior performance. Code is available at https://github.com/deeplearning-wisc/hypo.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Haoyue Bai"
+        },
+        {
+            "affiliations": [],
+            "name": "Yifei Ming"
+        },
+        {
+            "affiliations": [],
+            "name": "Julian Katz-Samuels"
+        },
+        {
+            "affiliations": [],
+            "name": "Yixuan Li"
+        }
+    ],
+    "id": "SP:10b671cb77473bf1b44fa81a844d1af75f44d4f0",
+    "references": [
+        {
+            "authors": [
+                "Kartik Ahuja",
+                "Karthikeyan Shanmugam",
+                "Kush Varshney",
+                "Amit Dhurandhar"
+            ],
+            "title": "Invariant risk minimization games",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Isabela Albuquerque",
+                "Jo\u00e3o Monteiro",
+                "Mohammad Darvishi",
+                "Tiago H Falk",
+                "Ioannis Mitliagkas"
+            ],
+            "title": "Generalizing to unseen domains via distribution matching",
+            "year": 1911
+        },
+        {
+            "authors": [
+                "Martin Arjovsky",
+                "L\u00e9on Bottou",
+                "Ishaan Gulrajani",
+                "David Lopez-Paz"
+            ],
+            "title": "Invariant risk minimization",
+            "venue": "arXiv preprint arXiv:1907.02893,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Haoyue Bai",
+                "Rui Sun",
+                "Lanqing Hong",
+                "Fengwei Zhou",
+                "Nanyang Ye",
+                "Han-Jia Ye",
+                "S-H Gary Chan",
+                "Zhenguo Li"
+            ],
+            "title": "Decaug: Out-of-distribution generalization via decomposed feature representation and semantic augmentation",
+            "venue": "In Proceedings of the AAAI Conference on Artificial Intelligence,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Haoyue Bai",
+                "Fengwei Zhou",
+                "Lanqing Hong",
+                "Nanyang Ye",
+                "S-H Gary Chan",
+                "Zhenguo Li"
+            ],
+            "title": "Nas-ood: Neural architecture search for out-of-distribution generalization",
+            "venue": "In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 8320\u20138329,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Shai Ben-David",
+                "John Blitzer",
+                "Koby Crammer",
+                "Alex Kulesza",
+                "Fernando Pereira",
+                "Jennifer Wortman Vaughan"
+            ],
+            "title": "A theory of learning from different domains",
+            "venue": "Machine Learning,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Gilles Blanchard",
+                "Gyemin Lee",
+                "Clayton Scott"
+            ],
+            "title": "Generalizing from several related classification tasks to a new unlabeled sample",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Gilles Blanchard",
+                "Aniket Anand Deshmukh",
+                "\u00dcrun Dogan",
+                "Gyemin Lee",
+                "Clayton Scott"
+            ],
+            "title": "Domain generalization by marginal transfer learning",
+            "venue": "The Journal of Machine Learning Research,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Junbum Cha",
+                "Sanghyuk Chun",
+                "Kyungjae Lee",
+                "Han-Cheol Cho",
+                "Seunghyun Park",
+                "Yunsung Lee",
+                "Sungrae Park"
+            ],
+            "title": "Swad: Domain generalization by seeking flat minima",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Junbum Cha",
+                "Kyungjae Lee",
+                "Sungrae Park",
+                "Sanghyuk Chun"
+            ],
+            "title": "Domain generalization by mutualinformation regularization with pre-trained models",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Shiyu Chang",
+                "Yang Zhang",
+                "Mo Yu",
+                "Tommi Jaakkola"
+            ],
+            "title": "Invariant rationalization",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Liang Chen",
+                "Yong Zhang",
+                "Yibing Song",
+                "Ying Shan",
+                "Lingqiao Liu"
+            ],
+            "title": "Improved test-time adaptation for domain generalization",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ting Chen",
+                "Simon Kornblith",
+                "Mohammad Norouzi",
+                "Geoffrey Hinton"
+            ],
+            "title": "A simple framework for contrastive learning of visual representations",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yimeng Chen",
+                "Tianyang Hu",
+                "Fengwei Zhou",
+                "Zhenguo Li",
+                "Zhi-Ming Ma"
+            ],
+            "title": "Explore and exploit the diverse knowledge in model zoo for domain generalization",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yongqiang Chen",
+                "Yonggang Zhang",
+                "Yatao Bian",
+                "Han Yang",
+                "MA Kaili",
+                "Binghui Xie",
+                "Tongliang Liu",
+                "Bo Han",
+                "James Cheng"
+            ],
+            "title": "Learning causally invariant representations for out-of-distribution generalization on graphs",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Rui Dai",
+                "Yonggang Zhang",
+                "Zhen Fang",
+                "Bo Han",
+                "Xinmei Tian"
+            ],
+            "title": "Moderately distributional exploration for domain generalization",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Hal Daume III",
+                "Daniel Marcu"
+            ],
+            "title": "Domain adaptation for statistical classifiers",
+            "venue": "Journal of Artificial Intelligence Research,",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "Cian Eastwood",
+                "Alexander Robey",
+                "Shashank Singh",
+                "Julius Von K\u00fcgelgen",
+                "Hamed Hassani",
+                "George J Pappas",
+                "Bernhard Sch\u00f6lkopf"
+            ],
+            "title": "Probable domain generalization via quantile risk minimization",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yaroslav Ganin",
+                "Evgeniya Ustinova",
+                "Hana Ajakan",
+                "Pascal Germain",
+                "Hugo Larochelle",
+                "Fran\u00e7ois Laviolette",
+                "Mario Marchand",
+                "Victor Lempitsky"
+            ],
+            "title": "Domain-adversarial training of neural networks",
+            "venue": "The Journal of Machine Learning Research,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Arthur Gretton",
+                "Karsten Borgwardt",
+                "Malte Rasch",
+                "Bernhard Sch\u00f6lkopf",
+                "Alex Smola"
+            ],
+            "title": "A kernel method for the two-sample-problem",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "Ishaan Gulrajani",
+                "David Lopez-Paz"
+            ],
+            "title": "In search of lost domain generalization",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yaming Guo",
+                "Kai Guo",
+                "Xiaofeng Cao",
+                "Tieru Wu",
+                "Yi Chang"
+            ],
+            "title": "Out-of-distribution generalization of federated learning via implicit invariant relationships",
+            "venue": "International Conference on Machine Learning,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Dan Hendrycks",
+                "Thomas Dietterich"
+            ],
+            "title": "Benchmarking neural network robustness to common corruptions and perturbations",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Zeyi Huang",
+                "Haohan Wang",
+                "Eric P Xing",
+                "Dong Huang"
+            ],
+            "title": "Self-challenging improves cross-domain generalization",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Zhuo Huang",
+                "Miaoxi Zhu",
+                "Xiaobo Xia",
+                "Li Shen",
+                "Jun Yu",
+                "Chen Gong",
+                "Bo Han",
+                "Bo Du",
+                "Tongliang Liu"
+            ],
+            "title": "Robust generalization against photon-limited corruptions via worst-case sharpness minimization",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Pavel Izmailov",
+                "Dmitrii Podoprikhin",
+                "Timur Garipov",
+                "Dmitry Vetrov",
+                "Andrew Gordon Wilson"
+            ],
+            "title": "Averaging weights leads to wider optima and better generalization",
+            "venue": "In Uncertainty in Artificial Intelligence,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "James M Joyce"
+            ],
+            "title": "Kullback-leibler divergence",
+            "venue": "In International Encyclopedia of Statistical Science, pp",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "P.E. Jupp",
+                "K.V. Mardia"
+            ],
+            "title": "Directional Statistics. Wiley Series in Probability and Statistics",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Guoliang Kang",
+                "Lu Jiang",
+                "Yi Yang",
+                "Alexander G Hauptmann"
+            ],
+            "title": "Contrastive adaptation network for unsupervised domain adaptation",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Prannay Khosla",
+                "Piotr Teterwak",
+                "Chen Wang",
+                "Aaron Sarna",
+                "Yonglong Tian",
+                "Phillip Isola",
+                "Aaron Maschinot",
+                "Ce Liu",
+                "Dilip Krishnan"
+            ],
+            "title": "Supervised contrastive learning",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Daehee Kim",
+                "Youngjun Yoo",
+                "Seunghyun Park",
+                "Jinkyu Kim",
+                "Jaekoo Lee"
+            ],
+            "title": "Selfreg: Self-supervised contrastive regularization for domain generalization",
+            "venue": "In IEEE International Conference on Computer Vision,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jaeill Kim",
+                "Suhyun Kang",
+                "Duhun Hwang",
+                "Jungwook Shin",
+                "Wonjong Rhee"
+            ],
+            "title": "Vne: An effective method for improving deep representation by manipulating eigenvalue distribution",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Pang Wei Koh",
+                "Shiori Sagawa",
+                "Henrik Marklund",
+                "Sang Michael Xie",
+                "Marvin Zhang",
+                "Akshay Balsubramani",
+                "Weihua Hu",
+                "Michihiro Yasunaga",
+                "Richard Lanas Phillips",
+                "Irena Gao"
+            ],
+            "title": "Wilds: A benchmark of in-the-wild distribution shifts",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Alex Krizhevsky",
+                "Geoffrey Hinton"
+            ],
+            "title": "Learning multiple layers of features from tiny images",
+            "venue": "Technical report, University of Toronto,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "David Krueger",
+                "Ethan Caballero",
+                "Joern-Henrik Jacobsen",
+                "Amy Zhang",
+                "Jonathan Binas",
+                "Dinghuai Zhang",
+                "Remi Le Priol",
+                "Aaron Courville"
+            ],
+            "title": "Out-of-distribution generalization via risk extrapolation",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Da Li",
+                "Yongxin Yang",
+                "Yi-Zhe Song",
+                "Timothy M Hospedales"
+            ],
+            "title": "Deeper, broader and artier domain generalization",
+            "venue": "In IEEE International Conference on Computer Vision,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Da Li",
+                "Yongxin Yang",
+                "Yi-Zhe Song",
+                "Timothy Hospedales"
+            ],
+            "title": "Learning to generalize: Meta-learning for domain generalization",
+            "venue": "In AAAI Conference on Artificial Intelligence,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Haoliang Li",
+                "Sinno Jialin Pan",
+                "Shiqi Wang",
+                "Alex C Kot"
+            ],
+            "title": "Domain generalization with adversarial feature learning",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Junnan Li",
+                "Caiming Xiong",
+                "Steven Hoi"
+            ],
+            "title": "Mopro: Webly supervised learning with momentum prototypes",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Ya Li",
+                "Xinmei Tian",
+                "Mingming Gong",
+                "Yajing Liu",
+                "Tongliang Liu",
+                "Kun Zhang",
+                "Dacheng Tao"
+            ],
+            "title": "Deep domain generalization via conditional invariant adversarial networks",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Divyat Mahajan",
+                "Shruti Tople",
+                "Amit Sharma"
+            ],
+            "title": "Domain generalization using causal matching",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Leland McInnes",
+                "John Healy",
+                "Nathaniel Saul",
+                "Lukas"
+            ],
+            "title": "Grossberger. Umap: Uniform manifold approximation and projection",
+            "venue": "The Journal of Open Source Software,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Pascal Mettes",
+                "Elise van der Pol",
+                "Cees Snoek"
+            ],
+            "title": "Hyperspherical prototype networks",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Seonwoo Min",
+                "Nokyung Park",
+                "Siwon Kim",
+                "Seunghyun Park",
+                "Jinkyu Kim"
+            ],
+            "title": "Grounding visual representations with texts for domain generalization",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yifei Ming",
+                "Yiyou Sun",
+                "Ousmane Dia",
+                "Yixuan Li"
+            ],
+            "title": "How to exploit hyperspherical embeddings for out-of-distribution detection",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Krikamol Muandet",
+                "David Balduzzi",
+                "Bernhard Sch\u00f6lkopf"
+            ],
+            "title": "Domain generalization via invariant feature representation",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Hyeonseob Nam",
+                "HyunJae Lee",
+                "Jongchan Park",
+                "Wonjun Yoon",
+                "Donggeun Yoo"
+            ],
+            "title": "Reducing domain gap by reducing style bias",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jungwuk Park",
+                "Dong-Jun Han",
+                "Soyeong Kim",
+                "Jaekyun Moon"
+            ],
+            "title": "Test-time style shifting: Handling arbitrary styles in domain generalization",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Jonas Peters",
+                "Peter B\u00fchlmann",
+                "Nicolai Meinshausen"
+            ],
+            "title": "Causal inference by using invariant prediction: identification and confidence intervals",
+            "venue": "Journal of the Royal Statistical Society,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Alexandre Rame",
+                "Kartik Ahuja",
+                "Jianyu Zhang",
+                "Matthieu Cord",
+                "L\u00e9on Bottou",
+                "David Lopez-Paz"
+            ],
+            "title": "Model ratatouille: Recycling diverse models for out-of-distribution generalization",
+            "venue": "International Conference on Machine Learning,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Mateo Rojas-Carulla",
+                "Bernhard Sch\u00f6lkopf",
+                "Richard Turner",
+                "Jonas Peters"
+            ],
+            "title": "Invariant models for causal transfer learning",
+            "venue": "The Journal of Machine Learning Research,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Yossi Rubner",
+                "Carlo Tomasi",
+                "Leonidas J Guibas"
+            ],
+            "title": "A metric for distributions with applications to image databases",
+            "venue": "In International Conference on Computer Vision, pp",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Shiori Sagawa",
+                "Pang Wei Koh",
+                "Tatsunori B. Hashimoto",
+                "Percy Liang"
+            ],
+            "title": "Distributionally robust neural networks for group shifts: On the importance of regularization for worst-case generalization",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Baochen Sun",
+                "Kate Saenko"
+            ],
+            "title": "Deep coral: Correlation alignment for deep domain adaptation",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "M\u00e1ty\u00e1s A Sustik",
+                "Joel A Tropp",
+                "Inderjit S Dhillon",
+                "Robert W Heath Jr."
+            ],
+            "title": "On the existence of equiangular tight frames",
+            "venue": "Linear Algebra and its applications,",
+            "year": 2007
+        },
+        {
+            "authors": [
+                "Makarand Tapaswi",
+                "Marc T Law",
+                "Sanja Fidler"
+            ],
+            "title": "Video face clustering with unknown number of clusters",
+            "venue": "In Proceedings of the IEEE/CVF International Conference on Computer Vision,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Peifeng Tong",
+                "Wu Su",
+                "He Li",
+                "Jialin Ding",
+                "Zhan Haoxiang",
+                "Song Xi Chen"
+            ],
+            "title": "Distribution free domain generalization",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Eric Tzeng",
+                "Judy Hoffman",
+                "Kate Saenko",
+                "Trevor Darrell"
+            ],
+            "title": "Adversarial discriminative domain adaptation",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Vladimir N Vapnik"
+            ],
+            "title": "An overview of statistical learning theory",
+            "venue": "IEEE Transactions on Neural Networks,",
+            "year": 1999
+        },
+        {
+            "authors": [
+                "Julius Von K\u00fcgelgen",
+                "Yash Sharma",
+                "Luigi Gresele",
+                "Wieland Brendel",
+                "Bernhard Sch\u00f6lkopf",
+                "Michel Besserve",
+                "Francesco Locatello"
+            ],
+            "title": "Self-supervised learning with data augmentations provably isolates content from style",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Haobo Wang",
+                "Ruixuan Xiao",
+                "Yixuan Li",
+                "Lei Feng",
+                "Gang Niu",
+                "Gang Chen",
+                "Junbo Zhao"
+            ],
+            "title": "Pico: Contrastive label disambiguation for partial label learning",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jindong Wang",
+                "Cuiling Lan",
+                "Chang Liu",
+                "Yidong Ouyang",
+                "Tao Qin",
+                "Wang Lu",
+                "Yiqiang Chen",
+                "Wenjun Zeng",
+                "Philip Yu"
+            ],
+            "title": "Generalizing to unseen domains: A survey on domain generalization",
+            "venue": "IEEE Transactions on Knowledge and Data Engineering,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Rongguang Wang",
+                "Pratik Chaudhari",
+                "Christos Davatzikos"
+            ],
+            "title": "Embracing the disharmony in medical imaging: A simple and effective framework for domain adaptation",
+            "venue": "Medical Image Analysis,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Tongzhou Wang",
+                "Phillip Isola"
+            ],
+            "title": "Understanding contrastive representation learning through alignment and uniformity on the hypersphere",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yufei Wang",
+                "Haoliang Li",
+                "Alex C Kot"
+            ],
+            "title": "Heterogeneous domain generalization via domain mixup",
+            "venue": "In IEEE International Conference on Acoustics, Speech and Signal Processing,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Minghao Xu",
+                "Jian Zhang",
+                "Bingbing Ni",
+                "Teng Li",
+                "Chengjie Wang",
+                "Qi Tian",
+                "Wenjun Zhang"
+            ],
+            "title": "Adversarial domain adaptation with domain mixup",
+            "venue": "In AAAI Conference on Artificial Intelligence,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Shen Yan",
+                "Huan Song",
+                "Nanxiang Li",
+                "Lincan Zou",
+                "Liu Ren"
+            ],
+            "title": "Improve unsupervised domain adaptation with mixup training",
+            "venue": "arXiv preprint arXiv:2001.00677,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Xufeng Yao",
+                "Yang Bai",
+                "Xinyun Zhang",
+                "Yuechen Zhang",
+                "Qi Sun",
+                "Ran Chen",
+                "Ruiyu Li",
+                "Bei Yu"
+            ],
+            "title": "Pcl: Proxy-based contrastive learning for domain generalization",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Haotian Ye",
+                "Chuanlong Xie",
+                "Tianle Cai",
+                "Ruichen Li",
+                "Zhenguo Li",
+                "Liwei Wang"
+            ],
+            "title": "Towards a theoretical framework of out-of-distribution generalization",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Nanyang Ye",
+                "Kaican Li",
+                "Haoyue Bai",
+                "Runpeng Yu",
+                "Lanqing Hong",
+                "Fengwei Zhou",
+                "Zhenguo Li",
+                "Jun Zhu"
+            ],
+            "title": "Ood-bench: Quantifying and understanding two dimensions of out-of-distribution generalization",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Hongyi Zhang",
+                "Moustapha Cisse",
+                "Yann N Dauphin",
+                "David Lopez-Paz"
+            ],
+            "title": "Mixup: Beyond empirical risk minimization",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Marvin Mengxin Zhang",
+                "Henrik Marklund",
+                "Nikita Dhawan",
+                "Abhishek Gupta",
+                "Sergey Levine",
+                "Chelsea Finn"
+            ],
+            "title": "Adaptive risk minimization: Learning to adapt to domain shift",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Michael Zhang",
+                "Nimit S Sohoni",
+                "Hongyang R Zhang",
+                "Chelsea Finn",
+                "Christopher Re"
+            ],
+            "title": "Correct-ncontrast: a contrastive approach for improving robustness to spurious correlations",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Kaiyang Zhou",
+                "Yongxin Yang",
+                "Timothy Hospedales",
+                "Tao Xiang"
+            ],
+            "title": "Learning to generate novel domains for domain generalization",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Kaiyang Zhou",
+                "Yongxin Yang",
+                "Yu Qiao",
+                "Tao Xiang"
+            ],
+            "title": "Domain generalization with mixstyle",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Kaiyang Zhou",
+                "Ziwei Liu",
+                "Yu Qiao",
+                "Tao Xiang",
+                "Chen Change Loy"
+            ],
+            "title": "Domain generalization: A survey",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ye"
+            ],
+            "title": "2021) provide OOD generalization error bounds based on the notation of variation",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Ye"
+            ],
+            "title": "2021) for more details and illustrations",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Terra Incognita (Gulrajani",
+                "Lopez-Paz"
+            ],
+            "title": "2020) comprises images of wild animals taken by cameras at four different locations: location100, location38, location43, and location46",
+            "venue": "This dataset contains 24,",
+            "year": 2020
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Deploying machine learning models in real-world settings presents a critical challenge of generalizing under distributional shifts. These shifts are common due to mismatches between the training and test data distributions. For instance, in autonomous driving, a model trained on in-distribution (ID) data collected under sunny weather conditions is expected to perform well in out-of-distribution (OOD) scenarios, such as rain or snow. This underscores the importance of the OOD generalization problem, which involves learning a predictor that can generalize across all possible environments, despite being trained on a finite subset of training environments.\nA plethora of OOD generalization algorithms has been developed in recent years (Zhou et al., 2022), where a central theme is to learn domain-invariant representations\u2014features that are consistent and meaningful across different environments (domains) and can generalize to the unseen test environment. Recently, Ye et al. (2021) theoretically showed that the OOD generalization error can be bounded in terms of intra-class variation and inter-class separation. Intra-class variation measures the stability of representations across different environments, while inter-class separation assesses the dispersion of features among different classes. Ideally, features should display low variation and high separation, in order to generalize well to OOD data (formally described in Section 3). Despite the theoretical analysis, a research question remains open in the field:\nRQ: How to design a practical learning algorithm that directly achieves these two properties, and what theoretical guarantees can the algorithm offer?\nTo address the question, this paper presents a learning framework HYPO (HYPerspherical OOD generalization), which provably learns domain-invariant representations in the hyperspherical space with unit norm (Section 4). Our key idea is to promote low variation (aligning representation across\n\u2217Equal contribution. Correspondence to Yifei Ming and Yixuan Li \u2020This work is not related to the author\u2019s position at Amazon.\ndomains for every class) and high separation (separating prototypes across different classes). In particular, the learning objective shapes the embeddings such that samples from the same class (across all training environments) gravitate towards their corresponding class prototype, while different class prototypes are maximally separated. The two losses in our objective function can be viewed as optimizing the key properties of intra-class variation and inter-class separation, respectively. Since samples are encouraged to have a small distance with respect to their class prototypes, the resulting embedding geometry can have a small distribution discrepancy across domains and benefits OOD generalization. Geometrically, we show that our loss function can be understood through the lens of maximum likelihood estimation under the classic von Mises-Fisher distribution.\nEmpirical contribution. Empirically, we demonstrate strong OOD generalization performance by extensively evaluating HYPO on common benchmarks (Section 5). On the CIFAR-10 (ID) vs. CIFAR-10-Corruption (OOD) task, HYPO substantially improves the OOD generalization accuracy on challenging cases such as Gaussian noise, from 78.09% to 85.21%. Furthermore, we establish superior performance on popular domain generalization benchmarks, including PACS, Office-Home, VLCS, etc. For example, we achieve 88.0% accuracy on PACS which outperforms the best lossbased method by 1.1%. This improvement is non-trivial using standard stochastic gradient descent optimization. When coupling our loss with specialized optimization SWAD (Cha et al., 2021), the accuracy is further increased to 89%. We provide visualization and quantitative analysis to verify that features learned by HYPO indeed achieve low intra-class variation and high inter-class separation.\nTheoretical insight. We provide theoretical justification for how HYPO can guarantee improved OOD generalization, supporting our empirical findings. Our theory complements Ye et al. (2021), which does not provide a loss for optimizing the intra-class variation or inter-class separation. Thus, a key contribution of this paper is to provide a crucial link between provable understanding and a practical algorithm for OOD generalization in the hypersphere. In particular, our Theorem 6.1 shows that when the model is trained with our loss function, we can upper bound intra-class variation, a key quantity to bound OOD generalization error. For a learnable OOD generalization task, the upper bound on generalization error is determined by the variation estimate on the training environments, which is effectively reduced by our loss function under sufficient sample size and expressiveness of the neural network."
+        },
+        {
+            "heading": "2 PROBLEM SETUP",
+            "text": "We consider a multi-class classification task that involves a pair of random variables (X,Y ) over instances x \u2208 X \u2282 Rd and corresponding labels y \u2208 Y := {1, 2, \u00b7 \u00b7 \u00b7 , C}. The joint distribution of X and Y is unknown and represented by PXY . The goal is to learn a predictor function, f : X \u2192 RC , that can accurately predict the label y for an input x, where (x, y) \u223c PXY . Unlike in standard supervised learning tasks, the out-of-distribution (OOD) generalization problem is challenged by the fact that one cannot sample directly from PXY . Instead, we can only sample (X,Y ) under limited environmental conditions, each of which corrupts or varies the data differently. For example, in autonomous driving, these environmental conditions may represent different weathering conditions such as snow, rain, etc. We formalize this notion of environmental variations with a set of environments or domains Eall. Sample pairs (Xe, Y e) are randomly drawn from environment e. In practice, we may only have samples from a finite subset of available environments Eavail \u2282 Eall. Given Eavail, the goal is to learn a predictor f that can generalize across all possible environments. The problem is stated formally below.\nDefinition 2.1 (OOD Generalization). Let Eavail \u2282 Eall be a set of training environments, and assume that for each environment e \u2208 Eavail, we have a dataset De = {(xej , yej )} ne j=1, sampled i.i.d. from an unknown distribution PeXY . The goal of OOD generalization is to find a classifier f\u2217, using the data from the datasets De, that minimizes the worst-case risk over the entire family of environments Eall:\nmin f\u2208F max e\u2208Eall\nEPeXY \u2113(f(X e), Y e), (1)\nwhere F is hypothesis space and l(\u00b7, \u00b7) is the loss function.\nThe problem is challenging since we do not have access to data from domains outside Eavail. In particular, the task is commonly referred to as multi-source domain generalization when |Eavail| > 1."
+        },
+        {
+            "heading": "3 MOTIVATION OF ALGORITHM DESIGN",
+            "text": "Our work is motivated by the theoretical findings in Ye et al. (2021), which shows that the OOD generalization performance can be bounded in terms of intra-class variation and inter-class separation with respect to various environments. The formal definitions are given as follows. Definition 3.1 (Intra-class variation). The variation of feature \u03d5 across a domain set E is\nV(\u03d5, E) = max y\u2208Y sup e,e\u2032\u2208E\n\u03c1 ( P(\u03d5e|y),P(\u03d5e \u2032 |y) ) , (2)\nwhere \u03c1(P,Q) is a symmetric distance (e.g., Wasserstein distance, total variation, Hellinger distance) between two distributions, and P(\u03d5e|y) denotes the class-conditional distribution for features of samples in environment e. Definition 3.2 (Inter-class separation1). The separation of feature \u03d5 across domain set E is\nI\u03c1(\u03d5, E) = 1 C(C \u2212 1) \u2211 y \u0338=y\u2032\ny,y\u2032\u2208Y\nmin e\u2208E\n\u03c1 ( P(\u03d5e|y),P(\u03d5e|y\u2032) ) . (3)\nThe intra-class variation V(\u03d5, E) measures the stability of feature \u03d5 over the domains in E and the inter-class separation I(\u03d5, E) captures the ability of \u03d5 to distinguish different labels. Ideally, features should display high separation and low variation. Definition 3.3. The OOD generalization error of classifier f is defined as follows:\nerr(f) = max e\u2208Eall EPeXY \u2113(f(X e), Y e)\u2212 max e\u2208Eavail EPeXY \u2113(f(X e), Y e)\nwhich is bounded by the variation estimate on Eavail with the following theorem.\nTheorem 3.1 (OOD error upper bound, informal (Ye et al., 2021)). Suppose the loss function \u2113(\u00b7, \u00b7) is bounded by [0, B]. For a learnable OOD generalization problem with sufficient inter-class separation, the OOD generalization error err(f) can be upper bounded by\nerr(f) \u2264 O (( V sup(h, Eavail) ) \u03b12 (\u03b1+d)2 ) , (4)\nfor some \u03b1 > 0, and V sup (h, Eavail ) \u225c sup\u03b2\u2208Sd\u22121 V ( \u03b2\u22a4h, Eavail ) is the inter-class variation,\nh(\u00b7) \u2208 Rd is the feature vector, and \u03b2 is a vector in unit hypersphere Sd\u22121 = { \u03b2 \u2208 Rd : \u2225\u03b2\u22252 = 1 } , and f is a classifier based on normalized feature h.\nRemarks. The Theorem above suggests that both low intra-class variation and high inter-class separation are desirable properties for theoretically grounded OOD generalization. Note that in the full formal Theorem (see Appendix C), maintaining the inter-class separation is necessary for the learnability of the OOD generalization problem (Def. C.2). In other words, when the learned embeddings exhibit high inter-class separation, the problem becomes learnable. In this context, bounding intra-class variation becomes crucial for reducing the OOD generalization error.\nDespite the theoretical underpinnings, it remains unknown to the field how to design a practical learning algorithm that directly achieves these two properties, and what theoretical guarantees can the algorithm offer. This motivates our work.\nTo reduce the OOD generalization error, our key motivation is to design a hyperspherical learning algorithm that directly promotes low variation (aligning representation across domains for every class) and high separation (separating prototypes across different classes)."
+        },
+        {
+            "heading": "4 METHOD",
+            "text": "Following the motivation in Section 3, we now introduce the details of the learning algorithm HYPO (HYPerspherical OOD generalization), which is designed to promote domain invariant representations\n1Referred to as \u201cInformativeness\u201d in Ye et al. (2021).\nin the hyperspherical space. The key idea is to shape the hyperspherical embedding space so that samples from the same class (across all training environments Eavail) are closely aligned with the corresponding class prototype. Since all points are encouraged to have a small distance with respect to the class prototypes, the resulting embedding geometry can have a small distribution discrepancy across domains and hence benefits OOD generalization. In what follows, we first introduce the learning objective (Section 4.1), and then we discuss the geometrical interpretation of the loss and embedding (Section 4.2). We will provide theoretical justification for HYPO in Section 6, which leads to a provably smaller intra-class variation, a key quantity to bound OOD generalization error."
+        },
+        {
+            "heading": "4.1 HYPERSPHERICAL LEARNING FOR OOD GENERALIZATION",
+            "text": "Loss function. The learning algorithm is motivated to directly optimize the two criteria: intra-class variation and inter-class separation. At a high level, HYPO aims to learn embeddings for each sample in the training environments by maintaining a class prototype vector \u00b5c \u2208 Rd for each class c \u2208 {1, 2, ..., C}. To optimize for low variation, the loss encourages the feature embedding of a sample to be close to its class prototype. To optimize for high separation, the loss encourages different class prototypes to be far apart from each other.\nSpecifically, we consider a deep neural network h : X 7\u2192 Rd that maps an input x\u0303 \u2208 X to a feature embedding z\u0303 := h(x\u0303). The loss operates on the normalized feature embedding z := z\u0303/\u2225z\u0303\u22252. The normalized embeddings are also referred to as hyperspherical embeddings, since they are on a unit hypersphere, denoted as Sd\u22121 := {z \u2208 Rd | \u2225z\u22252 = 1}. The loss is formalized as follows:\nL = \u2212 1 N \u2211 e\u2208Eavail |De|\u2211 i=1 log exp\n( zei \u22a4\u00b5c(i)/\u03c4 )\u2211C\nj=1 exp ( zei \u22a4\u00b5j/\u03c4 )\ufe38 \ufe37\ufe37 \ufe38\nLvar: \u2193 variation\n+ 1\nC C\u2211 i=1 log 1 C \u2212 1 \u2211 j \u0338=i,j\u2208Y exp ( \u00b5\u22a4i \u00b5j/\u03c4 ) \ufe38 \ufe37\ufe37 \ufe38\n\u2191 separation\n,\nwhere N is the number of samples, \u03c4 is the temperature, z is the normalized feature embedding, and \u00b5c is the prototype embedding for class c. While hyperspherical learning algorithms have been studied in other context (Mettes et al., 2019; Khosla et al., 2020; Ming et al., 2023), none of the prior works explored its provable connection to domain generalization, which is our distinct contribution. We will theoretically show in Section 6 that minimizing our loss function effectively reduces intra-class variation, a key quantity to bound OOD generalization error.\nThe training objective in Equation 5 can be efficiently optimized end-to-end. During training, an important step is to estimate the class prototype \u00b5c for each class c \u2208 {1, 2, ..., C}. The classconditional prototypes can be updated in an exponential-moving-average manner (EMA) (Li et al., 2020): \u00b5c := Normalize(\u03b1\u00b5c + (1\u2212 \u03b1)z), \u2200c \u2208 {1, 2, . . . , C} (5) where the prototype \u00b5c for class c is updated during training as the moving average of all embeddings with label c, and z denotes the normalized embedding of samples of class c. An end-to-end pseudo algorithm is summarized in Appendix A.\nClass prediction. In testing, classification is conducted by identifying the closest class prototype: y\u0302 = argmaxc\u2208[C] fc(x), where fc(x) = z \u22a4\u00b5c and z = h(x) \u2225h(x)\u22252 is the normalized feature embedding."
+        },
+        {
+            "heading": "4.2 GEOMETRICAL INTERPRETATION OF LOSS AND EMBEDDING",
+            "text": "Geometrically, the loss function above can be interpreted as learning embeddings located on the surface of a unit hypersphere. The hyperspherical embeddings can be modeled by the von MisesFisher (vMF) distribution, a well-known distribution in directional statistics (Jupp & Mardia, 2009). For a unit vector z \u2208 Rd in class c, the probability density function is defined as\np(z | y = c) = Zd(\u03ba) exp(\u03ba\u00b5\u22a4c z), (6)\nwhere \u00b5c \u2208 Rd denotes the mean direction of the class c, \u03ba \u2265 0 denotes the concentration of the distribution around \u00b5c, and Zd(\u03ba) denotes the normalization factor. A larger \u03ba indicates a higher concentration around the class center. In the extreme case of \u03ba = 0, the samples are distributed uniformly on the hypersphere.\nUnder this probabilistic model, an embedding z is assigned to the class c with the following probability\np(y = c | z; {\u03ba,\u00b5j}Cj=1) = Zd(\u03ba) exp(\u03ba\u00b5 \u22a4 c z)\u2211C\nj=1 Zd(\u03ba) exp(\u03ba\u00b5 \u22a4 j z)\n= exp(\u00b5\u22a4c z/\u03c4)\u2211C j=1 exp(\u00b5 \u22a4 j z/\u03c4) , (7)\nwhere \u03c4 = 1/\u03ba denotes a temperature parameter.\nMaximum likelihood view. Notably, minimizing the first term in our loss (cf. Eq. 5) is equivalent to performing maximum likelihood estimation under the vMF distribution:\nargmax\u03b8 N\u220f i=1\np(yi | xi; {\u03ba,\u00b5j}Cj=1),where (xi, yi) \u2208\n\u22c3\ne\u2208Etrain De\nwhere i is the index of sample, j is the index of the class, and N is the size of the training set. In effect, this loss encourages each ID sample to have a high probability assigned to the correct class in the mixtures of the vMF distributions."
+        },
+        {
+            "heading": "5 EXPERIMENTS",
+            "text": "In this section, we show that HYPO achieves strong OOD generalization performance in practice, establishing competitive performance on several benchmarks. In what follows, we describe the experimental setup in Section 5.1, followed by main results and analysis in Section 5.2."
+        },
+        {
+            "heading": "5.1 EXPERIMENTAL SETUP",
+            "text": "Datasets. Following the common benchmarks in literature, we use CIFAR-10 (Krizhevsky et al., 2009) as the in-distribution data. We use CIFAR-10-C (Hendrycks & Dietterich, 2019) as OOD data, with 19 different common corruption applied to CIFAR-10. In addition to CIFAR-10, we conduct experiments on popular benchmarks including PACS (Li et al., 2017), Office-Home (Gulrajani & Lopez-Paz, 2020), and VLCS (Gulrajani & Lopez-Paz, 2020) to validate the generalization performance. PACS contains 4 domains/environments (photo, art painting, cartoon, sketch) with 7 classes (dog, elephant, giraffe, guitar, horse, house, person). Office-Home comprises four different domains: art, clipart, product, and real. Results on additional OOD datasets Terra Incognita (Gulrajani & Lopez-Paz, 2020), and ImageNet can be found in Appendix F and Appendix G.\nEvaluation metrics. We report the following two metrics: (1) ID classification accuracy (ID Acc.) for ID generalization, and (2) OOD classification accuracy (OOD Acc.) for OOD generalization.\nExperimental details. In our main experiments, we use ResNet-18 for CIFAR-10 and ResNet-50 for PACS, Office-Home, and VLCS. For these datasets, we use stochastic gradient descent with momentum 0.9, and weight decay 10\u22124. For CIFAR-10, we train the model from scratch for 500 epochs using an initial learning rate of 0.5 and cosine scheduling, with a batch size of 512. Following common practice for contrastive losses (Chen et al., 2020; Khosla et al., 2020; Yao et al., 2022), we use an MLP projection head with one hidden layer to obtain features. The embedding (output) dimension is 128 for the projection head. We set the default temperature \u03c4 as 0.1 and the prototype update factor \u03b1 as 0.95. For PACS, Office-Home, and VLCS, we follow the common practice and initialize the network using ImageNet pre-trained weights. We fine-tune the network for 50 epochs. The embedding dimension is 512 for the projection head. We adopt the leave-one-domain-out evaluation protocol and use the training domain validation set for model selection (Gulrajani & Lopez-Paz, 2020), where the validation set is pooled from all training domains. Details on other hyperparameters are in Appendix D."
+        },
+        {
+            "heading": "5.2 MAIN RESULTS AND ANALYSIS",
+            "text": "HYPO excels on common corruption benchmarks. As shown in Figure 2, HYPO achieves consistent improvement over the ERM baseline (trained with cross-entropy loss), on a variety of common corruptions. Our evaluation includes different corruptions including Gaussian noise, Snow, JPEG compression, Shot noise, Zoom blur, etc. The model is trained on CIFAR-10, without seeing any type of corruption data. In particular, our method brings significant improvement for challenging cases such as Gaussian noise, enhancing OOD accuracy from 78.09% to 85.21% (+7.12%). Complete results on all 19 different corruption types are in Appendix E.\nHYPO establishes competitive performance on popular benchmarks. Our method delivers superior results in the popular domain generalization tasks, as shown in Table 1. HYPO outperforms an extensive collection of common OOD generalization baselines on popular domain generalization datasets, including PACS, Office-Home, VLCS. For instance, on PACS, HYPO improves the best loss-based method by 1.1%. Notably, this enhancement is non-trivial since we are not relying on specialized optimization algorithms such as SWAD (Cha et al., 2021). Later in our ablation, we show that coupling HYPO with SWAD can further boost the OOD generalization performance, establishing superior performance on this challenging task.\nWith multiple training domains, we observe that it is desirable to emphasize hard negative pairs when optimizing the inter-class separation. As depicted in Figure 3, the embeddings of negative pairs from the same domain but different classes (such as dog and elephant in art painting) can be quite close on the hypersphere. Therefore, it is more informative to separate such hard negative pairs. This can be enforced by a simple modification to the denominator of our variation loss (Eq. 11 in Appendix D), which we adopt for multi-source domain generalization tasks.\nRelations to PCL. PCL (Yao et al., 2022) adapts a proxybased contrastive learning framework for domain generalization. We highlight several notable distinctions from ours: (1) While PCL offers no theoretical insights, HYPO is guided by theory. We provide a formal theoretical justification that our method reduces intra-class variation which is essential to bounding OOD generalization error (see Section 6); (2) Our loss function formulation is different and can be rigorously interpreted as shaping vMF distributions of hyperspherical embeddings (see Section 4.2), whereas PCL can not; (3) Unlike PCL (86.3% w/o SWAD), HYPO is able to achieve competitive performance (88.0%) without heavy reliance on special optimization SWAD (Cha et al., 2021), a dense and overfit-aware stochastic weight sampling (Izmailov et al., 2018) strategy for OOD generalization. As shown in Table 2, we also conduct experiments in conjunction with SWAD. Compared to PCL,\nHYPO achieves superior performance with 89% accuracy, which further demonstrates its advantage.\nVisualization of embedding. Figure 4 shows the UMAP (McInnes et al., 2018) visualization of feature embeddings for ERM (left) vs. HYPO (right). The embeddings are extracted from models trained on PACS. The red, orange, and green points are from the in-distribution, corresponding to art painting (A), photo (P), and sketch (S) domains. The violet points are from the unseen OOD domain cartoon (C). There are two salient observations: (1) for any given class, the embeddings across domains Eall become significantly more aligned (and invariant) using our method compared to the ERM baseline. This directly verifies the low variation (cf. Equation 2) of our learned embedding. (2) The embeddings are well separated across different classes, and distributed more uniformly in the space than ERM, which verifies the high inter-class separation (cf. Equation 3) of our method. Overall, our observations well support the efficacy of HYPO.\nQuantitative verification of intra-class variation. We provide empirical verification on intra-class variation in Figure 5, where the model is trained on PACS. We measure the intra-class variation with Sinkhorn divergence (entropy regularized Wasserstein distance). The horizontal axis (0)-(6) denotes\ndifferent classes, and the vertical axis denotes different pairs of training domains (\u2018P\u2019, \u2018A\u2019, \u2018S\u2019). Darker color indicates lower Sinkhorn divergence. We can see that our method results in significantly lower intra-class variation compared to ERM, which aligns with our theoretical insights in Section 6.\nAdditional ablation studies. Due to space constraints, we defer additional experiments and ablations to the Appendix, including (1) results on other tasks from DomainBed (Appendix F); (2) results on large-scale benchmarks such as ImageNet-100 (Appendix G); (3) ablation of different loss terms (Appendix H); (4) an analysis on the effect of \u03c4 and \u03b1 (Appendix I)."
+        },
+        {
+            "heading": "6 WHY HYPO IMPROVES OUT-OF-DISTRIBUTION GENERALIZATION?",
+            "text": "In this section, we provide a formal justification of the loss function. Our main Theorem 6.1 gives a provable understanding of how the learning objective effectively reduces the variation estimate V sup(h, Eavail), thus directly reducing the OOD generalization error according to Theorem 3.1. For simplicity, we assume \u03c4 = 1 and denote the prototype vectors \u00b51, . . . ,\u00b5C \u2208 Sd\u22121. Let H \u2282 {h : X 7\u2192 Sd\u22121} denote the function class induced by the neural network. Theorem 6.1 (Variation upper bound using HYPO). When samples are aligned with class prototypes such that 1N \u2211N j=1 \u00b5 \u22a4 c(j)zj \u2265 1 \u2212 \u03f5 for some \u03f5 \u2208 (0, 1), then \u2203\u03b4 \u2208 (0, 1), with probability at least 1\u2212 \u03b4,\nV sup(h, Eavail) \u2264 O(\u03f51/3 + ( ln(2/\u03b4)\nN )1/6 + (ED[\n1\nN E\u03c31,...,\u03c3N sup\nh\u2208H N\u2211 i=1 \u03c3iz \u22a4 i \u00b5c(i)]) 1/3),\nwhere zj = h(xj) \u2225h(xj)\u22252 , \u03c31, . . . , \u03c3N are Rademacher random variables and O(\u00b7) suppresses dependence on constants and |Eavail|.\nImplications. In Theorem 6.1, we can see that the upper bound consists of three factors: the optimization error, the Rademacher complexity of the given neural network, and the estimation error which becomes close to 0 as the number of samples N increases. Importantly, the term \u03f5 reflects how sample embeddings are aligned with their class prototypes on the hyperspherical space (as we have 1N \u2211N j=1 \u00b5 \u22a4 c(j)zj \u2265 1 \u2212 \u03f5), which is directly minimized by our proposed loss in Equation 5. The above Theorem implies that when we train the model with the HYPO loss, we can effectively upper bound the intra-class variation, a key term for bounding OOD generation performance by Theorem 3.1. In Section H, we provide empirical verification of our bound by estimating \u03f5\u0302, which is indeed close to 0 for models trained with HYPO loss. We defer proof details to Appendix C.\nNecessity of inter-class separation loss. We further present a theoretical analysis in Appendix J explaining how our loss promotes inter-class separation, which is necessary to ensure the learnability of the OOD generalization problem. We provide a brief summary in Appendix C and discuss the notion of OOD learnability, and would like to refer readers to Ye et al. (2021) for an in-depth and formal treatment. Empirically, to verify the impact of inter-class separation, we conducted an ablation study in Appendix H, where we compare the OOD performance of our method (with separation loss) vs. our method (without separation loss). We observe that incorporating separation loss indeed achieves stronger OOD generalization performance, echoing the theory."
+        },
+        {
+            "heading": "7 RELATED WORKS",
+            "text": "Out-of-distribution generalization. OOD generalization is an important problem when the training and test data are sampled from different distributions. Compared to domain adaptation (Daume III & Marcu, 2006; Ben-David et al., 2010; Tzeng et al., 2017; Kang et al., 2019; Wang et al., 2022c), OOD generalization is more challenging (Blanchard et al., 2011; Muandet et al., 2013; Gulrajani & Lopez-Paz, 2020; Bai et al., 2021b; Zhou et al., 2021; Koh et al., 2021; Bai et al., 2021a; Wang et al., 2022b; Ye et al., 2022; Cha et al., 2022; Kim et al., 2023; Guo et al., 2023; Dai et al., 2023; Tong et al., 2023), which aims to generalize to unseen distributions without any sample from the target domain. In particular, A popular direction is to extract domain-invariant feature representation. Prior works show that the invariant features from training domains can help discover invariance on target domains for linear models (Peters et al., 2016; Rojas-Carulla et al., 2018). IRM (Arjovsky et al., 2019) and its variants (Ahuja et al., 2020; Krueger et al., 2021) aim to find invariant representation from different training domains via an invariant risk regularizer. Mahajan et al. (2021) propose a causal matching-based algorithm for domain generalization. Other lines of works have explored the problem from various perspectives such as causal discovery (Chang et al., 2020), distributional robustness (Sagawa et al., 2020; Zhou et al., 2020), model ensembles (Chen et al., 2023b; Rame et al., 2023), and test-time adaptation (Park et al., 2023; Chen et al., 2023a). In this paper, we focus on improving OOD generalization via hyperspherical learning, and provide a new theoretical analysis of the generalization error.\nTheory for OOD generalization. Although the problem has attracted great interest, theoretical understanding of desirable conditions for OOD generalization is under-explored. Generalization to arbitrary OOD is impossible since the test distribution is unknown (Blanchard et al., 2011; Muandet et al., 2013). Numerous general distance measures exist for defining a set of test domains around the training domain, such as KL divergence (Joyce, 2011), MMD (Gretton et al., 2006), and EMD (Rubner et al., 1998). Based on these measures, some prior works focus on analyzing the OOD generalization error bound. For instance, Albuquerque et al. (2019) obtain a risk bound for linear combinations of training domains. Ye et al. (2021) provide OOD generalization error bounds based on the notation of variation. In this work, we provide a hyperspherical learning algorithm that provably reduces the variation, thereby improving OOD generalization both theoretically and empirically.\nContrastive learning for domain generalization Contrastive learning methods have been widely explored in different learning tasks. For example, Wang & Isola (2020) analyze the relation between the alignment and uniformity properties on the hypersphere for unsupervised learning, while we focus on supervised learning with domain shift. Tapaswi et al. (2019) investigates a contrastive metric learning approach for hyperspherical embeddings in video face clustering, which differs from our objective of OOD generalization. Von K\u00fcgelgen et al. (2021) provide theoretical justification for self-supervised learning with data augmentations. Recently, contrastive losses have been adopted for OOD generalization. For example, CIGA (Chen et al., 2022) captures the invariance of graphs to enable OOD generalization for graph data. CNC (Zhang et al., 2022) is specifically designed for learning representations robust to spurious correlation by inferring pseudo-group labels and performing supervised contrastive learning. SelfReg (Kim et al., 2021) proposes a self-supervised contrastive regularization for domain generalization with non-hyperspherical embeddings, while we focus on hyperspherical features with theoretically grounded loss formulations."
+        },
+        {
+            "heading": "8 CONCLUSION",
+            "text": "In this paper, we present a theoretically justified algorithm for OOD generalization via hyperspherical learning. HYPO facilitates learning domain-invariant representations in the hyperspherical space. Specifically, we encourage low variation via aligning features across domains for each class and promote high separation by separating prototypes across different classes. Theoretically, we provide a provable understanding of how our loss function reduces the OOD generalization error. Minimizing our learning objective can reduce the variation estimates, which determine the general upper bound on the generalization error of a learnable OOD generalization task. Empirically, HYPO achieves superior performance compared to competitive OOD generalization baselines. We hope our work can inspire future research on OOD generalization and provable understanding."
+        },
+        {
+            "heading": "ACKNOWLEDGEMENT",
+            "text": "The authors would like to thank ICLR anonymous reviewers for their helpful feedback. The work is supported by the AFOSR Young Investigator Program under award number FA9550-23-1-0184, National Science Foundation (NSF) Award No. IIS-2237037 & IIS-2331669, and Office of Naval Research under grant number N00014-23-1-2643."
+        },
+        {
+            "heading": "A PSEUDO ALGORITHM",
+            "text": "The training scheme of HYPO is shown below. We jointly optimize for (1) low variation, by encouraging the feature embedding of samples to be close to their class prototypes; and (2) high separation, by encouraging different class prototypes to be far apart from each other.\nAlgorithm 1: Hyperspherical Out-of-Distribution Generalization 1 Input: Training dataset D, deep neural network encoder h, class prototypes \u00b5c (1 \u2264 j \u2264 C),\ntemperature \u03c4 2 for epoch = 1, 2, . . . , do 3 for iter = 1, 2, . . . , do 4 sample a mini-batch B = {xi, yi}bi=1 5 obtain augmented batch B\u0303 = {x\u0303i, y\u0303i}2bi=1 by applying two random augmentations to xi \u2208 B \u2200i \u2208 {1, 2, . . . , b} 6 for x\u0303i \u2208 B\u0303 do // obtain normalized embedding 7 z\u0303i = h(x\u0303i), zi = z\u0303i/\u2225z\u0303i\u22252 // update class-prototypes 8 \u00b5c := Normalize(\u03b1\u00b5c + (1\u2212 \u03b1)zi), \u2200c \u2208 {1, 2, . . . , C}\n// calculate the loss for low variation 9 Lvar = \u2212 1N \u2211 e\u2208Eavail \u2211|De| i=1 log exp(zei \u22a4\u00b5c(i)/\u03c4)\u2211C j=1 exp(zei\u22a4\u00b5j/\u03c4)\n// calculate the loss for high separation 10 Lsep = 1C \u2211C i=1 log 1 C\u22121 \u2211 j \u0338=i,j\u2208Y exp ( \u00b5\u22a4i \u00b5j/\u03c4 ) // calculate overall loss 11 L = Lvar + Lsep // update the network weights 12 update the weights in the deep neural network"
+        },
+        {
+            "heading": "B BROADER IMPACTS",
+            "text": "Our work facilitates the theoretical understanding of OOD generalization through prototypical learning, which encourages low variation and high separation in the hyperspherical space. In Section 5.2, we qualitatively and quantitatively verify the low intra-class variation of the learned embeddings and we discuss in Section 6 that the variation estimate determines the general upper bound on the generalization error for a learnable OOD generalization task. This provable framework may serve as a foothold that can be useful for future OOD generalization research via representation learning.\nFrom a practical viewpoint, our research can directly impact many real applications, when deploying machine learning models in the real world. Out-of-distribution generalization is a fundamental problem and is commonly encountered when building reliable ML systems in the industry. Our empirical results show that our approach achieves consistent improvement over the baseline on a wide range of tasks. Overall, our work has both theoretical and practical impacts."
+        },
+        {
+            "heading": "C THEORETICAL ANALYSIS",
+            "text": "Notations. We first set up notations for theoretical analysis. Recall that PeXY denotes the joint distribution of X,Y in domain e. The label set Y := {1, 2, \u00b7 \u00b7 \u00b7 , C}. For an input x, z = h(x)/\u2225h(x)\u22252 is its feature embedding. Let Pe,yX denote the marginal distribution of X in domain e with class y. Similarly, Pe,yZ denotes the marginal distribution of Z in domain e with class y. Let E := |Etrain| for abbreviation. As we do not consider the existence of spurious correlation in this work, it is natural to assume that domains and classes are uniformly distributed: PX := 1EC \u2211 e,y P e,y X . We specify the\ndistance metric to be the Wasserstein-1 distance i.e., W1(\u00b7, \u00b7) and define all notions of variation under such distance.\nNext, we proceed with several lemmas that are particularly useful to prove our main theorem. Lemma C.1. With probability at least 1\u2212 \u03b4,\n\u2212E(x,c)\u223cPXY \u00b5 \u22a4 c\nh(x)\n\u2225h(x)\u22252 +\n1\nN N\u2211 i=1 \u00b5\u22a4c(i) h(xi) \u2225h(xi)\u22252 \u2264 ES\u223cPN [ 1 N E\u03c31,...,\u03c3N sup h\u2208H N\u2211 i=1 \u03c3i\u00b5 \u22a4 c(i) h(xi) \u2225h(xi)\u22252 ] + \u03b2\n\u221a ln(2/\u03b4)\nN .\nwhere \u03b2 is a universal constant and \u03c31, . . . , \u03c3N are Rademacher variables.\nProof. By Cauchy-Schwarz inequality,\n|\u00b5\u22a4c(i) h(xi)\n\u2225h(xi)\u22252 | \u2264 \u2225\u2225\u00b5c(i)\u2225\u22252 \u2225\u2225\u2225\u2225 h(xi)\u2225h(xi)\u22252 \u2225\u2225\u2225\u2225 2 = 1\nDefine G = {\u27e8 h(\u00b7)\u2225h(\u00b7)\u22252 , \u00b7\u27e9 : h \u2208 H}. Let S = (u1, . . . ,uN ) \u223c PN where ui = ( xi \u00b5c(i) ) and N is the sample size. The Rademacher complexity of G is\nRN (G) := ES\u223cPN [ 1\nN sup g\u2208G N\u2211 i=1 \u03c3ig(ui)].\nWe can apply the standard Rademacher complexity bound (Theorem 26.5 in Shalev-Shwartz and Ben-David) to G, then we have that,\n\u2212E(x,c)\u223cPXY \u00b5 \u22a4 c\nh(x)\n\u2225h(x)\u22252 +\n1\nN N\u2211 i=1 \u00b5\u22a4c(i) h(xi) \u2225h(xi)\u22252 \u2264 ES\u223cPN [ 1 N E\u03c31,...,\u03c3N sup g\u2208G N\u2211 i=1 \u03c3ig(ui)] + \u03b2\n\u221a ln(2/\u03b4)\nN\n= ES\u223cPN [ 1\nN E\u03c31,...,\u03c3N sup\nh\u2208H N\u2211 i=1 \u03c3i\u00b5 \u22a4 c(i) h(xi) \u2225h(xi)\u22252 ] + \u03b2\n\u221a ln(2/\u03b4)\nN ,\nwhere \u03b2 is a universal positive constant.\nRemark 1. The above lemma indicates that when samples are sufficiently aligned with their class prototypes on the hyperspherical feature space, i.e., 1N \u2211N i=1 \u00b5 \u22a4 c(i) h(xi) \u2225h(xi)\u22252\n\u2265 1\u2212 \u03f5 for some small constant \u03f5 > 0, we can upper bound \u2212E(x,c)\u223cPXY \u00b5\u22a4c\nh(x) \u2225h(x)\u22252 . This result will be useful to prove Thm 6.1. Lemma C.2. Suppose E(z,c)\u223cPZY \u00b5\u22a4c z \u2265 1\u2212 \u03b3. Then, for all e \u2208 Etrain and y \u2208 [C], we have that\nEz\u223cPe,yZ \u00b5 \u22a4 c z \u2265 1\u2212 CE\u03b3.\nProof. Fix e\u2032 \u2208 Etrain and y\u2032 \u2208 [C]. Then,\n1\u2212 \u03b3 \u2264 E(z,c)\u223cPZY \u00b5 \u22a4 c z\n= 1\nCE \u2211 e\u2208Etrain \u2211 y\u2208[C] Ez\u223cPe,yZ z \u22a4\u00b5y\n= 1\nCE E z\u223cPe \u2032,y\u2032 Z\nz\u22a4\u00b5y\u2032 + 1\nCE \u2211 (e,y)\u2208Etrain\u00d7[C]\\{(e\u2032,y\u2032)} Ez\u223cPe,yZ z \u22a4\u00b5y\n\u2264 1 CE E z\u223cPe \u2032,y\u2032 Z z\u22a4\u00b5y\u2032 + CE \u2212 1 CE\nwhere the last line holds by |z\u22a4\u00b5c| \u2264 1 and we also used the assumption that the domains and classes are uniformly distributed. Rearranging the terms, we have\n1\u2212 CE\u03b3 \u2264 E z\u223cPe\n\u2032,y\u2032 Z\nz\u22a4\u00b5y\u2032\nLemma C.3. Fix y \u2208 [C] and e \u2208 Etrain. Fix \u03b7 > 0. If Ez\u223cPe,yZ z \u22a4\u00b5y \u2265 1\u2212 CE\u03b3, then\nPe,yZ (\u2225z\u2212 \u00b5y\u22252 \u2265 \u03b7) \u2264 2CE\u03b3\n\u03b72 .\nProof. Note that\n\u2225z\u2212 \u00b5y\u222522 = \u2225z\u2225 2 2 + \u2225\u00b5y\u2225 2 2 \u2212 2z \u22a4\u00b5y\n= 2\u2212 2z\u22a4\u00b5y.\nTaking the expectation on both sides and applying the hypothesis, we have that\nEz\u223cPe,yZ \u2225z\u2212 \u00b5c\u2225 2 2 \u2264 2CE\u03b3.\nApplying Chebyschev\u2019s inequality to \u2225z\u2212 \u00b5y\u22252, we have that\nPe,yZ (\u2225z\u2212 \u00b5y\u22252 \u2265 \u03b7) \u2264 Var(\u2225z\u2212 \u00b5y\u22252)\n\u03b72\n\u2264 Ez\u223cPe,yZ (\u2225z\u2212 \u00b5y\u2225 2 2)\n\u03b72\n\u2264 2CE\u03b3 \u03b72\nLemma C.4. Fix y \u2208 [C]. Fix e, e\u2032 \u2208 Etrain. Suppose Ez\u223cPe,yZ z \u22a4\u00b5c \u2265 1\u2212 CE\u03b3. Fix v \u2208 Sd\u22121. Let P denote the distribution of v\u22a4ze and Q denote the distribution v\u22a4ze\u2032 . Then,\nW1(P,Q) \u2264 10(CE\u03b3)1/3\nwhere W1(P,Q) is the Wassersisten-1 distance.\nProof. Consider the dual formulation of Wasserstein-1 distance:\nW(P,Q) = sup f :\u2225f\u2225lip\u22641 Ex\u223cPe,yX [f(v \u22a4x)]\u2212 E x\u223cPe \u2032,y X [f(v\u22a4x)]\nwhere \u2225f\u2225lip denotes the Lipschitz norm. Let \u03ba > 0. There exists f0 such that\nW(P,Q) \u2264 Ez\u223cPe,yZ [f0(v \u22a4z)]\u2212 E z\u223cPe \u2032,y\nZ\n[f0(v \u22a4z)] + \u03ba.\nWe assume that without loss of generality f0(\u00b5\u22a4y v) = 0. Define f \u2032(\u00b7) = f0(\u00b7) \u2212 f0(\u00b5\u22a4y v). Then, note that f \u2032(\u00b5\u22a4y v) = 0 and\nEz\u223cPe,yZ [f \u2032(v\u22a4z)]\u2212 E z\u223cPe \u2032,y\nZ\n[f \u2032(v\u22a4z)] = Ez\u223cPe,yZ [f0(v \u22a4z)]\u2212 E z\u223cPe \u2032,y\nZ\n[f0(v \u22a4z)] + f \u2032(\u00b5\u22a4y v)\u2212 f \u2032(\u00b5\u22a4y v)\n= Ez\u223cPe,yZ [f0(v \u22a4z)]\u2212 E z\u223cPe \u2032,y\nZ\n[f0(v \u22a4z)],\nproving the claim.\nNow define B := {u \u2208 Sd\u22121 : \u2225u\u2212 \u00b5y\u22252 \u2264 \u03b7}. Then, we have\nEz\u223cPe,yZ [f0(v \u22a4z)]\u2212 E z\u223cPe \u2032,y\nZ\n[f0(v \u22a4z)] = Ez\u223cPe,yZ [f0(v \u22a4z)1{z \u2208 B}]\u2212 E z\u223cPe \u2032,y Z [f0(v \u22a4z)1{z \u2208 B}]\n+ Ez\u223cPe,yZ [f0(v \u22a4z)1{z \u0338\u2208 B}]\u2212 E z\u223cPe \u2032,y\nZ\n[f0(v \u22a4z)1{z \u0338\u2208 B}]\nNote that if z \u2208 B, then by \u2225f\u2225lip \u2264 1,\n|f0(v\u22a4z)\u2212 f0(v\u22a4\u00b5y)| \u2264 |v\u22a4(z\u2212 \u00b5y)| \u2264 \u2225v\u22252 \u2225z\u2212 \u00b5y\u22252 \u2264 \u03b7.\nTherefore, |f0(v\u22a4z)| \u2264 \u03b7 and we have that\nEz\u223cPe,yZ [f0(v \u22a4z)1{z \u2208 B}]\u2212 E z\u223cPe \u2032,y\nZ [f0(v \u22a4z)1{z \u2208 B}] \u2264 2\u03b7(Ez\u223cPe,yZ [1{z \u2208 B}] + Ez\u223cPe\u2032,yZ [1{z \u2208 B}])\n\u2264 2\u03b7.\nNow, note that maxu\u2208Sd\u22121 |f(u\u22a4v)| \u2264 2 (repeat the argument from above but use \u2225u\u2212 \u00b5y\u22252 \u2264 2. Then,\nEz\u223cPe,yZ [f0(v \u22a4z)1{z \u0338\u2208 B}]\u2212 E z\u223cPe \u2032,y\nZ [f0(v \u22a4z)1{z \u0338\u2208 B}] \u2264 2[Ez\u223cPe,yZ [1{z \u0338\u2208 B}] + Ez\u223cPe\u2032,yZ [1{z \u0338\u2208 B}]]\n\u2264 8CE\u03b3 \u03b7\nwhere in the last line, we used the hypothesis and Lemma C.3. Thus, by combining the above, we have that\nW(P,Q) \u2264 2\u03b7 + 8CE\u03b3 \u03b72 + \u03ba.\nChoosing \u03b7 = (CE\u03b3)1/3, we have that\nW(P,Q) \u2264 10(CE\u03b3)1/3 + \u03ba.\nSince \u03ba > 0 was arbitrary, we can let it go to 0, obtaining the result.\nNext, we are ready to prove our main results. For completeness, we state the theorem here. Theorem C.1 (Variation upper bound (Thm 4.1)). Suppose samples are aligned with class prototypes such that 1N \u2211N j=1 \u00b5 \u22a4 c(j)zj \u2265 1\u2212 \u03f5 for some \u03f5 \u2208 (0, 1), where zj = h(xj) \u2225h(xj)\u22252 . Then \u2203\u03b4 \u2208 (0, 1), with probability at least 1\u2212 \u03b4,\nV sup(h,\u03a3avail) \u2264 O(\u03f51/3 + (ED[ 1\nN E\u03c31,...,\u03c3N sup\nh\u2208H N\u2211 i=1 \u03c3iz \u22a4 i \u00b5c(i)]) 1/3 + ( ln(2/\u03b4) N )1/6),\nwhere \u03c31, . . . , \u03c3N are Rademacher random variables and O(\u00b7) suppresses dependence on constants and |Eavail|. Proof of Theorem 6.1. Suppose 1N \u2211N j=1 \u00b5 \u22a4 c(j)zj = 1 N \u2211N i=1 \u00b5 \u22a4 c(i) h(xi) \u2225h(xi)\u22252\n\u2265 1 \u2212 \u03f5. Then, by Lemma C.1, with probability at least 1\u2212 \u03b4, we have\n\u2212E(x,c)\u223cPXY \u00b5 \u22a4 c\nh(x)\n\u2225h(x)\u22252 \u2264 ES\u223cPN [\n1\nN E\u03c31,...,\u03c3N sup\nh\u2208H N\u2211 i=1 \u03c3i\u00b5 \u22a4 c(i) h(xi) \u2225h(xi)\u22252 ] + \u03b2\n\u221a ln(2/\u03b4)\nN \u2212 1 N N\u2211 i=1 \u00b5\u22a4c(i) h(xi) \u2225h(xi)\u22252\n\u2264 ES\u223cPN [ 1\nN E\u03c31,...,\u03c3N sup\nh\u2208H N\u2211 i=1 \u03c3i\u00b5 \u22a4 c(i) h(xi) \u2225h(xi)\u22252 ] + \u03b2\n\u221a ln(2/\u03b4)\nN + \u03f5\u2212 1\nwhere \u03c31, . . . , \u03c3N denote Rademacher random variables and \u03b2 is a universal positive constant. Define \u03b3 = \u03f5+ ES\u223cPN [ 1NE\u03c31,...,\u03c3N suph\u2208H \u2211N i=1 \u03c3i\u00b5 \u22a4 c(i) h(xi) \u2225h(xi)\u22252 ] + \u03b2 \u221a ln(2/\u03b4) N . Then, we have\nE(z,c)\u223cPZY \u00b5 \u22a4 c z \u2265 1\u2212 \u03b3.\nThen, by Lemma C.2, for all e \u2208 Etrain and y \u2208 [C],\nEz\u223cPe,yZ \u00b5 \u22a4 y z \u2265 1\u2212 CE\u03b3.\nLet \u03b1 > 0 and v0 such that\nV sup(h, Etrain) = sup v\u2208Sd\u22121 V(v\u22a4h, Etrain) \u2264 V(v\u22a40 h, Etrain) + \u03b1\nLet Qe,yv0 denote the distribution of v \u22a4 0 z in domain e under class y. From Lemma C.4, we have that\nW1(Qe,yv0 , Q \u2032,y v0 ) \u2264 10(CE\u03b3) 1/3\nfor all y \u2208 [C] and e, e\u2032 \u2208 Etrain. We have that\nsup v\u2208Sd\u22121 V(v\u22a4h, Etrain) = sup v\u2208Sd\u22121 V(v\u22a4h, Etrain)\n= max y sup e,e\u2032\nW1(Qe,yv0 , Q e\u2032,y v0 ) + \u03b1\n\u2264 10(CE\u03b3)1/3 + \u03b1.\nNoting that \u03b1 was arbitrary, we may send it to 0 yielding\nsup v\u2208Sd\u22121\nV(v\u22a4h, Etrain) \u2264 10(CE\u03b3)1/3.\nNow, using the inequality that for a, b, c \u2265 0, (a+ b+ c)1/3 \u2264 a1/3 + b1/3 + c1/3, we have that\nV sup(h, Etrain) \u2264 O(\u03f51/3 + (ES\u223cPN [ 1\nN E\u03c31,...,\u03c3N sup\nh\u2208H N\u2211 i=1 \u03c3i\u00b5 \u22a4 c(i) h(xi) \u2225h(xi)\u22252 ])1/3 + \u03b2( ln(2/\u03b4) N )1/6)\nRemark 2. As our loss promotes alignment of sample embeddings with their class prototypes on the hyperspherical space, the above Theorem implies that when such alignment holds, we can upper bound the intra-class variation with three main factors: the optimization error \u03f5, the Rademacher complexity of the given neural network, and the estimation error ( ln(2/\u03b4)N ) 1/6."
+        },
+        {
+            "heading": "C.1 EXTENSION: FROM LOW VARIATION TO LOW OOD GENERALIZATION ERROR",
+            "text": "Ye et al. (2021) provide OOD generalization error bounds based on the notation of variation. Therefore, bounding intra-class variation is critical to bound OOD generalization error. For completeness, we reinstate the main results in Ye et al. (2021) below, which provide both OOD generalization error upper and lower bounds based on the variation w.r.t. the training domains. Interested readers shall refer to Ye et al. (2021) for more details and illustrations.\nDefinition C.1 (Expansion Function (Ye et al., 2021)). We say a function s : R+ \u222a {0} \u2192 R+ \u222a {0,+\u221e} is an expansion function, iff the following properties hold: 1) s(\u00b7) is monotonically increasing and s(x) \u2265 x, \u2200x \u2265 0; 2) limx\u21920+ s(x) = s(0) = 0.\nAs it is impossible to generalize to an arbitrary distribution, characterizing the relation between Eavail and Eall is essential to formalize OOD generalization. Based on the notion of expansion function, the learnability of OOD generalization is defined as follows:\nDefinition C.2 (OOD-Learnability (Ye et al., 2021)). Let \u03a6 be the feature space and \u03c1 be a distance metric on distributions. We say an OOD generalization problem from Eavail to Eall is learnable if there exists an expansion function s(\u00b7) and \u03b4 \u2265 0, such that: for all \u03d5 \u2208 \u03a62 satisfying I\u03c1(\u03d5, Eavail) \u2265 \u03b4, we have s(V\u03c1(\u03d5, Eavail)) \u2265 V\u03c1(\u03d5, Eall). If such s(\u00b7) and \u03b4 exist, we further call this problem (s(\u00b7), \u03b4)learnable.\nFor learnable OOD generalization problems, the following two theorems characterize OOD error upper and lower bounds based on variation.\nTheorem C.2 (OOD Error Upper Bound (Ye et al., 2021)). Suppose we have learned a classifier with loss function \u2113(\u00b7, \u00b7) such that \u2200e \u2208 Eall and \u2200y \u2208 Y , phe|Y e(h|y) \u2208 L2(Rd). h(\u00b7) \u2208 Rd denotes the feature extractor. Denote the characteristic function of random variable he|Y e as\n2\u03d5 referred to as feature h in theoretical analysis.\np\u0302he|Y e(t|y) = E[exp{i\u27e8t, he\u27e9}|Y e = y]. Assume the hypothetical space F satisfies the following regularity conditions that \u2203\u03b1,M1,M2 > 0,\u2200f \u2208 F ,\u2200e \u2208 Eall, y \u2208 Y ,\u222b\nh\u2208Rd phe|Y e(h|y)|h|\u03b1dh \u2264 M1 and \u222b t\u2208Rd |p\u0302he|Y e(t|y)||t|\u03b1dt \u2264 M2. (8)\nIf (Eavail, Eall) is ( s(\u00b7), I inf(h, Eavail) ) -learnable under \u03a6 with Total Variation \u03c13, then we have\nerr(f) \u2264 O ( s ( V sup(h, Eavail) ) \u03b12 (\u03b1+d)2 ) , (9)\nwhere O(\u00b7) depends on d,C, \u03b1,M1,M2. Theorem C.3 (OOD Error Lower Bound (Ye et al., 2021)). Consider 0-1 loss: \u2113(y\u0302, y) = I(y\u0302 \u0338= y). For any \u03b4 > 0 and any expansion function satisfying 1) s\u2032+(0) \u225c limx\u21920+ s(x)\u2212s(0) x \u2208 (1,+\u221e); 2) exists k > 1, t > 0, s.t. kx \u2264 s(x) < +\u221e, x \u2208 [0, t], there exists a constant C0 and an OOD generalization problem (Eavail, Eall) that is (s(\u00b7), \u03b4)-learnable under linear feature space \u03a6 w.r.t symmetric KL-divergence \u03c1, s.t. \u2200\u03b5 \u2208 [0, t2 ], the optimal classifier f satisfying V\nsup(h, Eavail) = \u03b5 will have the OOD generalization error lower bounded by\nerr(f) \u2265 C0 \u00b7 s(V sup(h, Eavail)). (10)"
+        },
+        {
+            "heading": "D ADDITIONAL EXPERIMENTAL DETAILS",
+            "text": "Software and hardware. Our method is implemented with PyTorch 1.10. All experiments are conducted on NVIDIA GeForce RTX 2080 Ti GPUs for small to medium batch sizes and NVIDIA A100 and RTX A6000 GPUs for large batch sizes.\nArchitecture. In our experiments, we use ResNet-18 for CIFAR-10, ResNet-34 for ImageNet-100, ResNet-50 for PACS, VLCS, Office-Home and Terra Incognita. Following common practice in prior works (Khosla et al., 2020), we use a non-linear MLP projection head to obtain features in our experiments. The embedding dimension is 128 of the projection head for ImageNet-100. The projection head dimension is 512 for PACS, VLCS, Office-Home, and Terra Incognita.\nAdditional implementation details. In our experiments, we follow the common practice that initializing the network with ImageNet pre-trained weights for PACS, VLCS, Office-Home, and Terra Incognita. We then fine-tune the network for 50 epochs. For the large-scale experiments on ImageNet-100, we fine-tune ImageNet pre-trained ResNet-34 with our method for 10 epochs for computational efficiency. We set the temperature \u03c4 = 0.1, prototype update factor \u03b1 = 0.95 as the default value. We use stochastic gradient descent with momentum 0.9, and weight decay 10\u22124. The search distribution in our experiments for the learning rate hyperparameter is: lr \u2208 {0.005, 0.002, 0.001, 0.0005, 0.0002, 0.0001, 0.00005}. The search space for the batch size is bs \u2208 {32, 64}. The loss weight \u03bb for balancing our loss function (L = \u03bbLvar + Lsep) is selected from \u03bb \u2208 {1.0, 2.0, 4.0}. For multi-source domain generalization, hard negatives can be incorporated by a simple modification to the denominator of the variation loss:\nLvar = \u2212 1\nN \u2211 e\u2208Eavail |De|\u2211 i=1 log exp\n( z\u22a4i \u00b5c(i)/\u03c4 )\u2211C j=1 exp ( z\u22a4i \u00b5j/\u03c4 ) + \u2211N j=1 I(yj \u0338= yi, ei = ej) exp ( z\u22a4i zj/\u03c4\n) (11) Details of datasets. We provide a detailed description of the datasets used in this work:\nCIFAR-10 (Krizhevsky et al., 2009) is consist of 60, 000 color images with 10 classes. The training set has 50, 000 images and the test set has 10, 000 images.\nImageNet-100 is composed by randomly sampled 100 categories from ImageNet-1K.This dataset contains the following classes: n01498041, n01514859, n01582220, n01608432, n01616318, n01687978, n01776313, n01806567, n01833805, n01882714, n01910747, n01944390, n01985128, n02007558, n02071294,\n3For two distribution P,Q with probability density function p, q, \u03c1(P,Q) = 1 2 \u222b x |p(x)\u2212 q(x)|dx.\nn02085620, n02114855, n02123045, n02128385, n02129165, n02129604, n02165456, n02190166, n02219486, n02226429, n02279972, n02317335, n02326432, n02342885, n02363005, n02391049, n02395406, n02403003, n02422699, n02442845, n02444819, n02480855, n02510455, n02640242, n02672831, n02687172, n02701002, n02730930, n02769748, n02782093, n02787622, n02793495, n02799071, n02802426, n02814860, n02840245, n02906734, n02948072, n02980441, n02999410, n03014705, n03028079, n03032252, n03125729, n03160309, n03179701, n03220513, n03249569, n03291819, n03384352, n03388043, n03450230, n03481172, n03594734, n03594945, n03627232, n03642806, n03649909, n03661043, n03676483, n03724870, n03733281, n03759954, n03761084, n03773504, n03804744, n03916031, n03938244, n04004767, n04026417, n04090263, n04133789, n04153751, n04296562, n04330267, n04371774, n04404412, n04465501, n04485082, n04507155, n04536866, n04579432, n04606251, n07714990, n07745940.\nCIFAR-10-C is generated based on the previous literature (Hendrycks & Dietterich, 2019), applying different corruptions on CIFAR-10 data. The corruption types include gaussian noise, zoom blur, impulse noise, defocus blur, snow, brightness, contrast, elastic transform, fog, frost, gaussian blur, glass blur, JEPG compression, motion blur, pixelate, saturate, shot noise, spatter, and speckle noise.\nImageNet-100-C is algorithmically generated with Gaussian noise based on (Hendrycks & Dietterich, 2019) for the ImageNet-100 dataset.\nPACS (Li et al., 2017) is commonly used in OoD generalization. This dataset contains 9, 991 examples of resolution 224\u00d7 224 and four domains with different image styles, namely photo, art painting, cartoon, and sketch with seven categories.\nVLCS (Gulrajani & Lopez-Paz, 2020) comprises four domains including Caltech101, LabelMe, SUN09, and VOC2007. It contains 10, 729 examples of resolution 224\u00d7 224 and 5 classes. Office-Home (Gulrajani & Lopez-Paz, 2020) contains four different domains: art, clipart, product, and real. This dataset comprises 15, 588 examples of resolution 224\u00d7 224 and 65 classes. Terra Incognita (Gulrajani & Lopez-Paz, 2020) comprises images of wild animals taken by cameras at four different locations: location100, location38, location43, and location46. This dataset contains 24, 788 examples of resolution 224\u00d7 224 and 10 classes."
+        },
+        {
+            "heading": "E DETAILED RESULTS ON CIFAR-10",
+            "text": "In this section, we provide complete results of the different corruption types on CIFAR-10. In Table 3, we evaluate HYPO under various common corruptions. Results suggest that HYPO achieves consistent improvement over the ERM baseline for all 19 different corruptions. We also compare our loss (HYPO) with more recent competitive algorithms: EQRM (Eastwood et al., 2022) and SharpDRO (Huang et al., 2023), on the CIFAR10-C dataset (Gaussian noise). The results on ResNet18 are presented in Table 15."
+        },
+        {
+            "heading": "Algorithm Art painting Cartoon Photo Sketch Average Acc. (%)",
+            "text": ""
+        },
+        {
+            "heading": "Algorithm Art Clipart Product Real World Average Acc. (%)",
+            "text": ""
+        },
+        {
+            "heading": "F ADDITIONAL EVALUATIONS ON OTHER OOD GENERALIZATION TASKS",
+            "text": "In this section, we provide detailed results on more OOD generalization benchmarks, including Office-Home (Table 5), VLCS (Table 6), and Terra Incognita (Table 7). We observe that our approach achieves strong performance on these benchmarks. We compare our method with a collection of OOD generalization baselines such as IRM (Arjovsky et al., 2019), DANN (Ganin et al., 2016), CDANN (Li et al., 2018c), GroupDRO (Sagawa et al., 2020), MTL (Blanchard et al., 2021), I-Mixup (Zhang et al., 2018), MMD (Li et al., 2018b), VREx (Krueger et al., 2021), MLDG (Li et al., 2018a), ARM (Zhang et al., 2021), RSC (Huang et al., 2020), Mixstyle (Zhou et al., 2021), ERM (Vapnik, 1999), CORAL (Sun & Saenko, 2016), SagNet (Nam et al., 2021), SelfReg (Kim et al., 2021), GVRT Min et al. (2022), VNE (Kim et al., 2023). These methods are all loss-based and optimized using standard SGD. On the Office-Home, our method achieves an improved OOD generalization performance of 1.6% compared to a competitive baseline (Sun & Saenko, 2016).\nWe also conduct experiments coupling with SWAD and achieve superior performance on OOD generalization. As shown in Table 8, Table 9, Table 10, our method consistently establish superior results"
+        },
+        {
+            "heading": "Algorithm Caltech101 LabelMe SUN09 VOC2007 Average Acc. (%)",
+            "text": ""
+        },
+        {
+            "heading": "Algorithm Location100 Location38 Location43 Location46 Average Acc. (%)",
+            "text": ""
+        },
+        {
+            "heading": "Algorithm Art Clipart Product Real World Average Acc. (%)",
+            "text": ""
+        },
+        {
+            "heading": "Algorithm Caltech101 LabelMe SUN09 VOC2007 Average Acc. (%)",
+            "text": "on different benchmarks including VLCS, Office-Home, Terra Incognita, showing the effectiveness of our method via hyperspherical learning."
+        },
+        {
+            "heading": "Algorithm Location100 Location38 Location43 Location46 Average Acc. (%)",
+            "text": ""
+        },
+        {
+            "heading": "G EXPERIMENTS ON IMAGENET-100 AND IMAGENET-100-C",
+            "text": "In this section, we provide additional large-scale results on the ImageNet benchmark. We use ImageNet-100 as the in-distribution data and use ImageNet-100-C with Gaussian noise as OOD data in the experiments. In Figure 6, we observe our method improves OOD accuracy compared to the ERM baseline."
+        },
+        {
+            "heading": "H ABLATION OF DIFFERENT LOSS TERMS",
+            "text": "Ablations on separation loss. In Table 11, we demonstrate the effectiveness of the first loss term (variation) empirically. We compare the OOD performance of our method (with separation loss) vs. our method (without separation loss). We observe our method without separation loss term can still achieve strong OOD accuracy\u2013average 87.2% on the PACS dataset. This ablation study indicates the first term (variation) of our method plays a more important role in practice, which aligns with our theoretical analysis in Section 6 and Appendix C."
+        },
+        {
+            "heading": "Algorithm Art painting Cartoon Photo Sketch Average Acc. (%)",
+            "text": "Ablations on hard negative pairs. To verify that hard negative pairs help multiple training domains, we conduct ablation by comparing ours (with hard negative pairs) vs. ours (without hard negative pairs). We can see in Table 12 that our method with hard negative pairs improves the average OOD performance by 0.4% on the PACS dataset. Therefore, we empirically demonstrate that emphasizing hard negative pairs leads to better performance for multi-source domain generalization tasks."
+        },
+        {
+            "heading": "Algorithm Art painting Cartoon Photo Sketch Average Acc. (%)",
+            "text": "Comparing EMA update and learnable prototype. We conduct an ablation study on the prototype update rule. Specifically, we compare our method with exponential-moving-average (EMA) (Li et al., 2020; Wang et al., 2022a; Ming et al., 2023) prototype update versus learnable prototypes (LP). The results on PACS are summarized in Table 13. We observe our method with EMA achieves better average OOD accuracy 88.0% compared to learnable prototype update rules 86.7%. We empirically verify EMA-style method is a suitable prototype updating rule to facilitate gradient-based prototype update in practice.\nQuantitative verification of the \u03f5 factor in Theorem 6.1. We calculate the average intra-class variation over data from all environments 1N \u2211N j=1 \u00b5 \u22a4 c(j)zj (Theorem 6.1) models trained with"
+        },
+        {
+            "heading": "Algorithm Art painting Cartoon Photo Sketch Average Acc. (%)",
+            "text": "HYPO. Then we obtain \u03f5\u0302 := 1 \u2212 1N \u2211N j=1 \u00b5 \u22a4 c(j)zj . We evaluated PACS, VLCS, and OfficeHome and summarized the results in Table 14. We observe that training with HYPO significantly reduces the average intra-class variation, resulting in a small epsilon (\u03f5\u0302 < 0.1) in practice. This suggests that the first term O(\u03f5 1 3 ) in Theorem 6.1 is indeed small for models trained with HYPO.\nI ANALYZING THE EFFECT OF \u03c4 AND \u03b1\nIn Figure 7a, we present the OOD generalization performance by adjusting the prototype update factor \u03b1. The results are averaged over four domains on the PACS dataset. We observe the generalization performance is competitive across a wide range of \u03b1. In particular, our method achieves the best performance when \u03b1 = 0.95 on the PACS dataset with an average of 88.0% OOD accuracy.\nWe show in Figure 7b the OOD generalization performance by varying the temperature parameter \u03c4 . The results are averaged over four different domains on PACS. We observe a relative smaller \u03c4 results in stronger OOD performance while too large \u03c4 (e.g., 0.9) would lead to degraded performance."
+        },
+        {
+            "heading": "J THEORETICAL INSIGHTS ON INTER-CLASS SEPARATION",
+            "text": "To gain theoretical insights into inter-class separation, we focus on the learned prototype embeddings of the separation loss with a simplified setting where we directly optimize the embedding vectors.\nDefinition J.1. (Simplex ETF (Sustik et al., 2007)). A set of vectors {\u00b5i}Ci=1 in Rd forms a simplex Equiangular Tight Frame (ETF) if \u2225\u00b5i\u2225 = 1 for \u2200i \u2208 [C] and \u00b5\u22a4i \u00b5j = \u22121/(C \u2212 1) for \u2200i \u0338= j.\nNext, we will characterize the optimal solution for the separation loss defined as:\nLsep = 1\nC C\u2211 i=1 log 1 C \u2212 1 C\u2211 j \u0338=i,j=1 exp ( \u00b5\u22a4i \u00b5j/\u03c4 ) \ufe38 \ufe37\ufe37 \ufe38\n\u2191 separation\n:= 1\nC C\u2211 i=1 logLsep(i)\nLemma J.1. (Optimal solution of the separation loss) Assume the number of classes C \u2264 d + 1, Lsep is minimized when the learned class prototypes {\u00b5i}Ci=1 form a simplex ETF.\nProof.\nLsep(i) = 1\nC \u2212 1 C\u2211 j \u0338=i,j=1 exp ( \u00b5\u22a4i \u00b5j/\u03c4 ) (12)\n\u2265 exp  1 C \u2212 1 C\u2211 j \u0338=i,j=1 \u00b5\u22a4i \u00b5j/\u03c4  (13) = exp ( \u00b5\u22a4i \u00b5\u2212 \u00b5\u22a4i \u00b5i \u03c4(C \u2212 1) ) (14)\n= exp ( \u00b5\u22a4i \u00b5\u2212 1 \u03c4(C \u2212 1) ) (15)\nwhere we define \u00b5 = \u2211C\ni=1 \u00b5i and (13) follows Jensen\u2019s inequality. Therefore, we have\nLsep = 1\nC C\u2211 i=1 logLsep(i)\n\u2265 1 C C\u2211 i=1 log exp ( \u00b5\u22a4i \u00b5\u2212 1 \u03c4(C \u2212 1) )\n= 1\n\u03c4C(C \u2212 1) C\u2211 i=1 (\u00b5\u22a4i \u00b5\u2212 1)\n= 1 \u03c4C(C \u2212 1) \u00b5\u22a4\u00b5\u2212 1\n\u03c4(C \u2212 1) It suffices to consider the following optimization problem,\nminimize L1 = \u00b5\u22a4\u00b5 subject to \u2225\u00b5i\u2225 = 1 \u2200i \u2208 [C]\nwhere \u00b5\u22a4\u00b5 = ( \u2211C\ni=1 \u00b5i) \u22a4( \u2211C i=1 \u00b5i) = \u2211C i=1 \u2211 j \u0338=i \u00b5 \u22a4 i \u00b5j + C\nHowever, the problem is non-convex. We first consider a convex relaxation and show that the optimal solution to the original problem is the same as the convex problem below,\nminimize L2 = C\u2211 i=1 C\u2211 j=1,j \u0338=i \u00b5Ti \u00b5j\nsubject to \u2225\u00b5i\u2225 \u2264 1 \u2200i \u2208 [C]\nNote that the optimal solution L\u22171 \u2265 L\u22172. Next, we can obtain the Lagrangian form:\nL(\u00b51, . . . ,\u00b5C , \u03bb1, . . . , \u03bbC) = C\u2211 i=1 C\u2211 j=1,j \u0338=i \u00b5Ti \u00b5j + C\u2211 i=1 \u03bbi(\u2225\u00b5i\u22252 \u2212 1)\nwhere \u03bbi are Lagrange multipliers. Taking the gradient of the Lagrangian with respect to \u00b5k and setting it to zero, we have:\n\u2202L \u2202\u00b5k = 2 C\u2211 i\u0338=k \u00b5i + 2\u03bbk\u00b5k = 0\nSimplifying the equation, we have: \u00b5 = \u00b5k(1\u2212 \u03bbk)\nTherefore, the optimal solution satisfies that (1) either all feature vectors are co-linear (i.e. \u00b5k = \u03b1kv for some vector v \u2208 Rd \u2200k \u2208 [C]) or (2) the sum \u00b5 = \u2211C i=1 \u00b5i = 0. The Karush-Kuhn-Tucker (KKT) conditions are:\n\u00b5k(1\u2212 \u03bbk) = 0 \u2200k \u03bbk(\u2225\u00b5k\u22252 \u2212 1) = 0 \u2200k\n\u03bbk \u2265 0 \u2200k \u2225\u00b5k\u2225 \u2264 1 \u2200k\nWhen the learned class prototypes {\u00b5i}Ci=1 form a simplex ETF, \u00b5\u22a4k \u00b5 = 1 + \u2211 i\u0338=k \u00b5 \u22a4 i \u00b5k = 1 \u2212 C\u22121C\u22121 = 0. Therefore, we have \u00b5 = 0, \u03bbk = 1, \u2225\u00b5k\u2225 = 1 and KKT conditions are satisfied. Particularly, \u2225\u00b5k\u2225 = 1 means that all vectors are on the unit hypersphere and thus the solution is also optimal for the original problem L1. The solution is optimal for Lsep as Jensen\u2019s inequality (13) becomes equality when {\u00b5i}Ci=1 form a simplex ETF. The above analysis provides insights on why Lsep promotes inter-class separation."
+        }
+    ],
+    "title": "HYPO: HYPERSPHERICAL OUT-OF-DISTRIBUTION GENERALIZATION",
+    "year": 2024
+}

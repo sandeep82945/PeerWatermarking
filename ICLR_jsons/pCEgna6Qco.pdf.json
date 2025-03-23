@@ -1,0 +1,718 @@
+{
+    "abstractText": "Pretrained large language models (LLMs) are general purpose problem solvers applicable to a diverse set of tasks with prompts. They can be further improved towards a specific task by fine-tuning on a specialized dataset. However, fine-tuning usually makes the model narrowly specialized on this dataset with reduced general in-context learning performances, which is undesirable whenever the fine-tuned model needs to handle additional tasks where no fine-tuning data is available. In this work, we first demonstrate that fine-tuning on a single task indeed decreases LLMs\u2019 general in-context learning performance. We discover one important cause of such forgetting, format specialization, where the model overfits to the format of the fine-tuned task. We further show that format specialization happens at the very beginning of fine-tuning. To solve this problem, we propose Prompt Tuning with MOdel Tuning (ProMoT), a simple yet effective two-stage fine-tuning framework that reduces format specialization and improves generalization. ProMoT offloads task-specific format learning into additional and removable parameters by first doing prompt tuning and then fine-tuning the model itself with this soft prompt attached. With experiments on several fine-tuning tasks and 8 in-context evaluation tasks, we show that ProMoT achieves comparable performance on fine-tuned tasks to standard fine-tuning, but with much less loss of in-context learning performances across a board range of out-of-domain evaluation tasks. More importantly, ProMoT can even enhance generalization on in-context learning tasks that are semantically related to the fine-tuned task, e.g. ProMoT on En-Fr translation significantly improves performance on other language pairs, and ProMoT on NLI improves performance on summarization. Experiments also show that ProMoT can improve the generalization performance of multi-task training.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "LLM FINE-TUNING"
+        },
+        {
+            "affiliations": [],
+            "name": "Yihan Wang"
+        },
+        {
+            "affiliations": [],
+            "name": "Daliang Li"
+        },
+        {
+            "affiliations": [],
+            "name": "Felix Yu"
+        },
+        {
+            "affiliations": [],
+            "name": "Inderjit S Dhillon"
+        }
+    ],
+    "id": "SP:17c2584beef01fda3de5eeea813f8b96e67ca048",
+    "references": [
+        {
+            "authors": [
+                "Luisa Bentivogli",
+                "Peter Clark",
+                "Ido Dagan",
+                "Danilo Giampiccolo"
+            ],
+            "title": "The fifth pascal recognizing textual entailment challenge",
+            "venue": "In TAC,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Jonathan Berant",
+                "Andrew Chou",
+                "Roy Frostig",
+                "Percy Liang"
+            ],
+            "title": "Semantic parsing on freebase from question-answer pairs",
+            "venue": "In Proceedings of the 2013 conference on empirical methods in natural language processing,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Ondrej Bojar",
+                "Christian Buck",
+                "Christian Federmann",
+                "Barry Haddow",
+                "Philipp Koehn",
+                "Johannes Leveling",
+                "Christof Monz",
+                "Pavel Pecina",
+                "Matt Post",
+                "Herve Saint-Amand",
+                "Radu Soricut",
+                "Lucia Specia",
+                "Ale s Tamchyna"
+            ],
+            "title": "Findings of the 2014 workshop on statistical machine translation",
+            "venue": "In Proceedings of the Ninth Workshop on Statistical Machine Translation,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Samuel R. Bowman",
+                "Gabor Angeli",
+                "Christopher Potts",
+                "Christopher D. Manning"
+            ],
+            "title": "A large annotated corpus for learning natural language inference",
+            "venue": "In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing (EMNLP). Association for Computational Linguistics,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Dario Amodei"
+            ],
+            "title": "Language models are few-shot learners",
+            "venue": "Advances in NeurIPS,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Stephanie C.Y. Chan",
+                "Adam Santoro",
+                "Andrew K. Lampinen",
+                "Jane X. Wang",
+                "Aaditya Singh",
+                "Pierre H. Richemond",
+                "Jay McClelland",
+                "Felix Hill"
+            ],
+            "title": "Data distributional properties drive emergent incontext learning in transformers, 2022",
+            "venue": "URL https://arxiv.org/abs/2205.05055",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Diaz",
+                "Orhan Firat",
+                "Michele Catasta",
+                "Jason Wei",
+                "Kathy Meier-Hellstern",
+                "Douglas Eck",
+                "Jeff Dean",
+                "Slav Petrov",
+                "Noah"
+            ],
+            "title": "Fiedel. Palm: Scaling language modeling with pathways, 2022",
+            "venue": "URL https://arxiv.org/abs/2204.02311",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Hyung Won Chung",
+                "Le Hou",
+                "Shayne Longpre",
+                "Barret Zoph",
+                "Yi Tay",
+                "William Fedus",
+                "Eric Li",
+                "Xuezhi Wang",
+                "Mostafa Dehghani",
+                "Siddhartha Brahma"
+            ],
+            "title": "Scaling instruction-finetuned language models",
+            "venue": "arXiv preprint arXiv:2210.11416,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Antonia Creswell",
+                "Murray Shanahan"
+            ],
+            "title": "Faithful reasoning using large language models, 2022",
+            "venue": "URL https://arxiv.org/abs/2208.14271",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Marie-Catherine De Marneff",
+                "Mandy Simons",
+                "Judith Tonhauser"
+            ],
+            "title": "The commitmentbank: Investigating projection in naturally occurring discourse",
+            "venue": "proceedings of Sinn und Bedeutung",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Jacob Devlin",
+                "Ming-Wei Chang",
+                "Kenton Lee",
+                "Kristina Toutanova"
+            ],
+            "title": "BERT: Pre-training of deep bidirectional transformers for language understanding",
+            "venue": "In Proceedings of NAACL,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Tianyu Gao",
+                "Adam Fisch",
+                "Danqi Chen"
+            ],
+            "title": "Making pre-trained language models better few-shot learners",
+            "venue": "arXiv preprint arXiv:2012.15723,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Junxian He",
+                "Chunting Zhou",
+                "Xuezhe Ma",
+                "Taylor Berg-Kirkpatrick",
+                "Graham Neubig"
+            ],
+            "title": "Towards a unified view of parameter-efficient transfer learning",
+            "venue": "arXiv preprint arXiv:2110.04366,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yun He",
+                "Steven Zheng",
+                "Yi Tay",
+                "Jai Gupta",
+                "Yu Du",
+                "Vamsi Aribandi",
+                "Zhe Zhao",
+                "YaGuang Li",
+                "Zhao Chen",
+                "Donald Metzler"
+            ],
+            "title": "Hyperprompt: Prompt-based task-conditioning of transformers",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Neil Houlsby",
+                "Andrei Giurgiu",
+                "Stanislaw Jastrzebski",
+                "Bruna Morrone",
+                "Quentin De Laroussilhe",
+                "Andrea Gesmundo",
+                "Mona Attariyan",
+                "Sylvain Gelly"
+            ],
+            "title": "Parameter-efficient transfer learning for nlp",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Edward J Hu",
+                "Yelong Shen",
+                "Phillip Wallis",
+                "Zeyuan Allen-Zhu",
+                "Yuanzhi Li",
+                "Shean Wang",
+                "Lu Wang",
+                "Weizhu Chen"
+            ],
+            "title": "Lora: Low-rank adaptation of large language models",
+            "venue": "arXiv preprint arXiv:2106.09685,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Mandar Joshi",
+                "Eunsol Choi",
+                "Daniel S Weld",
+                "Luke Zettlemoyer"
+            ],
+            "title": "Triviaqa: A large scale distantly supervised challenge dataset for reading comprehension",
+            "venue": "arXiv preprint arXiv:1705.03551,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Faisal Ladhak",
+                "Esin Durmus",
+                "Claire Cardie",
+                "Kathleen McKeown"
+            ],
+            "title": "WikiLingua: A new benchmark dataset for cross-lingual abstractive summarization",
+            "venue": "In Findings of the Association for Computational Linguistics: EMNLP",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Brian Lester",
+                "Rami Al-Rfou",
+                "Noah Constant"
+            ],
+            "title": "The power of scale for parameter-efficient prompt tuning",
+            "venue": "In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Chin-Yew Lin"
+            ],
+            "title": "Rouge: A package for automatic evaluation of summaries",
+            "venue": "In Text summarization branches out,",
+            "year": 2004
+        },
+        {
+            "authors": [
+                "Xiao Liu",
+                "Kaixuan Ji",
+                "Yicheng Fu",
+                "Zhengxiao Du",
+                "Zhilin Yang",
+                "Jie Tang"
+            ],
+            "title": "P-tuning v2: Prompt tuning can be comparable to fine-tuning universally across scales and tasks",
+            "venue": "arXiv preprint arXiv:2110.07602,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Joshua Maynez",
+                "Shashi Narayan",
+                "Bernd Bohnet",
+                "Ryan McDonald"
+            ],
+            "title": "On faithfulness and factuality in abstractive summarization",
+            "venue": "In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pp. 1906\u20131919,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Todor Mihaylov",
+                "Peter Clark",
+                "Tushar Khot",
+                "Ashish Sabharwal"
+            ],
+            "title": "Can a suit of armor conduct electricity? a new dataset for open book question answering",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Sewon Min",
+                "Mike Lewis",
+                "Luke Zettlemoyer",
+                "Hannaneh Hajishirzi"
+            ],
+            "title": "Metaicl: Learning to learn in context",
+            "venue": "arXiv preprint arXiv:2110.15943,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Sewon Min",
+                "Xinxi Lyu",
+                "Ari Holtzman",
+                "Mikel Artetxe",
+                "Mike Lewis",
+                "Hannaneh Hajishirzi",
+                "Luke Zettlemoyer"
+            ],
+            "title": "Rethinking the role of demonstrations: What makes in-context learning work",
+            "venue": "arXiv preprint arXiv:2202.12837,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Shashi Narayan",
+                "Shay B Cohen",
+                "Mirella Lapata"
+            ],
+            "title": "Don\u2019t give me the details, just the summary! topic-aware convolutional neural networks for extreme summarization",
+            "venue": "arXiv preprint arXiv:1808.08745,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Kimia Noorbakhsh",
+                "Modar Sulaiman",
+                "Mahdi Sharifi",
+                "Kallol Roy",
+                "Pooyan Jamshidi"
+            ],
+            "title": "Pretrained language models are symbolic mathematics solvers too",
+            "venue": "arXiv preprint arXiv:2110.03501,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Kishore Papineni",
+                "Salim Roukos",
+                "Todd Ward",
+                "Wei-Jing Zhu"
+            ],
+            "title": "Bleu: a method for automatic evaluation of machine translation",
+            "venue": "In Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics,",
+            "year": 2002
+        },
+        {
+            "authors": [
+                "Mohammad Taher Pilehvar",
+                "Jos\u00e9 Camacho-Collados"
+            ],
+            "title": "Wic: 10,000 example pairs for evaluating context-sensitive representations",
+            "venue": "arXiv preprint arXiv:1808.09121,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Alec Radford",
+                "Karthik Narasimhan",
+                "Tim Salimans",
+                "Ilya Sutskever"
+            ],
+            "title": "Improving language understanding by generative pre-training",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Colin Raffel",
+                "Noam Shazeer",
+                "Adam Roberts",
+                "Katherine Lee",
+                "Sharan Narang",
+                "Michael Matena",
+                "Yanqi Zhou",
+                "Wei Li",
+                "Peter J. Liu"
+            ],
+            "title": "Exploring the limits of transfer learning with a unified textto-text",
+            "venue": "transformer. JMLR,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Colin Raffel",
+                "Noam Shazeer",
+                "Adam Roberts",
+                "Katherine Lee",
+                "Sharan Narang",
+                "Michael Matena",
+                "Yanqi Zhou",
+                "Wei Li",
+                "Peter J Liu"
+            ],
+            "title": "Exploring the limits of transfer learning with a unified text-to-text transformer",
+            "venue": "J. Mach. Learn. Res.,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Vinay Venkatesh Ramasesh",
+                "Aitor Lewkowycz",
+                "Ethan Dyer"
+            ],
+            "title": "Effect of scale on catastrophic forgetting in neural networks",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Shaden Smith",
+                "Mostofa Patwary",
+                "Brandon Norick",
+                "Patrick LeGresley",
+                "Samyam Rajbhandari",
+                "Jared Casper",
+                "Zhun Liu",
+                "Shrimai Prabhumoye",
+                "George Zerveas",
+                "Vijay Korthikanti",
+                "Elton Zhang",
+                "Rewon Child",
+                "Reza Yazdani Aminabadi",
+                "Julie Bernauer",
+                "Xia Song",
+                "Mohammad Shoeybi",
+                "Yuxiong He",
+                "Michael Houston",
+                "Saurabh Tiwary",
+                "Bryan Catanzaro"
+            ],
+            "title": "Using deepspeed and megatron to train megatron-turing nlg 530b, a large-scale generative language model, 2022",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Aarohi Srivastava",
+                "Abhinav Rastogi",
+                "Abhishek Rao",
+                "Abu Awal Md Shoeb",
+                "Abubakar Abid",
+                "Adam Fisch",
+                "Adam R Brown",
+                "Adam Santoro",
+                "Aditya Gupta",
+                "Adri\u00e0 Garriga-Alonso"
+            ],
+            "title": "Beyond the imitation game: Quantifying and extrapolating the capabilities of language models",
+            "venue": "arXiv preprint arXiv:2206.04615,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Hugo Touvron",
+                "Thibaut Lavril",
+                "Gautier Izacard",
+                "Xavier Martinet",
+                "Marie-Anne Lachaux",
+                "Timoth\u00e9e Lacroix",
+                "Baptiste Rozi\u00e8re",
+                "Naman Goyal",
+                "Eric Hambro",
+                "Faisal Azhar"
+            ],
+            "title": "Llama: Open and efficient foundation language models",
+            "venue": "arXiv preprint arXiv:2302.13971,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ashish Vaswani",
+                "Noam Shazeer",
+                "Niki Parmar",
+                "Jakob Uszkoreit",
+                "Llion Jones",
+                "Aidan N Gomez",
+                "\u0141 ukasz Kaiser",
+                "Illia Polosukhin"
+            ],
+            "title": "Attention is all you need",
+            "venue": "Advances in NeurIPS,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Alex Wang",
+                "Yada Pruksachatkun",
+                "Nikita Nangia",
+                "Amanpreet Singh",
+                "Julian Michael",
+                "Felix Hill",
+                "Omer Levy",
+                "Samuel Bowman"
+            ],
+            "title": "Superglue: A stickier benchmark for general-purpose language understanding systems",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Jason Wei",
+                "Maarten Bosma",
+                "Vincent Y. Zhao",
+                "Kelvin Guu",
+                "Adams Wei Yu",
+                "Brian Lester",
+                "Nan Du",
+                "Andrew M. Dai",
+                "Quoc V. Le"
+            ],
+            "title": "Finetuned language models are zero-shot",
+            "venue": "learners. CoRR,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jason Wei",
+                "Maarten Bosma",
+                "Vincent Y Zhao",
+                "Kelvin Guu",
+                "Adams Wei Yu",
+                "Brian Lester",
+                "Nan Du",
+                "Andrew M Dai",
+                "Quoc V Le"
+            ],
+            "title": "Finetuned language models are zero-shot learners",
+            "venue": "arXiv preprint arXiv:2109.01652,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Linting Xue",
+                "Noah Constant",
+                "Adam Roberts",
+                "Mihir Kale",
+                "Rami Al-Rfou",
+                "Aditya Siddhant",
+                "Aditya Barua",
+                "Colin Raffel"
+            ],
+            "title": "mt5: A massively multilingual pre-trained text-to-text transformer",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Yuexiang Zhai",
+                "Shengbang Tong",
+                "Xiao Li",
+                "Mu Cai",
+                "Qing Qu",
+                "Yong Jae Lee",
+                "Yi Ma"
+            ],
+            "title": "Investigating the catastrophic forgetting in multimodal large language models",
+            "venue": "arXiv preprint arXiv:2309.10313,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ningyu Zhang",
+                "Luoqiu Li",
+                "Xiang Chen",
+                "Shumin Deng",
+                "Zhen Bi",
+                "Chuanqi Tan",
+                "Fei Huang",
+                "Huajun Chen"
+            ],
+            "title": "Differentiable prompt makes pre-trained language models better few-shot learners",
+            "venue": "arXiv preprint arXiv:2108.13161,",
+            "year": 2021
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Natural language processing (NLP) has recently been revolutionized by scaling up transformer based large language models (LLMs) together with large-scale pretraining (Vaswani et al., 2017; Devlin et al., 2019; Raffel et al., 2020a; Brown et al., 2020; Rae et al., 2021; Chowdhery et al., 2022; Smith et al., 2022; Touvron et al., 2023). In addition to improved downstream performances, these pretrained LLMs can perform a broad array of unforeseen tasks when provided with a prompt. This in-context\n\u2217 Work done while at Google.\nlearning capability allows users to flexibly re-purpose LLMs for specific tasks with a minimum amount of supervised data, making it extremely convenient for fast prototyping and experimentation, especially in the low data regime.\nHowever, even the largest and most advanced LLMs leave a lot to be improved. Grounding and eliminating hallucinations (Maynez et al., 2020), reasoning and logical clarity (Creswell & Shanahan, 2022), mathematics (Brown et al., 2020; Noorbakhsh et al., 2021) are just a few examples where LLMs still lag behind the best human performances, or in some cases, the fine-tuned performances of the same model.\nThe most common practice to improve a pretrained model is to fine-tune it on a specialized task or several tasks. However, fine-tuning on LLM usually causes over-specialization to the fine-tuning tasks, and harm the model\u2019s pre-existing generalization ability on unseen tasks via in-context learning. As we show later, an mT5 model finetuned on a single task loses its few-shot performance on unseen tasks within one thousand steps of fine-tuning. When faced with hundreds of downstream tasks and even unknown tasks, we expect to have a single fine-tuned model that is both superior on supervised fine-tuned tasks and general unseen tasks. Thus, it becomes very important to develop new techniques for finetuning that prevent over-specialization of these fine-tuned models only to a few tasks.\nIn this work, we discover that the loss of general in-context learning abilities during fine-tuning is, to a large extent, caused by format specialization, which makes model overfitting to the specific task format. For example, an mT5 (Xue et al., 2020) model learns in the output space with only \u201cTrue\u201d and \u201cFalse\u201d if we fine-tune it on a binary classification dataset, losing its ability to flexibly generate different output styles according to the in-context prompts of other tasks. We show that format specialization tends to happen at the very beginning of fine-tuning, before the model fully learns the semantic content of the task.\nBased on these observations, we propose a simple solution to alleviate format specialization: PROmpt Tuning with MOdel Tuning (ProMoT), which off-loads format learning to a small amount of taskspecific parameters that are external to the model. ProMoT is a two-stage fine-tuning process. At the first stage, we freeze the pretrained model and tune a small set of additional parameters, where we find adding soft prompt before the input (Lester et al., 2021) is a good choice. At the second stage, we freeze the additional parameters and tune the main model. Since format information is learned first, it mostly enters the small set of additional parameters. At inference time, we can decide whether to remove the additional parameters depending on whether the incoming task share the same format as the fine-tuned task.\nOur experiments show that ProMoT significantly alleviates specialization during fine-tuning, while boosting generalization on semantically related tasks with different formats. For example, fine-tuning the model only on an NLI binary classification dataset, a mT5 XXL model consistently obtains improved in-context learning performance on summarization compared with the pretrained model, possibly due to improved grounding learned from NLI. See Table 1 for a concrete example. With ProMoT, we can obtain models with both better supervised performance compared to pretrained models and better general in-context learning performance compared to standard finetuning.\nTo summarize, our contributions are 4-fold:\n\u2022 We show empirically that general in-context learning capabilities decrease during single-task fine-tuning for T5 models. We identify format specialization as one of the important causes which mostly happens at the beginning of fine-tuning. \u2022 We propose a novel 2-stage fine-tuning framework: PROmpt Tuning with MOdel Tuning (ProMoT) to reduce format specialization during fine-tuning.\n\u2022 Experiments on 10+ NLP tasks show that ProMoT significantly reduces specialization of fine-tuned models compared to standard fine-tuning, while reaching similar supervised performance. The reduction in specialization opens up opportunities to enhance generalization across very dissimilar tasks when they share some semantic aspects. \u2022 ProMoT can be combined with many existing fine-tuning and parameter-efficient fine-tuning methods. We show examples where ProMoT is combined with multi-task fine-tuning and fine-tuning with 1-shot prompts to further boost the generalization on unseen tasks."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "Pretrained LLMs are general problem solvers with in-context prompts (Raffel et al., 2020b; Xue et al., 2020; Radford et al., 2018; Chowdhery et al., 2022; Min et al., 2022; Touvron et al., 2023). Zhai et al. (2023) evaluates the catastrophic forgetting in multimodal language model fine-tuning, which is limited to image classification tasks. Chan et al. (2022); Gao et al. (2020) study the effect of pretraining data distribution on in-context learning on image recognition tasks, where the tension between in-context learning tasks and fine-tuning tasks is discussed. They propose changing the data distribution to ease such tension, which could be difficult for generative NLP tasks. ProMoT is an orthogonal method that does not require changes in data distribution.\nIn a recent study, Ramasesh et al. (2022) found that as model size increases, the model becomes less prone to catastrophic forgetting. However such studies are mostly focused on tasks of similar format, e.g. a sequence of different classification tasks. In this work we explore vastly different tasks, e.g. classification v.s. long form generation where the format itself is critical.\nDifferent from full fine-tuning, prompt-tuning (Lester et al., 2021; Zhang et al., 2021), adapters and LoRA (Hu et al., 2021; He et al., 2021; Houlsby et al., 2019) adapt a pretrained model to a task with a small set of tunable parameters. Parameter-efficient methods like these largely leave the pretrained model intact, which can preserve the pre-existing in-context learning abilities. However, they also miss the opportunity to further improve the pretrained model with a small, high quality dataset that generalizes beyond the fine-tuned task. Besides, these parameter-efficient methods also underperform fine-tuning on the supervised task in many cases, as shown in (Lester et al., 2021; Liu et al., 2021) and in our results.\nAnother line of work uses multi-task fine-tuning to improve generalization on unseen in-context learning tasks. Wei et al. (2021a); Chung et al. (2022) fine-tune PaLM and T5 on large-scale multitask datasets with diverse natural language prompts, improving the zero- and few-shot performance on unseen tasks. Min et al. (2021) incorporate the in-context learning objective into fine-tuning on multitask datasets with few-shot prompts. This approach relies on multi-task training to generalize, while orthogonally, ProMoT improves the generalization of each single fine-tuning task, whether used in a multi-task setting or not. ProMoT can indeed be combined with multi-task training to obtain better generalization as we demonstrate in Sec. 5.4. In addition, such approaches often require human engineered instructions or prompts for each task to partly alleviate format specialization, while ProMoT uses prompt tuning, which has two advantages: 1) ProMoT does not require the elaborate trial and error of prompt engineering as it optimizes the soft prompts with data. 2) Soft prompts are more effective at absorbing the format compared to natural language prompts, as shown in Table 6."
+        },
+        {
+            "heading": "3 FORMAT SPECIALIZATION IN FINE-TUNING CAUSES THE LOSS OF IN-CONTEXT LEARNING CAPABILITIES",
+            "text": "In this section, we first show empirically with an mT5 XXL model that 1) in-context learning abilities are lost during fine-tuning; 2) format specialization is an important cause for such loss; 3) format specialization happens at the very beginning of fine-tuning."
+        },
+        {
+            "heading": "3.1 LOSS OF IN-CONTEXT LEARNING CAPABILITIES DURING FINE-TUNING",
+            "text": "In this subsection, we first show that the in-context learning performance usually drops significantly after standard fine-tuning.\nIn our experiments, we fine-tune a pretrained mT5 XXL model (13B parameters) (Xue et al., 2020) on the Recognizing Textual Entailment (RTE) dataset (Wang et al., 2019). In RTE tasks, the model is required to predict \u201cTrue\u201d or \u201cFalse\u201d for whether the two given sentences are entailed. We fine-tune\nthe mT5 model with default hyper-parameters and input/output template used in PaLM (Chowdhery et al., 2022).\nWe want to see whether the model lost its in-context learning abilities on unseen task during finetuning. Therefore, we evaluate the fine-tuned model with two 1-shot QA tasks, TriviaQA (Joshi et al., 2017) and web_questions (Berant et al., 2013). The results are illustrated in Figure 1, where we can see that when the accuracy on RTE dataset increases with fine-tuning, performance on few-shot QA tasks drops drastically. This phenomenon is general and not a result of specific fine-tuning or evaluation tasks (more results in Section 5.3)."
+        },
+        {
+            "heading": "3.2 FORMAT SPECIALIZATION",
+            "text": "Why are the in-context learning abilities of an LLM so easily lost after a few hundred steps of fine-tuning? A natural hypothesis is that due to the homogeneity of output formats in fine-tuning datasets, the model quickly specializes to this task format and learns to follow it no matter what the input sequence is. This leads to the loss of in-context learning abilities on other tasks that do not share the same format. here by \u201cformat\u201d we refer to the common characteristics of the sequences in fine-tuning task as a subset of all possible sequences, such as the language used, typical input/output lengths and styles, special tokens or punctuation, upper/lower case styles etc. For example, the output format of RTE is a set of two labels, \u201cTrue\u201d or \u201cFalse\u201d, among all possible sequences of tokens of various lengths. Since all data points share the same format in single-task fine-tuning, the model receives a strong gradient signal that the output should follow this format, thus its in-context learning performance on other tasks with different formats will drop, even when they share important semantic similarities with the fine-tuned task.\nTo verify this hypothesis, we evaluate the RTE fine-tuned mT5 model on 1-shot TriviaQA task and count the percentage of outputs which are \u201cTrue\u201d or \u201cFalse\u201d. Figure 2 shows that as the fine-tuning proceeds, the model outputs more \u201cTrue\u201d or \u2018False\u2019 even with a 1-shot prompted input from TriviaQA. In particular, after 300 fine-tuning steps, 90% of the output becomes \u201cTrue\u201d or \u201cFalse\u201d. The same phenomenon happens on other in-context learning tasks. With a 1-shot WMT16 En-De translation prompt, after 500 steps of RTE fine-tuning, more than 99% of the output becomes \u201cTrue\u201d or \u201cFalse\u201d. This indicates that format specialization is a possible reason for the loss of general in-context learning capabilities during fine-tuning."
+        },
+        {
+            "heading": "3.3 FORMAT LEARNING HAPPENS FIRST DURING STANDARD FINE-TUNING",
+            "text": "Next, we show experimental evidence that format learning happens first during standard fine-tuning. This is not surprising as the overwhelming majority of fine-tuning data points have very similar formats, causing a gradient signal that dominates over others, more nuanced elements such as the semantic content of the task.\nMore concretely, for the RTE dataset, the \u201cformat\u201d refers to the fact that the output \u2208 {True,False}, while the semantic content refers to the correlation between the input sequence and the output label.\nWe isolate format learning from semantic learning by creating a randomized RTE dataset where the output labels are randomly shuffled, thus are no longer correlated with the input sequences. The gradients of format learning, gformat, are then given by the gradients on the randomized RTE dataset. By comparing with the full gradient g on the original RTE we can detect when format learning happens during fine-tuning. We compute the gradients on the same batches of inputs for the two different settings. Figure 3 and Figure 7 in Appendix show that at the very beginning of fine-tuning (step 0), the full gradient g is highly aligned with the format-only gradient gformat, signified by cos(\u27e8g0, gformat,0\u27e9) \u2248 1. Since randomized RTE and original RTE share the format information only and contain totally different semantic content, this alignment implies that the model is mostly learning the format. After 400 fine-tuning steps, this alignment disappears where the cosine similarity drops to around 0.21, when the True/False ratio reaches nearly 100%."
+        },
+        {
+            "heading": "4 PROPOSED METHOD: PROMPT TUNING WITH MODEL TUNING (PROMOT)",
+            "text": "The observations from Section 3 inspire us to decouple format learning from fine-tuning, in order to alleviate specialization to the fine-tuned task and preserve general incontext learning abilities. The key idea is to offload format learning to a separate small set of parameters during early fine-tuning, and allow the model\u2019s own parameter changes afterwards to focus more on the semantic content of the task. We propose a two-stage fine-tuning strategy called ProMoT, illustrated in Figure 4. At the first stage, ProMoT uses prompt tuning to capture the format in a trainable soft prompt while the model itself is frozen. At the second stage, ProMoT freezes the learned soft prompt and fine-tunes the model itself to focus on semantic skills that might be more transferable.\nStage 1: Prompt Tuning. Here we use a continuous trainable prompt (soft prompt) (Lester et al., 2021) prepended before the embedded inputs as the separate small set of tunable parameters. The soft prompt for a given fine-tuned task Pe \u2208 Rp\u00d7e is a small set of free parameters taking the form of a few trainable embeddings, where p is the prompt length and e is the embedding size. Given an input sequence, prompt tuning first embeds it with the text embedding layer of the pretrained model, and then prepends it with the soft trainable prompt. The soft prompt is then optimized to reduce the loss while the\npretrained model is frozen. As indicated in Section 3.3, fine-tuning first learns the format. We expect that by prompt tuning first, the soft prompt will learn the format. Although it is not guaranteed that\n1We compute the format gradient at 400 steps, gformat,400, by first fine-tuning the model on RTE for 400 steps, then computing the gradient on the randomized RTE dataset with the same batch of input sequences.\nthe soft prompt only learns the format, the small capacity can prevent the soft prompt from learning all semantic skills in most realistic NLP tasks, as demonstrated by the performance gap between prompt tuning and standard fine-tuning.\nStage 2: Fine-tuning with trained prompt. After prompt-tuning, we expect the trained prompt now storing most of the format information. We then freeze the soft prompt and fine-tune the pretrained model. Importantly, as shown in Figure 4, the soft prompt is still prepended before the input during this stage, forcing the model to learn things not captured already by the soft prompt.\nOther parameter-efficient and fine-tuning methods. ProMoT is a general framework that can be combined with different parameter-efficient tuning and fine-tuning techniques in respective stages. Conceptually, the prompt-tuning at the first stage can be replaced by other commonly used parameterefficient methods such as LoRA Hu et al. (2021). However, empirically we found prompt-tuning is much better than LoRA on absorbing format information in early fine-tuning. More discussions can be found in Appendix C.7. For fine-tuning methods, we show examples to combine ProMoT with multi-task fine-tuning (Section 5.4) and 1-shot in-context learning prompt (Section 5.3, Section 5.4). Training with 1-shot prompt is introduced by Min et al. (2021) in a multi-task training setting.\nEvaluation. After the two-stage fine-tuning, we obtain a fine-tuned model checkpoint and a trained soft prompt for a specific fine-tuning target task. We expect the soft prompt stores most of the format information, and we only use this prompt during inference when the inference task has the same format as the fine-tuned target task. Otherwise, we remove the learned prompt and simply feed the original input into the fine-tuned model."
+        },
+        {
+            "heading": "5 EXPERIMENTS",
+            "text": ""
+        },
+        {
+            "heading": "5.1 SETTINGS",
+            "text": "Datasets. We use RTE (Wang et al., 2019; Bentivogli et al., 2009) and WMT14 En-Fr (Bojar et al., 2014) as two fine-tuning tasks in our main experiments. They are selected as examples of classification (RTE) and generative tasks (WMT14 En-Fr translation). Experiments on additional fine-tuning tasks including SNLI (Bowman et al., 2015) and OpenbookQA (Mihaylov et al., 2018) can be found in Appendix C.\nWe use 8 tasks unseen during fine-tuning to evaluate the model\u2019s generalization abilities. The 8 evaluation tasks are chosen to represent four types of tasks:\n\u2022 Natural language inference: CB (De Marneff et al., 2019) and WiC (Pilehvar & CamachoCollados, 2018) from superGLUE (Wang et al., 2019) \u2022 Closed book QA: TriviaQA (Joshi et al., 2017), web_questions (Berant et al., 2013) \u2022 Translation: WMT16 En-Ro, WMT16 En-De (Bojar et al., 2016) \u2022 Summarization: XSum (Narayan et al., 2018), WikiLingua (Ladhak et al., 2020)\nFor each evaluation task, we use 1-shot and 4-shots prompts and task templates from PaLM (Chowdhery et al., 2022) as described in the Appendix 7.\nMetrics. We report accuracy for classification tasks, exact match ratio for QA tasks, BLEU score (Papineni et al., 2002) for translation tasks and Rouge-2 score (Lin, 2004) for summarization tasks. We evaluate the model on development set for superGLUE sub-tasks (RTE, CB and WiC) and on test set for all other tasks. Besides per-task performance, we also report the normalized average (Norm. Avg.) performance on all evaluation tasks by averaging the performances normalized to [0,100], following the \"normalized preferred metric\" in BIG-bench (Srivastava et al., 2022) and Chung et al. (2022).\nModels. We primarily use mT5 (Xue et al., 2020) XXL model (Raffel et al., 2020b) in our main experiments, which is pretrained on multi-lingual corpus and contains 13B parameters. This is to accommodate multi-lingual scenarios among our training and evaluation tasks. To show the effectiveness of our method on different pretraining corpus, model sizes and architectures, we also include experiments on mT5 XL, T5.1.1 XXL and PaLM 8b in Appendix C. T5 based models\nare shown to have meaningful few-shot performance as shown in Chung et al. (2022). We do not consider FLAN-T5 (Chung et al., 2022) as a base model in our experiments because it has already been fine-tuned on a large amount of supervised datasets, including our evaluation datasets. More experimental details can be found in Appendix B.\nComparing methods. We compare our ProMoT with several different configurations, including\n\u2022 Pretrained model: We evaluate the pretrained model on all tasks without any fine-tuning. \u2022 Standard fine-tuning: Fine-tune the pretrained model without trainable prompts. We\nalso include a multi-task version in Section 5.4 which is commonly used to boost model generalization on unseen tasks. \u2022 Prompt tuning: Tune the trainable prompt with pretrained model frozen. As the model is fixed, prompt tuning will not change the pretrained model\u2019s performance on in-context learning tasks comparing when the prompt is removed. \u2022 Our proposed method: ProMoT: Our proposed two-stage fine-tuning strategy. \u2022 Our proposed method: ProMoT+1-shot: To further boost in-context learning performance,\nwe prepend a 1-shot example to the input in Figure 4 during training."
+        },
+        {
+            "heading": "5.2 SUPERVISED PERFORMANCE ON FINE-TUNING TASKS",
+            "text": "We first show that ProMoT training can achieve similar or even better performance on fine-tuning tasks compared to standard fine-tuning. We apply three different fine-tuning methods on four different tasks and report the result in Table 2. We report the best performance within the same number of fine-tuning steps (See Appendix B for more details). ProMoT outperforms standard fine-tuning on supervised performance on 3 out of 4 fine-tuning target tasks and outperforms prompt-tuning on 4 out of 4 tasks. Therefore the improved in-context learning performance on unseen tasks (better generalization ability), as will be demonstrated in the next few sections, comes without sacrificing the fine-tune task\u2019s performance."
+        },
+        {
+            "heading": "5.3 GENERALIZATION WITH SINGLE TASK FINE-TUNING",
+            "text": "In this section, we evaluate and compare the few-shot performance on unseen tasks after fine-tuning. We show the evaluation results of fine-tuning on RTE and WMT14 En-Fr in Table 3 and Table 4,\nrespectively. Experiments on additional fine-tuning tasks SNLI/OpenbookQA and additional base models including mT5 XL, T5.1.1 XXL and PaLM 8b can be found in Appendix C.\nFrom both tables, we first observe that the model\u2019s in-context learning performance drops significantly after standard fine-tuning. In particular, the few-shot learning performances drop to near zero for 6 over 8 tasks in Table 3, with the only exceptions being CB and WiC where they share the same format as the RTE fine-tuning task.\nOn the contrary, ProMoT reduces the loss of the in-context learning performance on unseen fewshot evaluation tasks, and even boosts some evaluation tasks that are semantically related to the fine-tuning task but with totally different task formats, resulting in an increasing in-context learning performance on average. In Table 3, ProMoT on the binary NLI dataset dataset consistently improves few-shot performances on two summarization tasks beyond the pretrained model. In Table 4, ProMoT training on English-French translation substantially improves few-shot performance on other language translation pairs such as English to German and Romanian. This cross-task generalization across different task formats are infeasible with previous fine-tuning techniques. Text examples from standard fine-tuning and ProMoT can be found in Appendix C.9. The improvement with less specialization and more generalization can be further boosted when we combine ProMoT with 1-shot prompt to incorporate in-context learning objective during fine-tuning.\nIt is however not surprising that even ProMoT cannot completely eliminate specialization and may still negatively influence some unseen in-context learning tasks compared to the pretrained model, depending on the characteristics of the fine-tuning task. In the next section, we show that a multi-task setup further improves the already strong generalization of ProMoT."
+        },
+        {
+            "heading": "5.4 MORE GENERALIZATION WITH MULTITASK TRAINING",
+            "text": "Multi-task training is commonly used to improve model\u2019s generalization ability (Wei et al., 2021b; Chung et al., 2022). As a general fine-tuning framework, ProMoT can be combined with multi-tasking and achieves better generalization compared to standard multi-task fine-tuning.\nWe apply multi-task ProMoT training on mixed RTE and WMT14 En-Fr translation dataset. At the prompt-tuning stage, we train a soft prompt for each task. At the fine-tuning stage, we mix different tasks and prepend the corresponding soft task prompt to each training example. We keep other configurations the same as Section 5.3 and report the results in Table 5. We compare multi-task ProMoT with standard multi-task fine-tuning. The results show that Multi-task ProMoT significantly outperforms standard multi-task fine-tuning on enhancing generalization with larger improvement on average on unseen 1-shot evaluation tasks. Similar to the single task setting, adding 1-shot prompt before each training input in the fine-tuning stage further boosts the performance of both multi-task fine-tuning and multi-task ProMoT."
+        },
+        {
+            "heading": "5.5 ABLATION STUDY",
+            "text": "We conduct several ablation studies in Table 6. First, instead of fine-tuning in a two-stage process, we consider \u201cjointly fine-tuning\u201d both the soft prompt and the model parameters in one stage. As shown in Table 6, this method still results in specialization and severe loss of in-context learning abilities. Thus the benefit of ProMoT comes from its two-stage nature instead of merely adding more learnable parameters (soft prompt). In addition, fine-tuning the models with a fixed random soft prompt does not help - as it does not help to remove format specialization. Another important baseline is to fine-tune the model with natural language prompts in place instead of soft prompts, which also capture the format to some extend. In a 1-shot scenario, this approach is still far worse compared to ProMoT, showing that learned soft prompts work better than natural language prompts in reducing format specialization in fine-tuning."
+        },
+        {
+            "heading": "6 CONCLUSIONS AND LIMITATIONS",
+            "text": "In this paper, we identify format specialization as one important cause of the loss of general in-context learning abilities during LLM fine-tuning, which tends to happen at the beginning of fine-tuning. We are motivated to develop ProMoT, a simple yet effective two-stage fine-tuning framework that utilizes soft trainable prompts to absorb task-specific formats before model fine-tuning. Experiments on a diverse set of NLP tasks show that ProMoT reduces format specialization and results in surprising generalization across very different tasks, making it a promising method to build general-purpose capabilities into LLMs with small fine-tuning datasets. Although we have shown the effectiveness of ProMoT in our main paper, there is no theoretical guarantee on how much format specialization can be absorbed by the soft prompt during the first stage of ProMoT. Besides, our experiments are done with models smaller than 15B due to limited computation resources. It can be interesting to test ProMoT on larger models."
+        },
+        {
+            "heading": "ACKNOWLEDGMENTS",
+            "text": "We thank the reviewers for their invaluable feedbacks. The work is supported in part by NSF 2008173, 2048280, 2331966, ONR N00014-23-1-2300:P00001, ARL 20230936 and Cisco."
+        },
+        {
+            "heading": "A BROADER IMPACTS",
+            "text": "In our work, we propose a method to improve general-purpose language models with fine-tuning datasets. The improved general-purpose language model may be used in malicious applications such as generating disinformation. To mitigate the potential negative impacts, we can add watermark or deploy AI-generated text classifiers before releasing the model."
+        },
+        {
+            "heading": "B EXPERIMENT DETAILS",
+            "text": "B.1 INPUT TEMPLATE USED IN EXPERIMENTS\nIn Table 7, we list the natural language input template used in our experiments for each task The\nexample shown in Table 1 is from ID 41141109 in XSum dataset."
+        },
+        {
+            "heading": "B.2 OUTPUT POST-PROCESSING",
+            "text": "For each task, we first extract the text after <extra_id_0> and before <extra_id_1>, then trim the text by locating and remove the text after the second prefix token (Q:, Translate, Article:). For classification tasks including RTE, CB and WiC, we check whether the first output token is True or False."
+        },
+        {
+            "heading": "B.3 DATASET AND MODELS",
+            "text": "We list the statistics of all datasets used in the paper in Table 8. All the datasets and models can be used in research context."
+        },
+        {
+            "heading": "B.4 HYPER-PARAMETERS",
+            "text": "For all mT5 models, we fine-tune with learning rate 0.001, drop rate 0.1 and label smoothing 0.1, following the default settings for T5 models (Raffel et al., 2020b). For all prompt tuning experiments, we use learning rate 0.2 and prompt length 100. For all tasks except summarization tasks, we choose the model input sequence length larger than the input length in datasets. For summarization, we\ncut each input to 1024 tokens. We use Adafactor optimizer and batch size 64 without data-packing across all experiments. In inference, we use beam search to decode the outputs with width 4. More experimental settings are provided in the appendix. For ProMoT tuning, at stage 1 we run prompt tuning for 5000 steps and save a checkpoint every 1000 steps, then select the prompt checkpoint with the best performance on target task. At stage 2, we freeze the trained prompt and fine-tune the model for 1000 steps, checkpointing every 100 steps. We pick the model checkpoint with highest performance on the fine-tuned task as our final checkpoint. For comparison, we run prompt tuning and standard fine-tuning for 5000 and 1000 training steps respectively and report the performance of the best checkpoint. We explore fine-tuning with more steps in Appendix C.3.\nIn ablation study in Section 5.5, we include an experiment to jointly fine-tune soft prompt and pretrained model. In this experiment, we finetune the model and prompt for 1000 steps with the same learning rate 0.001, following the setting in (He et al., 2022)."
+        },
+        {
+            "heading": "B.5 HARDWARE AND IMPLEMENTATION",
+            "text": "All the experiments are implemented based on the original prompt tuning2 and T5x code base3. All experiments are run on a cluster of 64 parallel TPUs. Time cost for different experiments varies, however, all training experiments can be finished within 1 day."
+        },
+        {
+            "heading": "C ADDITIONAL EXPERIMENT RESULTS",
+            "text": ""
+        },
+        {
+            "heading": "C.1 ADDITIONAL RESULTS ON SINGLE TASK FINE-TUNING",
+            "text": "As complementary results of Table 3 and 4, we list and compare the performance of prompt tuning + 1-shot in Table 9. We also provide experiments on SNLI and OpenbookQA datasets in Table 10. Without fine-tuning, pretrained mT5 failed to output \u201cA\u201d, \u201cB\u201d, \u201cC\u201d, \u201cD\u201d for multi-choice QA in 0-shot openbookQA dataset, which results in a zero accuracy. We can see that the additional experiments are consistent with our main experiments that ProMoT can achieve similar supervised performance on fine-tuning tasks with less forgetting and even better performance on general in-context learning tasks.\n2https://github.com/google-research/prompt-tuning 3https://github.com/google-research/t5x\nC.2 4-SHOT EVALUATION RESULTS OF MULTI-TASK TRAINING\nAs an additional result to Table 5, in Table 11 we provide the comparison between the pretrained model, multi-task standard fine-tuning and multi-task ProMoT."
+        },
+        {
+            "heading": "C.3 TRAINING MORE STEPS: TRADE-OFF BETWEEN FINE-TUNING TARGET TASK AND IN-CONTEXT LEARNING ABILITIES",
+            "text": "In Section 5.3, we report the results of the best checkpoints within 1000 steps of fine-tuning. With a longer training period, we can see a more clear trade-off between the performance on fine-tuning target task and the performance on in-context learning abilities. Here we show the long-term trade-off between fine-tuning target task and in-context learning evaluation tasks by scattering the performance of different checkpoints within 20000 steps fine-tuning. In Figure 5, and 6, we plot the trade-off on classification and translation tasks, respectively.\nAs we can see from the figures, datapoints for ProMoT is higher than standard fine-tuning on the figures, which implies that with the same performance on fine-tuning target task, forgetting is alleviated with ProMoT fine-tuning."
+        },
+        {
+            "heading": "C.4 ADDITIONAL EXPERIMENTS ON T5 XXL",
+            "text": "To show the performance of our method on an English-based pretrained model, we did an additional experiment on T5 XXL with fine-tuning target task RTE. The result is shown in Table 12. The results are consistent with our main experiments on the mT5 XXL model."
+        },
+        {
+            "heading": "C.5 ADDITIONAL EXPERIMENTS ON MT5 XL",
+            "text": "To show the performance of our method on an smaller-size pretrained model, we did an additional experiment on mT5 XL with fine-tuning target task WMT14 En-Fr. The result is shown in Table 13. The results are consistent with our main experiments on the mT5 XXL model."
+        },
+        {
+            "heading": "C.6 ADDTIONAL EXPERIMENTS ON PALM 8B",
+            "text": "To show the performance of our method on decoder-only models, we did an additional experiment on PaLM 8b model with fine-tuning target task WMT14 En-Fr. We use prompt length 50 and learning rate 0.3 in prompt-tuning and default fine-tuning hyperparameters in fine-tuning. The result is shown in Table 14. The results are consistent with our main experiments on mT5, where ProMoT can achieve similar supervised performance on fine-tuning tasks with less forgetting on general in-context learning tasks."
+        },
+        {
+            "heading": "C.7 USING LORA IN THE FIRST STAGE",
+            "text": "As we have discussed in Section 4, conceptually we can use any parameter-efficient method at the first ProMoT fine-tuning stage to absorb the task format information. Here we did experiments to\ncompare LoRA and prompt-tuning (used in our ProMoT main experiments) in the first fine-tuning stage. We report the results in Table 15. As we can see from the table, ProMoT with prompt-tuning is significantly better than ProMoT with LoRA, in both supervised fine-tuning task and unseen 1-shot evaluation tasks. This might partially due to better alignment of soft prompt between format description in natural language corpus."
+        },
+        {
+            "heading": "C.8 PLOTTING MORE STEPS FOR FIGURE 3",
+            "text": "To further strengthen our conclusion in Figure 3, here we plot the gradient alignment from step 0 to step 400. As we can see from the figure, gradient alignment drops significantly after 300 steps which is matched with Figure 2 where the true and false ratio increases before 300 steps and then remains stable."
+        },
+        {
+            "heading": "C.9 QUALITATIVE RESULTS ON FINE-TUNING WMT14 EN-FR TASK",
+            "text": "In Table 1 we show an example from fine-tuning task RTE. Here we show examples for fine-tuning task WMT14 En-Fr translation on different unseen few-shot tasks. We compare the outputs from ground-truth targets, pretrained mT5, fine-tuned mT5 on WMT14 En-Fr and ProMoT mT5 on WMT14 En-Fr. The outputs are generated with a 1-shot example. As we can see from the examples, standard fine-tuning on WMT14 En-Fr will 1) make the model overfit its format and tend to output French; and 2) model tends to repeat its input which is similar to translation task. ProMoT alleviates this specialization on fine-tuning task and has better generalization.\n\u2022 WMT16 En-De \u2013 Target: Danach war der Mann, der sich nach Angaben seines Anwalts mittlerweile\nwieder auf freiem Fu\u00dfbefindet, in eine gr\u00f6\u00dfere Zelle verlegt worden. \u2013 Pretrained: Danach wurde der Mann in eine gr\u00f6\u00dfere. \u2013 Fine-tune: L\u2019homme, qui, selon une d\u00e9claration de son avocat, a depuis \u00e9t\u00e9 lib\u00e9r\u00e9, a\nensuite \u00e9t\u00e9 transf\u00e9r\u00e9 dans une cellule plus grande. \u2013 ProMoT: Danach wurde der Mann, der mittlerweile freigelassen wurde, in eine gr\u00f6\u00dfere\nZelle verlegt. \u2022 WebQuestions\n\u2013 Target: Milwaukee \u2013 Pretrained: Milwaukee, Wisconsin \u2013 Fine-tune: Where is harley davidson corporate headquarters? A: Milwaukee, Wisconsin\nQ: what movies has scarlett johansson in? A: Girl with a Pearl Earring Q: where is harley davidson corporate headquarters? A: Milwaukee, Wisconsin Q: where is harley davidson corporate headquarters? ...\n\u2013 ProMoT: Milwaukee, Wisconsin \u2022 WikiLingua/en\n\u2013 Target: Ensure that you have never activated a free trial of Amazon Prime on your account in the past. Repeat the steps above to locate products that are fulfilled by Amazon. Click the button that says, ...\n\u2013 Pretrained: Click \u201cStart my Free Trial.\u201dSign up with Amazon Prime. Submit your order.\n\u2013 Fine-tune: Si vous avez besoin d\u2019une aide suppl\u00e9mentaire, n\u2019h\u00e9sitez pas \u00e0 communiquer avec l\u2019\u00e9quipe d\u2019Amazon Prime. Vous pouvez vous inscrire \u00e0 l\u2019Amazon Prime et vous inscrire \u00e0 l\u2019Amazon Prime. Vous pouvez vous inscrire ...\n\u2013 ProMoT: Click \u201cStart my Free Trial.\u201dSign up with Amazon Prime. Enter your credit card details or use one of your saved payment methods. Submit your order. If you do not return, you will be charged $99 for a year membership to Amazon Prime at the end of your trial period"
+        }
+    ],
+    "title": "IZATION AND MORE GENERALIZATION",
+    "year": 2024
+}

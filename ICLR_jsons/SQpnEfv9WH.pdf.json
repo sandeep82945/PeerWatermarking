@@ -1,0 +1,799 @@
+{
+    "abstractText": "Accurate human trajectory prediction is crucial for applications such as autonomous vehicles, robotics, and surveillance systems. Yet, existing models often fail to fully leverage the non-verbal social cues human subconsciously communicate when navigating the space. To address this, we introduce Social-Transmotion, a generic model that exploits the power of transformers to handle diverse and numerous visual cues, capturing the multi-modal nature of human behavior. We translate the idea of a prompt from Natural Language Processing (NLP) to the task of human trajectory prediction, where a prompt can be a sequence of x-y coordinates on the ground, bounding boxes or body poses. This, in turn, augments trajectory data, leading to enhanced human trajectory prediction. Our model exhibits flexibility and adaptability by capturing spatiotemporal interactions between pedestrians based on the available visual cues, whether they are poses, bounding boxes, or a combination thereof. By the masking technique, we ensure our model\u2019s effectiveness even when certain visual cues are unavailable, although performance is further boosted with the presence of comprehensive visual data. We delve into the merits of using 2d versus 3d poses, and a limited set of poses. Additionally, we investigate the spatial and temporal attention map to identify which keypoints and frames of poses are vital for optimizing human trajectory prediction. Our approach is validated on multiple datasets, including JTA, JRDB, Pedestrians and Cyclists in Road Traffic, and ETH-UCY.",
+    "authors": [],
+    "id": "SP:c1bf27041e578b5eb7af08481e5f70a63451c8de",
+    "references": [
+        {
+            "authors": [
+                "Vida Adeli",
+                "Ehsan Adeli",
+                "Ian Reid",
+                "Juan Carlos Niebles",
+                "Hamid Rezatofighi"
+            ],
+            "title": "Socially and contextually aware human motion and pose forecasting",
+            "venue": "IEEE Robotics and Automation Letters,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Alexandre Alahi",
+                "Kratarth Goel",
+                "Vignesh Ramanathan",
+                "Alexandre Robicquet",
+                "Li Fei-Fei",
+                "Silvio Savarese"
+            ],
+            "title": "Social lstm: Human trajectory prediction in crowded spaces",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Javad Amirian",
+                "Jean-Bernard Hayet",
+                "Julien Pettr\u00e9"
+            ],
+            "title": "Social ways: Learning multi-modal distributions of pedestrian trajectories with gans",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Graeme Best",
+                "Robert Fitch"
+            ],
+            "title": "Bayesian intention inference for trajectory prediction with an unknown goal destination",
+            "venue": "In 2015 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS),",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Apratim Bhattacharyya",
+                "Daniel Olmeda Reino",
+                "Mario Fritz",
+                "Bernt Schiele"
+            ],
+            "title": "Euro-pvi: Pedestrian vehicle interactions in dense urban centers",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Smail Ait Bouhsain",
+                "Saeed Saadatnejad",
+                "Alexandre Alahi"
+            ],
+            "title": "Pedestrian intention prediction: A multi-task perspective",
+            "venue": "arXiv preprint arXiv:2010.10270,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Andreja Bubic",
+                "D. Yves Von Cramon",
+                "Ricarda Schubotz"
+            ],
+            "title": "Prediction, cognition and the brain",
+            "venue": "Frontiers in Human Neuroscience,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Z. Cao",
+                "G. Hidalgo Martinez",
+                "T. Simon",
+                "S. Wei",
+                "Y.A. Sheikh"
+            ],
+            "title": "Openpose: Realtime multi-person 2d pose estimation using part affinity fields",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Changan Chen",
+                "Yuejiang Liu",
+                "Sven Kreiss",
+                "Alexandre Alahi"
+            ],
+            "title": "Crowd-robot interaction: Crowdaware robot navigation with attention-based deep reinforcement learning",
+            "venue": "In 2019 International Conference on Robotics and Automation (ICRA),",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Guangyi Chen",
+                "Zhenhao Chen",
+                "Shunxing Fan",
+                "Kun Zhang"
+            ],
+            "title": "Unsupervised sampling promoting for stochastic human trajectory prediction",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Kai Chen",
+                "Xiao Song",
+                "Xiaoxiang Ren"
+            ],
+            "title": "Pedestrian trajectory prediction in heterogeneous traffic using pose keypoints-based convolutional encoder-decoder network",
+            "venue": "IEEE Transactions on Circuits and Systems for Video Technology,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Hyung-gun Chi",
+                "Kwonjoon Lee",
+                "Nakul Agarwal",
+                "Yi Xu",
+                "Karthik Ramani",
+                "Chiho Choi"
+            ],
+            "title": "Adamsformer for spatial action localization in the future",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Matteo Fabbri",
+                "Fabio Lanzi",
+                "Simone Calderara",
+                "Andrea Palazzi",
+                "Roberto Vezzani",
+                "Rita Cucchiara"
+            ],
+            "title": "Learning to detect and track visible and occluded body joints in a virtual world",
+            "venue": "In Proceedings of the European conference on computer vision (ECCV),",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Carlos Flores",
+                "Pierre Merdrignac",
+                "Raoul de Charette",
+                "Francisco Navas",
+                "Vicente Milan\u00e9s",
+                "Fawzi Nashashibi"
+            ],
+            "title": "A cooperative car-following/emergency braking system with prediction-based pedestrian avoidance capabilities",
+            "venue": "IEEE Transactions on Intelligent Transportation Systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Roger Girgis",
+                "Florian Golemo",
+                "Felipe Codevilla",
+                "Martin Weiss",
+                "Jim Aldon D\u2019Souza",
+                "Samira Ebrahimi Kahou",
+                "Felix Heide",
+                "Christopher Pal"
+            ],
+            "title": "Latent variable sequential set transformers for joint multi-agent motion prediction",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Francesco Giuliari",
+                "Irtiza Hasan",
+                "Marco Cristani",
+                "Fabio Galasso"
+            ],
+            "title": "Transformer networks for trajectory forecasting",
+            "venue": "In 2020 25th international conference on pattern recognition (ICPR),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Ivan Grishchenko",
+                "Valentin Bazarevsky",
+                "Andrei Zanfir",
+                "Eduard Gabriel Bazavan",
+                "Mihai Zanfir",
+                "Richard Yee",
+                "Karthik Raveendran",
+                "Matsvei Zhdanovich",
+                "Matthias Grundmann",
+                "Cristian Sminchisescu"
+            ],
+            "title": "Blazepose ghum holistic: Real-time 3d human landmarks and pose estimation",
+            "venue": "arXiv preprint arXiv:2206.11678,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Tianpei Gu",
+                "Guangyi Chen",
+                "Junlong Li",
+                "Chunze Lin",
+                "Yongming Rao",
+                "Jie Zhou",
+                "Jiwen Lu"
+            ],
+            "title": "Stochastic trajectory prediction via motion indeterminacy diffusion",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Agrim Gupta",
+                "Justin Johnson",
+                "Li Fei-Fei",
+                "Silvio Savarese",
+                "Alexandre Alahi"
+            ],
+            "title": "Social gan: Socially acceptable trajectories with generative adversarial networks",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Irtiza Hasan",
+                "Francesco Setti",
+                "Theodore Tsesmelis",
+                "Vasileios Belagiannis",
+                "Sikandar Amin",
+                "Alessio Del Bue",
+                "Marco Cristani",
+                "Fabio Galasso"
+            ],
+            "title": "Forecasting people trajectories and head poses by jointly reasoning on tracklets and vislets",
+            "venue": "IEEE transactions on pattern analysis and machine intelligence,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Dirk Helbing",
+                "Peter Molnar"
+            ],
+            "title": "Social force model for pedestrian dynamics",
+            "venue": "Physical review E,",
+            "year": 1995
+        },
+        {
+            "authors": [
+                "Yue Hu",
+                "Siheng Chen",
+                "Ya Zhang",
+                "Xiao Gu"
+            ],
+            "title": "Collaborative motion prediction via neural motion message passing",
+            "venue": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yingfan Huang",
+                "Huikun Bi",
+                "Zhaoxin Li",
+                "Tianlu Mao",
+                "Zhaoqi Wang"
+            ],
+            "title": "Stgat: Modeling spatialtemporal interactions for human trajectory prediction",
+            "venue": "In Proceedings of the IEEE/CVF International Conference on Computer Vision,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Catalin Ionescu",
+                "Dragos Papava",
+                "Vlad Olaru",
+                "Cristian Sminchisescu"
+            ],
+            "title": "Human3.6m: Large scale datasets and predictive methods for 3d human sensing in natural environments",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Chiyu Jiang",
+                "Andre Cornman",
+                "Cheolho Park",
+                "Benjamin Sapp",
+                "Yin Zhou",
+                "Dragomir Anguelov"
+            ],
+            "title": "Motiondiffuser: Controllable multi-agent motion prediction using diffusion",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Diederik P Kingma",
+                "Jimmy Ba"
+            ],
+            "title": "Adam: A method for stochastic optimization",
+            "venue": "arXiv preprint arXiv:1412.6980,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Parth Kothari",
+                "Sven Kreiss",
+                "Alexandre Alahi"
+            ],
+            "title": "Human trajectory forecasting in crowds: A deep learning perspective",
+            "venue": "IEEE Transactions on Intelligent Transportation Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Viktor Kress",
+                "Fabian Jeske",
+                "Stefan Zernetsch",
+                "Konrad Doll",
+                "Bernhard Sick"
+            ],
+            "title": "Pose and semantic map based probabilistic forecast of vulnerable road users trajectories",
+            "venue": "IEEE Transactions on Intelligent Vehicles,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Alon Lerner",
+                "Yiorgos Chrysanthou",
+                "Dani Lischinski"
+            ],
+            "title": "Crowds by example",
+            "venue": "In Computer graphics forum,",
+            "year": 2007
+        },
+        {
+            "authors": [
+                "Lihuan Li",
+                "Maurice Pagnucco",
+                "Yang Song"
+            ],
+            "title": "Graph-based spatial transformer with memory replay for multi-future pedestrian trajectory prediction",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Junwei Liang",
+                "Lu Jiang",
+                "Juan Carlos Niebles",
+                "Alexander G Hauptmann",
+                "Li Fei-Fei"
+            ],
+            "title": "Peeking into the future: Predicting future person activities and locations in videos",
+            "venue": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Yuanfu Luo",
+                "Panpan Cai",
+                "Aniket Bera",
+                "David Hsu",
+                "Wee Sun Lee",
+                "Dinesh Manocha"
+            ],
+            "title": "Porca: Modeling and planning for autonomous driving among many pedestrians",
+            "venue": "IEEE Robotics and Automation Letters,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Karttikeya Mangalam",
+                "Yang An",
+                "Harshayu Girase",
+                "Jitendra Malik"
+            ],
+            "title": "From goals, waypoints & paths to long term human trajectory forecasting",
+            "venue": "In Proceedings of the IEEE/CVF International Conference on Computer Vision,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Roberto Martin-Martin",
+                "Mihir Patel",
+                "Hamid Rezatofighi",
+                "Abhijeet Shenoi",
+                "JunYoung Gwak",
+                "Eric Frankel",
+                "Amir Sadeghian",
+                "Silvio Savarese"
+            ],
+            "title": "Jrdb: A dataset and benchmark of egocentric robot visual perception of humans in built environments",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Alessio Monti",
+                "Alessia Bertugli",
+                "Simone Calderara",
+                "Rita Cucchiara"
+            ],
+            "title": "Dag-net: Double attentive graph neural network for trajectory forecasting",
+            "venue": "In 2020 25th International Conference on Pattern Recognition (ICPR),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Nigamaa Nayakanti",
+                "Rami Al-Rfou",
+                "Aurick Zhou",
+                "Kratarth Goel",
+                "Khaled S Refaat",
+                "Benjamin Sapp"
+            ],
+            "title": "Wayformer: Motion forecasting via simple & efficient attention networks",
+            "venue": "IEEE International Conference on Robotics and Automation (ICRA),",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Behnam Parsaeifard",
+                "Saeed Saadatnejad",
+                "Yuejiang Liu",
+                "Taylor Mordan",
+                "Alexandre Alahi"
+            ],
+            "title": "Learning decoupled representations for human pose forecasting",
+            "venue": "In Proceedings of the IEEE/CVF International Conference on Computer Vision Workshop,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Stefano Pellegrini",
+                "Andreas Ess",
+                "Konrad Schindler",
+                "Luc Van Gool"
+            ],
+            "title": "You\u2019ll never walk alone: Modeling social behavior for multi-target tracking",
+            "venue": "IEEE 12th international conference on computer vision,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "N Dinesh Reddy",
+                "Laurent Guigues",
+                "Leonid Pishchulin",
+                "Jayan Eledath",
+                "Srinivasa G Narasimhan"
+            ],
+            "title": "Tessetrack: End-to-end learnable multi-person articulated 3d pose tracking",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Saeed Saadatnejad",
+                "Yi Zhou Ju",
+                "Alexandre Alahi"
+            ],
+            "title": "Pedestrian 3d bounding box prediction",
+            "venue": "arXiv preprint arXiv:2206.14195,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Amir Sadeghian",
+                "Vineet Kosaraju",
+                "Ali Sadeghian",
+                "Noriaki Hirose",
+                "Hamid Rezatofighi",
+                "Silvio Savarese. Sophie"
+            ],
+            "title": "An attentive gan for predicting paths compliant to social and physical constraints",
+            "venue": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Tim Salzmann",
+                "Boris Ivanovic",
+                "Punarjay Chakravarty",
+                "Marco Pavone"
+            ],
+            "title": "Trajectron++: Dynamically-feasible trajectory forecasting with heterogeneous data",
+            "venue": "In Computer Vision\u2013ECCV 2020: 16th European Conference,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jianhua Sun",
+                "Yuxuan Li",
+                "Liang Chai",
+                "Hao-Shu Fang",
+                "Yong-Lu Li",
+                "Cewu Lu"
+            ],
+            "title": "Human trajectory prediction with momentary observation",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Peter Trautman",
+                "Andreas Krause"
+            ],
+            "title": "Unfreezing the robot: Navigation in dense, interacting crowds",
+            "venue": "In 2010 IEEE/RSJ International Conference on Intelligent Robots and Systems,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Ashish Vaswani",
+                "Noam Shazeer",
+                "Niki Parmar",
+                "Jakob Uszkoreit",
+                "Llion Jones",
+                "Aidan N Gomez",
+                "\u0141ukasz Kaiser",
+                "Illia Polosukhin"
+            ],
+            "title": "Attention is all you need",
+            "venue": "In Proceedings of the International Conference on Neural Information Processing Systems (NeurIPS),",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Bastian Wandt",
+                "Marco Rudolph",
+                "Petrissa Zell",
+                "Helge Rhodin",
+                "Bodo Rosenhahn"
+            ],
+            "title": "Canonpose: Self-supervised monocular 3d human pose estimation in the wild",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Chenxi Wang",
+                "Yunfeng Wang",
+                "Zixuan Huang",
+                "Zhiwen Chen"
+            ],
+            "title": "Simple baseline for single human motion forecasting",
+            "venue": "In Proceedings of the IEEE/CVF International Conference on Computer Vision,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Chenxin Xu",
+                "Weibo Mao",
+                "Wenjun Zhang",
+                "Siheng Chen"
+            ],
+            "title": "Remember intentions: Retrospectivememory-based trajectory prediction",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Chenxin Xu",
+                "Robby T Tan",
+                "Yuhong Tan",
+                "Siheng Chen",
+                "Yu Guang Wang",
+                "Xinchao Wang",
+                "Yanfeng Wang"
+            ],
+            "title": "Eqmotion: Equivariant multi-agent motion prediction with invariant interaction reasoning",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yi Xu",
+                "Armin Bazarjani",
+                "Hyung-gun Chi",
+                "Chiho Choi",
+                "Yun Fu"
+            ],
+            "title": "Uncovering the missing pattern: Unified framework towards trajectory imputation and prediction",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Takuma Yagi",
+                "Karttikeya Mangalam",
+                "Ryo Yonetani",
+                "Yoichi Sato"
+            ],
+            "title": "Future person localization in first-person videos",
+            "venue": "In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Cunjun Yu",
+                "Xiao Ma",
+                "Jiawei Ren",
+                "Haiyu Zhao",
+                "Shuai Yi"
+            ],
+            "title": "Spatio-temporal graph transformer networks for pedestrian trajectory prediction",
+            "venue": "In Proceedings of the European Conference on Computer Vision (ECCV),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Ye Yuan",
+                "Xinshuo Weng",
+                "Yanglan Ou",
+                "Kris M. Kitani"
+            ],
+            "title": "Agentformer: Agent-aware transformers for socio-temporal multi-agent forecasting",
+            "venue": "In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Chi Zhang",
+                "Christian Berger"
+            ],
+            "title": "Learning the pedestrian-vehicle interaction for pedestrian trajectory prediction",
+            "venue": "In 2022 8th International Conference on Control, Automation and Robotics (ICCAR),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Pu Zhang",
+                "Wanli Ouyang",
+                "Pengfei Zhang",
+                "Jianru Xue",
+                "Nanning Zheng"
+            ],
+            "title": "Sr-lstm: State refinement for lstm towards pedestrian trajectory prediction",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Zikang Zhou",
+                "Jianping Wang",
+                "Yung-Hui Li",
+                "Yu-Kai Huang"
+            ],
+            "title": "Query-centric trajectory prediction",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Grishchenko"
+            ],
+            "title": "2022), on the JRDB dataset (ground-truth 3D pose is not available). The obtained estimated 3D poses were then used as input cues for evaluating our model without re-training. As demonstrated in Table 9, our model exhibits a notable capacity to leverage even imperfect pose estimations, resulting in a performance improvement. Note that while the gain achieved with pseudo-ground-truth pose",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jiang"
+            ],
+            "title": "2023b)). Here, we take WayformerNayakanti et al. (2023) as an example and compare. Our proposed dual-transformer is modified from the language model BERT, which is different from the encoder-decoder structure used in Wayformer. The main similarity of our model and Wayformer for is that both use latent queries to encode features from different modalities. However, in the case of Wayformer and most trajectory prediction",
+            "year": 2023
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Predicting future events is often considered an essential aspect of intelligence (Bubic et al., 2010). This capability becomes critical in autonomous vehicles, where accurate predictions can help avoid accidents involving humans. For instance, consider a scenario where a pedestrian is about to cross the street. A non-predictive agent may only detect the pedestrian when they are in front, attempting to avoid a collision at the last moment. In contrast, a predictive agent anticipates the pedestrian\u2019s actions several seconds ahead of time, making informed decisions on when to stop or proceed.\nTrajectory prediction models aim to forecast the future positions of objects or people based on a sequence of observed 3d positions in the past. These models have substantial implications for various fields such as autonomous driving (Lerner et al., 2007), socially-aware robotics (Chen et al., 2019; Trautman & Krause, 2010), and security (Flores et al., 2018; Luo et al., 2018). Despite acknowledging the inherent stochasticity that arises from human free will, most traditional predictors have limited performance, as they typically rely on a single data point per person (i.e., their x-y coordinates on the ground) as input. This singular focus neglects a wealth of additional signals, such as body language, fine-grained social interactions, and gaze directions, that humans naturally exhibit to communicate their intended trajectories.\nIn this study, we explore the signals that humans consciously or subconsciously use to convey their mobility patterns. For example, individuals may turn their heads and shoulders before altering their walking direction\u2014a visual cue that cannot be captured using a sequence of spatial locations over time. Similarly, social interactions may be anticipated through gestures like hand waves or changes in head direction. Our goal is to propose a generic architecture for human trajectory prediction that leverages additional information whenever they are available (e.g., the body poses). We incorporate the sequence of observed cues as input, along with the observed trajectories, to predict future trajec-\ntories, as depicted in Figure 1. We translate the idea of a prompt from Natural Language Processing (NLP) to the task of human trajectory prediction, where a prompt can be a sequence of x-y coordinates on the ground, bounding boxes or body poses. We refer to our task as promptable human trajectory prediction. We embrace the multi-modal nature of human behavior by accommodating various visual cues to better capture the intricacies and nuances of human motion, leading to more accurate trajectory predictions. The challenge lies in effectively encoding and integrating all these visual cues1 into the prediction model.\nWe introduce Social-Transmotion, a generic and adaptable transformer-based model for human trajectory prediction. This model seamlessly integrates various types and quantities of visual cues, thus enhancing adaptability to diverse data modalities and exploiting rich information for improved prediction performance. Its dual-transformer architecture dynamically assesses the significance of distinct visual cues of both the primary and neighboring pedestrians, effectively capturing relevant social interactions and body language cues. To ensure the generality of our network, we employ a training strategy that includes selective masking of different types and quantities of visual cues. In other words, our model exhibits robustness even in the absence of certain visual cues. In other words, it can make predictions without relying on bounding boxes when pose information is unavailable, or it can use trajectory inputs alone when no visual cues are accessible.\nOur experimental results demonstrate that Social-Transmotion outperforms previous models. Additionally, we provide a comprehensive analysis of the usefulness of different visual representations, including 2d and 3d body pose keypoints and bounding boxes, for trajectory prediction. We show that 3d pose keypoints more effectively capture social interactions, while 2d pose keypoints can be a good alternative when 3d pose information is unavailable. We also consider the requirements for using poses from all humans at all times and the necessity of 3d versus 2d poses or even just bounding boxes. In some applications, only the latter may be available. We provide an in-depth analysis of these factors in Section 4.\nIn summary, our contributions are twofold. First, we present Social-Transmotion, the pioneering generic Transformer-based model for promptable human trajectory prediction, designed to flexibly utilize various visual cues for improved accuracy, even in the absence of certain cues. Second, we provide an in-depth analysis of the usefulness of different visual representations for trajectory prediction. The code for our proposed model will be made publicly available upon publication."
+        },
+        {
+            "heading": "2 RELATED WORKS",
+            "text": ""
+        },
+        {
+            "heading": "2.1 HUMAN TRAJECTORY PREDICTION",
+            "text": "Human trajectory prediction has evolved significantly over the years. Early models, such as the Social Force model, focused on the attractive and repulsive forces among pedestrians (Helbing & Molnar, 1995). Later, Bayesian Inference was employed to model human-environment interactions for trajectory prediction (Best & Fitch, 2015). As the field progressed, data-driven methods gained prominence (Alahi et al., 2016; Gupta et al., 2018; Giuliari et al., 2021; Kothari et al., 2021; Monti et al., 2021; Sun et al., 2022; Zhang et al., 2019; Mangalam et al., 2021; Chen et al., 2023), with\n1Throughout this paper, the term \u2018visual cues\u2019 is used to refer specifically to poses, bounding boxes, or a composite of both, except where otherwise stated.\nmany studies constructing human-human interactions (Alahi et al., 2016; Kothari et al., 2021; Monti et al., 2021; Zhang et al., 2019) to improve predictions. For example, Alahi et al. (2016) used hidden states to model observed neighbor interactions, while (Kothari et al., 2021) proposed the directional grid for better social interaction modeling. In recent years, researchers have expanded the scope of social interactions to encompass human-context interactions (Best & Fitch, 2015; Sun et al., 2022) and human-vehicle interactions (Bhattacharyya et al., 2021; Zhang & Berger, 2022). Various architectural models have been used, spanning from recurrent neural networks (RNNs) (Alahi et al., 2016; Salzmann et al., 2020), generative adversarial networks (GANs) (Gupta et al., 2018; Amirian et al., 2019; Hu et al., 2020; Huang et al., 2019) and diffusion models (Gu et al., 2022).\nThe introduction of Transformers and positional encoding (Vaswani et al., 2017) has led to their adoption in sequence modeling, owing to their capacity to capture long-range dependencies. This approach has been widely utilized recently in trajectory prediction (Yu et al., 2020; Giuliari et al., 2021; Li et al., 2022; Yuan et al., 2021) showing state-of-the-art performance on trajectory prediction (Girgis et al., 2022; Xu et al., 2023a). Despite advancements in social-interaction modeling, previous works have predominantly relied on sequences of pedestrian x-y coordinates as input features. With the advent of datasets providing more visual cues (Fabbri et al., 2018; Martin-Martin et al., 2021; Ionescu et al., 2014), more detailed information about pedestrian motion is now available. Therefore, we design a generic transformer that can benefit from incorporating visual cues in a promptable manner."
+        },
+        {
+            "heading": "2.2 VISUAL CUES FOR TRAJECTORY PREDICTION",
+            "text": "Multi-task learning has emerged as an effective approach for sharing representations and leveraging complementary information across related tasks. Pioneering studies have demonstrated the potential benefits of incorporating additional associated tasks into human trajectory prediction, such as scene context (Sadeghian et al., 2019; Chi et al., 2023), intention prediction (Bouhsain et al., 2020), 2d/3d bounding-box prediction (Saadatnejad et al., 2022), and action recognition (Liang et al., 2019).\nThe human pose serves as a potent indicator of human intentions. Owing to the advancements in pose estimation (Cao et al., 2019), 2d poses can now be readily extracted from images. In recent years, a couple of studies have explored the use of 2d body pose as visual cues for trajectory prediction in image/pixel space (Yagi et al., 2018; Chen et al., 2020). However, our work concentrates on trajectory prediction in camera/world coordinates, which offers more extensive practical applications. Employing 2d body pose presents limitations, such as information loss in depth, making it difficult to capture the spatial distance between agents. In contrast, 3d pose circumvent this issue and have been widely referred to in pose estimation (Wandt et al., 2021), pose forecasting (Parsaeifard et al., 2021; Adeli et al., 2020; Wang et al., 2021), and pose tracking (Reddy et al., 2021). Nevertheless, 3d pose data may not always be available in real-world scenarios. Inspired by Bouhsain et al. (2020), which demonstrated enhanced performance in intention prediction when employing bounding boxes, we have also included this visual cue in our exploration. Our goal is to investigate the effects of various visual cues, including but not limited to 3d human pose, on trajectory prediction.\nA study with close ties to our research is that of Kress et al. (2022), which highlighted the utility of an individual pedestrian\u2019s 3d body pose for predicting their trajectory. However, our research incorporates social interactions among poses, a feature overlooked in their study. Also, unlike (Hasan et al., 2019), which proposed head orientation as a feature, we explore more granular representations. Our work not only considers the effect of social interactions between 3d pose but also other visual cues, amplifying trajectory prediction precision. Moreover, our adaptable network is capable of harnessing any available visual cues."
+        },
+        {
+            "heading": "3 METHOD",
+            "text": "Our main objective is to tackle the task of predicting future trajectories. To achieve this, we have developed an adaptable model that effectively utilizes various visual cues alongside historical trajectory data. We also recognize that different scenarios may present varying sets of visual cues. To address this, our model is trained to be flexible to handle different types and quantities of cues. As illustrated in Figure 2, our model comprises two transformers. The cross-modality transformer takes as inputs the agent\u2019s previous 2d coordinates and can incorporate additional cues like the agent\u2019s 2d\nor 3d pose information and bounding boxes from past time-steps. By incorporating these diverse cues, the Cross-Modality Transformer (CMT) generates a more informative representation of the agent\u2019s behavior. Additionally, the Social Transformer (ST) is responsible for merging the outputs from the first transformers of different agents. By combining these individual representations, the social transformer captures interactions between agents, enabling the model to analyze their interplay and dependencies."
+        },
+        {
+            "heading": "3.1 PROBLEM FORMULATION",
+            "text": "We denote the trajectory sequence of pedestrian i as xTi , the 3d and 2d local pose coordinates as x3dPi and x 2dP i respectively, and the 3d and 2d bounding box coordinates as x 3dB i and x2dBi , respectively. We also label the observed time-steps as t = 1, ..., Tobs and the prediction time-steps as t = Tobs + 1, ..., Tpred. In a scene with N pedestrians, the network input is X = [X1, X2, X3, ..., XN ], where Xi = {xci , c \u2208 {T,3dP,2dP,3dB,2dB}} depending on the availability of different cues. The tensor xci has a shape of (Tobs, e\nc, f c), where ec represents the number of elements in a specific cue (for example the number of keypoints) and f c denotes the number of features for each element.\nWithout loss of generality, we consider X1 as the primary agent. The network\u2019s output, Y = Y1, contains the predicted future trajectory of the primary pedestrian, following the standard notation."
+        },
+        {
+            "heading": "3.2 INPUT CUES EMBEDDINGS",
+            "text": "To effectively incorporate the visual cues into our model, we employ a cue-specific embedding layer to embed the coordinates of the trajectory and all visual cues for each past time-step. In addition, we utilize positional encoding techniques to represent the input cues\u2019 temporal order. We also need to encode the identity of the person associated with each cue and the keypoint type for keypointrelated cues (e.g., neck, hip, shoulder). To tackle this, we introduce three distinct embeddings: one for temporal order, one for person identity, and one for keypoint type. The temporal order embedding facilitates the understanding of the sequence of cues, enabling the model to capture temporal dependencies and patterns. The person identity embedding allows the model to distinguish between different individuals within the input data. Lastly, the keypoint type embedding enhances the model\u2019s ability to extract relevant features and characteristics associated with different keypoint types movement. These embeddings are randomly initialized and learned during the training.\nHci = MLP c(xci ) + P,\nThe resulting tensor Hci has a shape of (Tobs, e c, D), where D represents the embedding dimension, MLP c refers to cue-specific Multi-Layer Perceptron (MLP) embedding layers, and the tensor P contains positional encoding information."
+        },
+        {
+            "heading": "3.3 LATENT INPUT QUERIES",
+            "text": "We equip each agent with a set of latent queries labeled as Qi of shape (Tpred \u2212 Tobs, D). Given the substantial and variable quantity of input modalities, we employ latent queries to encompass the motion information of each agent across the multitude of modalities. These queries encoded by the CMT, together with the 2d coordinate representations of past motion, are then directed into the second transformer ST. In the final layers of the network, each latent query associated with the primary agent is mapped to represent one of the potential future positions."
+        },
+        {
+            "heading": "3.4 CROSS-MODALITY TRANSFORMER (CMT)",
+            "text": "The CMT in our model is designed to process various inputs embedding vectors. By incorporating these different cues, the CMT is capable of encoding a more comprehensive and informative representation of the agent\u2019s motion dynamics. Furthermore, CMT employs shared parameters to process the various modalities and ensure efficient information encoding across different inputs.\nmQi,mH c i = CMT(Qi, H c i , c \u2208 {T, 3dP, 2dP, 3dB, 2dB}).\nCMT transforms the latent representation of agent motion, concat(HTi , Qi), into a motion crossmodal tensor mHMi with shape (Tpred, D) where mH M i = concat(mH T i ,mQi). Similarly, each cues embedding tensor Hci is mapped to mH c i with shape (Tobs, e c, D).\nIt is important to note that while our CMT receives inputs from various cues, only the motion crossmodal tensor mHMi is passed to the ST transformer. Therefore, the number of input vectors to the ST is independent of the number of the input cues. This decision is based on the assumption that the motion cross-modal features capture and encode information from the different cues."
+        },
+        {
+            "heading": "3.5 SOCIAL TRANSFORMER (ST)",
+            "text": "ST in our model integrates the motion tensors from the CMT across all agents. By combining the individual representations from different agents, the ST creates a comprehensive representation of the collective behavior, considering the influence and interactions among the agents. This enables the model to better understand and predict the complex dynamics in multi-agent scenarios.\nSMi = ST (mH M i , i \u2208 [1, N ]).\nST transforms the motion cross-modal tensor of each agent mHMi to a socially aware encoding tensor SMi with shape (Tpred, eT , D). We denote SMi = concat(SMTi , SM Q i ), where SM T i and SMQi are respectively the mappings of mH T i and mQi.\nFinally, SMQ1 undergoes a projection layer that transforms it into the 2d coordinate predictions of the future positions."
+        },
+        {
+            "heading": "3.6 INPUT MASKING",
+            "text": "To ensure the generality and adaptability of our network, we employ a training approach that involves masking different types and quantities of visual cues. Each sample in the training dataset is augmented with a variable combination of cues, including trajectories, 2d or 3d human pose information, and bounding boxes. This masking technique enables our network to learn and adapt to various cue configurations during training.\nSubsequently, we conduct testing to evaluate the model\u2019s performance across different combinations of visual cues. By systematically varying the presence or absence of specific cues in the input, we assess the model\u2019s ability to leverage different cues for accurate trajectory prediction.\nOur model is trained with Mean Square Error (MSE) loss function between Y and ground truth Y\u0302."
+        },
+        {
+            "heading": "4 EXPERIMENTS",
+            "text": "In this section, we present the datasets used, metrics and baselines, and an extensive analysis of the results in both quantitative and qualitative aspects followed by the discussion. The implementation details will be found in Appendix B."
+        },
+        {
+            "heading": "4.1 DATASETS",
+            "text": "We evaluate on three publicly available datasets providing visual cues: JTA (Fabbri et al., 2018), JRDB (Martin-Martin et al., 2021), and Pedestrians and Cyclists in Road Traffic (Kress et al., 2022). Furthermore, in Appendix A.1, we report on the well-known ETH-UCY dataset (Pellegrini et al., 2009; Lerner et al., 2007), which does not contain visual cues.\nJTA dataset: a large-scale synthetic dataset containing 256 training sequences, 128 validation sequences, and 128 test sequences, with a total of approximately 10 million 3d keypoints annotations. The abundance of data and multi-agent scenarios in this dataset enables a thorough exploration of our models\u2019 potential performance, thus we consider this dataset as our main dataset. We predict the location of future 12 time-steps given the previous 9 time-steps.\nJRDB dataset: a real-world dataset that provides a diverse set of pedestrian trajectories and 2d bounding boxes, allowing for a comprehensive evaluation of our models in both indoor and outdoor scenarios. We used \u2018gates-ai-lab\u2019 for validation, indoor scenario \u2018packard-poster-session\u2019 and outdoor scenario \u2018tressider\u2019 for testing and the other scenarios for training. We predict future 12 time-steps given past 9 time-steps under 2.5 frames per second (fps).\nPedestrians and Cyclists in Road Traffic dataset: gathered from real-world urban traffic settings, comprises more than 2, 000 pedestrian trajectories paired with their corresponding 3d body poses. It contains 50, 000 test samples. For evaluations on this dataset, the models observe one second and predict the next 2.52 seconds at 25 fps."
+        },
+        {
+            "heading": "4.2 METRICS AND BASELINES",
+            "text": "We evaluate the models in terms of Average Displacement Error (ADE), Final Displacement Error (FDE) and Average Specific Weighted Average Euclidean Error (ASWAEE) (Kress et al., 2022):\n- ADE: the average displacement error between the predicted location and the real location of the pedestrian across all prediction time-steps;\n- FDE: the displacement error between the final predicted location and the real location;\n- ASWAEE: the average displacement error per second for specific time-steps; Following Kress et al. (2022), we compute it for these five time-steps: [t=0.44s, t=0.96s, t=1.48s, t=2.00s, t=2.52s]\nWe selected the best-performing trajectory prediction models (Alahi et al., 2016; Kothari et al., 2021; Giuliari et al., 2021; Gupta et al., 2018) from the Trajnet++ leaderboard (Kothari et al., 2021). In addition, we compare with recent state-of-the-art models EqMotion (Xu et al., 2023a), Autobots (Girgis et al., 2022), and Trajectron++ (Salzmann et al., 2020) and pose-based trajectory prediction model (Kress et al., 2022). Note that in this paper, we concentrate on deterministic prediction, and thus, all models generate a single trajectory per agent."
+        },
+        {
+            "heading": "4.3 RESULTS",
+            "text": "Quantitative results Table 1 compares the previous models with our proposed visual-cues-based model on two datasets. Our model, even when provided with only past trajectory information at inference time, surpasses previous models in terms of ADE/FDE. Moreover, the integration of pose information into our model leads to a significant enhancement. This improvement stems from the ability of pose-based models to capture body rotation patterns before changes in walking direction occur. 3d pose yields better improvements compared to 2d pose. It can be attributed to the fact that modeling social interactions requires more spatial information, and 3d pose provides the advantage of depth perception compared to 2d pose.\nThe absence of pose information in the JRDB dataset led us to rely on bounding boxes as visual cue. The results show that incorporating bounding boxes is better than only-trajectory-based predictions. Additionally, we conducted a similar experiment on the JTA dataset and observed that the inclusion of 2d bounding boxes, in addition to trajectories, improved the FDE metric. However, it is important to note that the performance was still lower compared to utilizing 3d pose cues.\nFurthermore, we conducted an experiment taking as input trajectory, 3d pose and 3d bounding box. The findings show that the performance of this combination was similar to using only trajectories\nand 3d poses. This suggests that, on average, incorporating 3d bounding boxes does not provide additional information beyond what is already captured by 3d poses. Lastly, we assessed the model\u2019s performance using all accessible cues: trajectory, 3d and 2d poses, and 3d and 2d bounding boxes, and it yielded the best outcomes."
+        },
+        {
+            "heading": "Qualitative results",
+            "text": "Figure 3 provides a visual comparison between Social-Transmotion, which uses only trajectory inputs, with its pose-based counterpart. The inclusion of pose information helps the model predict when the agent changes its direction and avoid collisions with neighbors. For instance, in the right figure, adding pose enables the model to understand body rotation and collision avoidance simultaneously, resulting in a prediction closer to the ground truth\nPredicting sudden turns presents a significant challenge for trajectory prediction models. However, the addition of pose information can help overcome this. As demonstrated in the middle figure, the pose-based model excels in scenarios involving sudden turns, leveraging pose to anticipate forthcoming changes in walking state, an aspect the conventional model fails to capture. We also provide some failure cases of the model in Appendix A.5."
+        },
+        {
+            "heading": "4.4 DISCUSSIONS",
+            "text": "What if we have imperfect input? In real-world situations, obtaining complete trajectory and body poses can be challenging due to obstructions or errors in pose estimation. Therefore, we conducted an experiment where we evaluated the model using randomly masked trajectories and pose keypoints in the observation. We compared the performance of the generic model (trained on all visual cues with masking) and the specific model (trained on trajectory and pose) as presented in Table 2. The results demonstrate that our proposed generic model exhibits significantly greater robustness against both low quantities and low-quality input data. By utilizing modality masking and meta-masking, our generic model reduces its reliance on a single modality and enhances robustness. For instance, when both models encounter challenging incomplete trajectory and pose input (50% T + 10% 3d P), the ADE/FDE drop of the generic model (+19.1% / +16.2%) is substantially smaller compared to the specific model (+65.9% / +65.3%). Additionally, the generic model proves to be more adept at handling noisy pose keypoints than the specific model.\nWhat if we use different variations of 3d pose? Previously, we observed that the 3d Pose-based model achieves the best performance. To delve deeper into the contribution of pose information in improving ADE and FDE, we conducted an ablation study on different variations of pose. To investigate the impact of neighboring poses, we assessed if the performance boost resulted from the primary pedestrian\u2019s pose alone or if interactions contributed. Table 3 shows that relying solely on the primary pedestrian\u2019s pose significantly improves performance over the purely trajectory-based Social-Transmotion. However, incorporating all pedestrian poses further enhances performance, underscoring the significance of considering pose interactions in trajectory prediction. Then, we utilized the last observed pose as the only visual cue for all agents in the scene. Table 3 shows similar performance with just the last observed frame compared to all observed frames, highlighting the importance of the last frame for trajectory prediction. Our investigation also extended to the exclusive use of head pose as the visual cue, i.e., all non-head pose keypoints were excluded. Table 3 demonstrates that the performance with only head pose is similar to the trajectory-only model. This suggests the importance of including other keypoints for improved model performance. In Appendix A.3, we provide the spatial and temporal attention maps for further investigations.\nWhat if we use other architecture designs instead of CMT\u2013ST? Our Social-Transmotion architecture employs two transformers: one for individual pedestrian feature extraction and another for capturing pedestrian interactions. Here, we conduct a comparative analysis of this dual-transformer setup against three alternative designs in Table 4. In the MLP\u2013ST design, we adopt a unified single-transformer model. Trajectory and pose information is extracted using a Multi-Layer Perceptron (MLP), and the resultant tokens representing\nvarious pedestrian features are aggregated. This allows for simultaneous attention to the diverse features of all pedestrians. The observed performance decline in Table 4 underscores the advantages of utilizing CMT for extracting useful features. We also tested the impact of swapping the order of CMT and ST, involving the extraction of all pedestrians\u2019 features at a specific time-step, followed by the second transformer to attend to all time-steps. Table 4 shows the increased errors. Our hypothesis is that the relationships between an individual\u2019s keypoints across different time-steps are more significant than the interactions among keypoints of multiple individuals within a specific time-step. The ST first approach challenges the network by requiring it to extract useful information from numerous irrelevant connections. To assess the influence of social interaction modeling, we conducted an experiment where we removed ST while retaining the CMT only configuration. As outlined in Table 4, we observe a significant performance drop. This underscores the effectiveness of dual-transformers."
+        },
+        {
+            "heading": "4.5 EXPERIMENT ON PEDESTRIANS AND CYCLISTS IN ROAD TRAFFIC DATASET",
+            "text": "Table 5 compares our model to the previous work by Kress et al. (2022) that used 3d body pose to predict human trajectories on this dataset. Here, the notations \u2019c\u2019 and \u2019d\u2019 represent two variations of their model using a continuous or discrete approach, respectively. The results indicate the effectiveness of our dual transformer and its proficiency in utilizing pose information because of the masking strategy."
+        },
+        {
+            "heading": "5 CONCLUSIONS",
+            "text": "In this work, we introduced Social-Transmotion, the first generic promptable Transformer-based model adept at managing diverse visual cues in varying quantities, thereby augmenting trajectory data for enhanced human trajectory prediction. Social-Transmotion, engineered for adaptability, highlights that with an efficient masking strategy and a powerful network, integrating visual cues is never harmful and, in most cases, helpful (free win). By embracing the multi-modal aspects of human behavior, our approach pushed the limits of conventional trajectory prediction performance.\nLimitations: While our generic model can work with any visual cue, we have examined a limited set of visual cues and noted instances in the appendix where they did not consistently enhance trajectory prediction performance. In the future, one can study the potential of alternative visual cues such as gaze direction, actions, and other attributes, taking into account their presence in datasets. Moreover, although our model demonstrates strong performance even without visual cues, it is important to note that we rely on estimation methods to derive these cues. An intriguing avenue for research involves benefiting directly from images by the development of efficient feature extraction networks. These networks could facilitate the transformation of images into optimized prompts, enabling the direct utilization of visual information."
+        },
+        {
+            "heading": "A MORE RESULTS",
+            "text": ""
+        },
+        {
+            "heading": "A.1 PERFORMANCE ON THE ETH-UCY DATASET",
+            "text": "In the paper, we have presented our proposed generic model, highlighting its adaptability to various visual modalities. We have also conducted a comparative analysis with prior models using datasets that incorporate visual cues. In this section, our aim is to assess the model\u2019s performance on the widely recognized ETH-UCY dataset, which has only trajectory labels.\nThe ETH-UCY dataset (Pellegrini et al., 2009; Lerner et al., 2007) is a real-world dataset that provides 2d pedestrian trajectories labels in birds-eye-view. It has five different subsets named ETH, Hotel, Univ, Zara1 and Zara2. Following established conventions in previous research, we employ the task of predicting 12 future time-steps based on 8 preceding time-steps, all observed at a frame rate of 2.5 fps.\nTable 6 illustrates the deterministic prediction performance of ours and previous works. Notably, our model shows commendable performance, particularly on the challenging ETH subset. This is attributed to the efficacy of our dual-transformer architecture, enabling our model to attain superior results on the ETH subset and competitive performance on other subsets when using solely trajectory as input."
+        },
+        {
+            "heading": "A.2 PERFORMANCE ON THE WAYMO PERCEPTION DATASET",
+            "text": "To enhance our analysis of multi-person multi-modal traffic scenarios, we added the Waymo Perception dataset. This dataset was chosen for its extensive multi-modal annotations, including 2D/3D bounding boxes and 2D/3D pose keypoints of humans, as well as frame conversions and 2D-3D label associations.\nDue to the substantial size of the Waymo Perception dataset and the time constraints, we conducted training and evaluation on selected subsets (25,000 random samples from the training set and 5,000 random samples from the validation set). Our model leverages the various visual labels and their associations provided by this dataset whenever they are available, and masks them out when not.\nFor comparison, we selected two recent top-performing models based on the results presented in Table 1: EqMotion (from CVPR 2023) and the transformer-based Autobots (from ICLR 2022). The detailed results can be found in Table 7.\nIt shows that our model exhibits superior performance compared to previous works. We acknowledge that with further hyperparameter tuning, optimization, and training on the entire dataset, our model\u2019s performance could be further enhanced."
+        },
+        {
+            "heading": "A.3 ATTENTION MAPS",
+            "text": "To explore the impact of different keypoints/frames on trajectory prediction task, we displayed the attention maps in Figure 4. The first map illustrates temporal attention, and the second map represents spatial attention. The attention weights assigned to earlier frames are comparatively lower, indicating that later frames contain more valuable information for trajectory prediction. In simpler scenarios, the last observed frame may be sufficient, as demonstrated in our previous ablation study. However, in more complex scenarios, a larger number of observation frames may be required.\nWe also observed that specific keypoints, such as the ankles, wrists, and knees, play a significant role in determining direction and movement. Generally, there is symmetry across different body points, with a slight tendency towards the right. We hypothesize it may be attributed to data bias. These findings open up opportunities for further research, particularly in identifying a sparse set of essential keypoints that can offer advantages in specific applications.\nIn addition, Figures 5 and 6 depicts two examples involving turns. For the simpler scenario (Figure 5), a single frame capturing body rotation is adequate. Conversely, for the more complex situation (Figure 6), several frames prove to be more informative in facilitating accurate trajectory prediction."
+        },
+        {
+            "heading": "A.4 QUALITATIVE RESULTS",
+            "text": "In Figure 7, we have provided visual comparisons between our model and the best baseline, EqMotion, on the JTA dataset. Both models successfully capture interactions with neighboring agents. However, our model exhibits a higher level of progressiveness, leveraging interactions across a greater number of agents and more modalities (pose and trajectory). This distinct feature results in predictions that are closer to the ground truth."
+        },
+        {
+            "heading": "A.5 QUALITATIVE RESULTS: FAILURE CASES",
+            "text": "We have also incorporated illustrative instances showcasing instances where the model\u2019s performance falls short. These examples serve as valuable insights, pinpointing potential avenues for enhancement. For instance, as portrayed in Figure 8 and Figure 9, it becomes apparent that relying solely on poses may not always yield optimal outcomes. The integration of supplementary visual cues like gaze or the original scene image could potentially offer advantageous improvements."
+        },
+        {
+            "heading": "A.6 COMPUTATIONAL COSTS",
+            "text": "In inference time, Social-Transmotion demonstrates a prediction duration of 8.08 milliseconds on average for forecasting future timesteps (4.8 seconds) given all visual cues. The timings of other input configurations are detailed in the following table. It is noteworthy that we observe 29% reduction in evaluation time when using only trajectory input modality; however, this comes at the cost of reduced accuracy. It is important to acknowledge that our approach relies on additional estimation methods within its pipeline. Hence, when considering the complete processing time, especially for potential real-world deployments, these factors should be taken into account.\nA.7 IMPERFECT POSE\nIn the main text, we have observed the performance under noisy situations. Here, we want to extend those experiments.\nWe conducted an experiment involving an off-the-shelf pose estimator Grishchenko et al. (2022), on the JRDB dataset (ground-truth 3D pose is not available). The obtained estimated 3D poses were then used as input cues for evaluating our model without re-training. As demonstrated in Table 9, our model exhibits a notable capacity to leverage even imperfect pose estimations, resulting in a performance improvement. Note that while the gain achieved with pseudo-ground-truth pose (here on the JRDB dataset) is slightly lower compared to utilizing ground-truth pose (as showcased in the main paper with a gain of about 10.1% and 8.58% on the JTA dataset), our generic model\u2019s adaptability to real-world pose estimators underscores its robustness and practical utility in scenarios where accurate ground-truth information may be challenging to obtain. One way to lower this gap is to train the model with the estimated / inaccurate poses.\nThen, we conducted experiments to assess our model\u2019s performance under occlusions by masking keypoints in specific temporal or spatial areas. These experiments included these scenarios: 1) Random leg and arm occluded 3d P: leg and arm joints are randomly occluded with the same probability of 50%; 2) Structurally occluded 3d P: the right leg joints for all frames are missing; 3) Whole frame missing 3d P: the pose in some frames are completely missing with a dedicated probability; Our findings in Table 10 demonstrate that our model maintains robustness against both temporal and spatial occlusions, with diminishing performance only at very high occlusion rates. Furthermore, Figure 10 qualitatively shows that inputting all keypoints yields similar results to scenarios with only occluded keypoints.\nThe experiments also revealed that imperfect observation such as excessive noise in pose data (e.g., Gaussian noise with a standard deviation of 50) could misguide the model, pointing to a possible limitation. To mitigate this, one option is to do data augmentation techniques, which might improve robustness at the expense of accuracy on clean data. The choice would be application-dependent. Alternatively, selecting and developing a more reliable pose estimator could address this issue. This expanded discussion has been included in the manuscript."
+        },
+        {
+            "heading": "A.8 DIFFERENT PERCENTAGES OF DATA QUANTITY FOR TRAINING",
+            "text": "we conducted experiments with models trained on incrementally increasing data quantities. The outcomes of these experiments, as detailed in Table 11, indicate a marked performance enhancement up to the 40% data volume threshold. Post this threshold, we observe steady improvements up until the 80% data mark. Post-80%, there is a noticeable plateau in performance enhancement."
+        },
+        {
+            "heading": "A.9 RELATED WORKS ON VEHICLE TRAJECTORY PREDICTION",
+            "text": "Vehicle trajectory prediction is a critical component in the domain of autonomous driving and traffic management, where the primary goal is to forecast the paths that vehicles will take based on their current states and surroundings. Distinct from human trajectory prediction, which is our study\u2019s focus, vehicle trajectory prediction often involves considers the static scenes as an important feature.\nThere are several related works tackling trajectory prediction for vehicle(Nayakanti et al. (2023); Jiang et al. (2023); Zhou et al. (2023); Xu et al. (2023b)). Here, we take WayformerNayakanti et al. (2023) as an example and compare. Our proposed dual-transformer is modified from the language model BERT, which is different from the encoder-decoder structure used in Wayformer. The main similarity of our model and Wayformer for is that both use latent queries to encode features from different modalities. However, in the case of Wayformer and most trajectory prediction architectures, the modalities represent only the locations of agents and map information. Our model differs in its focus on broader visual cues beyond that, leading to distinct learning processes for agent interactions. In Wayformer, the model learns the agent-agent interaction based on the location. In contrast, our model, designed for the task of human trajectory prediction, necessitates learning not only location-wise interactions but also pose interactions across agents. This distinction becomes particularly crucial in complex, crowded scenes where each agent may exhibit multiple modalities. Consequently, to address the challenge of modeling these intricate interactions, we employ distinct transformers for cross-modal feature extraction and social interactions, which enables the model to learn how neighbours\u2019 poses, bounding boxes and trajectories affect the agent\u2019s future trajectory.\nB IMPLEMENTATION DETAILS"
+        },
+        {
+            "heading": "B.1 HYPERPARAMETERS",
+            "text": "Our training configuration for the model included three layers and four heads for both the CrossModality Transformer (CMT) and Social Transformer (ST), with a model dimension of 128. The Adam optimizer (Kingma & Ba, 2014) was employed, starting with a learning rate of 1e-4, which decreased by a factor of 0.1 after completing 80% of a total of 50 epochs. We implemented a 30% modality-mask and 10% meta-mask. The CMT comprises 6 layers with 4 heads, while the ST comprises 3 layers with 4 heads. All training was executed on a NVIDIA V100 GPU with 32GB of memory."
+        },
+        {
+            "heading": "B.2 USER-INTERACTIVE VISUALIZATION",
+            "text": "To further illustrate the enhancements brought by pose integration, we have created an interactive visualization toolbox. This tool can concurrently display both pose and trajectory from any desired\nviewpoint. As demonstrated in Figure 11, this dynamic visualisation of a scene from two separate angles underlines the significant role that pose plays in discerning the correct direction of movement. We will release this toolbox.\nB.3 3D POSE NORMALIZATION FOR JTA DATASET\nThe original 3d coordinates provided by JTA (Fabbri et al., 2018) are in camera systems. Since the camera angle is not fixed for different sequences, converting them into world coordinates can make data, i.e., normalize 3d body poses so that the model can better understand poses. However, the extrinsic camera matrix is not provided in this dataset. To solve this issue, we come up with an approximation method based on the average height of every sequence.\nSpecifically, we first find the sequence with the most horizontal camera angle by calculating min(zc max \u2212 zc min). In Figure 12, we can easily find that, as (zc max \u2212 zc min) becomes smaller until (zw max\u2212zw min), the rotation angle \u03b2 will become smaller until 0. After finding the sequence with the most horizontal camera angle, we assume the rotation angle \u03b2 is zero in this sequence, then we denote the standard average height h\u2032 as the average height of every pedestrian of this sequence. When the camera direction is not parallel to the ground, the average height of pedestrians will be the projection of real average heights on zc axis. Therefore, we can set the standard average height h\u2032 as a threshold and calculate the approximate rotation angle then get coordinates in world coordinates. Mathematically, we can calculate the world coordinates with the following equations:\n\u03b2 \u2248 { arccos (ht/h \u2032) if ht < h\u2032\n0 if ht \u2265 h\u2032 , (1)\nwhere ht is the average height of relevant sequences and h\u2032 is the standard average height derived from the most horizontal camera angle. Therefore, we can compute world coordinates with:(\nxw yw zw\n) = ( 1 0 0 0 cos\u03b2 sin\u03b2 0 \u2212 sin\u03b2 cos\u03b2 )( xc yc zc ) . (2)\nUsing this method, in Figure 13, we observe pedestrians are normalized, i.e., standing vertically to the ground."
+        }
+    ],
+    "year": 2023
+}

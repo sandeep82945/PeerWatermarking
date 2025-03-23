@@ -1,0 +1,586 @@
+{
+    "abstractText": "Inverse problems aim to determine parameters from observations, a crucial task in engineering and science. Lately, generative models, especially diffusion models, have gained popularity in this area for their ability to produce realistic solutions and their good mathematical properties. Despite their success, an important drawback of diffusion models is their sensitivity to the choice of variance schedule, which controls the dynamics of the diffusion process. Fine-tuning this schedule for specific applications is crucial but time-consuming and does not guarantee an optimal result. We propose a novel approach for learning the schedule as part of the training process. Our method supports probabilistic conditioning on data, provides high-quality solutions, and is flexible, proving able to adapt to different applications with minimum overhead. This approach is tested in two unrelated inverse problems: super-resolution microscopy and quantitative phase imaging, yielding comparable or superior results to previous methods and fine-tuned diffusion models. We conclude that fine-tuning the schedule by experimentation should be avoided because it can be learned during training in a stable way that yields better results. The code is available on https://github.com/casus/cvdm",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Gabriel della Maggiora"
+        },
+        {
+            "affiliations": [],
+            "name": "Luis Alberto Croquevielle"
+        },
+        {
+            "affiliations": [],
+            "name": "Nikita Deshpande"
+        },
+        {
+            "affiliations": [],
+            "name": "Harry Horsley"
+        },
+        {
+            "affiliations": [],
+            "name": "Thomas Heinis"
+        },
+        {
+            "affiliations": [],
+            "name": "Artur Yakimovich"
+        }
+    ],
+    "id": "SP:31cbf762fef89734f9eb7b81a498e982dc68fddf",
+    "references": [
+        {
+            "authors": [
+                "Martin Benning",
+                "Martin Burger"
+            ],
+            "title": "Modern regularization methods for inverse problems",
+            "venue": "Acta numerica,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Sayantan Bhadra",
+                "Varun A Kelkar",
+                "Frank J Brooks",
+                "Mark A Anastasio"
+            ],
+            "title": "On hallucinations in tomographic image reconstruction",
+            "venue": "IEEE transactions on medical imaging,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Daniela Calvetti",
+                "Erkki Somersalo"
+            ],
+            "title": "Inverse problems: From regularization to bayesian inference",
+            "venue": "Wiley Interdisciplinary Reviews: Computational Statistics,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Nanxin Chen",
+                "Yu Zhang",
+                "Heiga Zen",
+                "Ron J Weiss",
+                "Mohammad Norouzi",
+                "William Chan"
+            ],
+            "title": "Wavegrad: Estimating gradients for waveform generation",
+            "venue": "arXiv preprint arXiv:2009.00713,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Zheng Chen",
+                "Yulun Zhang",
+                "Ding Liu",
+                "Bin Xia",
+                "Jinjin Gu",
+                "Linghe Kong",
+                "Xin Yuan"
+            ],
+            "title": "Hierarchical integration diffusion model for realistic image deblurring, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Wenyan Cong",
+                "Jianfu Zhang",
+                "Li Niu",
+                "Liu Liu",
+                "Zhixin Ling",
+                "Weiyuan Li",
+                "Liqing Zhang"
+            ],
+            "title": "Image harmonization datasets: Hcoco, hadobe5k, hflickr, and hday2night",
+            "venue": "URL http://arxiv.org/abs/1908.10526",
+            "year": 1908
+        },
+        {
+            "authors": [
+                "Florinel-Alin Croitoru",
+                "Vlad Hondru",
+                "Radu Tudor Ionescu",
+                "Mubarak Shah"
+            ],
+            "title": "Diffusion Models in Vision: A Survey",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Jia Deng",
+                "Wei Dong",
+                "Richard Socher",
+                "Li-Jia Li",
+                "Kai Li",
+                "Li Fei-Fei"
+            ],
+            "title": "Imagenet: A large-scale hierarchical image database",
+            "venue": "IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "A. Descloux",
+                "K.S. Gru\u00dfmayer",
+                "A. Radenovic"
+            ],
+            "title": "Parameter-free image resolution estimation based on decorrelation analysis",
+            "venue": "Nature Methods,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Prafulla Dhariwal",
+                "Alex Nichol"
+            ],
+            "title": "Diffusion models beat gans on image synthesis",
+            "venue": "CoRR, abs/2105.05233,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Juan Luis Fern\u00e1ndez-Mart\u0131\u0301nez",
+                "Z Fern\u00e1ndez-Mu\u00f1iz",
+                "JLG Pallero",
+                "Luis Mariano"
+            ],
+            "title": "PedrueloGonz\u00e1lez. From bayes to tarantola: new insights to understand uncertainty in inverse problems",
+            "venue": "Journal of Applied Geophysics,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Jonathan Ho",
+                "Ajay Jain",
+                "Pieter Abbeel"
+            ],
+            "title": "Denoising Diffusion Probabilistic Models, December 2020",
+            "venue": "URL http://arxiv.org/abs/2006.11239. arXiv:2006.11239 [cs, stat]",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "Phillip Isola",
+                "Jun-Yan Zhu",
+                "Tinghui Zhou",
+                "Alexei A. Efros"
+            ],
+            "title": "Image-to-image translation with conditional adversarial networks",
+            "venue": "CoRR, abs/1611.07004,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Bahjat Kawar",
+                "Michael Elad",
+                "Stefano Ermon",
+                "Jiaming Song"
+            ],
+            "title": "Denoising diffusion restoration models, 2022",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Diederik P. Kingma",
+                "Max Welling"
+            ],
+            "title": "Auto-Encoding Variational Bayes, December 2022",
+            "venue": "URL http://arxiv.org/abs/1312.6114",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Diederik P. Kingma",
+                "Tim Salimans",
+                "Ben Poole",
+                "Jonathan Ho"
+            ],
+            "title": "Variational Diffusion Models, April 2023",
+            "venue": "URL http://arxiv.org/abs/2107.00630",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yury Korolev",
+                "Jonas Latz"
+            ],
+            "title": "Lecture notes, michaelmas term 2020 university of cambridge",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jaakko Lehtinen",
+                "Jacob Munkberg",
+                "Jon Hasselgren",
+                "Samuli Laine",
+                "Tero Karras",
+                "Miika Aittala",
+                "Timo Aila"
+            ],
+            "title": "Noise2noise: Learning image restoration without clean data, 2018",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Michael Lustig",
+                "David Donoho",
+                "John M. Pauly"
+            ],
+            "title": "Sparse MRI: The application of compressed sensing for rapid MR imaging",
+            "venue": "Magnetic Resonance in Medicine,",
+            "year": 2007
+        },
+        {
+            "authors": [
+                "David JC MacKay"
+            ],
+            "title": "Information theory, inference and learning algorithms",
+            "venue": "Cambridge university press,",
+            "year": 2003
+        },
+        {
+            "authors": [
+                "Ahmad Mousavi",
+                "Mehdi Rezaee",
+                "Ramin"
+            ],
+            "title": "Ayanzadeh. A survey on compressive sensing",
+            "venue": "Classical results and recent advancements,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Alex Nichol",
+                "Prafulla Dhariwal"
+            ],
+            "title": "Improved Denoising Diffusion Probabilistic Models, February 2021",
+            "venue": "URL http://arxiv.org/abs/2102.09672",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Richard Nickl"
+            ],
+            "title": "Bayesian non-linear statistical inverse problems",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Lukas Owens"
+            ],
+            "title": "Exploring the rate of convergence of approximations to the riemann integral",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Anna Pyzara",
+                "Beata Bylina",
+                "Jaros\u0142aw Bylina"
+            ],
+            "title": "The influence of a matrix condition number on iterative methods",
+            "venue": "Federated Conference on Computer Science and Information Systems (FedCSIS),",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Chang Qiao",
+                "Di Li",
+                "Yuting Guo",
+                "Chong Liu",
+                "Tao Jiang",
+                "Qionghai Dai",
+                "Dong Li"
+            ],
+            "title": "Evaluation and development of deep neural networks for image super-resolution in optical microscopy",
+            "venue": "Nature Methods,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Olaf Ronneberger",
+                "Philipp Fischer",
+                "Thomas Brox"
+            ],
+            "title": "U-net: Convolutional networks for biomedical image segmentation",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Chitwan Saharia",
+                "Jonathan Ho",
+                "William Chan",
+                "Tim Salimans",
+                "David J. Fleet",
+                "Mohammad Norouzi"
+            ],
+            "title": "Image Super-Resolution via Iterative Refinement, June 2021",
+            "venue": "URL http://arxiv.org/abs/ 2104.07636",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Chitwan Saharia",
+                "William Chan",
+                "Huiwen Chang",
+                "Chris A. Lee",
+                "Jonathan Ho",
+                "Tim Salimans",
+                "David J. Fleet",
+                "Mohammad Norouzi"
+            ],
+            "title": "Palette: Image-to-image diffusion models, 2022",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Justin Sirignano",
+                "Konstantinos Spiliopoulos"
+            ],
+            "title": "DGM: A deep learning algorithm for solving partial differential equations",
+            "venue": "Journal of Computational Physics,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Jascha Sohl-Dickstein",
+                "Eric Weiss",
+                "Niru Maheswaranathan",
+                "Surya Ganguli"
+            ],
+            "title": "Deep unsupervised learning using nonequilibrium thermodynamics",
+            "venue": "In International conference on machine learning,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Jiaming Song",
+                "Chenlin Meng",
+                "Stefano Ermon"
+            ],
+            "title": "Denoising diffusion implicit models, 2022",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yang Song",
+                "Jascha Sohl-Dickstein",
+                "Diederik P. Kingma",
+                "Abhishek Kumar",
+                "Stefano Ermon",
+                "Ben Poole"
+            ],
+            "title": "Score-Based Generative Modeling through Stochastic Differential Equations, February 2021",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "N. Streibl"
+            ],
+            "title": "Phase imaging by the transport equation of intensity",
+            "venue": "Optics Communications,",
+            "year": 1984
+        },
+        {
+            "authors": [
+                "Michael Reed Teague"
+            ],
+            "title": "Deterministic phase retrieval: a green\u2019s function solution",
+            "venue": "J. Opt. Soc. Am.,",
+            "year": 1983
+        },
+        {
+            "authors": [
+                "Laura Waller",
+                "Lei Tian",
+                "George Barbastathis"
+            ],
+            "title": "Transport of intensity phase-amplitude imaging with higher order intensity derivatives",
+            "venue": "Opt. Express,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Zhou Wang",
+                "Eero P Simoncelli",
+                "Alan C Bovik"
+            ],
+            "title": "Multiscale structural similarity for image quality assessment",
+            "venue": "In The Thrity-Seventh Asilomar Conference on Signals, Systems & Computers,",
+            "year": 2003
+        },
+        {
+            "authors": [
+                "Xiaofeng Wu",
+                "Ziling Wu",
+                "Sibi Chakravarthy Shanmugavel",
+                "Hang Z. Yu",
+                "Yunhui Zhu"
+            ],
+            "title": "Physicsinformed neural network for phase imaging based on transport of intensity equation",
+            "venue": "Opt. Express,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jialin Zhang",
+                "Qian Chen",
+                "Jiasong Sun",
+                "Long Tian",
+                "Chao Zuo"
+            ],
+            "title": "On a universal solution to the transport-of-intensity equation",
+            "venue": "Optics Letters,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Chao Zuo",
+                "Jiaji Li",
+                "Jiasong Sun",
+                "Yao Fan",
+                "Jialin Zhang",
+                "Linpeng Lu",
+                "Runnan Zhang",
+                "Bowen Wang",
+                "Lei Huang",
+                "Qian Chen"
+            ],
+            "title": "Transport of intensity equation: a tutorial",
+            "venue": "Optics and Lasers in Engineering,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Kingma"
+            ],
+            "title": "2023) that increasing the number of steps T decreases the error on the condition that the model is good enough. This provides an interesting insight. Kingma et al. (2023) show that in the continuous-time limit, the diffusion loss is invariant to the choice of SNR",
+            "year": 2024
+        },
+        {
+            "authors": [
+                "Kingma"
+            ],
+            "title": "2023), to learn the functions \u03c4\u03b8(t) and \u03c1\u03c7(t) we parametrize them using a monotonic neural network. This network is composed of a residual block with three convolutional layers. The first and third layers employ linear activation",
+            "year": 2023
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Inverse problems deal with the task of finding parameters of interest from observations. Formally, for a mapping A : Y \u2192 X and x \u2208 X (the data), the inverse problem is to find an input y \u2208 Y such that A(y) = x. Examples abound in computer science. For instance, single-image super-resolution can be formulated in this setting. Inverse problems are usually ill-posed, which means that observations underdetermine the system or small errors in the data propagate greatly to the solution.\nDeep networks trained with supervised learning have recently gained popularity for tackling inverse problems in contexts where input-data samples are available. Depending on the application, the optimization might target the L1 or L2 norm, or pixel-wise distance measures in image-based tasks. These methods are effective in many scenarios, but the supervised learning approach can introduce undesired artifacts (Lehtinen et al., 2018) and it does not yield uncertainty estimates for the solutions.\nSince most inverse problems are ill-posed, it makes sense to model the uncertainty explicitly. This can be done by considering y and x as realizations of random variables Y and X , respectively, and learning a conditional probability distribution PY |X . Several methods are available to learn a distribution from pairs of samples (Isola et al., 2016; Peng & Li, 2020; Sohl-Dickstein et al.,\n\u2217Equal contribution\n2015; Kohl et al., 2018). In this work, we use diffusion models, a likelihood-based method with state-of-the-art generation capabilities (Dhariwal & Nichol, 2021; Saharia et al., 2021).\nDiffusion models produce high quality samples and offer stable training (Ho et al., 2020; Kingma et al., 2023). Despite these advantages, they have a few drawbacks, like the number of steps required to generate samples (Song et al., 2022) and their sensitivity to the choice of variance schedule (Saharia et al., 2021; Nichol & Dhariwal, 2021). The variance schedule controls the dynamics of the diffusion process, and it is usually necessary to fine-tune it with a hyperparameter search for each application. This is time-consuming and leads to suboptimal performance (Chen et al., 2020).\nIn this work, we introduce the Conditional Variational Diffusion Model (CVDM), a flexible method to learn the schedule that involves minimum fine-tuning. Our detailed contributions are:\n\u2022 Following Kingma et al. (2023) we learn the schedule as part of the training, extending their approach to the conditioned case. Furthermore, we allow for learning a different schedule for each element in the output (e.g., a pixel-wise for images). These extensions require several technical novelties, including a separation-of-variables strategy for the schedule.\n\u2022 We prove that the rate of convergence of the discrete-time diffusion loss to the continuoustime case depends strongly on the derivatives of the schedule. This shows that the finding in Kingma et al. (2023) that continuous-time diffusion loss is invariant under choice of schedule may not hold in practice. Based on this result, we introduce a novel regularization term that proves to be critical for the performance of the method in our general formulation.\n\u2022 We implement the schedule by replacing the architecture in Kingma et al. (2023) with two networks, one required to be positive for the conditioning variable and one monotonicconvolutional network. This allows us to test our model with inputs of different resolutions without retraining. Moreover, thanks to our clean formulation, our method does not need the post-processing of the schedule that Kingma et al. (2023) introduces, nor the preprocessing of the input. This further contributes to streamlining our implementation.\nWe test CVDM in three distinct applications. For super-resolution microscopy, our method shows comparable reconstruction quality and enhanced image resolution compared to previous methods. For quantitative phase imaging, it significantly outperforms previous methods. For image super-resolution, reconstruction quality is also comparable to previous methods. CVDM proves to be versatile and accurate, and it can be applied to previously unseen contexts with minimum overhead."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "Diffusion probabilistic models (DPMs) (Sohl-Dickstein et al., 2015) are a subset of variational autoencoders methods (Kingma & Welling, 2022; Kingma et al., 2023). Recently, these models have demonstrated impressive generation capabilities (Ho et al., 2020; Dhariwal & Nichol, 2021), performing better than generative adversarial networks (Isola et al., 2016) while maintaining greater training stability. Fundamentally, diffusion models operate by reversing a process wherein the structure of an input is progressively corrupted by noise, according to a variance schedule.\nBuilding on the DPM setup, conditioned denoising diffusion probabilistic models (CDDPMs) have been introduced to tackle challenges like image super-resolution (Saharia et al., 2021), inpainting, decompression (Saharia et al., 2022), and image deblurring (Chen et al., 2023). All the cited works use different variance schedules to achieve their results, which is to be expected, because fine-tuning the schedule is usually a prerequisite to optimize performance (Saharia et al., 2021).\nEfforts have been made to understand variance schedule optimization more broadly. Cosine-shaped schedule functions (Nichol & Dhariwal, 2021) are now the standard in many applications (Dhariwal & Nichol, 2021; Croitoru et al., 2023), showing better performance than linear schedules in various settings. Beyond this empirical observation, Kingma et al. (2023) developed a framework (Variational Diffusion Models, or VDMs) to learn the variance schedule and proved several theoretical properties. Their work supports the idea that learning the schedule during training leads to better performance.\nSpecifically, Kingma et al. (2023) formulate a Gaussian diffusion process for unconditioned distribution sampling. The latent variables are indexed in continuous time, and the forward process diffuses the input driven by a learnable schedule. The schedule must satisfy a few minimal conditions, and its\nparameters are defined as a monotonic network. By forcing the schedule to be contained within a range, the model can be trained by minimizing a weighted version of the noise prediction loss. Their work also introduces Fourier features to improve the prediction of high-frequency details.\nIn this work, we extend VDMs to the conditioned case. To achieve this, we define the schedule as a function of two variables, time t and condition x. This requires careful consideration because the schedule should be monotonic in t and not necessarily with respect to x. To solve this issue, we propose a novel factorization of the schedule and derive several theoretical requirements for the schedule functions. By incorporating these requirements into the loss function, we can train the model in a straightforward way and dispense with the schedule post-processing of Kingma et al. (2023). We adapt the framework proposed by Saharia et al. (2021), which learns a noise prediction model that takes the variance schedule directly as input. To streamline the framework, we eliminate the noise embedding and directly concatenate the output of our learned schedule to the noise prediction model."
+        },
+        {
+            "heading": "3 METHODS",
+            "text": ""
+        },
+        {
+            "heading": "3.1 CONDITIONED DIFFUSION MODELS AND INVERSE PROBLEMS",
+            "text": "For a brief introduction to inverse problems, see Appendix A. For a formulation of non-conditioned DPMs, see Ho et al. (2020); Kingma et al. (2023). In conditioned DPMs we are interested in sampling from a distribution PY |X=x(y), which we denote p(y|x). The samples from this distribution can be considered as solutions to the inverse problem.\nFollowing Kingma et al. (2023), we use a continuous-time parametrization of the schedule and latent variables. Specifically, the schedule is represented by a function \u03b3(t,x) and for each t \u2208 [0, 1] there is a latent variable zt. We formulate the diffusion process using a time discretization, with continuous-time introduced as a limiting case. This formulation is better for the introduction of key concepts like the regularization strategy in Section 3.4. To start with, for a finite number of steps T , let ti = i/T for i \u2208 {0, 1, . . . , T}, and define the forward process by\nq(zti |y,x) = N (\u221a \u03b3(ti,x)y, \u03c3(ti,x)I ) . (1)\nWe use the variance-preserving condition \u03c3(ti,x) = 1 \u2212 \u03b3(ti,x) but sometimes write \u03c3(ti,x) to simplify notation. The whole process is conditioned on y: it starts at zt0 = y and it gradually injects noise, so that each subsequent zti is a noisier version of y, and ztT is almost a pure Gaussian variable. The forward process should start at y in t = 0, so for all x we enforce the condition \u03b3(0,x) = 1.\nWe follow Kingma et al. (2023) in learning the schedule instead of fine-tuning it as a hyperparameter, with some key differences. If y has a vector representation, we learn a different schedule for each component. For example, in the case of images, each pixel has a schedule. This means that functions of \u03b3 apply element-wise and expressions like \u221a \u03b3(ti,x)y represent a Hadamard product.\nSimilarly to the non-conditioned case, the diffusion process is Markovian and each step 0 < i \u2264 T is characterized by a Gaussian distribution q(zti |zti\u22121 ,x) (see Appendix B.1). The posterior q(zti\u22121 |zti ,y,x) also distributes normally, and the parameters ultimately depend on the function \u03b3 (see Appendix B.2). The reverse process is chosen to take the natural shape\np\u03bd(zti\u22121 |zti ,x) = q(zti\u22121 |zti ,y = y\u0302\u03bd(zti , ti,x),x), (2) such that it only differs from the posterior in that y is replaced by a deep learning prediction y\u0302\u03bd . The forward process should end in an almost pure Gaussian variable, so q(ztT |y,x) \u2248 N (0, I) should hold. Hence, for the reverse process we model ztT with\np\u03bd(ztT |x) = N (0, I) (3) for all x. The reverse process is defined by equations (2) and (3) without dependence on y, so we can use them to sample y. Specifically, we can sample from p\u03bd(ztT |x) and then use relation (2) repeatedly until we reach zt0 = y. All the relevant distributions are Gaussian, so this procedure is computationally feasible.\nIn other words, equations (2) and (3) completely define the reverse process, such that we can sample any zti conditioned on x, including zt0 = y. If we are able to learn the p\u03bd(zti\u22121 |zti ,x), we should have a good proxy for p(y|x) from which we can sample."
+        },
+        {
+            "heading": "3.2 DEFINING THE SCHEDULE",
+            "text": "We now describe in more detail our approach to learning the schedule. Recall that the latent variables zt are indexed by a continuous time parameter t \u2208 [0, 1], and we introduced the diffusion process using a time discretization {ti}Ti=0. We now consider the non-discretized case, starting with the forward process. In this case, the mechanics described by equation (1) can be extended straightforwardly to the continuous case q(zt|y,x). The continuous-time version of the forward Markovian transitions and the posterior distribution are more complicated. Consider the forward transitions, which in the discretized version we denote by q(zti |zti\u22121 ,x). To extend this idea to the continuous case, Kingma et al. (2023) consider q(zt|zs,x) for s < t. We use a different approach and focus on the infinitesimal transitions q(zt+dt|zt,x). This idea can be formalized using stochastic calculus, but we do not need that framework here. From Appendix B.1, the forward transitions are given by\nq(zti |zti\u22121 ,x) = N (\u221a 1\u2212 \u03b2\u0302T (ti,x)y, \u03b2\u0302T (ti,x)I ) .\nwhere \u03b2\u0302T (ti,x) = 1\u2212 \u03b3(ti,x)/\u03b3(ti\u22121,x). As defined, the values \u03b2\u0302T (ti,x) control the change in the latent variables over a short period of time. Now, consider the continuous-time limit T \u2192 \u221e. The intuition is that there is a function \u03b2 such that the change of the latent variables over an infinitesimal period of time dt is given by \u03b2(t,x)dt. In the discretization, this becomes \u03b2\u0302T (ti,x) = \u03b2(ti,x)/T . This idea leads to the following relation between \u03b3 and \u03b2 (details in Appendix F):\n\u2202\u03b3(t,x)\n\u2202t = \u2212\u03b2(t,x)\u03b3(t,x). (4)\nIn view of this relation, our approach is as follows. First, we make the assumption that \u03b2 can be decomposed into two independent functions, respectively depending on the time t and the data x. We write this as \u03b2(t,x) = \u03c4\u03b8(t)\u03bb\u03d5(x), where both \u03c4\u03b8 and \u03bb\u03d5 are learnable positive functions. This assumption takes inspiration from many separable phenomena in physics, and it proves to be general enough in our experiments. Moreover, \u03b3(t,x) should be decreasing in t, since the forward process should start at y in t = 0 and gradually inject noise from there. This monotony condition is much simpler to achieve in training if the t and x variables are separated in the schedule functions. Replacing this form of \u03b2 in equation (4) and integrating with initial condition \u03b3(0,x) = 1, we get\n\u03b3(t,x) = e\u2212\u03bb\u03d5(x) \u222b t 0 \u03c4\u03b8(s)ds. (5)\nEquation (5) could be used to compute \u03b3 during training and inference, but we follow a different approach to avoid integration. Since \u03c4\u03b8 is defined to be positive, its integral is an increasing function. This motivates the parametrization of \u03b3 as \u03b3(t,x) = e\u2212\u03bb\u03d5(x)\u03c1\u03c7(t), where \u03c1\u03c7 is a learnable function which is increasing by design. Summarizing, we parametrize \u03b2 and \u03b3 such that they share the same function \u03bb\u03d5(x) and separate time-dependent functions. A priori, \u03c1\u03c7 and the integral of \u03c4\u03b8 could not coincide. So, to ensure that equation (4) holds, we use the Deep Galerkin Method (Sirignano & Spiliopoulos, 2018) by including the following term as part of the loss function:\nL\u03b2(x) = Et\u223cU([0,1]) [\u2225\u2225\u2225\u2225\u2202\u03b3(t,x)\u2202t + \u03b2(t,x)\u03b3(t,x) \u2225\u2225\u2225\u22252 2 ] + \u2225\u03b3(0,x)\u2212 1\u222522 + \u2225\u03b3(1,x)\u2212 0\u2225 2 2,\nwhere U(A) represents the continuous uniform distribution over set A. The last two terms codify the soft constraints \u03b3(0,x) = 1 and \u03b3(1,x) = 0, which help to ensure that the forward process starts at y (or close) and ends in a standard Gaussian variable (or close). Noise injection is gradual because \u03b3 is defined by a deep learning model as a smooth function (see details about architecture in Appendix G). In the rest of Section 3, we provide the remaining details about the loss function."
+        },
+        {
+            "heading": "3.3 NON-REGULARIZED LEARNING",
+            "text": "The schedule functions \u03b3, \u03b2 define the forward process and determine the form of the posterior distribution and the reverse process (Appendix B). On the other hand, y\u0302\u03bd helps to define the reverse process p\u03bd . To learn these functions we need access to a dataset of input-data pairs (y,x). The\nstandard approach for diffusion models is to use these samples to minimize the Evidence Lower Bound (ELBO), given in our case by (details in Appendix C)\nLELBO(y,x) = Lprior(y,x) + Ldiffusion(y,x). The term Lprior = DKL (q(ztT |zt0 ,x) || p\u03bd(ztT |x)) helps to ensure that the forward process ends in an almost pure Gaussian variable. As described in Appendix D, Ldiffusion(y,x) is analytic and differentiable, but is computationally inconvenient. To avoid this problem, this term can be rewritten as an expected value LT (y,x) which has a simple and efficient Monte Carlo estimator (Appendix E.1). For reasons outlined in the following section, we work in the continuous-time case, i.e. the T \u2192 \u221e limit. Under certain assumptions, we get the following form of the ELBO when T \u2192 \u221e\nL\u0302ELBO(y,x) = DKL (q(z1|y,x) || p\u03bd(z1|x)) + L\u221e(y,x). In the above expression, z1 represents the latent variable at time t = 1, such that p\u03bd(z1|x) is a standard Gaussian and q(z1|y,x) = N ( \u221a \u03b3(1,x)y, \u03c3(1,x)I). On the other hand, L\u221e is a continuous-time estimator for Ldiffusion and takes an integral form. See Appendix E.2 for the full details.\nIn summary, L\u0302ELBO provides a differentiable and efficient-to-compute version of the ELBO, and we use it as the core loss function to learn the forward and reverse processes correctly. In the next section, we describe two important modifications we make to the loss function and the learning process."
+        },
+        {
+            "heading": "3.4 REGULARIZED DIFFUSION MODEL",
+            "text": "As mentioned above, we work with a diffusion process that is defined for continuous time. The schedule \u03b3 and the model prediction y\u0302\u03bd depend on a continuous variable t \u2208 [0, 1], and the latent variables zt are also parametrized by t \u2208 [0, 1]. We also derived a continuous-time version of the diffusion loss, L\u221e. In our final implementation, we get better results by replacing L\u221e with\nL\u0302\u221e(y,x) = \u2212 1\n2 E\u03f5\u223cN (0,I),t\u223cU([0,1])\n[ \u2225\u03f5\u2212 \u03f5\u0302\u03bd(zt(\u03f5), t,x)\u222522 ] ,\nwhere \u03f5\u0302\u03bd is a noise prediction model. See details in Appendix E.3. This provides a natural Monte Carlo estimator for the diffusion loss, by taking samples \u03f5 \u223c N (0, I) and t \u223c U([0, 1]). As shown in Kingma et al. (2023), increasing the number of timesteps T should reduce the diffusion loss, so it makes sense to work in the T \u2192 \u221e limit. Also, a continuous-time setup is easier to implement. Importantly, Kingma et al. (2023) prove that the continuous-time diffusion loss is invariant to the choice of variance schedule. However, we argue this is not necessarily the case in practice. Since all computational implementations are ultimately discrete, we look for conditions on \u03b3 that make the discrete case as close as possible to the continuous one.\nAs explained in Appendix E.2, one way of achieving this is to keep the Euclidean norm of SNR\u2032\u2032(t,x) low, where SNR(t,x) = \u03b3(t,x)/\u03c3(t,x). We use f \u2032(t,x) to represent the partial derivative of a function f(t,x) with respect to the time t. A natural way of incorporating this condition would be to include a regularization term in the loss function, with a form like\nLSNR(x) = \u2225\u2225SNR\u2032\u2032(\u00b7,x)\u2225\u2225\nL2([0,1]) where by definition SNR(t,x) =\n\u03b3(t,x) \u03c3(t,x) = \u03b3(t,x) 1\u2212 \u03b3(t,x) .\nFrom this, we can see that LSNR can be complicated to implement. It involves a fraction and a second derivative, operations that can be both numerically unstable. Moreover, as we have mentioned before, for t = 0 it should hold that \u03b3(t,x) \u2248 1, which makes SNR more unstable around t = 0. Since SNR(t,x) \u2248 \u03b3(t,x) for values of t closer to 1, we replace LSNR with the more stable\nL\u03b3(x) = Et\u223cU([0,1]) [ \u2225\u03b3\u2032\u2032(t,x)\u222522 ] .\nThis regularization term is actually key for the performance of our method. To see this, recall that a variable zt \u223c q(zt|y,x) can be reparametrized as zt = \u221a \u03b3(t,x)y + \u221a \u03c3(t,x)\u03f5 with \u03f5 \u223c N (0, I). This means that \u03b3 \u2261 0, \u03c3 \u2261 1 make zt = \u03f5, so that the noise prediction model \u03f5\u0302\u03bd(zt(\u03f5), t,x) = zt can perfectly predict \u03f5 and make L\u0302\u221e = 0. Now, \u03b3 \u2261 0 is not compatible with the L\u03b2 loss term, but any function \u03b3 that starts at 1 for t = 0 and then abruptly drops to 0 is permitted. L\u03b3 prevent this type of undesirable solution. Once we include this term, the full loss function takes the form\nLCVDM = E(y,x)\u223cp(y,x) [ L\u03b2(x) +DKL (q(z1|y,x) || p\u03bd(z1|x)) + L\u0302\u221e(y,x) + \u03b1L\u03b3(x) ] , (6)\nwhere \u03b1 controls the weight of the regularization term and p(y,x) is the joint distribution of y and x. We optimize a Monte Carlo estimator of LCVDM by using the available (y,x) samples. For the KL divergence term, we optimize the analytical form of the KL divergence between two Gaussian distributions with the log-variance (Kingma & Welling, 2022; Nichol & Dhariwal, 2021)."
+        },
+        {
+            "heading": "4 EXPERIMENTS AND RESULTS",
+            "text": "We assess the performance of our model on three distinct benchmarks. First, we evaluate the model\u2019s ability to recover high-spatial frequencies using the BioSR super-resolution microscopy benchmark (Qiao et al., 2021). Second, we examine the model\u2019s effectiveness in retrieving the phase of a diffractive system with synthetic data and real brightfield image stacks from a clinical sample assessed by two experienced microscopists. The last benchmark is image super-resolution on ImageNet 1K (Deng et al., 2009) . For the first two, performance is measured using two key metrics: multi-scale structural similarity index measure (MS-SSIM) (Wang et al., 2003) and Mean Absolute Error (MAE), both detailed in Appendix G. In the case of ImageNet, performance is measured using SSIM and peak signal-to-noise ratio (PSNR). For BioSR, the resolution of the reconstruction (a metric related to the highest frequency in the Fourier space) is additionally evaluated as per Qiao et al. (2021), using a parameter-free estimation (Descloux et al., 2019). We evaluate against methods developed for each benchmark, as well as CDDPM. In the case of CDDPM, we follow the implementation shown in Saharia et al. (2021). The specific implementation of our model is described in Appendix G."
+        },
+        {
+            "heading": "4.1 SUPER-RESOLUTION MICROSCOPY",
+            "text": "Super-resolution microscopy aims to overcome the diffraction limit, which restricts the observation of fine details in images. It involves reconstructing a high-resolution image y from its diffraction-limited version x, expressed mathematically as x = K \u2217 y + \u03b7, where K is the point spread function (PSF) and \u03b7 represents inherent noise. Convolution of the PSF with the high-resolution image y leads to the diffraction-limited image x, which complicates y recovery due to information loss and noise. In this context, we utilize the BioSR dataset (Qiao et al., 2021).\nBioSR consists of pairs of widefield and structured illumination microscopy (SIM) images which encapsulate varied biological structures and signal-to-noise ratio (SNR) levels. The structures present in the dataset have varying complexities: clathrin-coated pits (CCPs), endoplasmic reticulum (ER), microtubules (MTs), and F-actin filaments, ordered by increasing structural complexity. Each image pair is captured over ten different SNR levels. Our results are compared with DFCAN, a regressionbased method implemented as in Qiao et al. (2021), and CDDPM trained as in Saharia et al. (2021). For diffusion methods during inference, best results are found at T = 500, resulting in similar inference time for CVDM and CDDPM. For CDDPM, fine-tuning results in optimal performance for a linear schedule ranging from 0.0001 to 0.03. All models are trained for 400,000 iterations."
+        },
+        {
+            "heading": "4.1.1 RESULTS",
+            "text": "Table 1 shows the enhanced resolution achieved in the BioSR benchmark, with our model surpassing other methods in the ER and F-actin structures. Our approach consistently delivers comparable or superior performance than CDDPM across all structures, and improves markedly over DFCAN in the resolution metric. Figure 6b facilitates a visual inspection of these achievements, comparing our reconstructions to those of DFCAN, and Figure 6a, which underscores the contrast in quality between our model and the CDDPM benchmark. Additional comparative insights are detailed in Appendix I."
+        },
+        {
+            "heading": "4.2 QUANTITATIVE PHASE IMAGING",
+            "text": "Quantitative phase imaging (QPI) has gained prominence in diverse applications, including bioimaging, drug screening, object localization, and security scanning (Zuo et al., 2020). The Transport of Intensity Equation (TIE) method (Teague, 1983; Streibl, 1984) is a notable approach to phase retrieval, linking the diffraction intensity differential along the propagation direction to the lateral phase profile. This relationship, under the paraxial approximation, is formulated as\n\u2212k\u2202I(x, y; z) \u2202z = \u2207(x,y)\u00b7(I(x, y; z)\u2207(x,y)\u03c6(x, y; z)),\nwhere k is the wavenumber, I is the intensity, \u03c6 is the phase of the image, and x, y, z are the coordinates. In practice, the intensity derivative \u2202I(x, y; z)/\u2202z at z = 0 is approximated via finite difference calculations, using 2-shot measurements at z = d and z = \u2212d:\n\u2202I(x, y; z)\n\u2202z\n\u2223\u2223\u2223\u2223 z=0 \u2248 I\u2212d \u2212 Id 2d .\nWe train the model with a synthetic dataset created by using ImageNet to simulate Id and I\u2212d from grayscale images. The process, informed by the Fresnel diffraction approximation, is expressed as\nId = \u2223\u2223\u2223\u2223\u221aI0ei\u03c6 \u2217 eikzi\u03bbz ei k2z (x2+y2) \u2223\u2223\u2223\u22232 ,\nwith z = d, the defocus distance, fixed at 2\u00b5m during the training phase. Noise was added using a N (\u03be, \u03be) distribution, where \u03be fluctuates randomly between 0 and 0.2 for every image pair to approximate Poisson noise.\nTo evaluate the effectiveness of our method, we compare against two baselines: CDDPM and US-TIE (Zhang et al., 2020), an iterative parameter-free estimation method for the QPI problem. For diffusion methods during inference, best results are found at T = 400, resulting in similar inference time for CVDM and CDDPM. For CDDPM, fine-tuning results in optimal performance for a linear schedule ranging from 0.0001 to 0.02. Both our model and CDDPM undergo 200,000 iterations of training."
+        },
+        {
+            "heading": "4.2.1 RESULTS FOR THE SYNTHETIC QPI DATASET",
+            "text": "We estimate the phase of images using the HCOCO dataset (Cong et al., 2019). These images are simulated at a distance of d = \u00b12\u00b5m. Table 2a presents the model\u2019s performance on the provided test split of HCOCO, which is conducted without noise. Figure 1a visually compares the methods. For more detailed comparisons, please refer to Appendix I."
+        },
+        {
+            "heading": "4.2.2 RESULTS FOR QPI GENERATED FROM CLINICAL BRIGHTFIELD IMAGES",
+            "text": "We evaluate our method on microscope brightfield images, consisting of three stacks with varying defocus distances, obtained from clinical urine microscopy samples. The phase ground truth is established by computing \u2202I(x, y; z)/\u2202z, using a 20th-order polynomial fitting for each pixel within the stack, following Waller et al. (2010). This fitting is performed at distances d = \u00b12k\u00b5m, with k\nranging from 1 to 20, and the gradient of the polynomial is employed to apply the US-TIE method to generate ground truth data. All methods are evaluated using a 2-shot approach at d = \u00b12\u00b5m. The diffusion models are evaluated in a zero-shot scenario from the synthetic experiment. Figure 1b illustrates the reconstructions of all stacks, while Table 2b presents the MS-SSIM for each sample and method, with sample numbers corresponding to the figure rows."
+        },
+        {
+            "heading": "4.3 ABLATIONS AND ADDITIONAL EXPERIMENTS",
+            "text": "In addition to super-resolution microscopy and QPI, we also test our method for the problem of image super-resolution over ImageNet. For this task, we use the architecture of Saharia et al. (2021), equipped with our schedule-learning framework. Without any fine-tuning of the schedule, our results are comparable to Saharia et al. (2021) and slightly better than Kawar et al. (2022), another diffusion-based method. See Appendix L for more details and reconstruction examples.\nWe also evaluate the impact of our design decisions. First, the regularization term (Section 3.4) is critical in preventing the schedule from converging to a meaningless solution. See Appendix K for a detailed analysis. Second, the separation of variables for \u03b2 (Section 3.2) ensures that the monotonic behavior of \u03b3(t,x) with respect to t is not extended to x. This is key for achieving competitive performance, so we do not include a detailed ablation study. Finally, we compare learning a pixel-wise schedule to a single, global schedule using the synthetic QPI dataset. Our experiment shows that performance drops with a single learned schedule (see details in Appendix K)."
+        },
+        {
+            "heading": "5 ANALYSIS AND DISCUSSION",
+            "text": "Accuracy. Our model competes favorably with DFCAN on the BioSR dataset, particularly excelling in image resolution (Table 1). It shows the versatility of diffusion models in generating realistic solutions across diverse phenomena. Additionally, it outperforms CDDPM in more complex biological structures, and it advances significantly in the QPI problem by overcoming noise challenges near the singularity (Wu et al., 2022). While not designed specifically for these tasks, our approach shows promise as a flexible tool for solving inverse problems with available input-data pair samples.\nSchedule. As explained in Section 1, the schedule is a key parameter for diffusion models, so we aim to understand whether our method yields reasonable values. Based on the relation between \u03b3 and \u03b2 , the forward model can be parametrized as (details in Appendix J):\nq(zt|y,x) = N ( e\u2212 1 2 \u222b t 0 \u03b2(s,x)dsy, ( 1\u2212 e\u2212 \u222b t 0 \u03b2(s,x)ds ) I ) .\nWe can see that for large values of \u03b2, the latent variable zt gets rapidly close to a N (0, I) distribution. For small values of \u03b2, on the other hand, zt remains closer to y for longer. In general, a steeper graph of \u03b2 results in a diffusion process that adds noise more abruptly around the middle timesteps, resulting in more difficult inversion of the process. In our image-based data applications, the pixelwise dedicated schedule supports this analytical insight. In BioSR (Figure 2a), structure pixels (i.e., pixels with high-frequency information) are more difficult to denoise, which is reflected in the steeper \u03b2 graph. In contrast, background pixels (i.e., pixels with low-frequency information) are easier to resolve. This is consistent with the diffraction limit in optical microscopy, which mostly consists of low frequencies. Conversely, in QPI background pixels have a steeper \u03b2 graph, a phenomenon linked to the amplification of low-frequency noise around the singularity point in k-space (Wu et al., 2022).\nUncertainty. In our experiments, we measure the uncertainty of the reconstruction by the pixel-wise variance on the model predictions. This uncertainty is theoretically tied to \u03b2. As described in Song et al. (2021), the reverse diffusion process can be characterized by a stochastic differential equation with a diffusion coefficient of \u221a \u03b2(t, x) (in the variance-preserving case). Hence, higher values of \u03b2 introduce more diffusion into the reverse process over time, leading to more varied reconstructions. For BioSR, structure pixels exhibit higher values of \u03b2 and consequently higher reconstruction variance, as seen in Figure 2b. For QPI, the converse phenomenon is true (Figure 12). For further analysis and illustration of uncertainty, see Appendix M."
+        },
+        {
+            "heading": "6 CONCLUSION",
+            "text": "We introduce a method that extends Variational Diffusion Models (VDMs) to the conditioned case, providing new theoretical and experimental insights for VDMs. While theoretically, the choice of schedule should be irrelevant for a continuous-time VDM, we show that it is important when a discretization is used for inference. We test our method in three applications and get comparable or better performance than previous methods. For image super-resolution and super-resolution microscopy we obtain comparable results in reconstruction metrics. Additionally, for super-resolution microscopy we improve resolution by 4.42% when compared against CDDPM and 26.27% against DFCAN. For quantitative phase imaging, we outperform 2-shot US-TIE by 50.6% in MAE and 3.90% in MS-SSIM and improve the CDDPM benchmark by 83.6% in MAE and 7.03% in MS-SSIM. In the wild brightfield dataset, we consistently outperform both methods. In general, our approach improves over fine-tuned diffusion models, showing that learning the schedule yields better results\nthan setting it as a hyperparameter. Remarkably, our approach produces convincing results for a wild clinical microscopy sample, suggesting its immediate applicability to medical microscopy."
+        },
+        {
+            "heading": "ACKNOWLEDGEMENTS",
+            "text": "This work was partially funded by the Center for Advanced Systems Understanding (CASUS) which is financed by Germany\u2019s Federal Ministry of Education and Research (BMBF) and by the Saxon Ministry for Science, Culture, and Tourism (SMWK) with tax funds on the basis of the budget approved by the Saxon State Parliament.\nThe authors acknowledge the financial support by the Federal Ministry of Education and Research of Germany and by Sa\u0308chsische Staatsministerium fu\u0308r Wissenschaft, Kultur und Tourismus in the programme Center of Excellence for AI-research \u201cCenter for Scalable Data Analytics and Artificial Intelligence Dresden/Leipzig\u201d, project identification number: ScaDS.AI.\nThe authors also acknowledge the support of the National Agency for Research and Development (ANID) through the Scholarship Program (DOCTORADO BECAS CHILE/2023 - 72230222)."
+        },
+        {
+            "heading": "B FORWARD PROCESS AND POSTERIOR DISTRIBUTION",
+            "text": "B.1 FORWARD PROCESS MARKOVIAN TRANSITIONS\nUsing the result in Appendix A of Kingma et al. (2023), for each step 0 < i \u2264 T we have\nq(zti |zti\u22121 ,x) = N\n(\u221a \u03b3(ti,x)\n\u03b3(ti\u22121,x) zti\u22121 ,\n( \u03c3(ti,x)\u2212 \u03b3(ti,x)\n\u03b3(ti\u22121,x) \u03c3(ti\u22121,x)\n) I ) .\nWe are working with the variance-preserving case, that is, \u03c3(t,x) = 1 \u2212 \u03b3(t,x). Looking at the variance in the expression above, notice that\n\u03c3(ti,x)\u2212 \u03b3(ti,x)\n\u03b3(ti\u22121,x) \u03c3(ti\u22121,x) = (1\u2212 \u03b3(ti,x))\u2212\n\u03b3(ti,x)\n\u03b3(ti\u22121,x) (1\u2212 \u03b3(ti\u22121,x))\n= 1\u2212 \u03b3(ti,x)\u2212 \u03b3(ti,x)\n\u03b3(ti\u22121,x) + \u03b3(ti,x)\n= 1\u2212 \u03b3(ti,x) \u03b3(ti\u22121,x) .\nTo simplify these expressions, we introduce the following notation:\n\u03b2\u0302T (ti,x) := 1\u2212 \u03b3(ti,x)\n\u03b3(ti\u22121,x) .\nNotice that \u03b2\u0302T depends on both ti\u22121 and ti, but we have only parametrized it in terms of ti. We can do this because, for any fixed number of steps T , we can easily recover ti\u22121 from ti. Our notation will be convenient when we consider the limit case T \u2192 \u221e, as explained in Section 3.2. With this notation, we can restate the result in a more concise way:\nq(zti |zti\u22121 ,x) = N (\u221a 1\u2212 \u03b2\u0302T (ti,x)zti\u22121 , \u03b2\u0302T (ti,x)I ) .\nB.2 POSTERIOR DISTRIBUTION\nBy Bayes\u2019 theorem, we know that\nq(zti\u22121 |zti ,y,x) = q(zti |zti\u22121 ,y,x)q(zti\u22121 |y,x)\nq(zti |y,x) = q(zti |zti\u22121 ,x)q(zti\u22121 |y,x) q(zti |y,x) .\nNotice that both the prior q(zti\u22121 |y,x) and the likelihood q(zti |zti\u22121 ,x) are Gaussian, which means that the posterior will be normally distributed too (MacKay, 2003). The computation of the parameters is somewhat involved, but it has already been done in the diffusion models literature. Following Kingma et al. (2023), we get\nq(zti\u22121 |zti ,y,x) = N (\u00b5B(zti , ti,y,x), \u03c3B(ti,x)I) ,\nwhere\n\u00b5B(zti , ti,y,x) = \u221a 1\u2212 \u03b2\u0302T (ti,x) \u03c3(ti\u22121,x)\n\u03c3(ti,x) zti +\n\u221a \u03b3(ti\u22121,x) \u03b2\u0302T (ti,x)\n\u03c3(ti,x) y\n= \u221a 1\u2212 \u03b2\u0302T (ti,x)\n1\u2212 \u03b3(ti\u22121,x) 1\u2212 \u03b3(ti,x)\nzti + \u221a \u03b3(ti\u22121,x) \u03b2\u0302T (ti,x)\n1\u2212 \u03b3(ti,x) y\nand\n\u03c3B(ti,x) = \u03b2\u0302T (ti,x) \u03c3(ti\u22121,x)\n\u03c3(ti,x)\n= \u03b2\u0302T (ti,x) 1\u2212 \u03b3(ti\u22121,x) 1\u2212 \u03b3(ti,x) .\nNotice that, similar to \u03b2\u0302T , both \u00b5B and \u03c3B require ti\u22121 as input besides ti. However, if the number of steps T is fixed, then ti can be used to find ti\u22121. So, same as \u03b2\u0302T , we write these functions as depending only on ti, like \u03b2\u0302T (ti,x), rather than including ti\u22121 as an extra parameter."
+        },
+        {
+            "heading": "C EVIDENCE LOWER BOUND",
+            "text": "In this appendix, we derive the most important aspects of the loss function. Most of these details correspond to the derivations in Sohl-Dickstein et al. (2015); Ho et al. (2020) and other references, but we include them for completeness and to point out some key differences in our setup. For simplicity of notation, we denote zti as zi in most of this section. Let x be the data. We want the learned p\u03bd(y|x) distribution to be as close as possible to the true distribution p(y|x). Hence, it makes sense to maximize the following log-likelihood term:\nE(y,x)\u223cp(y,x) [log p\u03bd(y|x)] .\nActual implementations of diffusion models take the equivalent approach of minimizing the negative log-likelihood, so we focus on the following term:\nL = \u2212 log p\u03bd(y|x) = \u2212 log p\u03bd(z0|x)\n= \u2212 log \u222b p\u03bd(zT |x) T\u220f\ni=1\np\u03bd(zi\u22121|zi,x)dz1 . . . dzT\n= \u2212 log \u222b p\u03bd(zT |x) \u220fT\ni=1 p\u03bd(zi\u22121|zi,x)\u220fT i=1 q(zi|zi\u22121,x) T\u220f i=1 q(zi|zi\u22121,x)dz1 . . . dzT\nSince the process is Markovian, \u220fT\ni=1 q(zi|zi\u22121,x) = q(z1, . . . , zT |z0,x) and we get\n= \u2212 logE(z1,...,zT )\u223cq(z1,...,zT |z0,x) [ p\u03bd(zT |x) \u220fT i=1 p\u03bd(zi\u22121|zi,x)\u220fT i=1 q(zi|zi\u22121,x) ] By Jensen\u2019s inequality:\n\u2264 E(z1,...,zT )\u223cq(z1,...,zT |z0,x)\n[ \u2212 log ( p\u03bd(zT |x) \u220fT i=1 p\u03bd(zi\u22121|zi,x)\u220fT i=1 q(zi|zi\u22121,x) )] .\nFor simplicity of notation, in the appendices, we compute the loss terms before application of E(y,x)\u223cp(y,x) [\u00b7]. This means, for instance, that L depends on (y,x) and should be written as L(y,x). Once again, in the interest of simplifying notation in the appendices, we write the loss terms without explicit dependence on y and x. So, for instance, we write Lprior in the appendices, but in the main body of the paper, we use the more precise Lprior(y,x). In the following, we denote E(z1,...,zT )\u223cq(z1,...,zT |z0,x) [\u00b7] by just Eq|z0,x [\u00b7]. We continue by taking the logarithm of the whole product:\nL \u2264 Eq|z0,x\n[ \u2212 log ( p\u03bd(zT |x) \u220fT i=1 p\u03bd(zi\u22121|zi,x)\u220fT i=1 q(zi|zi\u22121,x) )]\n= Eq|z0,x\n[ T\u2211\ni=1\nlog q(zi|zi\u22121,x) p\u03bd(zi\u22121|zi,x) \u2212 log p\u03bd(zT |x)\n]\n= Eq|z0,x\n[ T\u2211\ni=2\nlog q(zi|zi\u22121,x) p\u03bd(zi\u22121|zi,x) + q(z1|z0,x) p\u03bd(z0|z1,x) \u2212 log p\u03bd(zT |x)\n]\n= Eq|z0,x\n[ T\u2211\ni=2\nlog ( q(zi\u22121|zi, z0,x) p\u03bd(zi\u22121|zi,x) q(zi|z0,x) q(zi\u22121|z0,x) ) + q(z1|z0,x) p\u03bd(z0|z1,x) \u2212 log p\u03bd(zT |x) ]\n= Eq|z0,x\n[ T\u2211\ni=2\nlog q(zi\u22121|zi, z0,x) p\u03bd(zi\u22121|zi,x) + T\u2211 i=2 log q(zi|z0,x) q(zi\u22121|z0,x) + q(z1|z0,x) p\u03bd(z0|z1,x) \u2212 log p\u03bd(zT |x)\n]\n= Eq|z0,x\n[ T\u2211\ni=2\nlog q(zi\u22121|zi, z0,x) p\u03bd(zi\u22121|zi,x) + log q(zT |z0,x) q(z1|z0,x) + q(z1|z0,x) p\u03bd(z0|z1,x) \u2212 log p\u03bd(zT |x)\n]\n= Eq|z0,x\n[ T\u2211\ni=2\nlog q(zi\u22121|zi, z0,x) p\u03bd(zi\u22121|zi,x) + log q(zT |z0,x) p\u03bd(zT |x) \u2212 log p\u03bd(z0|z1,x) ] = Lprior + Lreconstruction + Ldiffusion.\nWe take a look at each one of these terms in turn. To be consistent with the main body of the paper, we now return to the zti notation instead of using zi. The prior loss term corresponds to\nLprior = DKL (q(ztT |zt0 ,x) || p\u03bd(ztT |x)) ,\nand it helps ensure that the forward process ends with a similar distribution as to that with which the reverse process begins. In our setup, p\u03bd(ztT |x) is fixed as a normal distribution for all zT and has no trainable parameters. In many DPM setups (Ho et al., 2020; Nichol & Dhariwal, 2021) the schedule is fixed and hence q(ztT |zt0 ,x) has no trainable parameters either, so Lprior is discarded altogether for training. However, in our framework we need the key flexibility of learning the schedule function \u03b3, so we do not discard this term.\nThere are known ways to estimate and minimize Lprior, since p\u03bd(ztT |x) is a standard normal variable and q(ztT |zt0 ,x) has a Gaussian distribution too. Hence, the KL divergence between the two has an analytical expression that is differentiable and can be minimized with standard techniques (see Section 3.4). On the other hand, consider the reconstruction loss, given by\nLreconstruction = Ezt1\u223cq(zt1 |zt0 ,x) [\u2212 log p\u03bd(zt0 |zt1 ,x)] ,\nwhich helps ensure that the last step of the reverse process p\u03bd(zt0 |zt1 ,x) gives the correct converse operation with respect to the forward process q(zt1 |zt0 ,x). In most DPM setups, this term is discarded or included in an altered form (Ho et al., 2020; Nichol & Dhariwal, 2021).\nWe choose to discard it for training, because its effect is very small when compared to Ldiffusion, and because the last step of the reverse process is not especially important. Consider the following: a diffusion process has to produce change in a gradual way, and in the end p\u03bd(zt1 |x) should be almost identical to p\u03bd(zt0 |x), especially when the number of steps T is high or even infinite (we discuss the continuous-time case in Appendix D). The quality of p\u03bd is ultimately determined by the diffusion loss as a whole rather than by the last step.\nFinally, consider the diffusion loss, given by\nLdiffusion = T\u2211\ni=2\nE(zt1 ,...,ztT )\u223cq(zt1 ,...,ztT |zt0 ,x) [ log\nq(zti\u22121 |zti , zt0 ,x) p\u03bd(zti\u22121 |zti ,x)\n]\n= T\u2211 i=2 Ezti\u223cq(zti |zt0 ,x) [ DKL ( q(zti\u22121 |zti , zt0 ,x) || p\u03bd(zti\u22121 |zti ,x) )]\ufe38 \ufe37\ufe37 \ufe38 Lti .\nEach Lti term simplifies greatly, as we show in Appendix D. In the end, after discarding the reconstruction loss, the Evidence Lower Bound loss becomes\nLELBO = Lprior + Ldiffusion = Lprior + T\u2211\ni=2\nLti ."
+        },
+        {
+            "heading": "D DIFFUSION LOSS AND TRAINING",
+            "text": "From Appendix C, we know that one of the terms in the Evidence Lower Bound is\nLdiffusion = T\u2211\ni=2\nLti = T\u2211\ni=2\nEzti\u223cq(zti |zt0 ,x) [ DKL ( q(zti\u22121 |zti , zt0 ,x) || p\u03bd(zti\u22121 |zti ,x) )] .\nWe now simplify this term, essentially following Kingma et al. (2023). We include this material for completeness and to highlight any differences that may come about from conditioning on x. Each Lti includes the KL divergence between two Gaussian distributions, which has an analytic expression. Moreover, both distributions have the same variance. From Section 3.1, recall that by definition\np\u03bd(zti\u22121 |zti ,x) = q(zti\u22121 |zti , zt0 = y\u0302\u03bd(zti , ti,x),x),\nNow, from Appendix B.2 recall that the variance \u03c3B of q(zti\u22121 |zti , zt0 ,x) only depends on ti and x, and it does not depend on y. Hence, as we mentioned before, both q(zti\u22121 |zti , zt0 ,x) and p\u03bd(zti\u22121 |zti ,x) are Gaussian distributions with exactly the same variance. This means that the KL divergence between them simplifies to\nDKL ( q(zti\u22121 |zti , zt0 ,x) || p\u03bd(zti\u22121 |zti ,x) ) =\n1\n2\u03c3B(ti,x) \u2225\u00b5\u2212 \u00b5\u03bd\u222522,\nwhere \u00b5 and \u00b5\u03bd are the means of q(zti\u22121 |zti , zt0 ,x) and p\u03bd(zti\u22121 |zti ,x), respectively. Now, from Appendix B.2, we know that\n\u00b5 = \u00b5B(zti , ti,y,x) = \u221a 1\u2212 \u03b2\u0302T (ti,x)\n1\u2212 \u03b3(ti\u22121,x) 1\u2212 \u03b3(ti,x)\nzti + \u221a \u03b3(ti\u22121,x) \u03b2\u0302T (ti,x)\n1\u2212 \u03b3(ti,x) y,\n\u00b5\u03bd = \u00b5B(zti , ti,y,x) = \u221a 1\u2212 \u03b2\u0302T (ti,x)\n1\u2212 \u03b3(ti\u22121,x) 1\u2212 \u03b3(ti,x)\nzti + \u221a \u03b3(ti\u22121,x) \u03b2\u0302T (ti,x)\n1\u2212 \u03b3(ti,x) y\u0302\u03bd\n=\u21d2 \u00b5\u2212 \u00b5\u03bd = \u221a \u03b3(ti\u22121,x) \u03b2\u0302T (ti,x)\n1\u2212 \u03b3(ti,x) (y \u2212 y\u0302\u03bd).\nSince \u03c3B(ti,x) = \u03b2\u0302T (ti,x)(1\u2212 \u03b3(ti\u22121,x))/(1\u2212 \u03b3(ti,x)), we can conclude that\nDKL ( q(zti\u22121 |zti , zt0 ,x) || p\u03bd(zti\u22121 |zti ,x) ) = 1\n2\u03c3B(ti,x) \u2225\u00b5\u2212 \u00b5\u03bd\u222522\n= 1\u2212 \u03b3(ti,x)\n2\u03b2\u0302T (ti,x)(1\u2212 \u03b3(ti\u22121,x)) \u2225\u2225\u2225\u2225\u2225\u221a\u03b3(ti\u22121,x) \u03b2\u0302T (ti,x)1\u2212 \u03b3(ti,x) (y \u2212 y\u0302\u03bd) \u2225\u2225\u2225\u2225\u2225 2\n2\n= \u03b3(ti\u22121,x)\u03b2\u0302T (ti,x)\n2(1\u2212 \u03b3(ti\u22121,x))(1\u2212 \u03b3(ti,x)) \u2225y \u2212 y\u0302\u03bd\u222522\n= \u03b3(ti\u22121,x)\n( 1\u2212 \u03b3(ti,x)\u03b3(ti\u22121,x) ) 2(1\u2212 \u03b3(ti\u22121,x))(1\u2212 \u03b3(ti,x)) \u2225y \u2212 y\u0302\u03bd\u222522\n= \u03b3(ti\u22121,x)\u2212 \u03b3(ti,x)\n2(1\u2212 \u03b3(ti\u22121,x))(1\u2212 \u03b3(ti,x)) \u2225y \u2212 y\u0302\u03bd\u222522\n= 1\n2\n( \u03b3(ti\u22121,x)\n1\u2212 \u03b3(ti\u22121,x) \u2212 \u03b3(ti,x) 1\u2212 \u03b3(ti,x)\n) \u2225y \u2212 y\u0302\u03bd\u222522\n= 1\n2\n( \u03b3(ti\u22121,x)\n\u03c3(ti\u22121,x) \u2212 \u03b3(ti,x) \u03c3(ti,x)\n) \u2225y \u2212 y\u0302\u03bd\u222522,\nwhere y\u0302\u03bd = y\u0302\u03bd(zti , ti,x) The fraction \u03b3(t,x)/\u03c3(t,x) is what Kingma et al. (2023) call the signalto-noise ratio and it should be a decreasing function of time, so the above expression makes sense as a nonnegative loss. Since we are in the variance-preserving case where \u03c3(t,x) = 1\u2212 \u03b3(t,x), it is sufficient that \u03b3(t,x) is a decreasing function of time to guarantee that the above expression is nonnegative. Recapping, we have that\nLti = 1\n2 Ezti\u223cq(zti |zt0 ,x)\n[( \u03b3(ti\u22121,x)\n\u03c3(ti\u22121,x) \u2212 \u03b3(ti,x) \u03c3(ti,x)\n) \u2225y \u2212 y\u0302\u03bd(zti , ti,x)\u2225 2 2 ] .\nBy the definition of the forward process q(zti |zt0 ,x) in Section 3.1, a variable zti \u223c q(zti |zt0 ,x) can be reparametrized as zti(\u03f5) = \u221a \u03b3(ti,x)y + \u221a \u03c3(ti,x)\u03f5 with \u03f5 \u223c N (0, I). This means that we can write the i-th term of the diffusion loss as\nLti = 1\n2 E\u03f5\u223cN (0,I)\n[( \u03b3(ti\u22121,x)\n\u03c3(ti\u22121,x) \u2212 \u03b3(ti,x) \u03c3(ti,x)\n) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2 ] .\nPutting everything together, the diffusion loss is given by\nLdiffusion = T\u2211\ni=2\nLti\n= 1\n2 T\u2211 i=2 E\u03f5\u223cN (0,I) [( \u03b3(ti\u22121,x) \u03c3(ti\u22121,x) \u2212 \u03b3(ti,x) \u03c3(ti,x) ) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2 ]\n= 1\n2 T\u2211 i=2 E\u03f5\u223cN (0,I) [( \u03b3(ti\u22121,x) 1\u2212 \u03b3(ti\u22121,x) \u2212 \u03b3(ti,x) 1\u2212 \u03b3(ti,x) ) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2 ] ."
+        },
+        {
+            "heading": "E ESTIMATORS FOR DIFFUSION LOSS",
+            "text": "E.1 MONTE CARLO ESTIMATOR FOR DIFFUSION LOSS\nFrom Appendix D, we know that\nLdiffusion = 1\n2 T\u2211 i=2 E\u03f5\u223cN (0,I) [( \u03b3(ti\u22121,x) \u03c3(ti\u22121,x) \u2212 \u03b3(ti,x) \u03c3(ti,x) ) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2. ]\nFor large T , computing the sum becomes computationally expensive. By linearity of expectation:\n= 1\n2 E\u03f5\u223cN (0,I)\n[ T\u2211\ni=2\n( \u03b3(ti\u22121,x)\n\u03c3(ti\u22121,x) \u2212 \u03b3(ti,x) \u03c3(ti,x)\n) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2 ]\n= T \u2212 1 2 E\u03f5\u223cN (0,I)\n[ 1\nT \u2212 1 T\u2211 i=2 ( \u03b3(ti\u22121,x) \u03c3(ti\u22121,x) \u2212 \u03b3(ti,x) \u03c3(ti,x) ) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2 ] .\nWe can recognize the expression in brackets as an expected value, where i is chosen uniformly at random from {2, . . . , T} with probability 1/(T \u2212 1). In other words, we can rewrite Ldiffusion as:\nLT (y,x) := T \u2212 1 2 E\u03f5\u223cN (0,I),i\u223cU{2,...,T}\n[( \u03b3(ti\u22121,x)\n\u03c3(ti\u22121,x) \u2212 \u03b3(ti,x) \u03c3(ti,x)\n) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2 ] ,\nwhere UA represents the discrete uniform distribution over a finite set A. As mentioned in Section 3.3, the advantage of writing the loss term like this is that it provides a straightforward Monte Carlo estimator, by taking samples \u03f5 \u223c N (0, I) and i \u223c U{2,...,T}.\nE.2 CONTINUOUS-TIME DIFFUSION LOSS\nWe mention again that throughout the appendices, we sometimes omit writing function parameters to simplify notation, mainly in the case of the loss terms. For instance, we write LT instead of LT (y,x). Recall from Section 3.1 that zti = i/T , so intuitively the limit case T \u2192 \u221e takes us into a continuous-time diffusion process, which can be described by a stochastic differential equation. This fact has been noticed before in the literature and it allows to present both diffusion models and score-based generative models as part of the same framework (Song et al., 2021).\nIn our case, we are mostly interested in how the loss term LT changes when T goes to infinity. Kingma et al. (2023) give the following result when taking T \u2192 \u221e:\nL\u221e := lim T\u2192\u221e\nL\u221e = \u2212 1\n2 E\u03f5\u223cN (0,I) [\u222b 1 0 SNR\u2032(t,x)\u2225y \u2212 y\u0302\u03bd(zt(\u03f5), t,x)\u222522dt ]\n(7)\n= \u22121 2 E\u03f5\u223cN (0,I),t\u223cU([0,1])\n[ SNR\u2032(t,x)\u2225y \u2212 y\u0302\u03bd(zt(\u03f5), t,x)\u222522 ] ,\nwhere SNR(t,x) represents the signal-to-noise ratio at time t and is defined as \u03b3(t,x)/\u03c3(t,x). Throughout this section, for simplicity of notation we use SNR\u2032(t,x) to denote the partial derivative of SNR(t,x) with respect to the time t, and analogously for SNR\u2032\u2032(t,x).\nWe are interested in better understanding this result, in particular regarding sufficient conditions under which the above equality holds, and its rate of convergence. This provides an interesting regularization idea for the training process, which we discuss in Section 3.4. Starting from the expressions for LT and Ldiffusion given in Appendices D and E.1, we know that\nLT = Ldiffusion\n= 1\n2 E\u03f5\u223cN (0,I)\n[ T\u2211\ni=2\n( \u03b3(ti\u22121,x)\n\u03c3(ti\u22121,x) \u2212 \u03b3(ti,x) \u03c3(ti,x)\n) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2 ]\n= 1\n2 E\u03f5\u223cN (0,I)\n[ T\u2211\ni=2\n(SNR(ti\u22121,x)\u2212 SNR(ti,x)) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2\n]\n= \u22121 2 E\u03f5\u223cN (0,I)\n[ T\u2211\ni=2\n(SNR(ti,x)\u2212 SNR(ti\u22121,x)) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2\n]\n= \u22121 2 E\u03f5\u223cN (0,I) [ST ] ,\nwhere we have denoted the sum inside the brackets as ST . Now, we denote hT = 1/T and rewrite ST in the following way, such that a derivative-like expression appears:\nST = T\u2211 i=2 (SNR(ti,x)\u2212 SNR(ti\u22121,x))\u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2\n= T\u2211 i=2 SNR(ti,x)\u2212 SNR(ti\u22121,x) hT \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2hT\n= T\u2211 i=2 fT (ti)hT ,\nwhere the function fT is defined as\nfT (t) = SNR(t,x)\u2212 SNR(t\u2212 hT ,x)\nhT \u2225y \u2212 y\u0302\u03bd(zt(\u03f5), t,x)\u222522.\nNow, we need to understand the behaviour of ST as T goes to infinity. Assuming that both SNR and y\u0302\u03bd are continuously differentiable, it is easy to see that fT (t) converges pointwise:\nfT (t) T\u2192\u221e\u2212\u2212\u2212\u2212\u2192 g(t) := SNR\u2032(t,x)\u2225y \u2212 y\u0302\u03bd(zt(\u03f5), t,x)\u222522.\nWe have established pointwise convergence of fT to g, but what we are really interested in is to understand the convergence of LT to L\u221e, defined as in equation (7). Notice that\nLT = \u2212 1\n2 E\u03f5\u223cN (0,I) [ST ] , L\u221e = \u2212\n1 2 E\u03f5\u223cN (0,I) [\u222b 1 0 g(t)dt ] .\nDenote the integral \u222b 1 0 g(t)dt by I . The above expression strongly suggests that we should understand the relation between ST and I when T goes to infinity, in order to establish the convergence of LT to L\u221e. With that in mind, for any given positive integer T , the difference between the sum ST and the integral I can be bounded as follows:\n|ST \u2212 I| = \u2223\u2223\u2223\u2223\u2223 T\u2211\ni=2\nfT (ti)hT \u2212 \u222b 1 0 g(t)dt \u2223\u2223\u2223\u2223\u2223 \u2264 \u2223\u2223\u2223\u2223\u2223 T\u2211\ni=2\nfT (ti)hT \u2212 T\u2211\ni=2\ng(ti)hT \u2223\u2223\u2223\u2223\u2223\ufe38 \ufe37\ufe37 \ufe38 E1 + \u2223\u2223\u2223\u2223\u2223 T\u2211 i=1 g(ti)hT \u2212 \u222b 1 0 g(t)dt \u2223\u2223\u2223\u2223\u2223\ufe38 \ufe37\ufe37 \ufe38 E2 + |g(t1)hT |\ufe38 \ufe37\ufe37 \ufe38 E3 .\nWe have assumed that both SNR and y\u0302\u03bd are continuously differentiable, which makes g continuously differentiable too. Given the smoothness of g, for large T we have\nE3 \u2248 |g(0)| T .\nOn the other hand, E2 is just the difference between a Riemann Sum for g and its integral. For a uniform partition such as ours (i.e. ti = i/T ) the Riemann Sum converges as O(1/T ). In particular, since g is differentiable, for large T we have (Owens, 2014)\nE2 \u2248 |g(1)\u2212 g(0)|\nT .\nOn the other hand, notice that\nE1 = \u2223\u2223\u2223\u2223\u2223 T\u2211\ni=2\n( fT (ti)\u2212 g(ti) ) hT \u2223\u2223\u2223\u2223\u2223 = \u2223\u2223\u2223\u2223\u2223 T\u2211\ni=2\n( SNR(ti,x)\u2212 SNR(ti \u2212 hT ,x)\nhT \u2212 SNR\u2032(ti,x) ) \ufe38 \ufe37\ufe37 \ufe38\nDi\n\u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2hT \u2223\u2223\u2223\u2223\u2223.\nAssuming further that SNR is twice differentiable, the forward difference approximates the derivative:\nDi = SNR(ti,x)\u2212 SNR(ti \u2212 hT ,x)\nhT \u2212 SNR\u2032(ti,x) \u2264\n1\n2T\n\u2225\u2225SNR\u2032\u2032(\u00b7,x)\u2225\u2225 L\u221e([ti\u22121,ti]) .\nReplacing in the bound for E1, we get\nE1 = \u2223\u2223\u2223\u2223\u2223 T\u2211\ni=2\nDi\u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2hT \u2223\u2223\u2223\u2223\u2223 \u2264\nT\u2211 i=2 |Di|\u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2hT\n\u2264 T\u2211\ni=2\n1\n2T\n\u2225\u2225SNR\u2032\u2032(\u00b7,x)\u2225\u2225 L\u221e([ti\u22121,ti]) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2hT\n= 1\n2T T\u2211 i=2 \u2225\u2225SNR\u2032\u2032(\u00b7,x)\u2225\u2225 L\u221e([ti\u22121,ti]) \u2225y \u2212 y\u0302\u03bd(zti(\u03f5), ti,x)\u2225 2 2hT\nApproximating the Riemann Sum by its integral\n\u2248 1 2T \u222b 1 0 \u2223\u2223SNR\u2032\u2032(t,x)\u2223\u2223\u2225y \u2212 y\u0302\u03bd(zt(\u03f5), t,x)\u222522dt. Putting everything together, we get\n|ST \u2212 I| \u2272 E3 + E2 + E1\n\u2264 |g(0)| T + |g(1)\u2212 g(0)| T + 1 2T \u222b 1 0 \u2223\u2223SNR\u2032\u2032(t,x)\u2223\u2223\u2225y \u2212 y\u0302\u03bd(zt(\u03f5), t,x)\u222522dt Replacing g and using Cauchy-Schwarz inequality:\n\u2264 \u2223\u2223\u2223SNR\u2032(0,x)\u2225y \u2212 y\u0302\u03bd(z0(\u03f5), 0,x)\u222522\u2223\u2223\u2223 T\n+ \u2223\u2223\u2223SNR\u2032(1,x)\u2225y \u2212 y\u0302\u03bd(z1(\u03f5), 1,x)\u222522 \u2212 SNR\u2032(0,x)\u2225y \u2212 y\u0302\u03bd(z0(\u03f5), 0,x)\u222522\u2223\u2223\u2223 T\n+ 1\n2T (\u222b 1 0 \u2223\u2223SNR\u2032\u2032(t,x)\u2223\u22232dt)1/2(\u222b 1 0 \u2225y \u2212 y\u0302\u03bd(zt(\u03f5), t,x)\u222542dt )1/2 .\nIf the model is good enough, we would expect \u2225y \u2212 y\u0302\u03bd(z0(\u03f5), 0,x)\u222522 \u2248 0:\n\u2248 |SNR \u2032(1,x)|\u2225y \u2212 y\u0302\u03bd(z1(\u03f5), 1,x)\u222522 T + \u2225SNR\u2032\u2032(\u00b7,x)\u2225L2([0,1]) 2T (\u222b 1 0 \u2225y \u2212 y\u0302\u03bd(zt(\u03f5), t,x)\u222542dt )1/2 .\nSummarizing, the main assumptions so far are that SNR is twice differentiable and that y\u0302\u03bd is continuously differentiable. With that in mind, we can use the last expression to prove that ST converges to I when T goes to infinity. Adding an extra condition of boundedness for y\u0302\u03bd , we can use the Dominated Convergence Theorem to conclude that\nlim T\u2192\u221e LT = lim T\u2192\u221e \u22121 2 E\u03f5\u223cN (0,I) [ST ] = \u2212 1 2 E\u03f5\u223cN (0,I)\n[ lim\nT\u2192\u221e ST\n] = \u22121\n2 E\u03f5\u223cN (0,I) [\u222b 1 0 g(t)dt ] .\nWe thus establish sufficient conditions for the convergence of LT to L\u221e. Our analysis shows that, in some way, this convergence is of order O(1/T ) and its speed depends on the magnitude of SNR\u2032 and SNR\u2032\u2032. Also, it depends on the approximation quality of the neural network model y\u0302\u03bd , which is\nconsistent with the finding in Kingma et al. (2023) that increasing the number of steps T decreases the error on the condition that the model is good enough.\nThis provides an interesting insight. Kingma et al. (2023) show that in the continuous-time limit, the diffusion loss is invariant to the choice of SNR function, as long as it fulfills a few basic conditions. However, in any computational implementation, continuous time cannot truly exist, so the rate of convergence to the continuous-time case does matter. This means that for choices of SNR with ill-behaved derivatives, or for a model y\u0302\u03bd that is not good enough, the \u201cinvariance under the choice of SNR\u201d does not necessarily hold. This gives intuition for the regularization introduced in Section 3.4.\nE.3 NOISE PREDICTION MODEL\nFrom Appendix E.2, we know that the continuous-time diffusion loss is given by\nL\u221e = \u2212 1\n2 E\u03f5\u223cN (0,I),t\u223cU([0,1])\n[ SNR\u2032(t,x)\u2225y \u2212 y\u0302\u03bd(zt(\u03f5), t,x)\u222522 ] .\nBy the definition of the forward process q(zt|y,x) in Section 3.1, a variable zt \u223c q(zt|y,x) can be reparametrized as zt = \u221a \u03b3(t,x)y + \u221a \u03c3(t,x)\u03f5 with \u03f5 \u223c N (0, I). Rearranging the terms:\ny = 1\u221a\n\u03b3(t,x)\n( zt \u2212 \u221a \u03c3(t,x)\u03f5 ) . (8)\nOur model for predicting y is y\u0302\u03bd(zt(\u03f5), t,x). From equation (8), notice that y\u0302\u03bd receives, as explicit input, all the values necessary to compute y excepting \u03f5. As a consequence, we can follow Ho et al. (2020) and repurpose y\u0302\u03bd into a noise prediction model \u03f5\u0302\u03bd by parametrizing\ny\u0302\u03bd = 1\u221a\n\u03b3(t,x)\n( zt \u2212 \u221a \u03c3(t,x)\u03f5\u0302\u03bd ) .\nThis means that the diffusion loss takes the form\nL\u221e = \u2212 1\n2 E\u03f5\u223cN (0,I),t\u223cU([0,1])\n[ SNR\u2032(t,x)\u2225y \u2212 y\u0302\u03bd(zt(\u03f5), t,x)\u222522 ] = \u22121\n2 E\u03f5\u223cN (0,I),t\u223cU([0,1])\n[ SNR\u2032(t,x) \u03c3(t,x)\n\u03b3(t,x) \u2225\u03f5\u2212 \u03f5\u0302\u03bd(zt(\u03f5), t,x)\u222522 ] = \u22121\n2 E\u03f5\u223cN (0,I),t\u223cU([0,1]) [ SNR\u2032(t,x) SNR(t,x) \u2225\u03f5\u2212 \u03f5\u0302\u03bd(zt(\u03f5), t,x)\u222522 ] .\nThis is the form of the diffusion loss that we use as part of the loss function in the end (see Section 3.4). In experiments, we get better results by dropping the rational term SNR\u2032(t,x)/SNR(t,x), which is consistent with the approach in Ho et al. (2020). Otherwise, the training process can converge to trivial solutions that minimize L\u221e by making SNR\u2032(t,x) \u2248 0 for all t,x. In the end, the actual form of the diffusion loss for our method is given by\nL\u0302\u221e = \u2212 1\n2 E\u03f5\u223cN (0,I),t\u223cU([0,1])\n[ \u2225\u03f5\u2212 \u03f5\u0302\u03bd(zt(\u03f5), t,x)\u222522 ] ."
+        },
+        {
+            "heading": "F CONTINUOUS-TIME SCHEDULE",
+            "text": "In Appendix B.1, for all i \u2208 {1, . . . , T} we define\n\u03b2\u0302T (ti,x) = 1\u2212 \u03b3(ti,x)\n\u03b3(ti\u22121,x) .\nNow, we want to study the relationship between functions \u03b3 and \u03b2\u0302T when T goes to infinity and we move into a continuous-time framework. Since we want a diffusion process to be smooth and free of sudden jumps, we require that \u03b3 be least continuous on [0, 1] and continuously differentiable on (0, 1). By definition, notice that for any i \u2208 {1, . . . , T}\n\u03b3(ti,x) = \u03b3(ti\u22121,x)(1\u2212 \u03b2\u0302T (ti,x)). (9)\nRecall that the discretization we are using assumes a number of steps T \u2208 N, and we use the uniform partition of [0, 1] defined by {ti}Ti=0 where ti = i/T . Now, take any t \u2208 [0, 1] and define t\u2032 = \u2308tT \u2309/T . Notice that t\u2032 is an element of the partition {ti} defined above, and that t\u2032 \u2192 t when T \u2192 \u221e. Then, equation (9) implies\n\u03b3(t\u2032,x) = \u03b3(t\u2032 \u2212 hT ,x) ( 1\u2212 \u03b2\u0302T (t\u2032,x) ) .\nNow, assume there exists a continuous function \u03b2(t,x) such that\n\u03b2\u0302T (t \u2032,x) = \u03b2(t\u2032,x)/T (10)\nfor all t\u2032,x. A function like this would allow us to calculate \u03b2\u0302T for any discretization, so we are interested in learning more about \u03b2. Denoting hT = 1/T , we have\n\u03b3(t\u2032,x) = \u03b3(t\u2032 \u2212 hT ,x) (1\u2212 \u03b2(t\u2032,x)hT ) = \u03b3(t\u2032 \u2212 hT ,x)\u2212 \u03b3(t\u2032 \u2212 hT ,x)\u03b2(t\u2032,x)hT\n=\u21d2 \u03b3(t\u2032,x)\u2212 \u03b3(t\u2032 \u2212 hT ,x) = \u2212\u03b3(t\u2032 \u2212 hT ,x)\u03b2(t\u2032,x)hT\n=\u21d2 \u03b3(t \u2032,x)\u2212 \u03b3(t\u2032 \u2212 hT ,x)\nhT = \u2212\u03b3(t\u2032 \u2212 hT ,x)\u03b2(t\u2032,x).\nWe can now take the limit T \u2192 \u221e (which means hT \u2192 0 and t\u2032 \u2192 t). With our assumption that \u03b3 is continuously differentiable, the left-hand side of the equation above converges to \u2202\u03b3(t,x)/\u2202t. On the right-hand side, \u03b3(t\u2032 \u2212 hT ,x) converges to \u03b3(t,x) and, with our assumption that \u03b2 is continuous, \u03b2(t\u2032,x) converges to \u03b2(t,x). In conclusion, we get the equation\n\u2202\u03b3(t,x)\n\u2202t = \u2212\u03b3(t,x)\u03b2(t,x).\nDuring training, we learn both the \u03b3 and \u03b2 functions, and we enforce the above differential equation by adding a corresponding term to the loss function. This ensures that the correct relation between \u03b3 and \u03b2 is preserved during training. Afterwards, having learned these functions successfully, we can use equation (10) to discretize \u03b2 into \u03b2\u0302T , and then sample from the forward and the reverse process using the equations derived in Appendix B.\nG IMPLEMENTATION DETAILS\nG.1 METRICS DEFINITION\nWe use two main metrics to measure our results (Section 4). The first is MAE, defined as:\nMAE := 1 |P | \u2211 p\u2208P |yp \u2212 y\u0302p|,\nwhere p indexes the set of pixel positions P in the images, y stands for the ground truth image, and y\u0302 is the predicted image. The second metric is MS-SSIM, which measures the structural similarity between images and is defined as:\nMS-SSIM(y, y\u0302) := [lM (y, y\u0302)]\u03b1M M\u220f j=1 [cj(y, y\u0302)] \u03b2j [sj(y, y\u0302)] \u03b3j ,\nwhere lj , cj , and sj are the measures of luminance, contrast, and structure corresponding to scale j. We use five scales for this evaluation and we set \u03b1j = \u03b2j = \u03b3j such that \u2211M j=1 \u03b3j = 1.\nG.2 ARCHITECTURAL DETAILS\nFollowing Kingma et al. (2023), to learn the functions \u03c4\u03b8(t) and \u03c1\u03c7(t) we parametrize them using a monotonic neural network. This network is composed of a residual block with three convolutional layers. The first and third layers employ linear activation and are linked by a skip connection, while\nthe second layer uses a sigmoid activation and is equipped with 1024 filters. All layers adopt 1\u00d7 1 convolutions. The decision to use convolutional layers over a dense network stems from the desire to facilitate the model\u2019s operation at various resolutions without retraining. Additionally, we constrain the weights of the network to be positive. To satisfy the condition \u03b2(0,x) = 0, we multiply the network\u2019s output by t.\nFor \u03bb\u03d5(x), we parametrize it using a U-Net architecture (Ronneberger et al., 2015), represented in Figure 3. The model incorporates 5 scales, doubling the number of filters at each scale while concurrently halving the resolution. Each block consists of two sequences: convolution, activation, and instance normalization. Upscaling is achieved using transposed convolutions to ensure differentiability. Softplus activations are used throughout the architecture. Mirrored filters are concatenated, and the output\u2019s positivity is guaranteed by a final softplus activation.\nOur denoising model (Figure 4) closely mirrors this implementation with two notable distinctions: first, its input comprises the concatenation of x, \u03b3(t,x), and zt, and the predicted zt\u22121 output has a linear rather than softplus activation. In line with common practices, the network predicts the noise \u03f5 at the corresponding timestep. We determine zt\u22121 by using the algorithm detailed in Appendix H."
+        },
+        {
+            "heading": "H TRAINING AND INFERENCE ALGORITHMS",
+            "text": "Figure 5 presents a high-level overview of the training algorithm and the inference process for CVDM. Algorithm 1 describes the training of the denoiser using a learnable schedule, while Algorithm 2 demonstrates the inference process and how to use the learned schedule during this procedure."
+        },
+        {
+            "heading": "I ADDITIONAL EXPERIMENTAL RESULTS FOR BIOSR AND QPI",
+            "text": "The following figures further highlight results from our method in comparison to its counterparts in both the BioSR and QPI benchmarks. The reconstructions in Figures 7 and 8 depict the differences between the CDDPM benchmark and our approach. Similarly, Figure 9 contrasts an F-actin sample as reconstructed by our method and DFCAN.\nAdditionally, in Figure 10 we provide more examples of QPI evaluated in the synthetic benchmark.\nDFCAN CVDM Ground Truth Widefield"
+        },
+        {
+            "heading": "J THE SCHEDULE AND THE FORWARD PROCESS IN EXPERIMENTS",
+            "text": "As described in Section 3.1, the forward process can be characterized by the function \u03b3: q(zt|y,x) = N (\u221a \u03b3(t,x)y, \u03c3(t,x)I ) .\nThere is an alternative, equivalent parametrization of the forward process in terms of the function \u03b2. From Section 3.2, equation (4), we know that the following relation holds:\n\u2202\u03b3(t,x)\n\u2202t = \u2212\u03b2(t,x)\u03b3(t,x).\nThis differential equation can be integrated:\n\u2212\u03b2(s,x) = 1 \u03b3(s,x) \u2202\u03b3(s,x) \u2202s = \u2202 log \u03b3(s,x) \u2202s =\u21d2 \u2212 \u222b t 0 \u03b2(s,x)ds = log \u03b3(t,x)\u2212 log \u03b3(0,x).\nAs we describe in Section 3, the initial condition \u03b3(0,x) = 1 should hold for all x in a diffusion process. Replacing in the above equation and applying exponentiation, we get\n\u03b3(t,x) = e\u2212 \u222b t 0 \u03b2(s,x)ds. (11)\nFigures 11 and 17 show the averages of \u03b2 and \u03b3 for different groups of pixels (structure and background) in different images. Notice that the shapes of \u03b2 and \u03b3 are consistent with equation (11).\nMoreover, notice that higher values of \u03b2 lead to values of \u03b3 that decrease more rapidly to zero, as we would expect. Now, using the variance-preserving condition \u03c3(t,x) = 1\u2212 \u03b3(t,x), the distribution of the forward process takes the form\nq(zt|y,x) = N ( e\u2212 1 2 \u222b t 0 \u03b2(s,x)dsy, ( 1\u2212 e\u2212 \u222b t 0 \u03b2(s,x)ds ) I ) .\nThis is the relation we use in Section 5 to analyze the results of the BioSR experiments. We note that it is equivalent to do the analysis in terms of \u03b3. If \u03b3 decreases fast, the latent variable zt gets rapidly close to a N (0, I) distribution. This corresponds to pixels (or parts of the image) that are harder to invert, and is reflected in the variance of those pixels in the reconstructed images. The converse is true for pixels where \u03b3 decreases more slowly. This relation between the learned schedule and the uncertainty (represented by the variance) is exemplified by Figures 11 and 12, which respectively show the schedule and the variance of the reconstruction for an image."
+        },
+        {
+            "heading": "K ABLATION STUDY",
+            "text": "First, we study the behavior of our method without the regularization strategy. Figure 13 shows the learned schedule \u03b3(t,x) (averaged over all pixels) for BioSR, learned with the same specifications as CVDM but removing the regularization term. As can be observed, under these conditions, the schedule is mostly meaningless. Under this schedule, the input is steeply transformed at the beginning\nof the diffusion process, then remains mostly equal for most of the time, and experiences another abrupt change at the end. There is no gradual injection of noise.\nAs explained in Section 3.4, regularization is important to prevent this type of result. Recall that a variable zt sampled from the distribution q(zt|y,x) can be written as zt = \u221a \u03b3(t,x)y + \u221a \u03c3(t,x)\u03f5, where \u03f5 follows a Gaussian distribution N (0, I). This reparametrization implies that setting \u03b3 \u2261 0 and \u03c3 \u2261 1 gives zt = \u03f5, allowing the noise prediction model \u03f5\u0302\u03bd(zt(\u03f5), t,x) to perfectly predict \u03f5 and yield L\u0302\u221e = 0. It is true that \u03b3 \u2261 0 conflicts with the L\u03b2 loss term, but any function \u03b3 that starts at 1 for t = 0 and then abruptly decreases to 0 is admissible. In Figure 13 we can see a similar behavior, with \u03b3 starting at 1 and then abruptly dropping to a low value. The regularization term L\u03b3 prevents undesired solutions of this type and ensures the gradual nature of the diffusion process.\nAdditionally, we perform an ablation study on the impact of learning a pixel-wise schedule instead of a single, global one. Learning a single schedule can be implemented as a special case of our method, which we denote as CVDM-simple. For the experiment we use the synthetic QPI dataset, introduced in Section 4. Table 3 summarizes the results. As can be seen, CVDM-simple shows improved performance when compared to CDDPM, supporting the idea that learning the schedule can yield better results than fine-tuning it. At the same time, the results are not on par with CVDM, showing there is value in learning a pixel-wise schedule. This supports the idea that some regions of the image are intrinsically more difficult to reconstruct than others, and the schedule captures part of that difficulty. Figure 14 allows for visual comparison of the reconstructions given by these methods."
+        },
+        {
+            "heading": "L EXPERIMENTAL RESULTS FOR IMAGE SUPER-RESOLUTION",
+            "text": "We showcase the versatility of our method by training the model described in Saharia et al. (2021) enhanced with our schedule learning mechanism, for the task of image super-resolution in ImageNet.\nFor this task, we compare our method to SR3 (Saharia et al., 2021) and Denoising Diffusion Restoration Models or DDRMs (Kawar et al., 2022). The images are sampled with T = 500 timesteps, for our method. For SR3 and DDRM, the metrics are taken from their respective works.\nTable 4 shows the results obtained by the three methods, using the peak signal-to-noise ratio (PSNR) and structural similarity index measure (SSIM) metrics. The results obtained by our method are comparable to both SR3 and DDRM. Similarly to the other applications described in Section 4, our method achieves competitive results without requiring any fine-tuning of the schedule. Figure 15 shows three examples from the ImageNet dataset, including the low-resolution image, the highresolution ground truth, and a reconstruction sampled with our method."
+        },
+        {
+            "heading": "M UNCERTAINTY ESTIMATION AND THE SCHEDULE",
+            "text": "Our method implicitly learns a conditional probability distribution, from which conditioned sampling can be performed. This means that we can get different reconstructions for a given input, drawing attention to the question of how much uncertainty is there in the reconstruction. As a way of measuring uncertainty, several reconstructions can be sampled for a given input, and the element-wise (e.g., pixel-wise) sample variance can be computed. Theoretically, we expect the schedule function \u03b2 to be significantly linked to this sample variance. As described in Section 5, in continuous time, the reverse diffusion process can be characterized by a stochastic differential equation with a diffusion coefficient of \u221a \u03b2(t,x). In that sense, higher values of \u03b2 make the reverse process more diffusive and leads to more randomness in the reconstructions.\nWe illustrate these ideas using samples from both the BioSR and ImageNet datasets, corresponding respectively to the problems of super-resolution microscopy and image super-resolution. The top half of Figure 16 shows a widefield microscopy image from the BioSR dataset, along with the ground truth image and five sample reconstructions. The bottom half shows a low-resolution image from the ImageNet dataset, along with the ground truth super-resolution image and five sample reconstructions.\nFor each reconstruction, we include the absolute error with respect to the ground truth image, which can be seen at the bottom of the respective half. Also at the bottom, we include the sample variance over the five reconstructions for each pixel, besides an image showcasing the pixel-wise magnitude of the \u03b2 schedule function (as an integral with respect to t). Finally, we highlight zones of high sample variance, so that it is possible to visually appreciate how the reconstructions differ from each other.\nFrom Figure 16 it is easy to visualize the ideas described at the beginning of this Section. The sample variance is reflected in the reconstructions, which clearly vary in some of the details. There is also a clear relation between the magnitude of \u03b2 and the sample variance, as expected theoretically. This is interesting, as it suggests that \u03b2 could be used to assess uncertainty in the absence of a readily available ground truth image, which would be the case in most real-world applications. We can also observe that the regions with high sample variance tend to exhibit a higher absolute error in the reconstruction. In that sense, the regions with larger uncertainty (as measured by the sample variance or the magnitude of \u03b2) correspond to details that are truly more difficult to reconstruct correctly.\nIn general, this highlights the importance of robust uncertainty estimation, even for reconstructions that look generally correct. For applications such as microscopy, a single pixel may contain relevant information, such as evidence of cell interaction. Something similar happens with MRI, where a few pixels can determine, for instance, the difference between the presence or absence of a tumor. Therefore, hallucinations in the reconstruction method can be easily misleading, which is in fact one of the challenges for the adoption of accelerated MRI in clinical environments (Bhadra et al., 2021)."
+        }
+    ],
+    "title": "CONDITIONAL VARIATIONAL DIFFUSION MODELS",
+    "year": 2024
+}

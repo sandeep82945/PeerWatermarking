@@ -1,0 +1,513 @@
+{
+    "abstractText": "Popular machine learning approaches forgo second-order information due to the difficulty of computing curvature in high dimensions. We present FOSI, a novel meta-algorithm that improves the performance of any base first-order optimizer by efficiently incorporating second-order information during the optimization process. In each iteration, FOSI implicitly splits the function into two quadratic functions defined on orthogonal subspaces, then uses a second-order method to minimize the first, and the base optimizer to minimize the other. We formally analyze FOSI\u2019s convergence and the conditions under which it improves a base optimizer. Our empirical evaluation demonstrates that FOSI improves the convergence rate and optimization time of first-order methods such as Heavy-Ball and Adam, and outperforms second-order methods (K-FAC and L-BFGS).",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Hadar Sivan"
+        },
+        {
+            "affiliations": [],
+            "name": "Moshe Gabel"
+        }
+    ],
+    "id": "SP:753570e05104cd0f79371c930215ea7b61447b40",
+    "references": [
+        {
+            "authors": [
+                "Ehsan Amid",
+                "Rohan Anil",
+                "Manfred Warmuth"
+            ],
+            "title": "Locoprop: Enhancing backprop via local loss optimization",
+            "venue": "In International Conference on Artificial Intelligence and Statistics,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Mathieu Blondel",
+                "Quentin Berthet",
+                "Marco Cuturi",
+                "Roy Frostig",
+                "Stephan Hoyer",
+                "Felipe LlinaresL\u00f3pez",
+                "Fabian Pedregosa",
+                "Jean-Philippe Vert"
+            ],
+            "title": "Efficient and modular implicit differentiation",
+            "venue": "arXiv preprint arXiv:2105.15183,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Aleksandar Botev",
+                "James Martens"
+            ],
+            "title": "KFAC-JAX, 2022. URL http://github.com/deepmind/ kfac-jax",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "James Bradbury",
+                "Roy Frostig",
+                "Peter Hawkins",
+                "Matthew James Johnson",
+                "Chris Leary",
+                "Dougal Maclaurin",
+                "George Necula",
+                "Adam Paszke",
+                "Jake VanderPlas",
+                "Skye Wanderman-Milne",
+                "Qiao Zhang"
+            ],
+            "title": "JAX: composable transformations of Python+NumPy programs, 2018",
+            "venue": "URL http: //github.com/google/jax",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Jos Dorsselaer",
+                "Michiel Hochstenbach",
+                "Henk Van der Vorst"
+            ],
+            "title": "Computing probabilistic bounds for extreme eigenvalues of symmetric matrices with the lanczos method",
+            "venue": "SIAM Journal on Matrix Analysis and Applications, 22,",
+            "year": 2001
+        },
+        {
+            "authors": [
+                "John Duchi",
+                "Elad Hazan",
+                "Yoram Singer"
+            ],
+            "title": "Adaptive subgradient methods for online learning and stochastic optimization",
+            "venue": "J. Mach. Learn. Res.,",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Elias Frantar",
+                "Eldar Kurtic",
+                "Dan Alistarh"
+            ],
+            "title": "M-fac: Efficient matrix-free approximations of second-order information",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jean Gallier"
+            ],
+            "title": "The Schur complement and symmetric positive semidefinite (and definite) matrices (2019)",
+            "venue": "URL https://www. cis. upenn. edu/jean/schur-comp. pdf,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jort F. Gemmeke",
+                "Daniel P.W. Ellis",
+                "Dylan Freedman",
+                "Aren Jansen",
+                "Wade Lawrence",
+                "R. Channing Moore",
+                "Manoj Plakal",
+                "Marvin Ritter"
+            ],
+            "title": "Audio set: An ontology and human-labeled dataset for audio events",
+            "venue": "In Proc. IEEE ICASSP 2017,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "James Gentle"
+            ],
+            "title": "Matrix Algebra: Theory, Computations and Applications",
+            "venue": "in Statistics. Springer,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Donald Goldfarb",
+                "Yi Ren",
+                "Achraf Bahamou"
+            ],
+            "title": "Practical quasi-newton methods for training deep neural networks",
+            "venue": "In Proceedings of the 34th International Conference on Neural Information Processing Systems, NIPS\u201920, Red Hook, NY, USA,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Vineet Gupta",
+                "Tomer Koren",
+                "Yoram Singer"
+            ],
+            "title": "Shampoo: Preconditioned stochastic tensor optimization",
+            "venue": "Proceedings of the 35th International Conference on Machine Learning,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Tom Hennigan",
+                "Trevor Cai",
+                "Tamara Norman",
+                "Igor"
+            ],
+            "title": "Babuschkin. Haiku: Sonnet for JAX, 2020",
+            "venue": "URL http://github.com/deepmind/dm-haiku",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jo\u00e3o F Henriques",
+                "Sebastien Ehrhardt",
+                "Samuel Albanie",
+                "Andrea Vedaldi"
+            ],
+            "title": "Small steps and giant leaps: Minimal Newton solvers for deep learning",
+            "venue": "In Proceedings of the IEEE/CVF International Conference on Computer Vision,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Majid Jahani",
+                "Sergey Rusakov",
+                "Zheng Shi",
+                "Peter Richt\u00e1rik",
+                "Michael W. Mahoney",
+                "Martin Tak\u00e1c"
+            ],
+            "title": "Doubly adaptive scaled algorithm for machine learning using second-order information",
+            "venue": "In The Tenth International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Diederik Kingma",
+                "Jimmy Ba"
+            ],
+            "title": "Adam: A method for stochastic optimization",
+            "venue": "International Conference on Learning Representations,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Cornelius Lanczos"
+            ],
+            "title": "An iteration method for the solution of the eigenvalue problem of linear differential and integral operators",
+            "venue": "Journal of research of the National Bureau of Standards,",
+            "year": 1950
+        },
+        {
+            "authors": [
+                "Laurent Lessard",
+                "Benjamin Recht",
+                "Andrew Packard"
+            ],
+            "title": "Analysis and design of optimization algorithms via integral quadratic constraints",
+            "venue": "SIAM Journal on Optimization,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Daniel Levy",
+                "John C Duchi"
+            ],
+            "title": "Necessary and sufficient geometries for gradient methods",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Xi-Lin Li"
+            ],
+            "title": "Preconditioned stochastic gradient descent",
+            "venue": "IEEE transactions on neural networks and learning systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Phillip Lippe"
+            ],
+            "title": "UvA Deep Learning Tutorials",
+            "venue": "https://uvadlc-notebooks.readthedocs.io/ en/latest/,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Dong C Liu",
+                "Jorge Nocedal"
+            ],
+            "title": "On the limited memory BFGS method for large scale optimization",
+            "venue": "Mathematical programming,",
+            "year": 1989
+        },
+        {
+            "authors": [
+                "Hong Liu",
+                "Zhiyuan Li",
+                "David Hall",
+                "Percy Liang",
+                "Tengyu Ma"
+            ],
+            "title": "Sophia: A scalable stochastic second-order optimizer for language model pre-training",
+            "venue": "arXiv preprint arXiv:2305.14342,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "James Martens",
+                "Roger Grosse"
+            ],
+            "title": "Optimizing neural networks with Kronecker-factored approximate curvature",
+            "venue": "In Proceedings of the 32nd International Conference on International Conference on Machine Learning - Volume 37,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "James Martens",
+                "Ilya Sutskever"
+            ],
+            "title": "Learning recurrent neural networks with hessian-free optimization",
+            "venue": "In Proceedings of the 28th international conference on machine learning",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "James Martens",
+                "Jimmy Ba",
+                "Matt Johnson"
+            ],
+            "title": "Kronecker-factored curvature approximations for recurrent neural networks",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "James Martens"
+            ],
+            "title": "Deep learning via hessian-free optimization",
+            "venue": "In ICML,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "G\u00e9rard Meurant",
+                "Zden\u011bk Strako\u0161"
+            ],
+            "title": "The Lanczos and conjugate gradient algorithms in finite precision arithmetic",
+            "venue": "Acta Numerica,",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "Yurii Nesterov"
+            ],
+            "title": "Introductory lectures on convex optimization: A basic course, volume 87",
+            "venue": "Springer Science & Business Media,",
+            "year": 2003
+        },
+        {
+            "authors": [
+                "Antonio Orvieto",
+                "Jonas Kohler",
+                "Dario Pavllo",
+                "Thomas Hofmann",
+                "Aurelien Lucchi"
+            ],
+            "title": "Vanishing curvature in randomly initialized deep ReLU networks",
+            "venue": "Proceedings of The 25th International Conference on Artificial Intelligence and Statistics,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Barak A. Pearlmutter"
+            ],
+            "title": "Fast exact multiplication by the Hessian",
+            "venue": "Neural Computation,",
+            "year": 1994
+        },
+        {
+            "authors": [
+                "Boris T Polyak"
+            ],
+            "title": "Introduction to optimization. optimization software. Inc., Publications Division",
+            "venue": "New York,",
+            "year": 1987
+        },
+        {
+            "authors": [
+                "Ning Qian"
+            ],
+            "title": "On the momentum term in gradient descent learning algorithms",
+            "venue": "Neural networks,",
+            "year": 1999
+        },
+        {
+            "authors": [
+                "Zhaonan Qu",
+                "Yinyu Ye",
+                "Zhengyuan Zhou"
+            ],
+            "title": "Diagonal preconditioning: Theory and algorithms",
+            "venue": "arXiv preprint arXiv:2003.07545,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Farbod Roosta-Khorasani",
+                "Michael W. Mahoney"
+            ],
+            "title": "Sub-sampled newton methods",
+            "venue": "Math. Program.,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Hadar Sivan",
+                "Moshe Gabel",
+                "Assaf Schuster"
+            ],
+            "title": "AutoMon: Automatic distributed monitoring for arbitrary multivariate functions",
+            "venue": "In Proceedings of the 2022 International Conference on Management of Data,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Hong Hui Tan",
+                "King Hann Lim"
+            ],
+            "title": "Review of second-order optimization techniques in artificial neural networks backpropagation. IOP Conference Series: Materials Science and Engineering, 495:012003, jun 2019",
+            "venue": "doi: 10.1088/1757-899x/495/1/012003. URL https://doi.org/10",
+            "year": 1200
+        },
+        {
+            "authors": [
+                "Tijmen Tieleman",
+                "Geoffrey Hinton"
+            ],
+            "title": "Lecture 6.5-rmsprop: Divide the gradient by a running average of its recent magnitude",
+            "venue": "COURSERA: Neural networks for machine learning,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "John C. Urschel"
+            ],
+            "title": "Uniform error estimates for the Lanczos method",
+            "venue": "SIAM Journal on Matrix Analysis and Applications,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Xiao Wang",
+                "Shiqian Ma",
+                "Donald Goldfarb",
+                "Wei Liu"
+            ],
+            "title": "Stochastic quasi-newton methods for nonconvex stochastic optimization",
+            "venue": "SIAM Journal on Optimization,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Ashia C Wilson",
+                "Rebecca Roelofs",
+                "Mitchell Stern",
+                "Nati Srebro",
+                "Benjamin Recht"
+            ],
+            "title": "The marginal value of adaptive gradient methods in machine learning",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Peng Xu",
+                "Jiyan Yang",
+                "Farbod Roosta-Khorasani",
+                "Christopher R\u00e9",
+                "Michael W. Mahoney"
+            ],
+            "title": "Subsampled newton methods with non-uniform sampling",
+            "venue": "In Proceedings of the 30th International Conference on Neural Information Processing Systems,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "M. Yang",
+                "D. Xu",
+                "Q. Cui",
+                "Z. Wen",
+                "P. Xu"
+            ],
+            "title": "An efficient fisher matrix approximation method for large-scale neural network optimization",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Zhewei Yao",
+                "Amir Gholami",
+                "Sheng Shen",
+                "Mustafa Mustafa",
+                "Kurt Keutzer",
+                "Michael Mahoney"
+            ],
+            "title": "Adahessian: An adaptive second order optimizer for machine learning",
+            "venue": "In proceedings of the AAAI conference on artificial intelligence,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Lin Zhang",
+                "Shaohuai Shi",
+                "Bo Li"
+            ],
+            "title": "Eva: Practical second-order optimization with kroneckervectorized approximation",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Pan Zhou",
+                "Jiashi Feng",
+                "Chao Ma",
+                "Caiming Xiong",
+                "Steven Chu Hong Hoi"
+            ],
+            "title": "Towards theoretically understanding why SGD generalizes better than Adam in deep learning",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        }
+    ],
+    "sections": [
+        {
+            "text": "1 Introduction\nConsider the optimization problem min\u03b8 f (\u03b8) for a twice differential function f : Rn \u2192 R. Firstorder optimizers such as gradient descent (GD) use only the gradient information to update \u03b8 (Kingma & Ba, 2014; Tieleman et al., 2012; Duchi et al., 2011; Polyak, 1987; Nesterov, 2003). Conversely, second-order optimizers such as Newton\u2019s method update \u03b8 using both the gradient and the Hessian information. First-order optimizers are thus more computationally efficient as they only require evaluating and storing the gradient, and since their update step often involves only elementwise operations, but have a lower convergence rate compared to second-order optimizers in many settings (Tan & Lim, 2019). Unfortunately, second-order optimizers cannot be used for large-scale optimization problems such as deep neural networks (DNNs) due to the intractability of evaluating the Hessian when the dimension n is large.\nDespite recent work on hybrid optimizers that leverage second-order information without computing the entire Hessian (Henriques et al., 2019; Martens & Grosse, 2015; Gupta et al., 2018; Goldfarb et al., 2020; Sivan et al., 2022), first-order methods remain the preferred choice for two reasons. First, many hybrid methods approximate the Hessian rather than the inverse preconditioner directly, resulting in amplifying approximation error and noise (Li, 2017). Second, no single optimizer is best across all problems: the performance of an optimizer can depend on the specific characteristics of the problem it is being applied to (Nocedal & Wright, 1999; Wilson et al., 2017; Zhou et al., 2020).\nOur Contributions. We propose FOSI (for First-Order and Second-order Integration), an alternative approach. Rather than creating a completely new optimizer, FOSI improves the convergence of any base first-order optimizer by incorporating second-order information. FOSI iteratively splits min\u03b8 f (\u03b8) into pairs of quadratic problems on orthogonal subspaces, then uses Newton\u2019s method to optimize one and the base optimizer to optimize the other. Unlike prior approaches, FOSI: (a) estimates the inverse preconditioner directly, reducing errors due to matrix inversion; (b) only estimates the most extreme eignenvalues and vectors, making it more robust to noise; (c) has low and controllable overhead; (d) accepts a base first-order optimizer, making it well suited for a large variety of tasks; and (e) works as \u201cturn key\u201d replacement for the base optimizer without requiring additional tuning. We make the following contributions:\n\u2022 A detailed description of the FOSI algorithm and a thorough spectral analysis of its preconditioner. We prove FOSI converges under common assumptions, and that it improves the condition number of the problem for a large family of base optimizers.\n\u2022 An empirical evaluation of FOSI on common DNN training tasks with standard datasets, showing it improves over popular first-order optimizers in terms of convergence and wall time. The best FOSI optimizer achieves the same loss as the best first-order algorithm in 48%\u201377% of the wall time, depending on the task. We also use quadratic functions to explore different features of FOSI, showing it significantly improves convergence of base optimizers when optimizing ill-conditioned functions with non-diagonally dominant Hessians. \u2022 An open source implementation of FOSI, available at: https://github.com/hsivan/fosi.\n2 Background and Notation\nGiven \u03b8t, the parameter vector at iteration t, second-order methods incorporate both the gradient gt = \u2207 f (\u03b8t) and the Hessian Ht = \u22072 f (\u03b8t) in the update step, while first-order methods use only the gradient. These algorithms typically employ an update step of the form \u03b8t+1 = \u03b8t + dt, where dt is a descent direction determined by the information (first and/or second order) from current and previous iterations. Usually, dt is of the form \u2212\u03b7P\u22121t g\u0304t, where Pt is a preconditioner matrix, g\u0304t is a linear combination of current and past gradients, and \u03b7 > 0 is a learning rate. This results in an effective condition number of the problem given by the condition number of P\u22121t Ht, which ideally is smaller than that of Ht (Zupanski, 2002). Note that in Newton\u2019s method Pt = Ht, resulting in the ideal effective condition number of 1.\nSince evaluating Ht for large n is intractable, most prior work approximate it. This, however, results in amplification of approximation errors and gradient noise due to the need of computing the inverse P\u22121t (Li, 2017); techniques such as damping (Martens & Grosse, 2015) that artificially modify the approximated Hessian further increase the error. As we will later show, FOSI approximates P\u22121t directly, which avoids the error amplification induced by matrix inversion.\nThe Lanczos algorithm. To obtain information about the curvature of a function f without computing its entire Hessian, we use the Lanczos algroithm (1950). This is an iterative method that finds the m extreme eigenvalues and eigenvectors of a symmetric matrix A \u2208 Rn\u00d7n, where m is usually much smaller than n. After running m iterations, its output is a matrix U \u2208 Rn\u00d7m with orthonormal columns and a tridiagonal real symmetric matrix T \u2208 Rm\u00d7m which can then be used to extract the approximate eigenvalues and eigenvectors of A.\nThe Lanczos approximation is more accurate for more extreme eigenvalues, thus to accurately approximate the k largest and \u2113 smallest eigenvalues, m must be larger than k + \u2113. Crucially, the Lanczos algorithm does not require storing A explicitly. It only requires an operator that receives a vector v and computes the matrix-vector product Av. In our case, A is the Hessian Ht of f (\u03b8) at the point \u03b8t. We denote by hvpt(v) : Rn \u2192 R the operator that returns the Hessian vector product Htv. This operator can be evaluated in linear time (roughly two approximations of f \u2019s gradient), using Pearlmutter\u2019s algorithm (1994).\nNotations and definitions. We use diag(v) for a diagonal matrix with diagonal v, 0m or 1m for a row vector of zeros or ones of size m, and [A, B] for concatenating two matrices n \u00d7 m1, n \u00d7 m2 into a single n \u00d7 (m1 + m2) matrix. We also define several notations w.r.t a real symmetric matrix A with eigenvalues \u03bb1 > ... > \u03bbn and eigenvectors v1, ... , vn. Let \u03bb\u0302 be the row vector with entries \u03bb1, ... , \u03bbk and \u03bbn\u2212\u2113+1, ... , \u03bbn (the k largest and \u2113 smallest eigenvalues), and V\u0302 \u2208 Rn\u00d7k+\u2113 the corresponding matrix whose columns are the eigenvectors of the eigenvalues in \u03bb\u0302. Similarly, \u03bb\u0302 is the row vector [\u03bbk+1, ... , \u03bbn\u2212\u2113] and V\u0302 \u2208 Rn\u00d7n\u2212k\u2212\u2113 is the corresponding matrix of eigenvectors.\n3 First and Second-Order Integration\nFOSI is a hybrid method that combines a first-order base optimizer with Newton\u2019s method by utilizing each to operate on a distinct subspace of the problem. The Lanczos algorithm, which provides curvature information of a function, is at the core of FOSI. We first provide an algorithm for approximating extreme eigenvalues and eigenvectors (\u00a73.1). We next present FOSI (\u00a73.2), analyze its preconditioner (\u00a73.3), discuss use of momentum (\u00a73.4), and analyze convergence in stochastic settings such as DNN training (\u00a73.5). We then discuss support for closed-form learning rates (\u00a73.6), reducing spectrum estimation error, and FOSI\u2019s overhead (\u00a73.7).\n3.1 Extreme Spectrum Estimation (ESE)\nFOSI uses the Lanczos algorithm to estimate the extreme eigenvalues and vectors of the Hessian Ht. Recently, Urschel (2021) presented probabilistic upper and lower bounds on the relative error of this approximation for arbitrary eigenvalues. While the upper bound is dependent on the true eigenvalues of Ht, which is unknown, the lower bound is dependent solely on m and n. To maintain the lower bound small, it is necessary to set m such that m = \u0398(ln n) and m must be greater than k + \u2113. We thus define a heuristic for determining m: m = max{4(k + \u2113), 2 ln n}. We now describe the ESE procedure for obtaining the k largest and \u2113 smallest eigenvalues of Ht and their eigenvectors using Lanczos. ESE takes as input the function f and its parameter value \u03b8t, and uses them to define a Hessian-vector product operator hvpt. Next, it calls the Lanczos algorithm with a specified number of iterations, m, and the hvpt operator. Our implementation parallelizes hvpt computations across the batch dimension, since they involve gradient computation, and performs full orthogonalization w.r.t all previous vectors in each iteration to prevent numerical instability (Meurant & Strakos\u030c, 2006). Finally, ESE extracts the desired eigenvalues and eigenvectors from Lanczos\u2019s outputs. The steps are summarized as Algorithm 1 in the Supplementary Material (Appendix A.1).\n3.2 The FOSI Optimizer\nFOSI takes as input the base optimizer, the function to be optimized, and an initial point, then performs iterative updates until convergence is reached. In each iteration t, FOSI computes the gradient gt = \u2207 f (\u03b8t), potentially updates the spectrum estimation, then uses both to update \u03b8t.\nFOSI calls the ESE procedure every T \u2265 1 iterations to obtain \u03bb\u0302 and V\u0302 , the largest k and smallest \u2113 eigenvalues of Ht and their eigenvectors, and then computes u = 1/|\u03bb\u0302| using element-wise absolute values. To avoid approximation errors, we postpone the first invocation of the ESE procedure by W warmup iterations (we discuss this further in \u00a73.7) During these iterations, the updates are equivalent to those of the base optimizer, as u and V\u0302 are initialized as zeros.\nNext, FOSI updates \u03b8t using the following procedure:\n1. Compute the sum of gt\u2019s projections on V\u0302\u2019s columns, g1 = V\u0302(V\u0302T gt), and the sum of gt\u2019s projections on V\u0302\u2019s columns, g2 = gt \u2212 g1. Due to the orthogonality of the eigenvectors, g1 and g2 are also orthogonal to each other. 2. Compute the descent direction d1 = \u2212\u03b1V\u0302((V\u0302T g1)\u2299uT ), where \u2299 stands for the Hadamard product. While the chance of encountering an eigenvalue that is exactly or nearly 0 when using small k and \u2113 values is very small, it is common to add a small epsilon to |\u03bb\u0302| to avoid division by such values (Kingma & Ba, 2014) when computing u. Note that an equivalent computation to d1 is \u2212\u03b1V\u0302 diag(u)V\u0302T gt, which is an \u03b1-scaled Newton\u2019s method step that is limited to V\u0302 subspace. The resulting d1 is a linear combination of V\u0302\u2019s columns. 3. Call the base optimizer to compute a descent direction from g2, denoted by db. 4. Subtract from db its projection on V\u0302\u2019s columns, d2 = db \u2212 V\u0302(V\u0302T db). The new vector d2 is\northogonal to V\u0302\u2019s columns, hence also to d1. 5. Update the parameters: \u03b8t+1 = \u03b8t + d1 + d2\nParentheses in the above steps are important as they allow for only matrix-vector products, reducing computational complexity. Appendix A.2 provides the full pseudocode for FOSI.\nSplitting to Two Subspaces. For clarity, we define \u03c9 = \u03b8t \u2212 \u03b8, H1 = V\u0302 diag(\u03bb\u0302)V\u0302T , and H2 = V\u0302 diag(\u03bb\u0302)V\u0302 T . Then at each iteration t, FOSI implicitly uses the quadratic approximation f\u0303 = ft + \u03c9T gt + 12\u03c9 T Ht\u03c9 of f and performs a step to minimize f\u0303 as follows. It first divides the vector space that is the eigenvectors of Ht into two orthogonal complement subspaces \u2013 one is spanned by V\u0302\u2019s columns and the other by V\u0302 . It then implicitly splits f\u0303 into two quadratic functions f1 and f2 such that f\u0303 is their sum: f1 = 12 ft+\u03c9 T g1+ 12\u03c9 T H1\u03c9 and f2 = 12 ft+\u03c9 T g2+ 12\u03c9 T H2\u03c9. Note that f\u0303 = f1+ f2, since gt = g1 + g2 and Ht = H1 + H2. Finally, FOSI minimizes f1 and f2 independently, while using a scaled Newton\u2019s step to minimize f1 and the base optimizer step to minimize f2.\nWe observe that f1 has similar slope and curvature as f\u0303 in the subspace that is spanned by V\u0302 and zero slope and curvature in its orthogonal complement V\u0302 , while f2 has similar slope and curvature as f\u0303 in V\u0302 and zero slope and curvature in V\u0302 . To minimize f1, FOSI changes \u03b8 in the direction d1 that is a linear combination of V\u0302\u2019s columns, and to minimize f2, it changes \u03b8 in the direction d2 that is a linear combination of V\u2019s columns. Hence, we can look at each step of FOSI as two simultaneous and orthogonal optimization steps that do not affect the solution quality of each other, and their sum is a step in the minimization of f\u0303 . Figure 1 illustrates this idea for the quadratic function f (\u03b8) = 1.25\u03b821 + 1.25\u03b8 2 2 + 1.5\u03b81\u03b82.\nAvoiding Matrix Inversion. We stress that unlike most hybrid methods, FOSI does not require inverting H1. Rather, the inverse preconditioner is obtained directly and exactly using the output of ESE: H\u221211 = V\u0302 diag(u)V\u0302 T . This helps avoid error amplification due to matrix inversion (Li, 2017).\n3.3 Preconditioner Analysis\nWe next analyze FOSI as a preconditioner. For simplicity, the t subscript is omitted from gt and Ht when it is clear from the text that the reference is to a specific point in time.\nFor base optimizers that utilize a diagonal matrix as a preconditioner (e.g., Adam), the result is an efficient computation, as P\u22121g is equivalent to element-wise multiplication of P\u22121\u2019s diagonal with g. When using FOSI with such a base optimizer, the diagonal of the inverse preconditioner, denoted by q, is calculated using g2, instead of g. Hence, db = \u2212\u03b7 diag(q)g2, for some learning rate \u03b7 > 0. Lemma 1. Let f (\u03b8) be a convex twice differential function and let BaseOpt be a first-order optimizer that utilizes a positive definite diagonal preconditioner. Let H be f \u2019s Hessian at iteration t of FOSI with BaseOpt, and let V diag(\u03bb)VT be an eigendecomposition of H such that V = [V\u0302 , V\u0302] and \u03bb = [\u03bb\u0302, \u03bb\u0302]. Then:\n1. FOSI\u2019s inverse preconditioner is P\u22121 = V ( \u03b1 diag(u) 0\n0 \u03b7M\n) VT , where M is the trailing n\u2212k\u2212\u2113\nprincipal submatrix (lower right corner submatrix) of VT diag(q)V, and diag(q) is the inverse preconditioner produced by BaseOpt from g2.\n2. The preconditioner P is symmetric and positive definite. 3. \u03b1 is an eigenvalue of the effective Hessian P\u22121H, and V\u0302\u2019s columns are in the eigenspace of \u03b1.\nThe proof can be found in Appendix A.3. It includes expressing d1 and d2 as a product of certain matrices with g, substituting these expressions into \u03b8t + d1 + d2, and using linear algebra properties to prove that the resulting preconditioner is a symmetric positive definite matrix. Finally, we assign P\u22121 expression to obtain P\u22121H. Note that symmetric positive definite preconditioner is necessary for ensuring that the search direction always points towards a descent direction (Li, 2017).\nAs expected, we obtained a separation of the space into two subspaces. For the subspace that is spanned by V\u0302 , for which FOSI uses scaled Newton\u2019s method, the condition number is 1. For the complementary subspace, the condition number is determined by BaseOpt\u2019s preconditioner. In the general case, it is hard to determine the impact of a diagonal preconditioner on the condition number of the problem, although it is known to be effective for diagonally dominant Hessian (Qu et al., 2020;\nLevy & Duchi, 2019). Appendix A.3 includes an analysis of the special case in which H is diagonal. We show that even in this case, which is ideal for a diagonal preconditioner, FOSI provides benefit, since it solves f1 with Newton\u2019s method and provides the base optimizer with f2, which is defined on a smaller subspace, hence can be viewed as of smaller dimensionality than f .\nIdentity Preconditioner. For base optimizers with identity preconditioner such as GD, we can perform a complete spectral analysis of FOSI\u2019s preconditioner and effective Hessian, even for nondiagonal H. This allows us to obtain the effective condition number and the conditions in which it is smaller than the original one. However, since FOSI uses two optimizers on orthogonal subspaces, a more relevant measure for improvement is whether the effective condition number of each subspace is smaller than the original one. We show that the condition number of the subspace that is spanned by V\u0302 is 1 and the condition number of V\u0302 is \u03bbk+1/\u03bbn\u2212\u2113. Both condition numbers, of f1 and f2, are smaller than the condition number of the original H. See Appendices A.4 for proofs and analysis.\n3.4 Momentum\nMomentum accelerates convergence of first-order optimizers and is adapted by many popular optimizers (Qian, 1999; Kingma & Ba, 2014). When using momentum, the descent direction is computed on g\u0304, instead of g, where g\u0304 is a linear combination of the current and past gradients. Momentum could also be used by FOSI; however, FOSI and the base optimizer must apply the same linear combination on g1 and g2, which entails g\u0304 = g\u03041 + g\u03042, to maintain the orthogonality of f1 and f2. We can use g\u0304, g\u03041, g\u03042 in the proof of Lemma 1, instead of g, g1, g2 and obtain similar results.\n3.5 Convergence in the Stochastic Setting\nWe adopt the stochastic setting proposed by Wang et al. (2017). Consider the stochastic optimization problem min\u03b8 f (\u03b8) for f (\u03b8) = Ex[F(\u03b8, x)], where F : Rn \u00d7 Rd \u2192 R is twice differentiable w.r.t \u03b8 and x \u2208 Rd denotes a random variable with distribution P. When stochastic optimization is used for DNN training, f is usually approximated by a series of of functions: at each iteration t, a batch bt containing mt data samples {x1, x2, ... , xmt } is sampled and the function f t is set as f t(\u03b8) = 1mt \u2211mt i=1 F(\u03b8, xi). Note that labels, if any, can be added to the data vectors to conform to this model. Adapting FOSI to stochastic DNN training requires a small change to FOSI\u2019s algorithm. at the beginning of each iteration, the first action would be to sample a batch bt and set f t. We can call the ESE procedure with the current f t, or with some predefined f i, i \u2264 t, as discussed in \u00a73.7. We now show convergence of FOSI in the common stochastic setting under common Lipschitz smoothness assumptions on f and F, and assuming bounded noise level of the stochastic gradient. Lemma 2. Let BaseOpt be a first-order optimizer that utilizes a positive definite diagonal preconditioner and denote by \u22072F(\u03b8, x) = \u22022F\n\u2202\u03b82 the Hessian of F w.r.t \u03b8. Assuming:"
+        },
+        {
+            "heading": "1. f (\u03b8) is L-smooth and lower bounded by a real number.",
+            "text": "2. For every iteration t, Ext [\u2207\u03b8F(\u03b8t, xt)] = \u2207 f (\u03b8t) and Ext [\u2225\u2207\u03b8F(\u03b8t, xt) \u2212 \u2207 f (\u03b8t)\u22252] \u2264 \u03c32, where \u03c3 > 0, xt for t = 1, 2, ... are independent samples, and for a given t the random variable xt is independent of {\u03b8i}ti=1. 3. There exist a positive constant z s.t. for every \u03b8 and x, \u2225\u22072F(\u03b8, x)\u2225 \u2264 z and the diagonal entries of BaseOpt\u2019s preconditioner are upper bounded by z.\nThen, for a given \u03f5 \u2208 (0, 1), the number of iterations N needed to obtain 1N \u2211N\nt=1 E[\u2225\u2207 f (\u03b8t)\u22252] \u2264 \u03f5 when applying FOSI with BaseOpt is N = O(\u03f5\u22121/(1\u2212\u03b2)), for step size \u03b7 chosen proportional to t\u2212\u03b2, where \u03b2 \u2208 (0.5, 1) is a constant.\nThe proof (in Appendix A.5) works by expressing FOSI in the stochastic quasi-Newton method form used in Theorem 2.8 of Wang et al. (2017), and proving the Theorem\u2019s conditions are satisfied.\nIn the convex, non-stochastic scenario, the convergence rate of the base optimizer becomes the limiting factor, as Newton\u2019s method demonstrates a quadratic convergence rate on f1. Therefore, FOSI\u2019s convergence rate mirrors that of the base optimizer for f , but with improved constants due to the smaller condition number of f2. For instance, the convergence analysis of GD yields f (\u03b8t) \u2212 f (\u03b8\u2217) \u2264 \u2225\u03b80 \u2212 \u03b8\u2217\u22252/(2\u03b1t) for \u03b1 \u2264 1/L. In the convex case, L = \u03bb1 (the maximal eigenvalue of the Hessian). Since FOSI-GD reduces the maximal eigenvalue to \u03bbk+1, its bound is tighter.\n3.6 Automatic Learning Rate Scaling\nWhen the base optimizer has a closed-form expression of its optimal learning rate in the quadratic setting that is only dependant on the extreme eigenvalues, FOSI can adjust a tuned learning rate \u03b7 to better suit the condition number of f2. Fortunately, in most cases of optimizers that utilize a diagonal preconditioner, such as GD, Heavy-Ball, and Nesterov, there are such closed-forms (Lessard et al., 2016). Specifically, when applying FOSI with such a base optimizer and given the relevant closedform expression for the optimal learning rate, the adjusted learning rate at iteration t would be \u03b72 = \u03b7(\u03b7\u22172/\u03b7\n\u2217), where \u03b7\u2217 is the optimal learning rate for the quadratic approximation f\u0303 and \u03b7\u22172 is the optimal one for f2. FOSI is able to compute this scaling, using the ESE outputs.\nThe intuition behind this scaling is that the ratio between the optimal learning rates is proportional to the ratio between the condition number of f\u0303 and that of f2. The full details regarding this scaling technique are in Appendix A.6. Note that \u03b7\u22172/\u03b7\n\u2217 \u2265 1. In practice, we suggest a more conservative scaling that involves clipping over this scaling factor as follows: \u03b72 = \u03b7min{\u03b7\u22172/\u03b7\u2217, c} for c \u2265 1. For c = 1, \u03b72 = \u03b7, and for extremely large c (\u221e), the scaling factor is not clipped.\n3.7 Error and Overhead\nESE Approximation Error. Using Newton\u2019s method in non-quadratic settings in conjunction with inexact approximation of Hessian eigenvalues through the ESE procedure increases the risk of divergence. FOSI uses several techniques to address this: scaled Newton\u2019s method, extra numerical accuracy inside the ESE procedure, full orthogonalization, and warmup. The details are available in Appendix A.7. In practice, our experiments on a variety of DNNs in \u00a74 demonstrate that FOSI is robust and substantially improves convergence.\nRuntime. FOSI\u2019s runtime differs from that of the base optimizer due to additional computations in each update step and calls to the ESE procedure. For large and complex functions, the latency of the update step of both optimizers, the base optimizer and FOSI, is negligible when compared to the computation of the gradient in each iteration. Furthermore, since each Lanczos iteration is dominated by the Hessian-vector product operation which takes approximately two gradient evaluations, the latency of the ESE procedure can be approximated by 2m\u03c4, where \u03c4 is gradient computation latency and m the number of Lanczos iterations (see \u00a73.1). The ESE procedure is called every T iterations, and the parameter T should be set such that FOSI\u2019s runtime is at most \u03c1 times the base optimizer runtime, for a user-defined overhead \u03c1 > 1. Thus, given the above approximations and assumptions, we can achieve overhead \u03c1 by setting: T = 2m/(\u03c1 \u2212 1). This heuristic helps avoid the need to tune T , though FOSI can of course use any T > 0. See Appendix A.8 for additional details as well as a more accurate expression for T for functions where additional computations are not negligible in comparison to gradient computations.\nMemory. FOSI stores k + \u2113 eigenvectors of size O(n), and temporarily uses O(mn) memory when performing the ESE procedure. In comparison, other second order methods such as K-FAC (Martens & Grosse, 2015) and Shampoo (Gupta et al., 2018) incur O( \u2211 i\u2208L d2i + p 2 i ) memory overhead, where di is the input dimension of layer i, pi the output dimension, and L the total number of layers.\n4 Evaluation\nWe first evaluate FOSI\u2019s performance on benchmarks tasks including real-world DNNs with standard datasets, for both first- and second-order methods. We then validate our theoretical results by evaluating FOSI on a positive definite (PD) quadratic function with different base optimizers; we explore the effect of the dimension n, the eigenspectrum, the learning rate, the base optimizer, and the clipping parameter c on FOSI\u2019s performance. We implemented FOSI in Python using the JAX framework (Bradbury et al., 2018) 0.3.25. For experiments, we use an NVIDIA A40 GPU.\n4.1 Deep Neural Networks\nWe evaluated FOSI on five DNNs of various sizes using standard datasets, first focusing first-order methods in common use. We execute FOSI with k = 10 and \u2113 = 0, since small eigenvalues are usually negative. We set \u03b1 = 0.01, c = 3, and W such that warmup is one epoch. T is determined\nTable 1: Wall time in seconds to reach target validation accuracy (AC, TL, LR) or loss (LM, AE). The target (in parentheses) is the best one reached by the base optimizer. No single base optimizer is best for all tasks.\nTask HB FOSI-HB Adam FOSI-Adam\nAC 3822 1850 (40.4%) 5042 3911 (28.9%) LM 269 207 (1.71) 270 219 (1.76) AE 354 267 (52.46) 375 313 (51.26) TL 93 53 (79.1%) 68 33 (79.0%) LR 16 8 (92.8%) 12 18 (92.8%)\n0 5000 wall time (sec.)\n0.01\n0.02\n0.03\ntra in\nlo ss\n0 5000 wall time (sec.)\n0.2\n0.4\nva lid\na cc\n.\nAdam HB FOSI-Adam FOSI-HB\nFigure 2: Training AC (MobileNetV1 on AudioSet data). FOSI converges faster than HB and similar to Adam across wall time (left). However, Adam overfits and generalizes poorly as indicated by its low validation accuracy (right).\nusing the heuristic suggested in \u00a7 3.7 aiming at 10% overhead (\u03c1 = 1.1), resulting in T = 800 for all experiments. The base optimizers compared to FOSI are Heavy-Ball (HB) and Adam; we omit GD (SGD) as it performed worse than HB in most cases. We use the standard learning rate for Adam (0.001), and the best learning rate for HB out of 0.1, 0.01, 0.001, with default momentum parameters \u03b21 = 0.9, \u03b22 = 0.999 for Adam and \u03b2 = 0.9 for HB. The five evaluated tasks are:\n1. Audio Classification (AC): Training MobileNetV1 (approximately 4 million parameters) on the AudioSet dataset (Gemmeke et al., 2017). The dataset contains about 20,000 audio files, each 10 seconds long, with 527 classes and multiple labels per file. We converted the audio files into 1-second mel-spectrograms and used them as input images for the DNN. The multi-hot label vector of a segment is the same as the original audio file\u2019s label. 2. Language Model (LM): Training an RNN-based character-level language model with over 1 million parameters (Hennigan et al., 2020) on the Tiny Shakespeare dataset (Karpathy, 2015). For LM training batches are randomly sampled; there is no defined epoch and we use W = T . 3. Autoencoder (AE): Training an autoencoder model with roughly 0.5 million parameters on the CIFAR-10 dataset. Implementation is based on Lippe (2022) with latent dimension size 128. We observed that the HB optimizer in this case is sensitive to the learning rate and diverges easily. Therefore we run FOSI with c = 1 (prevents learning rate scaling) and W = T , which enables extra warmup iterations (number of iteration per epoch is 175). 4. Transfer Learning (TL): Transfer learning from ImageNet to CIFAR-10. We start with a pretrained ResNet-18 on ImageNet2012 and replace the last two layers with a fully-connected layer followed by a Softmax layer. We train the added fully-connected layer (5130 params), while the other layers are frozen (11 million parameters). 5. Logistic Regression (LR): Training a multi-class logistic regression model to predict the 10 classes of the MNIST dataset. The model is a neural network with one fully connected layer of 784 input size followed by a Softmax layer of 10 outputs, containing 7850 parameters. The input data is the flattened MNIST images. Since logistic regression is a convex function, the model is also convex w.r.t. the parameters of the network.\nTable 1 summarize the experimental results, showing the wall time when reaching a target validation accuracy (for AC, TL, LR tasks) or target validation loss (for LM, AE tasks). The target metric (in parentheses) is the best one reached by the base optimizer. FOSI consistently reaches the target metric faster than the base optimizer (though Adam is faster than FOSI-Adam on LR, FOSI-HB is faster than both). The improvement in FOSI-HB is more significant than in FOSI-Adam, due to FOSI-HB\u2019s ability to adapt the learning rate according to the improved condition number of the effective Hessian.\nFigure 2 shows the optimizers\u2019 learning curves for the AC task. The training loss curves suggests that FOSI significantly improves the performance of HB, but does not help Adam. However, while Adam\u2019s training loss reaches zero quickly, it suffers from substantial overfitting and generalizes poorly, as indicated by its accuracy. This supports the idea that there is no single best optimizer for all problems (Zhou et al., 2020). FOSI aims to improve the best optimizer for each specific task. In this case, HB is preferred over Adam as it generalizes much better, and FOSI improves over HB.\nIt is important to note that when the base optimizer overfits, FOSI\u2019s acceleration of convergence also leads to an earlier overfitting point. This can be observed in the validation accuracy curve: HB begins to overfit near epoch 70 while FOSI begins to overfit at roughly epoch 35. Overall, throughout our experiments, we have not observed FOSI to overfit more than the base optimizer; FOSI always reaches the same or superior validation accuracy as the base optimizer.\nSummary. FOSI improves convergence of the base optimizer, and is the fastest optimizer for all five tasks. On average, FOSI achieves the same loss as its base optimizer in 78% of the time on the training set and the same accuracy/loss in 75% of the time on the validation set. Thus while the average FOSI iteration takes longer than the base optimizer\u2019s, FOSI requires fewer iterations resulting in overall faster convergence. Additional results can be found in Appendix B.1.\n4.2 Comparison to Second-OrderMethods\nWe compare FOSI to two representative second-order techniques, K-FAC (Martens & Grosse, 2015) and L-BFGS (Liu & Nocedal, 1989); these use a block-diagonal approximation of the Hessian as a preconditioner, subsequently perform its inversion. We repeat the five DNN training experiments and compare the results of both algorithms to FOSI-HB. We use the KFAC-JAX (Botev & Martens, 2022) implementation for K-FAC and the JAXOpt library (Blondel et al., 2021) for L-BFGS.\nWe used grid search to tune K-FAC\u2019s learning rate and momentum, and included K-FAC\u2019s adaptive as one of the options. We utilized adaptive damping and maintained the default and more precise T3 (interval between two computations of the approximate Fisher inverse matrix) value of 5 after testing larger T3 values and observing no variation in runtime. For tuning L-BFGS hyperparameters, we used line-search for the learning rate, and performed a search for the optimal L (history size) for each task, starting from L = 10 (similar to k we used for FOSI) and up to L = 100. The hyperparameters were selected based on the lowest validation loss obtained for each experiment.\nOverall, we observed that both K-FAC and L-BFGS algorithms have slower runtimes and poorer performance compared to FOSI. They occasionally diverge, can overfit, and rarely achieve the same level of validation accuracy as FOSI. See Appendix B.1 for figures and additional results.\n4.3 Quadratic Functions\nTo evaluate FOSI\u2019s optimization performance across range of parameters, we use controlled experiments on PD quadratic functions of the form fH(\u03b8) = 0.5\u03b8T H\u03b8. We use GD, HB, and Adam to minimize fH , as well as FOSI with these base optimizers. We use the default momentum parameters \u03b21 = 0.9, \u03b22 = 0.999 for Adam and \u03b2 = 0.9 for HB. The learning rate \u03b7 for Adam was set to 0.05 after tuning, for GD to the optimal value 2/(\u03bb1 + \u03bbn), and for HB we used 2/( \u221a \u03bb1 + \u221a \u03bbn)2 which is half of the optimal value (due to using constant \u03b2 rather than optimal). FOSI runs with k = 10, \u2113 = 0, \u03b1 = 1, and c = \u221e (no clipping on the scaling of the GD and HB learning rates, see \u00a73.6).\nDimensionality and Eigenspectrum. To study the effect of dimensionality and eigenspectrum on FOSI, we created five fH functions for each n \u2208 {100, 1500} by varying \u03bb1 of the Hessian H with \u03bb1 \u2208 {5, 10, 20, 50, 200}. The other eigenvalues were set to \u03bbi = 1.5\u2212(i\u22122) and the eigenvectors were extracted from a symmetric matrix whose entries were randomly sampled from U(0, 1).\nFigure 3 shows learning curves of the optimizers on functions with \u03bb1 = 5 and \u03bb1 = 200. Similar results were obtained for other functions. FOSI converges at least two orders of magnitude faster\nthan its counterparts. In this case, dimensionality has little impact on the performance of different optimizers. For a specific n value, increasing \u03bb1 causes the base optimizers to converge to less optimal solutions, but has little impact on FOSI. This is expected for GD and HB, whose learning rate is limited by the inverse of the largest eigenvalue, hence, larger \u03bb1 implies slower convergence. FOSI reduces the largest eigenvalue, allowing for larger learning rate that is identical for all functions. Interestingly, this is observed for Adam as well.\nIll-conditioning and diagonally dominance. We explore the effect of both the condition number and the diagonally dominance of the function\u2019s Hessian on the different optimizers. We use a set of quadratic functions with different condition number and different rotation w.r.t. the coordinate system, which impacts the dominance of the Hessian\u2019s diagonal. While all optimizers are negatively affected by large condition number, only Adam is affected by the rotation. FOSI improves over the base optimizer in all cases. The full details and analysis of the results are in Appendix B.2.1\nLearning rate and momentum. We explored the effect of various learning rates and momentum parameters on the optimizers. We find that FOSI improves over Adam, HB, and GD for all learning rates and momentum (for HB and Adam). The full details of this experiment are in Appendix B.2.2.\n5 RelatedWork\nPartially second-order optimizers are a group of optimization methods that incorporate some aspects of second-order information in their optimization process. Optimizers that use a diagonal preconditioner (Yao et al., 2021; Jahani et al., 2022; Henriques et al., 2019; Liu et al., 2023), and in fact approximate the Hessian diagonal, suffer when the assumption for diagonally dominance Hessian does not hold (see \u00a7 4.3). L-BFGS (Liu & Nocedal, 1989), which uses low-rank approximation of the Hessian, is sensitive to the rank parameter and an incorrect selection can lead to slow convergence or divergence. Additionally, it requires line search in each iteration, slowing down the optimization process further. Recent approaches, such as K-FAC (Martens & Grosse, 2015), Shampoo (Gupta et al., 2018), K-BFGS (Goldfarb et al., 2020), LocoProp (Amid et al., 2022), Eva (Zhang et al., 2023), and Yang et al. (2023) exploit the structure of the network to approximate a block diagonal preconditioner matrix, as an alternative to full second-order methods. However, these techniques approximate the preconditioner directly instead of approximating its inverse, potentially resulting in higher approximation errors and noise sensitivity (Li, 2017). They also exhibit comparable limitations to those of diagonal preconditioners due to neglecting Hessian elements outside the diagonal blocks, such as inter-layer parameter correlations or rotated problems (\u00a74.3). In contrast, by splitting the problem into two subspaces FOSI obtains a full low-rank representation of the Hessian for the first subspace V\u0302 , which captures both the rotation and curvature of the sub-problem f1. This contributes to accuracy and stability of the optimization, particularly as it is based on extreme eigenvalues and vectors that can be approximated more accurately.\nOther optimization approaches for stochastic settings involve the use of sub-sampling of f i functions and constructing an approximation of the Hessian based on the gradients of these functions at each iteration (Roosta-Khorasani & Mahoney, 2019; Xu et al., 2016). However, these methods are limited to functions with only a few thousand parameters. Hessian-free optimization methods (Martens et al., 2010; Martens & Sutskever, 2011; Frantar et al., 2021) rely on conjugate gradient to incorporate second order information, which while more efficient than Lanczos in terms of memory, it still often requires many steps to converge and is more sensitive to noise. Finally, while these works propose a single improved optimizer, FOSI is a meta-optimizer.\n6 Discussion and FutureWork\nFOSI is a hybrid meta-optimizer that combines a first-order base optimizer with Newton\u2019s method to improve the optimization process without additional tuning. Evaluation on real and synthetic tasks demonstrates FOSI improves the wall time to convergence when compared to the base optimizer. Future research will focus on methods for automatic tuning of different parameters of FOSI, such as dynamically adjusting parameters k and \u2113 according to their impact on the effective condition number. We also plan to investigate the effect of stale spectrum estimation, which could allow running the ESE procedure on the CPU in parallel to the training process on the GPU.\nAcknowledgments\nThe authors thank the anonymous reviewers for their valuable feedback. The research leading to these results was supported by the Israel Science Foundation (grant No.191/18), the Technion Hiroshi Fujiwara Cyber Security Research Center, the Israel National Cyber Directorate, and the HPITechnion Research School.\nReferences Ehsan Amid, Rohan Anil, and Manfred Warmuth. Locoprop: Enhancing backprop via local loss\noptimization. In International Conference on Artificial Intelligence and Statistics, pp. 9626\u20139642. PMLR, 2022.\nMathieu Blondel, Quentin Berthet, Marco Cuturi, Roy Frostig, Stephan Hoyer, Felipe LlinaresLo\u0301pez, Fabian Pedregosa, and Jean-Philippe Vert. Efficient and modular implicit differentiation. arXiv preprint arXiv:2105.15183, 2021.\nAleksandar Botev and James Martens. KFAC-JAX, 2022. URL http://github.com/deepmind/ kfac-jax.\nJames Bradbury, Roy Frostig, Peter Hawkins, Matthew James Johnson, Chris Leary, Dougal Maclaurin, George Necula, Adam Paszke, Jake VanderPlas, Skye Wanderman-Milne, and Qiao Zhang. JAX: composable transformations of Python+NumPy programs, 2018. URL http: //github.com/google/jax.\nJos Dorsselaer, Michiel Hochstenbach, and Henk Van der Vorst. Computing probabilistic bounds for extreme eigenvalues of symmetric matrices with the lanczos method. SIAM Journal on Matrix Analysis and Applications, 22, 01 2001. doi: 10.1137/S0895479800366859.\nJohn Duchi, Elad Hazan, and Yoram Singer. Adaptive subgradient methods for online learning and stochastic optimization. J. Mach. Learn. Res., 12(null):2121\u20132159, jul 2011. ISSN 1532-4435.\nElias Frantar, Eldar Kurtic, and Dan Alistarh. M-fac: Efficient matrix-free approximations of second-order information. Advances in Neural Information Processing Systems, 34:14873\u2013 14886, 2021.\nJean Gallier et al. The Schur complement and symmetric positive semidefinite (and definite) matrices (2019). URL https://www. cis. upenn. edu/jean/schur-comp. pdf, 2020.\nJort F. Gemmeke, Daniel P. W. Ellis, Dylan Freedman, Aren Jansen, Wade Lawrence, R. Channing Moore, Manoj Plakal, and Marvin Ritter. Audio set: An ontology and human-labeled dataset for audio events. In Proc. IEEE ICASSP 2017, New Orleans, LA, 2017.\nJames Gentle. Matrix Algebra: Theory, Computations and Applications in Statistics. Springer, 01 2017. ISBN 978-3-319-64866-8. doi: 10.1007/978-3-319-64867-5.\nDonald Goldfarb, Yi Ren, and Achraf Bahamou. Practical quasi-newton methods for training deep neural networks. In Proceedings of the 34th International Conference on Neural Information Processing Systems, NIPS\u201920, Red Hook, NY, USA, 2020. Curran Associates Inc. ISBN 9781713829546.\nVineet Gupta, Tomer Koren, and Yoram Singer. Shampoo: Preconditioned stochastic tensor optimization. In Jennifer Dy and Andreas Krause (eds.), Proceedings of the 35th International Conference on Machine Learning, volume 80 of Proceedings of Machine Learning Research, pp. 1842\u20131850. PMLR, 10\u201315 Jul 2018. URL https://proceedings.mlr.press/v80/ gupta18a.html.\nTom Hennigan, Trevor Cai, Tamara Norman, and Igor Babuschkin. Haiku: Sonnet for JAX, 2020. URL http://github.com/deepmind/dm-haiku.\nJoa\u0303o F Henriques, Sebastien Ehrhardt, Samuel Albanie, and Andrea Vedaldi. Small steps and giant leaps: Minimal Newton solvers for deep learning. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pp. 4763\u20134772, 2019.\nMajid Jahani, Sergey Rusakov, Zheng Shi, Peter Richta\u0301rik, Michael W. Mahoney, and Martin Taka\u0301c. Doubly adaptive scaled algorithm for machine learning using second-order information. In The Tenth International Conference on Learning Representations, ICLR 2022, Virtual Event, April 25- 29, 2022. OpenReview.net, 2022. URL https://openreview.net/forum?id=HCelXXcSEuH.\nAndrej Karpathy. char-rnn, 2015. URL https://github.com/karpathy/char-rnn.\nDiederik Kingma and Jimmy Ba. Adam: A method for stochastic optimization. International Conference on Learning Representations, 12 2014.\nCornelius Lanczos. An iteration method for the solution of the eigenvalue problem of linear differential and integral operators. Journal of research of the National Bureau of Standards, 45: 255\u2013282, 1950.\nLaurent Lessard, Benjamin Recht, and Andrew Packard. Analysis and design of optimization algorithms via integral quadratic constraints. SIAM Journal on Optimization, 26(1):57\u201395, 2016. doi: 10.1137/15M1009597. URL https://doi.org/10.1137/15M1009597.\nDaniel Levy and John C Duchi. Necessary and sufficient geometries for gradient methods. Advances in Neural Information Processing Systems, 32, 2019.\nXi-Lin Li. Preconditioned stochastic gradient descent. IEEE transactions on neural networks and learning systems, 29(5):1454\u20131466, 2017.\nPhillip Lippe. UvA Deep Learning Tutorials. https://uvadlc-notebooks.readthedocs.io/ en/latest/, 2022.\nDong C Liu and Jorge Nocedal. On the limited memory BFGS method for large scale optimization. Mathematical programming, 45(1):503\u2013528, 1989.\nHong Liu, Zhiyuan Li, David Hall, Percy Liang, and Tengyu Ma. Sophia: A scalable stochastic second-order optimizer for language model pre-training. arXiv preprint arXiv:2305.14342, 2023.\nJames Martens and Roger Grosse. Optimizing neural networks with Kronecker-factored approximate curvature. In Proceedings of the 32nd International Conference on International Conference on Machine Learning - Volume 37, ICML\u201915, pp. 2408\u20132417. JMLR.org, 2015.\nJames Martens and Ilya Sutskever. Learning recurrent neural networks with hessian-free optimization. In Proceedings of the 28th international conference on machine learning (ICML-11), pp. 1033\u20131040, 2011.\nJames Martens, Jimmy Ba, and Matt Johnson. Kronecker-factored curvature approximations for recurrent neural networks. In International Conference on Learning Representations, 2018.\nJames Martens et al. Deep learning via hessian-free optimization. In ICML, volume 27, pp. 735\u2013742, 2010.\nGe\u0301rard Meurant and Zdene\u030ck Strakos\u030c. The Lanczos and conjugate gradient algorithms in finite precision arithmetic. Acta Numerica, 15:471\u2013542, 2006.\nYurii Nesterov. Introductory lectures on convex optimization: A basic course, volume 87. Springer Science & Business Media, 2003.\nJorge Nocedal and Stephen J Wright. Numerical optimization. Springer, 1999.\nAntonio Orvieto, Jonas Kohler, Dario Pavllo, Thomas Hofmann, and Aurelien Lucchi. Vanishing curvature in randomly initialized deep ReLU networks. In Gustau Camps-Valls, Francisco J. R. Ruiz, and Isabel Valera (eds.), Proceedings of The 25th International Conference on Artificial Intelligence and Statistics, volume 151 of Proceedings of Machine Learning Research, pp. 7942\u20137975. PMLR, 28\u201330 Mar 2022. URL https://proceedings.mlr.press/v151/ orvieto22a.html.\nBarak A. Pearlmutter. Fast exact multiplication by the Hessian. Neural Computation, 6(1):147\u2013160, 1994. doi: 10.1162/neco.1994.6.1.147.\nBoris T Polyak. Introduction to optimization. optimization software. Inc., Publications Division, New York, 1:32, 1987.\nNing Qian. On the momentum term in gradient descent learning algorithms. Neural networks, 12 (1):145\u2013151, 1999.\nZhaonan Qu, Yinyu Ye, and Zhengyuan Zhou. Diagonal preconditioning: Theory and algorithms. arXiv preprint arXiv:2003.07545, 2020.\nFarbod Roosta-Khorasani and Michael W. Mahoney. Sub-sampled newton methods. Math. Program., 174(1\u20132):293\u2013326, mar 2019. ISSN 0025-5610. doi: 10.1007/s10107-018-1346-5. URL https://doi.org/10.1007/s10107-018-1346-5.\nHadar Sivan, Moshe Gabel, and Assaf Schuster. AutoMon: Automatic distributed monitoring for arbitrary multivariate functions. In Proceedings of the 2022 International Conference on Management of Data, SIGMOD \u201922, pp. 310\u2013324. Association for Computing Machinery, 2022. ISBN 9781450392495. doi: 10.1145/3514221.3517866. URL https://doi.org/10.1145/ 3514221.3517866.\nHong Hui Tan and King Hann Lim. Review of second-order optimization techniques in artificial neural networks backpropagation. IOP Conference Series: Materials Science and Engineering, 495:012003, jun 2019. doi: 10.1088/1757-899x/495/1/012003. URL https://doi.org/10. 1088/1757-899x/495/1/012003.\nTijmen Tieleman, Geoffrey Hinton, et al. Lecture 6.5-rmsprop: Divide the gradient by a running average of its recent magnitude. COURSERA: Neural networks for machine learning, 4(2):26\u201331, 2012.\nJohn C. Urschel. Uniform error estimates for the Lanczos method. SIAM Journal on Matrix Analysis and Applications, 42(3):1423\u20131450, 2021. doi: 10.1137/20M1331470. URL https://doi. org/10.1137/20M1331470.\nXiao Wang, Shiqian Ma, Donald Goldfarb, and Wei Liu. Stochastic quasi-newton methods for nonconvex stochastic optimization. SIAM Journal on Optimization, 27(2):927\u2013956, 2017. doi: 10.1137/15M1053141. URL https://doi.org/10.1137/15M1053141.\nAshia C Wilson, Rebecca Roelofs, Mitchell Stern, Nati Srebro, and Benjamin Recht. The marginal value of adaptive gradient methods in machine learning. Advances in neural information processing systems, 30, 2017.\nPeng Xu, Jiyan Yang, Farbod Roosta-Khorasani, Christopher Re\u0301, and Michael W. Mahoney. Subsampled newton methods with non-uniform sampling. In Proceedings of the 30th International Conference on Neural Information Processing Systems, NIPS\u201916, pp. 3008\u20133016, Red Hook, NY, USA, 2016. Curran Associates Inc. ISBN 9781510838819.\nM. Yang, D. Xu, Q. Cui, Z. Wen, and P. Xu. An efficient fisher matrix approximation method for large-scale neural network optimization. IEEE Transactions on Pattern Analysis and Machine Intelligence, 45(05):5391\u20135403, may 2023. ISSN 1939-3539. doi: 10.1109/TPAMI.2022.3213654.\nZhewei Yao, Amir Gholami, Sheng Shen, Mustafa Mustafa, Kurt Keutzer, and Michael Mahoney. Adahessian: An adaptive second order optimizer for machine learning. In proceedings of the AAAI conference on artificial intelligence, volume 35, pp. 10665\u201310673, 2021.\nLin Zhang, Shaohuai Shi, and Bo Li. Eva: Practical second-order optimization with kroneckervectorized approximation. In The Eleventh International Conference on Learning Representations, ICLR 2023, Kigali, Rwanda, May 1-5, 2023. OpenReview.net, 2023. URL https: //openreview.net/pdf?id=_Mic8V96Voy.\nPan Zhou, Jiashi Feng, Chao Ma, Caiming Xiong, Steven Chu Hong Hoi, et al. Towards theoretically understanding why SGD generalizes better than Adam in deep learning. Advances in Neural Information Processing Systems, 33:21285\u201321296, 2020.\nMilija Zupanski. A preconditioning algorithm for large-scale minimization problems. Tellus A, 45: 478 \u2013 492, 11 2002. doi: 10.1034/j.1600-0870.1993.00011.x.\nAppendix\nA First and Second-Order Integration\nA.1 The ESE Algorithm\nThis section describes the ESE algorithm for obtaining the k largest and \u2113 smallest eigenvalues, as well as their corresponding eigenvectors, of the Hessian Ht. The full details of the algorithm are in \u00a7 3.1.\nESE first sets the number of Lanczos iterations, m, defines the hvpt operator, and then calls the Lanczos algorithm. After running Lanczos for m iterations, its output is a matrix U \u2208 Rn\u00d7m with orthonormal columns and a tridiagonal real symmetric matrix T \u2208 Rm\u00d7m\nTo extract the approximate eigenvalues and eigenvectors of A, let Q\u039bQT be the eigendecomposition of T , s.t. \u039b is a diagonal matrix whose diagonal is the eigenvalues of T sorted from largest to smallest and Q\u2019s columns are their corresponding eigenvectors. The approximate k largest and \u2113 smallest eigenvalues of A are the first k and last \u2113 elements of \u039b\u2019s diagonal, and their approximate corresponding eigenvectors are the first k and last \u2113 columns of the matrix product UQ.\nAlgorithm 1 details the ESE procedure.\nAlgorithm 1 Extreme Spectrum Estimation. procedure ESE( f , \u03b8t, k, \u2113)\nn\u2190 length of \u03b8t m\u2190 max{4(k + \u2113), 2 ln n} hvpt \u2190 generate hvp operator from f and \u03b8t. U,T \u2190 Lanczos(m, hvpt) Q,\u039b\u2190 eigendecomposition(T ) \u03bb\u0302\u2190 first k and last \u2113 entries of \u039b\u2019s diagonal V\u0302 \u2190 first k and last \u2113 columns of UQ return \u03bb\u0302, V\u0302\nA.2 The FOSI Algorithm\nAlgorithm 2 provides the pseudocode for FOSI. The details of the algorithm are in \u00a7 3.2.\nA.3 Preconditioner Analysis\nWe start by proving Lemma 1 from \u00a7 3.3, and continue by analysing a special case in which the eigenvectors of H are aligned to the axes of the Euclidean space.\nProof. In case we apply FOSI on an optimizer that uses an inverse diagonal preconditioner s.t. db = \u2212\u03b7 diag(q)g2, then:\nd1 = \u2212\u03b1V\u0302 (( V\u0302T g1 ) \u2299 u ) = \u2212\u03b1V\u0302   V\u0302T V\u0302\ufe38\ufe37\ufe37\ufe38\nI\n( V\u0302T g ) \u2299 u  = \u2212\u03b1V\u0302 diag(u)V\u0302T g,\nd2 = db \u2212 V\u0302 ( V\u0302T db ) = ( I \u2212 V\u0302V\u0302T ) db = \u2212\u03b7 ( I \u2212 V\u0302V\u0302T ) diag(q)g2\n= \u2212\u03b7 ( I \u2212 V\u0302V\u0302T ) diag(q) ( g \u2212 V\u0302 ( V\u0302T g )) = \u2212\u03b7 ( I \u2212 V\u0302V\u0302T ) diag(q) ( I \u2212 V\u0302V\u0302T ) g.\nBy assigning these forms of d1 and d2 in the update step \u03b8t+1 = \u03b8t+d1+d2, we obtain that the update step is of the form \u03b8t+1 = \u03b8t \u2212 P\u22121g and the inverse preconditioner is:\nP\u22121 = \u03b1V\u0302 diag(u)V\u0302T + \u03b7 ( I \u2212 V\u0302V\u0302T ) diag(q) ( I \u2212 V\u0302V\u0302T ) . (1)\nNote that V\u0302 diag(u)V\u0302T = V diag([u, 0n\u2212k\u2212\u2113])VT . (2)\nAlgorithm 2 FOSI Optimizer. initialization:\n1: BaseOptStep: given gradient, return descent direction. 2: T : number of iterations between two ESE runs. 3: W: number of warmup iterations before calling ESE. 4: k, \u2113: parameters for ESE, 1 \u2264 k + \u2113 \u226a n. 5: \u03b1: positive learning rate (scalar). 6: u\u2190 0, V\u0302 \u2190 0.\nprocedure UpdateStep(\u03b8, g, V\u0302 , u) 7: g1 \u2190 V\u0302 ( V\u0302T g ) , g2 \u2190 g \u2212 V\u0302 ( V\u0302T g ) 8: d1 \u2190 \u2212\u03b1V\u0302 (( V\u0302T g1 ) \u2299 uT\n) 9: db \u2190 BaseOptStep(g2)\n10: d2 \u2190 db \u2212 V\u0302 ( V\u0302T db ) 11: \u03b8 \u2190 \u03b8 + d1 + d2 12: return \u03b8 procedure Optimize( f , \u03b80) 13: t \u2190 0 14: while \u03b8t not converged do 15: gt \u2190 \u2207 f (\u03b8t) 16: if t >= W and (t \u2212W) mod T = 0 then"
+        },
+        {
+            "heading": "17: \u03bb\u0302, V\u0302 \u2190 ESE( f , \u03b8t, k, \u2113)",
+            "text": ""
+        },
+        {
+            "heading": "18: u\u2190 1/|\u03bb\u0302|",
+            "text": "19: \u03b8t+1 \u2190 UpdateStep(\u03b8t, gt, V\u0302 , u) 20: t \u2190 t + 1\nSimilarly, and using the fact that V is an orthonormal matrix (V is an orthogonal basis) and hence VVT = I:\nI \u2212 V\u0302V\u0302T = VIVT \u2212 V diag([1k+\u2113, 0n\u2212k\u2212\u2113])VT = V ( I \u2212 diag([1k+\u2113, 0n\u2212k\u2212\u2113]) ) VT\n= V diag([0k+\u2113, 1n\u2212k\u2212\u2113])VT . (3) By assigning equation 2 and equation 3 in equation 1 we obtain:\nP\u22121 =\u03b1V diag([u, 0n\u2212k\u2212\u2113])VT + \u03b7V diag([0k+\u2113, 1n\u2212k\u2212\u2113])VT diag(q)V diag([0k+\u2113, 1n\u2212k\u2212\u2113])VT =V [ \u03b1 diag([u, 0n\u2212k\u2212\u2113]) + \u03b7 diag([0k+\u2113, 1n\u2212k\u2212\u2113])VT diag(q)V diag([0k+\u2113, 1n\u2212k\u2212\u2113]) ] VT .\nThis completes the proof of claim 1 of the Lemma.\nNote that multiplying a diagonal matrix from the left of another matrix is equivalent to scaling each row of the later by the corresponding diagonal entry of the former, and similarly multiplying a diagonal matrix from from the right has the same effect on columns. Therefore, the matrix B = diag([0k+\u2113, 1n\u2212k\u2212\u2113])VT diag(q)V diag([0k+\u2113, 1n\u2212k\u2212\u2113]) (4) is a matrix whose first k + \u2113 rows and first k + \u2113 columns are 0.\nDenote by M the sub matrix of B that contains the entries i, j s.t. i, j > k + \u2113. Sine BaseOpt utilizes a positive definite (PD) preconditioner (as stated in the Lemma 1), i.e. diag(q) \u227b 0, hence VT diag(q)V \u227b 0, and since M is a trailing principal submatrix of VT diag(q)V it is PD (Gentle, 2017, p. 349). M is also symmetric, since B is symmetric. The diagonal matrix diag(u) is also symmetric and PD. Since a block diagonal matrix is PD if each diagonal block is PD (Gallier et al., 2020) and symmetric if each block is symmetric, the block diagonal matrix\n\u03b1 diag([u, 0n\u2212k\u2212\u2113]) + \u03b7B = ( \u03b1 diag(u) 0\n0 \u03b7M\n) (5)\nis PD and symmetric.\nSince V has full column and row rank, and the block diagonal matrix equation 5 is PD, the inverse preconditioner\nP\u22121 = V ( \u03b1 diag(u) 0\n0 \u03b7M\n) VT\nis PD (Gentle, 2017, p. 113). It is also symmetric, as equation 5 is symmetric.\nFinally, using the fact that the inverse of a PD and symmetric matrix is PD and symmetric, we conclude that the preconditioner P is symmetric and PD. This completes the proof of claim 2 of the Lemma.\nWe assign the above P\u22121 in P\u22121H to obtain the effective Hessian: P\u22121H =V ( \u03b1 diag(u) 0\n0 \u03b7M\n) VT V diag([\u03bb\u0302, \u03bb\u0302])VT\n=V  \u03b1 diag(u) diag(\u03bb\u0302) 00 \u03b7M diag(\u03bb\u0302)  VT =V ( \u03b1 diag(1k+\u2113) 0\n0 \u03b7M diag(\u03bb\u0302)\n) VT .\nWe obtained a partial eigendecomposition of the effective Hessian, which indicates that there are at least k + \u2113 repetitions of the eigenvalues with value \u03b1 and its corresponding eigenvectors are V\u0302\u2019s eigenvectors. This completes the proof of claim 3 of the Lemma. \u25a1\nIn the special case in which the eigenvectors of H are aligned to the axes of the Euclidean space Rn (i.e. H is diagonal), V is a permutation matrix (has exactly one entry of 1 in each row and each column and 0s elsewhere). Note that I diag(q)IT is an eigendecomposition of diag(q). Let P be the permutation of I\u2019s columns, such thatP(I) = V . Then V diag(P(q))VT is also an eigendecomposition of diag(q), i.e: diag(q) = V diag(P(q))VT . Therefore, VT diag(q)V = VT V diag(P(q))VT V = diag(P(q)), and M is the n \u2212 k \u2212 \u2113 trailing principal submatrix of diag(P(q)). In other words, the diagonal of M contains the last n \u2212 k \u2212 \u2113 entries of the vector P(q). By Lemma 1, \u03b1 is an eigenvalue of P\u22121H with k + \u2113 repetitions. From the analysis of M we obtain that the remaining n \u2212 k \u2212 \u2113 eigenvalues of P\u22121H are: \u03b7P(q)k+\u2113+1\u03bbk+1, ... , \u03b7P(q)n\u03bbn\u2212\u2113. If q is a good approximation to the Hessian diagonal, then these eigenvalues should be all close to \u03b7 since each P(q)i is an approximation to the inverse of \u03bbi\u2212\u2113.\nThis is an optimal case, since the two optimization problems defined on the two subspaces have condition number of 1, which enable fast convergence. However, this is a very special case and the Hessian in most optimization problems is not diagonal. Moreover, even in this case, which is ideal for a diagonal preconditioner, FOSI provides benefit, since it solves f1 with Newton\u2019s method, which obtains an ideal effective condition number over V\u0302 , and provides the base optimizer with f2, which is defined on a smaller subspace V\u0302 , hence can be viewed as of smaller dimensionality than f .\nA.4 Identity Preconditioner\nHere we formalize the claims in \u00a7 3.3. Lemma 3. Under the same assumption as in Lemma 1, with BaseOpt that utilizes a scaled identity inverse preconditioner \u03b7I for some learning rate \u03b7 > 0:"
+        },
+        {
+            "heading": "1. FOSI\u2019s resulting inverse preconditioner is P\u22121 = V diag([\u03b1u, \u03b71n\u2212k\u2212\u2113])VT .",
+            "text": ""
+        },
+        {
+            "heading": "2. The preconditioner P is symmetric and PD.",
+            "text": ""
+        },
+        {
+            "heading": "3. \u03b1 is an eigenvalue of the effective Hessian P\u22121H, and V\u0302\u2019s columns are in the eigenspace of \u03b1. In addition, the entries of the vector \u03b7\u03bb\u0302 are eigenvalues of P\u22121H and their corresponding eigenvectors are V\u0302\u2019s columns.",
+            "text": "Proof. The proof immediately follows from Lemma 1 by replacing diag(q) with I.\nBy replacing diag(q) with I in equation 4, we obtain\nB = diag([0k+\u2113, 1n\u2212k\u2212\u2113])VT IV diag([0k+\u2113, 1n\u2212k\u2212\u2113]) = diag([0k+\u2113, 1n\u2212k\u2212\u2113]).\nHence, M = diag(1n\u2212k\u2212\u2113). Assigning this M in P\u22121 given by Lemma 1 obtains: P\u22121 = V ( \u03b1 diag(u) 0\n0 \u03b7 diag(1n\u2212k\u2212\u2113)\n) VT = V diag([\u03b1u, \u03b7 diag(1n\u2212k\u2212\u2113)])VT ,\nwhich completes the proof of claim 1 of the Lemma.\nP\u22121 is diagonal matrix with positive diagonal entries, and therefore symmetric and PD. Its inverse, P, is also symmetric and PD, which completes the proof of claim 2 of the Lemma.\nWe assign the above P\u22121 in P\u22121H to obtain the effective Hessian:\nP\u22121H = V diag([\u03b1u, \u03b71n\u2212k\u2212\u2113])VT V diag([\u03bb\u0302, \u03bb\u0302])VT = V diag([\u03b11k+\u2113, \u03b7\u03bb\u0302])VT .\nWe obtained an eigendecomposition of the effective Hessian, which implies there are k+\u2113 repetitions of the eigenvalues with value \u03b1 and their corresponding eigenvectors are V\u0302\u2019s columns, and the entries of \u03b7\u03bb\u0302 are eigenvalues and their corresponding eigenvectors are V\u0302\u2019s columns. This completes the proof of claim 3 of the Lemma. \u25a1\nThe following Lemma states the conditions in which the effective condition number is smaller than the original condition number when applying FOSI with a base optimizer that utilizes an identity preconditioner. Lemma 4. Under the same assumption as in Lemma 3, denote the effective condition number induced by BaseOpt by \u03ba and the effective condition number induced by FOSI using BaseOpt by \u03ba\u0303. Then, \u03ba\u0303 \u2264 \u03ba in the following cases:\n1. \u03b1 < \u03b7\u03bbn\u2212\u2113 and \u03b7\u03bbk+1 \u03b1 \u2264 \u03bb1 \u03bbn\n2. \u03b7\u03bbn\u2212\u2113 \u2264 \u03b1 \u2264 \u03b7\u03bbk+1\n3. \u03b7\u03bbk+1 < \u03b1 and \u03b1\u03b7\u03bbn\u2212\u2113 \u2264 \u03bb1 \u03bbn\nProof. The identity preconditioner does not affect the condition number, so we have \u03ba = \u03bb1/\u03bbn. As stated in claim 2 of Lemma 3, when using FOSI the distinct eigenvalues of the effective Hessian are \u03b1, \u03b7\u03bbk+1, ... , \u03b7\u03bbn\u2212\u2113. There are now three distinct ranges for \u03b1 which affect \u03ba\u0303:\n1. \u03b1 < \u03b7\u03bbn\u2212\u2113. In this case, the smallest eigenvalue of P\u22121H is \u03b1 and the largest is \u03b7\u03bbk+1, which leads to \u03ba\u0303 = \u03b7\u03bbk+1/\u03b1; therefore, \u03ba\u0303 \u2264 \u03ba \u21d0\u21d2 \u03b7\u03bbk+1\u03b1 \u2264 \u03bb1 \u03bbn .\n2. \u03b7\u03bbn\u2212\u2113 \u2264 \u03b1 \u2264 \u03b7\u03bbk+1. In this case, the smallest eigenvalue of P\u22121H is \u03b7\u03bbn\u2212\u2113 and the largest is \u03b7\u03bbk+1; therefore, \u03ba\u0303 = \u03bbk+1\u03bbn\u2212\u2113 and \u03ba\u0303 \u2264 \u03ba \u21d0\u21d2 \u03bbk+1 \u03bbn\u2212\u2113 \u2264 \u03bb1 \u03bbn . Sine \u03bbk+1 \u03bbn\u2212\u2113 < \u03bb1 \u03bbn is true then \u03ba\u0303 < \u03ba.\n3. \u03b7\u03bbk+1 < \u03b1. In this case the smallest eigenvalue of P\u22121H is \u03b7\u03bbn\u2212\u2113 and the largest is \u03b1; therefore, \u03ba\u0303 = \u03b1\n\u03b7\u03bbn\u2212\u2113 and \u03ba\u0303 \u2264 \u03ba \u21d0\u21d2 \u03b1 \u03b7\u03bbn\u2212\u2113 \u2264 \u03bb1 \u03bbn .\n\u25a1\nWhile Lemma 4 provides the conditions in which FOSI improves the condition number, as discussed in \u00a7 3.3, FOSI is able to accelerate the convergence of the optimization process even when it does not improve the condition number.\nTo show this phenomenon, we use GD and FOSI with GD as a base optimizer to optimize the quadratic function f (\u03b8) = 0.5\u03b8T H\u03b8, \u03b8 \u2208 R100. We draw a random orthonormal basis for f \u2019s Hessian, H, and set its eigenvalues as follows: \u03bb1, ... , \u03bb10 are equally spaced in the range [9, 10] and \u03bb11, ... , \u03bb100 are equally spaced in the range [0.01, 0.1]. We used the learning rate \u03b7 = 0.001 and run FOSI with k = 9, \u2113 = 0, \u03b1 = 1. For this setting we have \u03bb1 = 10, \u03bb10 = 9, \u03bb100 = 0.01 and none of the conditions in Lemma 4 is satisfied. Since \u03b7\u03bb10 < 1, the only candidate condition in Lemma 4 is condition (3), however, in this case FOSI\u2019s effective condition number is 1/(\u03b7\u03bb100) = 100000, which is much larger than the original condition number of the problem, which is \u03bb1/\u03bb100 = 1000. However, as shown in Figure 4, FOSI converges much faster then GD.\nThis example emphasises our claim that the condition numbers to look at are those of V\u0302 and V\u0302 , which are smaller than the original one, and not the condition number of the entire Hessian.\nA.5 Convergence Guarantees in the Stochastic Setting\nOur proof of Lemma 2 relies on applying Theorem 2.8 from Wang et al. (2017) to FOSI. For clarity, we restate their theorem with our notations: Theorem 5 (Theorem 2.8, Wang et al. (2017)). Suppose that the following assumptions hold for {\u03b8t} generated by a stochastic quasi-Newton (SQN) method with batch size mt = m for all t:\n(i) f is continuously differentiable, f (\u03b8) is lower bounded by a real number f low for any \u03b8, and \u2207 f is globally Lipschitz continuous with Lipschitz constant L.\n(ii) For every iteration t, Ext [\u2207\u03b8F(\u03b8t, xt)] = \u2207 f (\u03b8t) and Ext [\u2225\u2207\u03b8F(\u03b8t, xt) \u2212 \u2207 f (\u03b8t)\u22252] \u2264 \u03c32, where \u03c3 > 0, xt for t = 1, 2, ... are independent samples, and for a given t the random variable xt is independent of {\u03b8i}ti=1.\n(iii) There exist two positive constants, z, z\u0304, such that zI \u2aaf P\u22121t \u2aaf z\u0304I for all t. (iv) For any t \u2265 2, the random variable P\u22121t depends only on b1, b2, ..., bt\u22121 (the random batch\nsampling in the t \u2212 1 previous iterations).\nWe also assume that \u03b7t is chosen as \u03b7t = z Lz\u03042 t \u2212\u03b2 with constant \u03b2 \u2208 (0.5, 1). Then, for a given \u03f5 \u2208 (0, 1), the number of iterations N needed to obtain 1N \u2211N t=1 E [ \u2225\u2207 f (\u03b8t)\u22252 ] \u2264 \u03f5 is N = O ( \u03f5\u2212 1 1\u2212\u03b2 ) .\nWe now prove Lemma 2.\nProof. First, we need to bring FOSI\u2019s inverse preconditioner P\u22121 to the standard SQN form stated in Wang et al. (2017), and then prove that all the assumption of Theorem 2.8 are satisfied.\nTo bring FOSI\u2019s P\u22121 from Lemma 2 to the standard SQN form, with update step \u03b8t+1 = \u03b8t \u2212 \u03b7tP\u22121t gt, let \u03b1 = \u03b7 = \u2212\u03b7t. After extracting \u2212\u03b7t, P\u22121 is then given by\nP\u22121 = V (\ndiag(u) 0 0 M\n) VT ,\nwhere M is the trailing n \u2212 k \u2212 \u2113 principal submatrix of VT diag(q)V . Theorem 2.8 is comprised of four assumptions, where its first two assumption, (i) and (ii), are satisfied by the first two assumptions in Lemma 2. Assumption (iv) requires that for each iteration t, FOSI\u2019s inverse preconditioner P\u22121 depends only on b1, b2, . . . , bt\u22121. This could be easily satisfied by ensuring that the ESE procedure is called with f i for i < t and that BaseOptStep is called after the gradient step (switching the 4th and 5th steps in the UpdateStep() procedure), while using db from the last iteration in the update step. This has no impact on our analysis of FOSI in \u00a7 3.3.\nTo establish assumption (iii) we examine P\u22121 structure. Given that the Hessian is symmetric PSD, it follows that for every \u03b8 and x, the norm of the Hessian \u22072F(\u03b8, x) is equivalent to its largest absolute eigenvalue. Therefore, from assumption 3 that \u2225\u2225\u2225\u22072F(\u03b8, x)\u2225\u2225\u2225 \u2264 z, we have that the largest absolute eigenvalue is bounded above by z. Since f t(\u03b8) = 1m \u2211m i=1 F(\u03b8, xi), then the largest absolute\neigenvalue of \u22072 f t(\u03b8t) is also bounded by z. In addition, it should be noted that the ESE procedure provides eigenvalue estimates that are within bounds of the true extreme eigenvalues of the Hessian of f t (Dorsselaer et al., 2001). Thus, it follows that each entry of |\u03bb\u0302| is bounded above by z, which in turn implies that each entry of u is bounded below by 1/z. Moreover, the entries of u are also bounded above by 1/\u03f5 for 0 < \u03f5 < 1 (\u03f5 is added to entries of |\u03bb\u0302| that are smaller than \u03f5). Given that BaseOpt utilizes a PD preconditioner (assumption 3), the entries of q are upper bounded by some positive constant 1/\u03f5 (assuming w.l.o.g that this is the same constant that upper bounds u). Moreover, given that the eigenvalues of BaseOpt\u2019s preconditioner are bounded from above by z, the values of q are lower bounded by 1/z. Since the matrix M is a trailing principal submatrix of VT diag(q)V , its eigenvalues are bounded by the eigenvalues of VT diag(q)V (eigenvalue interlacing theorem), which are simply the entries of q.\nFinally, since V is a rotation matrix, a multiplication from the left by V and from the right by VT has no impact on the eigenvalues, which implies that P\u22121\u2019s eigenvalues are the entries of u and the eigenvalues of M. Hence, for every iteration t, P\u22121\u2019s eigenvalues are lower bounded by z = 1/z and upper bounded by z\u0304 = 1/\u03f5.\nAfter establishing assumptions (i)\u2013(iv), we complete the proof by applying Theorem 2.8 from Wang et al. (2017). \u25a1\nA.6 Automatic Learning Rate Scaling\nThis section provides details regarding the automatic learning rate scaling technique, presented in \u00a73.6.\nLet the base optimizer, BaseOpt, be an optimizer with a closed-form expression of its optimal learning rate in the quadratic setting, \u03b7 be a tuned learning rate for BaseOpt over f , and \u03b7\u2217 be the optimal learning rate of BaseOpt over a quadratic approximation f\u0303 of f at iteration t. In general, \u03b7\u2217 is not known since first-order optimizers do not evaluate the extreme eigenvalues. Implicitly, \u03b7 is a scaled version of \u03b7\u2217, i.e., \u03b7 = s\u03b7\u2217 for some unknown positive scaling factor s, usually s < 1.\nFOSI creates a quadratic subproblem, f2, with a lower condition number compared to f\u0303 and solves it using BaseOpt. Therefore, we propose using \u03b72 = s\u03b7\u22172, a scaled version of the optimal learning rate of f2 with the same scaling factor s of \u03b7, instead of simply using \u03b7. the ESE procedure provides \u03bb1, \u03bbn, \u03bbk, \u03bbn\u2212\u2113+1, which allows FOSI to automatically adjust \u03b7 to \u03b72, given the relevant closed-form expression for the optimal learning rate. Specifically, \u03b72 = \u03b7(\u03b7\u22172/\u03b7\n\u2217), with \u03b7\u2217 obtainable from \u03bb1 and \u03bbn, and an approximate value for \u03b7\u22172 obtainable from \u03bbk and \u03bbn \u2212 \u2113 + 1.\nA.7 ESE Approximation Error\nUsing Newton\u2019s method in non-quadratic settings within a subspace obtained from the ESE procedure increases the likelihood of divergence due to inaccuracies in the direction of the steps taken. These inaccuracies stem from the imprecise approximation of Hessian eigenvalues and eigenvectors through the ESE procedure.\nTo mitigate this, we employ a scaled Newton\u2019s method, with a learning rate of 0 < \u03b1 \u2264 1, for function f1, as an alternative to the traditional Newton\u2019s method which enforces \u03b1 = 1.\nWe also avoid issues of numerical accuracy in the ESE procedure by performing full orthogonalization w.r.t all previous vectors in each Lanczos iteration (Meurant & Strakos\u030c, 2006). Moreover, we use float64 for the ESE procedure computations (only); we retain the original precision for training, storing parameters, and other computations.\nTo mitigate Lanczos divergence caused by a plateau-like initial point (Orvieto et al., 2022), we use warmup iterations before the first ESE call.\nFinally, using ESE in a stochastic setting could theoretically result in unsuitable V\u0302 and \u03bb\u0302 when called with f i which misrepresent f . Techniques to address this include using larger batch size only for the ESE procedure, or averaging the results obtained from different f is. We leave the investigation of such techniques to future work.\nIn practice, our experiments on a variety of DNNs in \u00a74, using an arbitrary f j on ESE calls, demonstrate that FOSI is robust and substantially improves convergence.\nA.8 Runtime Analysis\nFOSI\u2019s runtime differs from that of the base optimizer due to additional computations in each update step and its calls to the ESE procedure.\nLet \u03c41 be the average latency per iteration of the base optimizers, \u03c42 be the average latency per iteration of FOSI that does not include a call to the ESE procedure (as if T = \u221e), and \u03c43 be the average latency of the ESE procedure. Given that the base optimizer and FOSI are run for T iterations, the latency of the base optimizer is T\u03c41, and that of FOSI is T\u03c42 + \u03c43, as the ESE procedure is called once every T iterations. The parameter T impacts FOSI\u2019s runtime relative to the base optimizer. A small T may result in faster convergence in terms of iterations, since V\u0302 and \u03bb\u0302 are more accurate; however, it also implies longer runtime.1 On the other hand, using a large T may result in divergence due to inaccurate estimates of V\u0302 and \u03bb\u0302. Since the improvement in convergence rate, for any given T , is not known in advance, the parameter T should be set such that FOSI\u2019s runtime it at most \u03c1 times the base optimizer runtime, for a user define \u03c1 > 1. To ensure that, we require \u03c1T\u03c41 = T\u03c42 + \u03c43, which implies2\nT = \u03c43/(\u03c1\u03c41 \u2212 \u03c42). (6)\nThe average latency of FOSI\u2019s extra computations in an update step (lines 7, 8, and 10 in Algorithm 2), denoted by \u03c42\u2212\u03c41, includes three matrix-vector products and some vector additions, which have a computational complexity of O(n(k + \u2113)). For large and complex functions, the latency of these extra computations is negligible when compared to the computation of the gradient (line 18 in Algorithm 2)3, thus leading to the approximation of \u03c41 \u224a \u03c42. Furthermore, \u03c43 can be approximated by 2m\u03c41, where m = max{4(k + \u2113), 2 ln n} is the number of Lanczos iterations, since each Lanczos iteration is dominated by the Hessian-vector product operation which takes approximately two gradient evaluations (see \u00a7 3.1). By incorporating these approximations into equation (6), we can derive a formula for T which does not require any measurements:\nT = 2m/(\u03c1 \u2212 1).\nNote that this formula is not accurate for small or simple functions, where the gradient can be computed quickly, and the additional computations are not negligible in comparison. In such cases, \u03c41, \u03c42, and \u03c43 can be evaluated by running a small number of iterations, and T can be computed using equation (6) based on these evaluations.\nB Evaluation\nB.1 Deep Neural Networks\nFigure 5 shows the learning curves of FOSI and the base optimizers for different DNN training tasks: (1) training logistic regression model on the MNIST dataset, (2) training autoencoder on the CIFAR-10 dataset, (3) transfer learning task in which we train the last layer of trained ResNet-18 on the CIFAR-10 dataset, and (4) training character-level language model with a recurrent network on the Tiny Shakespeare dataset. FOSI improves over the base optimizers in most cases. While FOSI improvement over Adam is less significant than its improvements over Heavy-Ball, there are tasks for which Heavy-Ball performs better than Adam since it generalizes better.\n1We do note, however, that in some settings, such as distributed settings in which network bandwidth is limited, using fewer iterations is preferred, even at the cost of additional runtime per iteration. In future work we plan to run the ESE procedure on the CPU in the background in the effort of saving this extra runtime altogether.\n2It should be noted that this calculation does not take into account the extra evaluation steps during the training process, which has identical runtime with and without FOSI; hence, FOSI\u2019s actual runtime is even closer to that of the base optimizer.\n3For DNNs, gradient computation can be parallelized over the samples in a batch, however, it must be executed serially for each individual sample. In contrast, operations such as matrix-vector multiplication and vector addition can be efficiently parallelized.\nTable 2 shows the time it takes for both the base optimizer and FOSI to reach the same train loss, which is the lowest train loss of the base optimizer. On average, FOSI achieves the same loss over the training set in 78% of the wall time compared to the base optimizers.\nFigure 6 shows the learning curves of FOSI-HB, K-FAC and L-BFGS. In all cases, FOSI converges faster and to a lower validation loss than K-FAC and L-BFGS. Specifically:\n\u2022 LR: K-FAC converges quickly but overfits dramatically, resulting in much higher validation loss than FOSI. L-BFGS converges much more slowly than the other approaches and to a much higher validation loss. \u2022 TL: Both K-FAC and L-BFGS converge slower than FOSI and result in higher validation loss. \u2022 AE: K-FAC converges quickly but is noisy and leads to a large validation loss (52.1 compared to\n51.4 for FOSI), while L-BFGS diverges quickly after the first epoch, even with large values of L. \u2022 LM: we could not get the K-FAC implementation to work on this RNN model (this is a known\nissue with K-FAC and RNN (Martens et al., 2018)). L-BFGS converges more slowly, and to a much higher loss. \u2022 AC: K-FAC converges slower than FOSI and shows substantial overfitting, while L-BFGS does\nnot converge.\nB.2 Quadratic Functions\nB.2.1 Dimensionality and Eigenspectrum\nHere we provide the full details regarding the experiment in \u00a7 4.3, where we explore the effect of both the condition number and the diagonally dominance of the function\u2019s Hessian on the different optimizers. To do so, we define a set of functions fb,\u03b6(\u03b8) = 0.5\u03b8T Hb,\u03b6\u03b8 for b \u2208 {1.1, ... , 1.17} and \u03b6 \u2208 {0, ... , 100}, \u03b8 \u2208 R100, where b and \u03b6 are parameters that define the Hessian Hb,\u03b6 . The parameter b determines the eigenvalues of Hb,\u03b6 : \u2200i \u2208 {1, ... , 100} \u03bbi = 0.001bi. The parameter \u03b6 determines the number of rows in Hb,\u03b6 that are not dominated by the diagonal element, i.e., the part of Hb,\u03b6 which is not diagonally dominant.\nTo construct Hb,\u03b6 , we start from a diagonal matrix whose diagonal contains the eigenvalues according to b. We then replace a square block on the diagonal of this matrix with a PD square block of dimensions \u03b6 \u00d7 \u03b6 whose eigenvalues are taken from the original block diagonal and its eigenvectors are some random orthogonal basis. The result is a symmetric PD block diagonal Hb,\u03b6 with one block of size \u03b6 \u00d7 \u03b6 and another diagonal block, and the eigenvalues are set by b. An important observation is, that for a specific b value, b1, and two different \u03b6 values, \u03b61 and \u03b62, the Hessians Hb1,\u03b61 and Hb2,\u03b62 share the same eigenvalues and their eigenvectors are differ by a simple rotation. The starting point \u03b80 in all the experiments is the same and it is rotated by a rotation matrix that is Hb,\u03b6\u2019s eigenvectors. As a result, for all the experiments with the same b, the starting values fb,\u03b6(\u03b80) are identical.\nFigure 7 shows fb,\u03b6 at the optimal point after 200 iterations of the optimizers for different b and \u03b6 values. For a specific b value, rotations of the coordinate system (changes in \u03b6) have no impact on GD and HB, as seen by the vertical lines with the same value for different \u03b6 values. Their performance deteriorates for larger b values (more ill-conditioned problems). When applying FOSI, the new maximal eigenvalues of two functions with similar \u03b6 and different b are still differ by an order of magnitude, which leads to the differences in FOSI\u2019s performance along the b axis. Adam\u2019s performance is negatively affected for large b and \u03b6 values. FOSI improves over the base optimizer in all cases.\nFigure 8 shows the learning curves of the optimizers for four specific fb,\u03b6 functions: f1.12,50, f1.12,90, f1.16,50, f1.16,90. The black x marks in each sub figure of Figure 7 are the last value of these learning curves. For both functions with b = 1.12 the learning curves of GD and HeavyBall (as well as FOSI with these base optimizers) are identical, as they are only differ by a rotation, and similarly for b = 1.16. However, for the same \u03b6, these optimizers convergence is much slower for larges b value. FOSI implicitly reduces the maximal eigenvalue in both functions, but the new two maximal eigenvalues still differ by an order of magnitude, which leads to the differences in FOSI\u2019s performance (as opposed to the first experiment on quadratic functions). Adam is negatively impacted when \u03b6 is increased. In this experiment. For smaller \u03b6 values its performance is not impacted by the change in b and it is able to converge to the same value even for functions with larger curvature.\nB.2.2 Learning Rate andMomentum\nIn the last experiment on quadratic functions, we use each optimizer to optimize the function f1.12,90 multiple times, with different learning rates \u03b7 \u2208 {1e \u2212 5, 10}. FOSI-HB and FOSI-GD were run with both c = 1 (no scaling) and c = \u221e (no clipping). We repeated the experiment twice. In the first version we used a fixed momentum parameter 0.9 (\u03b2 for HB and \u03b21 for Adam). In the second version we find the best momentum parameter \u2208 [0.7, 1) for each \u03b7. Figure 9 shows the results after 200 iterations for every optimizer and learning rate \u03b7. FOSI improves over Adam for all learning rates. For GD and HB, with c = 1, FOSI expands the range of \u03b7 values for convergence, changes the optimal \u03b7, and leads to superior results after the same number of iterations. With c = \u221e, FOSI improves over the base optimizer for all \u03b7 values, but the range of \u03b7 values for convergence stays similar. Moreover, FOSI\u2019s improvement over the base optimizer when using the optimal set of hyperparameters is similar to the improvement for a fixed momentum parameters. Similar trends were observed when repeating the experiment for other fb,\u03b6 functions."
+        }
+    ],
+    "title": "FOSI: Hybrid First and Second Order Optimization",
+    "year": 2024
+}

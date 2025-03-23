@@ -1,0 +1,734 @@
+{
+    "abstractText": "A newly-arising uncertainty estimation method named Evidential Deep Learning (EDL), which can obtain reliable predictive uncertainty in a single forward pass, has garnered increasing interest. Guided by the subjective logic theory, EDL obtains Dirichlet concentration parameters from deep neural networks, thus constructing a Dirichlet probability density function (PDF) to model the distribution of class probabilities. Despite its great success, we argue that EDL keeps nonessential settings in both stages of model construction and optimization. In constructing the Dirichlet PDF, a commonly ignored prior weight parameter governs the balance between leveraging the proportion of evidence and its magnitude in deriving predictive scores. In model optimization, a variance-minimized regularization term adopted by traditional EDL encourages the Dirichlet PDF to approach a Dirac delta function, potentially exacerbating overconfidence. Therefore, we propose the R-EDL (Relaxed-EDL) method by relaxing these nonessential settings. Specifically, R-EDL treats the prior weight as an adjustable hyperparameter instead of a fixed scalar, and directly optimizes the expectation of the Dirichlet PDF provided to deprecate the variance-minimized regularization term. Extensive experiments and SOTA performances demonstrate the effectiveness of our method. Source codes are provided in Appendix E.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "DEEP LEARNING"
+        },
+        {
+            "affiliations": [],
+            "name": "Mengyuan Chen"
+        },
+        {
+            "affiliations": [],
+            "name": "Junyu Gao"
+        },
+        {
+            "affiliations": [],
+            "name": "Changsheng Xu"
+        }
+    ],
+    "id": "SP:575bd6c0f03c4f6ebe6f5158c4a58c992bddd0a6",
+    "references": [
+        {
+            "authors": [
+                "Moloud Abdar",
+                "Abbas Khosravi",
+                "Sheikh Mohammed Shariful Islam",
+                "U Rajendra Acharya",
+                "Athanasios V Vasilakos"
+            ],
+            "title": "The need for quantification of uncertainty in artificial intelligence for clinical data analysis: increasing the level of trust in the decision-making process",
+            "venue": "IEEE Systems, Man, and Cybernetics Magazine,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Alexander Amini",
+                "Wilko Schwarting",
+                "Ava Soleimany",
+                "Daniela Rus"
+            ],
+            "title": "Deep evidential regression",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Wentao Bao",
+                "Qi Yu",
+                "Yu Kong"
+            ],
+            "title": "Evidential deep learning for open set action recognition",
+            "venue": "In Proceedings of the IEEE/CVF International Conference on Computer Vision,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Abhijit Bendale",
+                "Terrance E Boult"
+            ],
+            "title": "Towards open set deep networks",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Charles Blundell",
+                "Julien Cornebise",
+                "Koray Kavukcuoglu",
+                "Daan Wierstra"
+            ],
+            "title": "Weight uncertainty in neural network",
+            "venue": "In International conference on machine learning,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Bertrand Charpentier",
+                "Daniel Z\u00fcgner",
+                "Stephan G\u00fcnnemann"
+            ],
+            "title": "Posterior network: Uncertainty estimation without ood samples via density-based pseudo-counts",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Guangyao Chen",
+                "Limeng Qiao",
+                "Yemin Shi",
+                "Peixi Peng",
+                "Jia Li",
+                "Tiejun Huang",
+                "Shiliang Pu",
+                "Yonghong Tian"
+            ],
+            "title": "Learning open set network with discriminative reciprocal points",
+            "venue": "In Computer Vision\u2013ECCV 2020: 16th European Conference,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Mengyuan Chen",
+                "Junyu Gao",
+                "Shicai Yang",
+                "Changsheng Xu"
+            ],
+            "title": "Dual-evidential learning for weakly-supervised temporal action localization",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Mengyuan Chen",
+                "Junyu Gao",
+                "Changsheng Xu"
+            ],
+            "title": "Cascade evidential learning for open-world weakly-supervised temporal action localization",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Mengyuan Chen",
+                "Junyu Gao",
+                "Changsheng Xu"
+            ],
+            "title": "Uncertainty-aware dual-evidential learning for weakly-supervised temporal action localization",
+            "venue": "IEEE transactions on pattern analysis and machine intelligence,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Jiwoong Choi",
+                "Dayoung Chun",
+                "Hyun Kim",
+                "Hyuk-Jae Lee"
+            ],
+            "title": "Gaussian yolov3: An accurate and fast object detector using localization uncertainty for autonomous driving",
+            "venue": "In Proceedings of the IEEE/CVF International conference on computer vision,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Tarin Clanuwat",
+                "Mikel Bober-Irizar",
+                "Asanobu Kitamoto",
+                "Alex Lamb",
+                "Kazuaki Yamamoto",
+                "David Ha"
+            ],
+            "title": "Deep learning for classical japanese literature",
+            "venue": "arXiv preprint arXiv:1812.01718,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Danruo Deng",
+                "Guangyong Chen",
+                "Yang Yu",
+                "Furui Liu",
+                "Pheng-Ann Heng"
+            ],
+            "title": "Uncertainty estimation by fisher information-based evidential deep learning",
+            "venue": "arXiv preprint arXiv:2303.02045,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Michael Dusenberry",
+                "Ghassen Jerfel",
+                "Yeming Wen",
+                "Yian Ma",
+                "Jasper Snoek",
+                "Katherine Heller",
+                "Balaji Lakshminarayanan",
+                "Dustin Tran"
+            ],
+            "title": "Efficient and scalable bayesian neural nets with rank-1 factors",
+            "venue": "In International conference on machine learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Romain Egele",
+                "Romit Maulik",
+                "Krishnan Raghavan",
+                "Bethany Lusch",
+                "Isabelle Guyon",
+                "Prasanna Balaprakash"
+            ],
+            "title": "Autodeuq: Automated deep ensemble with uncertainty quantification",
+            "venue": "In 2022 26th International Conference on Pattern Recognition (ICPR),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yarin Gal",
+                "Zoubin Ghahramani"
+            ],
+            "title": "Dropout as a bayesian approximation: Representing model uncertainty in deep learning",
+            "venue": "In international conference on machine learning,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Junyu Gao",
+                "Tianzhu Zhang",
+                "Changsheng Xu"
+            ],
+            "title": "Learning to model relationships for zero-shot video classification",
+            "venue": "IEEE transactions on pattern analysis and machine intelligence,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Junyu Gao",
+                "Mengyuan Chen",
+                "Changsheng Xu"
+            ],
+            "title": "Collecting cross-modal presence-absence evidence for weakly-supervised audio-visual event perception",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Junyu Gao",
+                "Mengyuan Chen",
+                "Changsheng Xu"
+            ],
+            "title": "Vectorized evidential learning for weaklysupervised temporal action localization",
+            "venue": "IEEE transactions on pattern analysis and machine intelligence,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Chuan Guo",
+                "Geoff Pleiss",
+                "Yu Sun",
+                "Kilian Q Weinberger"
+            ],
+            "title": "On calibration of modern neural networks",
+            "venue": "In International conference on machine learning,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Pavel Izmailov",
+                "Sharad Vikram",
+                "Matthew D Hoffman",
+                "Andrew Gordon Gordon Wilson"
+            ],
+            "title": "What are bayesian neural network posteriors really like",
+            "venue": "In International conference on machine learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Audun J\u00f8sang"
+            ],
+            "title": "A logic for uncertain probabilities",
+            "venue": "International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems,",
+            "year": 2001
+        },
+        {
+            "authors": [
+                "Melih Kandemir",
+                "Abdullah Akg\u00fcl",
+                "Manuel Haussmann",
+                "Gozde Unal"
+            ],
+            "title": "Evidential turing processes",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ranganath Krishnan",
+                "Mahesh Subedar",
+                "Omesh Tickoo"
+            ],
+            "title": "Bar: Bayesian activity recognition using variational inference",
+            "venue": "arXiv preprint arXiv:1811.03305,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Alex Krizhevsky",
+                "Geoffrey Hinton"
+            ],
+            "title": "Learning multiple layers of features from tiny images",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Hildegard Kuehne",
+                "Hueihan Jhuang",
+                "Est\u0131\u0301baliz Garrote",
+                "Tomaso Poggio",
+                "Thomas Serre"
+            ],
+            "title": "Hmdb: a large video database for human motion recognition",
+            "venue": "In 2011 International conference on computer vision,",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Balaji Lakshminarayanan",
+                "Alexander Pritzel",
+                "Charles Blundell"
+            ],
+            "title": "Simple and scalable predictive uncertainty estimation using deep ensembles",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Yann LeCun"
+            ],
+            "title": "The mnist database of handwritten digits. http://yann",
+            "venue": "lecun. com/exdb/mnist/,",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Jeremiah Liu",
+                "Zi Lin",
+                "Shreyas Padhy",
+                "Dustin Tran",
+                "Tania Bedrax Weiss",
+                "Balaji Lakshminarayanan"
+            ],
+            "title": "Simple and principled uncertainty estimation with deterministic deep learning via distance awareness",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Andrey Malinin",
+                "Mark Gales"
+            ],
+            "title": "Predictive uncertainty estimation via prior networks",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Andrey Malinin",
+                "Mark Gales"
+            ],
+            "title": "Reverse kl-divergence training of prior networks: Improved uncertainty and adversarial robustness",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "David A McAllester"
+            ],
+            "title": "Some pac-bayesian theorems",
+            "venue": "In Proceedings of the eleventh annual conference on Computational learning theory,",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Nis Meinert",
+                "Jakob Gawlikowski",
+                "Alexander Lavin"
+            ],
+            "title": "The unreasonable effectiveness of deep evidential regression",
+            "venue": "In Proceedings of the AAAI Conference on Artificial Intelligence,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Mathew Monfort",
+                "Bowen Pan",
+                "Kandan Ramakrishnan",
+                "Alex Andonian",
+                "Barry A McNamara",
+                "Alex Lascelles",
+                "Quanfu Fan",
+                "Dan Gutfreund",
+                "Rog\u00e9rio Schmidt Feris",
+                "Aude Oliva"
+            ],
+            "title": "Multi-moments in time: Learning and interpreting models for multi-action video understanding",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yuval Netzer",
+                "Tao Wang",
+                "Adam Coates",
+                "Alessandro Bissacco",
+                "Bo Wu",
+                "A Ng"
+            ],
+            "title": "The street view house numbers (svhn",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Dongpin Oh",
+                "Bonggun Shin"
+            ],
+            "title": "Improving evidential deep learning via multi-task learning",
+            "venue": "In Proceedings of the AAAI Conference on Artificial Intelligence,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Younghyun Park",
+                "Wonjeong Choi",
+                "Soyeong Kim",
+                "Dong-Jun Han",
+                "Jaekyun Moon"
+            ],
+            "title": "Active learning for object detection with evidential deep learning and hierarchical uncertainty aggregation",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yang Qin",
+                "Dezhong Peng",
+                "Xi Peng",
+                "Xu Wang",
+                "Peng Hu"
+            ],
+            "title": "Deep evidential learning with noisy correspondence for cross-modal retrieval",
+            "venue": "In Proceedings of the 30th ACM International Conference on Multimedia,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Hippolyt Ritter",
+                "Aleksandar Botev",
+                "David Barber"
+            ],
+            "title": "A scalable laplace approximation for neural networks",
+            "venue": "In 6th International Conference on Learning Representations, ICLR 2018-Conference Track Proceedings,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Hitesh Sapkota",
+                "Qi Yu"
+            ],
+            "title": "Adaptive robust evidential optimization for open set detection from imbalanced data",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Murat Sensoy",
+                "Lance Kaplan",
+                "Melih Kandemir"
+            ],
+            "title": "Evidential deep learning to quantify classification uncertainty",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Karen Simonyan",
+                "Andrew Zisserman"
+            ],
+            "title": "Very deep convolutional networks for large-scale image recognition",
+            "venue": "arXiv preprint arXiv:1409.1556,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Ava P Soleimany",
+                "Alexander Amini",
+                "Samuel Goldman",
+                "Daniela Rus",
+                "Sangeeta N Bhatia",
+                "Connor W Coley"
+            ],
+            "title": "Evidential deep learning for guided molecular property prediction and discovery",
+            "venue": "ACS central science,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Khurram Soomro",
+                "Amir Roshan Zamir",
+                "Mubarak Shah"
+            ],
+            "title": "Ucf101: A dataset of 101 human actions classes from videos in the wild",
+            "venue": "arXiv preprint arXiv:1212.0402,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Shuzhou Sun",
+                "Shuaifeng Zhi",
+                "Janne Heikkil\u00e4",
+                "Li Liu"
+            ],
+            "title": "Evidential uncertainty and diversity guided active learning for scene graph generation",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Joost Van Amersfoort",
+                "Lewis Smith",
+                "Yee Whye Teh",
+                "Yarin Gal"
+            ],
+            "title": "Uncertainty estimation using a single deep deterministic neural network",
+            "venue": "In International conference on machine learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Oriol Vinyals",
+                "Charles Blundell",
+                "Timothy Lillicrap",
+                "Daan Wierstra"
+            ],
+            "title": "Matching networks for one shot learning",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Yeming Wen",
+                "Dustin Tran",
+                "Jimmy Ba"
+            ],
+            "title": "Batchensemble: an alternative approach to efficient ensemble and lifelong learning",
+            "venue": "arXiv preprint arXiv:2002.06715,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Han Xiao",
+                "Kashif Rasul",
+                "Roland Vollgraf"
+            ],
+            "title": "Fashion-mnist: a novel image dataset for benchmarking machine learning algorithms",
+            "venue": "arXiv preprint arXiv:1708.07747,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Shuo Yang",
+                "Lu Liu",
+                "Min Xu"
+            ],
+            "title": "Free lunch for few-shot learning: Distribution calibration",
+            "venue": "arXiv preprint arXiv:2101.06395,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Deng"
+            ],
+            "title": "EDL introduces an auxiliary regularization term to suppress the evidence of non-target classes by minizing the Kullback-Leibler (KL) divergence between a modified Dirichlet distribution and a uniform distribution. This regularization term has demonstrated promising empirical results and has been elucidated",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Following Deng"
+            ],
+            "title": "2023), we conduct experiments on the following groups of image",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Few-shot setting. Following Deng"
+            ],
+            "title": "2023), we adopt a pre-trained WideResNet-28-10 network",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yang"
+            ],
+            "title": "2021) to extract features and train a single dense layer for experiments",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Bao"
+            ],
+            "title": "open-set action recognition task on UCF-101 with I3D as the backbone network. The HMDB-51 and MiT-v2 are used as sources of unknown samples. The hyper-parameter \u03bb is set to 0.8, and the batch size is set to 8. Other details. Our model is implemented with Python 3.8 and PyTorch 1.12",
+            "venue": "Video-modality setting",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Deng"
+            ],
+            "title": "2023), we generate the noisy data by introducing zero-mean isotropic Gaussian noise to the test split of the ID dataset. Table 11 reports the classification accuracy and the AUPR scores for OOD detection across varying levels of Gaussian noise on CIFAR-10. It is essential to note that these two metrics are not mutually Table 8: Comparison of temperature scaling method with EDL-related works in the classical setting",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Bao et al",
+                "Gao"
+            ],
+            "title": "2020), specifically on the open-set action recognition",
+            "year": 2021
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "In high-risk domains such as autonomous driving and medical analysis, it is imperative for models to reliably convey the confidence level of their predictions (Choi et al., 2019; Abdar et al., 2022). However, previous research suggests that most modern deep neural networks (DNNs), especially when trained for classification via supervised learning, exhibit poor calibration, tending predominantly towards over-confidence (Guo et al., 2017). Despite effective uncertainty methods based on Bayesian theory and ensemble techniques have been developed, these mainstream methods of uncertainty quantification necessitate multiple forward passes in the inference phase (Blundell et al., 2015; Dusenberry et al., 2020; Gal & Ghahramani, 2016; Lakshminarayanan et al., 2017; Wen et al., 2020; Egele et al., 2022), imposing substantial computational burdens that hamper their widespread industrial adoption. This limitation drives the interest of researchers in exploring how to achieve high-quality uncertainty estimation with minimal additional cost.\nEvidential deep learning (EDL) (Sensoy et al., 2018) is such a newly arising single-forward-pass uncertainty estimation method, which has attracted increasing attention for its success in various pattern recognition tasks (Amini et al., 2020; Bao et al., 2021; Qin et al., 2022; Chen et al., 2022; Oh & Shin, 2022; Sun et al., 2022; Park et al., 2022; Sapkota & Yu, 2022; Gao et al., 2023a). Drawing upon the theory of subjective logic (J\u00f8sang, 2001; 2016), EDL harnesses both the proportion of collected evidence among classes and their magnitude value to achieve high-quality uncertainty estimation, effectively mitigating model over-confidence on misclassified and out-of-distribution samples. Specifically, in a C-class classification task, EDL constructs a Dirichlet distribution Dir(pX ,\u03b1X)\n\u2217Corresponding author\nto model the distribution of class probability pX under the guidance of subjective logic, and the concentration parameter vector \u03b1X(x) is given by\n\u03b1X(x) = eX(x) + C \u00b7 aX(x), \u2200x \u2208 X = {1, 2, ..., C}, (1) where the base rate aX is typically set as a uniform distribution over X, and its scalar coefficient C serves as a parameter termed as a prior weight. Note that to keep the notation uncluttered, we use \u03b1X(x) as a simplified expression of \u03b1X(X = x), and similarly for eX(x) and aX(x). The random variable X denotes the class index of the input sample, and eX(x) signifies the amassed evidence for the sample\u2019s association with class x. Thereafter, for model optimization, the traditional EDL method integrates the mean square error (MSE) loss over the class probability pX , which is assumed to follow the above Dirichlet distribution, thus deriving its optimization goal as\nLedl = 1 |D| \u2211\n(z,y)\u2208D\nEpX\u223cDir(pX ,\u03b1X) [ \u2225y \u2212 pX\u222522 ] = 1 |D| \u2211\n(z,y)\u2208D \u2211 x\u2208X ( y[x]\u2212 EpX\u223cDir(pX ,\u03b1X)[pX(x)] )2 + VarpX\u223cDir(pX ,\u03b1X)[pX(x)], (2)\nwhere the training set D consists of sample features and their one-hot labels denoted (z,y)1, and y[x] refers to the x-th element of y. A rigorous mathematical exposition of subjective logic and a more detailed introduction of EDL will be provided in section 2 and section 3.1.\nDespite the remarkable success of EDL, we argue that in the existing EDL-based methodology, there exists nonessential settings in both model construction and model optimization. These settings have been widely accepted by deep learning researchers, however, they are not intrinsically mandated in the mathematical framework of subjective logic. Specifically, (1) in model construction, the commonly ignored prior weight parameter in Eqn. 1 actually governs the balance between capitalizing on the proportion of evidence and its magnitude when deriving predictive scores. However, EDL prescribes this parameter\u2019s value to be equivalent to the number of classes, potentially resulting in highly counter-intuitive outcomes. Therefore, we advocate for setting the prior weight parameter as a free hyper-parameter in the neural network to adapt to complex application cases. (2) in model optimization, the EDL loss function given by Eqn. 2 includes a variance-minimized regularization term, which encourages the Dirichlet PDF modeling the distribution of probabilities to approach a Dirac delta function which is infinitely high and infinitesimally thin, or in other words, requires an infinite amount of evidence of the target class, thus further intensifying the over-confidence issue. Contrarily, we advocate for directly optimizing the expectation of the Dirichlet distribution towards the given one-hot label, thus deprecating this regularization to obtain more reliable predictive scores. Note that both the above relaxations strictly adhere to the subjective logic theory. Theoretical analysis in section 3 and experiment results in section 5 both demonstrate that relaxing the above nonessential settings contributes to alleviating the over-confidence issue and bringing more accurate uncertainty estimation. Our contributions include:\n\u2022 An analysis of the significance of the commonly ignored parameter termed prior weight on balancing the trade-off relationship between leveraging the proportion and magnitude of evidence to compute predictive scores in the subjective logic framework. Relaxing the rigid setting of fixing the parameter to the number of classes has been shown to enhance the quality of uncertainty estimation.\n\u2022 An analysis of the advantages of directly optimizing the expected value of the constructed Dirichlet distribution, instead of minimizing the integration of MSE loss over the class probability pX which follows the above Dirichlet distribution. Relaxing the EDL optimization objective by deprecating the variance-minimized regularization term has been shown to mitigate the issue of over-confidence.\n\u2022 Extensive experiments on multiple benchmarks for uncertainty estimation tasks, including confidence estimation and out-of-distribution detection, which comprehensively demonstrate the effectiveness of our proposed R-EDL with remarkable performances under the classical, few-shot, noisy, and video-modality settings.\nDerivations, proofs, additional experiment results and details are given in Appendix. 1In deep learning, the sample feature is usually denoted by the symbol x. However, to preclude ambiguity with the symbol x denoting the value of the random variable X , we employ z instead of x to denote the sample feature. The random variable X , the label y, and the feature z pertain to the same input sample."
+        },
+        {
+            "heading": "2 SUBJECTIVE LOGIC THEORY",
+            "text": "Just as the names of binary logic and probabilistic logic imply, an argument in binary logic must be either true or false, and one in probabilistic logic can take its probability in the range [0, 1] to express the meaning of partially true. Furthermore, subjective logic (J\u00f8sang, 2001; 2016) extends probabilistic logic by explicitly including uncertainty about probabilities in the formalism. Specifically, an argument in subjective logic, also called a subjective opinion, is formalized as follows:\nDefinition 1 (Subjective opinion). Let X be a categorical random variable on the domain X. A subjective opinion over the random variableX is defined as the ordered triplet \u03c9X = (bX , uX ,aX), where bX is a belief mass distribution over X , uX is a uncertainty mass, aX is a base rate, aka prior probability distribution over X , and the additivity requirements \u2211 x\u2208X bX(x) + uX = 1 and\u2211\nx\u2208X aX(x) = 1 are satisfied.\nBelief mass assigned to a singleton value x \u2208 X expresses support for x being TRUE, and uncertainty mass can be interpreted as belief mass assigned to the entire domain. Therefore, subjective logic also provides a well-defined projected probability, which follows the additivity requirement of traditional probability theory, by reassigning the uncertainty mass into each singleton of domain X according to the base rate aX as follows:\nDefinition 2 (Projected probability of a subjective opinion). Let \u03c9X = (bX , uX ,aX) be a subjective opinion. The projected probability PX of the opinion \u03c9X is defined by PX(x) = bX(x) + aX(x)uX , \u2200x \u2208 X. Note that the additivity requirement \u2211 x\u2208X PX(x) = 1 is satisfied.\nFurthermore, the subjective logic theory points out that, if the base rate aX and a parameter termed prior weight, denoted as W , is given, there exists a bijection between a multinomial opinion and a Dirichlet probabilistic density function (PDF). This relationship emerges from interpreting secondorder uncertainty by probability density, and plays an important role in the formalism of subjective logic since it provides a calculus reasoning with PDFs. The proof is provided in Appendix A.1.\nTheorem 1 (Bijection between subjective opinions and Dirichlet PDFs). Let X be a random variable defined in domain X, and \u03c9X = (bX , uX ,aX) be a subjective opinion. pX is a probability distribution over X, and a Dirichlet PDF with the concentration parameter \u03b1X is denoted by Dir(pX ,\u03b1X), where \u03b1X(x) \u2265 0, and pX(x) \u0338= 0 if \u03b1X(x) < 1. Then, given the base rate aX , there exists a bijection F between the opinion \u03c9X and the Dirichlet PDF Dir(pX ,\u03b1X):\nF : \u03c9X = (bX , uX ,aX) 7\u2192 Dir(pX ,\u03b1X) = \u0393 (\u2211 x\u2208X \u03b1X(x) )\u220f\nx\u2208X \u0393(\u03b1X(x)) \u220f x\u2208X pX(x) \u03b1X(x)\u22121, (3)\nwhere \u0393 denotes the Gamma function, \u03b1X satisfies the following identity that\n\u03b1X(x) = bX(x)W\nuX + aX(x)W, \u2200x \u2208 X, (4)\nand W \u2208 R+ is a scalar called a prior weight, whose setting will be further discussed in section 3.2."
+        },
+        {
+            "heading": "3 R-EDL: ALLEVIATING OVER-CONFIDENCE BY RELAXING NONESSENTIAL SETTINGS OF EDL",
+            "text": "Despite the significant success achieved by EDL and its related works, we argue that the existing EDL-based methodology (section 3.1) keeps rigid settings on the construction of the Dirichlet distributions specified in Theorem 1 and the design of optimization objectives, which, while widely accepted, are not intrinsically mandated within the subjective logic framework (section 2). Theoretical analysis in this section and comprehensive experiments in section 5 both demonstrate that those nonessential settings hinder this line of methods from quantifying more accurate uncertainty. Specifically, in this section, we rigorously analyze and relax two nonessential settings in EDL, including: (1) in model construction, the prior weight parameter is prescribed to be equivalent to the number of classes (section 3.2); (2) in model optimization, the traditional optimization objective includes a variance-minimized regularization term, which potentially intensifies over-confidence (section 3.3). Note that our relaxations to the above EDL settings strictly adhere to subjective logic."
+        },
+        {
+            "heading": "3.1 PRELIMINARY: EVIDENTIAL DEEP LEARNING",
+            "text": "Based on the subjective logic theory, Sensoy et al. (2018) proposes a single-forward-pass uncertainty estimation method named Evidential Deep Learning (EDL), which lets deep neural networks play\nthe role of analysts to give belief mass and uncertainty mass of samples. For example, in the case of C-class classification, the belief mass bX and uncertainty mass uX of the input sample, whose category index is a random variable X taking values x from the domain X = [1, ..., C], are given by\nbX(x) = eX(x)\u2211\nx\u2032\u2208X eX(x \u2032) + C\n, uX = C\u2211\nx\u2208X eX(x) + C , \u2200x \u2208 X. (5)\nSpecifically, eX(x), which denotes the evidence of the random variable X taking the value x, is the x-th element of the evidence vector eX = f(g(z)) \u2208 RC+, where z is the feature of the input sample, g is a deep neural network, f is a non-negative activation function, e.g., softplus, sometimes also called the evidence function, and the scalar C in this equation serves as the prior weight.\nAccording to Theorem 1, there exists a bijection between the Dirichlet PDF denoted DirX(pX ,\u03b1X) and the opinion \u03c9X = (bX , uX ,aX) if the requirement in Eqn. 4 is satisfied. Substituting Eqn. 5 into Eqn. 4 and setting the prior weight W in Eqn. 4 as C, we obtain the relationship between the parameter vector of the Dirichlet PDF and the collected evidence in EDL, as expressed by Eqn. 1. Moreover, since EDL sets the base rate aX(x) as a uniform distribution, the relationship given by Eqn. 1 can be further simplified into \u03b1X(x) = eX(x) + 1, \u2200x \u2208 X. To perform model optimization, EDL integrates the conventional MSE loss function over the class probability pX which is assumed to follow the Dirichlet PDF specified in the bijection, thus derives the optimization objective given by Eqn. 2. The detailed derivation is provided in Appendix A.2. In inference, EDL utilizes the projected probability PX (refer to Definition 2) as the predictive scores, and uses Eqn. 5 to calculate the uncertainty mass uX as the uncertainty of classification,\nPX(x) = eX(x) + 1\u2211\nx\u2032\u2208X eX(x \u2032) + C\n= \u03b1X(x)\nSX , uX = C\u2211 x\u2208X eX(x) + C = C SX , \u2200x \u2208 X, (6)\nwhere SX is the sum of \u03b1X(x) over x \u2208 X."
+        },
+        {
+            "heading": "3.2 RELAXING RIGID SETTING OF PRIOR WEIGHT IN MODEL CONSTRUCTION",
+            "text": "In this subsection, we elucidate how W orchestrates the equilibrium between leveraging the proportion and magnitude of evidence to compute predictive scores. Conclusively, we argue against the rigidity of fixing W to the class number and propose viewing it as an adjustable hyper-parameter.\nThe nomenclature of prior weight comes from the expression of Eqn. 1. Here, the scalar coefficient C, functioning as the prior weight W , denotes the weight of the base rate aX , which is alternatively termed the prior distribution. In Theorem 1, it should be noted that the existence of the bijection is contingent upon certain prerequisites; specifically, the base rate aX and the prior weight W must be provided. Typically, in the absence of prior information, we default to setting the base rate as a uniform distribution over the domain X, i.e., aX(x) = 1/C, \u2200x \u2208 X, and |X| = C. However, the setting of the prior weight W is worth further discussion.\nWe argue that fixing the prior weight to the cardinality of the domain, which is widely adopted by EDL researchers, is not intrinsically mandated by subjective logic and may result in counter-intuitive results. For example, a 100-classes classification task forces W = 100. Even though the neural net gives an extreme evidence distribution e = [100, 0, 0, ...., 0] \u2208 R100+ , EDL will reach the prediction that the probability of the sample belonging to Class 1 is P = (100 + 1)/(100 + 100) \u2248 0.5 by Eqn. 6, which is highly counter-intuitive. The underlying reason for the above phenomenon is that the value of W dictates the degree to which the projected probability is influenced by the magnitude of the evidence or contrarily the proportion of the evidence. To elucidate this point more clearly, we first revisit Eqn. 5 and Eqn. 6 without fixing the prior weight W to C. In this way, we can obtain a generalized form of the projected probability PX as\nPX(x) = bX(x) + aX(x)uX = eX(x) + W C\u2211\nx\u2032\u2208X eX(x \u2032) +W\n, \u2200x \u2208 X. (7)\nWhen the prior weight W is set to zero, the projected probability PX in Eqn. 7 degenerates to a conventional probability form, which solely relies on the proportion of evidence among classes and is unaffected by their magnitude, as scaling the evidence by a constant coefficient has no impact on PX . However, when W is not zero, we have\nPX(x) \u2264 eX(x) +\nW C\neX(x) +W = 1\u2212 (1\u2212 1 C ) \u00b7 1 eX(x)/W + 1 , \u2200x \u2208 X, (8)\nwhere the equlity holds if \u2211\nx\u2032\u2208X,x\u2032 \u0338=x eX(x \u2032) = 0. Eqn. 8 indicates that, in scenarios of extreme\nevidence distributions, i.e., when the evidence for all classes except class x is zero, the upper bound of PX(x) is governed by the ratio of the evidence for class x to the prior weight W . In other words, the upper bound of PX(x) purely relies on the magnitude of eX(x) when the prior weight W is given, and a lower magnitude results in a larger gap between the upper bound of PX(x) and 1.\nFrom the two cases presented above, it becomes evident that the value ofW determines the extent to which the projected probability PX(x) is influenced by the magnitude and proportion of evidence respectively. Specifically, a small W implies that PX(x) is predominantly influenced by the proportion of evidence distribution, whereas a large W leads PX(x) to mainly considering the magnitude of the evidence while overlooking the evidence proportion.\nIntuitively speaking, for any specific case, there should exist an optimal value for W which can balance the inherent trade-off between leveraging the proportion of evidence and its magnitude to obtain predictive scores minimizing the model over-confidence on misclassified and out-of-distribution samples. However, it is unlikely that such an optimal value is universally applicable to all scenarios, given the myriad of complex factors influencing the network\u2019s output. Hence, we advocate for relinquishing the rigidity of assigning the number of classes to W , but instead, treating W as an adjustable hyper-parameter within the neural network. Therefore, we revisit Eqn. 4 to derive a generalized form of the concentration parameter \u03b1X of the constructed Dirichlet PDF as\n\u03b1X(x) =\n( eX(x)\nW +\n1\n|X|\n) W = eX(x) + \u03bb, \u2200x \u2208 X, (9)\nwhere \u03bb = W/C \u2208 R+ is a hyper-parameter. Note that both the projected probability and the uncertainty mass retain the same form as in Eqn. 6, i.e., PX(x) = \u03b1X(x)/SX and uX = C/SX , when represented by \u03b1X(x) and SX ."
+        },
+        {
+            "heading": "3.3 DEPRECATING VARIANCE-MINIMIZED REGULARIZATION IN MODEL OPTIMIZATION",
+            "text": "In the preceding subsection, we underscore the imperative of treating the prior weight W as an adjustable hyper-parameter, which enables the projected probability PX to effectively balance the trade-off between leveraging the proportion and the magnitude of collected evidence. Consequently, in this subsection, we elucidate the reasoning underlying our optimization objective, which focuses on directly optimizing the projected probability PX . Upon comparison with the traditional loss function employed in EDL, it becomes evident that our method deprecates a commonly used varianceminimizing regularization term. We undertake a meticulous examination of the motivations for relaxing the EDL optimization objective by excluding this term.\nWith the generalized setting of \u03b1X in Eqn. 9, the projected probability PX has the following variant:\nPX(x) = \u03b1X(x)\nSX = eX(x) + \u03bb\u2211 x\u2032\u2208X eX(x \u2032) + C\u03bb , \u2200x \u2208 X. (10)\nConsequently, by substituting the class probability in traditional MSE loss with the projected probability PX in Eqn. 10, we seamlessly derive an appropriate optimization objective denoted Lredl within our relaxed-EDL framework in the following form:\nLredl = 1 |D| \u2211\n(z,y)\u2208D \u2211 x\u2208X (y[x]\u2212 PX(x))2 . (11)\nRegarding the reason for adopting the above optimization objective, we contend that the projected probability PX has the unique property of alleviating the overconfidence typically arising from optimization toward the hard one-hot labels y. As previously noted, the projected probability PX harnesses both the magnitude and proportion of collected evidence to more accurately represent the actual likelihood of a given output. From an optimization perspective, compared to the proportion of evidence among classes, i.e., eX(x)/ \u2211 x eX(x), or the belief mass bX , the projected probability PX has more tolerance towards the existence of the uncertainty mass uX , since uX also contributes to the projected probability PX according to the base rate aX . In other words, the item aXuX alleviates the urgency of the projected probability PX tending to the one-hot label y when the model has not collected enough evidence, since the uncertainty mass uX is inversely proportional to the total amount of evidence, thus mitigating the over-confidence issue to some extent.\nMeanwhile, the optimization goal in Eqn. 11 can also be interpreted as encouraging the expectation of the Dirichlet distribution to converge to the provided label, since the bijection introduced in Theorem 1 has been established on the following identity:\nPX(x) = EpX\u223cDir(p,\u03b1)[pX(x)], (12)\nwhich can be easily derived from Eqn. 10 and the property of Dirichlet distributions. Therefore, by substituting Eqn. 12 into Eqn. 11 and then comparing it with Eqn. 2, we can find that the essential difference between the two optimization goals is that, EDL optimizes the expectation of the traditional MSE loss over the constructed Dirichlet PDF, while our proposed R-EDL directly optimizes the expectation of the constructed Dirichlet PDF with MSE loss. As a result, a regularization term, denoted Lvar, which attempts to minimize the variance of the Dirichlet distribution given by the following equation is deprecated:\nLvar = 1 |D| \u2211\n(z,y)\u2208D \u2211 x\u2208X VarpX\u223cDir(pX ,\u03b1X)[pX(x)] = 1 |D| \u2211 (z,y)\u2208D S2X \u2212 \u2211 x\u2208X \u03b1 2 X(x) S2X(SX + 1) . (13)\nLet us delve deeper into this variance-minimized regularization term. When the variance of a Dirichlet distribution is close to zero, the Dirichlet probability density function is in the form of a Dirac delta function which is infinitely high and infinitesimally thin. Consequently, in the entire training phase, the regularization term Lvar keeps requiring an infinite amount of evidence of the target class, which further intensifies the serious over-confidence issue we seek to mitigate. From another perspective, the Dirichlet distribution which models the distribution of first-order probabilities would gradually degenerate to a traditional point estimation of first-order probabilities when its variance approaches zero, thus losing the advantage of subjective logic in modeling second-order uncertainty. Therefore, we posit that omitting this regularization term contributes to alleviating the overconfidence issue which commonly results in suboptimal uncertainty estimation, while preserving the merits of subjective logic. Our ablation study further corroborates this assertion. Moreover, following previous works (Sensoy et al., 2018; Deng et al., 2023), we adopt an additional KL-divergence based regularization for optimization, and its detailed introduction can be found in Appendix A.2."
+        },
+        {
+            "heading": "4 RELATED WORK",
+            "text": "Extensions and applications of EDL. A detailed introduction of EDL can be found in section 3.1, and here we briefly introduce the follow-up works of EDL. After Sensoy et al. (2018) proposes EDL, Deep Evidential Regression (DER) (Amini et al., 2020; Soleimany et al., 2021) extend this paradigm by incorporating evidential priors into the conventional Gaussian likelihood function, thereby enhancing the modeling of uncertainty within regression networks. Kandemir et al. (2022) combines EDL, neural processes, and neural Turing machines to propose the Evidential Tuning Process, which shows stronger performances than EDL but requires a rather complex memory mechanism. Meinert et al. (2023) offers further insights into the empirical effectiveness of DER, even in the presence of over-parameterized representations of uncertainty. Recently, I-EDL proposed by Deng et al. (2023) largely outperforms EDL by incorporating Fisher information matrix to measure the informativeness of evidence carried by samples. For application, DEAR (Bao et al., 2021) achieves impressive performances on open-set action recognition by proposing a novel model calibration method to regularize the EDL training. Moreover, EDL has achieved great success in other applications of computer vision (Qin et al., 2022; Oh & Shin, 2022; Sun et al., 2022; Park et al., 2022; Sapkota & Yu, 2022; Chen et al., 2023a;b; Gao et al., 2023b). Compared with previous efforts, our method is the first to consider relaxing the nonessential settings of the traditional EDL while strictly adhering to the subjective logic theory.\nOther single-model uncertainty methods based on DNNs. In addition to EDL-related works, various single-model methods exist for estimating predictive uncertainties. Efficient ensemble methods (Wen et al., 2020; Dusenberry et al., 2020), which cast a set of models under a single one, show state-of-the-art performances on large-scale datesets. While these methods are parameter-efficient, they necessitate multiple forward passes during inference. Bayesian Neural Networks (BNNs)(Ritter et al., 2018; Izmailov et al., 2021) model network parameters as random variables and quantify uncertainty through posterior estimation while suffering from a significant computational cost. A widely-recognized method is Monte Carlo Dropout (Gal & Ghahramani, 2016), which interprets the dropout layer as a random variable following a Bernoulli distribution, and training a neural network\nwith such dropout layers can be considered an approximation to variational inference. Two other notable single-forward-pass methods, DUQ (Van Amersfoort et al., 2020) and SNGP (Liu et al., 2020), introduce distance-aware output layers using radial basis functions or Gaussian processes. Although nearly competitive with deep ensembles in OOD benchmarks, these methods entail extensive modifications to the training procedure and lack easy integration with existing classifiers. Another group of efficient uncertainty methods are Dirichlet-based uncertainty (DBU) methods, to which EDL also belongs. Prominent DBU methods encompass KL-PN (Malinin & Gales, 2018), RKL-PN (Malinin & Gales, 2019), and Posterior Network (Charpentier et al., 2020), which vary in both the parameterization and the training strategy of the Dirichlet distribution. Compared to these preceding methods, our approach combines the benefits of exhibiting favorable performances, being single-forward-pass, parameter-efficient, and easily integrable."
+        },
+        {
+            "heading": "5 EXPERIMENTS",
+            "text": ""
+        },
+        {
+            "heading": "5.1 EXPERIMENTAL SETUP",
+            "text": "Baselines. Following Deng et al. (2023), we focus on comparing with other Dirichlet-based uncertainty methods, including the traditional EDL (Sensoy et al., 2018), I-EDL (Deng et al., 2023), KL-PN (Malinin & Gales, 2018), RKL-PN (Malinin & Gales, 2019), and PostN (Charpentier et al., 2020). Additionally, we present the results of the representative single-forward-pass method DUQ (Van Amersfoort et al., 2020) and the popular Bayesian uncertainty method MC Dropout (Gal & Ghahramani, 2016) for reference. For experiments concerning video-modality data, following Bao et al. (2021), we compare our methods with: OpenMax (Bendale & Boult, 2016), MC Dropout, BNN SVI (Krishnan et al., 2018), RPL (Chen et al., 2020), and DEAR (Bao et al., 2021).\nDatasets, Implementation details, Hyper-parameter settings. Refer to Appendix C."
+        },
+        {
+            "heading": "5.2 CLASSICAL SETTING",
+            "text": "A classifier with reliable uncertainty estimation abilities should exhibit following characteristics: (1) Assign higher uncertainties to out-of-distribution (OOD) than in-distribution (ID) samples; (2) Assign higher uncertainties to misclassified than to correctly classified samples; (3) maintain comparable classification accuracy. Therefore, We first evaluate our method by OOD detection and confidence estimation in image classification, measured by the area under the precision-recall curve (AUPR) with labels 1 for ID / correctly classified data, and labels 0 for OOD / misclassified data. For the Dirichlet-base uncertainty methods, we use the max probability (MP) and the sum of Dirichlet concentration parameters, aka the scaled reciprocal of uncertainty mass (UM) of subjective opinions, as the confidence scores. For MC Dropout and DUQ, we only report their MP performances since they do not involve Dirichlet PDFs. As Table 1 shows, our R-EDL method shows consistently favorable performances on most metrics. In particular, comparing with the traditional EDL method and the SOTA method I-EDL, our R-EDL obtains absolute gains of 6.13% and 1.74% when evaluated by MP on the OOD detection setting of CIFAR-10 against SVHN. Besides, our method also achieves superior performances on confidence estimation while maintaining a satisfactory classification accuracy. All results are averaged from 5 runs, and the relatively small standard deviations indicate that R-EDL exhibits stable performances."
+        },
+        {
+            "heading": "5.3 FEW-SHOT SETTING",
+            "text": "Next, we conduct more challenging few-shot experiments on mini-ImageNet to further demonstrate the effectiveness of our method. As shown in Table 2, we report the averaged top-1 accuracy of classification and the AUPR scores of confidence estimation and OOD detection over 10,000 fewshot episodes. We employ the N -way K-shot setting, with N \u2208 {5, 10} and K \u2208 {1, 5, 20}. Each episode comprises N random classes and K random samples per class for training, min(15,K) query samples per class for classification and confidence estimation, and an equivalent number of query samples from the CUB dataset for OOD detection. As depicted in Table 2, our R-EDL method achieves satisfactory performances on most N -way K-shot settings. Specifically, comparing with the EDL and I-EDL methods, our R-EDL obtains absolute gains of 9.19% and 1.61% when evaluated by MP on OOD detection of the 5-way 5-shot task."
+        },
+        {
+            "heading": "5.4 NOISY SETTING",
+            "text": "Thereafter, we employ noisy data to assess both the robustness of classification and the OOD detection capability of our method in the presence of noise. Following Deng et al. (2023), we generate\nthe noisy data by introducing zero-mean isotropic Gaussian noise to the test split of the ID dataset. Fig. 1(a) clearly illustrates the superior performance of R-EDL in terms of the average of these two key metrics. More results and analysis are provided in Appendix D.3."
+        },
+        {
+            "heading": "5.5 ABLATION STUDY AND PARAMETER ANALYSIS",
+            "text": "We assess the performance impact of relaxing two aforementioned nonessential settings in EDL, as summarized in Table 3. In particular, we explore the effects of retaining the original value of \u03bb = 1, and of reintroducing the deprecated variance-minimized regularization term Lvar. Note that if both original settings are restored, R-EDL reverts to traditional EDL. As evidenced in rows 3 and 4 of Table 3, reverting to each of these original settings results in a noticeable performance decline, or conversely, relaxing these settings leads to performance gains, particularly in OOD detection. For instance, measured by the AUPR score for OOD detection in the setting of CIFAR-10 vs SVHN,\nrelaxing just one setting yields improvements of 4.12% and 4.92% respectively. Moreover, when both settings are relaxed, the performance of R-EDL improves by 5.88%. Thus, we conclude that both relaxations are effective and their joint application yields a further optimized performance.\nMoreover, we further investigate the effect of the hyper-parameter \u03bb. Fig. 1(b) demonstrates the trend of variation in classification accuracy on CIFAR-10 and the AUPR score for OOD detection on CIFAR-100 as the hyper-parameter \u03bb varies from 0.01 to 1.5. In this setting, \u03bb is ultimately established at 0.1, selected from the range [0.1:0.1:1.0] based on the best classification accuracy on the validation set. More results and analysis can be found in Appendix D.5.\nDue to space limitation, please refer to Appendix D.4 for results of Video-modality Setting, and Appendix D.6 for Visualization of Uncertainty Distributions with different metrics."
+        },
+        {
+            "heading": "6 CONCLUSION",
+            "text": "Summary. We propose Relaxed-EDL, a generalized version of EDL, which relaxes two traditionally adopted nonessential settings in the model construction and optimization stages. Our analysis reveals two key findings: (1) A commonly ignored parameter termed prior weight governs the balance between leveraging the proportion of evidence and its magnitude in deriving predictive scores; (2) A variance-minimized regularization term adopted by the traditional EDL method encourages the Dirichlet PDF to approach a Dirac delta function, thereby heightening the risk of model overconfidence. Based on the findings, R-EDL treats the prior weight as an adjustable hyper-parameter instead of fixing it to the class number, and directly optimizes the expectation of the Dirichlet PDF provided to deprecate the variance-minimized regularization term. Comprehensive experimental evaluations underscore the efficacy of our proposed methodology.\nDeficiencies and Future directions. This paper can be extended along two directions below. (1) Although the crucial role of the prior weight parameter in balancing the trade-off between leveraging the proportion and the magnitude of collected evidence has been elucidated, the underlying mechanism dictating its optimal value is a topic worth further investigation. (2) The optimization objective of R-EDL can be interpreted as an optimization of the expected value of the constructed Dirichlet PDF. While this approach is principled and effective, it is somewhat coarse. Future work could explore optimization goals considering other statistical properties of Dirichlet PDFs."
+        },
+        {
+            "heading": "ACKNOWLEDGMENTS",
+            "text": "This work was supported in part by the National Natural Science Foundation of China under Grants 62036012, 62236008, U21B2044, 62102415, 62072286, and 62106262."
+        },
+        {
+            "heading": "A PROOF AND DERIVATION",
+            "text": "This section provides the proof of Theorem 1 and the derivation of optimization objectives of EDL."
+        },
+        {
+            "heading": "A.1 PROOF OF THEOREM 1",
+            "text": "Theorem 1 (Bijection between subjective opinions and Dirichlet PDFs). Let X be a random variable defined in domain X, and \u03c9X = (bX , uX ,aX) be a subjective opinion. pX is a probability distribution over X, and a Dirichlet PDF with the concentration parameter \u03b1X is denoted by Dir(pX ,\u03b1X), where \u03b1X(x) \u2265 0, and pX(x) \u0338= 0 if \u03b1X(x) < 1. Then, given the base rate aX , there exists a bijection F between the opinion \u03c9X and the Dirichlet PDF Dir(pX ,\u03b1X):\nF : \u03c9X = (bX , uX ,aX) 7\u2192 Dir(pX ,\u03b1X) = \u0393 (\u2211 x\u2208X \u03b1X(x) )\u220f\nx\u2208X \u0393(\u03b1X(x)) \u220f x\u2208X pX(x) \u03b1X(x)\u22121, (14)\nwhere \u0393 denotes the Gamma function, \u03b1X satisfies the following identity that\n\u03b1X(x) = bX(x)W\nuX + aX(x)W, (15)\nW \u2208 R+ is a given scalar representing a non-informative prior weight. Proof. The proof of the bijection will be performed in two steps. First, we will prove a Dirichlet distribution Dir(pX ,\u03b1X) is uniquely specified by its parameters \u03b1X , aka there exists a bijective mapping between Dir(pX ,\u03b1X) and \u03b1X . Then, we will prove the bijection between the Dirichlet parameters \u03b1X and the subjective opinion \u03c9X . Therefore, the bijection between \u03c9X and Dir(pX ,\u03b1X) can be established due to the transitivity of bijection.\nStep 1: To prove the mapping F1 : \u03b1X 7\u2192 Dir(pX ,\u03b1X) is bijective, we will prove it is both injective and surjective. The surjective property is obvious due to the mapping form. We use proof by contradiction to verify the injectivity as follows.\nAssuming that there exists two Dirichlet distributions over the random variableX , which are parameterized by two different concentration parameter vectors \u03b1X and \u03b1\u0303X respectively, sharing exactly the same probability density function, i.e., \u2203x \u2208 X, \u03b1X(x) \u0338= \u03b1\u0303X(x), and \u2200x \u2208 X and \u2200pX \u2208 S|X|,\n\u0393 (\u2211 x\u2208X \u03b1X(x) )\u220f\nx\u2208X \u0393(\u03b1X(x)) \u220f x\u2208X pX(x) \u03b1X(x)\u22121 =\n\u0393 (\u2211 x\u2208X \u03b1\u0303X(x) )\u220f\nx\u2208X \u0393(\u03b1\u0303X(x)) \u220f x\u2208X pX(x) \u03b1\u0303X(x)\u22121, (16)\nwhere S|X| is a |X|-dimensional unit simplex. Taking the logarithm of both sides, we have \u2212 log(B(\u03b1X(x)))+ \u2211 x\u2208X (\u03b1X(x)\u22121) log(pX(x)) = \u2212 log(B(\u03b1\u0303X(x)))+ \u2211 x\u2208X (\u03b1\u0303X(x)\u22121) log(pX(x)), (17) where B denotes a |X|-dimensional beta function. Therefore, we have\u2211\nx\u2208X (\u03b1X(x)\u2212 \u03b1\u0303X(x)) log (pX(x)) = log\n( B (\u03b1X(x))\nB (\u03b1\u0303X(x))\n) , \u2200pX \u2208 S|X|. (18)\nSince the above equation holds for any probability distribution pX , we have\u2211 x\u2208X (\u03b1X(x)\u2212 \u03b1\u0303X(x)) log (pX(x)\u2212 p\u2032X(x)) = 0, \u2200pX ,p\u2032X \u2208 S|X|. (19)\nThe above equation can be regarded as a homogenous linear equation with \u03b1X(x) \u2212 \u03b1\u0303X(x) as variables and log (pX(x)\u2212 p\u2032X(x)) as parameters. Due to the arbitrariness of pX and p\u2032X , and the property of homogeneous systems of linear equations, we know that Eqn. 19 only has a particular solution, i.e., \u03b1X(x)\u2212 \u03b1\u0303X(x) = 0 for any x \u2208 X, which violates our assumption. Therefore, F1 is both injective and surjective, thus bijective.\nStep 2: To prove the bijection between \u03c9X and \u03b1X , we also need to prove the mapping F2 : \u03c9X 7\u2192 \u03b1X is both injective and surjective. Since the base rate aX and the non-informative prior weight W in Eqn. 15 are given, F2 can be simplified to (bX , uX) 7\u2192 \u03b1X with the following formulation:\n\u03b1X(x) = bX(x)\nuX , \u2200x \u2208 X. (20)\nFirst, we use proof by contradiction to verify the injection. Assuming that there exists two different sets of belief mass and uncertainty mass which corresponds to the same set of Dirichlet concentration parameters, aka there exists (bX , uX), (b\u0303X , u\u0303X),\u03b1X , which satisfies\n\u03b1X(x) = bX(x)\nuX =\nb\u0303X(x)\nu\u0303X , \u2200x \u2208 X, (21)\nand \u2203x \u2208 X, bX(x) \u0338= b\u0303X(x), or uX \u0338= u\u0303X . We take the summation of Eqn. 21 across all possible values of x \u2208 X and utilize the additivity requirement \u2211 x\u2208X bX(x) + uX = 1, then we will have\u2211\nx\u2208X \u03b1X(x) =\n1\u2212 uX uX = 1\u2212 u\u0303X u\u0303X . (22)\nThus we reach uX = u\u0303X and after using the relationship in Eqn. 21, we will have bX(x) = b\u0303X(x), \u2200x \u2208 X. Thereafter, our assumption is violated and thus F2 is injective. Second, we prove F2 is surjective, aka for any Dirichlet parameter set \u03b1X , there exists a set of (bX , uX) satisfying Eqn. 20. By summing Eqn. 20 over all values of x \u2208 X, we have\nSX = 1\u2212 uX uX , (23)\nwhere SX = \u2211 x\u2208X \u03b1X(x). By reorganization and substituting uX into Eqn. 20, we have\nuX = 1\nSX + 1 , bX(x) =\n\u03b1X(x) SX + 1 , (24)\nwhich satisfy all the requirements. Therefore, the mapping F2 is surjective.\nFinally, since F1 and F2 are both bijective, F = F1 \u25e6 F2 is also bijective. Moreover, in cases of no prior information available, we generally set the base rate aX(x) as uniform distribution, i.e., aX(x) = 1|X| , \u2200x \u2208 X, and Eqn. 15 can be reorganized as\n\u03b1X(x) =\n( bX(x)\nuX +\n1\n|X|\n) W, \u2200x \u2208 X, (25)\nor equivalently as\nbX(x) = \u03b1X(x)\u2212W/|X|\u2211\nx\u2032\u2208X \u03b1X(x \u2032) , uX = W\u2211 x\u2208X \u03b1X(x) , \u2200x \u2208 X, (26)\nby utilizing the additivity requirement \u2211\nx\u2208X bX(x) + uX = 1.\nBesides, it is noteworthy that comprehensive elaborations on the concepts within the Subjective Logic theory are available in J\u00f8sang (2001; 2016)."
+        },
+        {
+            "heading": "A.2 DERIVATION OF OPTIMIZATION OBJECTIVES IN EDL",
+            "text": "As aforementioned in section 3.1, to perform model optimization, EDL integrates the conventional MSE loss function over the class probability pX which is assumed to follow the Dirichlet PDF specified in the bijection, thus derives the optimization objective as\nLedl = \u2211\n(z,y)\u2208D\nEpX\u223cDir(pX ,\u03b1X) [ \u2225y \u2212 pX\u222522 ] =\n\u2211 (z,y)\u2208D EpX\u223cDir(pX ,\u03b1X) \u2211 x\u2208X ( y[x]2 \u2212 2y[x]pX(x) + pX(x)2 ) =\n\u2211 (z,y)\u2208D \u2211 x\u2208X ( y[x]2 \u2212 2y[x]EpX\u223cDir(pX ,\u03b1X)[pX(x)] + EpX\u223cDir(pX ,\u03b1X) [ pX(x) 2 ]) .\n(27)\nUsing the identity E[x2] = E[x]2 + Var[x], we know that Ledl = \u2211\n(z,y)\u2208D \u2211 x\u2208X ( y[x]\u2212 EpX\u223cDir(pX ,\u03b1X)[pX(x)] )2 + VarpX\u223cDir(pX ,\u03b1X)[pX(x)]. (28)\nSince the Dirichlet distribution has the following properties:\nE[pX(x)] = \u03b1X(x)\nSX , Var[pX(x)] = \u03b1X(x)(SX \u2212\u03b1X(x)) S2X(SX + 1) , (29)\nwhere SX = \u2211C i=1 \u03b1X(x), we can explicitly express Ledl by \u03b1X(x) and SX as\nLedl = \u2211\n(z,y)\u2208D \u2211 x\u2208X ( y[x]\u2212 \u03b1X(x) SX )2 + \u03b1X(x)(SX \u2212\u03b1X(x)) S2X(SX + 1) . (30)\nFurthermore, EDL introduces an auxiliary regularization term to suppress the evidence of non-target classes by minizing the Kullback-Leibler (KL) divergence between a modified Dirichlet distribution and a uniform distribution. This regularization term has demonstrated promising empirical results and has been elucidated by Deng et al. (2023) using the PAC-Bayesian theory (McAllester, 1998). Specifically, the regularization term has the following form:\nLkl = 1 |D| \u2211\n(z,y)\u2208D\nKL (Dir(pX , \u03b1\u0303X),Dir(pX ,1))\n= 1 |D| \u2211\n(z,y)\u2208D\n( log\n\u0393(SX) \u0393(C) \u220f x\u2208X \u0393 (\u03b1\u0303X(x)) + \u2211 x\u2208X (\u03b1\u0303X(x)\u2212 1) (\u03c8 (\u03b1\u0303X(x))\u2212 \u03c8(SX))\n) ,\n(31) where \u0393 denotes the Gamma function, and \u03b1\u0303X = y+(1\u2212y)\u2299\u03b1X represents a modified Dirichlet parameter vector whose value of the target class has been set to 1."
+        },
+        {
+            "heading": "B DERIVATION FOR UNCERTAINTY MEASURES",
+            "text": "This section provides the derivation of several uncertainty measures, including expected entropy, mutual information, and differential entropy, of Dirichlet-based uncertainty models. The following content is adapted from the Appendix of Malinin & Gales (2018) and Deng et al. (2023)."
+        },
+        {
+            "heading": "B.1 EXPECTED ENTROPY",
+            "text": "Let X be a random variable defined in X, where X is a domain consisting of multiple mutually disjoint values. Let p be a probability distribution over X, and let Dir(p,\u03b1) be a Dirichlet distribution parameterized by the concentration parameter vector \u03b1. If X represents the category index of an input sample, x \u2208 X = {1, ..., C} denotes the value of X , satisfying p(X = x) = p(x), then the expected entropy of the random variable X over the Dirichlet distribution Dir(p,\u03b1) can be derived as follows:\nEp\u223cDir(p,\u03b1)[H[p(x)]] = \u222b p\u2208NC Dir(p,\u03b1) ( \u2212 \u2211 x\u2208X p(x) lnp(x) ) dp\n=\u2212 \u2211 x\u2208X \u222b p\u2208NC Dir(p,\u03b1) (\u2212p(x) lnp(x)) dp\n=\u2212 \u2211 x\u2208X \u222b p\u2208NC \u0393(S)\u220f x\u2032\u2208X \u0393(\u03b1(x \u2032)) \u220f x\u2032\u2208X p(x\u2032)\u03b1(x \u2032)\u22121 (\u2212p(x) lnp(x)) dp\n=\u2212 \u2211 x\u2208X \u222b p\u2208NC \u03b1(x) S\n\u0393(S) \u0393(\u03b1(x) + 1) \u220f\nx\u2032 \u0338=x \u0393(\u03b1(x \u2032)) \u220f x\u2032 \u0338=x p(x\u2032)\u03b1(x \u2032)\u22121p(x)\u03b1(x) lnp(x)dp\n=\u2212 \u2211 x\u2208X \u03b1(x) S \u222b p\u2208NC Ep\u223cDir(p,\u03b1+1x)[lnp(x)]dp\n=\u2212 \u2211 x\u2208X \u03b1(x) S (\u03c8(\u03b1(x) + 1)\u2212 \u03c8(S + 1)) ,\n(32)\nwhere S = \u2211\nx\u2208X \u03b1(x), NC is a C-dimensional unit simplex, \u03c8 denotes the digamma function, and 1x denotes a one-hot vector with the x-th element being set to 1 and other elements being set to 0. The last third equation comes from the property of Gamma function that \u0393(n) = (n\u2212 1)!. In some literature, the expected entropy is used to measure the data uncertainty."
+        },
+        {
+            "heading": "B.2 MUTUAL INFORMATION",
+            "text": "In the Dirichlet-based uncertainty methods, the mutual information between the labels y and the class probability p, which can be regarded as the difference between the total amount of uncertainty and the data uncertainty, can be approximately computed as:\nI[y,p]\ufe38 \ufe37\ufe37 \ufe38 Distributional Uncertainty\n\u2248 H [ Ep\u223cDir(p,\u03b1)[p(x)] ]\ufe38 \ufe37\ufe37 \ufe38 Total Uncertainty \u2212Ep\u223cDir(p,\u03b1) [H[p(x)]]\ufe38 \ufe37\ufe37 \ufe38 Expected Data Uncertainty\n= \u2212 \u2211 x\u2208X \u03b1(x) S ln \u03b1(x) S + \u2211 x\u2208X \u03b1(x) S (\u03c8(\u03b1(x) + 1)\u2212 \u03c8(S + 1))\n= \u2212 \u2211 x\u2208X \u03b1(x) S ( ln \u03b1(x) S \u2212 \u03c8(\u03b1(x) + 1) + \u03c8(S + 1) ) .\n(33)\nThe calculation of the expected data uncertainty utilizes the result of Eqn. 32. The mutual information is often used to measure the distributional uncertainty."
+        },
+        {
+            "heading": "B.3 DIFFERENTIAL ENTROPY",
+            "text": "The derivation of the differential entropy of the Dirichlet distribution is given by: H[Dir(p,\u03b1)] =\u2212 \u222b p\u2208NC Dir(p,\u03b1) lnDir(p,\u03b1)dp\n=\u2212 \u222b p\u2208NC Dir(p,\u03b1) ( ln \u0393(S)\u2212 \u2211 x\u2208X \u0393(\u03b1(x)) + \u2211 x\u2208X (\u03b1(x)\u2212 1) lnp(x) ) dp\n= \u2211 x\u2208X ln \u0393(\u03b1(x))\u2212 ln \u0393(S)\u2212 \u2211 x\u2208X (\u03b1(x)\u2212 1)Ep\u223cDir(p,\u03b1)[lnp(x)]\n= \u2211 x\u2208X ln \u0393(\u03b1(x))\u2212 ln \u0393(S)\u2212 \u2211 x\u2208X (\u03b1(x)\u2212 1)(\u03c8(\u03b1(x)\u2212 \u03c8(S))).\n(34) Differential entropy is also a prevalent measure of distributional uncertainty. A lower entropy indicates that the model yields a sharper distribution, whereas a higher value signifies a more uniform Dirichlet distribution."
+        },
+        {
+            "heading": "C EXPERIMENTAL SETTINGS",
+            "text": ""
+        },
+        {
+            "heading": "C.1 DATASETS",
+            "text": "Following Deng et al. (2023), we conduct experiments on the following groups of image classification dataset: (1) MNIST (LeCun, 1998), FMNIST (Xiao et al., 2017), KMNIST (Clanuwat et al., 2018); (2) CIFAR-10 (Krizhevsky et al., 2009), SVHN (Netzer et al., 2018), CIFAR100 (Krizhevsky et al., 2009); (3) mini-ImageNet (Vinyals et al., 2016), CUB (Wah et al., 2011). Within each group, we designate the first dataset as in-distribution training data, while utilizing the subsequent ones as OOD data. Moreover, to evaluate the effectiveness of our method on video-modality data, we also conduct an open-set action recognition experiment by taking UCF101 (Soomro et al., 2012) as ID data and HMDB-51 (Kuehne et al., 2011) and MiT-v2 (Monfort et al., 2021) as OOD data following Bao et al. (2021). Below are the detailed introductions:\nThe MNIST (LeCun, 1998) database consists of handwritten digits ranging from 0 to 9. Specifically, MNIST contains 60,000 training images and 10,000 testing images, which have been normalized to fit into 28 \u00d7 28 pixel bounding boxes. We use the proportion of [0.8, 0.2] to partition the training samples into training and validation sets.\nFashionMNIST (FMNIST) (Xiao et al., 2017) is a dataset designed as a more challenging replacement for MNIST. Created by Zalando Research, FMNIST features grayscale images of various clothing items such as shirts, trousers, sneakers, and bags. The dataset is structured similarly to MNIST, containing 60,000 training images and 10,000 testing images, each of which is 28 \u00d7 28 pixels in size. We use FMNIST as OOD data when training models on MNIST.\nKuzushiji-MNIST (KMNIST) (Clanuwat et al., 2018) is another drop-in replacement for MNIST, consisting of a training set with 60,000 handwritten Kuzushiji (cursive Japanese) Hiragana characters and a testing set comprising 10,000 ones. Similar to MNIST, the handwritten characters have been processed to fit into 28\u00d7 28 pixel resolution grayscale images. We also use KMNIST as OOD data when using MNIST as ID data.\nCIFAR-10 (Krizhevsky et al., 2009) comprises 60,000 32 \u00d7 32 color distributed across 10 distinct classes such as airplanes, birds, cats, ships, and more, with each class containing 6,000 images. Among them, 50,000 are designated for training and the remaining 10,000 for testing. We partition the training images into training and validation sets using a split ratio of [0.95, 0.05].\nStreet View House Numbers (SVHN) (Netzer et al., 2018) dataset consists of digit images of house numbers from Google Street View. Specifically, it contains 73257 digits for training and 26032 digits for testing. We use SVHN as OOD data when training models on CIFAR10.\nCIFAR-100 (Krizhevsky et al., 2009) is just like the CIFAR-10, except it has 100 classes containing 600 images each. There are 500 training images and 100 testing images per class. We use CIFAR100 as OOD data when using CIFAR-10 as ID data.\nmini-ImageNet (Vinyals et al., 2016) is designed for few-shot learning evaluation. mini-ImageNet comprises 50,000 84 \u00d7 84 color images for training and 10,000 ones for testing, evenly distributed across 100 classes, and these 100 classes are subdivided into sets of 64, 16, and 20 for meta-training, meta-validation, and meta-testing tasks, respectively.\nThe Caltech-UCSD Birds (CUB) (Wah et al., 2011) dataset contains 11,788 images of 200 subcategories belonging to birds, 5,994 for training and 5,794 for testing. We use CUB as OOD data when using mini-ImageNet as ID data in the few-shot setting.\nUCF-101 (Soomro et al., 2012) is an action recognition data set of realistic action videos, collected from YouTube. Specifically, UCF-101 contains 13320 videos distributed across 101 action categories. For experiments of video-modality setting, we train models on UCF-101 training split and take its testing set as known samples in inference. Following Bao et al. (2021), despite there exists a few overlapping classes between UCF-101 and the OOD datasets, HMDB-51 and MiT-v2, we do not manually clean the data for standardizing the evaluation.\nHMDB-51 (Kuehne et al., 2011) is collected mostly from movies, and a small proportion from Prelinger archive, YouTube and Google videos. Specifically, HMDB-51 contains 6,849 clips of 51 action categories, each containing a minimum of 101 clips. We use its testing set as unknown samples in the video-modality setting.\nMulti-Moments in Time (MiT-v2) (Monfort et al., 2021) has 305 classes and its testing split contains 30,500 video samples. We also use its testing set as unknown samples in the video-modality setting.\nC.2 IMPLEMENTATION DETAILS\nClassical setting. In alignment with Deng et al. (2023), a ConvNet with three convolutional and three dense layers is employed for MNIST, while VGG16 (Simonyan & Zisserman, 2014) serves as the backbone network for CIFAR-10. As Table 4 shows, FMNIST and KMNIST are utilized as OOD data for MNIST, while SVHN and CIFAR-100 are used for CIFAR-10. We use Softplus as the activation function to keep the collected evidence non-negative. The Adam optimizer is employed with a learning rate of 1 \u00d7 10\u22123, decaying by 0.1 every 15 epochs for MNIST, and a learning rate of 1 \u00d7 10\u22124 for CIFAR-10. The hyper-parameter \u03bb is set to 0.1, which is selected from the range [0.1:0.1:1.0] based on the optimal classification accuracy on the validation set. The batch size is set to 64, and the maximum training epoch is set to 60 and 200 for MNIST and CIFAR-10, respectively. Reported results are averaged over 5 runs.\nBesides, for the baseline methods which require OOD data in the training phase, i.e., KL-PN and RKL-PN, uniform noise instead of actual OOD test data is used as OOD training data to ensure a fair comparison as previous works did (Charpentier et al., 2020; Deng et al., 2023).\nFew-shot setting. Following Deng et al. (2023), we adopt a pre-trained WideResNet-28-10 network from Yang et al. (2021) to extract features and train a single dense layer for experiments under a challenging few-shot setting on the mini-ImageNet dataset, with the testing set of CUB as OOD data. We employ the N -way K-shot setting, with N \u2208 {5, 10} and K \u2208 {1, 5, 20}. Each few-shot episode comprises N random classes and K random samples per class for training, min(15,K) query samples per class from mini-ImageNet for classification and confidence estimation, and an equivalent number of query samples from the CUB dataset for OOD detection. Reported results are averaged over 10,000 episodes. Note that in the few-shot setting, we perform setting relaxations on I-EDL to achieve stronger performances. Softplus is used as the activation function to keep evidence non-negative. The LBFGS optimizer is employed with the default learning rate 1.0 for 100 epochs. The hyper-parameter \u03bb is also selected on the meta-validation set, as shown in Table 5.\nNoisy setting. Noisy samples are generated by adding zero-mean Gaussian noises with standard deviations of [0.025:0.025:0.200] to the testing samples of CIFAR-10. The hyper-parameter \u03bb is set to 0.3, which is selected by the best AUPR score of OOD detection on the clean validation set of CIFAR-10 against the noisy validation set with zero-mean 0.1-SD Gaussian noise.\nVideo-modality setting. Following Bao et al. (2021), we explore the open-set action recognition task on UCF-101 with I3D as the backbone network. The HMDB-51 and MiT-v2 are used as sources of unknown samples. The hyper-parameter \u03bb is set to 0.8, and the batch size is set to 8.\nOther details. Our model is implemented with Python 3.8 and PyTorch 1.12. All experiments are conducted on NVIDIA RTX 3090 GPUs. Source codes are provided in the supplementary material."
+        },
+        {
+            "heading": "D ADDITIONAL RESULTS",
+            "text": ""
+        },
+        {
+            "heading": "D.1 CLASSICAL SETTING",
+            "text": "In Table 6 and Table 7, we provide the AUPR and AUROC scores of OOD detection in the classical setting, measured by MP (Max projected probability), UM (Uncertainty Mass), DE (Differential Entropy), and MI (Mutual Information), respectively. Table 8 compares EDL-related works with the temperature scaling method (Guo et al., 2017) in the classical setting, including results evaluated by the Expected Calibration Error (ECE) with 15 bins and the Brier score. Although temperature scaling achieves impressive results when evaluated by the ECE metric, there still exists a performance gap with our method on OOD detection ability.\nBesides, we believe that employing the AUPR scores for evaluation purposes aligns more closely with our objectives than using ECE or Brier score. As delineated in Section 5.2, our primary criterion for assessing confidence estimation is the model\u2019s ability in differentiating between correctly classified and misclassified samples, as well as between ID and OOD samples based on the predicted confidence. Despite that ECE is frequently employed to assess the degree of correspondence between the model\u2019s confidence and the true correctness likelihood, a confidence distribution accompanied by a low ECE does not inherently ensure a clear distinction between correct and incorrect predictions. For instance, in a balanced two-class dataset scenario, if a binary classifier categorizes\nall samples into a single class with a consistent confidence output of 50%, the ECE would be zero, yet this result lacks practical significance."
+        },
+        {
+            "heading": "D.2 FEW-SHOT SETTING",
+            "text": "Table 9 shows few-shot results of OOD detection measured by more uncertainty metrics. Table 10 compares our method and label smoothing in the few-shot setting. All results consistently demonstrate the superior OOD detection performance of our proposed method."
+        },
+        {
+            "heading": "D.3 NOISY SETTING",
+            "text": "We also employ noisy data to assess both the robustness of classification and the OOD detection capability of our method with the interference of noise. Following Deng et al. (2023), we generate the noisy data by introducing zero-mean isotropic Gaussian noise to the test split of the ID dataset. Table 11 reports the classification accuracy and the AUPR scores for OOD detection across varying levels of Gaussian noise on CIFAR-10. It is essential to note that these two metrics are not mutually\nexclusive; a robust and reliable classifier should excel in both dimensions simultaneously. While both EDL and I-EDL methods tend to excel in only one of the metrics, Table 11 and Fig. 1(a) clearly present the superior performance of R-EDL in terms of the average of these two key metrics.\nD.4 VIDEO-MODALITY SETTING\nWe also assess our approach using video-modality samples (Bao et al., 2021; Gao et al., 2020), specifically on the open-set action recognition task. Following Bao et al. (2021), we train models on UCF-101 training split and use the testing splits of HMDB-51 and MiT-v2 datasets as unknown sources. Given that the state-of-the-art method DEAR is predicated on EDL, we substitute its EDL implementation with our own R-EDL version. As evidenced by Table 12, this modification yields enhanced performance, further substantiating the efficacy of R-EDL."
+        },
+        {
+            "heading": "D.5 PARAMETER ANALYSIS",
+            "text": "Moreover, we further investigate the effect of the hyper-parameter \u03bb. As an expanded version of figure 1(b), figure 2 includes the trend of variation in classification accuracy on CIFAR-10, the AUPR score for confidence estimation on CIFAR-10, and the AUPR score for OOD detection on CIFAR-100 as the hyper-parameter \u03bb varies from 0.01 to 1.5. Observation reveals that a smaller \u03bb generally outperforms the tradition EDL setting where \u03bb = 1, indicating that the EDL setting for the prior weight is excessively high, leading to suboptimal results. Nonetheless, an excessively small \u03bb also has detrimental effects. For instance, setting \u03bb to 0.01 results in a significant decrease in classification accuracy to 83.11% and a drop in the AUPR score of OOD detection to 85.87%. In this setting, \u03bb is ultimately established at 0.1, selected from the range [0.1:0.1:1.0] based on the best classification accuracy on the validation set.\nD.6 VISUALIZATION OF UNCERTAINTY DISTRIBUTIONS\nFigs. 3,4,5, and 6 show density plots of the normalized uncertainty measures for CIFAR-10 against SVHN, and CIFAR-10 against CIFAR-100, while Figs. 7,8,9, and 10 show density plots for MNIST against FMNIST, and MNIST against KMNIST. The uncertainty measures include max projected probability, uncertainty mass, differential entropy, and mutual information. We apply min-max normalization on each uncertainty value u, i.e., unorm = (u \u2212 minu)(maxu \u2212 minu). It can be observed that our method attaches higher confidence to ID data and makes uncertainty of OOD data more aggregated, exhilarating better separability.\nThe density plots of I-EDL show different shapes with those of EDL and R-EDL, since I-EDL utilizes the Fisher information matrix to measure the amount of information that the categorical probabilities carry about the concentration parameters of the corresponding Dirichlet distribution, thus allowing a certain class label with higher evidence to have a larger variance. Consequently, the predictions made by the I-EDL approach are typically less extreme, resulting in a bimodal distribu-\ntion on the uncertainty density plot where the two peaks are closer to the center of the density axis compared to the EDL and R-EDL methods.\nAdditionally, we deduce that the similarity in the shapes of the uncertainty density plots between EDL and R-EDL may stem from the fact that R-EDL\u2019s modifications to EDL only consist of relaxations of non-essential settings, without introducing any additional mechanisms."
+        },
+        {
+            "heading": "E SOURCE CODE",
+            "text": "Our code is available at https://github.com/MengyuanChen21/ICLR2024-REDL."
+        }
+    ],
+    "year": 2024
+}

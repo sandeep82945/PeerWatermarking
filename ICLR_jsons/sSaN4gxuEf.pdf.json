@@ -1,0 +1,919 @@
+{
+    "abstractText": "In this paper, we aim to adapt a model at test-time using a few unlabeled data to address distribution shifts. In this setting, extracting the domain knowledge from a limited amount of data is challenging. To improve such a process, it is crucial to utilize correlated information from pre-trained backbones and source domains. Previous studies fail to utilize recent foundation models with strong outof-distribution generalization. Additionally, domain-centric designs are not flavored in their works. Furthermore, they employ the process of modelling source domains and the process of learning to adapt independently into disjoint training stages. In this work, we propose an approach on top of the pre-computed features of the foundation model. Specifically, we build a knowledge bank to learn the transferable knowledge from source domains. Conditioned on few-shot target data, we introduce a domain prompt generator to condense the knowledge bank into a domain-specific prompt. The domain prompt then directs the visual features towards a particular domain via a guidance module. Moreover, we propose a domain-aware contrastive loss and employ meta-learning to facilitate domain knowledge extraction. Extensive experiments are conducted to validate the domain knowledge extraction. The proposed method outperforms previous work on 5 large-scale benchmarks including WILDS and DomainNet.",
+    "authors": [],
+    "id": "SP:0c77758892dd9c8cabadfe03d9c446b1ceacde76",
+    "references": [
+        {
+            "authors": [
+                "Qiyuan An",
+                "Ruijiang Li",
+                "Lin Gu",
+                "Hao Zhang",
+                "Qingyu Chen",
+                "Zhiyong Lu",
+                "Fei Wang",
+                "Yingying Zhu"
+            ],
+            "title": "A privacy-preserving unsupervised domain adaptation framework for clinical text analysis",
+            "venue": "arXiv preprint arXiv:2201.07317,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Martin Arjovsky",
+                "L\u00e9on Bottou",
+                "Ishaan Gulrajani",
+                "David Lopez-Paz"
+            ],
+            "title": "Invariant risk minimization",
+            "venue": "arXiv preprint arXiv:1907.02893,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Hyojin Bahng",
+                "Ali Jahanian",
+                "Swami Sankaranarayanan",
+                "Phillip Isola"
+            ],
+            "title": "Exploring visual prompts for adapting large-scale models",
+            "venue": "arXiv preprint arXiv:2203.17274,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yogesh Balaji",
+                "Swami Sankaranarayanan",
+                "Rama Chellappa"
+            ],
+            "title": "Metareg: Towards domain generalization using meta-regularization",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Peter Bandi",
+                "Oscar Geessink",
+                "Quirine Manson",
+                "Marcory Van Dijk",
+                "Maschenka Balkenhol",
+                "Meyke Hermsen",
+                "Babak Ehteshami Bejnordi",
+                "Byungjae Lee",
+                "Kyunghyun Paeng",
+                "Aoxiao Zhong"
+            ],
+            "title": "From detection of individual metastases to classification of lymph node status at the patient level: the camelyon17 challenge",
+            "venue": "IEEE Transactions on Medical Imaging,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Gilles Blanchard",
+                "Gyemin Lee",
+                "Clayton Scott"
+            ],
+            "title": "Generalizing from several related classification tasks to a new unlabeled sample",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Han Cai",
+                "Chuang Gan",
+                "Ligeng Zhu",
+                "Song Han"
+            ],
+            "title": "Tinytl: Reduce memory, not parameters for efficient on-device learning",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Junbum Cha",
+                "Kyungjae Lee",
+                "Sungrae Park",
+                "Sanghyuk Chun"
+            ],
+            "title": "Domain generalization by mutualinformation regularization with pre-trained models",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Dian Chen",
+                "Dequan Wang",
+                "Trevor Darrell",
+                "Sayna Ebrahimi"
+            ],
+            "title": "Contrastive test-time adaptation",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yunjey Choi",
+                "Minje Choi",
+                "Munyoung Kim",
+                "Jung-Woo Ha",
+                "Sunghun Kim",
+                "Jaegul Choo"
+            ],
+            "title": "Stargan: Unified generative adversarial networks for multi-domain image-to-image translation",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Gordon Christie",
+                "Neil Fendley",
+                "James Wilson",
+                "Ryan Mukherjee"
+            ],
+            "title": "Functional map of the world",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Mohammad Mahdi Derakhshani",
+                "Enrique Sanchez",
+                "Adrian Bulat",
+                "Cees G.M. Snoek",
+                "Georgios Tzimiropoulos",
+                "Brais Martinez"
+            ],
+            "title": "Bayesian prompt learning for image-language model generalization",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Nicholas Frosst",
+                "Nicolas Papernot",
+                "Geoffrey Hinton"
+            ],
+            "title": "Analyzing and improving representations with the soft nearest neighbor loss",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Yulu Gan",
+                "Yan Bai",
+                "Yihang Lou",
+                "Xianzheng Ma",
+                "Renrui Zhang",
+                "Nian Shi",
+                "Lin Luo"
+            ],
+            "title": "Decorate the newcomers: Visual domain prompt for continual test time adaptation",
+            "venue": "In AAAI Conference on Artificial Intelligence,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yunhe Gao",
+                "Xingjian Shi",
+                "Yi Zhu",
+                "Hao Wang",
+                "Zhiqiang Tang",
+                "Xiong Zhou",
+                "Mu Li",
+                "Dimitris N Metaxas"
+            ],
+            "title": "Visual prompt tuning for test-time domain adaptation",
+            "venue": "arXiv preprint arXiv:2210.04831,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Sachin Goyal",
+                "Ananya Kumar",
+                "Sankalp Garg",
+                "Zico Kolter",
+                "Aditi Raghunathan"
+            ],
+            "title": "Finetune like you pretrain: Improved finetuning of zero-shot vision models",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Cheng Han",
+                "Qifan Wang",
+                "Yiming Cui",
+                "Zhiwen Cao",
+                "Wenguan Wang",
+                "Siyuan Qi",
+                "Dongfang Liu"
+            ],
+            "title": "E\u02c6 2vpt: An effective and efficient approach for visual prompt tuning",
+            "venue": "arXiv preprint arXiv:2307.13770,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Timothy Hospedales",
+                "Antreas Antoniou",
+                "Paul Micaelli",
+                "Amos Storkey"
+            ],
+            "title": "Meta-learning in neural networks: A survey",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Qidong Huang",
+                "Xiaoyi Dong",
+                "Dongdong Chen",
+                "Weiming Zhang",
+                "Feifei Wang",
+                "Gang Hua",
+                "Nenghai Yu"
+            ],
+            "title": "Diversity-aware meta visual prompting",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Andrew Jaegle",
+                "Felix Gimeno",
+                "Andy Brock",
+                "Oriol Vinyals",
+                "Andrew Zisserman",
+                "Joao Carreira"
+            ],
+            "title": "Perceiver: General perception with iterative attention",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Menglin Jia",
+                "Luming Tang",
+                "Bor-Chun Chen",
+                "Claire Cardie",
+                "Serge Belongie",
+                "Bharath Hariharan",
+                "Ser-Nam Lim"
+            ],
+            "title": "Visual prompt tuning",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Tero Karras",
+                "Samuli Laine",
+                "Timo Aila"
+            ],
+            "title": "A style-based generator architecture for generative adversarial networks",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Pang Wei Koh",
+                "Shiori Sagawa",
+                "Henrik Marklund",
+                "Sang Michael Xie",
+                "Marvin Zhang",
+                "Akshay Balsubramani",
+                "Weihua Hu",
+                "Michihiro Yasunaga",
+                "Richard Lanas Phillips",
+                "Irena Gao"
+            ],
+            "title": "Wilds: A benchmark of in-the-wild distribution shifts",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Ananya Kumar",
+                "Aditi Raghunathan",
+                "Robbie Matthew Jones",
+                "Tengyu Ma",
+                "Percy Liang"
+            ],
+            "title": "Finetuning can distort pretrained features and underperform out-of-distribution",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Brian Lester",
+                "Rami Al-Rfou",
+                "Noah Constant"
+            ],
+            "title": "The power of scale for parameter-efficient prompt tuning",
+            "venue": "In Empirical Methods in Natural Language Processing,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Da Li",
+                "Yongxin Yang",
+                "Yi-Zhe Song",
+                "Timothy Hospedales"
+            ],
+            "title": "Learning to generalize: Meta-learning for domain generalization",
+            "venue": "In AAAI Conference on Artificial Intelligence,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Haoliang Li",
+                "Sinno Jialin Pan",
+                "Shiqi Wang",
+                "Alex C Kot"
+            ],
+            "title": "Domain generalization with adversarial feature learning",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Jingyao Li",
+                "Pengguang Chen",
+                "Zexin He",
+                "Shaozuo Yu",
+                "Shu Liu",
+                "Jiaya Jia"
+            ],
+            "title": "Rethinking out-ofdistribution (ood) detection: Masked image modeling is all you need",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Rui Li",
+                "Qianfen Jiao",
+                "Wenming Cao",
+                "Hau-San Wong",
+                "Si Wu"
+            ],
+            "title": "Model adaptation: Unsupervised domain adaptation without source data",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Ya Li",
+                "Xinmei Tian",
+                "Mingming Gong",
+                "Yajing Liu",
+                "Tongliang Liu",
+                "Kun Zhang",
+                "Dacheng Tao"
+            ],
+            "title": "Deep domain generalization via conditional invariant adversarial networks",
+            "venue": "In European Confererence on Computer Vison,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Jian Liang",
+                "Dapeng Hu",
+                "Jiashi Feng"
+            ],
+            "title": "Do we really need to access the source data? source hypothesis transfer for unsupervised domain adaptation",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jian Liang",
+                "Ran He",
+                "Tieniu Tan"
+            ],
+            "title": "A comprehensive survey on test-time adaptation under distribution shifts",
+            "venue": "arXiv preprint arXiv:2303.15361,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ji Lin",
+                "Ligeng Zhu",
+                "Wei-Ming Chen",
+                "Wei-Chen Wang",
+                "Chuang Gan",
+                "Song Han"
+            ],
+            "title": "On-device training under 256kb memory",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jochem Loedeman",
+                "Maarten C. Stol",
+                "Tengda Han",
+                "Yuki M. Asano"
+            ],
+            "title": "Prompt generation networks for input-based adaptation of frozen vision transformers",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Hyeonseob Nam",
+                "HyunJae Lee",
+                "Jongchan Park",
+                "Wonjun Yoon",
+                "Donggeun Yoo"
+            ],
+            "title": "Reducing domain gap via style-agnostic networks",
+            "venue": "arXiv preprint arXiv:1910.11645,",
+            "year": 1910
+        },
+        {
+            "authors": [
+                "Changdae Oh",
+                "Hyeji Hwang",
+                "Hee-young Lee",
+                "YongTaek Lim",
+                "Geunyoung Jung",
+                "Jiyoung Jung",
+                "Hosik Choi",
+                "Kyungwoo Song"
+            ],
+            "title": "Blackvip: Black-box visual prompting for robust transfer learning",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yassine Ouali",
+                "Adrian Bulat",
+                "Brais Martinez",
+                "Georgios Tzimiropoulos"
+            ],
+            "title": "Black box few-shot adaptation for vision-language models",
+            "venue": "In IEEE International Conference on Computer Vision,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Xingchao Peng",
+                "Qinxun Bai",
+                "Xide Xia",
+                "Zijun Huang",
+                "Kate Saenko",
+                "Bo Wang"
+            ],
+            "title": "Moment matching for multi-source domain adaptation",
+            "venue": "In IEEE International Conference on Computer Vision,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Joan Puigcerver",
+                "Carlos Riquelme",
+                "Basil Mustafa",
+                "Neil Houlsby"
+            ],
+            "title": "From sparse to soft mixtures of experts",
+            "venue": "arXiv preprint arXiv:2308.00951,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Alec Radford",
+                "Jong Wook Kim",
+                "Chris Hallacy",
+                "Aditya Ramesh",
+                "Gabriel Goh",
+                "Sandhini Agarwal",
+                "Girish Sastry",
+                "Amanda Askell",
+                "Pamela Mishkin",
+                "Jack Clark"
+            ],
+            "title": "Learning transferable visual models from natural language supervision",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Robin Rombach",
+                "Andreas Blattmann",
+                "Dominik Lorenz",
+                "Patrick Esser",
+                "Bj\u00f6rn Ommer"
+            ],
+            "title": "Highresolution image synthesis with latent diffusion models",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Shiori Sagawa",
+                "Pang Wei Koh",
+                "Tony Lee",
+                "Irena Gao",
+                "Sang Michael Xie",
+                "Kendrick Shen",
+                "Ananya Kumar",
+                "Weihua Hu",
+                "Michihiro Yasunaga",
+                "Henrik Marklund",
+                "Sara Beery",
+                "Etienne David",
+                "Ian Stavness",
+                "Wei Guo",
+                "Jure Leskovec",
+                "Kate Saenko",
+                "Tatsunori Hashimoto",
+                "Sergey Levine",
+                "Chelsea Finn",
+                "Percy Liang"
+            ],
+            "title": "Extending the WILDS benchmark for unsupervised adaptation",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Manli Shu",
+                "Weili Nie",
+                "De-An Huang",
+                "Zhiding Yu",
+                "Tom Goldstein",
+                "Anima Anandkumar",
+                "Chaowei Xiao"
+            ],
+            "title": "Test-time prompt tuning for zero-shot generalization in vision-language models",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yang Shu",
+                "Xingzhuo Guo",
+                "Jialong Wu",
+                "Ximei Wang",
+                "Jianmin Wang",
+                "Mingsheng Long"
+            ],
+            "title": "Clipood: Generalizing clip to out-of-distributions",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Baochen Sun",
+                "Kate Saenko"
+            ],
+            "title": "Deep coral: Correlation alignment for deep domain adaptation",
+            "venue": "In European Confererence on Computer Vison Workshop,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Yu Sun",
+                "Xiaolong Wang",
+                "Zhuang Liu",
+                "John Miller",
+                "Alexei Efros",
+                "Moritz Hardt"
+            ],
+            "title": "Test-time training with self-supervision for generalization under distribution shifts",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Laurens Van der Maaten",
+                "Geoffrey Hinton"
+            ],
+            "title": "Visualizing data using t-sne",
+            "venue": "Journal of Machine Learning Research,",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Ashish Vaswani",
+                "Noam Shazeer",
+                "Niki Parmar",
+                "Jakob Uszkoreit",
+                "Llion Jones",
+                "Aidan N Gomez",
+                "\u0141ukasz Kaiser",
+                "Illia Polosukhin"
+            ],
+            "title": "Attention is all you need",
+            "venue": "In Advances in neural information processing systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Dequan Wang",
+                "Evan Shelhamer",
+                "Shaoteng Liu",
+                "Bruno Olshausen",
+                "Trevor Darrell"
+            ],
+            "title": "Tent: Fully test-time adaptation by entropy minimization",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Zifeng Wang",
+                "Zizhao Zhang",
+                "Sayna Ebrahimi",
+                "Ruoxi Sun",
+                "Han Zhang",
+                "Chen-Yu Lee",
+                "Xiaoqi Ren",
+                "Guolong Su",
+                "Vincent Perot",
+                "Jennifer Dy"
+            ],
+            "title": "Dualprompt: Complementary prompting for rehearsal-free continual learning",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Zifeng Wang",
+                "Zizhao Zhang",
+                "Chen-Yu Lee",
+                "Han Zhang",
+                "Ruoxi Sun",
+                "Xiaoqi Ren",
+                "Guolong Su",
+                "Vincent Perot",
+                "Jennifer Dy",
+                "Tomas Pfister"
+            ],
+            "title": "Learning to prompt for continual learning",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Olivia Wiles",
+                "Sven Gowal",
+                "Florian Stimberg",
+                "Sylvestre Alvise-Rebuffi",
+                "Ira Ktena",
+                "Krishnamurthy Dvijotham",
+                "Taylan Cemgil"
+            ],
+            "title": "A fine-grained analysis on distribution shift",
+            "venue": "arXiv preprint arXiv:2110.11328,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Mitchell Wortsman",
+                "Gabriel Ilharco",
+                "Samir Ya Gadre",
+                "Rebecca Roelofs",
+                "Raphael Gontijo-Lopes",
+                "Ari S Morcos",
+                "Hongseok Namkoong",
+                "Ali Farhadi",
+                "Yair Carmon",
+                "Simon Kornblith"
+            ],
+            "title": "Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Mitchell Wortsman",
+                "Gabriel Ilharco",
+                "Jong Wook Kim",
+                "Mike Li",
+                "Simon Kornblith",
+                "Rebecca Roelofs",
+                "Raphael Gontijo Lopes",
+                "Hannaneh Hajishirzi",
+                "Ali Farhadi",
+                "Hongseok Namkoong",
+                "Ludwig Schmidt"
+            ],
+            "title": "Robust fine-tuning of zero-shot models",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Mitchell Wortsman",
+                "Gabriel Ilharco",
+                "Jong Wook Kim",
+                "Mike Li",
+                "Simon Kornblith",
+                "Rebecca Roelofs",
+                "Raphael Gontijo Lopes",
+                "Hannaneh Hajishirzi",
+                "Ali Farhadi",
+                "Hongseok Namkoong"
+            ],
+            "title": "Robust fine-tuning of zero-shot models",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Minghao Xu",
+                "Jian Zhang",
+                "Bingbing Ni",
+                "Teng Li",
+                "Chengjie Wang",
+                "Qi Tian",
+                "Wenjun Zhang"
+            ],
+            "title": "Adversarial domain adaptation with domain mixup",
+            "venue": "In AAAI Conference on Artificial Intelligence,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Xiaoyun Xu",
+                "Jingzheng Wu",
+                "Mutian Yang",
+                "Tianyue Luo",
+                "Xu Duan",
+                "Weiheng Li",
+                "Yanjun Wu",
+                "Bin Wu"
+            ],
+            "title": "Information leakage by model weights on federated learning",
+            "venue": "In Proceedings of the 2020 workshop on privacy-preserving machine learning in practice,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Shiqi Yang",
+                "Yaxing Wang",
+                "Joost Van De Weijer",
+                "Luis Herranz",
+                "Shangling Jui"
+            ],
+            "title": "Unsupervised domain adaptation without source data by casting a bait",
+            "venue": "arXiv preprint arXiv:2010.12427,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Christopher Yeh",
+                "Anthony Perez",
+                "Anne Driscoll",
+                "George Azzari",
+                "Zhongyi Tang",
+                "David Lobell",
+                "Stefano Ermon",
+                "Marshall Burke"
+            ],
+            "title": "Using publicly available satellite imagery and deep learning to understand economic well-being in africa",
+            "venue": "Nature communications,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Marvin Zhang",
+                "Henrik Marklund",
+                "Nikita Dhawan",
+                "Abhishek Gupta",
+                "Sergey Levine",
+                "Chelsea Finn"
+            ],
+            "title": "Adaptive risk minimization: Learning to adapt to domain shift",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Xin Zhang",
+                "Shixiang Shane Gu",
+                "Yutaka Matsuo",
+                "Yusuke Iwasawa"
+            ],
+            "title": "Domain prompt learning for efficiently adapting clip to unseen domains",
+            "venue": "arXiv preprint arXiv:2111.12853,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Youshan Zhang"
+            ],
+            "title": "A survey of unsupervised domain adaptation for visual recognition",
+            "venue": "arXiv preprint arXiv:2112.06745,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Zangwei Zheng",
+                "Xiangyu Yue",
+                "Kai Wang",
+                "Yang You"
+            ],
+            "title": "Prompt vision transformer for domain generalization",
+            "venue": "arXiv preprint arXiv:2208.08914,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Tao Zhong",
+                "Zhixiang Chi",
+                "Li Gu",
+                "Yang Wang",
+                "Yuanhao Yu",
+                "Jin Tang"
+            ],
+            "title": "Meta-dmoe: Adapting to domain shift by meta-distillation from mixture-of-experts",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Kaiyang Zhou",
+                "Yongxin Yang",
+                "Timothy Hospedales",
+                "Tao Xiang"
+            ],
+            "title": "Deep domain-adversarial image generation for domain generalisation",
+            "venue": "In AAAI Conference on Artificial Intelligence,",
+            "year": 2020
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "The superior performance of deep models relies on identical distribution between training and testing data (Choi et al., 2018). However, in the real world, expecting the training set to cover the universal distribution is practically unfeasible. Consequently, domain shift occurs at test time on unseen distributions, leading to performance deterioration (Koh et al., 2021). To tackle domain shift, (Zhong et al., 2022) adopts an additional learning phase to adapt the trained model using only a few unlabeled data. Generally, a limited amount of unlabeled data from the target domain conveys underlying domain distribution (Zhang et al., 2021a), and is readily accessible at test-time (e.g., image collected during camera calibration). The adaptation is performed only once for each target domain instead of every data, making it efficient and practical for deployment on resource-constrained devices. We refer to such a setting as Few-Shot Test-Time Domain Adaptation (FSTT-DA).\nIn FSTT-DA, extracting domain-specific knowledge from few-shot data remains a major obstacle. Hence, leveraging generalized semantic knowledge from pre-trained backbone and transferable domain knowledge from source domain datasets is vital. To achieve this, three fundamental challenges should be carefully addressed: 1) how to leverage pre-trained backbones with strong out-ofdistribution generalization? 2) how to effectively learn transferable domain knowledge from source domains? 3) how to utilize this knowledge to acquire valid domain-specific knowledge for the unseen target domain?\n(Zhong et al., 2022) encodes the multi-source domain knowledge into a mixture of expert networks. A few unlabeled data are collected from a target domain to query the related knowledge to finetune a student network. However, storing domain knowledge in the parameter space of expert networks introduces exorbitant computation and storage costs that grow linearly with the number of source domains (Puigcerver et al., 2023). Moreover, updating the entire network at test-time is infeasible for resource-constrained devices (Cai et al., 2020; Lin et al., 2022). Alternatively, Visual Prompt Tuning (VPT) (Bahng et al., 2022; Jia et al., 2022; Wang et al., 2022b;a; Han et al., 2023) is adopted\nto efficiently handle domain shifts. A small number of learnable parameters on the input side, named visual prompts, enable the modification of domain knowledge exclusively. (Zheng et al., 2022) independently encodes the knowledge of each source domain into distinct domain prompts. A target prompt is then produced by linearly combining the pre-learned source domain prompts. (Gan et al., 2023) heuristically partition the source domain prompts into domain-specific and domain-shareable components. During adaptation, a manually crafted regularization term is employed to preserve the domain-shareable part while allowing the domain-specific component updates.\nHowever, several major drawbacks are observed. First, large foundation models (FMs, e.g., CLIP (Radford et al., 2021)) with more powerful out-of-domain generalization is not adopted as the visual backbone. Leveraging rich generalized semantic features from pre-trained FMs has been essential to address domain shifts (Zhang et al., 2021b). However, adapting FMs using only few-shot data in FSTT-DA is challenging. Directly adopting FMs into the above-mentioned methods is not ideal as accessing the FM weights is needed for finetuning or gradient calculation. Recent research has shown that finetuning greatly hampers its robust generalization capability (Wortsman et al., 2022b). On the other hand, it is not applicable when the FMs are only available via APIs in a black-box setting (Oh et al., 2023; Ouali et al., 2023). Second, they learn the source knowledge via cross-entropy loss solely. The domain expert/prompt may inadvertently learn semantic patterns as a shortcut to fulfill the classification task instead of learning transferable domain knowledge (Li et al., 2023). Last, separating the process of modelling source knowledge and the process of learning to adapt into independent training phases may compromise knowledge transfer to unseen domains.\nIn this work, we aim to adapt FMs to tackle domain shifts in a practical FSTT-DA setting. FMs trained on web-scale data, already exhibit robust generalized features (Wortsman et al., 2022b). We contend that with proper domain-specific guidance, such generalized visual features can boost the model\u2019s performance on a specific data distribution. Thus, we propose to build adaptation on top of their features while keeping their inherent robustness unspoiled. Specifically, we propose a prompt generator to generate a domain-specific visual prompt for each target domain to complete such feature guidance. We tackle the above-mentioned knowledge modelling and transfer challenges as follows: we propose a learnable knowledge bank that is shared across source domains to encode their transferable knowledge. Given a target domain, our prompt generator treats a mini-batch of unlabeled data as a condition to condense the knowledge bank into a domain-specific prompt. This generated domain prompt is then incorporated into the FM features via a guidance module to process all data in that domain. We train all the modules simultaneously to allow the knowledge bank to automatically explore and learn the transferable source knowledge. Moreover, we employ episodic learning to align the learning objectives of the prompt generator and the guidance module at the meta-level to ensure valid domain-specific guidance (Hospedales et al., 2021). To purify the domain-specific knowledge and reduce semantic interference, we introduce a domain-aware contrastive loss to enhance the prompt generator. This also allows us to further elevate the generator by exploiting large-scale unlabeled data with only domain IDs (Sagawa et al., 2022). Our proposed method does not require access to FM\u2019s weights, allowing it to be flexible in a black-box setting (Ouali et al., 2023). It also significantly reduces memory overheads and privacy leaks (Xu et al., 2020b) making it well-suited for on-device deployment scenarios with gradient-free adaptation.\nWe dub our method as Visual Domain Prompt Generator (VDPG), and summarize our main contributions as follows: 1) We propose a novel approach that employs the visual prompt and the foundation model to tackle distribution shifts. Our approach formulates the adaptation process as generating a visual prompt that encodes domain-specific knowledge to guide the foundational model. 2) we propose domain-aware contrastive loss and meta-learning to facilitate domain knowledge extraction. 3) We conduct extensive experiments to show the superiority of the proposed method among the state-of-the-art and verify the effectiveness of each component."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "Distribution shift. Domain Generalization (Zhou et al., 2022a) aims to learn a model that can perform well on all unseen target domains by learning a domain-invariant feature representation (Li et al., 2018c;b), exploiting data augmentation strategies (Zhou et al., 2020b;a) or exposing domain shifts during training via meta-learning (Li et al., 2018a; Balaji et al., 2018). However, deploying the generic model to all unseen target domains fails to explore domain specialty and yields sub-optimal\nsolutions (Sun et al., 2020). Unsupervised Domain Adaptation allows the model to access unlabeled target data at training time (Zhang, 2021). However, the assumption of co-existing source and target data is inapplicable in privacy-sensitive situations where the target domain is inaccessible in advance (An et al., 2022). In contrast, our work exploits few-shot unlabeled target data at test-time to adapt the pre-trained model to unseen target domains (Zhong et al., 2022).\nTest-time adaptation (TTA). TTA constructs unsupervised objectives to update the generic model with unlabeled data before inference. Most previous works focus on entropy minimization (Wang et al., 2021), pseudo-labeling (Liang et al., 2020), auxiliary tasks (Sun et al., 2020), contrastive learning (Chen et al., 2022), class prototypes (Yang et al., 2020), and image generation (Li et al., 2020). In addition, TTA is introduced to tackle distribution shifts (Liang et al., 2023) and can be broadly divided into offline and online settings (Gao et al., 2022). In offline TTA, the model uses all target data for multi-epoch adaptation before making final predictions. In online TTA, the model adapts and infers on each target data at the same time. In contrast, considering the constrained resources in the deployment, our work focuses on a more challenging case in which only a small mini-batch of data for each target domain can be used for test-time adaptation (Zhong et al., 2022).\nFoundation models for domain generalization. The large foundation models (e.g. CLIP ) pretrained on web-scale data achieve strong out-of-distribution (OOD) generalization in a task-agnostic way (Radford et al., 2021). However, finetuning CLIP\u2019s image encoder with task-specific data deteriorates the intrinsic robustness to distribution shifts (Wortsman et al., 2022a). Recent works focus on robust finetuning strategies including two-stage linear probing (Kumar et al., 2022), model ensemble (Wortsman et al., 2022a;b), and contrastive fine-tuning (Goyal et al., 2023; Shu et al., 2023). Instead, to minimize the training cost and to maintain the OOD generalization, our work opts not to finetune the CLIP\u2019s image encoder in training and adaptation. Moreover, (Zhou et al., 2020b) employs prompt tuning (Lester et al., 2021) on CLIP, optimizing the prompt vectors prefix to the input tokens of CLIP\u2019s text module to enhance performance on downstream tasks. To improve generalization to OOD data, the prompt vectors are conditioned on image inputs at test time (Zhou et al., 2022b; Zhang et al., 2021b; Shu et al., 2022; Derakhshani et al., 2023). However, since these works rely on the prompt prepended to the text input, they incur additional computational costs from the text encoder during inference and are constrained in Vision-Language architectures. Instead, our method generates a visual prompt for CLIP\u2019s image encoder, offering flexibility across various vision foundation models.\nVisual prompt. Visual Prompt Tuning offers a parameter-efficient fine-tuning framework. Learnable prompt tokens are inserted into the visual input, including image pixels (Bahng et al., 2022) and image patch features (Wang et al., 2022b;a; Jia et al., 2022; Huang et al., 2023). Those prompts are trained to adapt pre-trained models to downstream tasks. Furthermore, (Oh et al., 2023; Ouali et al., 2023) introduced a black-box setting that relies solely on pre-computed image and text features, bypassing the need to access the backbone\u2019s weights. Our research adopts this practical setting, sidestepping the prohibitive training costs associated with gradient backpropagation through the foundational model. In addition, a concurrent study introduces a prompt generation network that aims to produce input-dependent visual prompt tokens (Loedeman et al., 2023). However, this approach still necessitates access to the backbone\u2019s internal architecture and has not been validated in the Few-shot Test-Time Domain Adaptation setting."
+        },
+        {
+            "heading": "3 PRELIMINARIES",
+            "text": "Problem setting. In this work, we follow the Few-Shot Test-time Domain Adaptation (FSTT-DA) as in (Zhong et al., 2022). Specifically, the training set is comprised of N source domains: Ds = {Dns }Nn=1, and the test set contains M target domains: Dt = {Dmt }Mm=1. Each source domain contains labeled data: Dns = (xs, ys)n, while the target domains only have unlabeled data: Dmt = (xt)\nm. (x, y) denotes the input image and output label pair. We assume distribution shift occurs between any pair of the source and target domains {D1s , ...,DNs ,D1t , ...,DMt }, but all the domains share the same label space. FSTT-DA aims to perform training on the source domains. When an unseen target domain Dmt is encountered during testing (e.g., model deployed at a new scene), the trained model is expected to adapt to that particular domain using only a few-shot of unlabeled data. The adapted model is then adopted to test all data in that domain. FSTT-DA enforces mutual independence between source and target domains, accessing both types of domains is prohibited.\nMotivations. FMs trained on web-scale datasets with contrastive loss has been observed with strong OOD generalization (Goyal et al., 2023). However, expecting an undifferentiated model to tackle myriad domain shifts in the real world is manifestly less than the ideal (Zhong et al., 2022). Adapting a large model towards unseen distribution is challenging. And the problem becomes tougher when only a few unlabeled data is available. Finetuning such a large model under low data availability regimes causes significant overfitting and hampers the intrinsic strong generalization of FMs (Wortsman et al., 2022c). In Table 2, we show that CLIP-based models in general outperform others, and its zero-shot results indicate strong generalization capability even without seeing this particular dataset. It implicitly shows that the visual feature encoded by the CLIP image encoder contains rich generalized semantic features. In contrast, finetuning the CLIP image encoder weights (ERM in Table 2) shows a significant performance drop. Inspired by the aforementioned, our method builds on top of CLIP visual features to improve its performance towards specific unseen domains. It motivates us to propose a method that extracts purified domain-specific knowledge from a few unlabeled data to guide the CLIP visual feature under domain shifts."
+        },
+        {
+            "heading": "4 METHOD",
+            "text": "Overview. In this work, we aim to incorporate the visual prompt and CLIP visual (image) encoder to adapt to unseen target domains. Concretely, we build a learnable knowledge bank to encode transferable knowledge from source data. To adapt to each domain, we propose a domain prompt generator that is conditioned on few-shot unlabeled data to condense the knowledge bank into a domain-specific prompt. A guiding module is then proposed to incorporate the domain-specific knowledge into the CLIP features. Noted, the domain prompt is generated once and reused for all subsequent inferences on the remaining target data. We employ meta-learning to learn the process of modelling source domains and the process of learning to adapt simultaneously. Fig. 1 demonstrates the overall pipeline."
+        },
+        {
+            "heading": "4.1 MODEL ARCHITECTURE",
+            "text": "Transferable knowledge bank: Learning valid source domain knowledge that is suitable for transferring to unseen domains is pivotal. Instead of modelling each of the source domains independently (Zheng et al., 2022; Zhong et al., 2022), we propose a shared space for learning across all source domains. Concretely, we propose a learnable knowledge bank (KB) B \u2208 RZ\u00d7d = {b1,b2, ...,bZ} with bz \u2208 Rd. d matches the image embedding dimension CLIP (e.g., d = 1024\nfor ViT-L). Z is a source domain-dependent hyper-parameter that controls the KB size. Despite of the shared knowledge, we impose each of bz to maintain its own specialty, such as unique visual attributes (Wiles et al., 2021). Therefore, we propose to reduce the correlation between every pair of b\u2217 by reducing their inner product (enforcing orthogonality) as:\nLcorr(B) = \u2225\u2225BBT \u2212 diag(BBT )\u2225\u2225\n2 , (1)\nwhere diag() keeps only the diagonal entries and \u2225\u00b7\u22252 is the L2 loss. Conditional domain prompt generator: Given a domain D, the key contribution of VDPG is to obtain its domain-specific information from a few unlabeled data x. We use boldface x as a small batch of images and use x to indicate one image. Inspired by conditional generative models (Rombach et al., 2022; Karras et al., 2019), we model such process as conditional distribution p(D|x). Recall that our method is built upon rich CLIP image embeddings, we denote it as E(x) \u2208 R|x|\u00d7l\u00d7d, where l is the number of embeddings. Our goal is to condense the relevant information from source knowledge B to facilitate the domain-specific knowledge extraction. To this end, we build a conditional domain prompt generator, G, based on cross-attention mechanism (Jaegle et al., 2021; Vaswani et al., 2017) to effectively generate the domain prompts for domain D:\nP = AvePool(G(E(x),B)) = Attention(Q,K, V ) = softmax( QKT\u221a\nh )V,\nQ = BWQ,K = E(x)WK , V = E(x)WV , WQ,WK ,WV \u2208 Rd\u00d7h. (2)\nWQ,WK ,WV are the attention weights and h is their feature dimension. Note, we apply average pooling on the output at the batch dimension to obtain a domain prompt P \u2208 RZ\u00d7d. Domain-aware contrastive loss: The generated domain knowledge should be category agnostic and exhibit intra-domain similarity and inter-domain discrepancy. In other words, the generated domain prompts for images within the same domain should be similar regardless of their categories. In contrast, images across domains should yield domain prompts with larger differences. To this end, we propose a contrastive learning mechanism to further purify the domain prompt generation. Specifically, we construct a contrastive batch X with images from different domains: X = {xi}, and d(xi) denotes the domain ID of xi. Each image xi has its corresponding domain prompt Pi = G(E(xi),B). To contrast among those domain prompts generated from X, we adopt soft-nearest neighbor loss (Frosst et al., 2019) for multiple positive and negative samples as:\nLdac(X) = \u2212 1\n|X| |X|\u2211 i=1 log\n\u2211 i\u0338=j,d(xi)=d(xj),j=1,...,|X| exp(\u2212 \u2225\u2225(Pi \u2212 Pj)\u2225\u2225 2 /\u03c4)\u2211\ni \u0338=k,k=1,...,|X| exp ( \u2212 \u2225\u2225(Pi \u2212 Pk)\u2225\u2225 2 /\u03c4 ) . (3) \u2225\u00b7\u22252 is the L2 loss, \u03c4 is set to 0.1 to control the pair-wise importance. Eq. 3 pulls the domain prompts for the images from the same domain closer and pushes away those from different domains.\nDomain guidance module: Once the domain prompt is generated, we aim to utilize its domainspecific knowledge to guide the CLIP image feature E(x) towards that particular domain. Note, P represents domain-specific knowledge, and E(x) is a generalized feature with rich semantic concepts. Instead of a simple pre-pend operation (Zheng et al., 2022), we design a guidance module (GM ) to mix those two sets of knowledge. To achieve this, we follow (Kirillov et al., 2023) to stack cross-attention layers with two directions for GM . We first append a learnable [CLS] token to P to form a prompt token and pass it with E(x) to GM . The final prediction y\u2032 is obtained by processing the output with an MLP layer as:\ny\u2032 = MLP ([CLS]\u2032), where [CLS]\u2032 = GM([P,[CLS]],E(x)). (4)\nA task-specific loss (e.g., CE loss for classification and MSE for regression) is defined as: Ltask(y\u2032, y). We combine and weight all the losses by \u03bb and \u03b3 as:\nLall = Ltask + \u03bbLcorr + \u03b3Ldac. (5)"
+        },
+        {
+            "heading": "4.2 TRAINING AND INFERENCE",
+            "text": "Domain episodic training on source domains: Proper training is paramount to elevate the learning of transferable knowledge from source domains and to facilitate the adaptation with few-shot\nimages simultaneously. First, the domain prompt generated by a small number of images should not only overfit to those few-shot data but be applicable to all data from that domain. Second, while each adaptation solely focuses on one particular domain, the mechanism of learning to adapt should be generalized across all domains. Conventional ERM training is inferior because there is no domain-centric design for such a challenging few-show setting. Instead, inspired by the framework of meta-learning for few-shot image classification, we adopt episodic learning to address the above challenges (Hospedales et al., 2021). We treat the few-shot adaptation for one particular domain as one episode and simulate large-scale and diverse episodes with source domain datasets.\nAlgorithm 1 Training scheme for VDPG Require: Ds: source domains; \u03b1: learning rate; p(s): domain probability; G: prompt\ngenerator; B: KB; GM : guiding module; C: number of contrastive domains 1: // Learning to generate domain prompt and guide CLIP visual feature 2: Randomly initialize: G, B, GM 3: while not converged do 4: Dns \u223c p(s) \u25b7 Sample a source domain 5: (xS), (xQ, yQ)\u223c Dns \u25b7 Sample support and query sets 6: Construct contrastive batch X: 7: Sample C unique domains from {Ds \\Dns } 8: Sample batches from each C domains: {xc1, xc2, ..., xC} 9: X\u2190 {xS , xc1, ..., xC} \u25b7 Assign data to X 10: Compute losses: Ldac(X) and Lcorr(B) 11: P = G(E(xS , B)) \u25b7 Generate domain prompt 12: y\u2032Q = MLP (GM([P, [CLS]], E(xQ)) \u25b7 Evaluate on query set 13: Lall = Ltask(y\u2032Q, yQ) + \u03bbLcorr + \u03b3Ldac \u25b7 Compute and combine losses 14: (G, B, GM)\u2190 (G, B, GM)\u2212 \u03b1\u2207(G,B,GM)Lall \u25b7 Update via SGD 15: end while Algo. 1 demonstrates our training pipeline. Specifically, for each episode, we first sample one domain Dns \u223c p(s), and then sample two nonoverlapping support set (xS) and query set (xQ, yQ) (L4-5). In addition to the support set, we sample extra C other domains with a batch of data from each of them to form a contrastive batch X (L6-9). We then generate the domain prompt using the support set. The generated domainspecific knowledge is evaluated on the disjoint query set (L1112). Finally, the learnable parameters are updated by the 3 loss terms (L13-14).\nTraining on unlabeled data: Instance-level labels (categories) are costly to annotate, but recording the domain label is effortless. WILDS dataset (Sagawa et al., 2022) provides a set of large-scale unlabeled data with domain IDs. Our prompt generator operates on the domain level and the knowledge bank is able to explore more. Thus, both the knowledge bank and the prompt generator can take advantage of such unlabeled data to boost the overall domain knowledge generation. We first pre-train on unlabeled data using Eq. 1 and 3 and then perform training in Algo. 1.\nInference: Inference involves forward pass only. For each target domain, a few images are used to generate the domain prompt (Eq. 2), which will be used for testing all images in that domain (Eq. 4)."
+        },
+        {
+            "heading": "5 EXPERIMENT",
+            "text": ""
+        },
+        {
+            "heading": "5.1 EVALUATION DATASETS AND IMPLEMENTATION DETAILS",
+            "text": "Datasets and evaluation: We follow Meta-DMoE to evaluate our method on challenging real-world WILDS (Koh et al., 2021) benchmarks. WILDS provides practical large-scale realistic distribution shifts with diverse domains and data imbalance at the category level. We perform experiments on 4 image testbeds that contain both classification and regression tasks: iWildCam (Beery et al., 2021), Camelyon17 (Bandi et al., 2018), FMoW (Christie et al., 2018), and PovertyMap (Yeh et al., 2020). We follow official splits in source and target domains, and report official metrics: accuracy, Macro F1, worse-case (WC) accuracy, Pearson correlation (r), and its worst-case. We also evaluate DomianNet (Peng et al., 2019) which contains 6 domains with 569K images of 345 classes. We follow the official leave-one-domain-out to train 6 models and report the accuracy. In Appendix c, we show the details of testbeds and compare the imbalance conditions across different benchmarks.\nArchitecture: We adopt the image encoder from CLIP to extract the image embeddings. We use ViT-B/16 for DomainNet and ViT-L/14 for WILDS. Their embedding dimensions (d) are 768 and 1024. We stack two cross-attention layers for domain prompt generator G, and the feature dimension h for both G and GM is the same as embedding size d. The number of attention heads is set to 8.\nTraining details: We perform training using SGD with a batch size of 64 for 30 epochs. The initial learning rates are set to 3e\u22123 and 5e\u22124 with cosine decay for WILDS and DomainNet. The loss\nweights \u03b3 and \u03bb are set to 0.1. When unlabeled data is used in WILDS, we first train G and B and finetune with GM . Appendix D provides details of more hyperparameters."
+        },
+        {
+            "heading": "5.2 MAIN RESULTS",
+            "text": "Comparison on WILDS: We compare SOTA methods on WILDS, including CNN-based methods: ERM, CORAL (Sun & Saenko, 2016), IRM (Arjovsky et al., 2019), ARM (Zhang et al., 2021a) and Meta-DMoE; ViT-based methods: zero-shot CLIP (ZS) (Radford et al., 2021) and FLYP (Goyal et al., 2023). We adopt the results from Meta-DMoE and implement ZS (prompt=\u201ccategory name\u201d ) and FLYP using their official code, we use the single model of FLYP for a fair comparison. Note, that ZS can not be computed on Camelyon17 as the categories have no semantic meaning and PovertyMap as it is a regression task. As reported in Table 1, our method outperforms SOTA on iWildCam, Camelyon17, and FMoW. It is noted that ZS directly collapses due to the lack of learning on source domain datasets. Additionally, although freezing the backbone, our approach still outperforms the best finetuning-based method, FLYP, by 4.6% on the F1 score of iWildCam. FLYP follows the language-vision training as CLIP, therefore, it is not able to perform the regression task. In contrast, our VDPG is flexible for different learning tasks including regression on PovertyMap. On the other hand, as the CLIP image encoder only accepts 3-channel input, our method performs comparably with ARM and Meta-DMoE while using 3 out 8 channels on PovertyMap with only 38% data utility.\nComparison on DomainNet: Table 2 reports the evaluation on DomainNet with a wild range of SOTA methods. We adopt the results from Meta-DMoE and MIRO and implement ZS. In general, the CLIP-based methods perform better than their CNN-based counterparts. However, when finetuning the CLIP backbone (ERM), its performance is even worse than ZS. Instead, our method freezes the CLIP backbone to maintain its OOD generalization. In addition to our strong domain knowledge generator, significant improvement is observed.\nRobustness of in-distribution and out-of-distribution settings: Table 3 reports the comparison with FLYP for both single and ensembled models under in-distribution (ID) and OOD settings on iWildCam. Although ensembling improves FLYP by a large margin, it is still sub-optimal due to\nthe lack of domain-specific knowledge from the target domains. In contrast, our method is able to achieve superior results by incorporating domain-specific knowledge into the CLIP features."
+        },
+        {
+            "heading": "5.3 DOES THE GENERATOR REALLY OBTAIN THE DOMAIN-SPECIFIC INFORMATION?",
+            "text": "The key contribution of VDPG is to generate high-quality domain-specific prompts that are tailored to each target domain. We validate such property on iWildCam as it has 48 diverse target domains.\nReplacing the generated prompt with others contents: To show that the generated domain prompts are meaningful, we replace them with different contents, including randomly initialized prompts, KB B and zeros. As reported in Table 4, there are significant performance drops for all of them (Fig. 8 in Appendix B.5 shows per-domain comparison). It indicates that our generated domain prompts play an important role in guiding the CLIP image feature. Fig. 2a and 2b shows the t-SNE (Van der Maaten & Hinton, 2008) visualization on the features of CLIP and GM . Each point and color represents a sample and a class. It is noted that with our generated domain prompt, the features are better clustered and more discriminative than CLIP features. It indicates that the generated domain prompts are able to guide the CLIP image feature for better performance.\nInter-domain discrepancy and intra-domain similarity: To show such properties, we compute the L2 distance between every pair of the 48 generated domain prompts, as illustrated in Fig. 2c. It validates that the generated domain prompts are diverse since each domain has its own specialty. We further compare the domain prompt generated among data instances. The L2 distances are averages within each domain. As shown in Fig. 2d, it follows the same pattern as Fig. 2c, further reflecting that the extracted domain-specific knowledge is category-agnostic and only relates to the domain.\nTable 5: Ablation on different modules.\nRow Modules Training ID F1 OOD F1"
+        },
+        {
+            "heading": "1 ZS ERM 1.3 1.0",
+            "text": "2 Linear probing ERM 47.2 38.7 3 Fine-tuning ERM 48.3 36.4\n4 Frozen CLIP + GM ERM 49.7 39.6 5 + Generator G ERM 46.8 32.5 6 + KB (full model) ERM 47.0 32.4 7 Full model Episodic 54.5 43.6\nTable 6: Ablation on loss and unlabeled data.\nLcorr Ldac Unlabeled data ID F1 OOD F1 - - - 54.5 43.6 \u2713 - - 56.7 44.1 - \u2713 - 58.6 44.6 \u2713 \u2713 - 58.9 45.5 \u2713 \u2713 \u2713 60.2 46.5\nCorrelation among domains: It is natural to expect correlated domains. Intuitively, less correlated domains should have diverse domain information and vice versa. Thus, if we swap the domain prompts with a larger distance in the prompt, the performance should drop more. Thus, we randomly select two domains and conduct such domain prompt swapping. As shown in Fig. 3, more performance drop is observed when the swapped domain prompts have larger diversity. It demonstrates that our generated prompt can reflect the domain diversity."
+        },
+        {
+            "heading": "5.4 ABLATION STUDY",
+            "text": "Ablation on different modules: We conduct ablation on iWildCam to evaluate each proposed component. As reported in Table 5, linear probing (row 2) can achieve comparable performance, indicating that the visual features from CLIP are quite robust. However, when updating the CLIP\u2019s weights, its generalization is decreased (row 3), showing that fintuning could be harmful. Directly processing CLIP features with more parameters only improves slightly (row 4), as the domainspecific knowledge is still missing. Surprisingly, adding the generator and the knowledge bank even deteriorates the performance (row 5&6). We hypothesize that ERM training is not able to provide such supervision at the domain level to learn transferable knowledge and the mechanism of adaptation. Therefore, when episodic learning is employed to enforce domain-centric learning(row 7), the overall performance is boosted.\nAblation on loss functions and training on unlabeled data: Lcorr enforces each of the vectors in the knowledge bank to maintain its own special feature. And Ldac ensures the discriminative information generated at the domain level. Therefore, optimizing both during training improves the model performance, as demonstrated in Table 6. Furthermore, training the generator and knowledge bank on unlabeled data brings positive improvement, further pushing the performance boundary.\nComputational cost: Table 7 reports the model size and total computational cost. Note, all methods use the ViT/B-16 model. At train-time, both FYLP and DoPrompt rely on fine-tuning the backbone. At test-time, FYLP exploits the text\nencoder to generate the weights for the classifier head. DoPrompt needs to adapt before making each prediction. In contrast, our method only adapts once with few-shot data (16 images) before making inferences on all target data. We discuss reproducibility and limitation in Appendix A."
+        },
+        {
+            "heading": "6 CONCLUSION",
+            "text": "In this work, we present VDPG, an approach for adaptation to distribution shift using few-shot unlabeled examples at test-time. We formulate the adaptation process as generating a visual prompt that encodes domain-specific knowledge to guide the foundational model. We introduce a domainaware model architecture to encode the transferable domain knowledge and devise a meta-learning algorithm to facilitate the domain knowledge extraction. We demonstrate that VDPG outperforms previous works on 5 large-scale benchmarks in DomainNet and WILDS. And our method is efficient in the computation cost at test-time."
+        },
+        {
+            "heading": "A REPRODUCIBILITY, LIMITATIONS AND DISCUSSION",
+            "text": "Reproducibility: We keep all the implementations and dataset utilization consistent compared with the prior works. We follow the official setting to process the data and use the official splits on source and target domains. The foundation model we use, CLIP, is publicly available, we use the official code to load the model. Our algorithm is straightforward, and all the hyper-parameters used are listed in the implementation section in Section 5.1 and Appendix D. Our source code will be available upon paper acceptance.\nLimitations and discussion: One limitation of our method is that the performance highly depends on the out-of-distribution generalization in the foundation models. Although pre-trained on the webscale dataset, it is not guaranteed that the foundation model covers all the data, especially those that are strictly protected due to privacy. However, our method is built on top of the foundation models without knowing their architectures. It is flexible as long as the final feature can be obtained. Thus, integrating our method with a stronger foundation model is also able to improve our method overall."
+        },
+        {
+            "heading": "B ADDITIONAL EXPERIMENTS",
+            "text": "B.1 INSTANCE-WISE COMPARISON ON GENERATED DOMAIN PROMPTS\nIn Fig. 2d, we present the distance for every pair of data instances but averaged for each domain. In Fig. 4, we randomly select sample instances and show their differences in generated prompts.\nIn Fig. 4a, we randomly select samples with class label 24, but from different domains. As we can see, even with the same class category, the generated prompts from different domains have larger differences compared to the pairs from the same domain.\nOn the other hand, in Fig. 4b, we randomly sample data samples from the same domain with different classes. It is evident that, even with the different classes, their generated domain samples are close to each other.\nFig. 4a and Fig. 4b indicate that our domain prompt generator extracts high-quality domain-specific information which is class-agnostic and only related to domains.\nB.2 CORRELATION ON KNOWLEDGE BANK VECTORS\nIn section 4.1, we aim to allow our network to automatically explore the transferable knowledge while learning how to adapt. We enforce each of the vector bz to learn special characters by minimizing Lcorr in Eq. 1. Fig. 5 shows such correlation after training. It is observed that the correlation between different pairs of bz is small, indicating each of them exhibits their own properties.\nB.3 TRAINING ON UNLABELED DATA:\nFig. 6 shows the training curve on unlabeled data of iWildCam. We use the unlabeled set for training and use the source domains for validation. As we can see, the domain generator is able to generate unseen domains to extract diverse domain-specific knowledge among domains.\nB.4 ABLATION STUDY DETAILS\nDetails: We describe more experimental details of the ablation study in Table 5 as:\n\u2022 Row 4, Frozen CLIP + GM: since the generated domain prompt is missing in this experiment, we treat only the learnable [CLS] token as the prompt token. The guiding module is kept the same.\n\u2022 Row 5, + Generator G: the generator originally takes two inputs. Since the knowledge bank is missing in this experiment, we treat the cross-attention as self-attention. All the operation is performed on the image features.\nComparison on domain prompts for different training schemes: In the ablation study, we have shown that when adding the domain prompt generator and the knowledge bank, the performance is harmed under ERM training but boosted when episodic learning is utilized. This is because the ERM training is not domain-centric to learn domain-specific information. Fig. 7a and 7b show that episodic training allows our domain prompt generator to extract domain-specific information for better feature guidance to unseen distributions.\nB.5 PER DOMAIN F1 SCORE:"
+        },
+        {
+            "heading": "C DETAILS ON DATASETS",
+            "text": "WILDS benchmarks: Table 8 reports the details of 4 image testbeds in WILDS benchmarks. Noted, we only list the source (training) and target (testing) domains and images. The validation sets are not included. It shows that those datasets are large-scale at both domain and class level.\nComparison across benchmarks: Table 9 compares the existing benchmarks that are popular for domain generalization. We evaluate our method on two largest datasets, DomainNet and WILDS. We also compute the imbalance ratio to demonstrate that WILDS is more challenging. In fact, it is common for some domains to suffer data scarcity. For example, general hospitals accept more patients while specialized hospitals may accept fewer patients, collecting fewer data points."
+        },
+        {
+            "heading": "D ADDITIONAL HYPERPARAMETER",
+            "text": "Sampling at training: Table 10 shows the hyperparameters we used for performing the sampling in Algo. 1. Those hyperparameters are searched on OOD validation of the IWildCam dataset. We simply apply the same to other datasets.\nSize of knowledge bank B: Knowledge bank aims to condense the transferable knowledge from the source domains into the target domain prompt. Intuitively, each source domain should maintain its own specialty. Z, which is the size of B, should be the same as the number of source domains. However, there could be some correlation among domains, therefore, increasing Z could allow better exploitation from the training dataset, but there is a risk that redundant information will be learned. We set the search space of Z as {5, 10, 100, 150, 200}, and the value is picked based on validation performance."
+        }
+    ],
+    "year": 2023
+}

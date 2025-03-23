@@ -1,0 +1,943 @@
+{
+    "abstractText": "Conditional diffusion models have exhibited superior performance in high-fidelity text-guided visual generation and editing. Nevertheless, prevailing text-guided visual diffusion models primarily focus on incorporating text-visual relationships exclusively into the reverse process, often disregarding their relevance in the forward process. This inconsistency between forward and reverse processes may limit the precise conveyance of textual semantics in visual synthesis results. To address this issue, we propose a novel and general contextualized diffusion model (CONTEXTDIFF) by incorporating the cross-modal context encompassing interactions and alignments between text condition and visual sample into forward and reverse processes. We propagate this context to all timesteps in the two processes to adapt their trajectories, thereby facilitating cross-modal conditional modeling. We generalize our contextualized diffusion to both DDPMs and DDIMs with theoretical derivations, and demonstrate the effectiveness of our model in evaluations with two challenging tasks: text-to-image generation, and text-to-video editing. In each task, our CONTEXTDIFF achieves new state-of-the-art performance, significantly enhancing the semantic alignment between text condition and generated samples, as evidenced by quantitative and qualitative evaluations. Our code is available at https://github.com/YangLing0818/ContextDiff",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Ling Yang"
+        },
+        {
+            "affiliations": [],
+            "name": "Zhilong Zhang"
+        },
+        {
+            "affiliations": [],
+            "name": "Zhaochen Yu"
+        },
+        {
+            "affiliations": [],
+            "name": "Jingwei Liu"
+        },
+        {
+            "affiliations": [],
+            "name": "Minkai Xu"
+        },
+        {
+            "affiliations": [],
+            "name": "Stefano Ermon"
+        },
+        {
+            "affiliations": [],
+            "name": "Bin Cui"
+        }
+    ],
+    "id": "SP:e3dbcd88f5539f4d5ea09002c5d76527ae518cac",
+    "references": [
+        {
+            "authors": [
+                "Yogesh Balaji",
+                "Seungjun Nah",
+                "Xun Huang",
+                "Arash Vahdat",
+                "Jiaming Song",
+                "Karsten Kreis",
+                "Miika Aittala",
+                "Timo Aila",
+                "Samuli Laine",
+                "Bryan Catanzaro"
+            ],
+            "title": "ediffi: Text-to-image diffusion models with an ensemble of expert denoisers",
+            "venue": "arXiv preprint arXiv:2211.01324,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Omer Bar-Tal",
+                "Dolev Ofri-Amar",
+                "Rafail Fridman",
+                "Yoni Kasten",
+                "Tali Dekel"
+            ],
+            "title": "Text2live: Textdriven layered image and video editing",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Andrew Brock",
+                "Jeff Donahue",
+                "Karen Simonyan"
+            ],
+            "title": "Large scale gan training for high fidelity natural image synthesis",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Huiwen Chang",
+                "Han Zhang",
+                "Jarred Barber",
+                "AJ Maschinot",
+                "Jose Lezama",
+                "Lu Jiang",
+                "Ming-Hsuan Yang",
+                "Kevin Murphy",
+                "William T Freeman",
+                "Michael Rubinstein"
+            ],
+            "title": "Muse: Text-to-image generation via masked generative transformers",
+            "venue": "arXiv preprint arXiv:2301.00704,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Prafulla Dhariwal",
+                "Alexander Nichol"
+            ],
+            "title": "Diffusion models beat gans on image synthesis",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Tim Dockhorn",
+                "Arash Vahdat",
+                "Karsten Kreis"
+            ],
+            "title": "Score-based generative modeling with criticallydamped langevin diffusion",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Patrick Esser",
+                "Johnathan Chiu",
+                "Parmida Atighehchian",
+                "Jonathan Granskog",
+                "Anastasis Germanidis"
+            ],
+            "title": "Structure and content-guided video synthesis with diffusion models",
+            "venue": "arXiv preprint arXiv:2302.03011,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Wan-Cyuan Fan",
+                "Yen-Chun Chen",
+                "DongDong Chen",
+                "Yu Cheng",
+                "Lu Yuan",
+                "Yu-Chiang Frank Wang"
+            ],
+            "title": "Frido: Feature pyramid diffusion for complex scene image synthesis",
+            "venue": "In The AAAI Conference on Artificial Intelligence,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Zhida Feng",
+                "Zhenyu Zhang",
+                "Xintong Yu",
+                "Yewei Fang",
+                "Lanxin Li",
+                "Xuyi Chen",
+                "Yuxiang Lu",
+                "Jiaxiang Liu",
+                "Weichong Yin",
+                "Shikun Feng"
+            ],
+            "title": "Ernie-vilg 2.0: Improving text-to-image diffusion model with knowledge-enhanced mixture-of-denoising-experts",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Oran Gafni",
+                "Adam Polyak",
+                "Oron Ashual",
+                "Shelly Sheynin",
+                "Devi Parikh",
+                "Yaniv Taigman"
+            ],
+            "title": "Make-a-scene: Scene-based text-to-image generation with human priors",
+            "venue": "arXiv preprint arXiv:2203.13131,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Amir Hertz",
+                "Ron Mokady",
+                "Jay Tenenbaum",
+                "Kfir Aberman",
+                "Yael Pritch",
+                "Daniel Cohen-Or"
+            ],
+            "title": "Prompt-to-prompt image editing with cross attention control",
+            "venue": "International Conference on Learning Representations,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Jack Hessel",
+                "Ari Holtzman",
+                "Maxwell Forbes",
+                "Ronan Le Bras",
+                "Yejin Choi"
+            ],
+            "title": "Clipscore: A reference-free evaluation metric for image captioning",
+            "venue": "In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jonathan Ho",
+                "Ajay Jain",
+                "Pieter Abbeel"
+            ],
+            "title": "Denoising diffusion probabilistic models",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Emiel Hoogeboom",
+                "Jonathan Heek",
+                "Tim"
+            ],
+            "title": "Salimans. simple diffusion: End-to-end diffusion for high resolution images",
+            "venue": "arXiv preprint arXiv:2301.11093,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Manuel Jahn",
+                "Robin Rombach",
+                "Bj\u00f6rn Ommer"
+            ],
+            "title": "High-resolution complex scene synthesis with transformers",
+            "venue": "arXiv preprint arXiv:2105.06458,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Tero Karras",
+                "Miika Aittala",
+                "Timo Aila",
+                "Samuli Laine"
+            ],
+            "title": "Elucidating the design space of diffusionbased generative models",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Levon Khachatryan",
+                "Andranik Movsisyan",
+                "Vahram Tadevosyan",
+                "Roberto Henschel",
+                "Zhangyang Wang",
+                "Shant Navasardyan",
+                "Humphrey Shi"
+            ],
+            "title": "Text2video-zero: Text-to-image diffusion models are zero-shot video generators",
+            "venue": "arXiv preprint arXiv:2303.13439,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Dongjun Kim",
+                "Byeonghu Na",
+                "Se Jung Kwon",
+                "Dongsoo Lee",
+                "Wanmo Kang",
+                "Il-chul Moon"
+            ],
+            "title": "Maximum likelihood training of implicit nonlinear diffusion model",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Diederik Kingma",
+                "Tim Salimans",
+                "Ben Poole",
+                "Jonathan Ho"
+            ],
+            "title": "Variational diffusion models",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Sang-gil Lee",
+                "Heeseung Kim",
+                "Chaehun Shin",
+                "Xu Tan",
+                "Chang Liu",
+                "Qi Meng",
+                "Tao Qin",
+                "Wei Chen",
+                "Sungroh Yoon",
+                "Tie-Yan Liu"
+            ],
+            "title": "Priorgrad: Improving conditional denoising diffusion models with data-dependent adaptive prior",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Zhi Lei",
+                "Guixian Zhang",
+                "Lijuan Wu",
+                "Kui Zhang",
+                "Rongjiao Liang"
+            ],
+            "title": "A multi-level mesh mutual attention model for visual question answering",
+            "venue": "Data Science and Engineering,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Junnan Li",
+                "Dongxu Li",
+                "Silvio Savarese",
+                "Steven Hoi"
+            ],
+            "title": "Blip-2: Bootstrapping language-image pre-training with frozen image encoders and large language models",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Shaoteng Liu",
+                "Yuechen Zhang",
+                "Wenbo Li",
+                "Zhe Lin",
+                "Jiaya Jia"
+            ],
+            "title": "Video-p2p: Video editing with cross-attention control",
+            "venue": "arXiv preprint arXiv:2303.04761,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Xingchao Liu",
+                "Chengyue Gong"
+            ],
+            "title": "Flow straight and fast: Learning to generate and transfer data with rectified flow",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ilya Loshchilov",
+                "Frank Hutter"
+            ],
+            "title": "Decoupled weight decay regularization",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Cheng Lu",
+                "Yuhao Zhou",
+                "Fan Bao",
+                "Jianfei Chen",
+                "Chongxuan Li",
+                "Jun Zhu"
+            ],
+            "title": "Dpm-solver: A fast ode solver for diffusion probabilistic model sampling in around 10 steps",
+            "venue": "arXiv preprint arXiv:2206.00927,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ron Mokady",
+                "Amir Hertz",
+                "Kfir Aberman",
+                "Yael Pritch",
+                "Daniel Cohen-Or"
+            ],
+            "title": "Null-text inversion for editing real images using guided diffusion models",
+            "venue": "arXiv preprint arXiv:2211.09794,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Alexander Quinn Nichol",
+                "Prafulla Dhariwal"
+            ],
+            "title": "Improved denoising diffusion probabilistic models",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Alexander Quinn Nichol",
+                "Prafulla Dhariwal",
+                "Aditya Ramesh",
+                "Pranav Shyam",
+                "Pamela Mishkin",
+                "Bob Mcgrew",
+                "Ilya Sutskever",
+                "Mark Chen"
+            ],
+            "title": "Glide: Towards photorealistic image generation and editing with text-guided diffusion models",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Alexander Quinn Nichol",
+                "Prafulla Dhariwal",
+                "Aditya Ramesh",
+                "Pranav Shyam",
+                "Pamela Mishkin",
+                "Bob Mcgrew",
+                "Ilya Sutskever",
+                "Mark Chen"
+            ],
+            "title": "GLIDE: Towards photorealistic image generation and editing with text-guided diffusion models",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Dustin Podell",
+                "Zion English",
+                "Kyle Lacey",
+                "Andreas Blattmann",
+                "Tim Dockhorn",
+                "Jonas M\u00fcller",
+                "Joe Penna",
+                "Robin Rombach"
+            ],
+            "title": "Sdxl: Improving latent diffusion models for high-resolution image synthesis",
+            "year": 1952
+        },
+        {
+            "authors": [
+                "Jordi Pont-Tuset",
+                "Federico Perazzi",
+                "Sergi Caelles",
+                "Pablo Arbel\u00e1ez",
+                "Alex Sorkine-Hornung",
+                "Luc Van Gool"
+            ],
+            "title": "The 2017 davis challenge on video object segmentation",
+            "venue": "arXiv preprint arXiv:1704.00675,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Vadim Popov",
+                "Ivan Vovk",
+                "Vladimir Gogoryan",
+                "Tasnima Sadekova",
+                "Mikhail Kudinov"
+            ],
+            "title": "Gradtts: A diffusion probabilistic model for text-to-speech",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Chenyang Qi",
+                "Xiaodong Cun",
+                "Yong Zhang",
+                "Chenyang Lei",
+                "Xintao Wang",
+                "Ying Shan",
+                "Qifeng Chen"
+            ],
+            "title": "Fatezero: Fusing attentions for zero-shot text-based video editing",
+            "venue": "In IEEE International Conference on Computer Vision,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Alec Radford",
+                "Jong Wook Kim",
+                "Chris Hallacy",
+                "Aditya Ramesh",
+                "Gabriel Goh",
+                "Sandhini Agarwal",
+                "Girish Sastry",
+                "Amanda Askell",
+                "Pamela Mishkin",
+                "Jack Clark"
+            ],
+            "title": "Learning transferable visual models from natural language supervision",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Colin Raffel",
+                "Noam Shazeer",
+                "Adam Roberts",
+                "Katherine Lee",
+                "Sharan Narang",
+                "Michael Matena",
+                "Yanqi Zhou",
+                "Wei Li",
+                "Peter J Liu"
+            ],
+            "title": "Exploring the limits of transfer learning with a unified text-to-text transformer",
+            "venue": "J. Mach. Learn. Res.,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Aditya Ramesh",
+                "Mikhail Pavlov",
+                "Gabriel Goh",
+                "Scott Gray",
+                "Chelsea Voss",
+                "Alec Radford",
+                "Mark Chen",
+                "Ilya Sutskever"
+            ],
+            "title": "Zero-shot text-to-image generation",
+            "venue": "Proceedings of the 38th International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Aditya Ramesh",
+                "Prafulla Dhariwal",
+                "Alex Nichol",
+                "Casey Chu",
+                "Mark Chen"
+            ],
+            "title": "Hierarchical textconditional image generation with clip latents",
+            "venue": "arXiv preprint arXiv:2204.06125,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Robin Rombach",
+                "Andreas Blattmann",
+                "Dominik Lorenz",
+                "Patrick Esser",
+                "Bj\u00f6rn Ommer"
+            ],
+            "title": "Highresolution image synthesis with latent diffusion models",
+            "venue": "In IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Chitwan Saharia",
+                "William Chan",
+                "Huiwen Chang",
+                "Chris Lee",
+                "Jonathan Ho",
+                "Tim Salimans",
+                "David Fleet",
+                "Mohammad Norouzi"
+            ],
+            "title": "Palette: Image-to-image diffusion models",
+            "venue": "In ACM SIGGRAPH 2022 Conference Proceedings,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Chitwan Saharia",
+                "William Chan",
+                "Saurabh Saxena",
+                "Lala Li",
+                "Jay Whang",
+                "Emily L Denton",
+                "Kamyar Ghasemipour",
+                "Raphael Gontijo Lopes",
+                "Burcu Karagol Ayan",
+                "Tim Salimans"
+            ],
+            "title": "Photorealistic text-to-image diffusion models with deep language understanding",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Christoph Schuhmann",
+                "Richard Vencu",
+                "Romain Beaumont",
+                "Robert Kaczmarczyk",
+                "Clayton Mullis",
+                "Aarush Katta",
+                "Theo Coombes",
+                "Jenia Jitsev",
+                "Aran Komatsuzaki"
+            ],
+            "title": "Laion-400m: Open dataset of clip-filtered 400 million image-text pairs",
+            "venue": "arXiv preprint arXiv:2111.02114,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jascha Sohl-Dickstein",
+                "Eric Weiss",
+                "Niru Maheswaranathan",
+                "Surya Ganguli"
+            ],
+            "title": "Deep unsupervised learning using nonequilibrium thermodynamics",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Jiaming Song",
+                "Chenlin Meng",
+                "Stefano Ermon"
+            ],
+            "title": "Denoising diffusion implicit models",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yang Song",
+                "Stefano Ermon"
+            ],
+            "title": "Generative modeling by estimating gradients of the data distribution",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Yang Song",
+                "Jascha Sohl-Dickstein",
+                "Diederik P Kingma",
+                "Abhishek Kumar",
+                "Stefano Ermon",
+                "Ben Poole"
+            ],
+            "title": "Score-based generative modeling through stochastic differential equations",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Zhicong Tang",
+                "Shuyang Gu",
+                "Jianmin Bao",
+                "Dong Chen",
+                "Fang Wen"
+            ],
+            "title": "Improved vector quantized diffusion models",
+            "venue": "arXiv preprint arXiv:2205.16007,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ming Tao",
+                "Hao Tang",
+                "Fei Wu",
+                "Xiao-Yuan Jing",
+                "Bing-Kun Bao",
+                "Changsheng Xu"
+            ],
+            "title": "Df-gan: A simple and effective baseline for text-to-image synthesis",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Narek Tumanyan",
+                "Michal Geyer",
+                "Shai Bagon",
+                "Tali Dekel"
+            ],
+            "title": "Plug-and-play diffusion features for text-driven image-to-image translation",
+            "venue": "arXiv preprint arXiv:2211.12572,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ashish Vaswani",
+                "Noam Shazeer",
+                "Niki Parmar",
+                "Jakob Uszkoreit",
+                "Llion Jones",
+                "Aidan N Gomez",
+                "\u0141ukasz Kaiser",
+                "Illia Polosukhin"
+            ],
+            "title": "Attention is all you need",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Meng Wang",
+                "Yinghui Shi",
+                "Han Yang",
+                "Ziheng Zhang",
+                "Zhenxi Lin",
+                "Yefeng Zheng"
+            ],
+            "title": "Probing the impacts of visual context in multimodal entity alignment",
+            "venue": "Data Science and Engineering,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Wen Wang",
+                "Kangyang Xie",
+                "Zide Liu",
+                "Hao Chen",
+                "Yue Cao",
+                "Xinlong Wang",
+                "Chunhua Shen"
+            ],
+            "title": "Zeroshot video editing using off-the-shelf image diffusion models",
+            "venue": "arXiv preprint arXiv:2303.17599,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Jay Zhangjie Wu",
+                "Yixiao Ge",
+                "Xintao Wang",
+                "Weixian Lei",
+                "Yuchao Gu",
+                "Wynne Hsu",
+                "Ying Shan",
+                "Xiaohu Qie",
+                "Mike Zheng Shou"
+            ],
+            "title": "Tune-a-video: One-shot tuning of image diffusion models for text-to-video generation",
+            "venue": "arXiv preprint arXiv:2212.11565,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Zeyue Xue",
+                "Guanglu Song",
+                "Qiushan Guo",
+                "Boxiao Liu",
+                "Zhuofan Zong",
+                "Yu Liu",
+                "Ping Luo"
+            ],
+            "title": "Raphael: Text-to-image generation via large mixture of diffusion paths",
+            "venue": "arXiv preprint arXiv:2305.18295,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ling Yang",
+                "Jingwei Liu",
+                "Shenda Hong",
+                "Zhilong Zhang",
+                "Zhilin Huang",
+                "Zheming Cai",
+                "Wentao Zhang",
+                "CUI Bin"
+            ],
+            "title": "Improving diffusion-based image synthesis with context prediction",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ling Yang",
+                "Zhilong Zhang",
+                "Yang Song",
+                "Shenda Hong",
+                "Runsheng Xu",
+                "Yue Zhao",
+                "Wentao Zhang",
+                "Bin Cui",
+                "Ming-Hsuan Yang"
+            ],
+            "title": "Diffusion models: A comprehensive survey of methods and applications",
+            "venue": "ACM Computing Surveys,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ling Yang",
+                "Haotian Qian",
+                "Zhilong Zhang",
+                "Jingwei Liu",
+                "Bin Cui"
+            ],
+            "title": "Structure-guided adversarial training of diffusion models",
+            "venue": "IEEE Conference on Computer Vision and Pattern Recognition,",
+            "year": 2024
+        },
+        {
+            "authors": [
+                "Ling Yang",
+                "Zhaochen Yu",
+                "Chenlin Meng",
+                "Minkai Xu",
+                "Stefano Ermon",
+                "Bin Cui"
+            ],
+            "title": "Mastering textto-image diffusion: Recaptioning, planning, and generating with multimodal llms",
+            "venue": "arXiv preprint arXiv:2401.11708,",
+            "year": 2024
+        },
+        {
+            "authors": [
+                "Hui Ye",
+                "Xiulong Yang",
+                "Martin Takac",
+                "Rajshekhar Sunderraman",
+                "Shihao Ji"
+            ],
+            "title": "Improving text-toimage synthesis using contrastive learning",
+            "venue": "arXiv preprint arXiv:2107.02423,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jiahui Yu",
+                "Yuanzhong Xu",
+                "Jing Yu Koh",
+                "Thang Luong",
+                "Gunjan Baid",
+                "Zirui Wang",
+                "Vijay Vasudevan",
+                "Alexander Ku",
+                "Yinfei Yang",
+                "Burcu Karagol Ayan"
+            ],
+            "title": "Scaling autoregressive models for contentrich text-to-image generation",
+            "venue": "arXiv preprint arXiv:2206.10789,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Qinsheng Zhang",
+                "Yongxin Chen"
+            ],
+            "title": "Diffusion normalizing flow",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Xinchen Zhang",
+                "Ling Yang",
+                "Yaqi Cai",
+                "Zhaochen Yu",
+                "Jiake Xie",
+                "Ye Tian",
+                "Minkai Xu",
+                "Yong Tang",
+                "Yujiu Yang",
+                "Bin Cui"
+            ],
+            "title": "Realcompo: Dynamic equilibrium between realism and compositionality improves text-to-image diffusion models",
+            "venue": "arXiv preprint arXiv:2402.12908,",
+            "year": 2024
+        },
+        {
+            "authors": [
+                "Min Zhao",
+                "Rongzhen Wang",
+                "Fan Bao",
+                "Chongxuan Li",
+                "Jun Zhu"
+            ],
+            "title": "Controlvideo: Adding conditional control for one shot text-to-video editing",
+            "venue": "arXiv preprint arXiv:2305.17098,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yufan Zhou",
+                "Ruiyi Zhang",
+                "Changyou Chen",
+                "Chunyuan Li",
+                "Chris Tensmeyer",
+                "Tong Yu",
+                "Jiuxiang Gu",
+                "Jinhui Xu",
+                "Tong Sun"
+            ],
+            "title": "Towards language-free training for text-to-image generation",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,",
+            "year": 2022
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Diffusion models (Yang et al., 2023b) have made remarkable progress in visual generation and editing. They are first introduced by Sohl-Dickstein et al. (2015) and then improved by Song & Ermon (2019) and Ho et al. (2020), and can now generate samples with unprecedented quality and diversity (Rombach et al., 2022; Yang et al., 2023a; Podell et al., 2023; Yang et al., 2024a). As a powerful representation space for multi-modal data, CLIP latent space (Radford et al., 2021) is widely used by diffusion models to semantically modify images/videos by moving in the direction of any encoded text condition for controllable text-guided visual synthesis (Yang et al., 2024b; Zhang et al., 2024; Ramesh et al., 2022; Saharia et al., 2022b; Wu et al., 2022; Khachatryan et al., 2023).\nGenerally, text-guided visual diffusion models gradually disrupt visual input by adding noise through a fixed forward process, and learn its reverse process to generate samples from noise in a denoising way by incorporating clip text embedding. For example, text-to-image diffusion models usually estimate the similarity between text and noisy data to guide pretrained unconditional DDPMs (Dhariwal & Nichol, 2021; Nichol et al., 2022a), or directly train a conditional DDPM from scratch by incorporating text into the function approximator of the reverse process (Rombach et al., 2022; Ramesh et al., 2022). Text-to-video diffusion models mainly build upon pretrained DDPMs, and extend them with designed temporal modules (e.g., spatio-temporal attention) and DDIM Song et al. (2020a) inversion for both temporal and structural consistency (Wu et al., 2022; Qi et al., 2023).\n\u2217Contributed equally. \u2020Corresponding authors.\nDespite all this progress, there are common limitations in the majority of existing text-guided visual diffusion models. They typically employ an unconditional forward process but rely on a textconditional reverse process for denoising and sample generation. This inconsistency in the utilization of text condition between forward and reverse processes would constrain the potential of conditional diffusion models. Furthermore, they usually neglect the cross-modal context, which encompasses the interaction and alignment between textual and visual modalities in the diffusion process, which may limit the precise expression of textual semantics in visual synthesis results.\nTo address these limitations, we propose a novel and general cross-modal contextualized diffusion model (CONTEXTDIFF) that harnesses cross-modal context to facilitate the learning capacity of cross-modal diffusion models. As illustrated in Figure 1, we compare our contextualized diffusion models with conventional text-guided diffusion models. We incorporate the cross-modal interactions between text condition and image/video sample into the forward process, serving as a context-aware adapter to optimize diffusion trajectories. Furthermore, to facilitate the conditional modeling in the reverse process and align it with the adapted forward process, we also use the context-aware adapter to adapt the sampling trajectories. In contrast to traditional textual guidance employed for visual sampling process (Rombach et al., 2022; Saharia et al., 2022b), our CONTEXTDIFF offers a distinct approach by providing enhanced and contextually informed guidance for visual sampling. We generalize our contextualized diffusion to both DDPMs and DDIMs for benefiting both cross-modal generation and editing tasks, and provide detailed theoretical derivations. We demonstrate the effectiveness of our CONTEXTDIFF in two challenging text-guided visual synthesis tasks: text-to-video generation and text-to-video editing. Empirical results reveal that our contextualized diffusion models can consistently improve the semantic alignment between text conditions and synthesis results over existing diffusion models in both tasks.\nTo summarize, we have made the following contributions: (i) To the best of our knowledge, We for the first time propose CONTEXTDIFF to consider cross-modal interactions as context-aware trajectory adapter to contextualize both forward and sampling processes in text-guided visual diffusion models. (ii) We generalize our contextualized diffusion to DDPMs and DDIMs with thereotical derivations for benefiting both cross-modal visual generation and editing tasks. (iii) Our CONTEXTDIFF achieves new state-of-the-art performance on text-to-image generation and text-to-video editing tasks, consistently demonstrating the superiority of our CONTEXTDIFF over existing diffusion models with both quantitative and qualitative comparisons."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "Text-Guided Visual Diffusion Models Text-to-image diffusion models (Yang et al., 2023a; Podell et al., 2023) mainly incorporate the text semantics into the image sampling process (Nichol et al., 2022a) for cross-modal comprehension. Latent Diffusion Models (LDMs) (Rombach et al., 2022) apply diffusion models on the latent space of powerful pretrained autoencoders for high-resolution synthesis. RPG (Yang et al., 2024b) proposes a LLM-grounded prompt decomposition and utilizes the multimodal chain-of-thought reasoning ability of MLLMs to enable complex/compositional image generation. Regarding text-to-video diffusion models, recent methods mainly leverage the pretrained text-to-image diffusion models in zero-shot (Qi et al., 2023; Wang et al., 2023b) and one-shot (Wu et al., 2022; Liu et al., 2023) methodologies for text-to-video editing. For example, Tune-A-\nVideo (Wu et al., 2022) employs DDIM (Song et al., 2020a) inversion to provide structural guidance for sampling, and proposes efficient attention tuning for improving temporal consistency. FateZero (Qi et al., 2023) fuses the attention maps in the inversion process and generation process to preserve the motion and structure consistency during editing. In this work, we for the first time improve both text-to-image and text-to-video diffusion models with a general context-aware trajectory adapter.\nDiffusion Trajectory Optimization Our work focuses on optimizing the diffusion trajectories that denotes the distribution of the entire diffusion process. Some methods modify the forward process with a carefully-designed transition kernel or a new data-dependent initialization distribution (Liu et al., 2022; Dockhorn et al., 2021; Lee et al., 2021; Karras et al., 2022). For example, Rectified Flow (Liu et al., 2022) learns a straight path connecting the data distribution and prior distribution. GradTTS (Popov et al., 2021) and PriorGrad (Lee et al., 2021) introduce conditional forward process with data-dependent priors for audio diffusion models. Other methods mainly parameterize the forward process with additional neural networks (Zhang & Chen, 2021; Kim et al., 2022; Kingma et al., 2021). VDM (Kingma et al., 2021) parameterizes the noise schedule with a monotonic neural network, which is jointly trained with the denoising network. However, these methods only utilize unimodal information in forward process (Yang et al., 2024a), and thus are inadequate for handling complex multimodal synthesis tasks. In contrast, our CONTEXTDIFF for the first time incorporates cross-modal context into the diffusion process for improving text-guided visual synthesis, which is more informative and contextual guidance compared to text guidance."
+        },
+        {
+            "heading": "3 PRELIMINARIES",
+            "text": "Denoising Diffusion Probabilistic Models Diffusion models (Ho et al., 2020; Song et al., 2020b) consider an unconditional forward process that gradually disturb the data distribution q(x0) into a tractable prior N (0, I) with a gaussian kernel defined by {\u03b21, \u03b22, . . . , \u03b2T }: q(xt|xt\u22121) = N ( \u221a (1\u2212 \u03b2t)xt\u22121, \u03b2tI), which admits a close form of conditional distribution of xt given x0: q(xt|x0) = N ( \u221a \u03b1\u0304tx0, (1 \u2212 \u03b1\u0304t)I), where \u03b1\u0304t = \u220ft i=1(1 \u2212 \u03b2i). Then a parameterized Markov chain {p\u03b8(xt\u22121|xt)}Tt=1 is trained match the distribution of the reversal of the forward process. The training objective is a variational bound of the negative log likelihood of the data distribution q(x0):\nL = Eq[log q(x1:T |x0, c) p\u03b8(x0:T |c) ] \u2265 Eq \u2212 log p\u03b8(x0). (1)\nq(xt\u22121|xt,x0) admits a closed form gaussian distribution with the mean determined by x0 and xt, then p\u03b8(xt\u22121|xt) can be parameterized to gaussian kernel which mean is predict by xt.\nDenoising Diffusion Implicit Models DDIMs generalize the forward process of DDPMs to nonMarkovian process with an equivalent objective for training. Deterministic DDIM sampling (Song et al., 2020a) is one of ODE-based sampling methods (Lu et al., 2022; Song et al., 2020b) to generate samples starting from xT \u223c N (0, I) via the following iteration rule:\nxt\u22121 = \u221a \u03b1t\u22121 xt \u2212 \u221a 1\u2212 \u03b1t\u03f5\u03b8(xt, t)\u221a\n\u03b1t +\n\u221a 1\u2212 \u03b1t\u22121\u03f5\u03b8(xt, t). (2)\nDDIM inversion (Song et al., 2020a) can convert a real image x0 to related inversion noise by reversing the above process, which can be reconstructed by DDIM sampling. It is usually adopted in editing task (Hertz et al., 2023; Mokady et al., 2022; Tumanyan et al., 2022; Qi et al., 2023)."
+        },
+        {
+            "heading": "4 METHOD",
+            "text": ""
+        },
+        {
+            "heading": "4.1 CROSS-MODAL CONTEXTUALIZED DIFFUSION",
+            "text": "We aim to incorporate cross-modal context of each text-image(video) pair (c,x0) into the diffusion process as in Figure 2. We use clip encoders to extract the embeddings of each pair, and adopt an relational network (e.g., cross attention) to model the interactions and alignments between the two modalities as cross-modal context. This context is then propagated to all timesteps of the diffusion process as a bias term (we highlight the critical parts of our CONTEXTDIFF in brown):\nq\u03d5(xt|x0, c) = N (xt, \u221a \u03b1\u0304tx0 + ktr\u03d5(x0, c, t), (1\u2212 \u03b1\u0304t)I), (3)\nwhere scalar kt control the magnitude of the bias term, and we set the kt to \u221a \u03b1\u0304t \u00b7(1\u2212 \u221a \u03b1\u0304t). r\u03d5(\u00b7) is the relational network with trainable parameters \u03d5, it takes the visual sample x0 and text condition c as inputs and produces the bias with the same dimension as x0.\nConcretely, the forward process is defined as q\u03d5(x1,x2, ...,xT |x0, c) = \u220fT\nt=1 q\u03d5(xt|xt\u22121,x0, c). Given cross-modal context r\u03d5(x0, c, t), the forward transition kernel depends on xt\u22121,x0, and c :\nq\u03d5(xt|xt\u22121,x0, c) = N ( \u221a \u03b1txt\u22121 + ktr\u03d5(x0, c, t)\u2212 \u221a \u03b1tkt\u22121r\u03d5(x0, c, t\u2212 1), \u03b2tI), (4)\nwhere \u03b2t = 1 \u2212 \u03b1t. This transition kernel gives marginal distribution as Equation (3) (proof in Appendix C.1). At each timestep t, we add a noise that explicitly biased by the cross-modal context. With Equation (3) and Equation (4), we can derive the posterior distribution of the forward process for t > 1 (proof in Appendix C.1):\nq\u03d5(xt\u22121|xt,x0, c) = N ( \u221a \u03b1\u0304t\u22121\u03b2t 1\u2212 \u03b1\u0304t x0+ \u221a \u03b1t(1\u2212 \u03b1\u0304t\u22121) 1\u2212 \u03b1\u0304t (xt\u2212bt(x0, c))+bt\u22121(x0, c), (1\u2212 \u03b1\u0304t\u22121)\u03b2t 1\u2212 \u03b1\u0304t I),\n(5)\nwhere bt(x0, c) is an abbreviation form of ktr\u03d5(x0, c, t), and we use it for simplicity. With Equation (5), we can simplify the training objective which will be described latter. In this way, we contextualize the entire diffusion process with a context-aware trajectory adapter. In CONTEXTDIFF, we also utilize our context-aware context to adapt the reverse process of diffusion models, which encourages to align with the adapted forward process, and facilitates the precise expression of textual semantics in visual sampling process."
+        },
+        {
+            "heading": "4.2 ADAPTING REVERSE PROCESS",
+            "text": "We aim to learn a contextualized reverse process {p\u03b8(xt\u22121|xt, c)}Tt=1 , which minimizes a variational upper bound of the negative log likelihood, as in Equation (1). p\u03b8(xt\u22121|xt, c) is gaussian kernel with learnable mean and pre-defined variance. Allowing the forward transition kernel to depend on x0 and c, the objective function L\u03b8,\u03d5 of our CONTEXTDIFF can be formulated as (proof in Appendix C.2):\nL\u03b8,\u03d5 = Eq\u03d5(x1:T |x0,c) [ DKL(q\u03d5(xT |x0, c)\u2225p(xT |c))\u2212 log p\u03b8(x0|x1, c)\n+ \u2211 t>1 DKL(q\u03d5(xt\u22121|xt,x0, c)\u2225p\u03b8(xt\u22121|xt, c)) ] ,\n(6)\nwhere \u03b8 denotes the learnable parameters of denoising network in reverse process. Equation (6) uses KL divergence to directly compare p\u03b8(xt\u22121|xt, c) against the adapted forward process posteriors, which are tractable when conditioned on x0 and c. If r\u03d5 is identically zero, the objective can be viewed as the original DDPMs. Thus CONTEXTDIFF is theoretically capable of achieving better likelihood compared to original DDPMs.\nKindly note that optimizing Lt = Eq\u03d5DKL(q\u03d5(xt\u22121|xt,x0, c)\u2225p\u03b8(xt\u22121|xt, c)) is equivalent to matching the means for q\u03d5(xt\u22121|xt,x0, c) and p\u03b8(xt\u22121|xt, c), as they are gaussian distributions\nwith the same variance. According to Equation (5), directly matching the means requires to parameterize a neural network \u00b5\u03b8 that not only predicting x0, but also matching the complex cross-modal context information in the forward process, i.e.,\nL\u03b8,\u03d5,t = \u2223\u2223\u2223\u2223\u00b5\u03b8(xt, c, t)\u2212 \u221a\u03b1\u0304t\u22121\u03b2t\n1\u2212 \u03b1\u0304t x0 \u2212 \u221a \u03b1t(1\u2212 \u03b1\u0304t\u22121) 1\u2212 \u03b1\u0304t (xt \u2212 bt(x0, c))\u2212 bt\u22121(x0, c) \u2223\u2223\u2223\u22232 2 (7)\nSimplified Training Objective Directly optimizing this objective is inefficient in practice because it needs to compute the bias twice at each timestep. To simplify the training process, we employ a denoising network f\u03b8(xt, c, t) to directly predict x0 from xt at each time step t, and insert the predicted x\u03020 in Equation (5), i.e., p\u03b8,\u03d5(xt\u22121|xt, c) = q\u03d5(xt\u22121|xt, x\u03020, c). Under mild condition, we can derive that the reconstruction objective E||f\u03b8 \u2212 x0||22 is an upper bound of Lt, and thus an upper bound of negative log likehood (proof in Appendix C.2). Our simplified training objective is:\nL\u03b8,\u03d5 = T\u2211\nt=1\n\u03bbtEx0,xt ||f\u03b8(xt,\u03d5, c, t)\u2212 x0||22, (8)\nwhere \u03bbt is a weighting scalar. We set kT = 0 and there is no learnable parameters in DKL(q(xT |x0, c)\u2225p(xT |c)), which can be ignored. To adapt the reverse process at each timestep, we can efficiently sample a noisy sample xt according to Equation (3) using re-parameterization trick, which has included parameterized cross-modal context ktr\u03d5(x0, c, t), and then passes xt into the denoising network. The gradients will be propagated to r\u03d5 from the denoising network, and our context-aware adapter and denoising network are jointly optimized in training.\nContext-Aware Sampling During sampling, we use the denoising network to predict x\u03020, and the predicted context-aware adaptation r\u03d5(x\u03020, c, t) is then used to contextualize the sampling trajectory. Hence the gaussian kernel p\u03b8(xt\u22121|xt, c) has mean:\u221a\n\u03b1\u0304t\u22121\u03b2t 1\u2212 \u03b1\u0304t x\u03020 + \u221a \u03b1t(1\u2212 \u03b1\u0304t\u22121) 1\u2212 \u03b1\u0304t (xt \u2212 bt(x\u03020, c)) + bt\u22121(x\u03020, c), (9)\nwhere bt(x\u03020, c) = ktr\u03d5(x\u03020, c, t), and variance (1\u2212\u03b1\u0304t\u22121)\u03b2t\n1\u2212\u03b1\u0304t I . In this way, our CONTEXTDIFF can effectively adapt sampling process with cross-modal context, which is more informative and contextual guided compared to traditional text guidance (Rombach et al., 2022; Saharia et al., 2022b). Next, we will introduce how to generalize our contextualized diffusion to DDIMs for fast sampling."
+        },
+        {
+            "heading": "4.3 GENERALIZING CONTEXTUALIZED DIFFUSION TO DDIMS",
+            "text": "DDIMs (Song et al., 2020a) accelerate the reverse process of pretrained DDPMs, which are also faced with the inconsistency problem that exists in DDPMs. Therefore, we address this problem by generalizing our contextualized diffusion to DDIMs. Specifically, we define a posterior distribution q\u03d5(xt\u22121|xt,x0, c) for each timestep, thus the forward diffusion process has the desired distribution:\nq\u03d5(xt|x0, c) = N (xt, \u221a \u03b1\u0304tx0 + bt(x0, c), (1\u2212 \u03b1\u0304t)I), (10)\nIf the posterior distribution is defined as:\nq(xt\u22121|xt,x0, c) = N ( \u221a \u03b1\u0304t\u22121x0 + \u221a 1\u2212 \u03b1\u0304t\u22121 \u2212 \u03c32t \u2217 xt \u2212 \u221a \u03b1\u0304tx0\u221a\n1\u2212 \u03b1\u0304t , \u03c32t I), (11)\nthen the mean of q\u03d5(xt\u22121|x0, c) is (proof in Appendix C.1): \u221a \u03b1\u0304t\u22121x0 + bt(x0, c) \u2217 \u221a 1\u2212 \u03b1\u0304t\u22121 \u2212 \u03c32t\u221a\n1\u2212 \u03b1\u0304t (12)\nTo match the forward diffusion, we need to replace the adaptation ktr\u03d5(x0, c, t)\u2217 \u221a\n1\u2212\u03b1\u0304t\u22121\u2212\u03c32t\u221a 1\u2212\u03b1\u0304t\nwith kt\u22121r\u03d5(x0, c, t\u2212 1). Given \u03c32t = 0, the sampling process becomes deterministic:\nx\u0303t\u22121 = \u221a \u03b1\u0304t\u22121x\u03020 + \u221a 1\u2212 \u03b1\u0304t\u22121 \u2217 xt \u2212 \u221a \u03b1\u0304tx\u03020\u221a\n1\u2212 \u03b1\u0304t\nxt\u22121 = x\u0303t\u22121 \u2212 bt(x\u03020, c) \u2217 \u221a 1\u2212 \u03b1\u0304t\u22121\u221a 1\u2212 \u03b1\u0304t + bt\u22121(x\u03020, c).\n(13)\nIn this way, DDIMs can better convey textual semantics in generated samples when accelerating the sampling of pretrained DDPMs, which will be evaluated in later text-to-video editing task."
+        },
+        {
+            "heading": "5 EXPERIMENTS",
+            "text": "We conduct experiments on two main text-guided visual synthesis tasks: text-to-image generation (Sec. 5.1) and text-to-video editing (Sec. 5.2). We also extend our CONTEXTDIFF to other conditional generation scenarios: class-to-image and layout-to-image (in Appendix B), to demonstrate the generalization ability. For better understanding and explanation of our proposed contextualized diffusion, we further provide some qualitative analysis on FID-CLIP trade-off (Sec. 5.3), model convergence (Sec. 5.3) and heatmap visualization (Appendix A)."
+        },
+        {
+            "heading": "5.1 TEXT-TO-IMAGE GENERATION",
+            "text": "Datasets and Metrics. Following Rombach et al. (2022); Saharia et al. (2022b), we use public LAION-400M (Schuhmann et al., 2021), a dataset with CLIP-filtered 400 million image-text pairs for training CONTEXTDIFF. We conduct evaluations with FID and CLIP score (Hessel et al., 2021; Radford et al., 2021), which aim to assess the generation quality and resulting image-text alignment.\nImplementation Details. For our context-aware adapter, we use text CLIP and image CLIP (Radford et al., 2021) (ViT-B/32) to encode text and image inputs, and adopt multi-head cross attention (Vaswani et al., 2017) to model cross-modal interactions with 8 parallel attention layers. For the diffusion backbone, we mainly follow Imagen (Saharia et al., 2022b) using a 64\u00d7 64 base diffusion model (Nichol & Dhariwal, 2021; Saharia et al., 2022a) and a super-resolution diffusion models to upsample a 64 \u00d7 64 generated image into a 256 \u00d7 256 image. For 64 \u00d7 64 \u2192 256 \u00d7 256 super-resolution, we use the efficient U-Net model in Imagen for improving memory efficiency. We condition on the entire sequence of text embeddings (Raffel et al., 2020) by adding cross attention (Ramesh et al., 2022) over the text embeddings at multiple resolutions. More details about the hyper-parameters can be found in Appendix E.\nQuantitative and Qualitative Results Following previous works (Rombach et al., 2022; Ramesh et al., 2022; Saharia et al., 2022b), we make quantitative evaluations CONTEXTDIFF on the MSCOCO dataset using zero-shot FID score, which measures the quality and diversity of generated images. Similar to Rombach et al. (2022); Ramesh et al. (2022); Saharia et al. (2022b), 30,000 images are randomly selected from the validation set for evaluation. As demonstrated in Tab. 1, our CONTEXTDIFF achieves a new state-of-the-art performance on text-to-image generation task with\n6.48 zero-shot FID score, outperforming previous dominant diffusion models such as Stable Diffusion (Rombach et al., 2022), DALL-E 2 (Ramesh et al., 2022), and Imagen (Saharia et al., 2022b). We also make qualitative comparisons in Figure 3, and find that our CONTEXTDIFF can achieve more precise semantic alignment between text prompt and generated image than previous methods, demonstrating the effectiveness of incorporating cross-modal context into diffusion models. We visualize more qualitative results in Appendix F.1."
+        },
+        {
+            "heading": "5.2 TEXT-TO-VIDEO EDITING",
+            "text": "Datasets and Metrics To demonstrate the strength of our CONTEXTDIFF for text-to-video edting, we use 42 representative videos taken from DAVIS dataset (Pont-Tuset et al., 2017) and other in-thewild videos following previous works (Wu et al., 2022; Qi et al., 2023; Bar-Tal et al., 2022; Esser et al., 2023). These videos cover a range of categories including animals, vehicles, and humans. To obtain video footage, we use BLIP-2 (Li et al., 2023) for automated captions. We also use their designed prompts for each video, including object editing, background changes, and style transfers. To measure textual alignment, we compute average CLIP score between all frames of output videos and corresponding edited prompts. For temporal consistency, we compute CLIP (Radford et al., 2021) image embeddings on all frames of output videos and report the average cosine similarity between all pairs of video frames. Moreover, We perform user study to quantify text alignment, and temporal consistency by pairwise comparisons between the baselines and our CONTEXTDIFF. A total of 10 subjects participated in this user study. Taking text alignment as an example, given a source video, the participants are instructed to select which edited video is more aligned with the text prompt in the pairwise comparisons between the baselines and CONTEXTDIFF.\nImplementation Details In order to reproduce the baselines of Tune-A-Video (Wu et al., 2022), FateZero (Qi et al., 2023), and ControlVideo (Zhao et al., 2023), we use their official repositories\nfor one-shot video tuning. Following FateZero, we use the trained Stable Diffusion v1.4 (Rombach et al., 2022) as the base text-to-image diffusion model, and fuse the attention maps in DDIM inversion (Song et al., 2020a) and sampling processes for retaining both structural and motion information. We fuse the attentions in the interval of t \u2208 [0.5 \u00d7 T, T ] of the DDIM step with total timestep T = 20. For context-aware adapter, we use the same encoders and cross attention as in textto-image generation. We additionally incorporate spatio-temporal attention, which includes spatial self-attention and temporal causal attention, into our context-aware adapter for capturing spatiotemporal consistency. For each source video, we tune our adapter using source text prompt for learning both context-aware structural and motion information, and use the learned adapter to conduct video editing with edited text prompt. Details about the hyper-parameters are in Appendix E.\nQuantitative and Qualitative Results We report our quantitative and qualitative results in Tab. 2 and Figure 4. Extensive results demonstrate that CONTEXTDIFF substantially outperforms all these baselines in both textual alignment and temporal consistency. Notably, in the textual alignment in user study, we outperform the baseline by a significant margin (over 80%), demonstrating the su-\nperior cross-modal understanding of our contextualized diffusion. In qualitative comparisons, we observe that CONTEXTDIFF not only achieves better semantic alignment, but also preserves the structure information in source video. Besides, the context-aware adapter in our contextualized diffusion can be generalized to previous methods, which substantially improves the generation quality as in Figure 5. More results demonstrating our generalization ability can be found in Appendix F.2."
+        },
+        {
+            "heading": "5.3 ABLATION STUDY",
+            "text": "Guidance Scale vs. FID Given the significance of classifier-free guidance weight in controlling image quality and text alignment, in Figure 6, we conduct ablation study on the trade-off between CLIP and FID scores across a range of guidance weights, specifically 1.5, 3.0, 4.5, 6.0, 7.5, and 9.0. The results indicate that our context-aware adapter contribute effectively. At the same guidance weight, our context-aware adapter considerably and consistently reduces the FID, resulting in a significant improvement in image quality.\nTraining Convergence We evaluate CONTEXTDIFF regarding our contribution to the model convergence. The comparison in Figure 7 demonstrates that our context-aware adapter can significantly accelerate the training convergence and improve the semantic alignment between text and generated video. This observation also reveals the generalization ability of our contextualized diffusion."
+        },
+        {
+            "heading": "6 CONCLUSION",
+            "text": "In this paper, we propose a novel and general conditional diffusion model (CONTEXTDIFF) by propagating cross-modal context to all timesteps in both diffusion and reverse processes, and adapt their trajectories for facilitating the model capacity of cross-modal synthesis. We generalize our contextualized trajectory adapter to DDPMs and DDIMs with theoretical derivation, and consistently achieve state-of-the-art performance in two challenging tasks: text-to-image generation, and textto-video editing. Extensive quantitative and qualitative results on the two tasks demonstrate the effectiveness and superiority of our proposed cross-modal contextualized diffusion models."
+        },
+        {
+            "heading": "ACKNOWLEDGEMENT",
+            "text": "This work was supported by the National Natural Science Foundation of China (No.U23B2048 and U22B2037)."
+        },
+        {
+            "heading": "B GENERALIZING TO CLASS AND LAYOUT CONDITIONAL GENERATION TASKS",
+            "text": "We generalize our context-aware adapter into class and layout conditional generation tasks. We replace the text encoder in original adapter with ResNet blocks for embedding classes or layouts, and keep the original image encoder and cross-attention module for obtaining cross-modal context information. We put both quantitative and qualitative results in Tabs. 3 and 4 and Figures 10 and 11. From the results, we conclude that our context-aware adapter can benefit the conditional diffusion models with different condition modalities and enable more realistic and precise generation consistent with input conditions, demonstrating the satisfying generalization ability of our method.\nTable 3: Performance comparison in class-to-image generation on ImageNet 256\u00d7256.\nMethod FID \u2193 IS \u2191 Precision \u2191 Recall \u2191 BigGAN (Brock et al., 2018) 6.95 203.63 0.87 0.28 ADM-G (Dhariwal & Nichol, 2021) 4.59 186.70 0.82 0.52 LDM (Rombach et al., 2022) 3.60 247.67 0.87 0.48 LDM+Context-Aware Adapter 2.97 273.04 0.89 0.55\nTable 4: FID performance comparison in layout-to-image generation on MS-COCO 256\u00d7256.\nMethod FID\u2193 VQGAN+T (Jahn et al., 2021) 56.58 Frido (Fan et al., 2023) 37.14 LDM (Rombach et al., 2022) 40.91 LDM+Context-Aware Adapter 34.58\nEgyptian Cat\nCatamount\nFerret\nTup\nLDM LDM + Context-Aware Adapter\nClass-to-image generation\nFigure 10: Qualitative results in class-to-image generation on ImageNet 256\u00d7256. Our contextaware adapter improves the generation quality of LDM."
+        },
+        {
+            "heading": "C THEORETICAL DERIVATIONS",
+            "text": "C.1 THE DISTRIBUTIONS IN THE FORWARD PROCESS\nFirst, we derive the explicit expressions for q(xt|xt\u22121,x0, c) and q(xt\u22121|xt,x0, c), based on our cross-modal contextualized diffusion defined by Equation (3). lemma 1 For the forward process q(x1,x2, ...,xT |x0, c) = \u220fT\nt=1 q(xt|xt\u22121,x0, c), if the transition kernel q(xt|xt\u22121,x0, c) is defined as Equation (4), then the conditional distribution q(xt|x0, c) has the desired distribution as Equation (3), i.e.,N (xt, \u221a \u03b1\u0304tx0 + ktr\u03d5(x0, c, t), (1\u2212 \u03b1\u0304t)I).\nProof 1 We prove the lemma by induction. Suppose at time t, we have q(xt|xt\u22121,x0, c) and q(xt\u22121|x0, c) admit the desired distributions as in Equations (3) and (4), respectively, then we need to prove that q(xt|x0, c) = N (xt, \u221a \u03b1\u0304tx0 + ktr\u03d5(x0, c, t), (1 \u2212 \u03b1\u0304t)I). We can re-write he conditional distributions of xt given (xt\u22121,x0, c) and xt\u22121 given (x0, c) with the following equations:\nxt = \u221a \u03b1txt\u22121 + ktr\u03d5(x0, c, t)\u2212 \u221a \u03b1tkt\u22121r\u03d5(x0, c, t\u2212 1) + \u221a \u03b2t\u03f51, (14)\nxt\u22121 = \u221a \u03b1\u0304t\u22121x0 + kt\u22121r\u03d5(x0, c, t\u2212 1) + \u221a 1\u2212 \u03b1\u0304t\u22121\u03f52, (15)\nwhere \u03f51, \u03f52 are two independent standard gaussian random variables. Replacing xt\u22121 in Equation (14) with Equation (15), we have:\nxt = \u221a \u03b1\u0304tx0 + ktr\u03d5(x0, c, t)\n+ \u221a \u03b1tkt\u22121r\u03d5(x0, c, t\u2212 1)\u2212 \u221a \u03b1tkt\u22121r\u03d5(x0, c, t\u2212 1)\n+ \u221a \u03b2t\u03f51 + \u221a \u03b1t \u2217 (1\u2212 \u03b1\u0304t\u22121) \u2217 \u03f52 = \u221a \u03b1\u0304tx0 + kt\u22121r\u03d5(x0, c, t\u2212 1) + \u221a \u03b2t\u03f51 + \u221a \u03b1t \u2217 (1\u2212 \u03b1\u0304t\u22121) \u2217 \u03f52\n(16)\nAs a result, the distribution of xt given (x0, c) is a gaussian distribution with mean \u221a \u03b1\u0304tx0 + ktr\u03d5(x0, c, t) and variance \u03b1t \u2217 (1\u2212 \u03b1\u0304t\u22121) + \u03b2t = 1\u2212 \u03b1\u0304t, which admits the desired distribution.\nProposition 1 Suppose the distribution of forward process is defined by Equations (3) and (4), then at each time t, the posterior distribution q(xt\u22121|xt,x0, c) is described by Equation (5)\nProof 2 By the Bayes rule, q(xt\u22121|xt,x0, c) = q(xt\u22121|x0,c)q(xt|xt\u22121,x0,c)q(xt|x0,c) . By Equations (3) and (4), the numerator and denominator are both gaussian , then the posterior distribution is also gaussian and we can proceed to calculate its mean and variance:\nq(xt\u22121|xt,x0, c) = N (xt\u22121,\n\u221a \u03b1\u0304t\u22121x0 + bt\u22121(x0, c), (1\u2212 \u03b1\u0304t\u22121)I)\nN (xt, \u221a \u03b1\u0304tx0 + bt(x0, c), (1\u2212 \u03b1\u0304t)I)\n\u2217 N (xt, \u221a \u03b1txt\u22121 + bt(x0, c)\u2212 \u221a \u03b1tbt\u22121(x0, c), \u03b2tI)\n, (17)\nwhere bt(x0, c) is an abbreviation form of ktr\u03d5(x0, c, t). Dropping the constants which are unrelated to x0,xt,xt\u22121 and c, we have:\nq(xt\u22121|xt,x0, c) \u221d exp { \u2212 (xt\u22121 \u2212 \u221a \u03b1\u0304t\u22121x0 \u2212 bt\u22121(x0, c))2\n2(1\u2212 \u03b1\u0304t\u22121) +\n(xt \u2212 \u221a \u03b1\u0304tx0 \u2212 bt(x0, c))2\n2(1\u2212 \u03b1\u0304t)\n\u2212 (xt \u2212\n\u221a \u03b1txt\u22121 \u2212 bt(x0, c) + \u221a \u03b1tbt\u22121(x0, c)) 2\n2\u03b2t } = exp { C(x0,xt, c)\u2212 1\n2 (\n1\n1\u2212 \u03b1\u0304t\u22121 + \u03b1t \u03b2t ) \u2217 x2t\u22121 + xt\u22121\u2217\n[ ( \u221a \u03b1\u0304t\u22121x0 + bt\u22121(x0, c))\n1\u2212 \u03b1\u0304t\u22121 + \u221a \u03b1t\n(xt \u2212 bt(x0, c) + \u221a \u03b1tbt\u22121(x0, c))\n\u03b2t ] } = exp { C(x0,xt, c)\u2212 1\n2 (\n1\n1\u2212 \u03b1\u0304t\u22121 + \u03b1t \u03b2t ) \u2217 x2t\u22121 + xt\u22121\u2217\n[ ( \u221a \u03b1\u0304t\u22121\n1\u2212 \u03b1\u0304t\u22121 x0 + \u221a \u03b1t \u03b2t (xt \u2212 bt(x0, c)) + ( 1 1\u2212 \u03b1\u0304t\u22121 + \u03b1t \u03b2t\n) \u2217 bt\u22121(x0, c)] } ,\n(18) where C(x0,xt, c) is a constant term with respect to xt\u22121. Note that ( 11\u2212\u03b1\u0304t\u22121 + \u03b1t \u03b2t ) = 1\u2212\u03b1\u0304t (1\u2212\u03b1\u0304t\u22121)(1\u2212\u03b1t) , and with some algebraic derivation, we can show that the gaussian distribution q(xt\u22121|xt,x0, c) has:\nvariance : (1\u2212 \u03b1\u0304t\u22121)(1\u2212 \u03b1t)\n1\u2212 \u03b1\u0304t I\nmean : \u221a \u03b1\u0304t\u22121\u03b2t 1\u2212 \u03b1\u0304t x0 + \u221a \u03b1t(1\u2212 \u03b1\u0304t\u22121) 1\u2212 \u03b1\u0304t (xt \u2212 bt(x0, c)) + bt\u22121(x0, c) (19)\nSimilarly, we can derive the distribution of DDIMs.\nlemma 2 Suppose that at each time t, the posterior distribution is defined by a gaussin distribution with\nMean : \u221a \u03b1\u0304t\u22121x0 + \u221a 1\u2212 \u03b1\u0304t\u22121 \u2212 \u03c32t \u2217 xt \u2212 \u221a \u03b1\u0304tx0\u221a\n1\u2212 \u03b1\u0304t \u2212 ktr\u03d5(x0, c, t) \u2217 \u221a 1\u2212 \u03b1\u0304t\u22121 \u2212 \u03c32t\u221a\n1\u2212 \u03b1\u0304t + kt\u22121r\u03d5(x0, c, t\u2212 1)\nV ariance : \u03c32t I,\n(20)\nthen the marginal distribution q\u03d5(xt|x0, c) has the desired distribution as Equation (3)\nProof 3 We prove by induction. Suppose that at time t, posterior and marginal distributions admit the desired distributions, then we need to prove that at time t\u22121, q\u03d5(xt\u22121|x0, c) also has the desired\ndistribution. Rewrite the posterior and marginal distribution as the following:\nxt\u22121 = \u221a \u03b1\u0304t\u22121x0 + \u221a 1\u2212 \u03b1\u0304t\u22121 \u2212 \u03c32t \u2217 xt \u2212 \u221a \u03b1\u0304tx0\u221a\n1\u2212 \u03b1\u0304t \u2212 ktr\u03d5(x0, c, t) \u2217 \u221a\n1\u2212 \u03b1\u0304t\u22121 \u2212 \u03c32t\u221a 1\u2212 \u03b1\u0304t\n+ kt\u22121r\u03d5(x0, c, t\u2212 1)) + \u03c3t\u03f51 (21)\nxt = \u221a \u03b1\u0304tx0 + ktr\u03d5(x0, c, t) + \u221a 1\u2212 \u03b1\u0304t\u03f52, (22)\nwhere \u03f51, \u03f52 are standard gaussian noises. Plugging in xt, we have:\nxt\u22121 = \u221a \u03b1\u0304t\u22121x0\n+ ktr\u03d5(x0, c, t) \u2217 \u221a 1\u2212 \u03b1\u0304t\u22121 \u2212 \u03c32t\u221a\n1\u2212 \u03b1\u0304t \u2212 ktr\u03d5(x0, c, t) \u2217\n\u221a 1\u2212 \u03b1\u0304t\u22121 \u2212 \u03c32t\u221a\n1\u2212 \u03b1\u0304t + kt\u22121r\u03d5(x0, c, t\u2212 1)) + \u03c3t\u03f51 + \u221a 1\u2212 \u03b1\u0304t\u22121 \u2212 \u03c32t \u03f52\n= \u221a \u03b1\u0304t\u22121x0 + kt\u22121r\u03d5(x0, c, t\u2212 1)) + \u03c3t\u03f51 + \u221a 1\u2212 \u03b1\u0304t\u22121 \u2212 \u03c32t \u03f52\n(23)\nSince the variance of \u03c3t\u03f51 + \u221a 1\u2212 \u03b1\u0304t\u22121 \u2212 \u03c32t \u03f52 is (1\u2212 \u03b1\u0304t\u22121)I , we have the desired distribution.\nC.2 UPPER BOUND OF THE LIKELIHOOD\nHere we show with our parameterization, the objective function L\u03b8,\u03d5 Equation (8) is a upper bound of the negative log likelihood of the data distribution.\nlemma 3 Based on the non-Markovian forward process q(x1,x2, ...,xT |x0, c) =\u220fT t=1 q(xt|xt\u22121,x0, c) and the conditional reverse process p\u03b8(x0,x1,x2, ...,xT |c) =\np\u03b8(xT |c) \u220fT\nt=1 p\u03b8(xt\u22121|xt, c), the objective function Equation (6) is an upper bound of the negative log likelihood.\nProof 4 \u2212 log p\u03b8(x0|c) \u2264 \u2212 log p\u03b8(x0|c) + Eq(x1:T |x0,c) { \u2212 log p\u03b8(x1:T |x0, c)\nq(x1:T |x0, c) } = Eq(x1:T |x0,c) { \u2212 log p\u03b8(x0:T |c)\nq(x1:T |x0, c) } = \u2212Eq(x1:T |x0,c) { log p\u03b8(xT |c) \u220fT\nt=1 p\u03b8(xt\u22121|xt, c)\u220fT t=1 q(xt|xt\u22121,x0, c)\n}\n= \u2212Eq(x1:T |x0,c) { log p\u03b8(xT |c) + \u2211 t>1 log p\u03b8(xt\u22121|xt, c) q(xt|xt\u22121,x0, c) + log p\u03b8(x0|x1, c) q(x1|x0, c) }\n= \u2212Eq(x1:T |x0,c) { log p\u03b8(xT |c) + log\np\u03b8(x0|x1, c) q(x1|x0, c)\n+ \u2211 t>1 log p\u03b8(xt\u22121|xt, c) q(xt\u22121|xt,x0, c) \u2217 q(xt\u22121|x0, c) q(xt|x0, c)\n}\n= \u2212Eq(x1:T |x0,c)\n{ log\np\u03b8(xT |c) q(xT |x0, c) + log p\u03b8(x0|x1, c) + log \u2211 t>1 p\u03b8(xt\u22121|xt, c) q(xt\u22121|xt,x0, c) } = DKL(q\u03d5(xT |x0, c)\u2225p\u03b8(xT |c))\u2212 Eq(x1|x0,c) log p\u03b8(x0|x1, c)\n+ \u2211 t>1 Eq(xt|x0,c)DKL(q\u03d5(xt\u22121|xt,x0, c)\u2225p\u03b8(xt\u22121|xt, c))\n(24)\nlemma 4 Assuming the relational network r\u03d5(x0, c, t) is Lipschitz continuous, i.e., \u2200t,\u2203a positive real number Ct s.t. \u2225r\u03d5(x0, c, t)\u2212 \u2225r\u03d5(x \u2032 0, c, t)\u2225 \u2264 Ct\u2225x0 \u2212 x \u2032\n0\u2225, then \u2225f\u03b8(xt, c, t)\u2212 x0\u222522 is an upper bound of DKL(q\u03d5(xt\u22121|xt,x0, c)\u2225p\u03b8(xt\u22121|xt, c)) after scaling.\nProof 5 From the main text, we know that\nDKL(q\u03d5(xt\u22121|xt,x0, c)\u2225p\u03b8(xt\u22121|xt, c)) \u221d\u2223\u2223\u2223\u2223\u00b5\u03b8(xt, c, t)\u2212 \u221a\u03b1\u0304t\u22121\u03b2t 1\u2212 \u03b1\u0304t x0 \u2212 \u221a \u03b1t(1\u2212 \u03b1\u0304t\u22121) 1\u2212 \u03b1\u0304t (xt \u2212 bt(x0, c))\u2212 bt\u22121(x0, c) \u2223\u2223\u2223\u22232 2 ,\n(25)\nwhere \u00b5\u03b8(xt, c, t) is the mean of q\u03b8(xt\u22121|xt, c). Here we discard a constant with respect to x0,xt, c. With our parameterization,\n\u00b5\u03b8(xt, c, t) = \u221a \u03b1\u0304t\u22121\u03b2t 1\u2212 \u03b1\u0304t x\u03020 \u2212 \u221a \u03b1t(1\u2212 \u03b1\u0304t\u22121) 1\u2212 \u03b1\u0304t (xt \u2212 bt(x\u03020, c))\u2212 bt\u22121(x\u03020, c), (26)\nwhere x\u03020 = f\u03b8(xt, c, t). Thus the objective function can be simplified as:\u2223\u2223\u2223\u2223\u221a\u03b1\u0304t\u22121\u03b2t 1\u2212 \u03b1\u0304t (x\u03020 \u2212 x0) + \u221a \u03b1t(1\u2212 \u03b1\u0304t\u22121) 1\u2212 \u03b1\u0304t (bt(x\u03020, c)\u2212 bt(x0, c))\u2212 (bt\u22121(x\u03020, c)\u2212 bt\u22121(x0, c)) \u2223\u2223\u2223\u2223 2\n\u2264 \u221a \u03b1\u0304t\u22121\u03b2t 1\u2212 \u03b1\u0304t \u2225x\u03020 \u2212 x0\u22252 + \u221a \u03b1t(1\u2212 \u03b1\u0304t\u22121) 1\u2212 \u03b1\u0304t \u2225bt(x\u03020, c)\u2212 bt(x0, c)\u22252 + \u2225bt\u22121(x\u03020, c)\u2212 bt\u22121(x0, c)\u22252 \u2264 \u221a \u03b1\u0304t\u22121\u03b2t 1\u2212 \u03b1\u0304t \u2225x\u03020 \u2212 x0\u22252 + \u221a \u03b1t(1\u2212 \u03b1\u0304t\u22121) 1\u2212 \u03b1\u0304t ktCt\u2225x\u03020 \u2212 x0\u22252 + kt\u22121Ct\u22121\u2225x\u03020 \u2212 x0\u22252 = \u03bbt\u2225f\u03b8(xt, c, t)\u2212 x0\u22252 (27)\nSimilar results can be proved for DDIMs by replacing the mean of posterior in DDPMs with DDIMs, defined by Equation (20), in Equation (25).\nAssume that the total diffusion step T is big enough and only a neglegible amount of noise is added to the data at the first diffusion step, then the term DKL(q\u03d5(xT |x0, c)\u2225p\u03b8(xT |c)) \u2212 Eq(x1|x0,c) log p\u03b8(x0|x1, c) is approximately zero. Now combining Lemmas 3 and 4, we have the following proposition:\nProposition 2 The objective function defined in Equation (8) is an upper bound of the negative log likelihood.\nC.3 ACHIEVING BETTER LIKELIHOOD WITH CONTEXTDIFF\nNext, we show that CONTEXTDIFF is theoretically capable of achieving better likelihood compared to original DDPMs. As the exact likelihood is intractable, we aim to compare the optimal variational bounds for negative log likelihoods. The objective function of CONTEXTDIFF at time step t is Eq\u03d5DKL(q\u03d5(xt\u22121|xt,x0, c)||p\u03b8(xt\u22121|xt, c)), and its optimal solution is\nmin \u03d5,\u03b8 Eq\u03d5DKL(q\u03d5(xt\u22121|xt,x0, c)||p\u03b8(xt\u22121|xt, c))\n= min\u03d5[min\u03b8Eq\u03d5DKL(q\u03d5(xt\u22121|xt,x0, c)||p\u03b8(xt\u22121|xt, c))] \u2264 min\u03b8Eq\u03d5=0DKL(q\u03d5=0(xt\u22121|xt,x0, c)||p\u03b8(xt\u22121|xt, c)),\n(28)\nwhere \u03d5 = 0 denotes setting the adapter network identical to 0, and thus min\u03b8Eq\u03d5=0DKL(q\u03d5=0(xt\u22121|xt,x0, c)||p\u03b8(xt\u22121|xt, c)) is the optimal loss of origianl DDPMs objective at time t. Similar inequality can be obtained for t=1:\nmin \u03d5,\u03b8 Eq\u03d5 \u2212 log p\u03b8(x0|x1, c)\n\u2264 min \u03b8\nEq\u03d5=0 \u2212 log p\u03b8(x0|x1, c). (29)\nAs a result, we have the following inequality by summing up the objectives at all time step:\n\u2212 Eq(x0) log p\u03b8(x0) \u2264 min\u03d5,\u03b8 \u2211 t>1 Eq\u03d5DKL(q\u03d5(xt\u22121|xt,x0, c)||p\u03b8(xt\u22121|xt, c)) + Eq\u03d5 \u2212 log p\u03b8(x0|x1, c) + C\n\u2264 min\u03b8 \u2211 t>1 Eq\u03d5=0DKL(q\u03d5=0(xt\u22121|xt,x0, c)||p\u03b8(xt\u22121|xt, c)) + Eq\u03d5=0 \u2212 log p\u03b8(x0|x1, c) + C\n(30) , where C = EDKL(q\u03d5(xT |x0, c)\u2225p\u03b8(xT |c)) is a constant defined by \u221a \u03b1\u0304T . Hence, CONTEXTDIFF has a tighter bound for the NLL, and thus theoretically capable of achieving better likelihood, compared with the original DDPMs.\nC.4 BETTER EXPRESSION OF CROSS-MODAL SEMANTICS\nWe provide an in-depth analysis on why CONTEXTDIFF can better express the cross-modal semantics. Our analysis focuses on the case of optimal estimation, as the theoretical analysis of convergence requires understanding the non-convex optimization of neural network, which is beyond the scope of this paper. Based on objective function in Equation (8), the optimal solution of CONTEXTDIFF at time t can be expressed as\nargmin \u03d5,\u03b8\nEq\u03d5(xt,x0|c)||x0 \u2212 f\u03b8(xt, c)|| 2\n= argmin \u03d5 argmin \u03b8\nEq\u03d5(xt,x0|c)||x0 \u2212 f\u03b8(xt, c)|| 2\n= argmin \u03d5\nEq\u03d5(xt|c)Eq\u03d5(x0|xt,c)||x0 \u2212 E[x0|xt, c]|| 2 2\n= \u03d5\u2217, \u03b8\u2217\n(31)\nsince the best estimator under L2 loss is the conditional expectation. As a result, the optimal estimator of CONTEXTDIFF for x0 is\nE[x0|ktr\u03d5\u2217(x0, c) + \u221a \u03b1\u0304tx0 + \u221a 1\u2212 \u03b1\u0304t\u03f5, c], (32)\nwhile existing methods that did not incorporate cross-modal contextual information in the forward process have the following optimal estimator:\nE[x0| \u221a \u03b1\u0304tx0 + \u221a 1\u2212 \u03b1\u0304t\u03f5, c]. (33)\nCompared with existing methods, CONTEXTDIFF can explicitly utilize the cross-modal context r\u03d5\u2217(x0, c) to optimally recover the ground truth sample, and thus achieve better multimodal semantic coherence.\nFurthermore, we analyze a toy example to show that CONTEXTDIFF can indeed utilize the crossmodal relations to better recover the ground truth sample. We consider the image embedding x0 and text embedding c that were generated with the following mechanism:\nx0 = \u00b5(c) + \u03c3(c)\u03f5, (34)\nwhere \u03f5 is an independent standard gaussain, \u00b5(c) and \u03c32(c) are the mean and variance of x0 conditioned on c. We believe this simple model can capture the multimodal relationships in the embedding space, where the relevant images and text embeddings are closely aligned with each other. Then xt = \u221a \u03b1\u0304tx0 + \u221a 1\u2212 \u03b1\u0304t\u03f5 \u2032 is the noisy image embedding in original diffusion model. We aim to calculate and compare the optimal estimation error at time step t in original diffusion model and in CONTEXTDIFF:\nmin \u03b8\nE||x0 \u2212 f\u03b8(x0, c)||22\n= E||x0 \u2212 E[x0|xt, c]||22 (35)\nThe conditional expectation as the optimal estimator of DDPMs can be calculated as:\nE[x0|xt, c] = \u00b5(c)\u2212 Cov(x0, xt|c) \u2217 V ar(xt|c)\u22121( \u221a \u03b1\u0304t\u00b5(c)\u2212 xt)\n= \u00b5(c)\u2212 \u221a \u03b1\u0304t\u03c3(c) 2\n\u03b1\u0304t\u03c3(c)2 + 1\u2212 \u03b1\u0304t ( \u221a \u03b1\u0304t\u00b5(c)\u2212 xt)\nAs a result, we can calculate the estimation error of DDPMs: E||x0 \u2212 E[x0|xt, c]||22\n= E||\u03c3(c)\u03f5\u2212 \u221a \u03b1\u0304t\u03c3(c) 2\n\u03b1\u0304t\u03c3(c)2 + 1\u2212 \u03b1\u0304t ( \u221a \u03b1\u0304t\u03c3(c)\u03f5+ \u221a 1\u2212 \u03b1\u0304t\u03f5 \u2032 )||22\n= d \u2217 (1\u2212 \u03b1\u0304t)\u03b1\u0304t\u03c3(c) 4 + \u03c32(c)(1\u2212 \u03b1\u0304t)2\n(\u03b1\u0304t\u03c32(c) + 1\u2212 \u03b1\u0304t)2\n= d \u2217 \u03c3(c)2 1\u2212 \u03b1\u0304t \u03b1\u0304t\u03c32(c) + 1\u2212 \u03b1\u0304t\n(36)\nNow we use CONTEXTDIFF with a parameterized adapter : xt = \u221a \u03b1\u0304tx0+ \u221a 1\u2212 \u03b1\u0304t\u03f5 \u2032 +r(\u03d5, c, t)x0 , where r(\u03d5, c, t)x0 is the adapter. We can similarly calculate the conditional mean as the optimal estimator of CONTEXTDIFF:\nE\u03d5[x0|xt, c] = \u00b5(c)\u2212 \u03c32(c)(r(\u03d5, c, t) +\n\u221a \u03b1\u0304t)\n1\u2212 \u03b1\u0304t + (r(\u03d5, c, t) + \u221a \u03b1\u0304t)2\u03c32\n\u2217 ((r(\u03d5, c, t) + \u221a \u03b1\u0304t)\u00b5(c)\u2212 xt)\nAnd the estimation error for a given \u03d5 in CONTEXTDIFF is:\nE||x0 \u2212 E\u03d5[x0|xt, c]||22\n= E||\u03c3(c)\u03f5\u2212 \u03c3 2(c)(r(\u03d5, c, t) +\n\u221a \u03b1\u0304t)\n1\u2212 \u03b1\u0304t + (r(\u03d5, c, t) + \u221a \u03b1\u0304t)2\u03c32(c)\n((r(\u03d5, c, t) + \u221a \u03b1\u0304t)\u03c3(c)\u03f5+ \u221a 1\u2212 \u03b1\u0304t\u03f5 \u2032 )||22\n= d\u03c3(c)2 1\u2212 \u03b1\u0304t\n1\u2212 \u03b1\u0304t + (r(\u03d5, c, t) + \u221a \u03b1\u0304t)2\u03c32(c)\n(37) Comparing the denominators of two estimation errors (Equations (36) and (37)), we can see that using a non-negative adapter will always reduce the estimation error."
+        },
+        {
+            "heading": "D MORE MODEL ANALYSIS",
+            "text": "Comparison on Computational Costs We compare our method with LDM and Imagen regarding parameters, training time, and testing time in Tab. 5. We find that our context-aware adapter (188M) only introduces few additional parameters and computational costs to the diffusion backbone (3000M), and substantially improves the generation performance, achieving a better trade-off than previous diffusion models.\nContributing to Faster Convergence In the Figure 7 of main text, we generalize our contextaware adapter to other video diffusion model Tune-A-Video and make a faster and better model convergence. Here, we additionally generalize the adapter to image diffusion model LDM and plot the partial training curve on the subset of LAION dataset in Figure 12. Similar to video domain, our context-aware adapter can also substantially improve the model convergence for image diffusion models, demonstrating the effectiveness and generalization ability of our method.\nQuantitative Results on Likelihood We follow (Kim et al., 2022) to compute NLL/NELBO (Negaitve Log-Likelihood/Negative Evidence Lower Bound) for performances of density estimation with Bits Per Dimension (BPD). We train our context-aware adapter on CIFAR-10 and compute NLL with the uniform dequantization. As the results in Tab. 6, we conclude that our method is empirically capable of achieving better likelihood compared to original DDPMs."
+        },
+        {
+            "heading": "E HYPER-PARAMETERS IN CONTEXTDIFF",
+            "text": "We provide detailed hyper-parameters in training CONTEXTDIFF for text-to-image generation (in Tab. 7) and text-to-video editing (in Tab. 8)."
+        },
+        {
+            "heading": "F MORE QUALITATIVE COMPARISONS",
+            "text": "F.1 MORE QUALITATIVE COMPARISONS ON TEXT-TO-IMAGE GENERATION\nIn order to fully demonstrate the effectiveness of our proposed contextualized diffusion, we visualize more qualitative comparison results in Figure 13. The results sufficiently demonstrate the superior cross-modal understanding in generated images of our CONTEXTDIFF over other models.\nF.2 GENERALIZING TO OTHER TEXT-GUIDED VIDEO DIFFUSION MODELS\nQualitative Results In order to fully demonstrate the generalization ability of the context-aware adapter in our contextualized diffusion, we visualize more qualitative comparison results, where we utilize context-aware adapter to improve Tune-A-Video (Wu et al., 2022) (in Figure 14) and FateZero (Qi et al., 2023) (in Figure 15 and Figure 16). From the results, we observe that our context-aware adapter can effectiveness promote the performance of text-to-video editing, significantly enhancing the semantic alignment while maintaining structural information in source videos. All video examples are also provided in the supplementary material, and we are committed to open sourcing the train/inference code upon paper acceptance."
+        }
+    ],
+    "title": "CROSS-MODAL CONTEXTUALIZED DIFFUSION MOD-",
+    "year": 2024
+}

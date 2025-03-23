@@ -1,0 +1,674 @@
+{
+    "abstractText": "Inverse design, where we seek to design input variables in order to optimize an underlying objective function, is an important problem that arises across fields such as mechanical engineering to aerospace engineering. Inverse design is typically formulated as an optimization problem, with recent works leveraging optimization across learned dynamics models. However, as models are optimized they tend to fall into adversarial modes, preventing effective sampling. We illustrate that by instead optimizing over the learned energy function captured by the diffusion model, we can avoid such adversarial examples and significantly improve design performance. We further illustrate how such a design system is compositional, enabling us to combine multiple different diffusion models representing subcomponents of our desired system to design systems with every specified component. In an N-body interaction task and a challenging 2D multiairfoil design task, we demonstrate that by composing the learned diffusion model at test time, our method allows us to design initial states and boundary shapes that are more complex than those in the training data. Our method generalizes to more objects for N-body dataset and discovers formation flying to minimize drag in the multi-airfoil design task. Project website and code can be found at https://github.com/AI4Science-WestlakeU/cindm.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "INVERSE DESIGN"
+        },
+        {
+            "affiliations": [],
+            "name": "Tailin Wu"
+        },
+        {
+            "affiliations": [],
+            "name": "Takashi Maruyama"
+        },
+        {
+            "affiliations": [],
+            "name": "Long Wei"
+        },
+        {
+            "affiliations": [],
+            "name": "Tao Zhang"
+        },
+        {
+            "affiliations": [],
+            "name": "Yilun Du"
+        },
+        {
+            "affiliations": [],
+            "name": "Gianluca Iaccarino"
+        },
+        {
+            "affiliations": [],
+            "name": "Jure Leskovec"
+        }
+    ],
+    "id": "SP:57455e16b8f94fa130af489051b6e0204c533d98",
+    "references": [
+        {
+            "authors": [
+                "Anurag Ajay",
+                "Seungwook Han",
+                "Yilun Du",
+                "Shaung Li",
+                "Abhi Gupta",
+                "Tommi Jaakkola",
+                "Josh Tenenbaum",
+                "Leslie Kaelbling",
+                "Akash Srivastava",
+                "Pulkit Agrawal"
+            ],
+            "title": "Compositional foundation models for hierarchical planning",
+            "venue": "arXiv preprint arXiv:2309.08587,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Kelsey Allen",
+                "Tatiana Lopez-Guevara",
+                "Kimberly L Stachenfeld",
+                "Alvaro Sanchez Gonzalez",
+                "Peter Battaglia",
+                "Jessica B Hamrick",
+                "Tobias Pfaff"
+            ],
+            "title": "Inverse design for fluid-structure interactions using graph network simulators",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "W Kyle Anderson",
+                "V Venkatakrishnan"
+            ],
+            "title": "Aerodynamic design optimization on unstructured grids with a continuous adjoint formulation",
+            "venue": "Computers & Fluids,",
+            "year": 1999
+        },
+        {
+            "authors": [
+                "Navid Ansari",
+                "Hans peter Seidel",
+                "Nima Vahidi Ferdowsi",
+                "Vahid Babaei"
+            ],
+            "title": "Autoinverse: Uncertainty aware inversion of neural networks",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Michael Athanasopoulos",
+                "Hassan Ugail",
+                "Gabriela Gonz\u00e1lez Castro"
+            ],
+            "title": "Parametric design of aircraft geometry using partial differential equations",
+            "venue": "Advances in Engineering Software,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Arghya Bhowmik",
+                "Ivano E Castelli",
+                "Juan Maria Garcia-Lastra",
+                "Peter Bj\u00f8rn J\u00f8rgensen",
+                "Ole Winther",
+                "Tejs Vegge"
+            ],
+            "title": "A perspective on inverse design of battery interphases using multi-scale modelling, experiments and generative deep learning",
+            "venue": "Energy Storage Materials,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Johannes Brandstetter",
+                "Daniel E. Worrall",
+                "Max Welling"
+            ],
+            "title": "Message passing neural PDE solvers",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Can Chen",
+                "Yingxue Zhang",
+                "Xue Liu",
+                "Mark Coates"
+            ],
+            "title": "Bidirectional learning for offline modelbased biological sequence design, 2023",
+            "venue": "URL https://openreview.net/forum?id= luEG3j9LW5-",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Samuel Cohen",
+                "Rendani Mbuvha",
+                "Tshilidzi Marwala",
+                "Marc Deisenroth"
+            ],
+            "title": "Healing products of gaussian process experts",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Stelian Coros",
+                "Bernhard Thomaszewski",
+                "Gioacchino Noris",
+                "Shinjiro Sueda",
+                "Moira Forberg",
+                "Robert W Sumner",
+                "Wojciech Matusik",
+                "Bernd Bickel"
+            ],
+            "title": "Computational design of mechanical characters",
+            "venue": "ACM Transactions on Graphics (TOG),",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Marjolein Dijkstra",
+                "Erik Luijten"
+            ],
+            "title": "From predictive modelling to machine learning and reverse engineering of colloidal self-assembly",
+            "venue": "Nature materials,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Tao Du",
+                "Kui Wu",
+                "Andrew Spielberg",
+                "Wojciech Matusik",
+                "Bo Zhu",
+                "Eftychios Sifakis"
+            ],
+            "title": "Functional optimization of fluidic devices with differentiable stokes flow",
+            "venue": "ACM Transactions on Graphics (TOG),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yilun Du",
+                "Igor Mordatch"
+            ],
+            "title": "Implicit generation and generalization in energy-based models",
+            "venue": "arXiv preprint arXiv:1903.08689,",
+            "year": 1903
+        },
+        {
+            "authors": [
+                "Yilun Du",
+                "Toru Lin",
+                "Igor Mordatch"
+            ],
+            "title": "Model based planning with energy based models. CORL, 2019",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Yilun Du",
+                "Shuang Li",
+                "Igor Mordatch"
+            ],
+            "title": "Compositional visual generation with energy based models",
+            "venue": "In Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yilun Du",
+                "Conor Durkan",
+                "Robin Strudel",
+                "Joshua B Tenenbaum",
+                "Sander Dieleman",
+                "Rob Fergus",
+                "Jascha Sohl-Dickstein",
+                "Arnaud Doucet",
+                "Will Grathwohl"
+            ],
+            "title": "Reduce, reuse, recycle: Compositional generation with energy-based diffusion models and mcmc",
+            "venue": "arXiv preprint arXiv:2302.11552,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Nikolaos Gkanatsios",
+                "Ayush Jain",
+                "Zhou Xian",
+                "Yunchu Zhang",
+                "Christopher Atkeson",
+                "Katerina Fragkiadaki"
+            ],
+            "title": "Energy-based models as zero-shot planners for compositional scene rearrangement",
+            "venue": "arXiv preprint arXiv:2304.14391,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Spencer L Gordon",
+                "Manav Kant",
+                "Eric Ma",
+                "Leonard J Schulman",
+                "Andrei Staicu"
+            ],
+            "title": "Identifiability of product of experts models",
+            "venue": "arXiv preprint arXiv:2310.09397,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Geoffrey E Hinton"
+            ],
+            "title": "Training products of experts by minimizing contrastive divergence",
+            "venue": "Neural computation,",
+            "year": 2002
+        },
+        {
+            "authors": [
+                "Dietrich Hummel"
+            ],
+            "title": "Formation flight as an energy-saving mechanism",
+            "venue": "Israel Journal of Ecology and Evolution,",
+            "year": 1995
+        },
+        {
+            "authors": [
+                "Diederik P Kingma",
+                "Jimmy Ba"
+            ],
+            "title": "Adam: A method for stochastic optimization",
+            "venue": "arXiv preprint arXiv:1412.6980,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Yann LeCun",
+                "Sumit Chopra",
+                "Raia Hadsell",
+                "M Ranzato",
+                "F Huang"
+            ],
+            "title": "A tutorial on energy-based learning",
+            "venue": "Predicting structured data,",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "Shuang Li",
+                "Xavier Puig",
+                "Chris Paxton",
+                "Yilun Du",
+                "Clinton Wang",
+                "Linxi Fan",
+                "Tao Chen",
+                "De-An Huang",
+                "Ekin Aky\u00fcrek",
+                "Anima Anandkumar"
+            ],
+            "title": "Pre-trained language models for interactive decisionmaking",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Zongyi Li",
+                "Nikola Borislavov Kovachki",
+                "Kamyar Azizzadenesheli",
+                "Burigede liu",
+                "Kaushik Bhattacharya",
+                "Andrew Stuart",
+                "Anima Anandkumar"
+            ],
+            "title": "Fourier neural operator for parametric partial differential equations",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "BS Peter"
+            ],
+            "title": "Lissaman and Carl A Shollenberger",
+            "venue": "Formation flight of birds. Science,",
+            "year": 1970
+        },
+        {
+            "authors": [
+                "Nan Liu",
+                "Shuang Li",
+                "Yilun Du",
+                "Josh Tenenbaum",
+                "Antonio Torralba"
+            ],
+            "title": "Learning to compose visual relations",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Nan Liu",
+                "Shuang Li",
+                "Yilun Du",
+                "Antonio Torralba",
+                "Joshua B Tenenbaum"
+            ],
+            "title": "Compositional visual generation with composable diffusion models",
+            "venue": "arXiv preprint arXiv:2206.01714,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Sean Molesky",
+                "Zin Lin",
+                "Alexander Y Piggott",
+                "Weiliang Jin",
+                "Jelena Vuckovi\u0107",
+                "Alejandro W Rodriguez"
+            ],
+            "title": "Inverse design in nanophotonics",
+            "venue": "Nature Photonics,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Weili Nie",
+                "Arash Vahdat",
+                "Anima Anandkumar"
+            ],
+            "title": "Controllable and compositional generation with latent-space energy-based models",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Ryan Po",
+                "Gordon Wetzstein"
+            ],
+            "title": "Compositional 3d scene generation using locally conditioned diffusion",
+            "venue": "arXiv preprint arXiv:2303.12218,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Simiao Ren",
+                "Willie Padilla",
+                "Jordan Malof"
+            ],
+            "title": "Benchmarking deep inverse models over time, and the neural-adjoint method",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Olaf Ronneberger",
+                "Philipp Fischer",
+                "Thomas Brox"
+            ],
+            "title": "U-net: Convolutional networks for biomedical image segmentation",
+            "venue": "MICCAI 2015: 18th International Conference,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Reuven Y Rubinstein",
+                "Dirk P Kroese"
+            ],
+            "title": "The cross-entropy method: a unified approach to combinatorial optimization, Monte-Carlo simulation, and machine learning, volume 133",
+            "year": 2004
+        },
+        {
+            "authors": [
+                "Mohammad Saghafi",
+                "Roham Lavimi"
+            ],
+            "title": "Optimal design of nose and tail of an autonomous underwater vehicle hull to reduce drag force using numerical simulation",
+            "venue": "Proceedings of the Institution of Mechanical Engineers, Part M: Journal of Engineering for the Maritime Environment,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Alvaro Sanchez-Gonzalez",
+                "Jonathan Godwin",
+                "Tobias Pfaff",
+                "Rex Ying",
+                "Jure Leskovec",
+                "Peter Battaglia"
+            ],
+            "title": "Learning to simulate complex physics with graph networks",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Pete Shinners"
+            ],
+            "title": "Pygame: A set of Python modules designed for writing video",
+            "venue": "URL https://www.pygame.org/",
+            "year": 2000
+        },
+        {
+            "authors": [
+                "Saulius Tautvai\u0161as",
+                "Julius \u017dilinskas"
+            ],
+            "title": "Heteroscedastic bayesian optimization using generalized product of experts",
+            "venue": "Journal of Global Optimization, pp",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Brandon Trabucco",
+                "Aviral Kumar",
+                "Xinyang Geng",
+                "Sergey Levine"
+            ],
+            "title": "Design-bench: Benchmarks for data-driven offline model-based optimization, 2021",
+            "venue": "URL https://openreview.net/ forum?id=cQzf26aA3vM",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Julen Urain",
+                "Anqi Li",
+                "Puze Liu",
+                "Carlo D\u2019Eramo",
+                "Jan Peters"
+            ],
+            "title": "Composable energy policies for reactive motion generation and reinforcement learning",
+            "venue": "arXiv preprint arXiv:2105.04962,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Sriram Venkataramanan",
+                "Atilla Dogan",
+                "William Blake"
+            ],
+            "title": "Vortex effect modelling in aircraft formation flight",
+            "venue": "In AIAA atmospheric flight mechanics conference and exhibit,",
+            "year": 2003
+        },
+        {
+            "authors": [
+                "Zihao Wang",
+                "Lin Gui",
+                "Jeffrey Negrea",
+                "Victor Veitch"
+            ],
+            "title": "Concept algebra for text-controlled vision models",
+            "venue": "arXiv preprint arXiv:2302.03693,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Gabriel D Weymouth"
+            ],
+            "title": "Lily pad: Towards real-time interactive computational fluid dynamics",
+            "venue": "arXiv preprint arXiv:1510.06886,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Tailin Wu",
+                "Takashi Maruyama",
+                "Jure Leskovec"
+            ],
+            "title": "Learning to accelerate partial differential equations via latent global evolution",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Tailin Wu",
+                "Megan Tjandrasuwita",
+                "Zhengxuan Wu",
+                "Xuelin Yang",
+                "Kevin Liu",
+                "Rok Sosic",
+                "Jure Leskovec"
+            ],
+            "title": "Zeroc: A neuro-symbolic model for zero-shot concept recognition and acquisition at inference time",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Mengjiao Yang",
+                "Yilun Du",
+                "Bo Dai",
+                "Dale Schuurmans",
+                "Joshua B Tenenbaum",
+                "Pieter Abbeel"
+            ],
+            "title": "Probabilistic adaptation of text-to-video models",
+            "venue": "arXiv preprint arXiv:2306.01872,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Zhutian Yang",
+                "Jiayuan Mao",
+                "Yilun Du",
+                "Jiajun Wu",
+                "Joshua B Tenenbaum",
+                "Tom\u00e1s Lozano-P\u00e9rez",
+                "Leslie Pack Kaelbling"
+            ],
+            "title": "Compositional diffusion-based continuous constraint solvers",
+            "venue": "arXiv preprint arXiv:2309.00966,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Xuan Zhang",
+                "Limei Wang",
+                "Jacob Helwig",
+                "Youzhi Luo",
+                "Cong Fu",
+                "Yaochen Xie",
+                "Meng Liu",
+                "Yuchao Lin",
+                "Zhao Xu",
+                "Keqiang Yan"
+            ],
+            "title": "Artificial intelligence for science in quantum, atomistic, and continuum systems",
+            "venue": "arXiv preprint arXiv:2307.08423,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Qingqing Zhao",
+                "David B. Lindell",
+                "Gordon Wetzstein"
+            ],
+            "title": "Learning to solve PDE-constrained inverse problems with graph networks",
+            "venue": "In ICML,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "AIRFOILS D"
+            ],
+            "title": "DETAILS FOR THE MAIN EXPERIMENT Dataset. We use Lily-Pad (Weymouth, 2015) as our data generator (Fig. 5). We generate 30,000 ellipse bodies and NACA airfoil boundary bodies and perform fluid simulations around each body. The bodies are sampled by randomizing location, thickness, and rotation between respective ranges",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Ren"
+            ],
+            "title": "We consider the \u201cre-simulation\u201d error r of a target objective y",
+            "year": 2020
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "The problem of inverse design \u2013 finding a set of high-dimensional design parameters (e.g., boundary and initial conditions) for a system to optimize a set of specified objectives and constraints, occurs across many engineering domains such as mechanical, materials, and aerospace engineering, with important applications such as jet engine design (Athanasopoulos et al., 2009), nanophotonic design (Molesky et al., 2018), shape design for underwater robots (Saghafi & Lavimi, 2020), and battery design (Bhowmik et al., 2019). Such inverse design problems are extremely challenging since they typically involve simulating the full trajectory of complicated physical dynamics as an inner loop, have high-dimensional design space, and require out-of-distribution test-time generalization.\nRecent deep learning has made promising progress for inverse design. A notable work is by Allen et al. (2022), which addresses inverse design by first learning a neural surrogate model to approximate the forward physical dynamics, and then performing backpropagation through the full simulation trajectory to optimize the design parameters such as the boundary shape. Compared with standard sampling-based optimization methods with classical simulators, it shows comparable and sometimes better performance, establishing deep learning as a viable technique for inverse design.\nHowever, an underlying issue with backpropagation with surrogate models is over-optimization \u2013 as learned models have adversarial minima, excessive optimization with respect to a learned forward model leads to adversarial design parameters which lead to poor performance (Zhao et al., 2022). A root cause of this is that the forward model does not have a measure of data likelihood and does\n\u2217Equal contribution. \u2020Corresponding author.\nnot know which design parameters are in or out of the training distribution it has seen, allowing optimization to easily fall out-of-distribution of the design parameters seen during training.\nTo address this issue, we view the inverse design problem from an energy optimization perspective, where constraints of the simulation model are implicitly captured through the generative energy function of a diffusion model trained with design parameters and simulator outputs. Designing parameters subject to constraints corresponds to optimizing for design parameters that minimize the energy of both the generative energy function and associated design objective functions. The generative energy function prevents design parameters from deviating and falling out of distribution.\nAn essential aspect of inverse design is the ability to further construct new structures subjects to different constraints at test-time. By formulating inverse design as optimizing generative energy function trained on existing designs, a na\u0131\u0308ve issue is that it constrains design parameters to be roughly those seen in the training data. We circumvent this issue by using a set of generative energy functions, where each generative model captures a subset of design parameters governing the system. Each individual generative energy function ensures that designs do not locally fall out of distribution, with their composition ensuring that inferred design parameters are roughly \u201clocally\u201d in distribution. Simultaneously, designs from this compositional set of generative energy functions may be significantly different from the training data, as designs are not constrained to globally follow the observed data (Liu et al., 2022; Du et al., 2023), achieving compositional generalization in design.\nWe illustrate the promise of using such compositional energy functions across a variety of different settings. We illustrate that temporally composing multiple compositional energy functions, we may design sequences of outputs that are significantly longer than the ones seen in training. Similarly, we can design systems with many more objects and more complex shapes than those seen in training.\nConcretely, we contribute the following: (1) We propose a novel formulation for inverse design as an energy optimization problem. (2) We introduce Compositional Inverse Design with Diffusion Models (CinDM) method, which enables us to generalize to out-of-distribution and more complex design inputs than seen in training. (3) We present a set of benchmarks for inverse design in 1D and 2D. Our method generalizes to more objects for N-body dataset and discovers formation flying to minimize drag in the multi-airfoil design task."
+        },
+        {
+            "heading": "2 RELATED WORK",
+            "text": "Inverse Design. Inverse design plays a key role across science and engineering, including mechanical engineering (Coros et al., 2013), materials science (Dijkstra & Luijten, 2021), nanophotonics (Molesky et al., 2018), robotics (Saghafi & Lavimi, 2020), chemical engineering (Bhowmik et al., 2019), and aerospace engineering (Athanasopoulos et al., 2009; Anderson & Venkatakrishnan, 1999). Classical methods to address inverse design rely on slow classical solvers. They are accurate but are prohibitively inefficient (e.g., sampling-based methods like CEM (Rubinstein & Kroese, 2004)). Recently, deep learning-based inverse design has made promising progress. Allen\net al. (2022) introduced backpropagation through the full trajectory with surrogate models. Wu et al. (2022a) introduced backpropagation through latent dynamics to improve efficiency and accuracy. For Stokes systems, Du et al. (2020a) introduced an inverse design method under different types of boundary conditions. While the above methods typically rely on learning a surrogate model for the dynamics and use it as an inner loop during inverse design, we introduce a novel generative perspective that learns an energy function for the joint variable of trajectory and boundary. This brings the important benefit of out-of-distribution generalization and compositionality. Ren et al. (2020); Trabucco et al. (2021); Ansari et al. (2022); Chen et al. (2023) benchmarked varieties of deep learning-based methods in a wide range of inverse design tasks.\nCompositional Models. A large body of recent work has explored how multiple different instances of generative models can be compositionally combined for applications such as 2D images synthesis (Du et al., 2020b; Liu et al., 2021; Nie et al., 2021; Liu et al., 2022; Wu et al., 2022b; Du et al., 2023; Wang et al., 2023), 3D synthesis (Po & Wetzstein, 2023), video synthesis (Yang et al., 2023a), trajectory planning (Du et al., 2019; Urain et al., 2021; Gkanatsios et al., 2023; Yang et al., 2023b), multimodal perception (Li et al., 2022) and hierarchical decision making (Ajay et al., 2023). Technically, product of experts is an effective kind of approaches to combine the predictive distributions of local experts (Hinton, 2002; Cohen et al., 2020; Gordon et al., 2023; Tautvais\u030cas & Z\u030cilinskas, 2023) . To the best of our knowledge, we are the first to introduce a compositional generative perspective and method to inverse design, and show how compositional models can enable us to generalize to design spaces that are much more complex than seen at training time."
+        },
+        {
+            "heading": "3 METHOD",
+            "text": "In this section, we detail our method of Compositional INverse design with Diffusion Models (CinDM). We first introduce the problem setup in Section 3.1. In Section 3.2, we introduce generative inverse design, a novel generative paradigm for solving the inverse design problem. In Section 3.3, we detail how our method allows for test-time composition of the design variables."
+        },
+        {
+            "heading": "3.1 PROBLEM SETUP",
+            "text": "We formalize the inverse design problem using a similar setup as in Zhang et al. (2023). Concretely, let u(x, t; \u03b3) be the state of a dynamical system at time t and location x where the dynamics is described by a partial differential equation (PDE) or an ordinary differential equation (ODE).1 Here \u03b3 = (u0,B) \u2208 \u0393 consists of the initial state u0 and boundary condition B, \u0393 is the design space, and we will call \u03b3 \u201cboundary\u201d for simplicity2. Given a PDE or ODE, a specific \u03b3 can uniquely determine a specific trajectory u[0,T ](\u03b3) := {u(x, t; \u03b3)|t \u2208 [0, T ]}, where we have written the dependence of u[0,T ] on \u03b3 explicitely. Let J be the design objective which evaluates the quality of the design. Typically J is a function of a subset of the trajectory u[0,T ] and \u03b3 (esp. the boundary shape). The inverse design problem is to find an optimized design \u03b3\u0302 which minimizes the design objective J :\n\u03b3\u0302 = argmin \u03b3\nJ (u[0,T ](\u03b3), \u03b3) (1)\nWe see that J depends on \u03b3 through two routes. On the one hand, \u03b3 influences the future trajectory of the dynamical system, which J evaluates on. On the other hand, \u03b3 can directly influence J at future times, since the design objective may be directly dependent on the boundary shape.\nTypically, we don\u2019t have access to the ground-truth model for the dynamical system, but instead only observe the trajectories u[0,T ](\u03b3) at discrete time steps and locations and a limited diversity of boundaries \u03b3 \u2208 \u0393. We denote the above discrete version of the trajectory as U[0,T ](\u03b3) = (U0, U1, ..., UT ) across time steps t = 0, 1, ...T . Given the observed trajectories U[0,T ](\u03b3), \u03b3 \u2208 \u0393, a straightforward method for inverse design is to use such observed trajectories to train a neural surrogate model f\u03b8 for forward modeling, so the trajectory can be autoregressively simulated by f\u03b8:\nU\u0302t(\u03b3) = f\u03b8(U\u0302t\u22121(\u03b3), \u03b3), U\u03020 := U0, \u03b3 = (U0,B), (2) Here we use U\u0302t to represent the prediction by f\u03b8, to differentiate from the actual observed state Ut. In the test time, the goal is to optimize J (U\u0302[0,T ](\u03b3), \u03b3) w.r.t. \u03b3, which includes the autoregressive rollout with f\u03b8 as an inner loop, as introduced in Allen et al. (2022). In general inverse design, the\n1In the case of ODE, the position x is neglected and the trajectory is u(t; \u03b3), where \u03b3 only includes the initial state u0. For more background information about PDEs, see Brandstetter et al. (2022).\n2Since B is the boundary in space and the initial state u0 can be seen as the \u201cboundary\u201d in time.\ntrajectory length T , state dimension dim(U[0,T ](\u03b3)), and complexity of \u03b3 may be much larger than in training, requiring significant out-of-distribution generalization."
+        },
+        {
+            "heading": "3.2 GENERATIVE INVERSE DESIGN",
+            "text": "Directly optimizing Eq. 1 with respect to \u03b3 using a learned surrogate model f\u03b8 is often problematic as the optimization procedure on \u03b3 often leads a set of U[0,T ] that is out-of-distribution or adversarial to the surrogate model f\u03b8, leading to poor performance, as observed in Zhao et al. (2022). A major cause of this is that f\u03b8 does not have an inherent measure of uncertainty, and cannot prevent optimization from entering a design spaces \u03b3 that the model cannot guarantee its performance in.\nTo circumvent this issue, we propose a generative perspective to inverse design: during the inverse design process, we jointly optimize for both the design objective J and a generative objective E\u03b8,\n\u03b3\u0302 = argmin \u03b3,U[0,T ]\n[ E\u03b8(U[0,T ], \u03b3) + \u03bb \u00b7 J (U[0,T ], \u03b3) ] , (3)\nwhere E\u03b8 is an energy-based model (EBM) p(U[0,T ], \u03b3) \u221d e\u2212E\u03b8(U[0,T ],\u03b3) (LeCun et al., 2006; Du & Mordatch, 2019) trained over the joint distribution of trajectories U[0,T ] and boundaries \u03b3, and \u03bb is a hyperparameter. Both U[0,T ] and \u03b3 are jointly optimized, and the energy function E\u03b8 is minimized when both U[0,T ] and \u03b3 are consistent with each other and serves the purpose of a surrogate model f\u03b8 in approximating simulator dynamics. The joint optimization optimizes all the steps of the trajectory U[0,T ] and the boundary \u03b3 simultaneously, which also gets rid of the time-consuming autoregressive rollout as an inner loop as in Allen et al. (2022), significantly improving inference efficiency. In addition to approximating simulator dynamics, the generative objective also serves as a measure of uncertainty. Essentially, the E\u03b8 in Eq. 3 encourages the trajectory U[0,T ] and boundary \u03b3 to be physically consistent, and the J encourages them to optimize the design objective. To train E\u03b8, we use a diffusion objective, where we learn a denoising network \u03f5\u03b8 that learns to denoise all variables in design optimization z = U[0,T ] \u2295 \u03b3 supervised with the training loss\nLMSE = \u2225\u03f5\u2212 \u03f5\u03b8( \u221a 1\u2212 \u03b2sz + \u221a \u03b2s\u03f5, s)\u222522, \u03f5 \u223c N (0, I). (4)\nAs discussed in Liu et al. (2022), the denoising network \u03f5\u03b8 corresponds to the gradient of a EBM \u2207zE\u03b8(z), that represents the distribution over all optimization variables p(z) \u221d e\u2212E\u03b8(z). To optimize Eq. 3 using a Langevin sampling procedure, we can initialize an optimization variable zS from Gaussian noise N (0, I), and iteratively run\nzs\u22121 = zs \u2212 \u03b7 (\u2207z(E\u03b8(zs) + \u03bbJ (zs))) + \u03be, \u03be \u223c N ( 0, \u03c32sI ) , (5)\nfor s = S, S \u2212 1, ..., 1. This procedure is implemented with diffusion models by optimizing3 zs\u22121 = zs \u2212 \u03b7 (\u03f5\u03b8(zs, s) + \u03bb\u2207zJ (zs)) + \u03be, \u03be \u223c N ( 0, \u03c32sI ) , (6) where \u03c32s and \u03b7 correspond to a set of different noise schedules and scaling factors used in the diffusion process. To further improve the performance, we run additional steps of Langevin dynamics optimization at a given noise level following Du et al. (2023).\nIntuitively, the above diffusion procedure starts from a random variable zS = (U[0,T ],S \u2295\n\u03b3S) \u223c N (0, I), follows the denoising network \u03f5\u03b8(zs, s) and the gradient \u2207zJ (zs), and step-by-step arrives at a final z0 = U[0,T ],0 \u2295 \u03b30 that approximately minimizes the objective in Eq. 3."
+        },
+        {
+            "heading": "3.3 COMPOSITIONAL GENERATIVE INVERSE DESIGN",
+            "text": "A key challenge in inverse design is that the boundary \u03b3 or the trajectory U[0,T ] can be substantially different than seen during training. To enable generalization across such design variables, we propose to compositionally represent the design variable z = U[0,T ] \u2295 \u03b3, using a composition of different energy functions E\u03b8 (Du et al., 2020b) on subsets of the design variable zi \u2282 z. Each of the above E\u03b8 on the subset of design variable zi provides a physical consistency constraint on zi, encouraging each zi to be physically consistent internally. Also we make sure that different zi, i = 1, 2, ...N overlap with each other, and overall covers z (See Fig. 1), so that the full z is physically consistent. Thus, test-time compositions of energy functions defined over subsets of the\n3There is also an additional scaling term applied on the sample zs during the diffusion sampling procedure, which we omit below for clarity but also implement in practice.\nAlgorithm 1 Algorithm for Compositional Inverse Design with Diffusion Models (CinDM) 1: Require Compositional set of diffusion models \u03f5i\u03b8(zs, s), i = 1, 2, ...N , design objective J (\u00b7),\ncovariance matrix \u03c32sI , hyperparameters \u03bb, S,K 2: Initialize optimization variables zS \u223c N (0, I)\n// optimize across diffusion steps S: 3: for s = S, . . . , 1 do 4: // optimize K steps of Langevin sampling at diffusion step s: 5: for k = 1, . . . ,K do 6: \u03be \u223c N ( 0, \u03c32sI\n) 7: // run a single Langevin sampling steps: 8: zs \u2190 zs \u2212 \u03b7 1N \u2211N i=1 ( \u03f5i\u03b8(z i s, s) + \u03bb\u2207zJ (zs) ) + \u03be\n9: end for 10: \u03be \u223c N ( 0, \u03c32sI ) 11: // scale sample to transition to next diffusion step: 12: zs\u22121 \u2190 zs \u2212 \u03b7 1N \u2211N i=1 ( \u03f5i\u03b8(z i s, s) + \u03bb\u2207zJ (zs) ) + \u03be 13: end for 14: \u03b3, U[0,T ] = z0 15: return \u03b3\ndesign variable zi \u2282 z can then be composed together to generalize to new design variable z values that substantially different than those seen during training, but exploiting shared local structure in z.\nBelow, we illustrate three different ways compositional inverse design can enable to generalize to design variables z that are much more complex than the ones seen during training.\nI. Generalization to more time steps. In the test time, the trajectory length T may be much longer than the trajectory length T tr seen in training. To allow generalization over a longer trajectory length, the energy function over the design variable can be written in terms of a composition of N energy functions over subsets of trajectories with overlapping states:\nE\u03b8(U[0,T ], \u03b3) = N\u2211 i=1 E\u03b8(U[(i\u22121)\u00b7tq,i\u00b7tq+T tr], \u03b3). (7)\nHere zi := U[(i\u22121)\u00b7tq,i\u00b7tq+T tr] \u2295 \u03b3 is a subset of the design variable z := U[0,T ] \u2295\n\u03b3. tq \u2208 {1, 2, ...T \u2212 1} is the stride for consecutive time intervals, and we let T = N \u00b7 tq + T tr. II. Generalization to more interacting bodies. Many inverse design applications require generalizing the trained model to more interacting bodies for a dynamical system, which is far more difficult than generalizing to more time steps. Our method allows such generalization by composing the energy function of few-body interactions to more interacting bodies. Now we illustrate it with a 2-body to N-body generalization. Suppose that only the trajectory of a 2-body interaction is given, where we have the trajectory of U (i)[0,T ] = (U (i) 0 , U (i) 1 , ..., U (i) T ) for body i \u2208 {1, 2}. We can learn an energy function E\u03b8((U (1) [0,T ], U (2) [0,T ]), \u03b3) from this trajectory. In the test time, given N > 2 interacting bodies subjecting to the same pairwise interactions, the energy function for the combined trajectory U[0,T ] = (U (1) [0,T ], ..., U (N) [0,T ]) for the N bodies is then given by:\nE\u03b8(U[0,T ], \u03b3) = \u2211 i<j E\u03b8 ( (U (i) [0,T ], U (j) [0,T ]), \u03b3 ) (8)\nIII. Generalization from part to whole for boundaries. Real-life inverse design typically involves designing shapes consisting of multiple parts that constitute an integral whole. Examples include planes that consist of wings, the body, the rudder, and many other parts. The shape of the whole may be more complex and out-of-distribution than the parts seen in training. To generalize from parts to whole, we can again compose the energy function over subsets of the design variable z. Concretely, suppose that we have trajectories U (i)[0,T ] corresponding to the part \u03b3 i, i = 1, 2, ...N , we can learn energy functions corresponding to the dynamics of each part E\u03b8i(U (i) [0,T ], \u03b3 i), i = 1, 2, ...N . An example is that \u03b3i represents the shape for each part of the plane, and U (i)[0,T ] represents the full fluid state around the part \u03b3i without other parts present. In the test time, when requiring to generalize\nover a whole boundary \u03b3 that consisting of these N parts \u03b3i, i = 1, 2...N , we have\nE\u03b8(U[0,T ], \u03b3) = N\u2211 i=1 E\u03b8i(U[0,T ], \u03b3 i) (9)\nNote that here in the composition, all the parts \u03b3i share the same trajectory U[0,T ], which can be intuitively understood in the example of the plane where all the parts of the plane influence the same full state of fluid around the plane. The composition of energy functions in Eq. 9 means that the full energy E\u03b8(U[0,T ], \u03b3) will be low if the trajectory U[0,T ] is consistent with all the parts \u03b3i.\nCompositional Generative Inverse Design. Given the above composition of energy functions, we can correspondingly learn each energy function over the design variable z = U[0,T ] \u2295 \u03b3 by training a corresponding diffusion model over the subset of design variables zi \u2282 z. Our overall sampling objective given the set of energy functions {Ei(zi)}i=1:N is then given by\nzs\u22121 = zs \u2212 \u03b7 1\nN N\u2211 i=1 ( \u03f5i\u03b8(z i s, s) + \u03bb\u2207zJ (zs) ) + \u03be, \u03be \u223c N ( 0, \u03c32sI ) , (10)\nfor s = S, S \u2212 1, ...1. Similarly to before, we can further run multiple steps of Langevin dynamics optimization at a given noise level following Du et al. (2023) to further improve performance. We provide the overall pseudo-code of our method in the compositional setting in Algorithm 1.\nOur proposed paradigm of generative inverse design in Section 3.2 (consisting of its design objective Eq. 3 and training objective Eq. 4) and our compositional inverse design method in Section 3.3, constitute our full method of Compositional INverse design with Diffusion Models (CinDM). Our approach is different from product of experts (Hinton, 2002) in that CinDM learns distribution of a subspace in training, based on which we infer distribution in much higher spaces during inference. Below, we will test our method\u2019s capability in compositional inverse design."
+        },
+        {
+            "heading": "4 EXPERIMENTS",
+            "text": "In the experiments, we aim to answer the following questions: (1) Can CinDM generalize to more complex designs in the test time using its composition capability? (2) Comparing backpropagation with surrogate models and other strong baselines, can CinDM improve on the design objective or prediction accuracy? (3) Can CinDM address high-dimensional design space? To answer these questions, we perform our experiments in three different scenarios: compositional inverse design in time dimension (Sec. 4.1), compositional inverse design generalizing to more objects (Sec. 4.2), and 2D compositional design for multiple airfoils with Navier-Stokes flow (Sec. 4.3). Each of the above experiments represents an important scenario in inverse design and has important implications in science and engineering. In each experiment, we compare CinDM with the state-of-the-art deep learning-based inverse design method proposed by Allen et al. (2022), which we term Backprop, and cross-entropy method (CEM) (Rubinstein & Kroese, 2004) which is a standard sampling-based optimization method typically used in classical inverse design. Additionally, we compare CinDM with two inverse-design methods: neural adjoint method with the boundary loss function (NABL) and conditional invertible neural network (cINN) method (Ren et al., 2020; Ansari et al., 2022). The details and results are provided in Appendix H, in which we adopt a more reasonable experimental setting to those new baselines. All the baselines and our model contain similar numbers of parameters in each comparison for fair evaluation. To evaluate the performance of each inverse design method, we feed the output of the inverse design method (i.e., the optimized initial or boundary states) to the ground-truth solver, perform rollout by the solver and feed the rollout trajectory to the design objective. We do not use the surrogate model to perform rollout since the trained surrogate models may not be faithful to the ground-truth dynamics and can overestimate the design objective. By evaluating using a ground-truth solver, all inverse design methods can be evaluated fairly."
+        },
+        {
+            "heading": "4.1 COMPOSITIONAL INVERSE DESIGN IN TIME",
+            "text": "In this experiment, we aim to test each method\u2019s ability to generalize to more forward time steps than during training. This is important since in test time, the inverse design methods are typically used over longer predictions horizons than in training. We use an N-body interaction environment where each ball with a radius of 0.1 is bouncing in a 1\u00d7 1 box. The balls will exchange momentum when\nelastically colliding with each other or with the wall. The design task is to identify the initial state (position and velocity of the balls) of the system such that the end state optimizes a certain objective (e.g., as close to a certain target as possible). This setting represents a simplified version of many real-life scenarios such as billiard, bowling, and ice hockey. Since the collisions preserve kinetic energy but modify speed and direction of each ball and multiple collisions can happen over a long time, this represents a non-trivial inverse design problem with abrupt changes in the design space. During training time, we provide each method with training trajectory consisting of 24 steps, and in test time, let it roll out for a total of 24, 34, 44, and 54 steps. The design objective is to minimize the last step\u2019s Euclidean distance to the center (x, y) = (0.5, 0.5). For baselines, we compare with CEM (Rubinstein & Kroese, 2004) and Backprop (Allen et al., 2022). Each method uses either Graph Network Simulator (GNS, Sanchez-Gonzalez et al. (2020), a state-of-the-art method for modeling Nbody interactions) or U-Net (Ronneberger et al., 2015) as backbone architecture that either predicts 1 step or 23 steps in a single forward pass. For our method, we use the same U-Net backbone architecture for diffusion. To perform time composition, we superimpose N EBMs E\u03b8(U[0,T ], \u03b3) on states with overlapping time ranges: U[0,23], U[10,33], U[20,43],...U[10(N\u22121),10(N\u22121)+23] as in Eq. 7, and use Eq. 10 to perform denoising diffusion. Besides evaluating with the design objective (J ), we also use the metric of mean absolute error (MAE) between the predicted trajectory and the trajectory generated by the ground-truth solver to evaluate how faithful each method\u2019s prediction is. Each design scenario is run 500 times and the average performance is reported in Table 1. We show example trajectories of our method in Fig. 2. Details for the architecture and training are provided in Appendix A. We also make comparison with a simple baseline that performs diffusion over 44 steps directly without time composition. Details and results are presented in Appendix C.\nFrom Table 1, we see that our method is competitive in design objectives and outperforms every baseline in MAE. In the \u201c2-body 24 steps\u201d scenario which is the same setting as in training and without composition, our method outperforms the strongest baselines by a wide margin both on design objective and MAE. With more prediction steps, our method not only performs better than any baselines in MAE but also merely is weaker than the strongest baseline in design objective. For example, our method\u2019s MAE outperforms the best baseline by 36.0%, 25.8%, 1.1%, and 0.3% for 24, 34, 44, and 54-step predictions, respectively, with an average of 15.8% improvement. Similarly, our method\u2019s design objective outperforms the best baseline by 5.5% for 24-step. This shows the two-fold advantage of our method. Firstly, even with the same backbone architecture, our diffusion method can roll out stably and accurately for much longer than the baseline, since the forward surrogate models in the baselines during design may encounter out-of-distribution and adversarial inputs which it does not know how to evolve properly. On the other hand, our diffusion-based method is trained to denoise and favor inputs consistent with the underlying physics. Secondly, our compositional method allows our model to generalize to longer time steps and allows for stable rollout. An example trajectory designed by our CinDM is shown in Fig. 2 (a). We see that it matches with the ground-truth simulation nicely, captures the bouncing with walls and with other balls, and the end position of the bodies tends towards the center, showing the effectiveness of our method. We also see that Backprop\u2019s performance are superior to the sampling-based CEM, consistent with Allen et al. (2022).\n4.2 COMPOSITIONAL INVERSE DESIGN GENERALIZING TO MORE OBJECTS\nIn this experiment, we test each method\u2019s performance in inverse design on larger state dimensions than in training. We utilize the Nbody simulation environment as in Sec. 4.1, but instead of considering longer trajectories, we test on more bodies than in training. This setting is also inspired by real-life scenarios where the dynamics in test time have more interacting objects than in training (e.g., in astronomical simulation and biophysics). Specifically, all methods are trained with only 2-body interactions with 24 time steps, and tested with 4-body and 8-body interactions for 24 and 44 time steps using Eq. 8. This is a markedly more challenging task than generalizing to more time steps since the methods\nneed to generalize to a much larger state space than in training. For N-body interaction, there are N(N \u2212 1)/2 pairs of 2-body interactions. The case with 44 time steps adds difficulty by testing generalization in both state size and time (composing 28\u00d7 3 = 84 diffusion models for CinDM). For the base network architecture, the U-Net in Backprop cannot generalize to more bodies due to UNet\u2019s fixed feature dimension. Thus we only use GNS as the backbone architecture in the baselines. In contrast, while our CinDM method also uses U-Net as base architecture, it can generalize to more bodies due to the compositional capability of diffusion models. The results are reported in Table 2.\nFrom Table 2, we see that our CinDM method outperforms all baselines by a wide margin in both the design objective and MAE. On average, our method achieves an improvement of 15.6% in design objective, and an improvement of 53.4% in MAE than the best baseline. In Fig. 2 (b), we see that our method captures the interaction of the 4 bodies with the wall and each other nicely and all bodies tend towards center at the end. The above results again demonstrate the strong compositional capability of our method: it can generalize to much larger state space than seen in training."
+        },
+        {
+            "heading": "4.3 2D COMPOSITIONAL DESIGN FOR MULTIPLE AIRFOILS",
+            "text": "In this experiment, we test the methods\u2019 ability to perform inverse design in high-dimensional space, for multiple 2D airfoils. We train the methods using flow around a single randomly-sampled shape, and in the test time, ask it to perform inverse design for one or more airfoils. The standard goal for airfoil design is to maximize the ratio between the total lift force and total drag force, thus improving aerodynamic performance and reducing cost. The multi-airfoil case represents an important scenario in real-life engineering where the boundary shape that needs to be designed is more complicated and out-of-distribution than in training, but can be constructed by composing multiple parts. Moreover, when there are multiple flying agents, they may use formation flying to minimize drag, as has been observed in nature for migrating birds (Lissaman & Shollenberger, 1970; Hummel, 1995)\nand adopted by humans in aerodynamics (Venkataramanan et al., 2003). For the ground-truth solver that generates a training set and performs evaluation, we use Lily-Pad (Weymouth, 2015). The fluid state Ut at each time step t is represented by 64 \u00d7 64 grid cells where each cell has three dynamic features: fluid velocity vx, vy , and pressure. The boundary \u03b3 is represented by a 64\u00d7 64\u00d7 3 tensor, where for each grid cell, it has three features: a binary mask indicating whether the cell is inside a boundary (denoted by 1) or in the fluid (denoted by 0), and relative position (\u2206x, \u2206y) between the cell center to the closest point on the boundary. Therefore, the boundary has 64\u00d7 64\u00d7 3 = 12288 dimensions, making the inverse design task especially challenging.\nFor CinDM, we use U-Net as the backbone architecture and train it to denoise the trajectory and boundary. In the test time, we utilize Eq. 9 to compose multiple airfoils into a formation. For both CEM and Backprob, we use the state-of-the-art architecture of FNO (Li et al., 2021) and LEPDE (Wu et al., 2022a). For all methods, to improve design stability, we use the design objective of J = \u2212lift + drag and evaluate both this design objective and the lift-to-drag ratio. The results are in Table 3. Details are provided in Appendix D.\nThe table shows that although CinDM has a similar design objective as baseline methods, it achieves a much higher lift-todrag ratio than the baselines, especially in the compositional case of 2 airfoils. Fig. 9 and Fig. 10 show examples of the designed initial state and boundary for the 2- airfoil scenario, for our model and \u201cCEM, FNO\u201d baseline, respectively. We see that\nwhile our CinDM can design a smooth initial state and reasonable boundaries, the baseline falls into adversarial modes. A surprising finding is that our model discovers formation flying (Fig. 3) that reduces the drag by 53.6% and increases the lift-to-drag ratio by 66.1% compared to each airfoil flying separately. The above demonstrates the capability of CinDM to effectively design boundaries that are more complex than in training, and achieving much better design performance."
+        },
+        {
+            "heading": "5 CONCLUSION",
+            "text": "In this work, we have introduced Compositional Inverse Design with Diffusion Models (CinDM), a novel paradigm and method to perform compositional generative inverse design. By composing the trained diffusion models on subsets of the design variables and jointly optimizing the trajectory and the boundary, CinDM can generalize to design systems much more complex than the ones seen in training. We\u2019ve demonstrated our model\u2019s compositional inverse design capability in N-body and 2D multi-airfoil tasks, and believe that the techniques presented in this paper are general (Appendix J), and may further be applied across other settings such as material, drug, and molecule design."
+        },
+        {
+            "heading": "ACKNOWLEDGMENTS",
+            "text": "We thank Boai Sun and Haodong Feng for suggestions on Lily-Pad simulation. We thank the anonymous reviewers for providing valuable feedback on our manuscript. We also gratefully acknowledge the support of Westlake University Research Center for Industries of the Future and Westlake University Center for High-performance Computing.\nThe content is solely the responsibility of the authors and does not necessarily represent the official views of the funding entities."
+        },
+        {
+            "heading": "A ADDITIONAL DETAILS FOR COMPOSITIONAL INVERSE DESIGN IN TIME",
+            "text": "This section provides additional details for Section 4.1 and Section 4.2. In both sections, we use the same dataset for training, and the model architecture and training specifics are the same for both sections.\nDataset. We use two Python packages Pymunk (Blomqvist, 2007) and Pygame (Shinners, 2000) to generate the trajectories for this N-body dataset. We use 4 walls and several bodies to define the simulation environment. The walls are shaped as a 200\u00d7 200 rectangle, setting elasticity to 1.0 and friction to 0.0. A body is described as a ball (circle) with a radius of 20, which shares the same elasticity and friction coefficient as the wall it interacts with. The body is placed randomly within the boundaries and its initial velocity is determined using a uniform distribution v \u223c U(\u2212100, 100). We performed 2000 simulations, for 2 balls, 4 balls, and 8 balls in each simulation. Each simulation has a time step of 1/60 seconds, consisting of 1000 steps in total. During these simulations, we record the positions and velocities of each particle in two dimensions at each time step to generate 3 datasets with a shape of [Ns, Nt, Nb, Nf ]. Ns means number of simulations, Nt means number of time steps, Nb is number of bodies, Nf means number of features. The input of one piece of data shaped as [B, 1, Nb \u00d7Nf ], B is batch size, for example, [32, 1, 8] for 2 bodies conditioning on only one step. Before training the model, the final data will be normalized by dividing it by 200 and setting the time resolution to four simulation time steps.\nModel structure. The U-Net (Ronneberger et al., 2015) consists of three modules: the downsampling encoder, the middle module, and the upsampling decoder. The downsampling encoder comprises 4 layers, each including three residual modules and downsampling convolutions. The middle module contains 3 residual modules, while the upsampling decoder includes four layers, each with 3 residual modules and upsampling. We mainly utilize one-dimensional convolutions in each residual module and incorporate attention mechanisms. The input shape of our model is defined as [batch size, n steps, n features], and the output shape follows the same structure. The GNS (Sanchez-Gonzalez et al., 2020) model consists of three main components. First, it builds an undirected graph based on the current state. Then, it encodes nodes and edges on the constructed graph, using message passing to propagate information. Finally, it decodes the predicted acceleration and utilizes semi-implicit Euler integration to update the next state. In our implementation of GNS, each body represents a node with three main attributes: current speed, distance from the wall, and particle type. We employ the standard k-d tree search algorithm to locate adjacent bodies within a connection radius, which is set as 0.2 twice the body radius. The attribute of an edge is the vector distance between the two connected bodies. More details are in Table 4.\nTraining. We utilize the MSE (mean squared error) as the loss function in our training process. Our model is trained for approximately 60 hours on a single Tesla V100 GPU, with a batch size of 32, employing the Adam optimizer for 1 million iterations. For the first 600,000 steps, the learning rate is set to 1e-4. After that, the learning rate is decayed by 0.5 every 40,000 steps for the remaining 400,000 iterations. More details are provided in Table 5.\nTo perform inverse design, we mainly trained the following models: U-Net, conditioned on 1 step and capable of rolling out 23 steps; U-Net (single step), conditioned on 1 step and limited to rolling out only 1 step; GNS, conditioned on 1 step and able to roll out 23 steps; GNS (single step), conditioned on 1 step and restricted to rolling out only 1 step; and the diffusion model. Simultaneously, we conducted a comparison to assess the efficacy of time compose by training a diffusion model with 44 steps directly for inverse design, eliminating the requirement for time compose. The results and analysis are shown in Appendix C. Throughout the training process, we maintained consistency in the selection of optimizers, datasets, and training steps for these models.\nInverse design. The center point is defined as the target point, and our objective is to minimize the mean squared error (MSE) between the position of the trajectory\u2019s last step and the target point. To compare our CinDM method, we utilize U-Net and GNS as forward models separately. We then use CEM (Rubinstein & Kroese, 2004) and Backprop (Allen et al., 2022) for inverse design with conditioned state (x0, y0, vx0, vy0) used as input, and multiple trajectories of different bodies as rolled out. While the CEM algorithm does not require gradient information, we define a parameterized Gaussian distribution and sample several conditions from it to input into the forward model for prediction. After the calculation of loss between the prediction and target, the best-performing samples are selected to update the parameterized Gaussian distribution. Through multiple iterations, we can\nsample favorable conditions from the optimized distribution to predict trajectories with low loss values. Backpropagation heavily relies on gradient information. It calculates the gradient of the loss concerning the conditions and updates the conditions using gradient descent, ultimately designing conditions that result in promising output.\nDuring training, we can only predict a finite number of time steps based on conditional states, but the system evolves over an infinite number of time steps starting from an initial state in real-world physical processes. To address this, we need to combine time intervals while training a single model capable of predicting longer trajectories despite having a limited number of training steps. For the forward model, whether using U-Net or GNS, we rely on an intermediate time step derived from the last prediction as the condition for the subsequent prediction. We iteratively forecast additional time steps based on a single initial condition in this manner. As for the forward model (single step), we employ an autoregressive approach using the last step of the previous prediction to predict more steps."
+        },
+        {
+            "heading": "B FULL RESULTS FOR COMPOSITIONAL INVERSE DESIGN OF THE N-BODY TASK",
+            "text": "Here we provide the full statistical results including the 95% confidence interval (for 500 instances) for N-body experiments, including compostional inverse design in time and more objects. Specifically, Table 6 shows detailed results for Table 1 in Section 4.1; and Table 7 extends Table 2 in Section 4.2."
+        },
+        {
+            "heading": "C ADDITIONAL BASELINE FOR TIME COMPOSITION OF THE N-BODY TASK",
+            "text": "We also make a comparison with a simple baseline that performs diffusion over 44 steps directly without time composition. We designed this baseline to verify the effectiveness of our timecompositional approach. This baseline takes the same architecture as CinDM but with 44 time steps instead of 24 time steps, thus has almost twice of number of parameters in CinDM. The results are displayed in Table 8, which indicates that this sample baseline is outperformed by our CinDM. Its reason may be the difficulty in capturing dynamics across 44 time steps simultaneously using a single model, due to the presence of long-range dependencies. In such cases, a 24-step diffusion model proves to be more suitable. Hence, when dealing with designs that involve a larger number of time steps, employing time composition is a more effective approach, with lower cost and better performance."
+        },
+        {
+            "heading": "D ADDITIONAL DETAILS FOR COMPOSITIONAL INVERSE DESIGN OF 2D AIRFOILS",
+            "text": "D.1 DETAILS FOR THE MAIN EXPERIMENT\nDataset. We use Lily-Pad (Weymouth, 2015) as our data generator (Fig. 5). We generate 30,000 ellipse bodies and NACA airfoil boundary bodies and perform fluid simulations around each body. The bodies are sampled by randomizing location, thickness, and rotation between respective ranges. Each body is represented by 40 two-dimensional points composing its boundary. The spatial resolution is 64 \u00d7 64 and each cell is equipped with temporal pressure and velocities in both horizontal and vertical directions. Each trajectory consists of 100 times steps. To generate training trajectories, we use a sliding time window over the 100 time steps. Each time window contains state data of T = 6 time steps with a stride of 4. So each original trajectory amounts to 25 training trajectories, and we get 750,000 training samples in total.\nModel architecture. We use U-Net (Ronneberger et al., 2015) as our backbone for denoising from a random state sampled from a prior distribution. Without considering the mini-batch size dimension, the input includes a tensor of shape (3T + 3) \u00d7 64 \u00d7 64, which concatenates flow states (pressure, velocity of horizontal and vertical directions) of T time steps and the boundary mask and offsets of horizontal and vertical directions along the channel dimension, and additionally the current diffusion step s. The output tensor shares the same shape with the input except s. The model architecture is illustrated in Fig. 4. The hyperparameters in our model architecture are shown in Table 9.\nTraining. We utilize the MSE (mean squared error) between prediction and a Gaussian noise as the loss function during training. We take a batch size of 48 and run for 700,000 iterations. The learning rate is initialized as 1\u00d7 10\u22124. Training details are provided in Table 10. Evaluation of design results. In inference, we set \u03bb in Eq. 3 as 0.0002. We find that this \u03bb could get the best design result. More discussion on the selection of \u03bb is presented in Appendix I. For each method and each airfoil design task (one airfoil or two airfoils), we conduct 10 batches of design, and each batch contains 20 examples. After we get the designed boundaries, we input them into Lily-Pad and run the simulation. To make the simulation more accurate and convincing, we use a 128\u00d7128 resolution of the flow field, instead of 64\u00d7 64 as in the generation of training data. Then we use the calculated horizontal and vertical flow force to compute our two metrics: \u2212lift + drag and lift-to-drag ratio. In each batch, we choose the best-designed boundary (or pair of boundaries in two airfoil scenarios) and then we report average values regarding the two metrics over 10 batches.\nD.2 SURROGATE MODEL FOR FORCE PREDICTION\nModel architecture. In the 2D compositional inverse design of multiple airfoils, we propose a neural surrogate model g\u03c6 to approximate the mapping from the state Ut and boundary \u03b3 to the lift and drag forces, so that the design objective J is differentiable to the design variable z = U[0,T ] \u2295 \u03b3. The input of our model is a tensor comprising pressure, boundary mask, and offsets (both horizontal and vertical directions) of shape 4 \u00d7 64 \u00d7 64 for a given time step. The output is the predicted drag and lift forces of dimension 2. Boundary masks indicate the inner part (+1) and outside part (0) of a closed boundary. Offsets measure the signed deviation of the center of each square on a 64\u00d7 64 grid from the boundary in horizontal and vertical direction respectively, where the deviation of a given point is defined as its distance to the nearest point on a boundary. If two or more boundaries appear in a sample, the input mask (resp. offsets) is given by the summation\nof masks (resp. offsets) of all the boundaries. Notice that since the input boundaries are assumed not to be overlapped, the summed mask and offset are still valid. The model architecture is half of a U-Net Ronneberger et al. (2015) where we only take the down-sampling part to embed the input features to a 512-dimensional representation; then we use a linear transformation to output forces.\nDataset. We use Lily-Pad (Weymouth, 2015) to generate simulation data with 1, 2, or 3 airfoil boundaries to train and evaluate the surrogate model. Boundaries are a mixture of ellipses and NACA airfoils. We generate 10,000 trajectories for the training dataset and 1,000 trajectories for the test dataset. Each trajectory consists of 100 time steps. We use pressure as features and lift and drag forces as labels. Thus we have 3 million training samples and 300 thousand testing samples in total.\nTraining. We use MSE (mean squared error) loss between the ground truth and predicted forces to train the surrogate model. The optimizer is Adam (Kingma & Ba, 2014). The batch size is 128. The model is trained for 20 epochs. The learning rate starts from 1\u00d7 10\u22124 and multiplies a factor of 0.1 every five epochs. The test error is 0.04, smaller than 5% of the average force in the training dataset.\nE VISUALIZATION OF N-BODY INVERSE DESIGN.\nExamples of N-body design results are provided in this section. Figure 6 shows the results of using the backpropagation algorithm and CinDM to design 2-body 54-time step trajectories. The results of designing 2-body 54-time steps trajectories using CEM and CinDM are provided in Figure 7. Figure 8 are the results of designing44-time 44 time steps trajectories using CEM, backpropagation, and CinDM.\nF VISUALIZATION RESULTS OF 2D INVERSE DESIGN BY OUR CINDM\nWe show the compositional design results of our method in 2D airfoil generation in Figure 9."
+        },
+        {
+            "heading": "G SOME VISUALIZATION RESULTS OF 2D INVERSE DESIGN BASELINE.",
+            "text": "We show some 2D design results of our baseline model in Fig. 10."
+        },
+        {
+            "heading": "H COMPARISON TO ADDITIONAL WORKS",
+            "text": "Besides comparison results of baselines shown in the main text, we further evaluated additional two baselines: neural adjoint method + boundary loss function (NABL) and conditional invertible neural network (cINN) method for both N-body and airfoils design experiments.\nWe implement NABL on top of baselines FNO and LE-PDE in the airfoil design task and U-net in tcompositionalostional taskamed as \u201cNABL, FNO\u201d, \u201cNABL, LE-PDE\u201d and \u201cNABL, U-net\u201d respectively. These new NABL baselines additionally use the boundary loss defined by the mean value and 95% significance radius of the training dataset. cINN does not apply to compositional design because the input scale for the invertible neural network function is fixed. Therefore, for the time composition task, we trained 4 cINN models, each for one of the time steps: 24, 34, 44, and 54. These models differ only in the input size. The input x to cINN is a vector of size 2\u00d7 4\u00d7 T , where 2 is the number of objects, 4 is the number of features and T is the number of time steps. The condition y is set to 0, the minimal distance to the target point. For cINN for 2D airfoil design, we adopt 2D coordinates of 40 boundary pointsarewhich is spanned 80-dimensionalensional vector, as the input, since the invertible constraint on the cINN model hardly accepts image-like inputs adopted in the main experiments. Therefore we evaluate cINN only in the single airfoil design task. The condition y is set as the minimal value of drag - lift drag in the training trajectories. In both tasks, the random variable z has a dimension of dim(x) - dim(y). It is drawn from a Gaussian distribution and then input to the INN for inference. We also adjust the hyperparameters, such as hidden size and a number of reversible blocks, to make the number of parameters in cINN close to ours for fair comparison.\nThe results of NABL and cINN are shown in Table 11 and Table 12. We can see that CinDM significantly outperforms the new baselines in both experiments. Even compared to the original baselines (who contains contain \u201cBackprop-\u201d) without the boundary loss function, as shown in Table 1 and Table 3, the NABL baselines in both tasks do not show the improvement in the objective for out-of-distribution data. These results show that our method generalizes to out-of-distribution while the original and new baselines struggle to generalize the out-of-distribution. CinDM also outperforms cINN by a large margin in both the time composition and airfoil design tasks. Despite the quantities, we also find that airfoil boundaries generated by cINN have little variation in shape, and the orientation is not as desired, which could incur high drag force in simulation. These results may be caused by the limitation of the model architecture of cINN, which utilizes fully connected layers as building blocks, and thus has an obvious disadvantage in capturing inductive bias of spatialtemporal features. We think it is necessary to extend cINN to convolutional networks when cINN is applied to such high-resolution design problems. However, this appears challenging when the invertible requirement is imposed. In summary, our method outperforms both NABL and cINN in both tasks. Furthermore, our method could be used for flexible compositional design. We use only one trained model to generate samples lying in a much larger state space than in training during inference, which is a unique advantage of our method beyond these baselines."
+        },
+        {
+            "heading": "I PERFORMANCE SENSITIVITY TO HYPERPARAMETERS, INITIALIZATION AND SAMPLING STEPS.",
+            "text": "This section evaluate the effects of different \u03bb, initialization and sampling steps on performance of CinDM.\nI.1 INFLUENCE OF THE HYPERPARAMETER \u03bb\nTo evaluate influence of the hyperparameter \u03bb in Eq. 3, we perform inference in both N-body time composition and 2D airfoils design task for a wide range of \u03bb. The results are shown in Table 13, Table 14, Fig 11, Fig 12, and Fig 13, where Table 13 corresponds to Fig 11 and Fig 12 while Table Table 14 corresponds to Fig 13. Our method demonstrates robustness and consistent performance across a wide range of lambda values. However, if \u03bb is set too small (\u22640.0001 in the 2D airfoil task, or \u22640.01 in the N-body task), the design results will be subpar because there is minimal objective\nguidance incorporated. On the other hand, if \u03bb is set too large (\u2265 0.01 in the 2D airfoil task, or \u2265 1.0 in the N-body task), there is a higher likelihood of entering a poor likelihood region, and the preservation of physical consistency is compromised. In practical terms, \u03bb can be set between 0.01 and 1.0 for the N-body task, and between 0.0002 and 0.02 for the 2D airfoil task. In our paper, we choose based on the best evaluation performance, namely we set as 0.4 for the N-body task and 0.0002 for the 2D airfoils task.\nI.2 INFLUENCE OF INITIALIZATION\nTo analyze the sensitivity of initialization in our approach, we follow a similar methodology discussed in Ren et al. (2020). We consider the \u201cre-simulation\u201d error r of a target objective y as a function of the number of samplings B, where each sampling starts from a Gaussian initialization z. We use the simulator to obtain the output y\u0302 for each design x from the B design results given the target y and compute the \u201cre-simulation\u201d error L(y\u0302, y). We then calculate the least error among a batch of B design results. This process is repeated for several batches, and the mean least error rB is obtained by averaging over these batches.\nTable 15 and Fig 14 present the results for the N-body inverse design task. We consider values of B ranging from 10 to 100, with N = 10 batches. The target y is set to be 0, which represents the\ndistance to a fixed target point. The results show that rB gradually decreases as B increases in the 24-step design, indicating that the design space is well explored and most solutions can be retrieved even with a small number of samplings. This demonstrates the efficiency of our method in generating designs. Moreover, similar observations can be made when time composition is performed in 34, 44, and 54 steps, indicating the effectiveness of our time composition approach in capturing long-time range physical dependencies and enabling efficient generation in a larger design space.\nIn the 2D inverse design task, the target y is slightly different. Here, we aim to minimize the model output (drag - lift force). Hence, we adopt the \u201cre-simulation\u201d performance metric, which is the lift/drag ratio, as opposed to the \u201cre-simulation\u201d error used in the N-body task, to evaluate sensitivity to initialization. For each B, the lift/drag ratio is chosen as the highest value among the simulation results of a batch of B designed boundaries (or boundary pairs for the 2 airfoils design). Any invalid design results, such as overlapping airfoil pairs in the 2-airfoil design, are removed from the B results before computing the maximal lift/drag ratio. The reported numbers are obtained by averaging over N = 10 batches for each B.\nTable 16 and Fig 15 present the results for the 2D airfoils design task. In the 1 airfoil design column, we observe that the lift/drag ratio is relatively low for B = 10, indicating that the design space is not\nsufficiently explored due to its high dimensionality (64 \u00d7 64 \u00d7 3 in our boundary mask and offsets representation). For B \u2265 20, the lift/drag performance remains steady. In the 2 airfoils design column, the lift/drag ratio increases roughly with B. This is attributed to the higher dimensional and more complex design space compared to the single airfoil design task. The stringent constraints on boundary pairs, such as non-overlapping, lead to the presence of complex infeasible regions in the design space. Random initialization may lead to these infeasible regions, resulting in invalid design results. The rate of increase in lift/drag ratio becomes slower when B \u2265 30, indicating that a majority of solutions have been explored. Despite the training data only containing a single airfoil boundary, which lies in a relatively lower dimensional and simpler design space, our model demonstrates a strong ability to generalize and efficiently generate designs for this challenging 2 body compositional design problem.\nI.3 INFLUENCE OF THE NUMBER OF SAMPLING STEPS IN INFERENCE\nFig 16 and Fig 17 illustrate the outcomes of inverse design carried out by CinDM. It is apparent that with an increase in the number of sampling time steps, the design objective gradually decreases. In contrast, the MAE fluctuates within a small range, occasionally rising. This phenomenon can be examined as follows: as the number of sampling steps increases, the participation of the design objective in the diffusion process intensifies. As a result, the designs improve and align more closely with the design objective, ultimately leading to a decrease in the design objective. However, when the number of sampling steps increases, the MAE also increases. This is because, with a small number of sampling steps, the initial velocities of some designed samples are very small, causing the diffusion of trajectories to be concentrated within a narrow range. Consequently, both the true trajectory and the diffused trajectory are highly concentrated, resulting in a small calculated MAE. By analyzing the sensitivity of the design objective and MAE to different sampling steps, we can conclude that CInDM can achieve desired design results that align with design objectives and physical constraints by appropriately selecting a sampling step size during the inverse design process."
+        },
+        {
+            "heading": "J BROADER IMPACTS AND LIMITATIONS",
+            "text": "Our method, CinDM, extends the scope of design exploration and enables efficient design and control of complex systems. Its application across various scientific and engineering fields has profound implications. In materials science, utilizing the diffusion model for inverse design facilitates the customization of material microstructures and properties. In biomedicine, it enables the structural design of drug molecular systems and optimizes production processes. Furthermore, in the aerospace sector, integrating the diffusion model with inverse design can lead to the development of more diverse shapes and structures, thereby significantly enhancing design efficiency and quality.\nCinDM combines the advantages of diffusion models, allowing us to generate more diverse and sophisticated design samples. However, some limitations need to be addressed at present. In terms of design quality and exploration space, we need to strike a balance between different objectives to avoid getting stuck in local optima, especially when dealing with complex, nonlinear systems in the real world. We also need to ensure that the designed samples adhere to complex multiscale physical constraints. Furthermore, achieving interpretability in the samples designed by deep learning models is challenging for inverse design applications. From a cost perspective, training diffusion models requires large datasets and intensive computational resources. The complexity of calculations also hinders the speed of our model design.\nMoving forward, we intend to incorporate more physical prior knowledge into the model, leverage multi-modal data for training, employ more efficient sampling methods to enhance training efficiency, improve interpretability, and generalize the model to multiple scales."
+        }
+    ],
+    "year": 2024
+}

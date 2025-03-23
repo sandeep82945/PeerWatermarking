@@ -1,0 +1,1064 @@
+{
+    "abstractText": "As neural networks grow in scale, their training becomes both computationally demanding and rich in dynamics. Amidst the flourishing interest in these training dynamics, we present a novel observation: Parameters during training exhibit intrinsic correlations over time. Capitalizing on this, we introduce correlation mode decomposition (CMD). This algorithm clusters the parameter space into groups, termed modes, that display synchronized behavior across epochs. This enables CMD to efficiently represent the training dynamics of complex networks, like ResNets and Transformers, using only a few modes. Moreover, test set generalization is enhanced. We introduce an efficient CMD variant, designed to run concurrently with training. Our experiments indicate that CMD surpasses the state-of-the-art method for compactly modeled dynamics on image classification. Our modeling can improve training efficiency and lower communication overhead, as shown by our preliminary experiments in the context of federated learning.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Jonathan Brokman"
+        },
+        {
+            "affiliations": [],
+            "name": "Roy Betser"
+        },
+        {
+            "affiliations": [],
+            "name": "Rotem Turjeman"
+        },
+        {
+            "affiliations": [],
+            "name": "Tom Berkov"
+        },
+        {
+            "affiliations": [],
+            "name": "Ido Cohen"
+        },
+        {
+            "affiliations": [],
+            "name": "Guy Gilboa"
+        }
+    ],
+    "id": "SP:dd2d5b0c0f906b38c8955f7b385717812d17067f",
+    "references": [
+        {
+            "authors": [
+                "Dan Alistarh",
+                "Demjan Grubic",
+                "Jerry Li",
+                "Ryota Tomioka",
+                "Milan Vojnovic"
+            ],
+            "title": "Qsgd: Communication-efficient sgd via gradient quantization and encoding",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Travis Askham",
+                "J Nathan Kutz"
+            ],
+            "title": "Variable projection methods for an optimized dynamic mode decomposition",
+            "venue": "SIAM Journal on Applied Dynamical Systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Benjamin Aubin",
+                "Antoine Maillard",
+                "Florent Krzakala",
+                "Nicolas Macris",
+                "Lenka Zdeborov\u00e1"
+            ],
+            "title": "The committee machine: Computational to statistical gaps in learning a two-layers neural network",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "N Aubry",
+                "R Guyonnet",
+                "R Lima"
+            ],
+            "title": "Spatio-temporal symmetries and bifurcations via bi-orthogonal decompositions",
+            "venue": "Journal of Nonlinear Science,",
+            "year": 1992
+        },
+        {
+            "authors": [
+                "Nadine Aubry",
+                "R\u00e9gis Guyonnet",
+                "Ricardo Lima"
+            ],
+            "title": "Spatiotemporal analysis of complex signals: theory and applications",
+            "venue": "Journal of Statistical Physics,",
+            "year": 1991
+        },
+        {
+            "authors": [
+                "Martin Burger",
+                "Guy Gilboa",
+                "Michael Moeller",
+                "Lina Eckardt",
+                "Daniel Cremers"
+            ],
+            "title": "Spectral decompositions using one-homogeneous functionals",
+            "venue": "SIAM Journal on Imaging Sciences,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Chen Chen",
+                "Wei Wang",
+                "Bo Li"
+            ],
+            "title": "Round-robin synchronization: Mitigating communication bottlenecks in parameter servers",
+            "venue": "In IEEE INFOCOM 2019-IEEE Conference on Computer Communications,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Chen Chen",
+                "Hong Xu",
+                "Wei Wang",
+                "Baochun Li",
+                "Bo Li",
+                "Li Chen",
+                "Gong Zhang"
+            ],
+            "title": "Communicationefficient federated learning with adaptive parameter freezing",
+            "venue": "IEEE 41st International Conference on Distributed Computing Systems (ICDCS),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Lenaic Chizat",
+                "Francis Bach"
+            ],
+            "title": "On the global convergence of gradient descent for overparameterized models using optimal transport",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Yunjey Choi",
+                "Youngjung Uh",
+                "Jaejun Yoo",
+                "Jung-Woo Ha"
+            ],
+            "title": "Stargan v2: Diverse image synthesis for multiple domains",
+            "venue": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Ido Cohen",
+                "Guy Gilboa"
+            ],
+            "title": "Latent modes of nonlinear flows: A koopman theory analysis",
+            "venue": "Elements in Non-local Data Interactions: Foundations and Applications,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Henggang Cui",
+                "Alexey Tumanov",
+                "Jinliang Wei",
+                "Lianghong Xu",
+                "Wei Dai",
+                "Jesse Haber-Kucharsky",
+                "Qirong Ho",
+                "Gregory R Ganger",
+                "Phillip B Gibbons",
+                "Garth A Gibson"
+            ],
+            "title": "Exploiting iterativeness for parallel ml computations",
+            "venue": "In Proceedings of the ACM Symposium on Cloud Computing,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Jacob Devlin",
+                "Ming-Wei Chang",
+                "Kenton Lee",
+                "Kristina Toutanova. Bert"
+            ],
+            "title": "Pre-training of deep bidirectional transformers for language understanding",
+            "venue": "arXiv preprint arXiv:1810.04805,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Felix Dietrich",
+                "Thomas N Thiem",
+                "Ioannis G Kevrekidis"
+            ],
+            "title": "On the koopman operator of algorithms",
+            "venue": "SIAM Journal on Applied Dynamical Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Akshunna S Dogra",
+                "William Redman"
+            ],
+            "title": "Optimizing neural networks via koopman operator theory",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Alexey Dosovitskiy",
+                "Lucas Beyer",
+                "Alexander Kolesnikov",
+                "Dirk Weissenborn",
+                "Xiaohua Zhai",
+                "Thomas Unterthiner",
+                "Mostafa Dehghani",
+                "Matthias Minderer",
+                "Georg Heigold",
+                "Sylvain Gelly"
+            ],
+            "title": "An image is worth 16x16 words: Transformers for image recognition at scale",
+            "venue": "arXiv preprint arXiv:2010.11929,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Felix Draxler",
+                "Kambis Veschgini",
+                "Manfred Salmhofer",
+                "Fred Hamprecht"
+            ],
+            "title": "Essentially no barriers in neural network energy landscape",
+            "venue": "In International conference on machine learning,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Nikoli Dryden",
+                "Tim Moon",
+                "Sam Ade Jacobs",
+                "Brian Van Essen"
+            ],
+            "title": "Communication quantization for data-parallel training of deep neural networks",
+            "venue": "In 2016 2nd Workshop on Machine Learning in HPC Environments (MLHPC),",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Mark Everingham",
+                "John Winn"
+            ],
+            "title": "The pascal visual object classes challenge 2012 (voc2012) development kit",
+            "venue": "Pattern Anal. Stat. Model. Comput. Learn., Tech. Rep,",
+            "year": 2007
+        },
+        {
+            "authors": [
+                "Guy Gilboa"
+            ],
+            "title": "Nonlinear Eigenproblems in Image Processing and Computer",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Sebastian Goldt",
+                "Madhu Advani",
+                "Andrew M Saxe",
+                "Florent Krzakala",
+                "Lenka Zdeborov\u00e1"
+            ],
+            "title": "Dynamics of stochastic gradient descent for two-layer neural networks in the teacher-student setup",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Frithjof Gressmann",
+                "Zach Eaton-Rosen",
+                "Carlo Luschi"
+            ],
+            "title": "Improving neural network training in low dimensional random bases",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Guy Gur-Ari",
+                "Daniel A Roberts",
+                "Ethan Dyer"
+            ],
+            "title": "Gradient descent happens in a tiny subspace",
+            "venue": "arXiv preprint arXiv:1812.04754,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Sayed Hadi Hashemi",
+                "Sangeetha Abdu Jyothi",
+                "Roy Campbell"
+            ],
+            "title": "Tictac: Accelerating distributed deep learning with communication scheduling",
+            "venue": "Proceedings of Machine Learning and Systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Kaiming He",
+                "Xiangyu Zhang",
+                "Shaoqing Ren",
+                "Jian Sun"
+            ],
+            "title": "Deep residual learning for image recognition",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Kaiming He",
+                "Xiangyu Zhang",
+                "Shaoqing Ren",
+                "Jian Sun"
+            ],
+            "title": "Identity mappings in deep residual networks",
+            "venue": "In Computer Vision\u2013ECCV 2016: 14th European Conference,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Shiqi He",
+                "Qifan Yan",
+                "Feijie Wu",
+                "Lanjun Wang",
+                "Mathias L\u00e9cuyer",
+                "Ivan Beschastnikh"
+            ],
+            "title": "Gluefl: Reconciling client sampling and model masking for bandwidth efficient federated learning",
+            "venue": "Proceedings of Machine Learning and Systems,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Qirong Ho",
+                "James Cipar",
+                "Henggang Cui",
+                "Seunghak Lee",
+                "Jin Kyu Kim",
+                "Phillip B Gibbons",
+                "Garth A Gibson",
+                "Greg Ganger",
+                "Eric P Xing"
+            ],
+            "title": "More effective distributed ml via a stale synchronous parallel parameter server",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Kevin Hsieh",
+                "Aaron Harlap",
+                "Nandita Vijaykumar",
+                "Dimitris Konomis",
+                "Gregory R Ganger",
+                "Phillip B Gibbons",
+                "Onur Mutlu"
+            ],
+            "title": "Gaia:{Geo-Distributed} machine learning approaching {LAN} speeds",
+            "venue": "In 14th USENIX Symposium on Networked Systems Design and Implementation (NSDI",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Pavel Izmailov",
+                "Dmitrii Podoprikhin",
+                "Timur Garipov",
+                "Dmitry Vetrov",
+                "Andrew Gordon Wilson"
+            ],
+            "title": "Averaging weights leads to wider optima and better generalization",
+            "venue": "arXiv preprint arXiv:1803.05407,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Arthur Jacot",
+                "Franck Gabriel",
+                "Cl\u00e9ment Hongler"
+            ],
+            "title": "Neural tangent kernel: Convergence and generalization in neural networks",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Tero Karras",
+                "Timo Aila",
+                "Samuli Laine",
+                "Jaakko Lehtinen"
+            ],
+            "title": "Progressive growing of gans for improved quality, stability, and variation",
+            "venue": "arXiv preprint arXiv:1710.10196,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Nitish Shirish Keskar",
+                "Dheevatsa Mudigere",
+                "Jorge Nocedal",
+                "Mikhail Smelyanskiy",
+                "Ping Tak Peter Tang"
+            ],
+            "title": "On large-batch training for deep learning: Generalization gap and sharp minima",
+            "venue": "arXiv preprint arXiv:1609.04836,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Jakub Kone\u010dn\u1ef3",
+                "H Brendan McMahan",
+                "Felix X Yu",
+                "Peter Richt\u00e1rik",
+                "Ananda Theertha Suresh",
+                "Dave Bacon"
+            ],
+            "title": "Federated learning: Strategies for improving communication efficiency",
+            "venue": "arXiv preprint arXiv:1610.05492,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Bernard O Koopman"
+            ],
+            "title": "Hamiltonian systems and transformation in hilbert space",
+            "venue": "Proceedings of the National Academy of Sciences,",
+            "year": 1931
+        },
+        {
+            "authors": [
+                "Alex Krizhevsky",
+                "Geoffrey Hinton"
+            ],
+            "title": "Learning multiple layers of features from tiny images",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "J Nathan Kutz",
+                "Steven L Brunton",
+                "Bingni W Brunton",
+                "Joshua L Proctor"
+            ],
+            "title": "Dynamic mode decomposition: data-driven modeling of complex systems",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Yann LeCun",
+                "L\u00e9on Bottou",
+                "Yoshua Bengio",
+                "Patrick Haffner"
+            ],
+            "title": "Gradient-based learning applied to document recognition",
+            "venue": "Proceedings of the IEEE,",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Jaehoon Lee",
+                "Lechao Xiao",
+                "Samuel Schoenholz",
+                "Yasaman Bahri",
+                "Roman Novak",
+                "Jascha SohlDickstein",
+                "Jeffrey Pennington"
+            ],
+            "title": "Wide neural networks of any depth evolve as linear models under gradient descent",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Chunyuan Li",
+                "Heerad Farkhoor",
+                "Rosanne Liu",
+                "Jason Yosinski"
+            ],
+            "title": "Measuring the intrinsic dimension of objective landscapes",
+            "venue": "arXiv preprint arXiv:1804.08838,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Hao Li",
+                "Zheng Xu",
+                "Gavin Taylor",
+                "Christoph Studer",
+                "Tom Goldstein"
+            ],
+            "title": "Visualizing the loss landscape of neural nets",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Tao Li",
+                "Lei Tan",
+                "Zhehao Huang",
+                "Qinghua Tao",
+                "Yipeng Liu",
+                "Xiaolin Huang"
+            ],
+            "title": "Low dimensional trajectory hypothesis is true: Dnns can be trained in tiny subspaces",
+            "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Tian Li",
+                "Anit Kumar Sahu",
+                "Ameet Talwalkar",
+                "Virginia Smith"
+            ],
+            "title": "Federated learning: Challenges, methods, and future directions",
+            "venue": "IEEE signal processing magazine,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "WANG Luping",
+                "WANG Wei",
+                "LI Bo"
+            ],
+            "title": "Cmfl: Mitigating communication overhead for federated learning",
+            "venue": "IEEE 39th international conference on distributed computing systems (ICDCS),",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "CWH Mace",
+                "ACC Coolen"
+            ],
+            "title": "Statistical mechanical analysis of the dynamics of learning in perceptrons",
+            "venue": "Statistics and Computing,",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Iva Manojlovi\u0107",
+                "Maria Fonoberova",
+                "Ryan Mohr",
+                "Aleksandr Andrej\u010duk",
+                "Zlatko Drma\u010d",
+                "Yannis Kevrekidis",
+                "Igor Mezi\u0107"
+            ],
+            "title": "Applications of koopman mode analysis to neural networks",
+            "venue": "arXiv preprint arXiv:2006.11765,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Brendan McMahan",
+                "Eider Moore",
+                "Daniel Ramage",
+                "Seth Hampson",
+                "Blaise Aguera y Arcas"
+            ],
+            "title": "Communication-efficient learning of deep networks from decentralized data",
+            "venue": "In Artificial intelligence and statistics,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Igor Mezi\u0107"
+            ],
+            "title": "Spectral properties of dynamical systems, model reduction and decompositions",
+            "venue": "Nonlinear Dynamics,",
+            "year": 2005
+        },
+        {
+            "authors": [
+                "Ilan Naiman",
+                "Omri Azencot"
+            ],
+            "title": "A koopman approach to understanding sequence neural models",
+            "venue": "arXiv preprint arXiv:2102.07824,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Luis Gustavo Nonato",
+                "Michael Aupetit"
+            ],
+            "title": "Multidimensional projection for visual analytics: Linking techniques with distortions, tasks, and layout enrichment",
+            "venue": "IEEE Transactions on Visualization and Computer Graphics,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Elisa Oostwal",
+                "Michiel Straat",
+                "Michael Biehl"
+            ],
+            "title": "Hidden unit specialization in layered neural networks: Relu vs. sigmoidal activation",
+            "venue": "Physica A: Statistical Mechanics and its Applications,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Adam Paszke",
+                "Sam Gross",
+                "Francisco Massa",
+                "Adam Lerer",
+                "James Bradbury",
+                "Gregory Chanan",
+                "Trevor Killeen",
+                "Zeming Lin",
+                "Natalia Gimelshein",
+                "Luca Antiga"
+            ],
+            "title": "Pytorch: An imperative style, highperformance deep learning library",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Yanghua Peng",
+                "Yibo Zhu",
+                "Yangrui Chen",
+                "Yixin Bao",
+                "Bairen Yi",
+                "Chang Lan",
+                "Chuan Wu",
+                "Chuanxiong Guo"
+            ],
+            "title": "A generic communication scheduler for distributed dnn training acceleration",
+            "venue": "In Proceedings of the 27th ACM Symposium on Operating Systems Principles,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "William T Redman",
+                "Maria Fonoberova",
+                "Ryan Mohr",
+                "Ioannis G Kevrekidis",
+                "Igor Mezic"
+            ],
+            "title": "An operator theoretic view on pruning deep neural networks",
+            "venue": "arXiv preprint arXiv:2110.14856,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Olga Russakovsky",
+                "Jia Deng",
+                "Hao Su",
+                "Jonathan Krause",
+                "Sanjeev Satheesh",
+                "Sean Ma",
+                "Zhiheng Huang",
+                "Andrej Karpathy",
+                "Aditya Khosla",
+                "Michael Bernstein"
+            ],
+            "title": "Imagenet large scale visual recognition challenge",
+            "venue": "International journal of computer vision,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "David Saad",
+                "Sara Solla"
+            ],
+            "title": "Dynamics of on-line gradient descent learning for multilayer neural networks",
+            "venue": "Advances in neural information processing systems,",
+            "year": 1995
+        },
+        {
+            "authors": [
+                "David Saad",
+                "Sara A Solla"
+            ],
+            "title": "On-line learning in soft committee machines",
+            "venue": "Physical Review E,",
+            "year": 1995
+        },
+        {
+            "authors": [
+                "Peter J Schmid"
+            ],
+            "title": "Dynamic mode decomposition of numerical and experimental data",
+            "venue": "Journal of fluid mechanics,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Frank Seide",
+                "Hao Fu",
+                "Jasha Droppo",
+                "Gang Li",
+                "Dong Yu"
+            ],
+            "title": "1-bit stochastic gradient descent and its application to data-parallel distributed training of speech dnns",
+            "venue": "In Fifteenth annual conference of the international speech communication association,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Shai Shalev-Shwartz",
+                "Shai Ben-David"
+            ],
+            "title": "Understanding machine learning: From theory to algorithms",
+            "venue": "Cambridge university press,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Shaohuai Shi",
+                "Xiaowen Chu",
+                "Bo Li"
+            ],
+            "title": "Mg-wfbp: Efficient data communication for distributed synchronous sgd algorithms",
+            "venue": "In IEEE INFOCOM 2019-IEEE Conference on Computer Communications,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Petr \u0160im\u00e1nek",
+                "Daniel Va\u0161ata",
+                "Pavel Kord\u0131\u0301k"
+            ],
+            "title": "Learning to optimize with dynamic mode decomposition",
+            "venue": "In 2022 International Joint Conference on Neural Networks (IJCNN),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Carlos Oscar S\u00e1nchez Sorzano",
+                "Javier Vargas",
+                "A Pascual Montano"
+            ],
+            "title": "A survey of dimensionality reduction techniques",
+            "venue": "arXiv preprint arXiv:1403.2877,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Nikko Str\u00f6m"
+            ],
+            "title": "Scalable distributed dnn training using commodity gpu cloud computing",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Chen Sun",
+                "Abhinav Shrivastava",
+                "Saurabh Singh",
+                "Abhinav Gupta"
+            ],
+            "title": "Revisiting unreasonable effectiveness of data in deep learning era",
+            "venue": "In Proceedings of the IEEE international conference on computer vision,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Christian Szegedy",
+                "Wei Liu",
+                "Yangqing Jia",
+                "Pierre Sermanet",
+                "Scott Reed",
+                "Dragomir Anguelov",
+                "Dumitru Erhan",
+                "Vincent Vanhoucke",
+                "Andrew Rabinovich"
+            ],
+            "title": "Going deeper with convolutions",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Antti Tarvainen",
+                "Harri Valpola"
+            ],
+            "title": "Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Jonathan H Tu"
+            ],
+            "title": "Dynamic mode decomposition: Theory and applications",
+            "venue": "PhD thesis, Princeton University,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Laurens Van der Maaten",
+                "Geoffrey Hinton"
+            ],
+            "title": "Visualizing data using t-sne",
+            "venue": "Journal of machine learning research,",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Laurens Van Der Maaten",
+                "Eric O Postma",
+                "H Jaap van den Herik"
+            ],
+            "title": "Dimensionality reduction: A comparative review",
+            "venue": "Journal of Machine Learning Research,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Matthew O Williams",
+                "Ioannis G Kevrekidis",
+                "Clarence W Rowley"
+            ],
+            "title": "A data\u2013driven approximation of the koopman operator: Extending dynamic mode decomposition",
+            "venue": "Journal of Nonlinear Science,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "King Fai Yeh",
+                "Paris Flood",
+                "William Redman",
+                "Pietro Li\u00f2"
+            ],
+            "title": "Learning linear embeddings for nonlinear network dynamics with koopman message passing",
+            "venue": "arXiv preprint arXiv:2305.09060,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Sergey Zagoruyko",
+                "Nikos Komodakis"
+            ],
+            "title": "Wide residual networks",
+            "venue": "arXiv preprint arXiv:1605.07146,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Hao Zhang",
+                "Zeyu Zheng",
+                "Shizhen Xu",
+                "Wei Dai",
+                "Qirong Ho",
+                "Xiaodan Liang",
+                "Zhiting Hu",
+                "Jinliang Wei",
+                "Pengtao Xie",
+                "Eric P Xing"
+            ],
+            "title": "Poseidon: An efficient communication architecture for distributed deep learning on {GPU} clusters",
+            "venue": "USENIX Annual Technical Conference (USENIX ATC 17),",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Hengshuang Zhao",
+                "Jianping Shi",
+                "Xiaojuan Qi",
+                "Xiaogang Wang",
+                "Jiaya Jia"
+            ],
+            "title": "Pyramid scene parsing network",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "B POST-HOC"
+            ],
+            "title": "CMD EXPERIMENTS Image Classification First we consider the CIFAR10 (He et al., 2016a) classification problem, using a simple CNN architecture, used in Manojlovi\u0107 et al. (2020), we refer to it as SimpleNet (Fig. 10a). Cross-Entropy Loss and augmented data (horizontal flip, random crop, etc.) are used for training",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Izmailov"
+            ],
+            "title": "2018)) that the space occupied by storing the model is insignificant during the training process compared to the sustained gradients. Therefor, after the F warm-up epochs this online method has negligible memory consumption",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Chen"
+            ],
+            "title": "ResNet18, we have N \u223c 107",
+            "year": 2021
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "The research of training dynamics in neural networks aims to comprehend the evolution of model weights during the training process. Understanding stochastic gradient descent (SGD) is of paramount importance as it is the preferred training method used in practice. By studying these dynamics, researchers strive to achieve predictability, enhance training efficiency, and improve overall performance. In this work we show, for instance, how a good model can improve distributive and federated learning.\nOutside the scope of deep learning, time profiles and correlation methods have been valuable for studying complex systems since the 1990s, as demonstrated by the foundational work of Aubry et al. (1991; 1992). Studies in variational image-processing such as Burger et al. (2016) and Gilboa (2018) also highlight the emergence of specific time profiles during gradient descent. However, these methods often rely on properties like convexity and homogeneity, which neural networks training dynamics typically lack.\nResearch into deep learning training dynamics dates back to the early days of neural networks, with initial studies focusing on two-layer models (Saad & Solla, 1995b;a; Mace & Coolen, 1998; Chizat & Bach, 2018; Aubin et al., 2018; Goldt et al., 2019; Oostwal et al., 2021). These simpler models continue to offer valuable insights, but our interest lies in the dynamics of contemporary, complex models that feature significantly larger numbers of weights and layers. These complexities introduce higher degrees of nonlinearity. Another popular simplification is the first-order Taylor approximation of the dynamics, particularly in the realm of infinitely wide neural networks, as in Jacot et al. (2018); Lee et al. (2019). However, this often results in performance shortcomings.\nA different approach examines the low-dimensional sub-space hypothesis, positing that effective training can occur in a limited set of directions within the weight space, see Li et al. (2018a); GurAri et al. (2018); Gressmann et al. (2020). Recently, Li et al. (2023) employed the eigenvectors\n*The contribution of these researchers to this work is equal. \u2020Technion \u2013 Israel Institute of Technology,\u2021Ariel University\nof the covariance between weight trajectories to define a 40-dimensional training sub-space. They achieve strong performance in this constrained sub-space, setting the SOTA for compactly modeled dynamics in image classification. Other studies proposed to represent the training dynamics of complex models through a concise set of representative trajectories wm(t):\nwi(t) \u2248 bi + \u2211 m ai,mwm(t), (1)\nwhere bi, ai,m are scalars and wi(t) is the trajectory of the i\u2019th tunable weight (parameter) of the network. Common solution approaches employ dynamical analysis techniques, relying on Koopman theory and Dynamic Mode Decomposition (DMD), see Schmid (2010); Dogra & Redman (2020); Naiman & Azencot (2021). Our experiments and analysis indicate that DMD and its variants do not adequately capture the complex dynamics inherent in neural network training (see Fig. 1 and Appendix H).\nOur main observation is that network parameters are highly correlated and can be grouped into \u201cModes\u201d characterized by their alignment with a common evolutionary profile. This captures the complex dynamics, as illustrated in Fig. 1. Our findings are substantiated through comprehensive experiments; a selection of key graphs is presented in the main body, while the Appendix offers a rich array of additional results, ablation studies, stability evaluations and details regarding various architectures and settings. Our contributions are three-fold:\n\u2022 The introduction of Correlation Mode Decomposition (CMD), a data-driven approach that efficiently models training dynamics.\n\u2022 Devising efficient CMD which can be performed online during training, out-performing the stateof-the-art method for training dynamics dimensionality reduction of Li et al. (2023) in both efficiency and performance.\n\u2022 We pioneer the use of modeled training dynamics to reduce communication overhead. Our preliminary experiments offer a promising avenue for future research."
+        },
+        {
+            "heading": "2 PREVIOUS WORK",
+            "text": "Dimensionality reduction techniques, particularly those using correlation matrices, are key to our approach and have roots in statistics and information visualization, see Nonato & Aupetit (2018); Sorzano et al. (2014); Van Der Maaten et al. (2009); Van der Maaten & Hinton (2008). Various studies explore low-dimensional sub-space training using similar methods. For example, random projections can capture a substantial amount of the gradient\u2019s information (Li et al., 2018a). Hessian-based methods focus on its top eigenvectors, (Gur-Ari et al., 2018). Dimensionality has been further reduced via smart weight sampling, (Gressmann et al., 2020). The work by Li et al. (2023) bears the most resemblance to our research. The authors affirm low-dimensional training dynamics, using top\neigenvectors of the covariance matrix to span the training space. The gradient is fully computed for all of the weights before being projected onto this basis, making their method more involved than regular (stochastic) gradient descent. They also introduce an efficient Quasi-Newton training scheme that benefits from the low-dimensional representation. Our approach distinguishes itself from Li et al. (2023) by focusing on dynamics mode decomposition, rather than training in a lowdimensional sub-space. Both methods use dimensionality reduction to compactly model the dynamics, but operate differently. Our analysis is not based on eigenvectors but on nonlinear clustering, yielding improved performance. DMD and Koopman theory, (Schmid, 2010; Tu, 2013; Williams et al., 2015; Kutz et al., 2016), decompose dynamics to modes using well-studied operators. They extend to neural training dynamics analysis (Manojlovic\u0301 et al., 2020; Dogra & Redman, 2020; Redman et al., 2021), including advanced methods for highly non-linear cases Yeh et al. (2023). S\u030cima\u0301nek et al. (2022) also incorporates DMD for training optimization. Contrary to these, we extract modes from the observed correlation in the dynamics without using a predefined operator, implying a more adaptive, data-driven approach. The geometry of loss landscapes has been a topic of interest, see Shalev-Shwartz & Ben-David (2014); Keskar et al. (2016); Li et al. (2018b); Draxler et al. (2018). We showcase our dimensionality-reduction technique in this regard as well.\nWe demonstrate the relevance of our approach for communication overhead in distributed learning, a widely-studied challenge addressed by various techniques, including order scheduling and data compression (Ho et al., 2013; Cui et al., 2014; Zhang et al., 2017; Chen et al., 2019; Shi et al., 2019; Hashemi et al., 2019; Peng et al., 2019; Dryden et al., 2016; Alistarh et al., 2017). In Federated Learning, communication is particularly problematic (Li et al., 2020). For instance, Chen et al. (2021) finds communication takes up more than 50% of the training time in their experiments. Solutions involve adaptive weight updates to reduce communication load (Seide et al., 2014; Alistarh et al., 2017; Hsieh et al., 2017; Luping et al., 2019; Konec\u030cny\u0300 et al., 2016; McMahan et al., 2017; Stro\u0308m, 2015; Chen et al., 2021). In our work we propose for the first time to use dynamics modeling to reduce the number of communicated parameters."
+        },
+        {
+            "heading": "3 METHOD",
+            "text": "We present several approaches to apply our method, starting by discussing the underlying correlated dynamics (Sec. 3.1). Following this discussion we introduce the basic CMD version, called posthoc CMD, which analyzes dynamics after they occur (Sec. 3.2). We then present the more efficient online CMD (Sec. 3.3) and embedded CMD (Sec. 3.4), which embeds CMD dynamics to the training process. In Sec. 3.5 we demonstrate accuracy landscape visualization via CMD."
+        },
+        {
+            "heading": "3.1 THE UNDERLYING CORRELATED DYNAMICS",
+            "text": "Hypothesis 1 The dynamics of neural network parameters can be clustered into very few highly correlated groups, referred to as \u201cModes\u201d.\nLet W = {wi(t)}Ni=1 denote the set of time-profiles of the neural network trainable weights during the training process, where i is the weight index, t is the training time, and N is the total number of such weights. We refer to W as the \u2019trajectories\u2019 where each wi(t) is a single \u2019trajectory\u2019. The trajectories are clustered to M modes, where M \u226a N . Let Wm \u2282 W be the subset of trajectories corresponding to mode m within W. Using a minor abuse of notation, when t is discrete we use W,Wm to denote the matrices where the (discrete) trajectories are arranged as rows. Details of the discrete case will be provided in Sec. 3.2. The correlation of two trajectories u, v is denoted corr(u, v). Any two time trajectories u, v that are perfectly correlated (or anti-correlated), i.e. |corr(u, v)| = 1, can be expressed as an affine transformation of each other, u = av + b. Thus, under the assumption of correlated dynamics, the following approximation is used to describe the dynamics of a weight trajectory\nwi(t) \u2248 aiwm(t) + bi, \u2200wi(t) \u2208Wm, (2)\nwhere ai, bi are scalar affine coefficients associated with wi, and wm(t) is a single common weight trajectory chosen to represent mode m termed \u2019reference weight\u2019. Note that in terms of the usual dynamics decomposition approach of Eq. (1), the case of Eq. (2) is a specific case where a single wm(t) models each trajectory. Figs. 1, 7 demonstrate that Eq. (2) approximates the dynamics using\na notably small set of modes (10 or less in most cases), supporting our hypothesis of correlated dynamics. Surprisingly, parameters of the same layers are typically distributed between the modes, see Fig. 10b in the Appendix.\nWhile neural networks are notoriously known for their complex dynamics, the data-driven approach of Eq. (2) is simple yet effective at capturing these training intricacies. The reference weights hold the advantage of not being restricted to common assumptions typically made in classical dynamics analysis. For instance, we show DMD (a classical analysis approach) to be too restrictive even for simple cases in Appendix H.2.\nOur key novelty lies in leveraging the correlation between parameter trajectories to compactly model the training dynamics. We will show that this approach outperforms current modeling methods."
+        },
+        {
+            "heading": "3.2 POST-HOC CMD",
+            "text": "In this section we introduce the basic CMD version, called post-hoc CMD, which analyzes dynamics after they occur. This algorithm models dynamics as per Eq. (2): It splits the trajectories to modes, associates a reference trajectory to each mode and approximates the affine coefficients.\nConsider a discrete time setting, t \u2208 [1, ..E], where E is the number of epochs, and denote Nm the number of trajectories in mode m. Then wm, wi \u2208 RE , W \u2208 RN\u00d7E ,Wm \u2208 RNm\u00d7E . We consider 1D vectors such as u \u2208 RE to be row vectors, and define u\u0304 := u \u2212 1E \u2211E t=1 u(t), \u27e8u, v\u27e9 = uvT ,\n\u2225u\u2225 = \u221a uuT , corr(u, v) = \u27e8u\u0304,v\u0304\u27e9||u\u0304||||v\u0304|| . Let A, B \u2208 R N s.t. A(i) = ai, B(i) = bi, and let Am, Bm \u2208 RNm be the parts of A,B corresponding to the weights in mode m. Denote w\u0303m = [ wm 1\u20d7 ] \u2208 R2\u00d7E , where 1\u20d7 = (1, 1, \u00b7 \u00b7 \u00b7 1) \u2208 RE , and A\u0303m = [ATm, BTm] \u2208 RNm\u00d72. In this context, Eq. (2) reads as Wm \u2248 A\u0303mw\u0303m. (3)\nStep 1. Find reference trajectories. Given the trajectories wi \u2208 W, use correlation to select wm. To avoid a large N \u00d7N matrix, we sample K trajectories to construct the absolute trajectory correlation matrix C1, i.e. C1[k1, k2] = |corr(wk1 , wk2)|, C1 \u2208 RK\u00d7K , (4) where wk1 , wk2 take any pair of the K sampled trajectories and M \u226a K \u226a N . C1 is used to cluster the K trajectories to M modes. In each mode, wm is chosen as the weight trajectory with the highest average correlation to the other weights in the mode. Details on the sampling and clustering procedures are available in Appendix C.2, C.3.\nStep 2. Associate weights to modes. Given {wm}Mm=1 and W, partition W to {Wm}Mm=1. Let C2 \u2208 RN\u00d7M : C2[i,m] = |corr(wi, wm)|. (5) To get {Wm}Mm=1, we obtain the mode of each wi \u2208W as argmax of the ith row C2[i, :].\nStep 3. Obtain the affine parameters. Given wm, Wm, get A\u0303m by a pseudo-inverse of Eq. (3)\nA\u0303m = Wmw\u0303 T m(w\u0303mw\u0303 T m) \u22121 \u2208 argmin A\u0303m \u2225Wm \u2212 A\u0303mw\u0303m\u2225F , (6)\nwhere \u2225 \u00b7 \u2225F denotes the Frobenius norm. Reconstruction of the modeled dynamics WReconm , is performed by re-plugging A\u0303m to the right-hand-side of Eq. (3)\nWReconm = A T mwm +B T m1\u20d7, (7) where, e.g., mode m weights at end of training appear at the last column, denoted WReconm (t) \u2223\u2223\u2223\u2223 t=E .\nWe tested post-hoc CMD on image classification, segmentation and generative image style transfer. The performance upon replacing the weights with the CMD modelled weights produces similar, and even enhanced results, compared to the original network weights, see Fig. 2. Further experimental details and additional post-hoc results, and ablation studies are in Appendix B. As far as we know, we are the first to assess dynamics modeling in image segmentation and generative style transfer. Post-hoc CMD is resource-intensive due to full training trajectory usage. Thus we introduce efficient CMD variants for real-time computation during training."
+        },
+        {
+            "heading": "3.3 ONLINE CMD",
+            "text": "We introduce an iterative CMD version that mitigates the computational drawbacks of post-hoc CMD. Designed to run alongside the regular training process, with negligible overhead - we term it online. Transforming post-hoc CMD into an iterative algorithm, we eliminate the need for full training trajectories, reducing memory and computation.\nWarm-up phase. We observed that the reference trajectories can be selected once during training, and do not require further updates (see Fig. 16 and Table 4 in Appendix C.5). Thus we perform Step 1 of Sec. 3.2 once at a pre-defined epoch F , and the selected reference weights continue to model the dynamics for the remainder of the training process. After the warm-up phase, we perform efficient iterative updates, variants of Step 2 and Step 3 of Sec. 3.2.\nStep 2 (iterative). This step requires computing C2, the trajectory correlation matrix of Eq. (5). C2 is calculated using inner products and norms. Denote wt \u2208 Rt as the discrete trajectory of a weight w at times 1 through t. Given \u27e8wm,t\u22121, wi,t\u22121\u27e9, \u2225wi,t\u22121\u22252, we may obtain \u27e8wm,t, wi,t\u27e9, \u2225wi,t\u22252 as:\n\u27e8wm,t, wi,t\u27e9 = \u27e8wm,t\u22121, wi,t\u22121\u27e9+ wm(t)wi(t), \u2225wi,t\u22252 = \u2225wi,t\u22121\u22252 + w2i (t). (8)\nStep 3 (iterative). Let A\u0303m(t) be A\u0303m evaluated on trajectories up to time t. Given A\u0303m(t \u2212 1), we have by Eq. (6)\nA\u0303m(t) = ( A\u0303m(t\u2212 1)(w\u0303m,t\u22121w\u0303Tm,t\u22121) +Wm(t)w\u0303Tm(t) ) (w\u0303m,tw\u0303 T m,t) \u22121, (9)\nw\u0303m,tw\u0303 T m,t = w\u0303m,t\u22121w\u0303 T m,t\u22121 + ( w2m(t) wm(t) wm(t) 1 ) , (10)\nwhere Wm(t), w\u0303m(t) are the tth column of Wm, w\u0303m respectively, and w\u0303m,t are columns 1 through t of w\u0303m. Note that we only used the weights at the current time t, along with the 2 \u00d7 2 matrices w\u0303m,t\u22121w\u0303 T m,t\u22121, w\u0303m,tw\u0303 T m,t, which are also iteratively maintained via Eq. (10). In all of our experiments - invertability of this 2\u00d72 was never an issue (generally, a pseudo-inverse can be used). Thus we use Eq. (9), Eq. (10) for iterative updates, see derivation of Eq. (9) in Appendix C.4.\nPerformance Our experiments show that after the F warm-up iterations we may fix not only Steps 1, but also Step 2, and continue with iterative Step 3 updates, while maintaining on-par performance with post-hoc CMD, as shown in Table 4 in Appendix C.5. Online CMD outperforms the current SOTA low-dimensional model of Li et al. (2023) on various image classification architectures, as highlighted in Table 1, while requiring a substantially shorter warm-up phase.\nEfficiency Unlike Eq. (6), which is performed once at the end of the warm-up phase, the iterative updates, Eq. (9), Eq. (10), do not require trajectory storage at all. Moreover, their overhead is computationally negligible compared to a training step, see Appendix C.6 for the calculations. Thus we have an online dynamics modeling procedure with negligible overhead - setting the ground for training enhancement. The full Online CMD algorithm is available in Algorithm 3 in Appendix C.1."
+        },
+        {
+            "heading": "3.4 EMBEDDING THE MODELED DYNAMICS IN TRAINING",
+            "text": "This method gradually integrates CMD dynamics into training, aimed at leveraging modeled dynamics for enhanced learning. This improves accuracy and reduces the number of trained parameters. Experiments show that gradual CMD embedding stabilizes training, whereas instantaneous CMD use in SGD is unstable (Fig. 3). Two naive approaches failed: 1) periodic CMD weight assignment reverted to regular SGD paths; 2) training only the reference weights after the warm-up phase.\nLet us describe the gradual embedding approach of choice. We rely upon the online algorithm of Sec. 3.3, where after a short warm-up phase the affine parameters ai, bi are iteratively updated at each epoch. Every L epochs we further embed additional parameters. A parameter wi for which the model is stable (change of ai, bi in time is negligible) is CMD embedded from then on, i.e. it gets its value according to the CMD model and not by gradient updates. Additionally, from this point on, ai, bi are fixed.\nAs shown in Appendix C.8, the affine parameters ai, bi tend to exhibit minimal or no changes after a certain epoch, denoted t = \u03c4i. Thus, after \u03c4i we may fix ai, bi, i.e. use ai \u2190 ai(\u03c4i), bi \u2190 b(\u03c4i)\u2200t > \u03c4i. Denote I(t) = {i : t > \u03c4i}. To embed the modeled dynamics to wi, we perform\nwi(t)\u2190 {\nSGD update if i /\u2208 I(t) aiwm(t) + bi if i \u2208 I(t) . (11)\nAfter \u03c4i, we say that wi is an embedded weight, and ai, bi its embedded coefficents. Note: Embedded coefficients are frozen in time, embedded weights are not. Let ci be a criterion of change in ai, bi, for instance ci(t) = \u221a \u2225ai(t)\u2212 ai(t\u2212 L)\u22252 + \u2225bi(t)\u2212 bi(t\u2212 L)\u22252. One way to obtain \u03c4i is by\n\u03c4i = t : ci(t) is in the bottom P% of the unembedded weights. (12)\nOther reasonable ways include \u03c4i = t : ci(t) < \u03f5, for un-embedded wi, using a small threshold \u03f5 > 0. The full online embedding algorithm is available in Algorithm 4 in the Appendix. Note that we do not embed the reference weights {wm}Mm=1. Sec. 4 demonstrates the benefit of embedded dynamics in the context of federated learning, where we can locally store the embedded coefficients to significantly reduce the communication overhead."
+        },
+        {
+            "heading": "3.5 CMD ACCURACY AND LOSS LANDSCAPE VISUALIZATION",
+            "text": "Reducing the search space to 1-2 dimensions allows for loss landscape visualization. To this end we use CMD with 2 modes, as seen in Fig. 4, where different parts of the dataset are used for accuracy visualization. Expectedly, training and validation sets differ in landscape smoothness. Smoothness as well as minima points also vary across the CIFAR10 classes. See further details in Appendix G."
+        },
+        {
+            "heading": "4 CMD FOR EFFICIENT COMMUNICATION IN DISTRIBUTED LEARNING",
+            "text": "We propose for the first time to use training dynamics modeling for efficient communication in distributed learning. In conventional (non-distributed) learning, as discussed above, a reduction in trained parameters leads to decreased computation. Nonetheless, in distributed scenarios, modeling trajectories may reduce the No. of communicated parameters as well, offering further significant benefits. Specifically in Federated Learning (FL), communication efficiency is crucial (Li et al., 2020). For example, Chen et al. (2021) find in their FL experiments that communication accounts for over 50% of the total training time. Following their experimental setting, we concentrate on FL, where client models handle unique per-client data. Although developed for FL, our method is adaptable for distributed learning.\nLet C be the set of client models, trained locally on distinct data. Periodical \u2019synchronization rounds\u2019 occur at time ts as follows: A subset C(ts) \u2282 C is randomly selected and aggregated in a Central Server using standard averaging (McMahan et al., 2017). We consider the (less standard) practice that aggregates only a subset of the weights\nCentral Server: wmaini (ts) = 1 |C(ts)| \u2211\nclient\u2208C(ts)\nwclienti (ts), \u2200i /\u2208 I(ts), (13)\nwhere I(ts) is the set of indices of the un-aggregated weights at time ts. Un-aggregated weights do not require communication with the central server, hence increasing the size of I while maintaining performance is beneficial. To this end, we harness the embedded CMD modeling of Sec. 3.4, where the analyzed set of weight trajectories is {wmaini (ts)}i\u2208I(ts) as follows: The coefficients {ai, bi} are maintained in the Central Server as in Sec. 3.4, and calculated w.r.t. {wmaini (ts)}Ni=1. Let \u03c4s,i be the round in which ai, bi are embedded. At ts = \u03c4s,i, the pair {ai, bi} is distributed to the client models. Each client maintains a local copy of all the embedded coefficients {ai, bi}i\u2208I(ts). The client synchronization is performed, similarly to Eq. (11), as\nLocal Client: wclienti (ts)\u2190 { wmaini (ts) if i /\u2208 I(ts) aiwm(ts) + bi if i \u2208 I(ts),\n(14)\nwhere I(ts) = {i : ts > \u03c4s,i}, and \u03c4s,i is updated at the Central Server via Eq. (12). Note that only the weights corresponding to indices i /\u2208 I(ts) and the set {wm}Mm=1 require communication. Additionally, each ai, bi pair is sent once during the training from the main model to the clients (when they are selected as embedded coefficients). Note: CMD is performed solely on {wmaini (ts)}Ni=1. In basic FL, N weights from each of the |C| selected clients are sent to a central server during each synchronization step. These are aggregated into a main model, which is then distributed back to all |C| clients. Thus, before employing any compression, the total data volume transmitted for each synchronization, is given by:\nSync. Volume (Baseline) = N(|C|+ |C|), (15)\nwhere usually this is measured in floating point numbers (depending on the variable-type of the N weights).\nIn our scenario, due to the progressive change in I, the communicated volume is not constant. Thus, we consider the following average:\nSync. Volume (CMD) = N\u0302 not-embedded(|C|+ |C|) + 2N Es |C|, (16)\nwhere N\u0302 not-embedded is the number of un-embedded parameters, averaged over Es synchronization rounds. Note that upon full embedding, the M reference weights are still required for communication. The term 2NEs |C| accounts for the following: Each ai, bi pair is embedded and communicated once during training. The N pairs form a total of 2N communicated parameters. Communication is performed to all clients, i.e. 2N |C| total volume. Average round communication is thus 2NEs |C|.\nIn Fig. 5 our approach is compared to Chen et al. (2021), showing comparable accuracy with significant reduction of communicated weights."
+        },
+        {
+            "heading": "5 RESULTS",
+            "text": "We provide a focused comparison between our approach and the most closely related contemporary works: Li et al. (2023) that uses the SOTA P-BFGS for compactly modeled dynamics in image classification, and Chen et al. (2021)\u2019s APF and aggressive APF (A-APF) aimed at reducing communicated parameters in FL. While we are first to leverage dynamics modeling for efficient communication, APF targets parameters that are nearly constant over time, which is infact plateau dynamics.\nDimensionality reduction. In Table 1 we compare our online CMD method to P-BFGS (Li et al., 2023) on various architectures, ranging from very simple networks to vision transformers. We add results of CMD embedding for some of the models in Table 10 in the Appendix. For implementation details see Appendix D. P-BFGS appears twice in the table: With CMD-equivalent warmup, and with an 80-epoch warm-up as they originally propose. Dimensionality is 40 unless the warm-up is \u226440 epochs, then it matches the warm-up length due to method constraints. Our online CMD method outperforms P-BFGS in all experiments. With just a handful of modes (10 or less), we achieve superior performance, regardless of the warm-up phase duration. P-BFGS requires substantially more dimensions and a longer warm-up phase than CMD, yielding models with low performance for equal warm-up phases to CMD and less than 40 dimensions. Furthermore, Online CMD has constant memory consumption and negligible computational overhead (see Appendix C.6, C.7). On the other hand, P-BFGS requires a matrix linearly dependent on the number of dimensions, leading to memory issues when training large models such as Wide-ResNet (Zagoruyko & Komodakis, 2016) or a vision transformer - ViT-b-16 (Dosovitskiy et al., 2020). In fact, we could not train P-BFGS on ViT-b-16 using a single GPU, like CMD. Moreover, we could not calculate the P-BFGS parameters for the long warm-up case using our computational device (125GB RAM memory), therefore only the equal warm-up phase option is available in the results.\nCMD as a regularizer A by-product of applying CMD for dynamics modeling is smoother trajectories, demonstrated in Figs. 1, 7. Smoothed trajectories have been shown to improve performance,\nfor instance in using EMA and SWA, (Tarvainen & Valpola, 2017; Izmailov et al., 2018). We compare this performance boost with CMD in Table 2, using several SGD variants. It can be observed that CMD even slightly out-performs EMA and SWA. See additional information in Appendix D. Notably, EMA and SWA are specifically designed for smoothing and relate to CMD solely through this by-product; they do not involve dynamics modeling.\nFederated Learning In Table 3 we contrast CMD with APF and A-APF. As a baseline, we perform FL training without any communication boosting. The Volume criterion quantifies the average number of parameters communicated per round, expressed as a ratio to the baseline number of parameters. We note that no additional compression is performed here. We closely followed the experimental setting provided in Chen et al. (2021), as detailed in Appendix F.1. CMD is preferable in terms of Volume to APF and A-APF as seen in Table 3."
+        },
+        {
+            "heading": "6 CONCLUSION",
+            "text": "In this paper, we have presented a new approach to model neural network parameter dynamics, leveraging the underlying correlated behavior of the training process. We show the model applies for a wide variety of architectures and learning tasks. By incorporating a low-dimensional approximation and using iterative update techniques, we introduce Online CMD, an efficient online method that models the training dynamics with just a handful of modes, while enhancing performance. We also incorporated the modeled dynamics into the training process and demonstrated the efficiency in Federated Learning, improving the communication overhead. The idea to use modeled dynamics for this task is novel in itself.\nOur experiments showcase a range of benefits: We improve accuracy relative to regular SGD training and also surpass the state-of-the-art in low-dimensional dynamics modeling. The model can also be used effectively for visualization of accuracy and error landscapes. Additionally, our federated learning method significantly reduces communication overhead without compromising performance. Our approach could be effectively combined with other techniques, opening up new avenues for optimizing complex neural network training."
+        },
+        {
+            "heading": "REPRODUCIBILITY",
+            "text": "Detailed pseudo-code of our CMD algorithm is described in Algorithms 1, 2. Our other CMD variants, Online CMD and Embedded CMD are descibed in Algorithms 3, 4. All the algorithms are available in the Appendix. The parameters used for our experiments in Sec. 5 are available in the Appendix D, specifically Table 5 (training parameters) and Table 6 (CMD parameters). All of our algorithms: Post-hoc, Online, and Embedded CMD, have an implementation provided here, alongside a script which executes them in the setting of the results in Sec. 5."
+        },
+        {
+            "heading": "ACKNOWLEDGEMENTS",
+            "text": "GG would like to acknowledge support by the Israel Science Foundation (Grants No. 534/19 and 1472/23), by the Ministry of Science and Technology (Grant No. 5074/22) and by the Ollendorff Minerva Center."
+        },
+        {
+            "heading": "APPENDIX",
+            "text": ""
+        },
+        {
+            "heading": "A CORRELATION RELATED EXPERIMENTS",
+            "text": ""
+        },
+        {
+            "heading": "A.1 MANUAL INSPECTION OF MODELED TRAJECTORIES",
+            "text": "corr\n(\n1 Nm\n\u2211\ni\u2208Cm wi, wm\n)\n. Notably, corr2 consistently indicates a strong alignment of the mean\ntrajectory with the reference trajectory, demonstrating its efficacy in capturing the general dynamics, even upon less-than-perfect values in corr1. Additionally, larger modes exhibit higher corr2 as well as corr1 values, suggesting more consistent behavior within the collective dynamics. The modeaverage dynamics display varied patterns, including sharp decreases and subsequent stabilization, reflecting the learning process\u2019s adaptation phases. This diversity is effectively encapsulated by the reference trajectories, affirming our dynamics modeling approach despite the variation in correlation.\nIn Fig. 1 we compare CMD weight trajectory approximation to DMD weight trajectory approximation. Here we offer additional examples of CMD weight trajectory approximations. CMD is performed with M = 10 modes and 3 weights are randomly sampled from each mode for visualization. Manual observation is indispensable, therefore in Fig. 7 we show CMD smoothens the output, implying a regularization effect that may boost performance similarly to smoothing methods like EMA and SWA (Tarvainen & Valpola, 2017; Izmailov et al., 2018). Note however that EMA and SWA do not offer modelling (which is the core interest in our work)."
+        },
+        {
+            "heading": "A.2 REFERENCE WEIGHT AND MODE WEIGHTS RELATIONS",
+            "text": "In Fig. 8, statistical metrics validate CMD\u2019s weight trajectory modeling. The reference weight of a mode, together with the mean and variance of 10,000 randomly sampled weights per mode are presented. Different approaches are used - Post-hoc CMD (top row), Naive reference weight training\n(middle row) and gradual CMD embedding (bottom row). In each row 3 modes are presented. In the post-hoc CMD case the mean of the weights in the mode do not follow the exact dynamic of the reference weight, it is somewhat similar and more smooth. In addition, the variance increases throughout the epochs. In the naive reference weight training case all of the weights in the mode are directly related to the reference weight and change only according to the reference weight, post warm-up (orange). Therefore, there is no variance and the mean of the sampled weights is exactly equal to the reference weight. However, in this case the final test accuracy is not comparable to the other cases (more details about the accuracy are available in Fig. 3). The warm-up phase in this case was 50 epochs. In the gradual CMD embedding case the weights are gradually linked to the reference weights which results with a converging mean and decreasing variance. The high performance is maintained, in terms of test accuracy. The warm-up phase is 20 epochs.\nNote: In order to display weights with different ranges of values in the same graph we stretch the values to the range of [0, 1] - w\u0303i =\nwi\u2212min(wi) max(wi)\u2212min(wi) ."
+        },
+        {
+            "heading": "A.3 CORRELATION MATRIX EXAMPLES",
+            "text": "Our main observation is that many network parameters, although non-smooth in their evolution, are highly correlated and can be grouped into \u201cModes\u201d characterized by their alignment with a common evolutionary profile. In Fig. 1 we displayed two examples of a clustered correlation matrix. Bellow we present two additional examples. The first example is of SimpleNet (see Fig. 10b) trained on a binary classification task. In this case the parameters are divided into 3 modes. The main mode contains the majority of the network parameters. The second example is of a vision transformer, ViT-b-16, fine tuned on CIFAR10. The model parameters are divided into 30 modes. The modes contain a decreasing number of parameters, and some redundancy is visible. Redundancy in the number of modes is implied when all of the weights from one mode have high correlation to all of weights in a different mode (mode 0, mode 2, mode 4, etc. in this case, and mode 1, mode 3, etc.)."
+        },
+        {
+            "heading": "B POST-HOC CMD EXPERIMENTS",
+            "text": "Image Classification First we consider the CIFAR10 (He et al., 2016a) classification problem, using a simple CNN architecture, used in Manojlovic\u0301 et al. (2020), we refer to it as SimpleNet (Fig. 10a). Cross-Entropy Loss and augmented data (horizontal flip, random crop, etc.) are used for training. The CNN was trained for 100 epochs, using Adam optimizer with momentum, and initial learning rate of \u03b7 = 1 \u00d7 10\u22123. The CMD Analysis was applied on the full 100 checkpoints of this training. In this case we obtained 12 modes for the post-hoc CMD. The results from the CMD and the original SGD training are presented in Fig. 10c. We clearly see the model follows well the SGD dynamic, where both train and test accuracy are even slightly improved. In addition, the distribution of the modes through the entire network is presented in Fig. 10b. Each mode contains weights from each layer of the network. Therefor, trying to simplify the mode decomposition to full layers of weights is not expected to work as well. After validating our method on a simple scenario we tested CMD on larger architectures, such as ResNet18 (He et al., 2016a), see Fig. 12.\nIn recent years, after becoming a key tool in NLP (Devlin et al., 2018) transformers are making a large impact in the field of computer vision. Following Dosovitskiy et al. (2020), we apply our method on a pre-trained vision transformer. Our model was applied on the fine tuning process of a ViT-b-16 (Dosovitskiy et al., 2020; Gugger et al., 2021), pre-trained on the JFT-300M dataset (Sun et al., 2017), on CIFAR10 with 15% validation/training split. We used Adam optimizer with a starting learning rate of 5 \u00d7 10\u22125 with linear scheduling. The network contains 86 million parameters. Negative Log Likelihood Loss was used. One can see in Fig. 2 that our method models the dynamics well and the induced regularization of CMD yields a stable, non-oscillatory evolution.\nImage Segmentation using PSPNet Our method generalizes well to other vision tasks. We present CMD modeling on the semantic segmentation task for PASCAL VOC 2012 dataset (Everingham & Winn, 2012). For this task we used PSPNet Architecture (Zhao et al., 2017), (13\u00d7 106 trainable parameters). The model was trained for 100 epochs, using SGD optimizer with momentum of 0.9, and weight decay of 1 \u00d7 10\u22124. In addition, we used \u201cpoly\u201d learning policy with initial\nlearning rate of \u03b7 = 1\u00d7 10\u22122. Post-hoc CMD was executed using M = 10 modes. Pixel accuracy and mIoU results from the CMD modeling and the original SGD training are presented in Fig. 11. Max CMD performance on the validation set: Pixel accuracy: 88.8% with mIoU of 61.6%. Max SGD performance on the validation set: Pixel accuracy: 88.1% with mIoU of 58.9%. We observe CMD follows SGD well in the training, until it reaches the overfitting regime. For the validation set, CMD is more stable and surpasses SGD for both quality criteria.\nImage synthesis using StarGan-v2 We applied our CMD modeling on image synthesis task using StarGan-V2 (Choi et al., 2020). This framework consists of four modules, each one contains millions of parameters. It was modeled successfully by only a few modes, as demonstrated in Fig. 15.\nAblation Study Our method introduces additional hyper-parameters such as the number of modes (M ) and the number of sampled weights to compute the correlation matrix (K). We performed\nseveral robustness experiments, validating our proposed method and examining the sensitivity of the CMD algorithm to these factors.\n1. Robustness to number of modes. Fig. 12 presents the test accuracy results of 10 different CMD models, with different number of modes for the same SGD training. Surprisingly, the test accuracy is close to invariant to the number of modes. The best test accuracy per mode is presented in Fig. 12b. We reach the highest score for only two modes. It appears ResNet18 is especially well suited for our proposed model. Weights MSE does in fact reduce as more modes are generated (Fig. 12c), but this does not effect the model performance. It is important to note that the weights MSE is very low even for 2 modes.\n2. Robustness to different random subsets. Here We examine empirically our assumption that in the K sampled weights we obtain all the essential modes of the network. In Fig. 13 we show the results of 10 CMD experiments executed on the same SGD training (ResNet18, CIFAR10), where in each experiment a different random subset of the weights is sampled. We fixed the number of modes to M = 10 and the subset size to K = 1000. The mean value of the test-accuracy at each epoch is shown, as well as the maximal and minimal values (over 10 trials, vertical bars). As can be expected, there are some changes in the CMD results. However, it is highly robust and outperforms the original GD training. In addition, we conducted several experiments, examining different values of K, the values were K = 50, 125, 250, 500, 1000, 2000. The number of modes was fixed (M = 10). For any fixed K, 5 experiments were carried out, see Fig. 13. We observe that the algorithm is robust to this meta-parameter as well. The results tend to be with somewhat less variance for larger K, but generally we see the sampling size for the initial clustering phase can be very small, compared to the size of the net N .\n3. Robustness to random initialization - In Fig. 14 we show that the effects of random initialization of the weights is marginal. The results of 10 training experiments are shown (ResNet18, CIFAR10). In each experiment a different random initialization of the weights is used. The same weights are sampled and the number of modes is fixed (M = 10,K = 1000). The variance of the CMD results is similar to the variance of the SGD results, with a smoother mean."
+        },
+        {
+            "heading": "C METHOD DETAILS",
+            "text": ""
+        },
+        {
+            "heading": "C.1 ALGORITHMS",
+            "text": "In Sec. 3.2 we introduce the CMD algorithm, consisting of three steps. Steps 1 and 2 describe clustering the model weights to modes. The clustering we use is a correlation based clustering with linear complexity and it is described in Algorithm 1. The full CMD algorithm is described, including the third step, in Algorithm 2.\nAlgorithm 1 Correlation-based clustering with linear complexity Input:\n- W \u2208 RN\u00d7T - Matrix of all weights. - K - Number of sampled weights. - M / t - Number of wanted modes / desired in-cluster distance threshold.\nOutput: - {Cm}Mm=1 - Clusters of the network parameters. procedure 1. Initialize Cm = {}, m = 1..M . 2. Sample a subset of K random weights and compute their correlations. 3. Cluster this set to M modes based on correlation values, update {Cm} accordingly. 4. Choose profiles wm = argmaxwj\u2208Cm \u2211 wi\u2208Cm |corr(wi, wj)|.\nfor i in (N \u2212K) weights do m\u2217 = argmaxm |corr(wi, wr,m)| Cm\u2217 \u2190 Cm\u2217 \u222a {wi} end for return {Cm}Mm=1\nend procedure\nAlgorithm 2 CMD - Correlation Mode Decomposition Input:\n- W \u2208 RN\u00d7T - Matrix of all weights. - K - Number of sampled weights. - M / t - Number of wanted modes / desired in-cluster distance threshold.\nOutput: - WRecon \u2208 RN\u00d7T - CMD reconstruction of network parameters.\nprocedure CMD Perform correlation clustering to M modes using Alg. 1. (M is fixed if given, or deduced according to the t input). Get mode mapping {Cm}Mm=1. for m\u2190 1 to M do\nFollow Eq. (6) to compute A,B, the affine parameters. Follow Eq. (7) to compute WReconm per mode, the CMD reconstructed weights.\nend for return WRecon\nend procedure\nAlgorithm 2 can return the CMD parameters (A,B vectors, wm weights, etc.) instead of the reconstructed weights WRecon, if wanted. The Online CMD algorithm is presented in Algorithm 3."
+        },
+        {
+            "heading": "C.2 SAMPLING DETAILS",
+            "text": "We would like to make sure that every layer is represented in the subset that is randomly sampled at the first step of our method (correlation and clustering). The choice of reference weights depends on\nAlgorithm 3 Online CMD - Iterative AB Update Algorithm Inputs:\n- F - Number of warm-up phase epochs. - E - Number of total epochs. - Any other input needed for the SGD training (learning rate, momentum, etc.) or CMD\nalgorithm (CMD sampled weights number - K, CMD number of modes - M , etc.) Outputs:\n- Regular SGD final model - CMD final model\nProcedure 1. Start SGD training and save model checkpoint in each epoch. 2. When epoch = F perform the full CMD algorithm. All CMD parameters are saved\n(A, B, Related mode vectors and reference weights time profiles). No checkpoints (additional or previous) are needed.\n3. For epoch from F + 1 to E: update A,B vectors according to Eq. (9), using the current model weights. Update the reference weights time profiles.\n4. After last epoch calculate final CMD model weights according to Eq. (7).\nthis set. We therefore allocate a budget of K2\u00b7|layers| for each layer and randomly sample it uniformly (using a total budget of K2 parameters). The other K 2 parameters are sampled uniformly throughout the network parmeter space. When K2 <= |layers| we simply sample all of the K parameters uniformly. In the context of image classification, we observed a reduction in test accuracy variance when using this procedure (compared to naively sampling with uniform distribution accross all weights)."
+        },
+        {
+            "heading": "C.3 CLUSTERING METHOD",
+            "text": "To cluster the correlation map into modes we employed a full linkage algorithm - the Farthest Point hierarchical clustering method. After creating a linkage graph we broke it down into groups either by thresholding the distance between vertices (\u03f5), or by specifying a number for modes (M ). Note - In Step 1, we associate K weights; in Step 2, only the remaining N \u2212K weights are considered, reducing C2 from RN to R(N\u2212K)\u00d7M .\nThe Clustering method could be substituted by any clustering algorithm such as the simple k-means and others. We do not recommend methods such as PCA to avoid assumptions, such as orthogonality, which may not apply to weight trajectory space.\nC.4 ITERATIVE STEP 3 DERIVATION\nGiven A\u0303m,t\u22121, we can re-express Eq. (6) as\nA\u0303m = Wmw\u0303 T m(w\u0303mw\u0303 T m) \u22121 (17) = [ Wm,t\u22121w\u0303 T m,t\u22121 +Wm(t)w\u0303m(t) ] (w\u0303mw\u0303 T m) \u22121,\nOn the other hand, by Eq. (6) at time t \u2212 1 we have Wm,t\u22121w\u0303Tm,t\u22121 = A\u0303m,t\u22121(w\u0303m,t\u22121w\u0303Tm,t\u22121). Plugging this we indeed get Eq. (9), which is:\nA\u0303m(t) = ( A\u0303m,t\u22121(w\u0303m,t\u22121w\u0303 T m,t\u22121) +Wm(t)w\u0303 T m(t) ) (w\u0303m,tw\u0303 T m,t) \u22121, (18)"
+        },
+        {
+            "heading": "C.5 POST-HOC VS ONLINE CMD COMPARISON",
+            "text": "Post-Hoc CMD is the basic approach, while Online CMD is a highly efficient version of it. While it is often the case that efficiency comes at the expense of performance - here it is not the case,\nas validated by our experiments, see Table. 4. The comparison is done on ResNet18 trained on CIFAR10 with different number of modes. The post-hoc experiments are done at the end of the full training (150 epochs). The online approach is performed with a short warm-up phase (20 epochs) for steps 1 and 2 in the online CMD algorithm (see Sec. 3.3). The iterative updates are then performed until the end of training (from epoch #21 to the last epoch - epoch #150). Each experiment is performed 5 times, on the same SGD training process. The same weights are sampled for both approaches in each experiment. In Fig. 16 we present an experiment comparing online CMD runs with different warm-up phases. We examine short warm-up phases (20,30,40 epochs) and longer warm-up phases (80, 100, 120 epochs). We also present the regular SGD training case and the posthoc CMD case. All CMD runs, online CMD with different warm-up phases and post-hoc CMD, achieve similar results. CMD is performed with 10 modes in all the experiments in this figure, using the same training process."
+        },
+        {
+            "heading": "C.6 ONLINE CMD FLOPS COMPUTATION",
+            "text": "Here we show rigorously that the Online CMD algorithm computation can be completely neglected compared to the SGD which it accompanies. Upon the online CMD Eq. (9), Eq. (7) are performed on each epoch that occurs after the F warm-up epochs (note that Eq. (7) is performed only in order to validate the model and is not necessary for the training process itself. However we will take the worst case when calculating the computational overhead.) We consider t2 = t1 + 1, which we also use in practice. Let us calculate the number of FLOPS required for each epoch in this case. Reminder: an n\u00d7 p matrix multiplied by a p\u00d7m matrix takes nm(2p\u2212 1) FLOPS.\nLet us start with Eq. (9), which is given by:\nA\u0303m,t2 = (A\u0303m,t1(w\u0303m,t1w\u0303 T m,t1) +Wm,t1:t2w\u0303 T m,t1:t2)(w\u0303m,t2w\u0303 T m,t2) \u22121. (19)\nWe begin with the complexity of the first term:\nA\u0303m,t1(w\u0303m,t1w\u0303 T m,t1). (20)\nComputational complexity: First multiplication of a Nm\u00d7 2 by a 2\u00d7 2 is 6Nm FLOPS. The second multiplication (inside the brackets), may be updated iteratively on its own, similarly to Eq. (8), with 8 FLOPS, i.e. we treat it as O(1). Thus we have 6Nm + O(1) FLOPS.\nThe last term:\n(w\u0303m,t2w\u0303 T m,t2) \u22121. (21) The multipication is similarly O(1) (via another iterative update), and the inverse of a 2\u00d7 2 is O(1) as well.\nThe middle term: Wm,t1:t2w\u0303 T m,t1:t2 . (22) Multiplying a Nm \u00d7 t2 \u2212 t1 by a t2 \u2212 t1 \u00d7 2, considering t2 \u2212 t1 = 1 yields 2Nm FLOPS. The first addition takes 2Nm FLOPS, and the remaining multipication by the inverse matrix is a Nm \u00d7 2 miltiplied by the inverse which is a 2\u00d7 2 resulting with 6Nm FLOPS. In total summing all FLOPS and summing over the modes, where the number of modes is much smaller than N , we have\n14N +O(1) FLOPS. (23)\nNow let us move to the easier Eq. (7). Here we have one element-wise multipication and one elementwise addition to the weights vector, i.e. 2N FLOPS.\nThus in total we have 16N +O(1) FLOPS, that can be done on the CPU (do not require GPU). This is negligible considering typical actual FLOPS, for instance - ResNet18 has 70.07\u00b710 9\n1.82\u00b7106 N = 38, 500N FLOPS just for a forward pass, according to the model zoo provided here."
+        },
+        {
+            "heading": "C.7 ONLINE CMD MEMORY CONSUMPTION",
+            "text": "The final memory consumption of the algorithm, for a random number of modes, after the F warmup epochs, is approximately 2.25 times the memory of a single model. The CMD parameters, and there relative sizes are detailed below.\n1. Vectors A and B each have a size equal to the size of a full model.\n2. M\u0303 vector which stores the related mode of each weight has the size of \u2248 0.25 times the model. This vector has the same length as A and B, but the values stored have a smaller range - positive integers that represent the mode number. This vector can be compressed even more if necessary.\n3. The full time profile for each reference weight. A 2 \u00d7 2 matrix can be stored for each reference weight instead, as explained in Step 3 in Sec. 3.3. Both cases have negligible size compared to the full model size.\nIt is well established (see for instance Izmailov et al. (2018)) that the space occupied by storing the model is insignificant during the training process compared to the sustained gradients. Therefor, after the F warm-up epochs this online method has negligible memory consumption."
+        },
+        {
+            "heading": "C.8 COEFFICIENT STABILIZATION",
+            "text": "Analyzing the changes in the affine parameters {ai, bi}Ni=1 throughout training reveals variations among them, with some experiencing more significant changes than others. Additionally, as depicted in Fig. 17, the portion of parameters that remain relatively unchanged increases as the training procedure progresses. This motivates us to gradually embed the CMD model into the SGD training process."
+        },
+        {
+            "heading": "D RESULTS SECTION EXPERIMENTAL DETAILS",
+            "text": "Models In order to generalize our method and verify that it works on various models and architectures we examined different ResNet models and networks with different architectures. We strive to check models with different properties in order to examine a diverse set of examples. In the ResNet family of models we tested ResNet18, Preactivation ResNet-164 (He et al., 2016b) and Wide ResNet28-10 (Zagoruyko & Komodakis, 2016). PreRes164 is a very deep network composed of more than 800 layers. The number of parameters in this model is 2.7 million, less than in ResNet18 (11.2 million). In Wide ResNet28-10 the feature channels per layer are multiplied by 10 and the depth, the number of residual blocks, is 28. This model has 36.5 million parameters, more than three times the number of parameters in ResNet18. A different architecture, which is very basic, is LeNet-5 (LeCun et al., 1998). This model, which was presented more than 20 years ago, has a very basic architecture, composed of several convolutional layers. We also tested in GoogleNet (Szegedy et al., 2015), another model which is not relatively new. In addition to these well known models we also demonstrate the CMD methods presented in this work on a vision transformers architecture named ViT-b-16 introduced in Dosovitskiy et al. (2020). Transformers have become a fundamental tool in NLP (Devlin et al., 2018) and many computer vision tasks (Dosovitskiy et al., 2020). The Vit-b-16 model we used was pre-trained on ImageNet1k (Russakovsky et al., 2015). The code we used for each model is linked to the following model names. ResNet18, Wide ResNet28-10, Preactivation-ResNet-164, LeNet-5, GoogleNet, ViT-b-16.\nImplementation Details Each experiment is performed 5 times and the mean test accuracy and standard deviation are presented in the results tables (Tables 1, 2). The training parameters (number of epochs, optimizer, learning rate) and the CMD parameters (warm-up phase, number of modes (M ), number of sampled weights (K)) for each model are presented in Tables 5, 6 respectively.\nIn all the experiments the weight decay was 0 and when SGD is used momentum is 0.9. In the ViT-b-16 training we used a cosine scheduler starting with a short (5 epochs) warm-up phase where the learning rate linearly increases from 0 to 0.03. Then a cosine decreasing scheduler is applied for the remaining 85 epochs. The code for this scheduler is from here. The training parameters used are training parameters used in other works, specifically in the linked projects from above. Additionally, we wanted to show CMD works with any optimizer, not specifically SGD, so we used Adam in several cases. Both SGD and ADAM optimizers are implemented using the Pytorch library (Paszke et al., 2019). The CMD warm-up phase was enlarged for relatively deep models, with many layers. The number of modes used in each experiment was not optimized. Rather, various number of modes from 2 to 10 modes were chosen for generalization purposes. P-BFGS code is provided by the authors of the original paper here. In Fig. 18 single run comparisons between the regular SGD test accuracy and the Online CMD test accuracy are presented. Each plot describes a single run, on a specific model (see figure caption), following the experimental details described above. The test accuracy of the Online CMD method is much more smooth compared to the regular SGD training result.\nFor Table 2 we used the same learning rate in all experiments (LR = 0.05), when momentum was applied the value was - 0.9 and the learning rate scheduler (when used) is the Cosine scheduler with no warm-up epochs. All the training sessions are 150 epochs long, with a warm-up phase of 20 epochs for CMD. EMA is performed with a smoothing factor \u03b2 = 0.9 and SWA is performed on the last 25% of epochs. CMD was performed with M = 10 modes.\nIn order to demonstrate CMD on a different dataset we present a small experiment, performed on CIFAR100 (Krizhevsky et al., 2009), in Table 7. The implementation details of this experiment on ResNet18 are - 150 epochs, learning rate - 0.05 and momentum - 0.9. CMD is performed with 10 modes, the number of sampled weights (K) is 1000 and 20 warm-up epochs were used. For Embedded CMD we used L - 10 and P - 10. The experiment is repeated 5 times, the mean and standard deviation of the results are presented.\nIn Table 2 results of CMD are compared to EMA and SWA, which all achieve similar results. To further analyze the relations between these methods we experimented with preforming one on top of the other (Table 9. Using ResNet18 on CIFAR10, we reconstructed the full model weight values per epoch for EMA and CMD (post-hoc). Then, we performed SWA, EMA and CMD (post-hoc) on each set of weights - SGD weights, EMA weights and CMD weights. The implementation details\nof this experiment are - 150 epochs, learning rate - 0.05 and momentum - 0.9. CMD (post-hoc) is performed with 10 modes and the number of sampled weights (K) is 1000. The results indicate that similar regularization introduced by EMA and SWA is attained by CMD as well."
+        },
+        {
+            "heading": "E EMBEDDING CMD DETAILS",
+            "text": ""
+        },
+        {
+            "heading": "E.1 ALGORITHM",
+            "text": "The full gradual CMD embedding and weight freeing algorithm is presented in Algorithm 4.\nAlgorithm 4 Gradual CMD Embedding Algorithm"
+        },
+        {
+            "heading": "Hyper-parameters:",
+            "text": "F (Number of warm-up epochs); L (Number of epochs between each embedding epoch); P (Percentage of embedded coefficients in each embedding epoch); Any inputs required for the CMD algorithm or training process (learning rate, etc.)"
+        },
+        {
+            "heading": "Procedure",
+            "text": "W1:F \u2190 weight trajectories of F regular SGD epochs. A,B, related modes\u2190 Post-hoc CMD on W1:F . I \u2190 \u2205 \u25b7 index set of embedded weights for t > F do\nRegular SGD step Iterative update of A, B via Eq. (9) wi \u2190 {\nSGD update if i /\u2208 I aiwr(t) + bi if i \u2208 I \u25b7 in accordance with Eq. (11), where if i \u2208 I then ai, bi are\nfixed in time if (t\u2212 F )%L == 0 then Diff \u2190 \u221a (Aold \u2212A)2 + (Bold \u2212B)2 \u25b7 excluding reference weights and embedded weights {A,B}old \u2190 {A,B} I \u2190 I \u22c3 {indices of the bottom P percentile of Diff}\nend if end for"
+        },
+        {
+            "heading": "E.2 DIFFERENT EMBEDDING SCHEDULING",
+            "text": "We examine different values for P, as well as several approaches to define P , in our experiments. P can be defined as the percentage from all the weights in the model, this is noted as the basic case. In this case using a constant value P will lead to the same number of weights embedded in each embedding epoch. A different way to define P is the percentage of the not embedded weights. This relative percentage approach is noted as relative P . Applying a constant value P will lead to a reducing number of weights embedded on each embedding epoch, as the number of not embedded weights reduces. Reducing the value of P is another approach. One can decrease the value of P linearly, exponentially, etc. In addition a scheduled decrease can be used as well. In Sec. 5, in the federated learning experiments, a combined approach involving both a constant P and an exponentially decreasing P is used (see Appendix F.1). We demonstrate these different approaches bellow in Fig. 19. We examined different P values {10, 20}, for the basic case and the relative P case. In addition we used a pre defined scheduled decreasing P, starting from P = 20. We used ResNet18 trained and tested on CIFAR10. The CMD warm-up phase is 20 epochs and L = 10 in all cases. The mean test accuracy of 5 different training cycles is presented, with the final accuracy and standard deviation available in the legend. Overall, from the five different options presented, embedding the A,B vectors iteratively, with P = 20% and using the relative percentage approach yields the best results. However, results are very similar for most cases."
+        },
+        {
+            "heading": "E.3 EMBEDDED CMD VS ONLINE CMD",
+            "text": "We compare the Online CMD algorithm (Algorithm 3) to the gradual CMD embedding algorithm (Algorithm 4) on different models, see Table 10. In these experiments the implementation details are the same as the experiments in Table 1. The Embedding algorithm parameters are fixed for all experiments - L = 10, P = 10, using the basic constant P embedding approach. The gradually embedded CMD method introduces weight freezing which enhances efficiency. Therefore, a limited drop in performance is reasonable. For some models the chosen hyper-parameters achieve better results than the full online CMD method."
+        },
+        {
+            "heading": "F FEDERATED LEARNING DETAILS",
+            "text": ""
+        },
+        {
+            "heading": "F.1 FEDERATED LEARNING EXPERIMENT DETAILS",
+            "text": "We closely followed the experimental setting provided in the original paper: 50 Clients with disjoint datasets of non-IID class distribution that is drawn independently for each client from a Dirichlet distribution with \u03b1 = 1. 10% of the clients are sampled for synchronization , i.e. |C[ts]| = 0.1|C|\u2200ts. 1,500 rounds. Each synchronization round, each client completes 10 epochs. The APF threshold is set to T = 0.05 , and whenever the number of embedded coefficints crosses 80%, perform thresh\u2190 thresh2 . To conform with this scheduling, we also perform for our method P \u2190 P 2 under the same circumstances. For CMD we set P = 5%. The \u2019aggressiveness\u2019 parameter schedule of A-APF is set as min ( round 2000 , 0.5 ) ."
+        },
+        {
+            "heading": "F.2 APF CODE",
+            "text": "Weight freezing can be combined with other strategies to enhance efficiency in Federated Learning. GlueFL He et al. (2023) stands out as a framework that adeptly merges weight freezing with client sampling, ensuring optimized communication overhead, especially crucial in cross-device settings like mobile or IoT devices. They have open-sorce code, including comparison to Chen et al. (2021) in here. We used their project for our APF implementation."
+        },
+        {
+            "heading": "F.3 CALCULATION OF THE NEGLIGIBLE ADDED COMMUNICATION",
+            "text": "Let us show that 2N E\nN\u0302 not-embedded(|C|+|C|) \u223c 10 \u22124. In our setup of ResNet18, we have N \u223c 107. Following\nChen et al. (2021) we have |C| = 50, |C| = 5. As shown in Fig. 5 these result with convergence for E \u223c 103. Thus we have 2N E\nN\u0302 not-embedded(|C|+|C|) \u223c 2N E N\u0302 not-embedded|C| = 2 E|C| N N\u0302 not-embedded = 25\u00b7104 N N\u0302 not-embedded . In\nour experiments N\u0302 not-embedded\nN \u2248 0.5, resulting with 1 5\u00b7104 \u2248 10 \u22124."
+        },
+        {
+            "heading": "F.4 POTENTIAL OF GENERALIZED DYNAMICS MODELING IN FEDERATED LEARNING",
+            "text": "Our work with CMD in FL has demonstrated promising preliminary results. A key contribution here is leveraging dynamics modeling for efficient communication in distributed learning, and is not restricted to CMD. This section discusses the potential of extending the framework to include various dynamics modeling approaches, emphasizing the value it may serve in FL.\nThe core of this generalized approach remains the use of dimensionality reduction. By communicating low-dimensional representations of model parameters between clients and the central server, the volume of transmitted data can be significantly reduced. Alongside the transmission of compressed data, it is crucial for client models to effectively reconstruct the original dynamics from the reduced information. Maintaining local copies of necessary data and mappings enables clients to accurately translate the low-dimensional representations back to the full parameter space.\nWith dimensionality reduction at its core, we believe this approach may allow for a more interpretable understanding of the model\u2019s behavior. For instance, by focusing on a reduced set of parameters, it becomes easier to trace and understand how these parameters influence the learning outcome. This is particularly beneficial in FL environments, where understanding the contribution of individual clients to the collective model is often complex and opaque. The ability to map back and forth between the full and reduced parameter spaces not only ensures efficient communication but also provides a clearer insight into the dynamics of the learning process. This transparency has the potential to aid in diagnosing the learning process for various issues.\nAs the field of dynamics modeling continues to evolve, new dynamics modeling approaches will emerge. A generalized framework, not limited to CMD, can seamlessly integrate these techniques, ensuring continued effectiveness and relevance in a rapidly evolving domain. Moreover, a natural extension is to generalize the framework to accommodate a range of dynamics modeling techniques. This generalization will utilize the most suitable dynamics model for specific tasks.\nIn summary, the generalization of the CMD framework to include a variety of dynamics modeling approaches presents an intriguing prospect. We believe such an approach can remain relevant and\nadapt for future advancements in FL as well as dynamics modeling. The goal is to enhance the adaptability, efficiency, and scalability of FL, providing a foundation for further research and development in this area. The addition of explainability to this framework not only aids in effective communication but may also enhance our understanding of distributed learning processes. Thus we believe this could be a valuable tool for future advancements in the field."
+        },
+        {
+            "heading": "G CMD LANDSCAPE VISUALIZATION: EXTENSION",
+            "text": "A different feature available due to the reduced number of parameters of the model is a visualization feature. Shifting the reference weight values of CMD with a single mode will lead to a 1D loss curve. In the 2 modes case a 2D loss landscape is created. Starting from post-hoc CMD with a single mode, in Fig. 20 we present the 1D curves and 2D landscapes representing the train loss and validation accuracy metrics for different values of the reference weights. The values of the reference weights determine the value of all the other reconstructed weights in the model, as shown in Eq. (7). Changing the reference weights values changes the values of all the other weights as well, creating a new model, easily calculated. An array of values are tested in the area of the original reference weights values - [w0 \u2212 |w02 |, w0 + | w0 2 |] with w0 50 increments (1D case), or - [w0 \u2212 |w02 |, w0 + | w0 2 |]\u00d7 [w1 \u2212 | w1 2 |, w1 + | w1 2 |] with w0 50 , w1 50 increments (2D case).\nThe main visual difference between the landscapes of the training loss and the validation accuracy in both cases is that the training set loss is smooth and the validation set accuracy is not. For the training set case there is a clear global minimum. For the validation set case there are many local maximum points, around the global maximum. We will note that the training set accuracy behaves similarly to the training set loss function and that the validation set loss behaves similarly to the validation set accuracy function. The smooth landscape in the training set case indicates that the CMD model is much more stable on the training set, compared to the validation set. Generated from the training data, this is an expected feature of the CMD model.\nFine tuning the model on a specific class (or classes) of data could also be done via this visualization method. An example is presented in Fig. 21, where each 2D landscape presents the validation accuracy landscape for images of a specific class. For each class different values of (w0, w1) optimize the validation set accuracy. The 2D landscapes produced per class show different behaviour from the full validation set accuracy landscapes presented earlier in this section. These 2D landscapes are divided into regions with the same exact performance. These different landscapes show how each model calculated with different reference weights values affects each class differently. The caption of each sub-figure contains the name of the class and the test accuracy of the optimized model in brackets. The original test accuracy, before any optimization, is 91.99%. Some classes lead to better optimized models (bird, frog, etc.) and others lead to a lower overall test accuracy (airplane, deer, etc.).\nA different approach is embedding a subset of the CMD model parameters into the model trained by SGD. The embedded parameters are dependant on the reference weights and the other parameters have fixed values. In Fig. 22 we illustrate an example (ResNet18 on CIFAR10) where 10% of all the model weights are embedded, 30% are embedded and 100% of the model weights are embedded. As expected, when more weights are embedded, and linked to the reference weights, a more significant change is visible in the 2D loss landscape.\nTo conclude this section, using the reduced number of parameters for visualization intents shows interesting options for different subsets of the data or different subsets of the model parameters. The visualization also leads us to the conclusion that there are many similar models, that achieve similar results, in the area of the original CMD calculated model. By changing the values of the reference weights we can easily calculate a new model, with different weight values, that achieves similar results."
+        },
+        {
+            "heading": "H DMD ANALYSIS FOR NEURAL NETWORKS",
+            "text": ""
+        },
+        {
+            "heading": "H.1 DYNAMIC MODE DECOMPOSITION",
+            "text": "DMD is one of the common and robust tools for system analysis. It is widely applied in dynamical systems in applications ranging from fluid dynamics through finance to control systems (Kutz et al., 2016). DMD reveals the main modes of the dynamics in various nonlinear cases and yields constructive results in various applications (Dietrich et al., 2020). Thus, it is natural to apply DMD-\ntype algorithms to model the process of neural network training in order to analyze the emerging modes and to reduce its dimensions. For instance, in Naiman & Azencot (2021) it was proposed to use DMD as a method to analyze already trained sequential networks such as Recurrent Neural Networks (RNNs) to asses the quality of their trained hypothesis operator in terms of stability.\nDMD is originally formulated as an approximation of Koopman decomposition (Mezic\u0301, 2005), where it is argued that any Hamiltonian system has measurements which behave linearly under the governing equations (Koopman, 1931). These measurements, referred to as Koopman eigenfunctions, evolve exponentially in time. This fact theoretically justifies the use of DMD, where it can be considered as an exponential data fitting algorithm (Askham & Kutz, 2018). The approximation of Koopman eigenfunctions by DMD can generally not be obtained for systems with one or more of the following characteristics (Cohen & Gilboa (2023)):\n1. Finite time support. 2. Non-smooth dynamics - not differential with respect to time. 3. Non-exponential decaying profiles.\nBelow we demonstrate a simple example of applying DMD on a single-layer linear network, showing that already in this very simple case we reach the limits stated above when using augmentation."
+        },
+        {
+            "heading": "H.2 DMD IN NEURAL NETWORKS",
+            "text": "The training process of neural networks is highly involved. Some common practices, such as augmentation, induce exceptional nonlinear behaviors, which are very hard to model. Here we examine the capacity of DMD to characterize a gradient descent process with augmentation. We illustrate this through a simple Toy example of linear regression.\nToy example \u2013 linear regression with augmentation. Let us formulate a linear regression problem as follows,\nL(x,w; y) = 1 2 ||y \u2212 wx||2F (24)\nwhere ||\u00b7||F denotes the Frobenius norm, x \u2208 Rm\u00d7n, y \u2208 Rd\u00d7n and w \u2208 Rd\u00d7m. In order to optimize for w, the gradient descent process, initialized with some random weights w0, is\nwk+1 = wk + \u03b7k ( y \u2212 wkx ) xT , (25)\nwhere the superscript k denotes epoch number k, T denotes transpose and \u03b7k is a (possibly adaptive) learning rate. We note that introducing an adaptive learning rate by itself already makes the dynamic nonlinear, as \u03b7 denotes a time interval. Let us further assume an augmentation process is performed, such that at each epoch we use different sets of x and corresponding y matrices, that is,\nwk+1 = wk + \u03b7k(yk \u2212 wkxk)(xk)T . (26)\nThen, the smoothness in Eq. (25) becomes non-smooth in the augmented process, Eq. (26). Actually, we obtain a highly nonlinear dynamic, where at each epoch the operator driving the discrete flow is different. We generally cannot obtain Koopman eigenfunctions and cannot expect DMD to perform well. Our experiments show that this is indeed what happens in practice. In the modeling of simple networks, DMD can model the dynamics of classical gradient descent but fails as soon as augmentation is introduced. Fig. 23 presents an experiment of CIFAR10 classification using a simple CNN (Fig. 10a) with standard augmentations, usually performed on this dataset (horizontal flips and random cropping). In this experiment in order to reconstruct the dynamics, we perform DMD with different dimensionality reduction rates (r = 10, 50, 90) using Koopman node operator, as described in Dogra & Redman (2020). The results presented in Fig. 23 show that when the dimensionality reduction is high (r = 10) DMD fails to reconstruct the network\u2019s dynamics. However, when the dimensionality reduction is mild (r = 90) DMD reconstruction is also unstable and oscillatory. An example of DMD performed on a more complex network (ResNet18), with no data augmentation, is also available in Fig. 23."
+        },
+        {
+            "heading": "H.3 DMD AND CMD",
+            "text": "The common ground between DMD and CMD is the intention to approximate a complex dynamic with a simpler one. In both cases, the original dynamic is decomposed into time profiles and spatial structures. The main difference is that DMD uses for its modes pre-known eigenfunctions, in a linear approach, which is limited to exponential profile representation. CMD is nonlinear, using a single representative with improved adaptability. DMD employs Eq. (1), while we employ the special case of Eq. (2).\nSeveral key differences exist - first, DMD is computed by finding a linear operator that approximates the dynamic with a least-squares problem. The operator is later decomposed into spatial structures (modes) and eigenvalues yielding exponential profiles in time. CMD, conversely, is not based on preknown temporal functions, but rather assumes correlation between parameters and uses time profiles present in the dynamic itself. They are not computed using an eigen-decomposition but rather by clustering a correlation matrix and finding a single representative profile in each cluster. Secondly, there is no operator approximation in CMD, thus it does not have, at least directly, the option to extrapolate the dynamic by continuing applying the operator to the end of the training data. Thirdly, decomposition in CMD is \u201dtransposed\u201d in relation to DMD, in the sense that the CMD \u201dmodes\u201d are groups with similar temporal behavior (a cluster of the correlation matrix), while in DMD each mode is a spatial function that has to be multiplied by an exponent to form its contribution to the total. To match this logic, the CMD modes should have been a vector including all coefficient vectors (a, b) from all clusters. But then, the whole vector does not have the same temporal behavior, as it is divided to clusters. For CMD with a single mode - the coefficient vector is similar to the DMD notion of a spatial mode."
+        }
+    ],
+    "title": "ENHANCING NEURAL TRAINING VIA A CORRELATED DYNAMICS MODEL",
+    "year": 2024
+}

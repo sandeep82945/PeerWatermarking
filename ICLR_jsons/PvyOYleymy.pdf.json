@@ -1,0 +1,652 @@
+{
+    "abstractText": "Modern learning frameworks often train deep neural networks with massive amounts of unlabeled data to learn representations by solving simple pretext tasks, then use the representations as foundations for downstream tasks. These networks are empirically designed; as such, they are usually not interpretable, their representations are not structured, and their designs are potentially redundant. Whitebox deep networks, in which each layer explicitly identifies and transforms structures in the data, present a promising alternative. However, existing white-box architectures have only been shown to work at scale in supervised settings with labeled data, such as classification. In this work, we provide the first instantiation of the white-box design paradigm that can be applied to large-scale unsupervised representation learning. We do this by exploiting a fundamental connection between diffusion, compression, and (masked) completion, deriving a deep transformer-like masked autoencoder architecture, called CRATE-MAE, in which the role of each layer is mathematically fully interpretable: they transform the data distribution to and from a structured representation. Extensive empirical evaluations confirm our analytical insights. CRATE-MAE demonstrates highly promising performance on large-scale imagery datasets while using only \u223c30% of the parameters compared to the standard masked autoencoder with the same model configuration. The representations learned by CRATE-MAE have explicit structure and also contain semantic meaning.",
+    "authors": [],
+    "id": "SP:b813694d14e75fb132bd35ed9c825cd9ccbecf80",
+    "references": [
+        {
+            "authors": [
+                "Samira Abnar",
+                "Willem Zuidema"
+            ],
+            "title": "Quantifying attention flow in transformers",
+            "venue": "arXiv preprint arXiv:2005.00928,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Michael S Albergo",
+                "Nicholas M Boffi",
+                "Eric Vanden-Eijnden"
+            ],
+            "title": "Stochastic interpolants: A unifying framework for flows and diffusions",
+            "venue": "arXiv preprint arXiv:2303.08797,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Shir Amir",
+                "Yossi Gandelsman",
+                "Shai Bagon",
+                "Tali Dekel"
+            ],
+            "title": "Deep vit features as dense visual descriptors",
+            "venue": "ECCVW What is Motion For?,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Adrien Bardes",
+                "Jean Ponce",
+                "Yann LeCun"
+            ],
+            "title": "Vicreg: Variance-invariance-covariance regularization for self-supervised learning",
+            "venue": "arXiv preprint arXiv:2105.04906,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Mathilde Caron",
+                "Hugo Touvron",
+                "Ishan Misra",
+                "Herv\u00e9 J\u00e9gou",
+                "Julien Mairal",
+                "Piotr Bojanowski",
+                "Armand Joulin"
+            ],
+            "title": "Emerging properties in self-supervised vision transformers",
+            "venue": "In Proceedings of the IEEE/CVF international conference on computer vision,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Kwan Ho Ryan Chan",
+                "Yaodong Yu",
+                "Chong You",
+                "Haozhi Qi",
+                "John Wright",
+                "Yi Ma"
+            ],
+            "title": "Redunet: A white-box deep network from the principle of maximizing rate reduction",
+            "venue": "The Journal of Machine Learning Research,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Minshuo Chen",
+                "Kaixuan Huang",
+                "Tuo Zhao",
+                "Mengdi Wang"
+            ],
+            "title": "Score approximation, estimation and distribution recovery of diffusion models on low-dimensional data",
+            "venue": "arXiv preprint arXiv:2302.07194,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ting Chen",
+                "Simon Kornblith",
+                "Mohammad Norouzi",
+                "Geoffrey Hinton"
+            ],
+            "title": "A simple framework for contrastive learning of visual representations",
+            "venue": "In International conference on machine learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Thomas M Cover"
+            ],
+            "title": "Elements of information theory",
+            "year": 1999
+        },
+        {
+            "authors": [
+                "Valentin De Bortoli",
+                "James Thornton",
+                "Jeremy Heng",
+                "Arnaud Doucet"
+            ],
+            "title": "Diffusion schr\u00f6dinger bridge with applications to score-based generative modeling",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jia Deng",
+                "Wei Dong",
+                "Richard Socher",
+                "Li-Jia Li",
+                "Kai Li",
+                "Li Fei-Fei"
+            ],
+            "title": "Imagenet: A large-scale hierarchical image database",
+            "venue": "IEEE conference on computer vision and pattern recognition,",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Bradley Efron"
+            ],
+            "title": "Tweedie\u2019s formula and selection bias",
+            "venue": "Journal of the American Statistical Association,",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Michael Elad",
+                "Michal Aharon"
+            ],
+            "title": "Image denoising via sparse and redundant representations over learned dictionaries",
+            "venue": "IEEE Transactions on Image processing,",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "Alexandros Graikos",
+                "Nikolay Malkin",
+                "Nebojsa Jojic",
+                "Dimitris Samaras"
+            ],
+            "title": "Diffusion models as plug-and-play priors",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Karol Gregor",
+                "Yann LeCun"
+            ],
+            "title": "Learning fast approximations of sparse coding",
+            "venue": "In Proceedings of the 27th international conference on international conference on machine learning,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Kaiming He",
+                "Xinlei Chen",
+                "Saining Xie",
+                "Yanghao Li",
+                "Piotr Doll\u00e1r",
+                "Ross Girshick"
+            ],
+            "title": "Masked autoencoders are scalable vision learners",
+            "venue": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jonathan Ho",
+                "Ajay Jain",
+                "Pieter Abbeel"
+            ],
+            "title": "Denoising diffusion probabilistic models",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Aapo Hyv\u00e4rinen"
+            ],
+            "title": "Estimation of Non-Normalized statistical models by score matching",
+            "venue": "Journal of machine learning research: JMLR,",
+            "year": 2005
+        },
+        {
+            "authors": [
+                "Aapo Hyv\u00e4rinen",
+                "Peter Dayan"
+            ],
+            "title": "Estimation of non-normalized statistical models by score matching",
+            "venue": "Journal of Machine Learning Research,",
+            "year": 2005
+        },
+        {
+            "authors": [
+                "Tero Karras",
+                "Miika Aittala",
+                "Timo Aila",
+                "Samuli Laine"
+            ],
+            "title": "Elucidating the design space of diffusionbased generative models",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Valentin Khrulkov",
+                "Gleb Ryzhakov",
+                "Andrei Chertkov",
+                "Ivan Oseledets"
+            ],
+            "title": "Understanding ddpm latent codes through optimal transport",
+            "venue": "arXiv preprint arXiv:2202.07477,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Alex Krizhevsky",
+                "Geoffrey Hinton"
+            ],
+            "title": "Learning multiple layers of features from tiny images",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Mufan Li",
+                "Mihai Nica",
+                "Dan Roy"
+            ],
+            "title": "The neural covariance sde: Shaped infinite depth-and-width networks at initialization",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ilya Loshchilov",
+                "Frank Hutter"
+            ],
+            "title": "Decoupled weight decay regularization",
+            "venue": "arXiv preprint arXiv:1711.05101,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Cheng Lu",
+                "Yuhao Zhou",
+                "Fan Bao",
+                "Jianfei Chen",
+                "Chongxuan Li",
+                "Jun Zhu"
+            ],
+            "title": "Dpm-solver: A fast ode solver for diffusion probabilistic model sampling in around 10 steps",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yubin Lu",
+                "Zhongjian Wang",
+                "Guillaume Bal"
+            ],
+            "title": "Mathematical analysis of singularities in the diffusion model under the submanifold assumption, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yi Ma",
+                "Harm Derksen",
+                "Wei Hong",
+                "John Wright"
+            ],
+            "title": "Segmentation of multivariate mixed data via lossy data coding and compression",
+            "venue": "IEEE transactions on pattern analysis and machine intelligence,",
+            "year": 2007
+        },
+        {
+            "authors": [
+                "Yi Ma",
+                "Doris Tsao",
+                "Heung-Yeung Shum"
+            ],
+            "title": "On the principles of parsimony and self-consistency for the emergence of intelligence",
+            "venue": "Frontiers of Information Technology & Electronic Engineering,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Song Mei",
+                "Yuchen Wu"
+            ],
+            "title": "Deep networks as denoising algorithms: Sample-efficient learning of diffusion models in high-dimensional graphical models, 2023",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Annie Millet",
+                "David Nualart",
+                "Marta Sanz"
+            ],
+            "title": "Integration by parts and time reversal for diffusion processes",
+            "venue": "The Annals of Probability,",
+            "year": 1989
+        },
+        {
+            "authors": [
+                "Ankur Moitra",
+                "Andrej Risteski"
+            ],
+            "title": "Fast convergence for langevin diffusion with manifold structure. February 2020",
+            "venue": "URL http://arxiv.org/abs/2002.05576",
+            "year": 2002
+        },
+        {
+            "authors": [
+                "Maria-Elena Nilsback",
+                "Andrew Zisserman"
+            ],
+            "title": "Automated flower classification over a large number of classes",
+            "venue": "Sixth Indian Conference on Computer Vision, Graphics & Image Processing,",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Kazusato Oko",
+                "Shunta Akiyama",
+                "Taiji Suzuki"
+            ],
+            "title": "Diffusion models are minimax optimal distribution estimators",
+            "venue": "arXiv preprint arXiv:2303.01861,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Maxime Oquab",
+                "Timoth\u00e9e Darcet",
+                "Th\u00e9o Moutakanni",
+                "Huy Vo",
+                "Marc Szafraniec",
+                "Vasil Khalidov",
+                "Pierre Fernandez",
+                "Daniel Haziza",
+                "Francisco Massa",
+                "Alaaeldin El-Nouby"
+            ],
+            "title": "Dinov2: Learning robust visual features without supervision",
+            "venue": "arXiv preprint arXiv:2304.07193,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Omkar M Parkhi",
+                "Andrea Vedaldi",
+                "Andrew Zisserman",
+                "CV Jawahar"
+            ],
+            "title": "Cats and dogs",
+            "venue": "IEEE conference on computer vision and pattern recognition,",
+            "year": 2012
+        },
+        {
+            "authors": [
+                "Michael Psenka",
+                "Druv Pai",
+                "Vishal Raman",
+                "Shankar Sastry",
+                "Yi Ma"
+            ],
+            "title": "Representation learning via manifold flattening and reconstruction",
+            "venue": "arXiv preprint arXiv:2305.01777,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yaniv Romano",
+                "Michael Elad",
+                "Peyman Milanfar"
+            ],
+            "title": "The little engine that could: Regularization by denoising (red)",
+            "venue": "SIAM Journal on Imaging Sciences,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Robin Rombach",
+                "Andreas Blattmann",
+                "Dominik Lorenz",
+                "Patrick Esser",
+                "Bjorn Ommer"
+            ],
+            "title": "Highresolution image synthesis with latent diffusion models",
+            "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ernest Ryu",
+                "Jialin Liu",
+                "Sicheng Wang",
+                "Xiaohan Chen",
+                "Zhangyang Wang",
+                "Wotao Yin"
+            ],
+            "title": "Plug-andplay methods provably converge with properly trained denoisers",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Simo S\u00e4rkk\u00e4",
+                "Arno Solin"
+            ],
+            "title": "Applied stochastic differential equations, volume 10",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Jascha Sohl-Dickstein",
+                "Eric A Weiss",
+                "Niru Maheswaranathan",
+                "Surya Ganguli"
+            ],
+            "title": "Deep unsupervised learning using nonequilibrium thermodynamics",
+            "venue": "URL http://arxiv. org/abs/1503.03585",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Yang Song",
+                "Jascha Sohl-Dickstein",
+                "Diederik P Kingma",
+                "Abhishek Kumar",
+                "Stefano Ermon",
+                "Ben Poole"
+            ],
+            "title": "Score-based generative modeling through stochastic differential equations",
+            "venue": "arXiv preprint arXiv:2011.13456,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yang Song",
+                "Jascha Sohl-Dickstein",
+                "Diederik P Kingma",
+                "Abhishek Kumar",
+                "Stefano Ermon",
+                "Ben Poole"
+            ],
+            "title": "Score-Based generative modeling through stochastic differential equations",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Robert Tibshirani"
+            ],
+            "title": "Regression shrinkage and selection via the lasso",
+            "venue": "Journal of the Royal Statistical Society Series B: Statistical Methodology,",
+            "year": 1996
+        },
+        {
+            "authors": [
+                "Roman Vershynin"
+            ],
+            "title": "High-dimensional probability: An introduction with applications in data science, volume 47",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Pascal Vincent"
+            ],
+            "title": "A connection between score matching and denoising autoencoders",
+            "venue": "Neural computation,",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "John Wright",
+                "Yi Ma"
+            ],
+            "title": "High-dimensional data analysis with low-dimensional models: Principles, computation, and applications",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yaodong Yu",
+                "Kwan Ho Ryan Chan",
+                "Chong You",
+                "Chaobing Song",
+                "Yi Ma"
+            ],
+            "title": "Learning diverse and discriminative representations via the principle of maximal coding rate reduction",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yaodong Yu",
+                "Sam Buchanan",
+                "Druv Pai",
+                "Tianzhe Chu",
+                "Ziyang Wu",
+                "Shengbang Tong",
+                "Benjamin D Haeffele",
+                "Yi Ma"
+            ],
+            "title": "White-Box transformers via sparse rate reduction",
+            "venue": "June 2023a. URL http://arxiv.org/abs/2306.01129",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yaodong Yu",
+                "Tianzhe Chu",
+                "Shengbang Tong",
+                "Ziyang Wu",
+                "Druv Pai",
+                "Sam Buchanan",
+                "Yi Ma"
+            ],
+            "title": "Emergence of segmentation with minimalistic white-box transformers",
+            "venue": "arXiv preprint arXiv:2308.16271,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yuexiang Zhai",
+                "Zitong Yang",
+                "Zhenyu Liao",
+                "John Wright",
+                "Yi Ma"
+            ],
+            "title": "Complete dictionary learning via l 4-norm maximization over the orthogonal group",
+            "venue": "The Journal of Machine Learning Research,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Song"
+            ],
+            "title": "section, we develop the basics of diffusion models through the language of time-reversible It\u00f4 diffusion processes. The coverage adapts that of Millet et al",
+            "venue": "Karras et al",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Song"
+            ],
+            "title": "Under review as a conference paper at ICLR 2024 the same law as (Z(t))t\u2208[0,T",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "d I"
+            ],
+            "title": "This marginal distribution was studied as a model for the multi-head attention selection operation in the transformer architecture by Yu et al. (2023a): precisely, they showed (Yu et al., 2023a, \u00a7A.1) that when the perturbation level \u03c32 \u2192 0, the score function for this marginal distribution approximately implements a projection operation onto the nearest subspace",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Yu"
+            ],
+            "title": "In this subsection we formally describe the procedures we used to generate the visualizations used to evaluate the segmentation property of CRATE-MAE in Section 3. Much of this evaluation",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Caron"
+            ],
+            "title": "VISUALIZING ATTENTION MAPS We recapitulate the method to visualize attention maps in Abnar & Zuidema",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yu"
+            ],
+            "title": "PCA VISUALIZATIONS As in the previous subsection, we recapitulate the method to visualize the patch representations using PCA from Amir et al",
+            "venue": "Oquab et al",
+            "year": 2023
+        }
+    ],
+    "sections": [
+        {
+            "text": "Modern learning frameworks often train deep neural networks with massive amounts of unlabeled data to learn representations by solving simple pretext tasks, then use the representations as foundations for downstream tasks. These networks are empirically designed; as such, they are usually not interpretable, their representations are not structured, and their designs are potentially redundant. Whitebox deep networks, in which each layer explicitly identifies and transforms structures in the data, present a promising alternative. However, existing white-box architectures have only been shown to work at scale in supervised settings with labeled data, such as classification. In this work, we provide the first instantiation of the white-box design paradigm that can be applied to large-scale unsupervised representation learning. We do this by exploiting a fundamental connection between diffusion, compression, and (masked) completion, deriving a deep transformer-like masked autoencoder architecture, called CRATE-MAE, in which the role of each layer is mathematically fully interpretable: they transform the data distribution to and from a structured representation. Extensive empirical evaluations confirm our analytical insights. CRATE-MAE demonstrates highly promising performance on large-scale imagery datasets while using only \u223c30% of the parameters compared to the standard masked autoencoder with the same model configuration. The representations learned by CRATE-MAE have explicit structure and also contain semantic meaning."
+        },
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "In recent years, deep learning has been called upon to process continually larger quantities of highdimensional, noisy, and unlabeled data. A key property which makes these ever-larger tasks tractable is that the high-dimensional data tends to have low-dimensional geometric and statistical structure. Modern deep networks tend to learn (implicit or explicit) representations of this structure, which are then used to efficiently perform downstream tasks. Learning these representations is thus of central importance in machine learning, and there are so far several common methodologies for this task. We focus our attention below on approaches that incrementally transform the data towards the end representation with simple, mathematically-interpretable primitives. Discussion of popular alternatives is postponed to Appendix A.\nDenoising-diffusion models for high-dimensional data. A popular method for learning implicit representations of high-dimensional data is learning to denoise: a model that can denoise, i.e., remove noise from a corrupted observation from the data distribution (to the extent informationtheoretically possible), can be chained across noise levels to transform the data distribution to and from certain highly structured distributions, such as an isotropic Gaussian, enabling efficient sampling (Hyva\u0308rinen, 2005; Vincent, 2011; Sohl-Dickstein et al., 2015; Ho et al., 2020; Song et al., 2021; 2023a). Crucially, in the case of data with low-dimensional structure\u2014including the highly nonlinear structure characteristic of natural images\u2014these models can be learned efficiently (Chen et al., 2023; Oko et al., 2023; Moitra & Risteski, 2020), and as a result this framework has significant practical impact (Rombach et al., 2022). Despite this progress, these techniques have been largely limited to use in generative modeling; the use of denoising-diffusion for representation learning is relatively underexplored.\nWhite-box models and structured representation learning. Another method for representation learning, this time built to produce explicit and structured representations, is that of white-box models. Such models attempt to produce representations of the data distribution with some desired structure, e.g., sparsity (Gregor & LeCun, 2010; Zhai et al., 2020) or (piecewise) linearity (Chan et al., 2022), etc. Recent work (Yu et al., 2023a;b) has built white-box deep networks via unrolled optimization: namely, to obtain representations with a desired set of properties, one composes an objective function which encourages these desiderata, then constructs a deep network where each layer is designed to iteratively optimize the objective. This builds deep networks as a chain of operators, representing well-understood optimization primitives, which iteratively transform the representations to the desired structure. However, such-obtained deep networks have yet to be constructed for unsupervised contexts (Yu et al., 2023a;b).\nOur contributions. In this work, we demonstrate that these two paradigms have more in common than previously known. We make two conceptual observations. First, we show quantitatively that under certain natural regimes, denoising and compression are highly similar primitive data processing operations: when the target distribution has low-dimensional structure, both operations implement a projection operation onto this structure. Second, using this insight, we demonstrate a quantitative connection between unrolled discretized diffusion models and unrolled optimization-constructed deep networks. This leads to a significant expansion of the existing conceptual toolkit for developing white-box neural network architectures, which we use to derive white-box transformer-like encoder and decoder architectures that together form an autoencoding model that we call CRATEMAE, illustrated in Fig.1. We evaluate CRATE-MAE on the challenging masked autoencoding task (He et al., 2022) and demonstrate promising performance with large parameter savings over traditional masked autoencoders, along with many side benefits such as emergence of semantic meaning in the representations."
+        },
+        {
+            "heading": "2 APPROACH",
+            "text": ""
+        },
+        {
+            "heading": "2.1 SETUP AND NOTATION",
+            "text": "We use the same notation and basic problem setup as in Yu et al. (2023a). Namely, we have some matrix-valued random variable X = [x1, . . . ,xN ] \u2208 RD\u00d7N representing the data, where the xi \u2208 RD are called \u201ctokens\u201d and may be arbitrarily correlated. To obtain representations of the input, we learn an encoder f : RD\u00d7N \u2192 Rd\u00d7N ; our representations are denoted by the random variable Z = f(X) = [z1, . . . ,zN ] \u2208 Rd\u00d7N , where the token representations are zi \u2208 Rd. In the autoencoding setup, we also learn a decoder g : Rd\u00d7N \u2192 RD\u00d7N , such that X \u2248 X\u0302 = [x\u03021, . . . , x\u0302N ] . = g(Z).\nOur encoder and decoder will be deep neural networks, and as such they will be composed of several, say L, layers each. Write f = fL \u25e6 \u00b7 \u00b7 \u00b7 \u25e6 f1 \u25e6 fpre and g = gpost \u25e6 gL\u22121 \u25e6 \u00b7 \u00b7 \u00b7 \u25e6 g0, where f \u2113 : Rd\u00d7N \u2192 Rd\u00d7N and g\u2113 : Rd\u00d7N \u2192 Rd\u00d7N are the \u2113th layer of the encoder and decoder respectively, and fpre : RD\u00d7N \u2192 Rd\u00d7N and gpost : Rd\u00d7N \u2192 RD\u00d7N are the pre- and post-processing layers respectively. The input to the \u2113th layer of the encoder is denoted Z\u2113 .= [ z\u21131, . . . ,z \u2113 N ] \u2208 Rd\u00d7N ,\nand the input to the \u2113th layer of the decoder is denoted Y \u2113 .= [ y\u21131, . . . ,y \u2113 N ] \u2208 Rd\u00d7N ."
+        },
+        {
+            "heading": "2.2 DESIDERATA, OBJECTIVE, AND OPTIMIZATION",
+            "text": "Our goal is to use the encoder f and decoder g to learn representations Z which are parsimonious (Ma et al., 2022) and invertible; namely, they have low-dimensional, sparse, (piecewise) linear geo-\nmetric and statistical structure, and are (approximately) bijective with the original data X . Yu et al. (2023a) proposes to implement this principle of parsimony by positing that the final representations Z lie on a union of low-dimensional axis-aligned subspaces, such that the kth subspace has basis Uk \u2208 Rd\u00d7p where p \u226a d, where together the bases form a local signal model for the representations and are denoted U[K] . = (U1, . . . ,UK). More specifically, Yu et al. (2023a) proposes to learn an encoding f such that the token representations zi each have marginal distribution equal to a Gaussian mixture supported on the subspaces U[K]. Such representations are those that maximize the sparse rate reduction objective function (Yu et al., 2023a):\nEZ [\u2206R(Z | U[K])\u2212 \u03bb\u2225Z\u22250] = EZ [R(Z)\u2212Rc(Z | U[K])\u2212 \u03bb\u2225Z\u22250], (2.1)\nwhere R and Rc are lossy coding rates, or rate distortions (Cover, 1999), which are estimates for the number of bits required to encode the sample up to precision \u03f5 > 0 using a Gaussian codebook, both unconditionally (for R), and conditioned on the samples being drawn from Uk summed over all k (for Rc). Concretely, closed-form tight approximations (Ma et al., 2007; Yu et al., 2023a) for such rate distortions are:\nR(Z) = 1\n2 log det\n( IN + \u03b1Z \u22a4Z ) , \u03b1 . = d\nN\u03f52 (2.2)\nRc(Z | U[K]) = 1\n2 K\u2211 k=1 log det ( IN + \u03b2(U \u22a4 k Z) \u22a4(U\u22a4k Z) ) , \u03b2 . = p N\u03f52 . (2.3)\nNotably, Rc is a measure of compression against our statistical structure \u2014 it measures how closely the overall distribution of tokens in Z fit a Gaussian mixture on U[K].\nTo optimize the sparse rate reduction, Yu et al. (2023a) proposed to construct the deep neural network f layer-by-layer using the unrolled optimization paradigm. In particular, f \u2113 was constructed as a two-step alternating optimization procedure which compressed the input against the (learned) local signal model U \u2113[K], by taking a step of gradient descent on R\nc(Z | U \u2113[K]), and taking a step of proximal gradient descent on a LASSO objective (Tibshirani, 1996; Wright & Ma, 2022) to sparsify the data in a (learned) dictionary D\u2113 \u2208 Rd\u00d7d:\nZ\u2113+1/2 = Z\u2113 + MSSA(Z\u2113 | U \u2113[K]) \u2248 Z \u2113 \u2212 \u03ba\u2207ZRc(Z\u2113 | U \u2113[K]) (2.4) Z\u2113+1 = ISTA(Z\u2113+1/2 | D\u2113) .= ReLU ( Z\u2113+1/2 + \u03b7(Z\u2113+1/2 \u2212D\u2113Z\u2113+1/2)\u2212 \u03b7\u03bb1 ) , (2.5)\nwhere MSSA(\u00b7), the Multi-head Subspace Self-Attention block (Yu et al., 2023a), is defined as\nMSSA(Z | U[K]) . =\np\nN\u03f52 [U1 \u00b7 \u00b7 \u00b7 UK ]\n(U \u22a4 1 Z) softmax((U \u22a4 1 Z) \u22a4(U\u22a41 Z)) ...\n(U\u22a4KZ) softmax((U \u22a4 KZ) \u22a4(U\u22a4KZ))  . (2.6) One may observe that the MSSA block has a remarkable functional form: it is exactly the same as a multi-head self-attention block in a transformer, with the changes that the Qk/Kk/Vk blocks are replaced by a single matrix Uk in each head k. As the layer f \u2113 defined by Z\u2113+1 = f \u2113(Z\u2113) and with parameters U \u2113[K] and D\n\u2113 is the concatenation of a self attention-like block (MSSA, as in (2.6)) and nonlinearity (ISTA, as in (2.5)), it bears significant resemblance to a transformer block. The CRATE model, which is a concatenation of such white-box blocks, is thus a white-box transformerlike architecture constructed via unrolled optimization. Such CRATE models obtain competitive performance on standard tasks, like image classification (Yu et al., 2023a), while enjoying many side benefits (Yu et al., 2023b), yet they have so far only been trained on supervised classification. In the sequel, we introduce a paradigm to obtain white-box networks which learn through unsupervised tasks, such as autoencoding, via unrolling discretized diffusion processes. This program obtains a model structurally similar to CRATE, along the way demonstrating conceptual and quantitative links between denoising and compression while connecting diffusion models and unrolled optimizationconstructed white-box networks through the lens of iterative signal processing."
+        },
+        {
+            "heading": "2.3 UNIFYING DENOISING AND COMPRESSION",
+            "text": "One common method for learning the structures of high-dimensional data is the so-called diffusion model (Ho et al., 2020). Diffusion models are built on the general principle and task of denoising,\nwhich seeks to remove the disturbance (e.g., noise) from noisy data, essentially projecting it onto the data distribution (Elad & Aharon, 2006; Romano et al., 2017; Ryu et al., 2019). In contrast to previous works which denoised in one iteration, diffusion models take many small denoising steps towards the data distribution (Ho et al., 2020; Graikos et al., 2022; Karras et al., 2022; Mei & Wu, 2023). Such models use estimates of the so-called score function \u2207 log p\u03c3 (Hyva\u0308rinen & Dayan, 2005), where p\u03c3 is the probability density function of the noised input when the noise has standard deviation \u03c3 > 0. The score function \u2207 log p\u03c3(Z\u0303) for a particular noised input Z\u0303 and small \u03c3 points towards the closest point to Z\u0303 on the data distribution support (Chen et al., 2023; Lu et al., 2023; Yu et al., 2023a), or more generally the modes of the true data distribution, which guides the denoising diffusion model to project Z onto the support of the data distribution and diffuse it within this support. In particular, if \u03c3 is small, then the denoising iteration in the diffusion model acts as a projection onto the support of the true data distribution. More exposition on diffusion models may be found in Appendix B.\nAnother approach to removing statistically or geometrically incoherent disturbances from perturbed data, is lossy compression against learned structures (Ma et al., 2007; Yu et al., 2020; Psenka et al., 2023; Yu et al., 2023a). Compressed versions of the data would form the representations, preserving the data structure while removing the ancillary disturbances. Such an approach has been favored in the construction of previous white-box deep networks (Chan et al., 2022; Yu et al., 2023a) due to explicit information-theoretic criteria for compression, such as the Rc function defined in (2.3). Compression against learned structures has a deep connection to general diffusion models. As we see from the following informally stated theorem, whose rigorous statement and proof is deferred to Appendix C, the score function and conditional rate distortion gradient share the crucial property that they project noisy inputs onto the support of the true input distribution. This suggests a way to bootstrap denoising diffusion models to perform compression against learned statistical or geometric structures; we refer to such models as structured diffusion models.\nTheorem 1 (Informal). Under certain conditions, usually observed in practice, if Z has the statistical structure discussed in Section 2.2 and Z\u0303 is a noisy version of Z with small noise level, we have that \u2207ziRc(Z\u0303 | U[K]) points from z\u0303i to the nearest Uk.\nThis result suggests the following approach to constructing white-box autoencoding networks. First, construct a time-reversible Ito\u0302 diffusion process (Millet et al., 1989; Song et al., 2020), i.e., the continuous-time backbone behind diffusion models, which compresses the data towards a learned desired statistical and geometric structure, as opposed to a standard Gaussian as in regular diffusion models (Ho et al., 2020). Each layer in the encoder corresponds to a discretized step of this flow, and each layer in the decoder corresponds to a discretized step of its time reversal. The encoder is designed to compress or denoise against the low-dimensional structures in the data to obtain good representations, while the decoder is designed to invert this compression and denoising. Both networks thus need to learn the low-dimensional structure of their input. To learn these structures, we train on masked autoencoding, which as a masked completion task evaluates how well we have learned the low-dimensional structures in the data and internal representations."
+        },
+        {
+            "heading": "2.4 CONSTRUCTING AN INVERTIBLE TRANSFORMER LAYER",
+            "text": "In Section 2.1, we described a method to construct a white-box transformer-like encoder network via unrolled optimization meant to compress the data against learned geometric and statistical structures,\nsay against a distribution of tokens where each token is marginally distributed as a Gaussian mixture supported on U[K]. In Section 2.3, we described in general terms an approach that relates denoising and compression to yield a conceptually similar network using the formalism of diffusion models, this time trainable via autoencoding. In this section, we carry out this procedure concretely to obtain an encoder and decoder layer with similarly interpretable operational characteristics.\nTo measure compression, we use the Rc function defined in (2.3). By using a standard (reverse-time) diffusion process with Rc as a drop-in replacement for the score, we obtain that such a diffusion process may be described by the following stochastic differential equation (SDE) (Song et al., 2020).\ndZ(t) = \u2212\u2207Rc(Z(t) | U[K]) dt+ \u221a 2 dB(t), \u2200t \u2208 [0, T ], (2.7)\nwhere (B(t))t\u2208[0,T ] is a Brownian motion. As a design choice, we wish to assert that our encoder and decoder ought to be deterministic, in particular preferring that our encoder-decoder architecture achieves sample-wise autoencoding as opposed to distribution-wise autoencoding or generation. Thus we need to construct some ordinary differential equation (ODE) which transports the input probability distribution in the same way as (2.7). Such an equation is readily obtained as the probability flow ODE (Song et al., 2020), which itself is commonly used for denoising and sampling (Song et al., 2020; Lu et al., 2022; Song et al., 2023b) and has the form\ndZ(t) = \u2212\u2207Rc(Z(t) | U[K]) dt, \u2200t \u2208 [0, T ]. (2.8)\nIn particular, the Z(t) generated by (2.7) and (2.8) have the same law. A first-order discretization (the discretization scheme being another design choice) of (2.8) with step size \u03ba obtains the iteration:\nZ\u2113+1/2 = Z\u2113 + MSSA(Z\u2113 | U \u2113[K]) \u2248 Z \u2113 \u2212 \u03ba\u2207Rc(Z\u2113 | U \u2113[K]), (2.9)\nwhere ISTA(\u00b7) was defined in (2.6). Similar to Yu et al. (2023a), in order to optimize the sparse rate reduction of the features, and in particular to sparsify them, we instantiate a learnable dictionary D\u2113 \u2208 Rd\u00d7d and sparsify against it, obtaining\nZ\u2113+1 = ISTA(Z\u2113+1/2 | D\u2113), (2.10)\nwhere ISTA(\u00b7) was defined in (2.5). This yields a two step iteration for the \u2113th encoder layer f \u2113, where Z\u2113+1 = f \u2113(Z\u2113):\nZ\u2113+1/2 = Z\u2113 + MSSA(Z\u2113 | U \u2113[K]), Z \u2113+1 = ISTA(Z\u2113+1/2 | D\u2113). (2.11)\nThis is the same layer as in CRATE, whose conceptual behavior is illustrated in Figure 2. This equivalence stems from the fact that the diffusion probability flow (2.8) is conceptually and mechanically similar to gradient flow on the compression objective in certain regimes, and so it demonstrates a useful conceptual connection between discretized diffusion and unrolled optimization as iteratively compressing or denoising the signal against the learned data structures.\nNote that we parameterized a different local signal model U \u2113[K] and dictionary D \u2113 at each layer, despite the continuous-time flows in (2.8) using only one (i.e., the final) local signal model. This is because the sparsification step (2.10) transforms the data distribution, and so we require a different local signal model at each layer to model the new (more sparse) data distribution; see Figure 1 for intuition on the iterative transformations. Also, having a different signal model at each layer may allow for more efficient iterative linearization and compression of highly nonlinear structures.\nWe now construct a matching decoder. The time reversal of the ODE (2.8) is:\ndY (t) = \u2207Rc(Y (t) | U[K]) dt, \u2200t \u2208 [0, T ], (2.12)\nin the sense that the Y (T \u2212 t) generated by (2.12) has the same law as the Z(t) generated by (2.8), assuming compatible initial conditions. A first-order discretization of (2.12) obtains the iteration:\nY \u2113+1 = Y \u2113+1/2 \u2212 MSSA(Y \u2113+1/2 | V \u2113[K]) \u2248 Y \u2113+1/2 + \u03ba\u2207Rc(Y \u2113+1/2 | V \u2113[K]), (2.13)\nwhere V \u2113[K] = (V \u2113 1 , . . . ,V \u2113 K) and each V \u2113 k \u2208 Rd\u00d7p are the bases of the subspaces to \u201canti-compress\u201d against. In our work, we treat them as different from the corresponding UL\u2212\u2113k , because the discretization of (2.8) and (2.12) is imperfect, and thus we should not expect a 1-1 correspondence between local signal models in the encoder and decoder. To invert the effect of a sparsifying ISTA\nstep, which we consider as intuitively close to a rotation of the subspace supports to a more statistically incoherent configuration, we merely instantiate another learnable dictionary E\u2113 \u2208 Rd\u00d7d and multiply by it, obtaining the iteration:\nY \u2113+1/2 = E\u2113Y \u2113, Y \u2113+1 = Y \u2113+1/2 \u2212 MSSA(Y \u2113+1/2 | V \u2113[K]). (2.14)\nThis constructs the (\u2113 + 1)st layer g\u2113 of our decoder. A graphical depiction of the encoder and decoder layers, with layer normalization added to match the implementation, is found in Figure 3."
+        },
+        {
+            "heading": "2.5 A COMPLETE WHITE-BOX TRANSFORMER-LIKE ARCHITECTURE FOR AUTOENCODING",
+            "text": "As previously discussed, the encoder is the concatenation of a preprocessing map fpre : RD\u00d7N \u2192 Rd\u00d7N which is a learnable linear projection W pre \u2208 Rd\u00d7D plus a learnable positional embedding Epos \u2208 Rd\u00d7N :\nfpre(X) . = W preX +Epos (2.15)\nand L transformer-like layers f \u2113 : Rd\u00d7N \u2192 Rd\u00d7N given by\nf \u2113(Z\u2113) . = ISTA(Z\u2113 + MSSA(Z\u2113 | U \u2113[K]) | D \u2113), \u2200\u2113 \u2208 [L], (2.16)\nomitting layer-norms for simplicity. The decoder is the concatenation of L transformer-like layers g\u2113 : Rd\u00d7N \u2192 Rd\u00d7N given by\ng\u2113(Y \u2113) . = E\u2113Y \u2113 \u2212 MSSA(E\u2113Y \u2113 | V \u2113[K]), \u2200\u2113 \u2208 [L]\u2212 1, (2.17)\nwith a postprocessing map gpost : Rd\u00d7N \u2192 RD\u00d7N which is a learnable linear map W post \u2208 RD\u00d7d:\ngpost(Y L) . = W postY L. (2.18)\nA full diagram of the autoencoding procedure is given in Figure 1, whence the intuition is that f \u2113 and gL\u2212\u2113 are mutually (partially) invertible.\nOur training procedure seeks to learn the structures in the data distribution, by using a pretext task that measures the degree to which these structures have been learnt. For this, we turn to masked autoencoding (He et al., 2022), which \u201cmasks out\u201d a large percentage of randomly selected tokens in the input X (precise implementation details left to Appendix D.1) and then attempts to reconstruct the whole image, measuring success by the resulting autoencoding objective:\nLMAE(f, g) . = EX [ \u2225(g \u25e6 f)(Mask(X))\u2212X\u222522 ] . (2.19)\nConceptually, masked autoencoding is a generalization of the classical matrix completion task, which attempts to use low-dimensional structure (either a priori assumed, or learned) to impute missing entries in incomplete data. Indeed, classical matrix completion can be solved efficiently and effectively if and only if the data has low-dimensional linear structures (Wright & Ma, 2022), and in this case it extracts these structures and uses them for imputation. Correspondingly, masked autoencoding seeks to extract the potentially nonlinear low-dimensional structures in the data into representations, and use these representations to impute the missing entries. Thus, a network that learns well-structured and linearized representations by design, such as CRATE-MAE, fits the role of the network in the masked autoencoding pretext task particularly well. For this reason, we train on masked autoencoding.\nFurther implementation details of this architecture are discussed in Appendices D.1 and D.2."
+        },
+        {
+            "heading": "3 EMPIRICAL EVALUATIONS",
+            "text": "In this section, we conduct experiments to evaluate CRATE-MAE on real-world datasets and both supervised and unsupervised tasks. Similarly to Yu et al. (2023a), CRATE-MAE is built using simple design choices that we do not claim are optimal. We also do not claim that our results are optimally engineered; in particular, we do not use the extreme amount of computational resources required to obtain state-of-the-art performance using vision transformer-backed masked autoencoders (MAEs) (He et al., 2022). Our goals in this section are to verify that our white-box masked autoencoding model CRATE-MAE has overall promising performance, has several of the same characteristics (such as representation learning and robustness to mask percentage) as the usual masked autoencoder, and finally that the roles of each operator in the CRATE-MAE network align with our theoretical design.\nNetwork architecture. We implement the encoder and decoder architectures described in Section 2, with a few changes detailed in Appendix D.1. We consider different model sizes of CRATE-MAE by varying the token dimension d, number of heads K, and number of layers L; such parameters will be kept the same for the encoder and decoder, which is contrary to He et al. (2022) yet totally in line with our white-box derivation. We consider two model sizes, CRATE-MAE-Small and CRATE-MAEBase; Table 1 displays the model configurations and number of parameters, with a comparison to MAE, showing that CRATE-MAE uses around 30% of the parameters of MAE with the same model configuration. A PyTorch-like pseudocode for CRATE-MAE can be found in Appendix D.2, while Appendix D.1 contains more implementation details.\nDatasets and optimization. We mainly consider ImageNet-1K (Deng et al., 2009) as the main experimental setting for our architecture. We apply the AdamW (Loshchilov & Hutter, 2017) optimizer to train CRATE-MAE models for both pre-training and fine-tuning. When fine-tuning, we also use several commonly used downstream datasets: CIFAR10, CIFAR100 (Krizhevsky et al., 2009),\nOriginalMasked ViT-MAE CRATE-MAE OriginalMasked ViT-MAE CRATE-MAE\nOxford Flowers (Nilsback & Zisserman, 2008), and Oxford-IIT-Pets (Parkhi et al., 2012). More details about training and datasets can be found in Appendix D.1.\nLayer-wise function analysis. First, we confirm that our model actually does do layer-wise compression and sparsification, confirming our conceptual understanding as described in Section 2. In Figure 4, we observe that each layer of the encoder tends to compress and sparsify the input features, confirming our theoretical designing of the role of each operator in the network.\nAutoencoding performance. In Figure 5, we qualitatively compare the masked autoencoding performance of CRATE-MAE-Base to MAE-Base (He et al., 2022). We observe that both models are able to reconstruct the data well, despite CRATE-MAE using less than a third of the parameters of MAE. In Table 3 we display the average reconstruction loss of CRATE-MAE-Base and MAE-Base, showing a similar quantitative conclusion.\nRepresentation learning and emerging semantic properties. In this paragraph, we prove qualitatively and quantitatively that the CRATE-MAE encoder learns high-quality features that match our theoretical understanding. First, in Table 2 we display the performance of CRATE-MAE-Base when fine-tuned for supervised classification on a variety of datasets. We observe that the fine-tuning classification accuracy is much higher than a classification network fine-tuned from a random initialization, showing that the learned representations are useful for downstream tasks and in particular carry high semantic content. In particular, we show that the representations may be used for semantic segmentation. First, by taking the alignment of the representations of each token with the top few principal components of the representations of tokens in each class (precise details in\nAppendix D.3), we observe in Figure 6 that the representations are linearized, and that the top few principal components carry semantic structure, in that they clearly align well with tokens belonging to the the semantically meaningful parts of the image. We also examine the behavior of attention heads in the last layer of the encoder; we show in Figure 7 that the attention heads in the MSSA operator in CRATE-MAE truly capture the semantics of the input images, i.e., they \u201cattend\u201d to the semantically meaningful tokens. Such semantic segmentation properties are not clearly observed in standard vision transformers (Caron et al., 2021; Yu et al., 2023b)."
+        },
+        {
+            "heading": "4 CONCLUSION",
+            "text": "In this work, we uncover a quantitative connection between denoising and compression, and use it to design a conceptual framework for building white-box (mathematically interpretable) transformerlike deep neural networks which can learn using unsupervised pretext tasks, such as masked autoencoding. We show that such models are more parameter-efficient over their empirically designed cousins, achieve promising performance on large-scale real-world imagery datasets, and learn structured representations that contain semantic meaning. This work demonstrates the potential and practicality of white-box networks derived from first principles for tasks outside supervised classification. We thus believe that this work helps to bridge the theory and practice of deep learning, by unifying on both the conceptual and technical level many previously separated approaches including, but not limited to, diffusion and denoising, compression and rate reduction, transformers, and (masked) autoencoding."
+        },
+        {
+            "heading": "A OTHER RELATED WORK",
+            "text": "In Section 1, we described the approaches to unsupervised learning of low-dimensional structures in the data that were most relevant to the rest of the work. Here, we discuss some other popular alternatives for completeness.\nBlack-box unsupervised representation learning. On the other end from white-box models, which learn representations from data that have a priori desired structures, are black-box unsupervised learning methods which learn fully data-driven representations. One implementation of this principle includes contrastive learning, which learns representations from computing the statistics of multiple augmentations of the same data point (Chen et al., 2020; Bardes et al., 2021). Another implementation is that of autoencoding models, the most recently popular of which is the masked autoencoder (MAE) (He et al., 2022). Autoencoders attempt to build low-dimensional representations of the data and use them to reconstruct input data; masked autoencoders specifically mask the input data in training and attempt to impute the missing entries through reconstruction. The common point in such unsupervised learning methods so far is that they use black-box neural networks, such as ResNets (Chen et al., 2020) or transformers (Caron et al., 2021), as their back-end. Thus, although they sometimes develop semantically meaningful representations of the data (Chen et al., 2020; Caron et al., 2021; Bardes et al., 2021), they are uninterpretable, and their training procedures and internal mechanisms are opaque.\nDeep networks and stochastic dynamics. There are many quantitative rapprochements of deep learning and stochastic dynamics. The most well-known of these is diffusion models, which can be modeled as discretizations of Ito\u0308 diffusion processes (Song et al., 2020). The neural network is usually trained to estimate the so-called score function. Diffusion models can be thought of as implementing a particular approximation to optimal transport between a template distribution and the true data distribution (Khrulkov et al., 2022). Different types of stochastic dynamics useful for generative modeling may be derived from optimal transport between the data distribution and a prespecified template (De Bortoli et al., 2021; Albergo et al., 2023). However, diffusion models are unique among these methods in that they have an iterative denoising interpretation (Karras et al., 2022), which this work draws on. Such an interpretation has previously been used to construct deep denoising networks from unrolled diffusion processes (Mei & Wu, 2023), instead of just using the deep networks to do black-box estimation of the score function. Similar studies have interpreted deep networks as discretizations of diffusion processes without this particular denoising interpretation (Li et al., 2022), but the aforementioned unrolled iterative denoising strategy is what we draw upon in this work."
+        },
+        {
+            "heading": "B OVERVIEW OF DIFFUSION MODELS",
+            "text": "In this section, we develop the basics of diffusion models through the language of time-reversible Ito\u0302 diffusion processes. The coverage adapts that of Millet et al. (1989); Song et al. (2020); Karras et al. (2022).\nConsider a generic Ito\u0302 diffusion process (Z(t))t\u2208[0,T ], where Z(t) is an Rm-valued random variable, given by the SDE\ndZ(t) = \u03d5(Z(t), t) dt+ \u0393(Z(t), t) dB(t), Z(0) \u223c P, \u2200t \u2208 [0, T ] (B.1)\nwhere B is a Brownian motion and P is some probability measure (in this case representing the data distribution). Here the drift coefficient \u03d5 : Rm \u00d7 R \u2192 Rm and diffusion coefficient \u0393: Rm \u00d7 R \u2192 Rm\u00d7m are functions. To make sense of (B.1) and also verify the existence of strong (i.e., pathwise well-defined) solutions, we need some regularity on them, and we choose the following assumption:\nA1. \u03d5 and \u0393 have some spatial smoothness and do not grow too fast, i.e., there is a constant K \u2265 0 such that for all x \u2208 Rm we have\nsup t\u2208[0,T ]\n[\u2225\u0393(x, t)\u2212 \u0393(y, t)\u2225F + \u2225\u03d5(x, t)\u2212 \u03d5(y, t)\u22252] \u2264 K\u2225x\u2212 y\u22252 (B.2)\nsup t\u2208[0,T ]\n[\u2225\u0393(x, t)\u2225F + \u2225\u03d5(x, t)\u22252] \u2264 K(1 + \u2225x\u22252). (B.3)\nIn general, Z(t) may not have a density w.r.t. the Lebesgue measure on Rm. For example, suppose that P is supported on some low-dimensional linear subspace (or even a Dirac delta measure), and take \u0393 to be the orthoprojector onto this subspace. Then Z(t) will be supported on this subspace for all t and thus not have a density w.r.t. the Lebesgue measure. Thus, when further discussing processes of the type (B.1), we make the following assumption\nA2. Z(t) has a probability density function p(\u00b7, t) for all t > 0. This is guaranteed by either of the following conditions (Millet et al., 1989):\nA2.1 \u03d5 and \u0393 are differentiable in (x, t) and have Ho\u0308lder-continuous derivatives, and P has a density w.r.t. the Lebesgue measure;\nA2.2 The event\n{rank(\u0393(Z(s), s)) = m for all s in some neighborhood of 0} (B.4)\nhappens almost surely with respect to the law of the process given by (B.1).\nDefine \u03a8(x, t) . = \u0393(x, t)\u0393(x, t)\u22a4. (B.5)\nTo discuss time-reversibility, we also need the following local integrability condition, which is another measure of sharp growth of the coefficients (or precisely their derivatives):\nA3. The functions (x, t) 7\u2192 \u2207x \u00b7 (\u03a8(x, t)p(x, t)) are integrable on sets of the form D \u00d7 [t0, 1] for t0 > 0 and D a bounded subset of Rm:\u222b 1\nt0\n\u222b D \u2225\u2207x \u00b7 (\u03a8(x, t)p(x, t))\u22252 dx dt < \u221e. (B.6)\nTo write the notation out more explicitly,\n\u2207x \u00b7 (\u03a8(x, t)p(x, t)) = \u2207x \u00b7 (\u03a8 1(x, t)p(x, t))\n... \u2207x \u00b7 (\u03a8m(x, t)p(x, t))  (B.7) where \u2207x \u00b7 (\u03a8i(x, t)p(x, t)) =\nm\u2211 j=1 \u2202 \u2202xj [\u03a8ij(x, t)p(x, t)] (B.8)\nwhere \u03a8i is the ith row of \u03a8 transposed to a column, and \u03a8ij is the (i, j)th entry of \u03a8. Note that Millet et al. (1989) phrases this in terms of an local integrability condition on each |\u2207x \u00b7 (\u03a8i(x, t)p(x, t))|, which would naturally give a local integrability condition on \u2225\u2207x \u00b7 (\u03a8(x, t)p(x, t))\u22251. However, all norms on Rm are equivalent, and so this leads to a local integrability condition for \u2225\u2207x \u00b7 (\u03a8(x, t)p(x, t))\u22252 as produced. Note that the assumptions do not guarantee that the involved derivatives exist, in which case they are taken in the distributional (e.g., weak) sense, whence they should exist (Millet et al., 1989).\nUnder assumptions A1\u2014A3, Millet et al. (1989) guarantees the existence of another process (Y (t))t\u2208[0,T ] such that the laws of Z(t) and Y (T \u2212 t) are the same for all t \u2208 [0, T ]. This process (Y (t))t\u2208[0,T ] is called the time reversal of (Z(t))t\u2208[0,T ], and is shown to have law given by\ndY (t) = \u03d5(Y (t), t) dt+ \u0393(Y (t), t) dB\u2032(t), Y (0) \u223c p(\u00b7, T ), \u2200t \u2208 [0, T ] (B.9)\nwhere B\u2032(t) is an independent Brownian motion and\n\u03d5(x, t) = \u2212\u03d5(x, T \u2212 t) + \u2207x \u00b7 [\u03a8(x, T \u2212 t)p(x, T \u2212 t)] p(x, T \u2212 t)\n(B.10)\n= \u2212\u03d5(x, T \u2212 t) +\u2207x \u00b7\u03a8(x, T \u2212 t) + \u03a8(x, T \u2212 t)[\u2207x log p(x, T \u2212 t)], (B.11) \u0393(x, t) = \u0393(x, T \u2212 t). (B.12)\nWe would next like to develop an ODE which transports the probability mass P in the same way as (B.1) \u2014 namely, find another process (Z\u0303(t))t\u2208[0,T ] which has deterministic dynamics, yet has\nthe same law as (Z(t))t\u2208[0,T ]. Song et al. (2020) looks at the Fokker-Planck equations (which can be defined, at least in a weak sense, under assumptions A1\u2013A2) and manipulates them to get the following dynamics for Z\u0303(t):\ndZ\u0303(t) = \u03d5\u0303(Z\u0303(t), \u22a4) dt, Z\u0303(0) \u223c P, \u2200t \u2208 [0, T ], (B.13)\nwhere \u03d5\u0303(x, t) = \u03d5(x, t)\u2212 1 2 \u00b7 \u2207x \u00b7 [\u03a8(x, t)p(x, t)] p(x, t) (B.14)\n= \u03d5(x, t)\u2212 1 2 \u2207x \u00b7\u03a8(x, t)\u2212 1 2 \u03a8(x, t)[\u2207x log p(x, t)]. (B.15)\nNow to get a similar process for Y (t), namely a process (Y\u0303 (t))t\u2208[0,T ] which evolves deterministically yet has the same law as (Y (t))t\u2208[0,T ], we may either take the time reversal of (B.13) or apply the Fokker-Planck method to (B.9), in both cases obtaining the same dynamics:\ndY\u0303 (t) = \u03d5\u0303(Y\u0303 (t), t) dt, Y\u0303 (0) \u223c p(\u00b7, T ), \u2200t \u2208 [0, T ] (B.16)\nwhere \u03d5\u0303(x, t) = \u2212\u03d5\u0303(x, T \u2212 t) (B.17)\n= \u2212\u03d5(x, T \u2212 t) + 1 2 \u00b7 \u2207x \u00b7 [\u03a8(x, T \u2212 t)p(x, T \u2212 t)] p(x, T \u2212 t) (B.18)\n= \u2212\u03d5(x, t) + 1 2 \u2207x \u00b7\u03a8(x, T \u2212 t) + 1 2 \u03a8(x, T \u2212 t)[\u2207x log p(x, T \u2212 t)].\n(B.19)\nThe quantity \u2207x log p(x, t) is of central importance; it is denoted the score at time t, and we use the notation s(x, t) .= \u2207x log p(x, t) for it. With this substitution, we have the following dynamics for our four processes:\ndZ(t) = \u03d5(Z(t), t) dt+ \u0393(Z(t), t) dB(t), Z(0) \u223c P (B.20) dY (t) = [\u2212\u03d5(Y (t), T \u2212 t) +\u2207x \u00b7\u03a8(Y (t), T \u2212 t) + \u03a8(Y (t), T \u2212 t)s(Y (t), T \u2212 t)] dt (B.21)\n+ \u0393(Y (t), T \u2212 t) dB\u2032(t), Y (0) \u223c p(\u00b7, T ) (B.22)\ndZ\u0303(t) = [ \u03d5(Z\u0303(t), t)\u2212 1\n2 \u2207x \u00b7\u03a8(Z\u0303(t), t)\u2212\n1 2 \u03a8(Z\u0303(t), t)s(Z\u0303(t), t)\n] dt, Z\u0303(0) \u223c P (B.23)\ndY\u0303 (t) = [ \u2212 \u03d5(Y\u0303 (t), T \u2212 t) + 1\n2 \u2207x \u00b7\u03a8(Y\u0303 (t), T \u2212 t) (B.24)\n+ 1\n2 \u03a8(Y\u0303 (t), T \u2212 t)s(Y\u0303 (t), T \u2212 t)\n] dt, Y\u0303 (0) \u223c p(\u00b7, T ). (B.25)\nIn practice, one fits an estimator for s(\u00b7, \u00b7) and estimates p(\u00b7, T ) and runs a discretization of either (B.9) or (B.16) to sample approximately from P . One common instantiation used in diffusion models (Karras et al., 2022) is the so-called variance-exploding diffusion process, which has the coefficient settings\n\u03d5(x, t) = 0, \u0393(x, t) = \u221a 2Im (B.26)\nwhich implies that \u03a8(x, t) = 2Im. (B.27)\nThis means that the four specified processes are of the form\ndZ(t) = \u221a 2 dB(t), Z(0) \u223c P (B.28) dY (t) = s(Y (t), T \u2212 t) dt+ \u221a 2 dB\u2032(t), Y (0) \u223c p(\u00b7, T ) (B.29)\ndZ\u0303(t) = s(Z\u0303(t), t) dt, Z\u0303(0) \u223c P (B.30)\ndY\u0303 (t) = \u2212s(Y\u0303 (t), T \u2212 t), Y\u0303 (0) \u223c p(\u00b7, T ). (B.31)\nNotice that the determinstic flows are actually gradient flows on the score, which concretely reveals a connection between sampling and optimization, and thus between diffusion models (precisely those which use the probability flow ODE to sample) and unrolled optimization networks.\nIn this context, we can also establish the connection between diffusion networks and iterative denoising. In the variance-exploding setting, we have\nZ(t) \u223c N (Z(0), 2tIm), (B.32) which can be easily computed using results from, e.g., Sa\u0308rkka\u0308 & Solin (2019). Thus Z(T ) is a noisy version of Z(0), with noise level increasing monotonically with t, and sampling Z(0) from Z(T ) conceptually removes this noise. Concretely, Tweedie\u2019s formula (Efron, 2011) says that the optimal denoising function EP [Z(0) | Z(t)] has a simple form in terms of the score function:\nEP [Z(0) | Z(t)] = Z(t) + 2t \u00b7 s(Z(t), t). (B.33) In other words, the score function s points from the current iterate Z(t) to the value of the optimal denoising function, so it is a negative multiple of the conditionally-expected noise. Following the score by (stochastic) gradient flow or its discretization is thus equivalent to iterative denoising.\nAs a last remark, the notation p\u03c3 used in Section 2.3 is a short-hand for p(\u00b7, \u03c32/2), whence \u03c32 = 2t."
+        },
+        {
+            "heading": "C COMPUTATIONS",
+            "text": "C.1 RATE REDUCTION GRADIENT\nIn this section, we define a basic yet representative signal model for token sets lying near lowdimensional structures, and show that under this model, in a natural regime of parameter scales motivated by the architecture of CRATE applied to standard image classification benchmarks, the operation implemented by taking a gradient step on the compression term of the sparse rate reduction objective (2.1) corresponds to a projection operation at quantization scales \u03b52 proportional to the size of the deviation. This leads us in particular to a formal version of the result Theorem 1 stated in Section 2.\nSignal model. We consider a distribution over tokens Z \u2208 Rd\u00d7N induced by the following natural signal model: each token zi is drawn independently from the normalized isotropic Gaussian measure on one of K p-dimensional subspaces U1, . . . ,Uk \u2208 Rd\u00d7p,1 which comprise the low-dimensional structure in the observed tokens, then corrupted with i.i.d. Gaussian noise N (0, \u03c3 2\nd I); the subspace each token is drawn from is selected uniformly at random, independently of all other randomness in the problem. This signal model therefore corresponds to the setting of uncorrelated tokens, with maximum entropy coordinate distributions within subspaces. Although in general, the ability of CRATE-MAE to capture correlations in the data through the MSSA block is essential, it is natural to first develop our theoretical understanding of the connection between compression and the score function in the uncorrelated setting. We make the following assumptions within this model:\n1. Inspired by an ablation of Yu et al. (2023a), which suggests that the learned CRATE model on supervised classification on ImageNet has signal models Uk which are near-incoherent, we will assume that the subspaces Uk witness U\u22a4k Uk\u2032 = 1k=k\u2032Ip.\n2. We assume that the relative scales of these parameters conform to the CRATE-Base settings, trained on ImageNet: recall (Table 1) that these parameters are (a) d = 768; (b) N = 196; (c) K = 12; (d) p = d/K = 64.\nIn particular, d \u226b N \u226b p and p \u226b N/K, and Kp = d. We emphasize that these precise parameter values will not play a role in our analysis, only their relative magnitudes.\nFormally, let \u00b5(K, p, \u03c32) denote the probability measure on Rd\u00d7N corresponding to the distribution specified above. We let Z\u266e \u223c \u00b5 denote an observation distributed according to this signal model: formally, there exists a (random) map i 7\u2192 ki, for i \u2208 [N ] and ki \u2208 [K], such that\nz\u266ei = Ukixi + \u03b4i, i = 1, . . . , n, (C.1) 1More precisely, zi is distributed according to the pushforward of the normalized isotropic Gaussian mea-\nsure N (0, 1 p Ip) on Rp by the bases Uk.\nwhere \u2206 = [\u03b41 . . . \u03b4N ] \u223ci.i.d. N (0, \u03c3 2 d I), and (independently) xi \u223ci.i.d. N (0, 1 pIp). It is convenient to write this observation model in block form. To this end, let Kk = \u2211N i=1 1ki=k for k \u2208 [K] denote the number of times the k-th subspace is represented amongst the columns of Z\u266e (a random variable). Then by rotational invariance of the Gaussian distribution, we have\nZ\u266e d = [U1X1 . . . UKXK ]\u03a0+\u2206, (C.2)\nwhere d= denotes equality in distribution, \u03a0 \u2208 RN\u00d7N is a uniformly random permutation matrix, and each Xk \u2208 Rp\u00d7Kk . Because of this equality in distribution, we will commit the mild abuse of notation of identifying the block representation (C.2) with the observation model (C.1) that follows the distribution \u00b5.\nDenoising in the uncorrelated tokens model. In the uncorrelated tokens model (C.2), the marginal distribution of each column of Z\u266e is identical, and equal to an equiproportional mixture of (normalized) isotropic Gaussians on the subspaces U1, . . .Uk, convolved with the noise distribution N (0, \u03c3 2\nd I). This marginal distribution was studied as a model for the multi-head attention selection operation in the transformer architecture by Yu et al. (2023a): precisely, they showed (Yu et al., 2023a, \u00a7A.1) that when the perturbation level \u03c32 \u2192 0, the score function for this marginal distribution approximately implements a projection operation onto the nearest subspace Uk.2\nHence, we can connect compression, as implemented in the MSSA block of the CRATE-MAE architecture, to denoising in the uncorrelated tokens model by showing that at similar local scales, and for suitable settings of the model parameters, the compression operation implements a projection onto the low-dimensional structure of the distribution, as well.\nCompression operation. The MSSA block of the CRATE-MAE architecture arises from taking an (approximate) gradient step on the Rc term of the sparse rate reduction objective (2.1). This term writes\nRc(Z | U[K]) = 1\n2 K\u2211 k=1 log det ( I + \u03b2(U\u22a4k Z) \u22a4U\u22a4k Z ) , (C.3)\nwhere\n\u03b2 = p\nN\u03b52 , (C.4)\nand \u03b5 > 0 is the quantization error. Calculating the gradient, we have\n\u2207ZRc(Z | U[K]) = K\u2211 k=1 UkU \u22a4 k Z ( \u03b2\u22121I + (U\u22a4k Z) \u22a4U\u22a4k Z )\u22121 . (C.5)\nMinimizing the sparse rate reduction objective corresponds to taking a gradient descent step on Rc( \u00b7 | U[K]). Performing this operation at the observation from the uncorrelated tokens model Z\u266e, the output can be written as Z+ = Z\u266e \u2212 \u03b7\u2207Rc(Z\u266e | U[K]), (C.6) where \u03b7 > 0 is the step size.\nMain result on projection. We will see shortly that the behavior of the compression output (C.6) depends on the relative scales of the perturbation about the low-dimensional structure \u03c32 and the target quantization error \u03b52.\nTheorem 2. There exist absolute constants C,C \u2032, C \u2032\u2032, C \u2032\u2032\u2032 > 0 such that if max{N, p} \u2265 C, N \u2265 C \u2032K2 logK, and p \u2265 C \u2032\u2032N/K, and moreover if \u03c3 \u2264 1 and C \u2032\u2032\u2032\u03b2\u03c3 \u2264 12 , then it holds on an event of large probability\nZ+ = (1\u2212 \u03b7)Z\u266e \u2212 \u03b7\u03b2PU[K](\u2206) +\u039e, (C.7) 2The aspect of (Yu et al., 2023a, \u00a7A.1) that renders it an approximation, rather than a true asymptotic equivalence as \u03c32 \u2192 0, is technical difficulties associated with treating the softmax function that arises in the score. At points in the support of the distribution where there is a unique closest subspace Uk, these difficulties do not present, and the equivalence can be obtained straightforwardly.\nwhere PU[K] implements a projection onto the relevant subspaces for each token in the limiting case as \u03b5 \u2192 0, and \u039e is an error term quantified in the proof that is small at sufficiently large problem parameter scales.\nProof. We start by noticing that, by orthonormality of the subspaces Uk, we have by (C.2)\nU\u22a4k Z\u266e = [0 . . . Xk . . . 0]\u03a0+U \u22a4 k \u2206, (C.8)\nso that\n( \u03b2\u22121I + (U\u22a4k Z\u266e) \u22a4U\u22a4k Z\u266e )\u22121 = \u03a0\u22a4   \u03b2\u22121I . . . \u03b2\u22121I +X\u22a4k Xk . . . \u03b2\u22121I  \ufe38 \ufe37\ufe37 \ufe38\nAk\n+\u039ek  \u22121 \u03a0,\n(C.9) because permutation matrices are orthogonal matrices, and where the perturbation \u039ek is defined by\n\u039ek = \u03a0\u2206 \u22a4UkU \u22a4 k \u2206\u03a0 \u22a4+  0 . . . \u2206\u22a41 UkXk . . . 0 ... ... ... X\u22a4k U \u22a4 k \u22061 . . . \u2206 \u22a4 k UkXk +X \u22a4 k U \u22a4 k \u2206k . . . X \u22a4 k U \u22a4 k \u2206K ... ...\n... 0 . . . \u2206\u22a4KUkXk . . . 0  , (C.10)\nand where we have defined (implicitly) in addition\n[\u22061 . . . \u2206K ] = \u2206\u03a0 \u22a4. (C.11)\nThe matrix Ak \u227b 0, so we can write( \u03b2\u22121I + (U\u22a4k Z\u266e) \u22a4U\u22a4k Z\u266e )\u22121 = \u03a0\u22a4A\u22121k ( I +\u039ekA \u22121 k )\u22121 \u03a0, (C.12)\nfrom which it follows U\u22a4k Z\u266e ( \u03b2\u22121I + (U\u22a4k Z\u266e) \u22a4U\u22a4k Z\u266e )\u22121\n(C.13) = ([ 0 . . . Xk(\u03b2 \u22121I +X\u22a4k Xk) \u22121 . . . 0 ] +U\u22a4k \u2206\u03a0 \u22a4A\u22121k ) ( I +\u039ekA \u22121 k )\u22121 \u03a0. (C.14)\nThe task before us is therefore to control \u2225\u039ekA\u22121k \u2225 < 1, in order to apply the Neumann series to further simplify this expression. By Lemma 3 and our hypotheses on the problem parameters, we have \u2225\u039ekA\u22121k \u2225 \u2264 C\u03b2\u03c3 < 1, (C.15) with probability at least 1 \u2212 e\u2212cN/K \u2212 N\u22122. We can therefore apply the Neumann series on this event to obtain\nU\u22a4k Z\u266e ( \u03b2\u22121I + (U\u22a4k Z\u266e) \u22a4U\u22a4k Z\u266e )\u22121\n(C.16)\n= ([ 0 . . . Xk(\u03b2 \u22121I +X\u22a4k Xk) \u22121 . . . 0 ] +U\u22a4k \u2206\u03a0 \u22a4A\u22121k )I \u2212\u039ekA\u22121k + \u221e\u2211\nj=2\n(\u22121)j ( \u039ekA \u22121 k )j\u03a0. (C.17)\nWe have on the previous event\u2225\u2225\u2225\u2225\u2225\u2225 \u221e\u2211 j=2 (\u22121)j ( \u039ekA \u22121 k )j\u2225\u2225\u2225\u2225\u2225\u2225 \u2264 \u221e\u2211 j=2 \u2225\u2225\u039ekA\u22121k \u2225\u2225j \u2264 C(\u03b2\u03c3)2 11\u2212 C\u03b2\u03c3 \u2264 C \u2032(\u03b2\u03c3)2. (C.18)\nMoreover, as in the proof of Lemma 3, we have on the previous event that\u2225\u2225U\u22a4k \u2206\u03a0\u22a4A\u22121k \u2225\u2225 \u2264 C\u03b2\u03c3. (C.19) Thus, if we define a \u201cmain term\u201d\nMk = [[ 0 . . . Xk(\u03b2 \u22121I +X\u22a4k Xk) \u22121 . . . 0 ] ( I \u2212\u039ekA\u22121k ) +U\u22a4k \u2206\u03a0 \u22a4A\u22121k ] \u03a0, (C.20) we have on the same event as previously\u2225\u2225\u2225U\u22a4k Z\u266e (\u03b2\u22121I + (U\u22a4k Z\u266e)\u22a4U\u22a4k Z\u266e)\u22121 \u2212Mk\u2225\u2225\u2225 \u2264 C(\u03b2\u03c3)2. (C.21) To conclude, we need only study this main term, since Uk has operator norm 1. We first compute\nU\u22a4k \u2206\u03a0 \u22a4A\u22121k = U \u22a4 k [ \u03b2\u22061 . . .\u2206k ( \u03b2\u22121I +X\u22a4k Xk )\u22121 . . . \u03b2\u2206K ] . (C.22)\nWe will repeatedly use in the sequel that, by following the proof of Lemma 4, one has that terms of the form (\u03b2\u22121I +X\u22a4k Xk)\n\u22121 are well-conditioned, so in particular the previous expression can be simplified as\nU\u22a4k \u2206\u03a0 \u22a4A\u22121k = U \u22a4 k [\u03b2\u22061 . . . O(\u03c3) . . . \u03b2\u2206K ] , (C.23)\nwhere the O( \u00b7 ) notation holds with high probability. Next, we recall that \u039ek is a sum of two terms; we will do one term at a time for concision. We have first[\n0 . . . Xk(\u03b2 \u22121I +X\u22a4k Xk) \u22121 . . . 0 ] \u03a0\u2206\u22a4UkU \u22a4 k \u2206\u03a0 \u22a4 (C.24)\n= [ 0 . . . Xk(\u03b2 \u22121I +X\u22a4k Xk) \u22121 . . . 0 ] U \u22a4 k \u22061\n... U\u22a4k \u2206K\n U \u22a4 k \u22061\n... U\u22a4k \u2206K\n \u22a4\n(C.25)\n= Xk(\u03b2 \u22121I +X\u22a4k Xk) \u22121U\u22a4k \u2206k U \u22a4 k \u22061\n... U\u22a4k \u2206K\n \u22a4 . (C.26)\nWe then multiply this term by A\u22121k on the right. The mismatched index terms of this expression are small: if gi and gj are independent N (0, \u03c3 2\nd Id) gaussian random vectors, we have\nP[|\u27e8gi, gj\u27e9| > t] \u2264 2e\u2212cdt 2 , (C.27)\nso by taking a union bound and controlling operator norm in Frobenius norm, we have by independence P [\u2225\u2225\u2206\u22a4k\u2206k\u2032\u2225\u2225 > C\u221aN/Kd] \u2264 2 logN/Kd2 (C.28) if k \u0338= k\u2032. By Lemma 5 applied to \u2206 (also i.i.d. Gaussian), the k-th block is close to the identity, in contrast. Next, we have\n[ 0 . . . Xk(\u03b2 \u22121I +X\u22a4k Xk) \u22121 . . . 0 ] \n0 . . . \u2206\u22a41 UkXk . . . 0 ... ... ...\nX\u22a4k U \u22a4 k \u22061 . . . \u2206 \u22a4 k UkXk +X \u22a4 k U \u22a4 k \u2206k . . . X \u22a4 k U \u22a4 k \u2206K\n... ... ... 0 . . . \u2206\u22a4KUkXk . . . 0  (C.29)\n= Xk(\u03b2 \u22121I +X\u22a4k Xk) \u22121 [X\u22a4k U\u22a4k \u22061 . . . (\u2206\u22a4k UkXk +X\u22a4k U\u22a4k \u2206k) . . . X\u22a4k U\u22a4k \u2206K] . (C.30)\nNow multiplying on the right by A\u22121k gives\nXk(\u03b2 \u22121I+X\u22a4k Xk) \u22121 [ \u03b2X\u22a4k U \u22a4 k \u22061 . . . ( \u2206\u22a4k UkXk +X \u22a4 k U \u22a4 k \u2206k ) ( \u03b2\u22121I +X\u22a4k Xk )\u22121 . . . \u03b2X\u22a4k U \u22a4 k \u2206K ] .\n(C.31)\nHere, the k-th block is negligible, by Lemma 4 as above\u2014we can write for this term\nXk(\u03b2 \u22121I +X\u22a4k Xk) \u22121 [\u03b2X\u22a4k U\u22a4k \u22061 . . . O(\u03c3) . . . \u03b2X\u22a4k U\u22a4k \u2206K] . (C.32) We now introduce the notation \u2206\u0303k = \u03b2\u2206 for convenience, which combines the parameters \u03b2 and \u03c3 into one object. We have shown that on the preceding high probability events,\nMk = ( I \u2212Xk(\u03b2\u22121I +X\u22a4k Xk)\u22121X\u22a4k ) [ U\u22a4k \u2206\u03031 . . . O(\u03c3) . . . U \u22a4 k \u2206\u0303K ] (C.33)\n+ [ O(\u03c32\u03b2 \u221a N/Kd) . . . Xk(\u03b2 \u22121I +X\u22a4k Xk) \u22121 (I \u2212 (\u03b2\u22121I +X\u22a4k Xk)\u22121) . . . O(\u03c32\u03b2\u221aN/Kd)] .\n(C.34)\nAt the same time, by Lemma 4, we recall that the matrix inverses in the second term are wellconditioned on the previously-instantiated high probability event. Hence, by Lemma 4, we have with high probability\nMk = ( I \u2212Xk(\u03b2\u22121I +X\u22a4k Xk)\u22121X\u22a4k ) [ U\u22a4k \u2206\u03031 . . . O(\u03c3) . . . U \u22a4 k \u2206\u0303K ] (C.35)\n+ [ O(\u03c32\u03b2 \u221a N/Kd) . . . Xk +O( \u221a N/d+N/d) . . . O(\u03c32\u03b2 \u221a N/Kd) ] . (C.36)\nTo obtain the gradient of Rc, we sum these terms over k, and prepend Uk on the left, and \u03a0 on the right. This gives (up to accumulation of the previous errors)\n\u2207ZRc(Z | U[K]) = \u03b2PU[K](\u2206) +Z\u266e +O(\u03c3 2\u03b2 \u221a NK/d), (C.37)\nwhere PU[K] is defined blockwise (in the \u03a0-permuted ordering of the columns) by the approximate projection matrices Uk ( I \u2212Xk(\u03b2\u22121I +X\u22a4k Xk)\u22121X\u22a4k ) U\u22a4k , (C.38) which become exact projection matrices in the limit as \u03b5 \u2192 0.\nC.2 SUPPORTING RESULTS\nLemma 3. Consider \u039ek defined in (C.10), and\nAk =  \u03b2\u22121I . . . \u03b2\u22121I +X\u22a4k Xk\n. . . \u03b2\u22121I\n . (C.39)\nThen there exist absolute constants C,C \u2032, C \u2032\u2032 > 0 such that if max{N, p} \u2265 C, N \u2265 C \u2032K2 logK, and p \u2265 C \u2032\u2032N/K, then with Xk defined as above, we have with probability at least 1 \u2212 e\u2212N/K \u2212 2e\u2212d \u2212 2N\u22122 that\n\u2225\u039ekAk\u2225\u22121 \u2264 c\u2032\u03b2[\u03c32 + \u03c3(1 + \u221a N/d)] (C.40)\nfor some absolute constants c, c\u2032 > 0.\nProof. Note that\nA\u22121k =  \u03b2I . . . ( \u03b2\u22121I +X\u22a4k Xk )\u22121\n. . . \u03b2I  . (C.41) We will use the straightforward estimate \u2225\u039ekA\u22121k \u2225 \u2264 \u2225\u039ek\u2225\u2225A \u22121 k \u2225 and bound the two matrices\u2019 operator norms individually. By the previous expression,\n\u2225A\u22121k \u2225 = max{\u03b2, \u2225(\u03b2 \u22121I +X\u22a4k Xk) \u22121\u2225} \u2264 \u03b2, (C.42)\nbecause X\u22a4k Xk \u2ab0 0, so we need only control the operator norm of \u039ek. To this end, note the convenient expression\nXk = \u03a0\u2206 \u22a4UkU \u22a4 k \u2206\u03a0 \u22a4 + 2 sym ( (\u2206\u03a0\u22a4)\u22a4 [0 . . . UkXk . . . 0] ) , (C.43)\nwhere sym( \u00b7 ) denotes the symmetric part operator. By the triangle inequality, the operator norm of Xk is no larger than the sum of the operator norms of each term in the previous expression. The operator norm of the first term is no larger than \u2225\u2206\u22252, because \u03a0 is a permutation matrix and UU\u22a4k is an orthogonal projection. Meanwhile, using that the symmetric part operator is the orthogonal projection onto the space of symmetric matrices, it follows\u2225\u22252 sym ((\u2206\u03a0\u22a4)\u22a4 [0 . . . UkXk . . . 0])\u2225\u2225 \u2264 2\u2225\u2225(\u2206\u03a0\u22a4)\u22a4 [0 . . . UkXk . . . 0]\u2225\u2225, (C.44) and then we find as above that the RHS is no larger than 2\u2225\u2206\u2225\u2225Xk\u2225. With probability at least 1\u2212 2e\u2212d, by Lemma 6, since d \u2265 N we have\n\u2225\u2206\u2225 \u2264 C\u03c3. (C.45)\nAlso, with probability at least 1\u2212 e\u2212N/K + 1N2 , we have\n\u2225Xk\u2225 \u2264 1 + 2C \u221a N/d. (C.46)\nThus, with probability at least 1\u2212 e\u2212N/K + 1N2 \u2212 2e \u2212d, we have\n2\u2225\u2206\u2225\u2225Xk\u2225 \u2264 C\u03c3[1 + \u221a N/d]. (C.47)\nThus we have that with probability at least 1\u2212 e\u2212N/K + 1N2 \u2212 2e \u2212d, we have\n\u2225\u039ekA\u22121k \u2225 \u2264 c\u03b2[\u03c3 2 + \u03c3(1 +\n\u221a N/d)]. (C.48)\nLemma 4. There exist absolute constants C,C \u2032, C \u2032\u2032 > 0 such that if max{N, p} \u2265 C, N \u2265 C \u2032K2 logK, and p \u2265 C \u2032\u2032N/K, then with Xk defined as above, we have with probability at least 1\u2212 e\u2212N/K \u2212 e\u2212cN/K \u2212 2N\u22122 that\u2225\u2225\u2225\u2225Xk(\u03b2\u22121I +X\u22a4k Xk)\u22121 \u2212 11 + \u03b2\u22121Xk \u2225\u2225\u2225\u2225 \u2264 C1 \u221a N/d+ C2N/d (1 + \u03b2\u22121)2 . (C.49)\nfor absolute constants c, C1, C2 > 0.\nProof. We will use Lemma 5 and our hypotheses to obtain that with probability at least 1\u2212e\u2212N/K\u2212 e\u2212cN/K \u2212 2N\u22122, it holds\n\u2225Xk\u2225 \u2264 1 + 2C \u221a N/d, \u2225X\u22a4k Xk \u2212 I\u2225 \u2264 4C \u221a N/d. (C.50)\nIn particular, if d \u2265 C \u2032N , we have on the same event\n\u2225X\u22a4k Xk \u2212 I\u2225 \u2264 12 , (C.51)\nand X\u22a4k Xk is well-conditioned. Write\n\u039e = X\u22a4k Xk \u2212 I, (C.52)\nso that\n(\u03b2\u22121I +X\u22a4k Xk) \u22121 = ((1 + \u03b2\u22121)I +\u039e)\u22121 (C.53)\n= 1\n1 + \u03b2\u22121\n( I +\n1\n1 + \u03b2\u22121 \u039e\n)\u22121 (C.54)\n= 1\n1 + \u03b2\u22121 \u221e\u2211 j=0 ( \u2212 1 1 + \u03b2\u22121 )j \u039ej (C.55)\n= 1\n1 + \u03b2\u22121 I +\n1\n1 + \u03b2\u22121 \u221e\u2211 j=1 ( \u2212 1 1 + \u03b2\u22121 )j \u039ej , (C.56)\nby the Neumann series. This gives us\u2225\u2225\u2225\u2225(\u03b2\u22121I +X\u22a4k Xk)\u22121 \u2212 11 + \u03b2\u22121 I \u2225\u2225\u2225\u2225 = \u2225\u2225\u2225\u2225\u2225\u2225 11 + \u03b2\u22121 \u221e\u2211 j=1 ( \u2212 1 1 + \u03b2\u22121 )j \u039ej \u2225\u2225\u2225\u2225\u2225\u2225 (C.57) \u2264 1\n1 + \u03b2\u22121 \u221e\u2211 j=1 ( 1 1 + \u03b2\u22121 )j \u2225\u039e\u2225j (C.58)\n\u2264 1 1 + \u03b2\u22121 \u221e\u2211 j=1\n( 4C \u221a N/d\n1 + \u03b2\u22121\n)j (C.59)\n= 4C \u221a N/d\n(1 + \u03b2\u22121)(1 + \u03b2\u22121 \u2212 4C \u221a N/d) . (C.60)\nWe use submultiplicativity of the operator norm to obtain\u2225\u2225\u2225\u2225Xk(\u03b2\u22121I +X\u22a4k Xk)\u22121 \u2212 11 + \u03b2\u22121Xk \u2225\u2225\u2225\u2225 (C.61)\n\u2264 \u2225Xk\u2225 \u2225\u2225\u2225\u2225(\u03b2\u22121I +X\u22a4k Xk)\u22121 \u2212 11 + \u03b2\u22121 I \u2225\u2225\u2225\u2225 (C.62) \u2264 [1 + 2C \u221a N/d] \u00b7 4C \u221a N/d\n(1 + \u03b2\u22121)(1 + \u03b2\u22121 \u2212 4C \u221a N/d)\n(C.63)\n\u2264 C1 \u221a N/d+ C2N/d\n(1 + \u03b2\u22121)2 . (C.64)\nLemma 5. There exist absolute constants C,C \u2032, C \u2032\u2032 > 0 such that if max{N, p} \u2265 C, N \u2265 C \u2032K2 logK, and p \u2265 C \u2032\u2032N/K, then with Xk defined as above, we have\nP [ \u2225Xk\u2225 \u2264 1 + 2C1 \u221a N/d ] \u2265 1\u2212 e\u2212N/K \u2212 1\nN2 (C.65)\nfor some absolute constant C1 > 0, and moreover P [ \u2225X\u22a4k Xk \u2212 IKk\u2225 \u2264 4C2 \u221a N/d ] \u2265 1\u2212 e\u2212cN/K \u2212 1\nN2 , (C.66)\nfor absolute constants c, C2 > 0.\nProof. Let n \u2208 [N ] \u222a {0}. To start, note that conditioned on Kk = n, we have that Xk is an i.i.d. Gaussian matrix with entries of mean zero and variance 1/p, and shape p\u00d7 n. By conditioning, for any f , we have\nP[f(Xk) \u2265 t] = N\u2211 n=0 P[f(Xk) \u2265 t |Kk = n]P[Kk = n]. (C.67)\nBy its definition, Kk is the sum of N i.i.d. Bernoulli random variables, each with rate 1/K. We have E[Kk] = N/K, so by Lemma 9 we have for an absolute constant C > 0\nP [ |Kk \u2212N/K| \u2265 C \u221a N logN ] \u2264 1/N3. (C.68)\nBy this bound, we have\nP[f(Xk) \u2265 t] \u2264 \u2308N/K+C\n\u221a N logN\u2309\u2211\nn=\u230aN/K\u2212C \u221a N logN\u230b\nP[f(Xk) \u2265 t |Kk = n]P[Kk = n] + 1\nN2 . (C.69)\nNow we specialize. First, recall that the definition of Xk includes normalization by 1\u221ap ; below we will calculate without this normalization then reintroduce it at the end of the proof. If f = \u2225\u00b7\u2225 is the operator norm, then we have by Theorem 8 that\nP[\u2225Xk\u2225 \u2264 t] \u2265 1\u2212 \u2308N/K+C\n\u221a N logN\u2309\u2211\nn=\u230aN/K\u2212C \u221a N logN\u230b\nP[\u2225Xk\u2225 \u2264 t |Kk = n]P[Kk = n]\u2212 1\nN2 (C.70)\n\u2265 1\u2212 \u2308N/K+C\n\u221a N logN\u2309\u2211\nn=\u230aN/K\u2212C \u221a N logN\u230b\n( 2 exp ( \u2212n ( t\u2212\u221ap C \u221a n \u2212 1 )2)) P[Kk = n]\u2212 1 N2 .\n(C.71)\nHere, we can pick t = \u221a p+ 2C \u221a N/K. Because we then have\nt\u2212\u221ap C \u221a n = 2\n\u221a N/K\nn \u2265 2\n\u221a N/K\nN/K + C \u221a N logN \u2265 2, (C.72)\nwhere the last bound holds when N \u2265 C \u2032\u2032 and N \u2265 C2K2 logK, it follows by lower bounding (x\u2212 1)2 \u2265 x\u2212 1 on x \u2265 1 (by convexity) that\nP [ \u2225Xk\u2225 \u2264 1 + 2C \u221a N/d ] = P [ \u2225Xk\u2225 \u2264 1 + 2C \u221a N/(Kp) ] (C.73)\n\u2265 1\u2212 \u2308N/K+C\n\u221a N logN\u2309\u2211\nn=\u230aN/K\u2212C \u221a N logN\u230b\ne\u22122nP[Kk = n]\u2212 1\nN2 (C.74)\n\u2265 1\u2212 \u2308N/K+C\n\u221a N logN\u2309\u2211\nn=\u230aN/K\u2212C \u221a N logN\u230b\ne\u22122nP[Kk = n]\u2212 1\nN2 (C.75)\n\u2265 1\u2212 e\u22122(N/K\u2212C \u221a N logN) \u2212 1\nN2 (C.76)\n\u2265 1\u2212 e\u2212N/K \u2212 1 N2 , (C.77)\nwhere the last line uses our previous condition on N relative to K (possibly worst-casing constants). This gives the result claimed for the operator norm. Next, we proceed for the concentration of the covariance matrix. Using Theorem 8 again, we have P [ \u2225X\u22a4k Xk \u2212 IKk\u2225 \u2264 t ] \u2265 1\u2212 \u2308N/K+C \u221a N logN\u2309\u2211\nn=\u230aN/K\u2212C \u221a N logN\u230b\nP [ \u2225X\u22a4k Xk \u2212 In\u2225 \u2264 t \u2223\u2223Kk = n]P[Kk = n]\u2212 1 N2\n(C.78)\n\u2265 1\u2212 2 \u2308N/K+C\n\u221a N logN\u2309\u2211\nn=\u230aN/K\u2212C \u221a N logN\u230b\nexp ( \u2212p ( t C \u2032 \u2212 \u221a n p )2) P[Kk = n]\u2212 1 N2 ,\n(C.79)\nwhere in the second line we used that p \u2265 C \u2032(N/K + C \u221a N logN) and p \u2265 C \u2032t2 (we will pick t shortly so that this holds). We will choose\nt = 2C \u2032 \u221a (N/K + C \u221a N logN)/p, (C.80)\ni.e., the largest possible n in the sum, so that the previous conditions are implied since p2 \u2265 p. We then obtain from the above\nP [ \u2225X\u22a4k Xk \u2212 IKk\u2225 \u2264 4C \u2032 \u221a N/d ] \u2265 1\u2212 e\u2212cN/K \u2212 1\nN2 , (C.81)\nsince the preceding conditions imply that N/K is larger than C \u221a N logN .\nLemma 6. With \u2206 defined as above, we have\nP [\u2223\u2223\u2223\u2223\u2223\u2225\u2206\u2225 \u2212 \u03c3 \u221a N\u221a d \u2223\u2223\u2223\u2223\u2223 > C\u03c3 ] \u2264 2 exp(\u2212d). (C.82)\nfor some absolute constant C.\nProof. We apply Theorem 8 with Ai = \u221a d \u03c3 \u03b4i, so that A = \u221a d \u03c3 \u2206. Then we have EAi = 0 and EAiA\u22a4i = I , and in particular the Ai are standard Gaussian variables. Thus, the sub-Gaussian constant Ki . = \u2225Ai\u2225\u03c82 = 1. Therefore we have\n2 exp(\u2212t2) \u2265 P [ |\u2225A\u2225 \u2212 \u221a N | > C( \u221a d+ t) ] (C.83)\n= P [\u2223\u2223\u2223\u2223\u2223 \u221a d \u03c3 \u2225\u2206\u2225 \u2212 \u221a N \u2223\u2223\u2223\u2223\u2223 > C(\u221ad+ t) ]\n(C.84)\n= P [\u2223\u2223\u2223\u2223\u2223\u2225\u2206\u2225 \u2212 \u03c3 \u221a N\u221a d \u2223\u2223\u2223\u2223\u2223 > C\u03c3 ( 1 + t\u221a d )] . (C.85)\nWe pick t = \u221a d and (for a different C) obtain\n2 exp(\u2212d) \u2265 P [\u2223\u2223\u2223\u2223\u2223\u2225\u2206\u2225 \u2212 \u03c3 \u221a N\u221a d \u2223\u2223\u2223\u2223\u2223 > C\u03c3 ] . (C.86)\nC.3 AUXILIARY RESULTS\nLemma 7 ((Vershynin, 2018, Lemma 3.4.2)). Let X = (X1, . . . , Xn) \u2208 Rn be a random vector with independent, mean zero, sub-Gaussian coordinates Xi. Then X is a sub-Gaussian random vector with Orlicz norm\n\u2225X\u2225\u03c82 \u2264 Cmax i\u2208[n] \u2225Xi\u2225\u03c82 . (C.87)"
+        },
+        {
+            "heading": "In particular, if the Xi are standard Gaussians, then \u2225X\u2225\u03c82 is constant in n.",
+            "text": "Theorem 8 ((Vershynin, 2018, Theorem 4.6.1)). Let A be an m\u00d7 n matrix whose columns Ai are independent sub-Gaussian, random vectors in Rm with EAi = 0 and EAiA\u22a4i = I . Then for any t \u2265 0 we have\n\u221a n\u2212 CK2( \u221a m+ t) \u2264 \u03c3m(A) \u2264 \u03c31(A) \u2264 \u221a n+ CK2( \u221a m+ t) (C.88)\nwith probability at least 1\u22122 exp(\u2212t2). Here K = maxi\u2225Ai\u2225\u03c82 . In particular, we have the slightly stronger result\u2225\u2225\u2225\u2225 1nAA\u22a4 \u2212 Im \u2225\u2225\u2225\u2225 \u2264 K2 max(\u03b4, \u03b42), where \u03b4 = C (\u221amn + t\u221an ) . (C.89)\nLemma 9 (Hoeffding\u2019s Inequality, (Vershynin, 2018, Theorem 2.2.6)). Let X1, . . . , Xn be independent random variables valued in [0, 1]. Then for every t > 0 we have\nP [\u2223\u2223\u2223\u2223\u2223 n\u2211 i=1 Xi \u2212 E[Xi] \u2223\u2223\u2223\u2223\u2223 \u2265 t ] \u2264 2 exp ( \u22122t 2 n ) . (C.90)"
+        },
+        {
+            "heading": "D ADDITIONAL EXPERIMENT DETAILS",
+            "text": "D.1 EXPERIMENT DETAILS AND CLARIFICATIONS\nIn all circumstances, during tokenization we instantiate a trainable class token zcls1 \u2208 Rd. This class token is never masked out or reconstructed by the autoencoding procedure, and is only used in fine-tuning and segmentation experiments. Specifically, after obtaining features Z1 of (unmasked) tokens as the output of fpre, we replace Z1 by [z1cls,Z\n1] (i.e., replacing N with N +1) and proceed with the rest of the autoencoding.\nFor training using masked autoencoding, we follow the recipe of (He et al., 2022). We mask a fixed percentage \u00b5 \u2208 [0, 1] of randomly selected tokens in X; that is, we randomly sample (without replacement) N .= (1 \u2212 \u00b5)N image tokens xi from the whole image token set, collecting them as X\n. = [x1, . . . ,xN ]. Thus X is the input to the encoder. In fact, this is conceptually very similar to inputting X into the encoder, only with zero vectors 0 \u2208 RD replacing the \u00b5N masked tokens. For the decoder, we pad Z .= f(X) with \u00b5N copies of a trainable \u201cmask token\u201d zmask \u2208 Rd, filling in the locations of the tokens that were masked out, apply an additive positional embedding (as in the encoder (2.15)), and then pass it through the decoder transformer layers. The loss is computed only on the masked image patches. Refer to He et al. (2022) for more MAE implementation details.\nFor fine-tuning using supervised classification, we examine the last-encoder-layer representation of the (so far vestigial) class token zcls, which is the first column of the representation Z. We obtain the unnormalized log-probabilities for the classes as u .= W head LN(zcls), where LN is a trainable layer-norm and W head \u2208 RC\u00d7d is a trainable weight matrix, where C is the number of classes. The output u \u2208 RC is the input to the softmax cross-entropy loss. All model parameters are trainable during fine-tuning.\nIn all training setups, we average the loss over all samples in the batch.\nWe pre-train CRATE-MAE on ImageNet-1K (Deng et al., 2009). We employ the AdamW optimizer (Loshchilov & Hutter, 2017). We configure the learning rate as 3\u00d7 10\u22125, weight decay as 0.1, and batch size as 4, 096.\nWe fine-tune our pre-trained CRATE-MAE on the following target datasets: CIFAR10/CIFAR100 (Krizhevsky et al., 2009), Oxford Flowers-102 (Nilsback & Zisserman, 2008), Oxford-IIIT-Pets (Parkhi et al., 2012). For each fine-tuning task, we employ the AdamW optimizer (Loshchilov & Hutter, 2017). We configure the learning rate as 5 \u00d7 10\u22125, weight decay as 0.01, and batch size as 256.\nTo allow transfer learning, in all training and evaluations setups we first resize our input data to 224 height and width. For data augmentations during pre-training and fine-tuning, we also adopt several standard techniques: random cropping, random horizontal flipping, and random augmentation (with number of transformations n = 2 and magnitude of transformations m = 14).\nD.2 PYTORCH-LIKE PSEUDOCODE\nListing 1: PyTorch-Like Code for MSSA and ISTA class ISTA:\n# initialization def __init__(self, dim, hidden_dim, dropout = 0., step_size=0.1,\nlambd=0.1): super().__init__() self.weight = nn.Parameter(torch.Tensor(dim, dim)) with torch.no_grad():\ninit.kaiming_uniform_(self.weight) self.step_size = step_size self.lambd = lambd\n# forward pass def forward(self, x):\nx1 = F.linear(x, self.weight, bias=None) grad_1 = F.linear(x1, self.weight.t(), bias=None) grad_2 = F.linear(x, self.weight.t(), bias=None)\ngrad_update = self.step_size * (grad_2 - grad_1) - self.step_size * self.lambd output = F.relu(x + grad_update) return output\nclass MSSA: # initialization def __init__(self, dim, heads = 8, dim_head = 64, dropout = 0.):\ninner_dim = dim_head * heads project_out = not (heads == 1 and dim_head == dim) self.heads = heads self.scale = dim_head ** -0.5 self.attend = Softmax(dim = -1) self.dropout = Dropout(dropout) self.qkv = Linear(dim, inner_dim, bias=False) self.to_out = Sequential(Linear(inner_dim, dim), Dropout(dropout))\nif project_out else nn.Identity() # forward pass def forward(self, x):\nw = rearrange(self.qkv(x), \u2019b n (h d) -> b h n d\u2019, h = self.heads) dots = matmul(w, w.transpose(-1, -2)) * self.scale attn = self.attend(dots) attn = self.dropout(attn) out = matmul(attn, w) out = rearrange(out, \u2019b h n d -> b n (h d)\u2019) return self.to_out(out)\nListing 2: PyTorch-Like Code for CRATE-MAE Encoder class CRATE_Encoder:\n# initialization def __init__(self, dim, depth, heads, dim_head, mlp_dim, dropout =\n0.): self.layers = [] self.depth = depth for _ in range(depth):\nself.layers.extend([LayerNorm(dim), MSSA(dim, heads, dim_head, dropout)]) self.layers.extend([LayerNorm(dim), ISTA(dim, mlp_dim, dropout)])\n# forward pass def forward(self, x):\nfor ln1, attn, ln2, ff in self.layers: x_ = attn(ln1(x)) + x x = ff(ln2(x_)) return x\nListing 3: PyTorch-Like Code for CRATE-MAE Decoder class CRATE_Decoder:\n# initialization def __init__(self, dim, depth, heads, dim_head, mlp_dim, dropout =\n0.): # define layers self.layers = [] self.depth = depth for _ in range(depth):\nself.layers.extend([LayerNorm(dim), Linear(in_features=dim, out_features=dim, bias=False)]) self.layers.extend([LayerNorm(dim), MSSA(dim, heads, dim_head, dropout)])\n# forward pass def forward(self, x):\nfor ln1, f_linear, ln2, attn in self.layers:\nx_ = f_linear(ln1(x)) x = ln2(x_) - attn(ln2(x_))\nreturn x\nD.3 VISUALIZATION METHODOLOGY\nIn this subsection we formally describe the procedures we used to generate the visualizations used to evaluate the segmentation property of CRATE-MAE in Section 3. Much of this evaluation is the same as in Yu et al. (2023b).\nD.3.1 VISUALIZING ATTENTION MAPS\nWe recapitulate the method to visualize attention maps in Abnar & Zuidema (2020); Caron et al. (2021).\nFor the kth head at the \u2113th layer of the encoder of CRATE-MAE, we compute the self-attention matrix A\u2113k \u2208 RN defined as follows:\nA\u2113k = A \u2113 k,1 ...\nA\u2113k,N\n \u2208 RN , where A\u2113k,i = exp(\u27e8U \u2113\u2217k z\u2113i ,U \u2113\u2217k z\u2113cls\u27e9)\u2211N j=1 exp(\u27e8U \u2113\u2217k z\u2113j ,U \u2113\u2217k z\u2113cls\u27e9) . (D.1)\nwhere z\u2113cls is the \u2113 th layer representation of the class token z1cls. We then reshape the attention matrix ALk for the last layer L into a \u221a N \u00d7 \u221a N matrix and visualize the heatmaps as shown in Figure 7. For example, the ith row and the jth column element of each heatmap in Figure 7 corresponds to the mth component of ALk if m = (i\u22121) \u00b7 \u221a N + j. In Figure 7, we select one attention head k of CRATE-MAE and visualize the attention matrix ALk for each image.\nD.3.2 PCA VISUALIZATIONS\nAs in the previous subsection, we recapitulate the method to visualize the patch representations using PCA from Amir et al. (2022); Oquab et al. (2023); Yu et al. (2023b).\nWe first select J images that belong to the same class, {Xj}Jj=1, and extract the token representations for each image at layer \u2113, i.e., [ z\u2113j,cls, z \u2113 j,1, . . . ,z \u2113 j,N ] for j \u2208 [J ]. In particular, z\u2113j,i represents the ith token representation at the \u2113th layer for the jth image. We then compute the first principal components of Z\u0302\u2113 = {z\u0302\u21131,1, . . . , z\u0302\u21131,N , . . . , z\u0302\u2113J,1, . . . , z\u0302\u2113J,N}, and use z\u0302\u2113j,i to denote the aggregated token representation for the i-th token of Xj , i.e., z\u0302\u2113j,i = [(U \u2217 1 z\u0302 \u2113 j,i) \u22a4, . . . , (U\u2217K z\u0302 \u2113 j,i)\n\u22a4]\u22a4 \u2208 R(p\u00b7K)\u00d71. We denote the first eigenvector of the matrix Z\u0302\u2217Z\u0302 by u0 and compute the projection values as\n{\u03c3\u03bb(\u27e8u0, z\u2113j,i\u27e9)}i,j , where \u03c3\u03bb(x) = { x, |x| \u2265 \u03bb 0, |x| < \u03bb is the hard-thresholding function. We then se-\nlect a subset of token representations from Z\u0302 with \u03c3\u03bb(\u27e8u0, z\u2113j,i\u27e9) > 0. which correspond to non-zero projection values after thresholding, and we denote this subset as Z\u0302s \u2286 Z\u0302. This selection step is used to remove the background (Oquab et al., 2023). We then compute the first three right singular vectors of Z\u0302s with the first three eigenvectors of the matrix Z\u0302\u2217s Z\u0302s denoted as {u1,u2,u3}. We define the RGB tuple for each token as:\n[rj,i, gj,i, bj,i] = [\u27e8u1, z\u2113j,i\u27e9, \u27e8u2, z\u2113j,i\u27e9, \u27e8u3, z\u2113j,i\u27e9], i \u2208 [N ], j \u2208 [J ], z\u2113j,i \u2208 Z\u0302s. (D.2)\nNext, for each image Xj we compute Rj ,Gj ,Bj , where Rj = [rj,1, . . . , rj,N ]\u22a4 \u2208 Rd\u00d71 (similar for Gj and Bj). Then we reshape the three matrices into \u221a N \u00d7 \u221a N and visualize the \u201cprincipal components\u201d of image Xj via the RGB image (Rj ,Gj ,Bj) \u2208 R3\u00d7 \u221a N\u00d7 \u221a N ."
+        }
+    ],
+    "year": 2023
+}

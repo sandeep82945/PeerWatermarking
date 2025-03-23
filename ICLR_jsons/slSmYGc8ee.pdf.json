@@ -1,0 +1,1208 @@
+{
+    "abstractText": "In theoretical neuroscience, recent work leverages deep learning tools to explore how some network attributes critically influence its learning dynamics. Notably, initial weight distributions with small (resp. large) variance may yield a rich (resp. lazy) regime, where significant (resp. minor) changes to network states and representation are observed over the course of learning. However, in biology, neural circuit connectivity could exhibit a low-rank structure and therefore differs markedly from the random initializations generally used for these studies. As such, here we investigate how the structure of the initial weights \u2014 in particular their effective rank \u2014 influences the network learning regime. Through both empirical and theoretical analyses, we discover that high-rank initializations typically yield smaller network changes indicative of lazier learning, a finding we also confirm with experimentally-driven initial connectivity in recurrent neural networks. Conversely, low-rank initialization biases learning towards richer learning. Importantly, however, as an exception to this rule, we find lazier learning can still occur with a low-rank initialization that aligns with task and data statistics. Our research highlights the pivotal role of initial weight structures in shaping learning regimes, with implications for metabolic costs of plasticity and risks of catastrophic forgetting.",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Yuhan Helena Liu"
+        },
+        {
+            "affiliations": [],
+            "name": "Aristide Baratin"
+        },
+        {
+            "affiliations": [],
+            "name": "Jonathan Cornford"
+        },
+        {
+            "affiliations": [],
+            "name": "Stefan Mihalas"
+        },
+        {
+            "affiliations": [],
+            "name": "Eric Shea-Brown"
+        },
+        {
+            "affiliations": [],
+            "name": "Guillaume Lajoie"
+        }
+    ],
+    "id": "SP:3279a26ac15e893a01341974c7d338add817406f",
+    "references": [
+        {
+            "authors": [
+                "Madhu S Advani",
+                "Andrew M Saxe",
+                "Haim Sompolinsky"
+            ],
+            "title": "High-dimensional dynamics of generalization error in neural networks",
+            "venue": "Neural Networks,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Atish Agarwala",
+                "Fabian Pedregosa",
+                "Jeffrey Pennington"
+            ],
+            "title": "Second-order regression models exhibit progressive sharpening to the edge of stability",
+            "venue": "arXiv preprint arXiv:2210.04860,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Sina Alemohammad",
+                "Zichao Wang",
+                "Randall Balestriero",
+                "Richard Baraniuk"
+            ],
+            "title": "The recurrent neural tangent kernel",
+            "venue": "arXiv preprint arXiv:2006.10246,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Johnatan Aljadeff",
+                "Merav Stern",
+                "Tatyana Sharpee"
+            ],
+            "title": "Transition to chaos in random networks with cell-type-specific connectivity",
+            "venue": "Physical review letters,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Alexander Atanasov",
+                "Blake Bordelon",
+                "Cengiz Pehlevan"
+            ],
+            "title": "Neural networks as kernel learners: The silent alignment effect",
+            "venue": "arXiv preprint arXiv:2111.00034,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Shahar Azulay",
+                "Edward Moroshko",
+                "Mor Shpigel Nacson",
+                "Blake E Woodworth",
+                "Nathan Srebro",
+                "Amir Globerson",
+                "Daniel Soudry"
+            ],
+            "title": "On the implicit bias of initialization shape: Beyond infinitesimal mirror descent",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yasaman Bahri",
+                "Jonathan Kadmon",
+                "Jeffrey Pennington",
+                "Sam S Schoenholz",
+                "Jascha Sohl-Dickstein",
+                "Surya Ganguli"
+            ],
+            "title": "Statistical mechanics of deep learning",
+            "venue": "Annual Review of Condensed Matter Physics,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Shahab Bakhtiari",
+                "Patrick Mineault",
+                "Timothy Lillicrap",
+                "Christopher Pack",
+                "Blake Richards"
+            ],
+            "title": "The functional specialization of visual cortex emerges from training parallel pathways with self-supervised predictive learning",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Omri Barak"
+            ],
+            "title": "Recurrent neural networks as versatile tools of neuroscience research",
+            "venue": "Current opinion in neurobiology,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Aristide Baratin",
+                "Thomas George",
+                "C\u00e9sar Laurent",
+                "R Devon Hjelm",
+                "Guillaume Lajoie",
+                "Pascal Vincent",
+                "Simon Lacoste-Julien"
+            ],
+            "title": "Implicit regularization via neural feature alignment",
+            "venue": "In International Conference on Artificial Intelligence and Statistics,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Peter L Bartlett",
+                "Andrea Montanari",
+                "Alexander Rakhlin"
+            ],
+            "title": "Deep learning: a statistical viewpoint",
+            "venue": "Acta numerica,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Guillaume Bellec",
+                "Franz Scherr",
+                "Anand Subramoney",
+                "Elias Hajek",
+                "Darjan Salaj",
+                "Robert Legenstein",
+                "Wolfgang Maass"
+            ],
+            "title": "A solution to the learning dilemma for recurrent networks of spiking neurons",
+            "venue": "Nature communications,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Blake Bordelon",
+                "Cengiz Pehlevan"
+            ],
+            "title": "The influence of learning rule on representation dynamics in wide neural networks",
+            "venue": "arXiv preprint arXiv:2210.02157,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Lukas Braun",
+                "Cl\u00e9mentine Domin\u00e9",
+                "James Fitzgerald",
+                "Andrew Saxe"
+            ],
+            "title": "Exact learning dynamics of deep linear networks with prior knowledge",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Luke Campagnola",
+                "Stephanie C Seeman",
+                "Thomas Chartrand",
+                "Lisa Kim",
+                "Alex Hoggarth",
+                "Clare Gamlin",
+                "Shinya Ito",
+                "Jessica Trinh",
+                "Pasha Davoudian",
+                "Cristina Radaelli"
+            ],
+            "title": "Local connectivity and synaptic dynamics in mouse and human",
+            "venue": "neocortex. Science,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Abdulkadir Canatar",
+                "Blake Bordelon",
+                "Cengiz Pehlevan"
+            ],
+            "title": "Spectral bias and task-model alignment explain generalization in kernel regression and infinitely wide neural networks",
+            "venue": "Nature communications,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Joanna C Chang",
+                "Matthew G Perich",
+                "Lee E Miller",
+                "Juan A Gallego",
+                "Claudia Clopath"
+            ],
+            "title": "De novo motor learning creates structure in neural activity space that shapes adaptation",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Lenaic Chizat",
+                "Edouard Oyallon",
+                "Francis Bach"
+            ],
+            "title": "On lazy training in differentiable programming",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "David Dahmen",
+                "Stefano Recanatesi",
+                "Gabriel K Ocker",
+                "Xiaoxuan Jia",
+                "Moritz Helias",
+                "Eric"
+            ],
+            "title": "SheaBrown. Strong coupling and local control of dimensionality across brain",
+            "venue": "areas. Biorxiv,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Sigurd Diederich",
+                "Manfred Opper"
+            ],
+            "title": "Learning of correlated patterns in spin-glass networks by local learning rules",
+            "venue": "Physical review letters,",
+            "year": 1987
+        },
+        {
+            "authors": [
+                "Sven Dorkenwald",
+                "Claire E McKellar",
+                "Thomas Macrina",
+                "Nico Kemnitz",
+                "Kisuk Lee",
+                "Ran Lu",
+                "Jingpeng Wu",
+                "Sergiy Popovych",
+                "Eric Mitchell",
+                "Barak Nehoran"
+            ],
+            "title": "Flywire: online community for whole-brain connectomics",
+            "venue": "Nature methods,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Alexis Dubreuil",
+                "Adrian Valente",
+                "Manuel Beiran",
+                "Francesca Mastrogiuseppe",
+                "Srdjan Ostojic"
+            ],
+            "title": "The role of population structure in computations through neural dynamics",
+            "venue": "Nature neuroscience,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Daniel B Ehrlich",
+                "Jasmine T Stone",
+                "David Brandfonbrener",
+                "Alexander Atanasov",
+                "John D Murray"
+            ],
+            "title": "Psychrnn: An accessible and flexible python package for training recurrent neural network models on cognitive",
+            "venue": "tasks. Eneuro,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Melikasadat Emami",
+                "Mojtaba Sahraee-Ardakan",
+                "Parthe Pandit",
+                "Sundeep Rangan",
+                "Alyson K Fletcher"
+            ],
+            "title": "Implicit bias of linear rnns",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Matthew Farrell",
+                "Stefano Recanatesi",
+                "Timothy Moore",
+                "Guillaume Lajoie",
+                "Eric Shea-Brown"
+            ],
+            "title": "Gradient-based learning drives robust representations in recurrent neural networks by balancing compression and expansion",
+            "venue": "Nature Machine Intelligence,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Timo Flesch",
+                "Keno Juechems",
+                "Tsvetomira Dumbalska",
+                "Andrew Saxe",
+                "Christopher Summerfield"
+            ],
+            "title": "Rich and lazy learning of task representations in brains and neural networks. BioRxiv",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Timo Flesch",
+                "Andrew Saxe",
+                "Christopher Summerfield"
+            ],
+            "title": "Continual task learning in natural and artificial agents",
+            "venue": "Trends in Neurosciences,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Peiran Gao",
+                "Eric Trautmann",
+                "Byron Yu",
+                "Gopal Santhanam",
+                "Stephen Ryu",
+                "Krishna Shenoy",
+                "Surya Ganguli"
+            ],
+            "title": "A theory of multineuronal dimensionality, dynamics and measurement",
+            "venue": "BioRxiv, pp",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Mario Geiger",
+                "Stefano Spigler",
+                "Arthur Jacot",
+                "Matthieu Wyart"
+            ],
+            "title": "Disentangling feature and lazy training in deep neural networks",
+            "venue": "Journal of Statistical Mechanics: Theory and Experiment,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Thomas George",
+                "Guillaume Lajoie",
+                "Aristide Baratin"
+            ],
+            "title": "Lazy vs hasty: linearization in deep networks impacts learning schedule based on example difficulty",
+            "venue": "TMLR,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Behrooz Ghorbani",
+                "Song Mei",
+                "Theodor Misiakiewicz",
+                "Andrea Montanari"
+            ],
+            "title": "When do neural networks outperform kernel methods",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Arna Ghosh",
+                "Yuhan Helena Liu",
+                "Guillaume Lajoie",
+                "Konrad Kording",
+                "Blake Aaron Richards"
+            ],
+            "title": "How gradient estimator variance and bias impact learning in neural networks",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Xavier Glorot",
+                "Yoshua Bengio"
+            ],
+            "title": "Understanding the difficulty of training deep feedforward neural networks",
+            "venue": "In Proceedings of the thirteenth international conference on artificial intelligence and statistics,",
+            "year": 2010
+        },
+        {
+            "authors": [
+                "Matthew D Golub",
+                "Patrick T Sadtler",
+                "Emily R Oby",
+                "Kristin M Quick",
+                "Stephen I Ryu",
+                "Elizabeth C Tyler-Kabara",
+                "Aaron P Batista",
+                "Steven M Chase",
+                "Byron M Yu"
+            ],
+            "title": "Learning by neural reassociation",
+            "venue": "Nature neuroscience,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Vishwa Goudar",
+                "Barbara Peysakhovich",
+                "David J Freedman",
+                "Elizabeth A Buffalo",
+                "Xiao-Jing Wang"
+            ],
+            "title": "Schema formation in a neural population subspace underlies learning-to-learn in flexible sensorimotor problem-solving",
+            "venue": "Nature Neuroscience,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Will Greedy",
+                "Heng Wei Zhu",
+                "Joseph Pemberton",
+                "Jack Mellor",
+                "Rui Ponte Costa"
+            ],
+            "title": "Single-phase deep learning in cortico-cortical networks",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jeff Z HaoChen",
+                "Colin Wei",
+                "Jason Lee",
+                "Tengyu Ma"
+            ],
+            "title": "Shape matters: Understanding the implicit bias of the noise covariance",
+            "venue": "In Conference on Learning Theory,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Isabelle D Harris",
+                "Hamish Meffin",
+                "Anthony N Burkitt",
+                "Andre DH Peterson"
+            ],
+            "title": "Eigenvalue spectral properties of sparse random matrices obeying dale\u2019s law",
+            "venue": "arXiv preprint arXiv:2212.01549,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Kaiming He",
+                "Xiangyu Zhang",
+                "Shaoqing Ren",
+                "Jian Sun"
+            ],
+            "title": "Delving deep into rectifiers: Surpassing human-level performance on imagenet classification",
+            "venue": "In Proceedings of the IEEE international conference on computer vision,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Geoffrey Hinton"
+            ],
+            "title": "The forward-forward algorithm: Some preliminary investigations",
+            "venue": "arXiv preprint arXiv:2212.13345,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Edward J Hu",
+                "Yelong Shen",
+                "Phillip Wallis",
+                "Zeyuan Allen-Zhu",
+                "Yuanzhi Li",
+                "Shean Wang",
+                "Lu Wang",
+                "Weizhu Chen"
+            ],
+            "title": "Lora: Low-rank adaptation of large language models",
+            "venue": "arXiv preprint arXiv:2106.09685,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yu Hu",
+                "Steven L Brunton",
+                "Nicholas Cain",
+                "Stefan Mihalas",
+                "J Nathan Kutz",
+                "Eric Shea-Brown"
+            ],
+            "title": "Feedback through graph motifs relates structure and function in complex networks",
+            "venue": "Physical Review E,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Jesper R Ipsen",
+                "Andre DH Peterson"
+            ],
+            "title": "Consequences of dale\u2019s law on the stability-complexity relationship of random neural networks",
+            "venue": "Physical Review E,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Arthur Jacot",
+                "Franck Gabriel",
+                "Cl\u00e9ment Hongler"
+            ],
+            "title": "Neural tangent kernel: Convergence and generalization in neural networks",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Mikail Khona",
+                "Sarthak Chandra",
+                "Joy J Ma",
+                "Ila R Fiete"
+            ],
+            "title": "Winning the lottery with neural connectivity constraints: Faster learning across cognitive tasks with spatially constrained sparse rnns",
+            "venue": "Neural Computation,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "James Kirkpatrick",
+                "Razvan Pascanu",
+                "Neil Rabinowitz",
+                "Joel Veness",
+                "Guillaume Desjardins",
+                "Andrei A Rusu",
+                "Kieran Milan",
+                "John Quan",
+                "Tiago Ramalho",
+                "Agnieszka Grabska-Barwinska"
+            ],
+            "title": "Overcoming catastrophic forgetting in neural networks",
+            "venue": "Proceedings of the national academy of sciences,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Axel Laborieux",
+                "Friedemann Zenke"
+            ],
+            "title": "Holomorphic equilibrium propagation computes exact gradients through finite size oscillations",
+            "venue": "arXiv preprint arXiv:2209.00530,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yann LeCun"
+            ],
+            "title": "The mnist database of handwritten digits. http://yann",
+            "venue": "lecun. com/exdb/mnist/,",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Timothy P Lillicrap",
+                "Adam Santoro",
+                "Luke Marris",
+                "Colin J Akerman",
+                "Geoffrey Hinton"
+            ],
+            "title": "Backpropagation and the brain",
+            "venue": "Nature Reviews Neuroscience,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Yuhan Helena Liu",
+                "Stephen Smith",
+                "Stefan Mihalas",
+                "Eric Shea-Brown",
+                "Uygar S\u00fcmb\u00fcl"
+            ],
+            "title": "Celltype\u2013specific neuromodulation guides synaptic credit assignment in a spiking neural network",
+            "venue": "Proceedings of the National Academy of Sciences,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yuhan Helena Liu",
+                "Arna Ghosh",
+                "Blake Richards",
+                "Eric Shea-Brown",
+                "Guillaume Lajoie"
+            ],
+            "title": "Beyond accuracy: generalization properties of bio-plausible temporal credit assignment rules",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yuhan Helena Liu",
+                "Stephen Smith",
+                "Stefan Mihalas",
+                "Eric Shea-Brown",
+                "Uygar S\u00fcmb\u00fcl"
+            ],
+            "title": "Biologically-plausible backpropagation through arbitrary timespans via local neuromodulators",
+            "venue": "arXiv preprint arXiv:2206.01338,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Christian Lohmann",
+                "Helmut W Kessels"
+            ],
+            "title": "The developmental stages of synaptic plasticity",
+            "venue": "The Journal of physiology,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Owen Marschall",
+                "Kyunghyun Cho",
+                "Cristina Savin"
+            ],
+            "title": "A unified framework of online learning algorithms for training recurrent neural networks",
+            "venue": "The Journal of Machine Learning Research,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Michael McCloskey",
+                "Neal J Cohen"
+            ],
+            "title": "Catastrophic interference in connectionist networks: The sequential learning problem",
+            "venue": "In Psychology of learning and motivation,",
+            "year": 1989
+        },
+        {
+            "authors": [
+                "Frederic Mery",
+                "Tadeusz J Kawecki"
+            ],
+            "title": "A cost of long-term memory in drosophila",
+            "venue": "Science,",
+            "year": 2005
+        },
+        {
+            "authors": [
+                "Alexander Meulemans",
+                "Nicolas Zucchet",
+                "Seijin Kobayashi",
+                "Johannes Von Oswald",
+                "Jo\u00e3o Sacramento"
+            ],
+            "title": "The least-control principle for local learning at equilibrium",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "MICrONS Consortium",
+                "J Alexander Bae",
+                "Mahaly Baptiste",
+                "Caitlyn A Bishop",
+                "Agnes L Bodor",
+                "Derrick Brittain",
+                "JoAnn Buchanan",
+                "Daniel J Bumbarger",
+                "Manuel A Castro",
+                "Brendan Celii"
+            ],
+            "title": "Functional connectomics spanning multiple areas of mouse visual cortex",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Manuel Molano-Mazon",
+                "Joao Barbosa",
+                "Jordi Pastor-Ciurana",
+                "Marta Fradera",
+                "Ru-Yuan Zhang",
+                "Jeremy Forest",
+                "Jorge del Pozo Lerida",
+                "Li Ji-An",
+                "Christopher J Cueva",
+                "Jaime de la Rocha"
+            ],
+            "title": "Neurogym: An open resource for developing and sharing neuroscience",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "James M Murray"
+            ],
+            "title": "Local online learning in recurrent networks with random feedback",
+            "venue": "Elife, 8:e43299,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Mor Shpigel Nacson",
+                "Kavya Ravichandran",
+                "Nathan Srebro",
+                "Daniel Soudry"
+            ],
+            "title": "Implicit bias of the step size in linear diagonal neural networks",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jonas Paccolat",
+                "Leonardo Petrini",
+                "Mario Geiger",
+                "Kevin Tyloo",
+                "Matthieu Wyart"
+            ],
+            "title": "Geometric compression of invariant manifolds in neural networks",
+            "venue": "Journal of Statistical Mechanics: Theory and Experiment,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Vardan Papyan",
+                "XY Han",
+                "David L Donoho"
+            ],
+            "title": "Prevalence of neural collapse during the terminal phase of deep learning training",
+            "venue": "Proceedings of the National Academy of Sciences,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Adam Paszke",
+                "Sam Gross",
+                "Francisco Massa",
+                "Adam Lerer",
+                "James Bradbury",
+                "Gregory Chanan",
+                "Trevor Killeen",
+                "Zeming Lin",
+                "Natalia Gimelshein",
+                "Luca Antiga"
+            ],
+            "title": "Pytorch: An imperative style, high-performance deep learning library",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Alexandre Payeur",
+                "Jordan Guerguiev",
+                "Friedemann Zenke",
+                "Blake A Richards",
+                "Richard Naud"
+            ],
+            "title": "Burstdependent synaptic plasticity can coordinate learning in hierarchical circuits",
+            "venue": "Nature neuroscience,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Mohammad Pezeshki",
+                "Oumar Kaba",
+                "Yoshua Bengio",
+                "Aaron C Courville",
+                "Doina Precup",
+                "Guillaume Lajoie"
+            ],
+            "title": "Gradient starvation: A learning proclivity in neural networks",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Pierre-Yves Pla\u00e7ais",
+                "Thomas Preat"
+            ],
+            "title": "To favor survival under food shortage, the brain",
+            "venue": "disables costly memory. Science,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Roman Pogodin",
+                "Jonathan Cornford",
+                "Arna Ghosh",
+                "Gauthier Gidel",
+                "Guillaume Lajoie",
+                "Blake Richards"
+            ],
+            "title": "Synaptic weight distributions depend on the geometry of plasticity",
+            "venue": "arXiv preprint arXiv:2305.19394,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Kanaka Rajan",
+                "Larry F Abbott"
+            ],
+            "title": "Eigenvalue spectra of random matrices for neural networks",
+            "venue": "Physical review letters,",
+            "year": 2006
+        },
+        {
+            "authors": [
+                "Dhruva V Raman",
+                "Timothy O\u2019Leary"
+            ],
+            "title": "Frozen algorithms: how the brain\u2019s wiring facilitates learning",
+            "venue": "Current Opinion in Neurobiology,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Blake A Richards",
+                "Timothy P Lillicrap",
+                "Philippe Beaudoin",
+                "Yoshua Bengio",
+                "Rafal Bogacz",
+                "Amelia Christensen",
+                "Claudia Clopath",
+                "Rui Ponte Costa",
+                "Archy de Berker",
+                "Surya Ganguli"
+            ],
+            "title": "A deep learning framework for neuroscience",
+            "venue": "Nature neuroscience,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Pieter R Roelfsema",
+                "Anthony Holtmaat"
+            ],
+            "title": "Control of synaptic plasticity in deep cortical networks",
+            "venue": "Nature Reviews Neuroscience,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Jo\u00e3o Sacramento",
+                "Rui Ponte Costa",
+                "Yoshua Bengio",
+                "Walter Senn"
+            ],
+            "title": "Dendritic cortical microcircuits approximate the backpropagation algorithm",
+            "venue": "arXiv preprint arXiv:1810.11393,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Darjan Salaj",
+                "Anand Subramoney",
+                "Ceca Kraisnikovic",
+                "Guillaume Bellec",
+                "Robert Legenstein",
+                "Wolfgang Maass"
+            ],
+            "title": "Spike frequency adaptation supports network computations on temporally dispersed information",
+            "venue": "Elife, 10:e65459,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Andrew M Saxe",
+                "James L McClelland",
+                "Surya Ganguli"
+            ],
+            "title": "Exact solutions to the nonlinear dynamics of learning in deep linear neural networks",
+            "venue": "arXiv preprint arXiv:1312.6120,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Andrew M Saxe",
+                "Yamini Bansal",
+                "Joel Dapello",
+                "Madhu Advani",
+                "Artemy Kolchinsky",
+                "Brendan D Tracey",
+                "David D Cox"
+            ],
+            "title": "On the information bottleneck theory of deep learning",
+            "venue": "Journal of Statistical Mechanics: Theory and Experiment,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Benjamin Scellier",
+                "Yoshua Bengio"
+            ],
+            "title": "Equilibrium propagation: Bridging the gap between energybased models and backpropagation",
+            "venue": "Frontiers in computational neuroscience,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Louis K Scheffer",
+                "C Shan Xu",
+                "Michal Januszewski",
+                "Zhiyuan Lu",
+                "Shin-ya Takemura",
+                "Kenneth J Hayworth",
+                "Gary B Huang",
+                "Kazunori Shinomiya",
+                "Jeremy Maitlin-Shepard",
+                "Stuart Berg"
+            ],
+            "title": "A connectome and analysis of the adult drosophila central brain",
+            "venue": "Elife, 9:e57443,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Friedrich Schuessler",
+                "Francesca Mastrogiuseppe",
+                "Alexis Dubreuil",
+                "Srdjan Ostojic",
+                "Omri Barak"
+            ],
+            "title": "The interplay between randomness and structure during learning in rnns",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Friedrich Schuessler",
+                "Francesca Mastrogiuseppe",
+                "Srdjan Ostojic",
+                "Omri Barak"
+            ],
+            "title": "Aligned and oblique dynamics in recurrent neural networks",
+            "venue": "arXiv preprint arXiv:2307.07654,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Mariia Seleznova",
+                "Gitta Kutyniok"
+            ],
+            "title": "Neural tangent kernel beyond the infinite-width limit: Effects of depth and initialization",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yuxiu Shao",
+                "Srdjan Ostojic"
+            ],
+            "title": "Relating local connectivity and global dynamics in recurrent excitatory-inhibitory networks",
+            "venue": "PLOS Computational Biology,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "D Simard",
+                "L Nadeau",
+                "H Kr\u00f6ger"
+            ],
+            "title": "Fastest learning in small-world neural networks",
+            "venue": "Physics Letters A,",
+            "year": 2005
+        },
+        {
+            "authors": [
+                "H Francis Song",
+                "Guangyu R Yang",
+                "Xiao-Jing Wang"
+            ],
+            "title": "Training excitatory-inhibitory recurrent neural networks for cognitive tasks: a simple and flexible framework",
+            "venue": "PLoS computational biology,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Sen Song",
+                "Per Jesper Sj\u00f6str\u00f6m",
+                "Markus Reigl",
+                "Sacha Nelson",
+                "Dmitri B Chklovskii"
+            ],
+            "title": "Highly nonrandom features of synaptic connectivity in local cortical circuits",
+            "venue": "PLoS biology,",
+            "year": 2005
+        },
+        {
+            "authors": [
+                "Vincent Thibeault",
+                "Antoine Allard",
+                "Patrick Desrosiers"
+            ],
+            "title": "The low-rank hypothesis of complex systems",
+            "venue": "Nature Physics,",
+            "year": 2024
+        },
+        {
+            "authors": [
+                "Naftali Tishby",
+                "Noga Zaslavsky"
+            ],
+            "title": "Deep learning and the information bottleneck principle",
+            "venue": "In 2015 ieee information theory workshop (itw),",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Pauli Virtanen",
+                "Ralf Gommers",
+                "Travis E Oliphant",
+                "Matt Haberland",
+                "Tyler Reddy",
+                "David Cournapeau",
+                "Evgeni Burovski",
+                "Pearu Peterson",
+                "Warren Weckesser",
+                "Jonathan Bright"
+            ],
+            "title": "Scipy 1.0: fundamental algorithms for scientific computing in python",
+            "venue": "Nature methods,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Kiran Vodrahalli",
+                "Rakesh Shivanna",
+                "Maheswaran Sathiamoorthy",
+                "Sagar Jain",
+                "Ed H Chi"
+            ],
+            "title": "Nonlinear initialization methods for low-rank neural networks",
+            "venue": "arXiv preprint arXiv:2202.00834,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Johan Winnubst",
+                "Erhan Bas",
+                "Tiago A Ferreira",
+                "Zhuhao Wu",
+                "Michael N Economo",
+                "Patrick Edson",
+                "Ben J Arthur",
+                "Christopher Bruns",
+                "Konrad Rokicki",
+                "David Schauder"
+            ],
+            "title": "Reconstruction of 1,000 projection neurons reveals new cell types and organization of long-range connectivity in the mouse",
+            "venue": "brain. Cell,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Chloe N Winston",
+                "Dana Mastrovito",
+                "Eric Shea-Brown",
+                "Stefan Mihalas"
+            ],
+            "title": "Heterogeneity in neuronal dynamics is learned by gradient descent for temporal processing tasks",
+            "venue": "Neural Computation,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Blake Woodworth",
+                "Suriya Gunasekar",
+                "Jason D Lee",
+                "Edward Moroshko",
+                "Pedro Savarese",
+                "Itay Golan",
+                "Daniel Soudry",
+                "Nathan Srebro"
+            ],
+            "title": "Kernel and rich regimes in overparametrized models",
+            "venue": "In Conference on Learning Theory,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Lechao Xiao",
+                "Jeffrey Pennington",
+                "Samuel Schoenholz"
+            ],
+            "title": "Disentangling trainability and generalization in deep neural networks",
+            "venue": "In International Conference on Machine Learning,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Marjorie Xie",
+                "Samuel Muscinelli",
+                "Kameron Decker Harris",
+                "Ashok Litwin-Kumar"
+            ],
+            "title": "Task-dependent optimal representations for cerebellar learning",
+            "venue": "bioRxiv, pp",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Greg Yang"
+            ],
+            "title": "Tensor programs ii: Neural tangent kernel for any architecture",
+            "venue": "arXiv preprint arXiv:2006.14548,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Guangyu Robert Yang",
+                "Manuel Molano-Maz\u00f3n"
+            ],
+            "title": "Towards the next generation of recurrent network models for cognitive neuroscience",
+            "venue": "Current opinion in neurobiology,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Guangyu Robert Yang",
+                "Xiao-Jing Wang"
+            ],
+            "title": "Artificial neural networks for neuroscientists: a primer",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Anthony M Zador"
+            ],
+            "title": "A critique of pure learning and what artificial neural networks can learn from animal brains",
+            "venue": "Nature communications,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Liqiong Zhao",
+                "Bryce Beverlin",
+                "Theoden Netoff",
+                "Duane Q Nykamp"
+            ],
+            "title": "Synchronization from second order network connectivity statistics",
+            "venue": "Frontiers in computational neuroscience,",
+            "year": 2011
+        }
+    ],
+    "sections": [
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "Structural variations can significantly impact learning dynamics in theoretical neuroscience studies of animals. For instance, studies have revealed that specific neural connectivity patterns can facilitate faster learning of certain tasks (Braun et al., 2022; Raman & O\u2019Leary, 2021; Simard et al., 2005; Canatar et al., 2021; Xie et al., 2022; Goudar et al., 2023; Chang et al., 2023). In deep learning, structure, encompassing architecture and initial connectivity, crucially dictates learning speed and effectiveness (Richards et al., 2019; Zador, 2019; Yang & Molano-Maz\u00f3n, 2021; Braun et al., 2022).\nA key structural aspect is the initial connectivity prior to training. Specifically, the initial connection weight magnitude can significantly bias learning dynamics, pushing them towards either rich or lazy regimes (Chizat et al., 2019; Flesch et al., 2021). Lazy learning often induces minor changes in the network during the learning process. Such minimal adjustments are advantageous given that plasticity is metabolically costly (Mery & Kawecki, 2005; Pla\u00e7ais & Preat, 2013), and significant changes in representations might lead to issues like catastrophic forgetting (McCloskey & Cohen, 1989; Kirkpatrick et al., 2017). On the other hand, the rich learning regime can significantly adapt the network\u2019s internal representations to task statistics, which can be advantageous for task feature acquisition and has implications for generalization (Flesch et al., 2021; George et al., 2022). Most research on initial weight magnitude\u2019s role in learning dynamics has focused on random Gaussian\nor Uniform initializations (Woodworth et al., 2020; Flesch et al., 2021; Braun et al., 2022). These patterns stand in contrast to the connectivity structures observed in biological neural circuits, which could exhibit a more pronounced low-rank eigenstructure (Song et al., 2005). This divergence prompts a pivotal question: how does the initial weight structure, given a fixed initial weight magnitude, bias the learning regime?\nThis study examines how initial weight structure, particularly the effective rank, modulates the effective richness or laziness of task learning within the standard training regime. We note that rich and lazy learning regimes have well established meanings in deep learning theory. The latter being defined as a situation where the Neural Tangent Kernel (NTK) stays stationary during training, while the former refers to the case where the NTK changes. In this work, we slightly extend these definitions and introduce effective learning richness/laziness. Unlike the traditional definition, which is based upon initialization, effective learning richness/laziness is defined in terms of post-training adjustment measurements. From this perspective, a learning process is deemed effectively \"lazy\" if the measured NTK movement is small. For example, consider a network whose initialization puts it in standard rich regime, but for a given task, its NTK moves very little during training. We define learning for this specific situation as effectively lazy. In other words, while the standard regime definition informs us (prior to training) whether the network can adapt significantly to task training or not, our \"effective\" definition lies in the post-training effects."
+        },
+        {
+            "heading": "1.1 CONTRIBUTIONS",
+            "text": "Our main contributions and findings can be summarized as follows:\n\u2022 Through theoretical derivation in two-layer feedforward linear network, we demonstrate that higher-rank initialization results in effectively lazier learning on average across tasks (Theorem 1). We note that the emphasis of the theorem is on the expectation across tasks.\n\u2022 We validate our theoretical findings in recurrent neural networks (RNNs) through numerical experiments on well-known neuroscience tasks (Figure 1) and demonstrate the applicability to different initial connectivity structures extracted from neuroscience data (Figure 2).\n\u2022 We identify scenarios where certain low-rank initial weights still result in effectively lazier learning for specific tasks (Proposition 1 and Figure 3). We postulate that such patterns emerge when a neural circuit is predisposed \u2014 perhaps due to evolutionary factors or post-development \u2014 to certain tasks, ingraining specific inductive biases in neural circuits."
+        },
+        {
+            "heading": "1.2 RELATED WORKS",
+            "text": "An extended discussion on related works can also be found in Appendix A.\nTheoretical Foundations of Neural Network Regimes and Implications for Neural Circuits: The deep learning community has made tremendous strides in developing theoretical groundings for artificial neural networks (Advani et al., 2020; Jacot et al., 2018; Alemohammad et al., 2020; Agarwala et al., 2022; Atanasov et al., 2021; Azulay et al., 2021; Emami et al., 2021). A focal point is the \u2019rich\u2019 and \u2019lazy\u2019 learning regimes dichotomy, which have distinct impacts on representation and generalization (Chizat et al., 2019; Flesch et al., 2021; Geiger et al., 2020; George et al., 2022; Ghorbani et al., 2020; Woodworth et al., 2020; Paccolat et al., 2021; Nacson et al., 2022; HaoChen et al., 2021; Flesch et al., 2023). The \u2019lazy\u2019 regime results in minimal weight changes, while the \u2019rich\u2019 regime fosters task-specific adaptations. The transition between these is influenced by various factors, including initial weight scale and network width (Chizat et al., 2019; Geiger et al., 2020).\nDeep learning theories increasingly inform studies of biological neural network learning dynamics (Bordelon & Pehlevan, 2022; Liu et al., 2022a; Braun et al., 2022; Ghosh et al., 2023; Saxe et al., 2019; Farrell et al., 2022; Papyan et al., 2020; Tishby & Zaslavsky, 2015). For the rich/lazy regime theory, the existence of diverse learning regimes in neural systems is evident through the resource-intensive plasticity-driven transformations prevalent in developmental phases, followed by more subdued adjustments (Lohmann & Kessels, 2014), and previous investigations characterized neural network behaviors under distinct regimes (Bordelon & Pehlevan, 2022; Schuessler et al., 2023) and discerning which mode yields solutions mimicking neural data (Flesch et al., 2021). Our work extends these studies by examining how initial weight structures affect learning.\nNeural circuit initialization, connectivity patterns and learning: Extensive research has explored the influence of various random initializations on deep network learning (Saxe et al., 2013; Bahri et al., 2020; Glorot & Bengio, 2010; He et al., 2015; Arora et al., 2019). The literature predominantly focuses on random initialization, but actual neural structures exhibit markedly different connectivity patterns, such as Dale\u2019s law and enriched cell-type-specific connectivity motifs (Rajan & Abbott, 2006; Ipsen & Peterson, 2020; Harris et al., 2022; Dahmen et al., 2020; Aljadeff et al., 2015). Motivated by existing evidence of low-rankedness in the brain (Thibeault et al., 2024) and the overrepresentation of local motifs in neural circuits (Song et al., 2005), which could be indicative of low-rank structures due to their influence on the eigenspectrum (Dahmen et al., 2020; Shao & Ostojic, 2023), our study explores the impact of connectivity effective rank on learning regimes. This focus is driven by the plausible presence of such low-rank structures in the brain, potentially revealed through these local motifs. With emerging connectivity data (Campagnola et al., 2022; MICrONS Consortium et al., 2021; Dorkenwald et al., 2022; Winnubst et al., 2019; Scheffer et al., 2020), future work is poised to encompass rich additional features of connectivity."
+        },
+        {
+            "heading": "2 SETUP AND THEORETICAL FINDINGS",
+            "text": ""
+        },
+        {
+            "heading": "2.1 RNN SETUP",
+            "text": "We examine recurrent neural networks (RNNs) because they are commonly adopted for modeling neural circuits (Barak, 2017; Song et al., 2016). We consider a RNN with Nin input units, N hidden units and Nout readout units (Figure 1A). The update formula for ht \u2208 RN (the hidden state at time t) is governed by (Ehrlich et al., 2021; Molano-Mazon et al., 2022):\nht+1 = \u03c1ht + (1\u2212 \u03c1)(Whf(ht) +Wxxt), (1)\nwhere an exponential Euler approximation is made with \u03c1 = e\u2212dt/\u03c4m \u2208 R denoting the leak factor for simulation time step dt and \u03c4m denoting the membrane time constant; f(\u00b7) : RN \u2192 RN is the activation function, for which we use ReLU ; Wh \u2208 RN\u00d7N (resp. Wx \u2208 RN\u00d7Nin) is the recurrent (resp. input) weight matrix and xt \u2208 RNin is the input at time step t. Readout y\u0302t \u2208 RNout , with readout weights w \u2208 RNout\u00d7N , is defined as\ny\u0302t = \u27e8w, f(ht)\u27e9. (2)\nThe objective is to minimize scalar loss L \u2208 R, for which we use the cross-entropy loss for classification tasks and mean squared error for regression tasks. L is minimized by updating the parameters using variants of gradient descent:\n\u2206W = \u2212\u03b7\u2207WL, (3)\nfor learning rate \u03b7 \u2208 R and W = [Wh Wx wT ] \u2208 RN\u00d7(Nin+N+Nout) contains all the trainable parameters. Details of parameter settings can be found in Appendix C."
+        },
+        {
+            "heading": "2.2 EFFECTIVE LAZINESS MEASURES",
+            "text": "As mentioned above, we introduce effective richness and laziness, with effectively lazier (resp. richer) learning corresponding to less (resp. greater) network change over the course of learning. To quantify network change, we adopt the following three measures that have been used previously (George et al., 2022). We note that these measures can be sensitive to other architectural aspects that bias learning regimes, such as network width, so throughout we hold these variables constant when making the comparisons.\nWeight change norm quantifies the vector norm of change in W . Effectively lazier learning should result in a lower weight change norm, and it is quantified as:\n\u2225\u2206W\u2225 := \u2225W (f) \u2212W (0)\u2225, (4)\nwhere \u2225 \u00b7 \u2225 = \u2225 \u00b7 \u2225F ; W (0) (resp. W (f)) are the weights before (resp. after) training. Representation alignment (RA) quantifies the directional change in a representational similarity matrix (RSM) before and after training. RSM focuses on the similarity between how two pairs\nof input are represented by computing the Gram matrix R of last step hidden activity. Greater representation alignment indicates effectively lazier learning in the network, and it is obtained by\nRA(R(f), R(0)) := Tr(R(f)R(0))\n\u2225R(f)\u2225\u2225R(0)\u2225 , where R := HTH, (5)\nwhere H \u2208 RN\u00d7m is the hidden activity at the last time step; R(0) and R(f) \u2208 Rm\u00d7m are the initial and final RSM, respectively; m is the batch size.\nTangent kernel alignment (KA) quantifies the directional change in the neural tangent kernel (NTK) before and after training; effectively lazier learning should result in higher tangent kernel alignment. The NTK computes the Gram matrix K of the output gradient. Greater tangent kernel alignment points to effectively lazier learning, and it is obtained by\nKA(K(f),K(0)) := Tr(K(f)K(0))\n\u2225K(f)\u2225\u2225K(0)\u2225 , where K := \u2207W y\u0302T\u2207W y\u0302 (6)\nwhere K(0) and K(f) \u2208 Rm\u00d7m (for the Nout = 1 case) denote the initial and final NTK, respectively."
+        },
+        {
+            "heading": "2.3 THEORETICAL FINDINGS",
+            "text": "This subsection derives the theoretical impact of initial weight effective rank on tangent kernel alignment. First, Theorem 1 focuses on task-agnostic settings, treating task definition as random variables and computing the expected tangent kernel alignment across tasks. With some assumptions, tangent kernel alignment is maximized when the initial weight singular values are distributed across all dimensions (i.e. high-rank initialization).\nIn this section, our theoretical results are framed in a simplified feedforward setting, as we use a twolayer network with linear activations. However, we return to RNNs (Eq. 1) for the rest of the paper, and verify the generality of our theoretical findings with numerical experiments for both feedforward and recurrent architectures. Our choice is motivated by the need for theoretical tractability. While research on RNN learning in the NTK regime exists (Yang, 2020; Alemohammad et al., 2020; Emami et al., 2021), we are not aware of any studies featuring the final converged NTK that could serve as a basis for our comparison of the initial and final kernel. Consequently, we have chosen to focus on RNNs for neural circuit modeling and employ linear feedforward networks for theoretical derivations, a strategy also adopted by Farrell et al. (2022); numerous other studies, including Saxe et al. (2019), (Atanasov et al., 2021), (Arora et al., 2019), and (Braun et al., 2022), have similarly concentrated on extracting theoretical insights from linear feedforward networks.\nFor a two-layer linear network with input data X \u2208 Rd\u00d7m, W1 \u2208 RN\u00d7d and W2 \u2208 R1\u00d7N as weights for layers 1 and 2, respectively, the NTK throughout training, K, is:\nK = XT (WT1 W1 + \u2225W2\u22252I)X. (7)\nWithout the loss of generality, suppose the output target Y \u2208 R1\u00d7m is generated from a linear teacher network as Y = \u03b2TX , for some Gaussian vector \u03b2 \u2208 Rd, with \u03b2i \u223c N (0, 1/d). Theorem 1. (Informal) Consider the network above with its corresponding NTK in Eq. 7, trained under MSE loss with small initialization and whitened data. The expected kernel alignment across tasks is maximized with high-rank initialization, i.e. the singular values of W (0)1 are distributed across all dimensions. (Formal statement and proof are in Appendix B)\nThe intuition of Theorem 1 result is that, when two random vectors are drawn in high-dimensional spaces, corresponding to the low-rank initial network and the task, the probability of them being nearly orthogonal is very high; this then necessitates greater movement to eventually learn the task direction. We emphasize again that Theorem 1 is task-agnostic, i.e. it focuses on the expected tangent kernel alignment across input-output definitions. This is in contrast to task-specific settings (e.g. Woodworth et al. (2020)) that focus on a given task. In such task-specific settings, certain low-rank initializations can in fact lead to lazier learning. The following proposition predicts that if the task structure is known, low-rank initialization that is already aligned with the task statistics (input/output covariance) can lead to kernel alignment. We revisit this proposition again in Figure 3. We remark that initializing this way can still have high initial error because of randomized W (0)2 .\nProposition 1. (Informal) Following the setup and assumptions in Theorem 1, rank-1 initializations of the form W (0)1 = \u03c3[\u03b2\nT /\u2225\u03b2\u2225 0\u20d7 ... 0\u20d7] leads to a high tangent kernel alignment. (Formal statement and proof are in Appendix B)\nAbove, we state technical results in terms of one metric of the effective laziness of learning \u2014 based on the NTK; our proof in Appendix B easily extends also to the representation alignment metric. The impact on weight change is also assessed in Appendix Proposition 2. This is in line with our simulations with RNNs, which will show similar trends for all three of the metrics introduced in Section 2.2)."
+        },
+        {
+            "heading": "3 SIMULATION RESULTS",
+            "text": "Ta sk =2 AF Ta sk =s M N IS T Ta sk =C XT Ta sk =D M S\nWeight change ( E ectively Lazier) RNN model for cognitive task learning\nHow does W(0) impact e ective learning laziness (e.g. ||\u0394W||), given xed ||W(0)||?\nA B\nInitial weight rank\nRep. alignment ( E ectively Lazier) Kernel alignment ( E ectively Lazier)\nInitial weight rank Initial weight rank\nOutput \u0177\nWeight W(f)\nLearning, \u0394W\nTarget\nInput X\nOutput \u0177\nInput X\nWeight W(0)\nTarget\nBefore training After training\nfull rank\nfull rank\nfull rank\nfull rank\nfull rank\nfull rank\nfull rank\nfull rank\nfull rank\nfull rank\nfull rank\nfull rank\nFigure 1: Low-rank initial recurrent weights, generated using SVD, lead to greater changes (or effectively richer learning) in the recurrent neural network. A) Schematic of RNN training setup. B) Measurements of effective richness vs laziness of learning (metrics as defined in Section 2.2), for RNN trained on several cognitive tasks in Neurogym (Molano-Mazon et al., 2022) as well as the sequential MNIST task (sMNIST). For details on SVD weight creation, see Appendix C. Fewer rank points were used for sMNIST due to computational time. Each dot represents a single training run, with each run using a different random initialization (10 runs total for each setting).\nIn this section we empirically illustrate and verify our main theoretical results, which are: (1) on average, high-rank initialization leads to effectively lazier learning (Theorem 1); (2) it is still possible for certain low-rank initializations that are already aligned to the task statistics to achieve effectively lazier learning (Proposition 1).\nImpact on effective laziness by low-rank initialization via SVD in RNNs: As a proof-of-concept, we start in Figure 1 with low-rank initialization in RNNs by truncating an initial Gaussian random matrix via Singular Value Decomposition (SVD), which enables us to precisely control the rank, and rescale it to ensure that the comparison is across the same weight magnitude (Schuessler et al., 2020). Additionally, all comparisons were made after training was completed, and all these training sessions achieved comparable losses. For our investigations, we applied this initialization scheme across a variety of cognitive tasks \u2014 including two-alternative forced choice (2AF), delayed-matchto-sample (DMS), context-dependent decision-making (CXT) tasks \u2014 implemented with Neurogym (Molano-Mazon et al., 2022) and the well-known machine learning benchmark sequential MNIST (sMNIST). Figure 1 indicates that low-rank initial weights result in effectively richer learning and greater network changes.\nA\nB\nE cells I cells\nFrom Allen Institute\nEM Data\nC\nD Chain Motif Overrepresentation\nDale\u2019s law\nPop. 1\nPop. 2\nPo p.\n1\nPo p.\n2\nWeight change ( E ectively Lazier) Rep. alignment ( E ectively Lazier) Kernel alignment ( E ectively Lazier) Block-speci c variance E ective rank\nEigenspectrum\nFigure 2: Low-rank initial weight structures, inspired by biological examples, lead to effectively richer learning. We present the eigenspectrum and the relative effective rank of connectivity in A) structures with cell-type-specific statistics, B) structures derived from EM data, C) structures obeying Dale\u2019s law, and D) structures with an over-representation of chain motifs; we also present the effective learning laziness for networks initialized with these connectivity structures. These structures exhibit a lower effective rank compared to standard random Gaussian initialization (null). We plotted the magnitude of the eigenvalues (Eigval mag) \u2014 scaled by the dominant eigenvalue\u2019s magnitude \u2014 against their indices normalized by the network size N (Eigval index). We apply the effective laziness measures described in Section 2.2 to compare the effective laziness of experimentally-driven initial connectivity versus standard random Gaussian initialization (null). See Appendix C for details on network initialization. The boxplots are generated from 10 independent runs with different initialization seeds. Due to space constraints, we include only the 2AF task here, but Appendix\nFigures 5 and 6 show that similar trends hold for the DMS and CXT tasks.\nThese numerical trends are in line with Theorem 1, which focused on an idealized setting of a twolayer linear network with numerical results in Appendix Figure 4A. We also demonstrated this trend for a non-idealized feedforward setting in Appendix Figure 4B, and more explorations in feedforward settings and across a broader range of architecture is left for future exploration due to our focus on RNNs. In the Appendix, we show the main trends observed in Figure 1 also hold for Uniform initialization (Figure 7), soft initial weight rank (Figure 8), various network sizes (Figure 9), learning rates (Figure 10), gains (Figure 11), and finer time step dt (Figure 12). We note that, in addition to fixing the weight magnitude across comparisons, the dynamical regime might also confound learning regimes. A common method for controlling the dynamical regime is through the leading weight eigenvalue, which affects the top Lyapunov exponent. Controlling in this manner led to similar trends (Appendix Figure 13). Investigating the relationship between learning regimes and various concepts of dynamical regimes further is a promising direction for future work. Moreover, since our emphasis is on the effective learning regime, which is based on post-training changes, we concentrated on the laziness measures computed from networks after training, rather than during the learning process. However, we also tracked the alignment with the initial kernel and task kernel alignment during\ntraining (Appendix Figure 14). We also examined how the kernel\u2019s effective rank evolves throughout the training period (Appendix Figure 15).\nLow-rank initialization via biologically motivated connectivity in RNNs: To establish a closer connection with biological neural circuits, we have tested our predictions on low-rank initialization using a variety of biologically motivated structures capable of resulting in low-rank connectivity. Here are some of the examples: (A) connectivity with cell-type-specific statistics (Aljadeff et al., 2015), where each block in the weight matrix corresponds to the connections between neurons of two distinct cell types, with the variance of these connections differing from one block to another. In terms of block-specific connectivity statistics, there are infinite possibilities for defining the blocks, each resulting in a unique eigenspectrum. For the example provided here, we adopted the setup from Figure S3 in Aljadeff et al. (2015), with parameters set as \u03b1 = 0.02, \u03b3 = 10, and 1\u2212 \u03f5 = 0.8; these correspond to the fraction of hyperexcitable neurons, gain of hyperexcitable connections and gain of the rest, respectively. We follow this particular setup because it has been demonstrated to create an outlier leading eigenvalue, thereby reducing the effective rank. We also consider (B) connectivity matrix derived from the electron microscopy (EM) data (Allen Institute, 2023), where the synaptic connections between individual neurons are meticulously mapped to create a detailed\nand comprehensive representation of neural circuits. Also, we consider (C) connectivity obeying Dale\u2019s law, where each neuron is either excitatory or inhibitory, meaning it can only send out one type of signal \u2013 either increasing or decreasing the activity of connected neurons \u2013 a principle inspired by the way neurons behave in biological systems (Song et al., 2005). Additionally, (D) the over-representation of certain localized connectivity patterns (or network motifs) \u2014 such as the chain motif, where two cells are connected via a third intermediary cell \u2014 creates outliers in the weight eigenspectrum, subsequently lowering the effective rank (Zhao et al., 2011; Hu et al., 2018; Dahmen et al., 2020). Details of these initial connectivity structures are provided in Appendix C.\nAs illustrated in Figure 2, these connectivity structures, motivated by known features of biological neural networks, exhibit a lower effective rank compared to standard random Gaussian initialization, thereby serving as natural testbeds for our theoretical predictions. To quantify (relative) effective rank, we used ( \u2211 i |\u03bbi|)/(|\u03bb1|N), which indicates the fraction of eigenvalues on the order of the dominant one and captures the (scaled) area under the curve of the eigenspectrum plots. We also tried effective rank based on singular values, i.e. ( \u2211 i |si|)/(|s1|N), in Appendix Figure 16 and observed similar trends. Importantly, Figure 2 show that these different low-rank biologically motivated structures can lead to effectively richer learning compared to the standard random Gaussian initialization. This finding supports our overarching prediction, that lower rank initial weights leads to effectively richer learning. We note that to test our theoretical predictions based on gradient-descent learning without specific constraints on the solutions, the structures are enforced only at initialization and not constrained during training. In Appendix Figure 17, we also constrained Dale\u2019s Law throughout training and found similar trends.\nLow-rank initialization aligned with task statistics: These simulations may be considered to be within our task-agnostic framework. That is, we have chosen a \u201crandom\u201d battery of tasks that is not directly matched to the initial network connectivity structures. Thus, our findings that lower rank initializations lead to richer learning are expected from our theoretical prediction on the task-averaged alignment (Theorem 1), rather than something task-specific. However, Proposition 1 also predicts that low-rank initialization can lead to lazy learning if the initialization is already aligned to the task structure. To test this, we observe in Figure 3 that a considerably higher alignment can be achieved when the initialization aligns solely with the dominant task features, especially when the relative strength of these dominant features is high. We postulate that such alignment may occur in biological settings if the circuit has evolved to preferentially learn specific tasks."
+        },
+        {
+            "heading": "4 DISCUSSION",
+            "text": "Our investigation casts light on the nuanced influence of initial weight effective rank on learning dynamics. Anchored by Theorem 1, our theoretical findings underscore that high-rank random initialization generally facilitates effectively lazier learning on average across tasks. This focus on the expectation across tasks can provide insights into the circuit\u2019s flexibility in learning across a broad range of tasks as well as predict the effective learning regime when the task structure is uncertain. However, certain low-rank initial weights, when naturally predisposed to specific tasks, may lead to effectively lazier learning, suggesting an interesting interplay between evolutionary or developmental biases and learning dynamics (Proposition 1). Our numerical experiments on RNNs further validate these theoretical findings illustrating the impact of initial rank in diverse settings.\nPotential implications to neuroscience: We investigate the impact of effective weight rank on learning regimes due to its relevance in neuroscience. Learning regimes reflect the extent of change through learning, implicating metabolic costs and catastrophic forgetting (McCloskey & Cohen, 1989; Pla\u00e7ais & Preat, 2013; Mery & Kawecki, 2005). The presence of different learning regimes is demonstrated in neural systems, since during developmental phases where neural circuits undergo extensive, plasticity-driven transformations. In contrast, mature neural circuits exhibit more subtle synaptic adjustments (Lohmann & Kessels, 2014). We hypothesize that a circuit\u2019s task-specific alignment might be established either evolutionarily or during early development. The specialization of neural circuits, such as ventral versus dorsal (Bakhtiari et al., 2021), may arise from engaging in tasks with similar computational demands. Conversely, circuits with high-rank structures may be less specialized, handling a wider array of tasks. Our framework could be used to compare connectivities across brain regions and species in order to predict their function and flexibility, assessing their functional specialization based on effective connectivity rank. Additionally, our framework predicts\nthat connectivity rank will affect the degree of change in neural activity during the learning of new tasks. This hypothesis could be tested through BCI experiments, as shown in Sadtler et al. (2014) and Golub et al. (2018), to explore how learning dynamics vary with connectivity rank.\nRegarding deep learning, low-rank initialization is not a common practice, yet adaptations like low-rank updates have gained popularity in training large models (Hu et al., 2021). LoRA, the study cited, concentrates on parameter updates rather than initializations, but understanding how update rank affects learning regimes is crucial. Our results offer a starting point for further exploration in this area. Although different rank initializations are less explored, with some exceptions like Vodrahalli et al. (2022), our findings suggest that this area should receive more attention due to its potential effects on learning regimes and, consequently, on generalization (George et al., 2022).\nLimitations and future directions: Our study predominantly focused on the weight (effective) rank, leaving the exploration of other facets of weight on the effective learning regime as an open avenue. Also, the ramifications of effective learning regimes on learning speed \u2014 given the known results on kernel alignment and ease of learning (Bartlett et al., 2021) and present mixed findings in the existing literature (Flesch et al., 2021; George et al., 2022) \u2014 warrant further exploration.\nExpanding the scope of our study calls for examining a wider variety of tasks, neural network architectures, and learning rules. Although our work is based on the backpropagation learning rule, its implications for biologically plausible learning rules remain unexplored. Our primary criterion for selecting tasks was their relevance to neuroscience, aligning with our main objectives. However, given the diverse range of tasks performed by various species, future research could benefit from exploring a more extensive array of tasks. Exploring more complex neuroscience tasks, such as those in Mod-Cog (Khona et al., 2023), could provide valuable insights. On that note, we tested the pattern generation task from Bellec et al. (2020), a neuroscience task differing in structure from the Neurogym tasks, and observed similar trends (refer to Appendix Figure 18).\nAdditionally, we ensured the consistency of outcomes against factors like width, learning rate, and initial gain (see Appendix D), but other factors such as dynamical regime and noise (HaoChen et al., 2021) remain underexamined. On that note, the study\u2019s focus on RNNs with finite task duration prompts further investigation into the implications for tasks with extended time steps and how conclusions for feedforward network depth (Xiao et al., 2020; Seleznova & Kutyniok, 2022) translate to RNN sequence length. Examining several mechanisms at once is beyond the scope of one paper, but our theoretical work constitutes the foundation for future investigations.\nMoreover, it is crucial to further explore the neuroscientific implications of effective learning regimes, as well as their diverse impacts on aspects such as representation, including kernel-task alignment (see Appendix Figure 14), and generalization capabilities (Flesch et al., 2021; George et al., 2022; Schuessler et al., 2023). Our current study did not delve into how initial weight rank affects these facets of learning, representing an essential future direction in connecting weight rank to these theoretical implications in both biological and artificial neural networks.\nFurthermore, while there exists evidence for low-rankedness in the brain (Thibeault et al., 2024), the extent to which the brain uses low-rank structures remains an open question, especially as neural circuit structures can vary across regions and species. While local connectivity statistics (Song et al., 2005) can offer some predictive insight into the global low-rank structure, this relationship is not always immediately apparent (Shao & Ostojic, 2023). Our theoretical results contribute to understanding the role of connectivity rank in the brain by linking effective connectivity rank with learning dynamics.\nLastly, we have primarily examined low-rank tasks and there remains unexplored terrain regarding the interplay between the number of task classes and weight rank, which is pivotal to uncovering a more precise relationship between the effective learning regime and the initial weight rank (Dubreuil et al., 2022; Gao et al., 2017). Overall, this dynamic area of learning regimes is ripe for many explorations, integrating numerous factors; our work contributes to this exciting area with new tools."
+        },
+        {
+            "heading": "5 ACKNOWLEDGEMENT",
+            "text": "We thank Andrew Saxe, Stefano Recanatesi, Kyle Aitken and Dana Mastrovito for insightful discussions and helpful feedback. This research was supported by NSERC PGS-D (Y.H.L.); FRQNT B2X\n(Y.H.L.); Pearson Fellowship (Y.H.L.); NSF AccelNet IN-BIC program, Grant No. OISE-2019976 AM02 (Y.H.L.); NIH BRAIN, Grant No. R01 1RF1DA055669 (Y.H.L., E.S.B., S.M.); Mitacs Globalink Research Award (Y.H.L.); IVADO Postdoctoral Fellowship (J.C); the Canada First Research Excellence Fund (J.C.); NSERC Discovery Grant RGPIN-2018-04821 (G.L); Canada Research Chair in Neural Computations and Interfacing (G.L.); Canada CIFAR AI Chair program (G.L.). We also thank the Allen Institute founder, Paul G. Allen, for his vision, encouragement, and support."
+        }
+    ],
+    "title": "HOW CONNECTIVITY STRUCTURE SHAPES RICH AND LAZY LEARNING IN NEURAL CIRCUITS"
+}

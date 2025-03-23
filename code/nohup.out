@@ -1,0 +1,146 @@
+Skipping: Input too short (8 tokens).
+Attack skipped.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:10,  3.52s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.94s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:04,  4.05s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  2.87s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:12<00:00,  3.25s/it]
+  0%|          | 0/546 [00:00<?, ?it/s] 49%|████▊     | 265/546 [00:00<00:00, 2648.64it/s] 97%|█████████▋| 530/546 [00:00<00:00, 2644.92it/s]100%|██████████| 546/546 [00:00<00:00, 2643.61it/s]
+  0%|          | 0/263 [00:00<?, ?it/s]Skipping already processed: CONCEPT BOTTLENECK GENERATIVE MODELS
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
+Processed: SWAP: SPARSE ENTROPIC WASSERSTEIN REGRESSION FOR ROBUST NETWORK PRUNING
+  1%|          | 2/263 [01:47<3:54:20, 53.87s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: BEYOND IMITATION: LEVERAGING FINE-GRAINED QUALITY SIGNALS FOR ALIGNMENT
+  1%|          | 3/263 [03:18<5:00:43, 69.40s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: GUAGE MODEL POWERED DIALOGUE AGENTS
+  2%|▏         | 4/263 [04:58<5:47:42, 80.55s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: THE EFFECTIVENESS OF RANDOM FORGETTING FOR ROBUST GENERALIZATION
+  2%|▏         | 5/263 [06:51<6:35:55, 92.07s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: SYMPHONY: SYMMETRY-EQUIVARIANT POINT- CENTERED SPHERICAL HARMONICS FOR MOLECULE GENERATION
+  2%|▏         | 6/263 [08:26<6:38:41, 93.08s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: ONE-HOT GENERALIZED LINEAR MODEL FOR SWITCHING BRAIN STATE DISCOVERY
+  3%|▎         | 7/263 [10:44<7:38:05, 107.37s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: DRM: MASTERING VISUAL REINFORCEMENT LEARN-
+  3%|▎         | 8/263 [12:55<8:08:34, 114.96s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: ING VIA TASK-DRIVEN FEATURE SELECTION
+  3%|▎         | 9/263 [15:42<9:14:03, 130.88s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: DYST: TOWARDS DYNAMIC NEURAL SCENE REPRESENTATIONS ON REAL-WORLD VIDEOS
+  4%|▍         | 10/263 [17:28<8:39:34, 123.22s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: LEARNING MULTI-FACETED PROTOTYPICAL USER INTERESTS
+  4%|▍         | 11/263 [19:15<8:17:05, 118.36s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: WIN-WIN: TRAINING HIGH-RESOLUTION VISION TRANSFORMERS
+  5%|▍         | 12/263 [21:15<8:16:50, 118.77s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: FAKE IT TILL MAKE IT: FEDERATED LEARNING WITH CONSENSUS-ORIENTED GENERATION
+  5%|▍         | 13/263 [23:03<8:01:55, 115.66s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: GIM: LEARNING GENERALIZABLE IMAGE MATCHER
+  5%|▌         | 14/263 [24:43<7:40:31, 110.97s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: VERA: VECTOR-BASED RANDOM MATRIX ADAPTATION
+  6%|▌         | 15/263 [26:20<7:20:47, 106.64s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: FANTASTIC GENERALIZATION MEASURES
+  6%|▌         | 16/263 [28:15<7:30:01, 109.32s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: STEVE-EYE: EQUIPPING LLM-BASED EMBOD-
+  6%|▋         | 17/263 [29:53<7:13:30, 105.73s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: PERCEPTUAL GROUP TOKENIZER: BUILDING PERCEPTION WITH ITERATIVE GROUPING
+  7%|▋         | 18/263 [31:40<7:13:22, 106.13s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: FOSI: Hybrid First and Second Order Optimization
+  7%|▋         | 19/263 [34:44<8:46:20, 129.43s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: UNLEASHING LARGE-SCALE VIDEO GENERATIVE PRE-TRAINING FOR VISUAL ROBOT MANIPULATION
+  8%|▊         | 20/263 [36:42<8:30:46, 126.12s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: DOUBLY ROBUST INSTANCE-REWEIGHTED ADVERSARIAL TRAINING
+  8%|▊         | 21/263 [38:28<8:04:54, 120.23s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: GENSIM: GENERATING ROBOTIC SIMULATION TASKS VIA LARGE LANGUAGE MODELS
+  8%|▊         | 22/263 [40:15<7:46:22, 116.11s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: COT3DREF: CHAIN-OF-THOUGHTS DATA-EFFICIENT 3D VISUAL GROUNDING
+  9%|▊         | 23/263 [42:06<7:37:48, 114.45s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: REWARD DESIGN FOR JUSTIFIABLE SEQUENTIAL DECISION-MAKING
+  9%|▉         | 24/263 [44:26<8:07:03, 122.27s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: ERAL GEOMETRY FOR KNOWLEDGE DISTILLATION
+ 10%|▉         | 25/263 [46:15<7:48:37, 118.14s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: TAPMO: SHAPE-AWARE MOTION GENERATION OF SKELETON-FREE CHARACTERS
+ 10%|▉         | 26/263 [48:11<7:44:05, 117.49s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: DiLu : A Knowledge-Driven Approach to Autonomous Driving with Large Language Models
+ 10%|█         | 27/263 [49:54<7:25:36, 113.29s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: RTFS-NET: RECURRENT TIME-FREQUENCY MOD-
+ 11%|█         | 28/263 [52:05<7:43:57, 118.46s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: SOHES: SELF-SUPERVISED OPEN-WORLD HIERARCHICAL ENTITY SEGMENTATION
+ 11%|█         | 29/263 [54:15<7:55:57, 122.04s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: PRE-TRAINING WITH SYNTHETIC DATA HELPS OFFLINE REINFORCEMENT LEARNING
+ 11%|█▏        | 30/263 [56:09<7:45:02, 119.75s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: CROSSQ: BATCH NORMALIZATION
+ 12%|█▏        | 31/263 [57:48<7:18:03, 113.29s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: Never Train from Scratch: FAIR COMPARISON OF LONG- SEQUENCE MODELS REQUIRES DATA-DRIVEN PRIORS
+ 12%|█▏        | 32/263 [59:30<7:04:09, 110.17s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: LEMUR: INTEGRATING LARGE LANGUAGE MODELS
+ 13%|█▎        | 33/263 [1:02:06<7:54:34, 123.80s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: MOVINGPARTS: MOTION-BASED 3D PART DISCOV-
+ 13%|█▎        | 34/263 [1:03:58<7:38:31, 120.14s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: EARLY NEURON ALIGNMENT IN TWO-LAYER RELU NETWORKS WITH SMALL INITIALIZATION
+ 13%|█▎        | 35/263 [1:06:03<7:42:58, 121.83s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: SIVE NEURAL NETWORK GENERATION
+ 14%|█▎        | 36/263 [1:07:53<7:27:18, 118.23s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: SPURIOUS FEATURES IN PROMPT DESIGN or: How I learned to start worrying about prompt formatting
+ 14%|█▍        | 37/263 [1:10:54<8:36:09, 137.03s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: ERROR-FREE DIFFERENTIABLE SWAP FUNCTIONS
+ 14%|█▍        | 38/263 [1:12:44<8:03:06, 128.83s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: WEAKER MVI CONDITION: EXTRAGRADIENT METH-
+ 15%|█▍        | 39/263 [1:14:51<7:58:46, 128.24s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: TAIL: TASK-SPECIFIC ADAPTERS FOR IMITATION LEARNING WITH LARGE PRETRAINED MODELS
+ 15%|█▌        | 40/263 [1:16:38<7:33:04, 121.90s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: ZERO-MEAN REGULARIZED SPECTRAL CONTRASTIVE LEARNING: IMPLICITLY MITIGATING WRONG CON-
+ 16%|█▌        | 41/263 [1:18:29<7:19:03, 118.66s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: RDESIGN: HIERARCHICAL DATA-EFFICIENT REPRE-
+ 16%|█▌        | 42/263 [1:20:25<7:13:56, 117.81s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: ONE-TO-MANY POLICY TRANSFER
+ 16%|█▋        | 43/263 [1:22:11<6:58:50, 114.23s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: WHAT’S IN MY BIG DATA?
+ 17%|█▋        | 44/263 [1:26:15<9:19:08, 153.19s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: COMPLEX PRIORS AND FLEXIBLE INFERENCE IN RECURRENT CIRCUITS WITH DENDRITIC NONLINEARITIES
+ 17%|█▋        | 45/263 [1:28:24<8:50:58, 146.14s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: DEMYSTIFYING LOCAL & GLOBAL FAIRNESS TRADE-OFFS IN FEDERATED LEARNING USING PARTIAL INFORMATION DECOMPOSITION
+ 17%|█▋        | 46/263 [1:31:41<9:43:11, 161.25s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Processed: INCREMENTAL RANDOMIZED SMOOTHING CERTIFICATION
+ 18%|█▊        | 47/263 [1:33:51<9:06:27, 151.79s/it]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.

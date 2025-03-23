@@ -1,0 +1,1185 @@
+{
+    "abstractText": "Semi-supervised learning (SSL) has witnessed great progress with various improvements in the self-training framework with pseudo labeling. The main challenge is how to distinguish high-quality pseudo labels against the confirmation bias. However, existing pseudo-label selection strategies are limited to pre-defined schemes or complex hand-crafted policies specially designed for classification, failing to achieve high-quality labels, fast convergence, and task versatility simultaneously. To these ends, we propose a Semi-supervised Reward framework (SemiReward) that predicts reward scores to evaluate and filter out high-quality pseudo labels, which is pluggable to mainstream SSL methods in wide task types and scenarios. To mitigate confirmation bias, SemiReward is trained online in two stages with a generator model and subsampling strategy. With classification and regression tasks on 13 standard SSL benchmarks across three modalities, extensive experiments verify that SemiReward achieves significant performance gains and faster convergence speeds upon Pseudo Label, FlexMatch, and Free/SoftMatch. Code and models are available at https://github.com/Westl ake-AI/SemiReward. ESC-50 250 ESC-50 500 FSDnoisy-18k 1773 UrtraSound-8k 400 Yelp Review 250",
+    "authors": [
+        {
+            "affiliations": [],
+            "name": "Siyuan Li"
+        },
+        {
+            "affiliations": [],
+            "name": "Weiyang Jin"
+        },
+        {
+            "affiliations": [],
+            "name": "Zedong Wang"
+        },
+        {
+            "affiliations": [],
+            "name": "Fang Wu"
+        },
+        {
+            "affiliations": [],
+            "name": "Zicheng Liu"
+        },
+        {
+            "affiliations": [],
+            "name": "Cheng Tan"
+        },
+        {
+            "affiliations": [],
+            "name": "Stan Z. Li"
+        }
+    ],
+    "id": "SP:7a002a5e1a0a2617280cd72675f61b3955273a25",
+    "references": [
+        {
+            "authors": [
+                "Eric Arazo",
+                "Diego Ortego",
+                "Paul Albert",
+                "Noel E OConnor",
+                "Kevin McGuinness"
+            ],
+            "title": "Pseudo-labeling and confirmation bias in deep semi-supervised learning",
+            "venue": "In 2020 International Joint Conference on Neural Networks (IJCNN),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "David Berthelot",
+                "Nicholas Carlini",
+                "Ekin D Cubuk",
+                "Alex Kurakin",
+                "Kihyuk Sohn",
+                "Han Zhang",
+                "Colin Raffel"
+            ],
+            "title": "Remixmatch: Semi-supervised learning with distribution alignment and augmentation anchoring",
+            "venue": "arXiv preprint arXiv:1911.09785,",
+            "year": 1911
+        },
+        {
+            "authors": [
+                "David Berthelot",
+                "Nicholas Carlini",
+                "Ian Goodfellow",
+                "Nicolas Papernot",
+                "Avital Oliver",
+                "Colin Raffel"
+            ],
+            "title": "Mixmatch: A holistic approach to semi-supervised learning",
+            "venue": "arXiv preprint arXiv:1905.02249,",
+            "year": 1905
+        },
+        {
+            "authors": [
+                "David Berthelot",
+                "Rebecca Roelofs",
+                "Kihyuk Sohn",
+                "Nicholas Carlini",
+                "Alexey Kurakin"
+            ],
+            "title": "Adamatch: A unified approach to semi-supervised learning and domain adaptation",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Avrim Blum",
+                "Tom Mitchell"
+            ],
+            "title": "Combining labeled and unlabeled data with co-training",
+            "venue": "In Proceedings of the eleventh annual conference on Computational learning theory,",
+            "year": 1998
+        },
+        {
+            "authors": [
+                "Ralph Allan Bradley",
+                "Milton E Terry"
+            ],
+            "title": "Rank analysis of incomplete block designs: I. the method of paired comparisons",
+            "year": 1952
+        },
+        {
+            "authors": [
+                "Ming-Wei Chang",
+                "Lev-Arie Ratinov",
+                "Dan Roth",
+                "Vivek Srikumar"
+            ],
+            "title": "Importance of semantic representation: Dataless classification",
+            "venue": "In AAAI Conference on Artificial Intelligence (AAAI),",
+            "year": 2008
+        },
+        {
+            "authors": [
+                "Baixu Chen",
+                "Junguang Jiang",
+                "Ximei Wang",
+                "Pengfei Wan",
+                "Jianmin Wang",
+                "Mingsheng Long"
+            ],
+            "title": "Debiased self-training for semi-supervised learning",
+            "venue": "Advances in Neural Information Processing Systems, 35:32424\u201332437,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Baixu Chen",
+                "Junguang Jiang",
+                "Ximei Wang",
+                "Jianmin Wang",
+                "Mingsheng Long"
+            ],
+            "title": "Debiased pseudo labeling in self-training",
+            "venue": "arXiv preprint arXiv:2202.07136,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Hao Chen",
+                "Ran Tao",
+                "Yue Fan",
+                "Yidong Wang",
+                "Jindong Wang",
+                "Bernt Schiele",
+                "Xing Xie",
+                "Bhiksha Raj",
+                "Marios Savvides"
+            ],
+            "title": "Softmatch: Addressing the quantity-quality tradeoff in semi-supervised learning",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Ting Chen",
+                "Simon Kornblith",
+                "Mohammad Norouzi",
+                "Geoffrey Hinton"
+            ],
+            "title": "A simple framework for contrastive learning of visual representations",
+            "venue": "In International Conference on Machine Learning (ICML),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Paul Francis Christiano",
+                "Jan Leike",
+                "Tom B. Brown",
+                "Miljan Martic",
+                "Shane Legg",
+                "Dario Amodei"
+            ],
+            "title": "Deep reinforcement learning from human preferences",
+            "venue": "In Advances in Neural Information Processing Systems (NeurIPS),",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "R Malcom Clark"
+            ],
+            "title": "A calibration curve for radiocarbon",
+            "venue": "dates. Antiquity,",
+            "year": 1975
+        },
+        {
+            "authors": [
+                "Adam Coates",
+                "Andrew Ng",
+                "Honglak Lee"
+            ],
+            "title": "An analysis of single-layer networks in unsupervised feature learning",
+            "venue": "In Proceedings of the fourteenth international conference on artificial intelligence and statistics,",
+            "year": 2011
+        },
+        {
+            "authors": [
+                "Ekin D Cubuk",
+                "Barret Zoph",
+                "Dandelion Mane",
+                "Vijay Vasudevan",
+                "Quoc V Le"
+            ],
+            "title": "Autoaugment: Learning augmentation policies from data",
+            "venue": "arXiv preprint arXiv:1805.09501,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Zihang Dai",
+                "Zhilin Yang",
+                "Fan Yang",
+                "William W Cohen",
+                "Russ R Salakhutdinov"
+            ],
+            "title": "Good semisupervised learning that requires a bad gan",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Jia Deng",
+                "Wei Dong",
+                "Richard Socher",
+                "Li-Jia Li",
+                "Kai Li",
+                "Li Fei-Fei"
+            ],
+            "title": "Imagenet: A large-scale hierarchical image database",
+            "venue": "In 2009 IEEE conference on computer vision and pattern recognition (CVPR),",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Jacob Devlin",
+                "Ming-Wei Chang",
+                "Kenton Lee",
+                "Kristina Toutanova"
+            ],
+            "title": "Bert: Pre-training of deep bidirectional transformers for language understanding",
+            "venue": "arXiv preprint arXiv:1810.04805,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Linhao Dong",
+                "Shuang Xu",
+                "Bo Xu"
+            ],
+            "title": "Speech-transformer: a no-recurrence sequence-to-sequence model for speech recognition",
+            "venue": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Alexey Dosovitskiy",
+                "Lucas Beyer",
+                "Alexander Kolesnikov",
+                "Dirk Weissenborn",
+                "Xiaohua Zhai",
+                "Thomas Unterthiner",
+                "Mostafa Dehghani",
+                "Matthias Minderer",
+                "Georg Heigold",
+                "Sylvain Gelly",
+                "Jakob Uszkoreit",
+                "Neil Houlsby"
+            ],
+            "title": "An image is worth 16x16 words: Transformers for image recognition at scale",
+            "venue": "In International Conference on Learning Representations (ICLR),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yue Fan",
+                "Anna Kukleva",
+                "Bernt Schiele"
+            ],
+            "title": "Revisiting consistency regularization for semisupervised learning",
+            "venue": "In DAGM German Conference on Pattern Recognition,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Eduardo Fonseca",
+                "Manoj Plakal",
+                "Daniel PW Ellis",
+                "Frederic Font",
+                "Xavier Favory",
+                "Xavier Serra"
+            ],
+            "title": "Learning sound event classifiers from web audio with noisy labels",
+            "venue": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Yixiao Ge",
+                "Dapeng Chen",
+                "Hongsheng Li"
+            ],
+            "title": "Mutual mean-teaching: Pseudo label refinery for unsupervised domain adaptation on person re-identification",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Yves Grandvalet",
+                "Yoshua Bengio"
+            ],
+            "title": "Semi-supervised learning by entropy minimization",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2004
+        },
+        {
+            "authors": [
+                "Kaiming He",
+                "Xiangyu Zhang",
+                "Shaoqing Ren",
+                "Jian Sun"
+            ],
+            "title": "Deep residual learning for image recognition",
+            "venue": "In Proceedings of the IEEE conference on computer vision and pattern recognition (CVPR),",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Kaiming He",
+                "Haoqi Fan",
+                "Yuxin Wu",
+                "Saining Xie",
+                "Ross Girshick"
+            ],
+            "title": "Momentum contrast for unsupervised visual representation learning",
+            "venue": "In Conference on Computer Vision and Pattern Recognition (CVPR),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Patrick Helber",
+                "Benjamin Bischke",
+                "Andreas Dengel",
+                "Damian Borth"
+            ],
+            "title": "Eurosat: A novel dataset and deep learning benchmark for land use and land cover classification",
+            "venue": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Wei-Ning Hsu",
+                "Benjamin Bolte",
+                "Yao-Hung Hubert Tsai",
+                "Kushal Lakhotia",
+                "Ruslan Salakhutdinov",
+                "Abdelrahman Mohamed"
+            ],
+            "title": "Hubert: Self-supervised speech representation learning by masked prediction of hidden units",
+            "venue": "IEEE/ACM Transactions on Audio, Speech, and Language Processing,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Jiwon Kim",
+                "Youngjo Min",
+                "Daehwan Kim",
+                "Gyuseong Lee",
+                "Junyoung Seo",
+                "Kwangrok Ryoo",
+                "Seungryong Kim"
+            ],
+            "title": "Conmatch: Semi-supervised learning with confidence-guided consistency regularization",
+            "venue": "In European Conference on Computer Vision (ECCV),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Diederik P Kingma",
+                "Jimmy Ba"
+            ],
+            "title": "Adam: A method for stochastic optimization",
+            "venue": "arXiv preprint arXiv:1412.6980,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Alex Krizhevsky",
+                "Geoffrey Hinton"
+            ],
+            "title": "Learning multiple layers of features from tiny images",
+            "year": 2009
+        },
+        {
+            "authors": [
+                "Dong-Hyun Lee"
+            ],
+            "title": "Pseudo-label: The simple and efficient semi-supervised learning method for deep neural networks",
+            "venue": "In Workshop on challenges in representation learning,",
+            "year": 2013
+        },
+        {
+            "authors": [
+                "Jan Leike",
+                "David Krueger",
+                "Tom Everitt",
+                "Miljan Martic",
+                "Vishal Maini",
+                "Shane Legg"
+            ],
+            "title": "Scalable agent alignment via reward modeling: a research",
+            "venue": "direction. ArXiv,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Junnan Li",
+                "Richard Socher",
+                "Steven CH Hoi"
+            ],
+            "title": "Dividemix: Learning with noisy labels as semisupervised learning",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Junnan Li",
+                "Caiming Xiong",
+                "Steven Hoi"
+            ],
+            "title": "Comatch: Semi-supervised learning with contrastive graph regularization",
+            "venue": "In International Conference on Computer Vision (ICCV),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Siyuan Li",
+                "Di Wu",
+                "Fang Wu",
+                "Zelin Zang",
+                "Kai Wang",
+                "Lei Shang",
+                "Baigui Sun",
+                "Haoyang Li",
+                "Stan.Z.Li"
+            ],
+            "title": "Architecture-agnostic masked image modeling - from vit back to cnn",
+            "venue": "ArXiv, abs/2205.13943,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Siyuan Li",
+                "Luyuan Zhang",
+                "Zedong Wang",
+                "Di Wu",
+                "Lirong Wu",
+                "Zicheng Liu",
+                "Jun Xia",
+                "Cheng Tan",
+                "Yang Liu",
+                "Baigui Sun",
+                "Stan Z. Li"
+            ],
+            "title": "Masked modeling for self-supervised representation learning on vision and beyond",
+            "venue": "ArXiv, abs/2401.00897,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Siyuan Li",
+                "Zedong Wang",
+                "Zicheng Liu",
+                "Cheng Tan",
+                "Haitao Lin",
+                "Di Wu",
+                "Zhiyuan Chen",
+                "Jiangbin Zheng",
+                "Stan Z. Li"
+            ],
+            "title": "Efficient multi-order gated aggregation network",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2024
+        },
+        {
+            "authors": [
+                "Xingjian Li",
+                "Haoyi Xiong",
+                "Hanchao Wang",
+                "Yuxuan Rao",
+                "Liping Liu",
+                "Jun Huan"
+            ],
+            "title": "Delta: Deep learning transfer using feature map with attention for convolutional networks",
+            "venue": "In International Conference on Learning Representations (ICLR),",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Xuhong Li",
+                "Yves Grandvalet",
+                "Franck Davoine"
+            ],
+            "title": "Explicit inductive bias for transfer learning with convolutional networks",
+            "venue": "In International Conference on Machine Learning (ICML),",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Zicheng Li",
+                "Siyuan Liu",
+                "Zelin Zang",
+                "Di Wu",
+                "Zhiyuan Chen",
+                "Stan Z. Li"
+            ],
+            "title": "Genurl: A general framework for unsupervised representation learning",
+            "venue": "IEEE Transactions on Neural Networks and Learning Systems,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Tsung-Yi Lin",
+                "Priya Goyal",
+                "Ross Girshick",
+                "Kaiming He",
+                "Piotr Doll\u00e1r"
+            ],
+            "title": "Focal loss for dense object detection",
+            "venue": "In International Conference on Computer Vision (ICCV),",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Yen-Cheng Liu",
+                "Chih-Yao Ma",
+                "Zijian He",
+                "Chia-Wen Kuo",
+                "Kan Chen",
+                "Peizhao Zhang",
+                "Bichen Wu",
+                "Zsolt Kira",
+                "P\u00e9ter Vajda"
+            ],
+            "title": "Unbiased teacher for semi-supervised object detection",
+            "venue": "In International Conference on Learning Representations,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Zicheng Liu",
+                "Siyuan Li",
+                "Di Wu",
+                "Zhiyuan Chen",
+                "Lirong Wu",
+                "Jianzhu Guo",
+                "Stan Z. Li"
+            ],
+            "title": "Automix: Unveiling the power of mixup for stronger classifiers",
+            "venue": "In European Conference on Computer Vision,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Zicheng Liu",
+                "Siyuan Li",
+                "Ge Wang",
+                "Cheng Tan",
+                "Lirong Wu",
+                "Stan Z. Li"
+            ],
+            "title": "Harnessing hard mixed samples with decoupled regularizer",
+            "venue": "In Advances in Neural Information Processing Systems (NeurIPS),",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Ilya Loshchilov",
+                "Frank Hutter"
+            ],
+            "title": "Sgdr: Stochastic gradient descent with warm restarts",
+            "venue": "arXiv preprint arXiv:1608.03983,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Takeru Miyato",
+                "Shin-ichi Maeda",
+                "Masanori Koyama",
+                "Shin Ishii"
+            ],
+            "title": "Virtual adversarial training: a regularization method for supervised and semi-supervised learning. IEEE transactions on pattern analysis and machine intelligence (TPAMI)",
+            "year": 1979
+        },
+        {
+            "authors": [
+                "Stylianos Moschoglou",
+                "Athanasios Papaioannou",
+                "Christos Sagonas",
+                "Jiankang Deng",
+                "Irene Kotsia",
+                "Stefanos Zafeiriou"
+            ],
+            "title": "Agedb: the first manually collected, in-the-wild age database",
+            "venue": "In proceedings of the IEEE conference on computer vision and pattern recognition workshops,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Augustus Odena"
+            ],
+            "title": "Semi-supervised learning with generative adversarial networks",
+            "venue": "arXiv preprint arXiv:1606.01583,",
+            "year": 2016
+        },
+        {
+            "authors": [
+                "Long Ouyang",
+                "Jeffrey Wu",
+                "Xu Jiang",
+                "Diogo Almeida",
+                "Carroll Wainwright",
+                "Pamela Mishkin",
+                "Chong Zhang",
+                "Sandhini Agarwal",
+                "Katarina Slama",
+                "Alex Ray"
+            ],
+            "title": "Training language models to follow instructions with human feedback",
+            "venue": "Advances in Neural Information Processing Systems (NeurIPS),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Jongjin Park",
+                "Younggyo Seo",
+                "Jinwoo Shin",
+                "Honglak Lee",
+                "Pieter Abbeel",
+                "Kimin Lee"
+            ],
+            "title": "Surf: Semi-supervised reward learning with data augmentation for feedback-efficient preference-based reinforcement learning",
+            "venue": "In International Conference on Learning Representations (ICLR),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Sungrae Park",
+                "JunKeon Park",
+                "Su-Jin Shin",
+                "Il-Chul Moon"
+            ],
+            "title": "Adversarial dropout for supervised and semi-supervised learning",
+            "venue": "In Proceedings of the AAAI conference on artificial intelligence,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Hieu Pham",
+                "Zihang Dai",
+                "Qizhe Xie",
+                "Quoc V Le"
+            ],
+            "title": "Meta pseudo labels",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Karol J Piczak"
+            ],
+            "title": "Esc: Dataset for environmental sound classification",
+            "venue": "In Proceedings of the 23rd ACM international conference on Multimedia,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Huafeng Qin",
+                "Xin Jin",
+                "Yun Jiang",
+                "Moun\u0131\u0302m A. El-Yacoubi",
+                "Xinbo Gao"
+            ],
+            "title": "Adversarial automixup",
+            "venue": "In International Conference on Learning Representations (ICLR),",
+            "year": 2024
+        },
+        {
+            "authors": [
+                "Antti Rasmus",
+                "Mathias Berglund",
+                "Mikko Honkala",
+                "Harri Valpola",
+                "Tapani Raiko"
+            ],
+            "title": "Semisupervised learning with ladder networks",
+            "venue": "Advances in neural information processing systems,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Chuck Rosenberg",
+                "Martial Hebert",
+                "Henry Schneiderman"
+            ],
+            "title": "Semi-supervised self-training of object detection models",
+            "venue": "Seventh IEEE Workshops on Applications of Computer Vision. Carnegie Mellon University,",
+            "year": 2005
+        },
+        {
+            "authors": [
+                "Rasmus Rothe",
+                "Radu Timofte",
+                "Luc Van Gool"
+            ],
+            "title": "Deep expectation of real and apparent age from a single image without facial landmarks",
+            "venue": "International Journal of Computer Vision,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Sebastian Ruder",
+                "Barbara Plank"
+            ],
+            "title": "Strong baselines for neural semi-supervised learning under domain shift. In The 56th Annual Meeting of the Association for Computational Linguistics",
+            "venue": "Association for Computational Linguistics,",
+            "year": 2018
+        },
+        {
+            "authors": [
+                "Justin Salamon",
+                "Christopher Jacoby",
+                "Juan Pablo Bello"
+            ],
+            "title": "A dataset and taxonomy for urban sound research",
+            "venue": "In Proceedings of the 22nd ACM international conference on Multimedia,",
+            "year": 2014
+        },
+        {
+            "authors": [
+                "Laine Samuli",
+                "Aila Timo"
+            ],
+            "title": "Temporal ensembling for semi-supervised learning",
+            "venue": "In International Conference on Learning Representations (ICLR),",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "John Schulman",
+                "Filip Wolski",
+                "Prafulla Dhariwal",
+                "Alec Radford",
+                "Oleg Klimov"
+            ],
+            "title": "Proximal policy optimization algorithms",
+            "venue": "ArXiv, abs/1707.06347,",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Kihyuk Sohn",
+                "David Berthelot",
+                "Chun-Liang Li",
+                "Zizhao Zhang",
+                "Nicholas Carlini",
+                "Ekin D Cubuk",
+                "Alex Kurakin",
+                "Han Zhang",
+                "Colin Raffel"
+            ],
+            "title": "Fixmatch: Simplifying semi-supervised learning with consistency and confidence",
+            "venue": "In Advances in Neural Information Processing Systems (NeurIPS),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Jong-Chyi Su",
+                "Subhransu Maji"
+            ],
+            "title": "The semi-supervised inaturalist-aves challenge at fgvc7 workshop",
+            "venue": "In proceedings of the IEEE conference on computer vision and pattern recognition workshops,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Teppei Suzuki",
+                "Ikuro Sato"
+            ],
+            "title": "Adversarial transformations for semi-supervised learning",
+            "venue": "In Proceedings of the AAAI Conference on Artificial Intelligence,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Cheng Tan",
+                "Jun Xia",
+                "Lirong Wu",
+                "Stan Z Li"
+            ],
+            "title": "Co-learning: Learning from noisy labels with self-supervision",
+            "venue": "In Proceedings of the 29th ACM International Conference on Multimedia,",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Cheng Tan",
+                "Zhangyang Gao",
+                "Lirong Wu",
+                "Siyuan Li",
+                "Stan Z Li"
+            ],
+            "title": "Hyperspherical consistency regularization",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Antti Tarvainen",
+                "Harri Valpola"
+            ],
+            "title": "Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results",
+            "venue": "In 31st Conference on Neural Information Processing Systems (NeurIPS),",
+            "year": 2017
+        },
+        {
+            "authors": [
+                "Yidong Wang",
+                "Hao Chen",
+                "Yue Fan",
+                "Wang Sun",
+                "Ran Tao",
+                "Wenxin Hou",
+                "Renjie Wang",
+                "Linyi Yang",
+                "Zhi Zhou",
+                "Lan-Zhe Guo",
+                "Heli Qi",
+                "Zhen Wu",
+                "Yu-Feng Li",
+                "Satoshi Nakamura",
+                "Wei Ye",
+                "Marios Savvides",
+                "Bhiksha Raj",
+                "Takahiro Shinozaki",
+                "Bernt Schiele",
+                "Jindong Wang",
+                "Xing Xie",
+                "Yue Zhang"
+            ],
+            "title": "Usb: A unified semi-supervised learning benchmark",
+            "venue": "In Neural Information Processing Systems (NeurIPS),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Yidong Wang",
+                "Hao Chen",
+                "Qiang Heng",
+                "Wenxin Hou",
+                "Yue Fan",
+                "Zhen Wu",
+                "Jindong Wang",
+                "Marios Savvides",
+                "Takahiro Shinozaki",
+                "Bhiksha Raj"
+            ],
+            "title": "Freematch: Self-adaptive thresholding for semisupervised learning",
+            "venue": "In The Eleventh International Conference on Learning Representations,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Qizhe Xie",
+                "Zihang Dai",
+                "Eduard Hovy",
+                "Thang Luong",
+                "Quoc Le"
+            ],
+            "title": "Unsupervised data augmentation for consistency training",
+            "venue": "In Advances in Neural Information Processing Systems (NeurIPS),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Qizhe Xie",
+                "Minh-Thang Luong",
+                "Eduard Hovy",
+                "Quoc V Le"
+            ],
+            "title": "Self-training with noisy student improves imagenet classification",
+            "venue": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pp. 10687\u201310698,",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Zhenda Xie",
+                "Zheng Zhang",
+                "Yue Cao",
+                "Yutong Lin",
+                "Jianmin Bao",
+                "Zhuliang Yao",
+                "Qi Dai",
+                "Han Hu"
+            ],
+            "title": "Simmim: A simple framework for masked image modeling",
+            "venue": "In Conference on Computer Vision and Pattern Recognition (CVPR),",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Wang Ximei",
+                "Gao Jinghan",
+                "Long Mingsheng",
+                "Wang Jianmin"
+            ],
+            "title": "Self-tuning for data-efficient deep learning",
+            "venue": "In International Conference on Machine Learning (ICML),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Yi Xu",
+                "Lei Shang",
+                "Jinxing Ye",
+                "Qi Qian",
+                "Yu-Feng Li",
+                "Baigui Sun",
+                "Hao Li",
+                "Rong Jin. Dash"
+            ],
+            "title": "Semi-supervised learning with dynamic thresholding",
+            "venue": "In International Conference on Machine Learning (ICML),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Ismet Zeki Yalniz",
+                "Herv\u00e9 J\u00e9gou",
+                "Kan Chen",
+                "Manohar Paluri",
+                "Dhruv Kumar Mahajan"
+            ],
+            "title": "Billionscale semi-supervised learning for image classification",
+            "venue": "ArXiv, abs/1905.00546,",
+            "year": 2019
+        },
+        {
+            "authors": [
+                "Lihe Yang",
+                "Zhen Zhao",
+                "Lei Qi",
+                "Yu Qiao",
+                "Yinghuan Shi",
+                "Hengshuang Zhao"
+            ],
+            "title": "Shrinking class space for enhanced certainty in semi-supervised learning",
+            "venue": "arXiv preprint arXiv:2308.06777,",
+            "year": 2023
+        },
+        {
+            "authors": [
+                "Huaxiu Yao",
+                "Yiping Wang",
+                "Linjun Zhang",
+                "James Y Zou",
+                "Chelsea Finn"
+            ],
+            "title": "C-mixup: Improving generalization in regression",
+            "venue": "Advances in Neural Information Processing Systems,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "David Yarowsky"
+            ],
+            "title": "Unsupervised word sense disambiguation rivaling supervised methods. In 33rd annual meeting of the association for computational linguistics",
+            "year": 1995
+        },
+        {
+            "authors": [
+                "Kaichao You",
+                "Zhi Kou",
+                "Mingsheng Long",
+                "Jianmin Wang"
+            ],
+            "title": "Co-tuning for transfer learning",
+            "venue": "In Advances in Neural Information Processing Systems (NeurIPS),",
+            "year": 2020
+        },
+        {
+            "authors": [
+                "Bowen Zhang",
+                "Yidong Wang",
+                "Wenxin Hou",
+                "Hao Wu",
+                "Jindong Wang",
+                "Manabu Okumura",
+                "Takahiro Shinozaki"
+            ],
+            "title": "Flexmatch: Boosting semi-supervised learning with curriculum pseudo labeling",
+            "venue": "In Advances in Neural Information Processing Systems (NeurIPS),",
+            "year": 2021
+        },
+        {
+            "authors": [
+                "Xiang Zhang",
+                "Junbo Zhao",
+                "Yann LeCun"
+            ],
+            "title": "Character-level convolutional networks for text classification",
+            "venue": "In Advances in neural information processing systems,",
+            "year": 2015
+        },
+        {
+            "authors": [
+                "Mingkai Zheng",
+                "Shan You",
+                "Lang Huang",
+                "Fei Wang",
+                "Chen Qian",
+                "Chang Xu"
+            ],
+            "title": "Simmatch: Semisupervised learning with similarity matching",
+            "venue": "arXiv preprint arXiv:2203.06915,",
+            "year": 2022
+        },
+        {
+            "authors": [
+                "Zhi-Hua Zhou",
+                "Ming Li"
+            ],
+            "title": "Semi-supervised learning by disagreement",
+            "venue": "Knowledge and Information Systems,",
+            "year": 2010
+        }
+    ],
+    "sections": [
+        {
+            "text": "\u2217First two authors contribute equally. \u2020Corrsponding author."
+        },
+        {
+            "heading": "1 INTRODUCTION",
+            "text": "In the past decades, deep learning (DL) has made great progress in various applications with different modalities (He et al., 2016; Devlin et al., 2018; Dong et al., 2018; Li et al., 2024). However, most tasks are in a supervised learning (SL) manner that requires manually labeling data, which is limited in quantity and labor-exhaustive. To extend SL with massive unlabeled data, semi-supervised learning (SSL) exploits the information of unlabeled data with limited labeled data (Tarvainen & Valpola, 2017; Sohn et al., 2020) in the self-training paradigm of pseudo-labeling (Lee et al., 2013), i.e., training models with unlabeled data and pseudo labels assigned by models\u2019 predictions.\nAs a widely used technique, the main problem of SSL is how to generate accurate pseudo labels without or with tolerable effects of confirmation bias (Arazo et al., 2020), i.e., overfitting to incorrect pseudo labels from teacher models. There were three main strands of research, aiming at obtaining high-quality pseudo labels and a high sampling rate while being capable of various tasks and scenarios. Firstly, mainstream methods utilize threshold-based pseudo labeling (Sohn et al., 2020; Zhang et al., 2021; Kim et al., 2022; Wang et al., 2022b) with ad-hoc or complex hand-crafted strategies to select high-quality pseudo labels. However, these algorithms are predefined and task-specific, i.e., they are designed for classification tasks but cannot handle more challenging regression tasks. The second strand introduces pre-trained teacher models (Zhou & Li, 2010; Xie et al., 2020b) to generate high-quality pseudo labels, which require extra computational cost (e.g., double training times (Pham et al., 2021)) or suffer from confirmation bias (Yalniz et al., 2019). The third line explores consistency regulaizations (Xie et al., 2020a; Sohn et al., 2020; Li et al., 2021) to prevent confirmation bias of inaccurate pseudo labels, e.g., optimizing the consistency loss with weak-strong augmentation, which only work for specific modalities with prior augmentations. Therefore, none of the previous SSL methods achieved three goals simultaneously.\nThis work answers a core question in SSL training: how to efficiently evaluate a pseudo label comprehensively? We introduce a reward score based on cosine similarity between pseudo and groundtruth labels as the quality standard, which is a smooth and well-calibrated metric for classification and regression tasks. Then, we propose a Semi-supervised Reward framework (SemiReward) that predicts reward scores based on pseudo labels and corresponding unlabeled data for pseudo-label selection and can be used as an add-on module for mainstream SSL methods. Specifically, a rewarder network predicts credible reward scores to filter pseudo labels for the student training and is learned to fit ground-truth reward scores online. To disentangle its training from the student, a twostage training pipeline is designed with the assistance of a generator network, which generates \u201cfake labels\u201d that only train the rewarder. The rewarder and generator are first pre-trained alternatively on the labeled dataset in stage 1 to alleviate confirmation bias, then trained on a randomly subsampled set of labeled data and selected unlabeled data in stage 2. Empirical studies show that SemiReward predicts calibrated reward scores to select high-quality pseudo labels with a high sampling rate to boost SSL training. We conduct comparison experiments on SSL benchmarks with three modalities and two task types, verifying that SemiReward improves both general and modern SSL algorithms in performance and convergence speeds. Our main contributions are three folds:\n\u2022 From a fresh perspective, we introduce the reward score to evaluate pseudo-label qualities and design the rewarder to predict it by modeling unlabeled data and pseudo-labels together.\n\u2022 We propose a general and pluggable SemiReward framework that selects high-quality pseudo labels with reward scores. A two-stage training pipeline and a generator network are designed to train the rewarder online with negligible extra cost.\n\u2022 Extensive experiments on 13 datasets validate that SemiReward markedly increases performance and convergence speeds of popular SSL methods in classification and regression tasks. We also empirically verify the reliability of reward scores and designed modules."
+        },
+        {
+            "heading": "2 PRELIMINARY",
+            "text": "Semi-supervised training pipeline. SSL is an extended scenario of SL, where given a labeled dataset DL = { xli, y l i }NL i=1 and an unlabeled dataset DU = {xui } NU i=1, with the sample numbers NL NU . Considering any classification or regression task, yli \u2208 RC denotes the encoded groundtruth label, where C is the label dimension, and the model fS(\u00b7) learns to predict fS(x) = y \u2208 RC . As for C-class classification, one-hot encoding is adopted for yl while converting the model output to arg maxp(y). To utilize all training data, the general SSL training pipeline with pseudo-labeling contains three steps: (a) Pseudo-label generation. Given a teacher model fT (\u00b7) that is well-trained on DL, it can generate pseudo-labels yu = fT (xu) for DU . (b) Pseudo-label selection. Highquality pseudo labels D\u0302U = {y\u0302u}N\u0302U = {I(pui , \u03c4)yui } NU i=1 are filtered by a label selection mechanism I(\u00b7, \u00b7), where \u03c4 \u2208 [0, 1] is the threshold. (c) Supervised and unsupervised losses computation, denoted as L = LS + LU . Given a mini-batch of BL data, LS is written as:\nLS = 1\nBL BL\u2211 i=1 H ( yli, fS ( \u03c9(xi) )) , (1)\nwhere \u03c9(\u00b7) denotes stochastic data augmentations and H(\u00b7, \u00b7) is the loss function used for the SL task, such as cross-entropy and `1 loss for classification and regression tasks. Similarly, given a mini-batch ofBU unlabeled data, taking popular consistency regularization frameworks (Sohn et al., 2020) as an example, the unsupervised loss is\nLU = 1\nBU BU\u2211 i=1 I(pui , \u03c4)H ( y\u0302ui , fS ( \u2126(xui ) )) , (2)\nwhere \u2126(xui ) represents the strong augmented unlabeled data. As shown in Figure 3(a), the consistency regularization framework usually has three design aspects: (i) fT and fS share the same network architecture and parameters of fS are updated to fT by copying or exponential moving average (EMA). (ii) For most consistency-based SSL methods, a hand-crafted I(\u00b7, \u00b7) requires predicted classification confidence to distinguish reliable labels. (iii) Since the teacher fT is more reliable than the student fS , the consistency that between fT and fS is introduced by constructing sample pairs (\u03c9(xui ),\u2126(x u i )) with strong-weak augmentations proposed by UDA (Xie et al., 2020a) and optimizing consistency through LU .\nBreaking Through Limitations of Confidence-based Label Selection. Existing label selection strategies in step (ii) only use yu or the confidence pu to evaluate pseudo labels in hand-crafted policies, which cannot guarantee the quality and stability of D\u0302U . Meanwhile, the designed steps (ii) and (iii) limit the task and modality generalities of the pseudo-labeling pipeline. To tackle these problems, we parameterize I(\u00b7, \u00b7) as a lightweight rewarder model R(xu, yu) = r, where a reward score r \u2208 [0, 1] represents the label quality and is defined in Sec. 3.1. In Figure 3(b), the pre-trained R can evaluate the label quality comprehensively based on both xu and yu, rather than solely depended on yu. And we define L in a simple and general form:\nL = 1 BL BL\u2211 i=1 H ( yli, fS ( \u03c9(xi) )) \ufe38 \ufe37\ufe37 \ufe38\nLL\n+ 1\nBU BU\u2211 j=1 I(R(xuj , yuj ) > \u03c4)H ( y\u0302uj , fS ( \u03c9(xuj ) )) \ufe38 \ufe37\ufe37 \ufe38\nLU\n+Laux, (3)\nwhere Laux denote training losses of the rewarderR with generator G discussed in Sec. 3.2."
+        },
+        {
+            "heading": "3 SEMIREWARD",
+            "text": "Here, we introduce SemiReward for high-quality pseudo-label selection in general SSL tasks. In Sec. 3.1, we first define reward score as a pseudo-label evaluation metric and approximate it by a rewarder model. Then, Sec. 3.2 describes how to learn the rewarder through a two-stage pipeline."
+        },
+        {
+            "heading": "3.1 MEASUREMENT OF LABEL QUALITY",
+            "text": "Unlike popular ranking loss (Ouyang et al., 2022) in reinforcement learning (RL) (Schulman et al., 2017), we define a continuous metric of pseudo-label quality based on label similarity.\nDefinition 3.1 (Reward Score). The reliability of a pseudo label yu of data x is measured by label similarity S(\u00b7, \u00b7) with its ground truth label yl, which can also be approximated by a rewarderR(\u00b7, \u00b7):\nr(yu, yl) = S(yu, yl) ' R(x, yu) \u2208 [0, 1]. (4) The ideal reward score should satisfy monotonicity and smoothness (not increasing dramatically) and strive to meet the trend of calibration curve (Clark, 1975), where a lower reward confidence indicates poorer label quality. Therefore, we define the label similarity based on cosine similarity.\nDefinition 3.2 (Label Similarity). Given vectorized label y \u2208 RC , the label similarity between yi and yj is defined as scaled cosine similarity:\nS(yi, yj) = yi \u00b7 yj\n2 \u2016yi\u2016 \u2016yj\u2016 + 0.5 \u2208 [0, 1]. (5)\nFigure 4(a) verifies the properties of r(yu, yl) by changing the label similarity metrics to negative L2 distance and JS-divergence, and it shows that Eq. (5) can be the better choice."
+        },
+        {
+            "heading": "Calibration Curve",
+            "text": "To support both classification and regression tasks, we determine the encoding strategies to ensure that used labels are in vector format. This paper mainly discusses the cases of one-hot classification or single attribute regression. Given a raw scalar label, it can be encoded in \u201cone-hot\u201d format for classification. As for a raw regression label y \u2208 [0, C], we propose a soft one-hot encoding that equally divides the scalar into C bins and sets the k-th position in the vector to 1 + (y \u2212 k), where\nk \u2264 y < k+ 1, while other positions are set to 0. Afterward, we verify Eq. (4) with regression tasks in Figure 5 and find that it can serve as a reliable metric and reduce the confirmation bias of raw pseudo labels. As for multi-label scenarios (Lin et al., 2017), we first encode raw labels for each task separately and then concatenate them as the final labels.\nRewarder. As defined in Eq. (4), R(\u00b7, \u00b7) tries to solve a regression problem: the model should extract semantic information of yl from xu and tell the similarity between xu and yu according to their semantic correlation. As shown in Figure 6,R is designed as:\nR(xu, yu) = Sigmoid ( MLP ( CA ( Emb(f(xu)),Emb(yu) ))) , (6)\nwhere the input data and label are first linear embedded to the same dimension by Emb(\u00b7), and their correlations are modeled by a cross-attention module CA(\u00b7, \u00b7) and a MLP(\u00b7) module, then predict the reward score through Sigmoid function. Notice that xu is converted to lastlayer features by a pre-trained backbone model f(\u00b7), e.g., an image in H \u00d7W resolutions will be encoded as a Ddim feature zu \u2208 RD, which is easy for the network to capture high-level information directly related to yl. As shown in Figure 4(b), we ablate modules in R and find that CA(\u00b7, \u00b7) is the most essential component to learn credible reward scores. Meanwhile, the backbone f(\u00b7) is also important to provide highly embedded features, or it will be hard and costly to learn such information by the lightweightR. On the contrary, the number of layers in MLP(\u00b7) has less impact on performance, as verified in Figure 4(c). As for implementation, R uses a 2-layer MLP(\u00b7) withD = 128 and we simply apply the inherent teacher fT as f(\u00b7) in Eq. (6)."
+        },
+        {
+            "heading": "3.2 EFFICIENT TWO-STAGE TRAINING OF SEMIREWARD",
+            "text": "Synchronizing with self-training paradigms, we train the rewarderR in a supervised manner with a reward training setDR = {\u03c9(xri ), yri } NR i=1, where y\nr is considered as the ground-truth label here. As discussed in Sec. 2, we expect a reliableR to filter pseudo labels to ensure high label quality to train fS . Hence, we design a two-stage training paradigm forR in Figure 7, and DR will be dynamically constructed by DL and D\u0302U . View Appendix B for a detailed analysis of training processes. Generator. To trainR, we first design a generator G(xu) = yf \u2208 RC to generate pseudo labels but not participate in the training process of fS . Thus, we denote them as \u201cfake labels\u201d. Similar to Chen et al. (2022a), G decouples the training of fS andR to avoid confirmation bias. Meanwhile, the fake labels generated by G gradually change from random to accurate, which helps R steadily fit reward scores on high-quality pseudo-label distributions. Its network is also as lightweight asR, containing the pre-trained f followed by a sample embedding Emb(\u00b7) and a MLP(\u00b7) module in Figure 6. Pre-training Rewarder. R and G will be trained with fixed DR = DL before T training iterations. In the first stage, our main optimization goal is to approximate the ground truth reward scores with a wide range of fake labels without affecting the training of fS . Thus,R does not select pseudo labels for the student fS , and we introduce G(xr) = yf to generate fake labels that gradually get better. We compute losses forR and G alternatively as the auxiliary loss Laux = LR + LG :\nLR = 1\nBR BR\u2211 i=1 `2 ( R ( xri ,G(xri ) ) ,S ( yri ,G(xri ) )) , (7)\nLG = 1\nBR BR\u2211 i=1 `2 ( R ( xri ,G(xri ) ) , 1 ) , (8)\nwhere R and G denote forward without requiring gradients, which prevents two losses from interfering with each other. In implementations, we adopt two independent optimizers for R and G for"
+        },
+        {
+            "heading": "Label",
+            "text": "convenience, e.g., Adam (Kingma & Ba, 2014). Therefore,R and G only run forward and backward once for rewarder training in each iteration, which costs ignorable extra overheads in SSL training.\nSemi-supervised training Rewarder. In the second stage, the core objective is to optimize fS usingR to filter high-quality labels as in Figure 3(b). As fS is continuously optimized onDL\u222aD\u0302U , R should also be efficiently optimized to suppress the confirmation bias in Pseudo Labeling. i.e., fS is easily to overfit to incorrect pseudo-labels. We tackle this dilemma with a simple sub-sampling strategy: we further trainR and G by Eq. (7) and Eq. (8) with randomly sub-sampled dataset DR \u2282 DL \u222a D\u0302U , where NR = \u03bb(NL + N\u0302U ) and D\u0302U is the reliable pseudo-label set selected by DR. We adopt \u03bb = 0.1 by default. This strategy combines two merits: (i) training R can be as fast as the first stage; (ii) similar to 10-fold cross-validation, exploring different subsets to train R avoids overfitting by introducing more randomness. As shown in Figure 8(c), SemiRewarder achieves high sampling rates compared to two confidence-based baselines, which select high-quality pseudo labels after stage 1 in Figure 8(a) and will maintain the high quantity in stage 2 as shown in Figure 8(b)."
+        },
+        {
+            "heading": "4 EXPERIMENTS",
+            "text": ""
+        },
+        {
+            "heading": "4.1 EXPERIMENTAL SETUP",
+            "text": "Comparison Methods for Classification. In the context of classification tasks, we conducted experiments on 10 diverse datasets spanning three distinct modalities to assess the impact of integrating our SemiReward approach. All experiments are based on SSL benchmark USB (Wang et al., 2022a), which implement 14 SSL algorithms, including \u03a0 model Rasmus et al. (2015), Pseudo Label Lee et al. (2013), Mean Teacher Tarvainen & Valpola (2017), VAT Miyato et al. (2018), MixMatch Berthelot et al. (2019b), ReMixMatch Berthelot et al. (2019a), UDA Xie et al. (2020a), FixMatch Sohn et al. (2020), Dash Xu et al. (2021), CoMatch Li et al. (2021), CRMatch Fan et al. (2021), FlexMatch Zhang et al. (2021), AdaMatch Berthelot et al. (2021), and SimMatch Zheng et al. (2022). We rigorously compare various SSL algorithms from them, Softmatch, Freematch, and Flexmatch, constituting the previous state-of-the-art, dubbed as Previous SOTA. Also, we choose the basic method Pseudo Label (Lee et al., 2013; Arazo et al., 2020) to illustrate the role of our approach in unlocking potential. Initially, we assess the performance of these algorithms based on classification error rates and training convergence speed, establishing a performance baseline. Subsequently, we can introduce SemiReward into the workflow and conduct a comparative analysis.\nTask Settings for Classification. Here are tasks and specific settings on datasets of each modality. More information on datasets and experimental settings are detailed in Appendix A.1.\n(a) For CV tasks, our investigations featured the deployment of renowned and challenging datasets, including CIFAR-100 (Krizhevsky et al., 2009), STL-10 (Coates et al., 2011), EuroSAT (Helber et al., 2019), and ImageNet (Deng et al., 2009), with the ImageNet pre-trained Vision Transformers (ViT) (Dosovitskiy et al., 2021) or randomly initialized ResNet-50 (He et al., 2016) architectures serving as the backbone.\n(b) In the domain of NLP, we leveraged 3 datasets, including AG News (Zhang et al., 2015), Yahoo! Answers (Chang et al., 2008), and Yelp Review (yel, 2014), employing the self-supervised pretrained Bert (Devlin et al., 2018) as the backbone.\n(c) For audio classification, we study the applications of SSL on 3 datasets, including UrbanSound8k (Salamon et al., 2014), ESC-50 (Piczak, 2015), and FSDNoisy18k (Fonseca et al., 2019), where Hubert (Hsu et al., 2021) played the role of the pre-trained backbone.\nComparison Methods and Task Settings for Regression. To demonstrate the versatility of our approach, we extend our investigation to regression tasks alongside our primary focus. Specifically, we select Pseudo Label and its counterparts, namely the \u03a0 model (Rasmus et al., 2015), CRMatch (Fan et al., 2021), and Mean Teacher (Tarvainen & Valpola, 2017), as our baseline methods. We then evaluate their performance in comparison to the integration of SemiReward on 3 regression datasets. The first two datasets, IMDB-WIKI (Rothe et al., 2018) and AgeDB (Moschoglou et al., 2017) with only 1% labeled data, perform face age regression. Additionally, we conduct a rotation angle estimation task using our custom RCF-MNIST dataset (Yao et al., 2022), featuring a more complex CIFAR10 (Krizhevsky et al., 2009) background to align the samples closely to natural images and make the task more difficult. Experimental results are assessed based on two standard regression metrics: Mean Absolute Error (MAE) and Root Mean Square Error (RMSE).\nSemiReward Implementations. To train the rewarderR and generator G, we apply Adam (Kingma & Ba, 2014) optimizer with a fixed learning rate of 0.0005 in two-stage training for all tasks. We set the scheduler\u2019s T to 10% of total SSL training iterations. During the inference process ofR, we use the average reward score as the threshold \u03c4 to filter pseudo labels dynamically. More specific hyperparameters are provided in Appendix A.2."
+        },
+        {
+            "heading": "4.2 COMPARISON RESULTS ON SEMI-SUPERVISED BENCHMARKS",
+            "text": "Results on Classification. Table 1 demonstrates the substantial performance improvements achieved by plugging SemiReward into representative SSL algorithms across diverse modalities, with notable impacts in audio-related tasks. When augmenting Pseudo Label with SemiReward, it outperforms SoftMatch on UrbanSound8k with 100 labeled instances and achieves an average performance gain of 4.11% on ESC-50 with 250 labels. This enhancement effectively guides basic models, e.g., Pseudo Label, toward more favorable local minima. The inclusion of SemiReward consistently expedites model convergence, as evidenced by the \u201cavg. speedup\u201d column in Table 1, with acceleration factors ranging from \u00d71.5 to \u00d73.53 in most cases. Total training times are shown in C.1. Meanwhile, the early stopping technique reduces training costs while maintaining desired performance, representing a valuable trade-off. Furthermore, using SemiReward can reduce training times and achieve lower error rates on Imagenet, as shown in Table 3. Notably, FlexMatch, in conjunction with SemiReward, surpasses previous SOTA methods, such as Freematch and Softmatch. The basic method with consistency regularization, FixMatch, also demonstrates substantial performance improvements when combined with SemiReward.\nResults on Regression. We compare CRMatch, Mean Teacher, \u03a0 model, Pseudo Label, and Pseudo Label added to SemiReward on RCF-MNIST, IMDB-WIKI, and AgeDB. The results are reported in Table 2. From the results of RMSE and MAE, SemiReward has great gain. Especially on RCF-\nMNIST dataset, SemiReward can yield lower RMSE to 0.9 and MAE to 0.99, which is even better than the supervised baseline. On the contrary, CRMatch performs poorly on various data sets, inferior to other SSL baselines, indicating the strong effect of confirmation bias."
+        },
+        {
+            "heading": "4.3 ANALYSIS AND ABLATION",
+            "text": "This section presents experimental analysis to demonstrate the functionality of SemiReward.\nContribution of Each Component. We do extensive ablation experiments and place them in Appendix B and obtain the following observations: (i) The number of MLP layers has little impact on the model\u2019s performance. The key lies in the design of the attention mechanism. (ii) Table 4 shows that replacing the used MSE (`2) loss with BCE loss will make it difficult for the rewarder to converge and achieve poor scoring performance. Also, we find a scheduler that exceeds the reasonable setting range will cause the rewarder to be trapped in the wrong direction. The empirical starting time T can be 10%. (iii) Comparing the training objectives of several models, we find that cosine similarity helps form the correspondence between pseudo labels and scores. (iv) Using the mean of reward scores to dynamically\nadjust the threshold \u03c4 performs much better than a fixed value in Figure A1.\nSimplicity of SemiReward. Table 5 shows SemiReward is very streamlined regarding parameters and FLOPs based on ViT-S-P4-32 on the CIRFA-100 dataset. Compared with the student model, our model accounts for a very low proportion of the training process, only requiring 1.28% and 0.056% extra parameters and FLOPs and computing two times forward and one times backward propagation in each iteration.\nRegression Tasks with SemiReward. Existing consistency regularization methods are unsuitable for regression tasks, with CRMatch being the only open-source alternative. However, CRMatch consistently yields subpar results, primarily due to confirmation bias (Arazo et al., 2020). Simultaneously, we note that in imbalanced regression datasets like IMDB-WIKI and AgeDB, SemiReward encounters challenges in enhancing the selection of superior pseudo-labels, hampering improved model convergence. Conversely, in tasks with balanced data distributions, such as rotation angle estimation, SemiReward demonstrates notably superior performance. This phenomenon may be attributed to the inherent difficulty in accurately labeling data points located at the distribution\u2019s extremes in imbalanced datasets, leading to partial performance degradation in such scenarios."
+        },
+        {
+            "heading": "5 RELATED WORK",
+            "text": "Pseudo Label (Lee et al., 2013) pioneered the generation of artificial labels for unlabeled data with models trained on labeled data, followed by consistency regularization (Samuli & Timo, 2017) aiming to ensure consistent predictions for different views of the same data, which are two foundational techniques in SSL. However, confirmation bias (Arazo et al., 2020; Chen et al., 2022a) caused by inaccurate pseudo labels limits SSL performances. Subsequent works mainly address this problem from three aspects: (i) selecting high-quality pseudo labels, (ii) generating high-quality pseudo labels, (iii) enhancing the tolerance of inaccurate labels. View Appendix D for detailed backgrounds.\nImproving Quality of Pseudo-labeling. Confidence-based thresholding techniques (Xie et al., 2020a; Xu et al., 2021) are designed to determine high-confidential pseudo labels. FixMatch (Sohn et al., 2020) relies on a fixed threshold but limits usage of more unlabeled data and leads to imbalanced pseudo-labels. FlexMatch (Zhang et al., 2021) employs class-specific thresholds to alleviate class imbalance by reducing thresholds for challenging classes. SoftMatch (Chen et al., 2022c) explores a trade-off between pseudo-label quantity and quality with a truncated Gaussian function to weigh sample confidence. FreeMatch (Wang et al., 2022b) introduces adaptive confidence thresholds based on the model\u2019s learning state. Moreover, contrastive learning is applied to thresholding methods, e.g., adaptive contraction of the class space in ShrinkMatch (Yang et al., 2023) and the semantic similarity for mutual calibration in SimMatch (Zheng et al., 2022). However, these methods broadly enhance classification tasks but are inapplicable in regression tasks. CR-Match (Fan et al., 2021) presents FeatDistLoss, which also works for regression but does not yield satisfactory results.\nImproving Tolerance of Inaccurate Labels. Early SSL models exhibit heightened sensitivity to low-quality pseudo-labels, necessitating the enhancement of the model\u2019s error tolerance and label quality. The \u03a0 model (Rasmus et al., 2015) introduces dual perturbations to input samples, while Temporal Ensembling (Samuli & Timo, 2017) maintains an EMA of label predictions for each training example. Mean Teacher (Tarvainen & Valpola, 2017) takes a step further by averaging model weights, reducing label dependency during training. Meanwhile, another line of research assumes the labeled datasets contain noisy labels and designs robust training strategies to discriminate inaccurate labels (Xu et al., 2021; Li et al., 2019a). Unlike them, SemiReward employs a two-stage training approach to learn reward scores, separating rewarder and student model training.\nReward Modeling A reward function is crucial in conveying complex objectives to agents in reinforcement learning (RL) (Christiano et al., 2017). Most reward models (Leike et al., 2018) are supervised by classification losses, e.g., ranking loss (Bradley & Terry, 1952), on constructed preference datasets from users. SURF (Park et al., 2022) adopts confidence-based pseudo-labeling to learn a reward function for preference-based RL. Recently, InstructGPT (Ouyang et al., 2022) provided a fine-tuning paradigm for aligning pre-trained large-scale language models (LLM) to human preference. However, reward modeling is designed and used for RL optimizations (Schulman et al., 2017) but has not been introduced to SSL scenarios."
+        },
+        {
+            "heading": "6 CONCLUSION AND LIMITATION",
+            "text": "Contributions and Social Impacts This paper introduces SemiReward, a general and pluggable framework for SSL scenarios that evaluates and selects high-quality pseudo labels to boost the performance and convergence speeds of self-training techniques. The core idea is to select accurate pseudo labels by a reward score reflecting pseudo-label quality based on unlabeled data and pseudo labels. To achieve this, a simple but efficient rewarder network is designed to model correlations and predict credible reward scores, which is trained online in a two-stage pipeline assisted by a generator network to avoid confirmation bias. Extensive experiments on diverse classification and regression datasets demonstrate consistent performance gains and convergence speedup when applying SemiReward to popular SSL algorithms. We believe that SemiReward will be regarded as a new paradigm for measuring pseudo-label quality compared to previous confidence-based strategies and will inspire the SSL community to design effective methods in many application scenarios.\nLimitations and Future Works We hope this work might be valuable and inspire the SSL community and list some limitations and future directions: (1) The defined reward scores and rewarder only support sample-level labels, while fine-grained labels have been widely used in many scenarios requiring token-level rewarding, e.g., object detection (Liu et al., 2021). (2) Despite the rewarder predicting a reliable indicator for high-quality labels, it requires repeating the teacher model and the rewarder several times to get reliable pseudo labels (discussed in Appendix B.3). It costs extra computational costs and might lead to performance decreasing at the end of training in Figure 2. We may further design a more efficient sampling and selection pipeline for SSL training. (3) In real-world scenarios, it might be useful to pre-train a general rewarder with large-scale pre-trained backbones on open-source datasets (Yalniz et al., 2019). Then, transfer it to specific SSL downstream tasks. (4) In RL scenarios, SemiReward might be useful to popular RLHF (Christiano et al., 2017; Ouyang et al., 2022) and LLM instruction alignment tasks, combining SSL with reward modeling for RL training as Park et al. (2022). (5) Extending SemiReward with adaptive data augmentations, e.g., automatic mixup (Liu et al., 2022; Qin et al., 2024), to further enhance SSL performance."
+        },
+        {
+            "heading": "ACKNOWLEDGEMENT",
+            "text": "This work was supported by National Key R&D Program of China (No. 2022ZD0115100), National Natural Science Foundation of China Project (No. U21A20427), and Project (No. WU2022A009) from the Center of Synthetic Biology and Integrated Bioengineering of Westlake University. This work was done when Weiyang Jin, Zedong Wang, and Fang Wu interned at Westlake University. We thank the AI Station of Westlake University for the support of GPUs and all anonymous reviewers for polishing the writing of the manuscript."
+        },
+        {
+            "heading": "APPENDIX",
+            "text": "The appendix is structured as follows:\n(A) In Appendix A, we provide implementation details are provided including dataset settings, hyperparameter settings, and training schedule.\n(B) In Appendix B, we describe extensive ablation studies presented analyzing the impact of different architectural choices, training techniques, and loss functions.\n(C) In Appendix C, we provide additional experimental results, including detailed training time statistics across different datasets and settings.\n(D) In Appendix D, we further provide extensive related work to highlight connections and differences to the proposed approach.\n(E) In Appendix E, we provide pseudocode for training pipelines of SemiReward.\nA IMPLEMENTATION DETAILS"
+        },
+        {
+            "heading": "A.1 DATASET SETTING",
+            "text": "For a fair comparison, we train and evaluate all methods with the same ViT backbones and hyperparameters in Table A3. As for CV, we evaluate SemiReward on common benchmarks: CIFAR100 (Krizhevsky et al., 2009), Euro-SAT (Helber et al., 2019), STL-10 (Coates et al., 2011), and ImageNet (Deng et al., 2009) for image modality. Euro-SAT contains Sentinel-2 satellite images covering 13 spectral bands, which is not a natural image dataset as the other three. As for NLP, AG News (Zhang et al., 2015) (news topic material), Yahoo! Answer (Chang et al., 2008) (topic classification), and Yelp Review (yel, 2014) (sentiment classification) to evaluate SSL algorithms on more fine-grained sentiment NLP classification tasks. For audio classification, we choose UrbanSound8k (Salamon et al., 2014) with a maximum length of 4 seconds, ESC-50 (Piczak, 2015) with a maximum length of 5 seconds, and FSDNoisy18k (Fonseca et al., 2019) with the length between 3 seconds and 30 seconds.\nTable A1: Settings and details classification datasets in various modalities. Domain Dataset #Label per class #Training data #Validation data #Test data #Class\nCIFAR-100 2 / 4 50,000 - 10,000 100 CV STL-10 4 / 10 5,000 / 100,000 - 8,000 10\nEuroSat 2 / 4 16,200 - 5,400 10 ImageNet 100 1,28,167 - 5,0000 1000\nYelp Review 50 / 200 250,000 25,000 50,000 5 NLP AG News 10 / 50 100,000 10,000 7,600 4\nYahoo! Answer 50 / 200 500,000 50,000 60,000 10 ESC-50 5 / 10 1,200 400 400 50\nAudio UrbanSound8k 10 / 40 7,079 816 837 10 FSDnoisy18k 52-171 1,772 / 15,813 - 947 20\nTable A2: Settings and details of regression datasets in CV. Domain Dataset Task #Label arrange #Training data #Validation data\nRCF-MNIST Rotation [0, 360] 50,000 10,000 CV IMDB-WIKI Face age [1, 101] 167,562 23,938\nAgeDB Face age [1, 101] 106,750 15,250\nWe conducted age regression experiments on two datasets, IMDB-WIKI (Rothe et al., 2018) and AgeDB (Moschoglou et al., 2017) with 1% labels. AgeDB contains images of various celebrities, such as actors, writers, scientists, and politicians, and each image is annotated with identity, age, and gender attributes. The minimum and maximum ages are 1 and 101, respectively. The IMDB-WIKI dataset contains around 167,562 face images. Each image has an age and gender label associated with it, and the age range is 1\u223c101. The task here is to extract human features so that the model returns a continuous real value to predict age. Furthermore, we performed a rotation angle estimation task on our custom RCF-MNIST (Yao et al., 2022) dataset, which features a more intricate background CIFAR-10 (Krizhevsky et al., 2009), rather than the simple three-color backgrounds, to align the dataset\u2019s images more closely with natural images and make it more difficult. This dataset\ncan be solved with rotation features of objects except for the background image, allowing the model to regress a rotation angle of the foreground object."
+        },
+        {
+            "heading": "A.2 HYPERPARAMETER AND TRAINING SETTINGS",
+            "text": "Basic Settings. As for classification tasks, regarding hyperparameter settings of SSL classification benchmarks constructed in USB (Wang et al., 2022a), we adopted the original settings with pre-trained Transformers as the backbone and made a few adjustments to adapt to SemiReward, as shown in Table A3. The total training iterations are set to 220, and an early stop technique is used for calculating the convergence times. Meanwhile, we use the full experimental settings in FlexMatch (Zhang et al., 2021) for ImageNet, which uses 100 classes per class with ResNet-50 as the backbone. All methods are trained from scratch by SGD (Loshchilov & Hutter, 2016) optimizer with a momentum of 0.9, a basic learning rate of 0.03, and a cosine learning rate decay as USB. Note that Semi-AVES (Su & Maji, 2020) uses 224\u00d7 224 input resolutions and ViT-S-P16-224 with the labeled and unlabeled batch size of 32, and other settings are the same as STL-10. We apply `1 loss as the basic regression loss. As for regression tasks, we follow CV settings in USB to construct similar experiment settings for IMDB-WIKI (Rothe et al., 2018) (224 \u00d7 224 resolutions as SemiAVES in USB), AgeDB (Moschoglou et al., 2017) (as Semi-AVES), RCF-MNIST (Yao et al., 2022) (32 \u00d7 32 resolutions as CIFAR-100). All experiments are implemented with PyTorch and run on NVIDIA A100 GPUs, using 4GPUs training by default.\nTable A3: Hyper-parameters and training schemes of SSL classification tasks based on USB. Domain CV NLP Audio Dataset CIFAR-100 STL-10 Euro-SAT AG News Yahoo! Answer Yelp-5 UrbanSound8k FSDNoisy ESC-50 Image Size 32 96 32 \u2212 \u2212 Max Length \u2212 512 4.0 5.0 5.0 Sampling Rate \u2212 \u2212 16,000 Model ViT-S-P4-32 ViT-B-P16-96 ViT-S-P4-32 BERT-Base HuBERT-Base Weight Decay 5e-4 1e-4 5e-4 Labeled Batch size 16 4 8 Unlabeled Batch size 16 4 8 Learning Rate 5e-4 1e-4 5e-5 5e-5 1e-4 5e-5 5e-5 5e-4 1e-4 Layer Decay Rate 0.5 0.95 1.0 0.65 0.65 0.75 0.75 0.75 0.85 Scheduler \u03b7 = \u03b70 cos( 7\u03c0k16K ) Model EMA Momentum 0.999 Eval EMA Momentum 0.999 Weak Augmentation Random Crop, Random Horizontal Flip \u2212 Random Sub-sample Strong Augmentation RandAugment(Cubuk et al., 2018) Back-Translation (Xie et al., 2020a) Random Sub-sample, Gain, Pitch, Speed\nTable A4: Hyper-parameters and training schemes of SemiReward for various tasks and modalities. Hyperparameter Classification Regression\nCV NLP Audio RCF-MNIST IMDB-WIKI AgeDB Threshold \u03c4 Average Top-k Average Optimizer Adam Learning rate 0.0005 Loss MSE Embedding dim. 128 MLP Layer-number 2 Schedule T 10% of total iterations Sun-sampling \u03bb 0.1\nSemiReward Settings. In Table A4, we provide detailed hyper-parameters and settings for SemiReward training. The two-stage online training of the rewarder R and generator G is trained by Adam (Kingma & Ba, 2014) optimizer with a learning rate of 0.0005 for all tasks, independent of the student model\u2019s optimization. For each training step after T iterations, R infers once and selects high-quality pseudo labels for the student with the average reward score as the threshold \u03c4 , except for using top-k highest pseudo-labels for RCF-MNIST with k = 16. The generator G utilizes a 4-layer MLP (only containing FC layers and ReLU) with 256, 128, and 64 hidden dimensions."
+        },
+        {
+            "heading": "B ABLATION STUDY DETAILS",
+            "text": ""
+        },
+        {
+            "heading": "B.1 CALIBRATION CURVE",
+            "text": "To explore the properties of our proposed reward score in Sec. 3.1, we visualize the correlation between ground truth or learned reward scores and the quality of pseudo labels according to the\nconcept of calibration curves (Clark, 1975) in Figure 4 and Figure 5. Our goal in Eq. 4 is to learn a mapping from pseudo-labels to scores, which can be approximately linear or positively correlated and will have good discrimination and reliability in evaluating pseudo-label qualities. The data will not be classified as particular points within a small range, leading to excessive random error interference.\nTherefore, we plan to analyze the reward score from four aspects: the threshold of reward score screening, the pseudo-label accuracy, and the confidence of the reward score. Based on the direct proportional relationship, we explore whether the model can achieve the required effect under different module designs and use this to illustrate through ablation experiments and theoretical analysis. Concretely, for each pseudo label that passes through the rewarder, we will return a corresponding score value and calculate the accuracy of the pseudo-labels after different thresholds by setting thresholds for different score values to draw a graph. In Figure 4(a), when calculating similarity, there is a sudden accuracy drop near a threshold value close to 1. This is caused by adding epsilon in numerical calculations to prevent division by zero errors in PyTorch implementation."
+        },
+        {
+            "heading": "B.2 NETWORK ARCHITECTURE OF REWARDER",
+            "text": "From the model design perspective, our rewarder network mainly incorporates a cross-attention mechanism to extract the information interaction between labels and data. On the other hand, it uses several layers of MLP to deepen feature processing further. Therefore, we conducted ablation experiments on CIRFA-100 with 400 labels to explore the impact of these mechanisms.\nTable A5: MLP number stands for the FC layers in the rewarder.\nattention MLP Accuracy(%) iteration X 1 83.35 100352 iters X 2 83.26 129024 iters X 3 83.32 145408 iters\n1 81.99 194559 iters 2 82.20 194559 iters 3 82.25 204799 iters As presented in Table A5, we find that the incorporation of the cross-attention mechanism within the architectural module exerts a profound influence on both the pace of convergence and the ultimate efficacy of the model. Subsequent to the integration of a more profound MLP, the performance of the rewarder in the context of SemiReward exhibits no statistically significant enhancements. Instead, it is discernible that the augmentation has engendered a deceleration in the training process. Drawing upon our meticulous calibration curve analysis in Figure 4 and Figure 5, it becomes readily apparent that the attention mechanism assumes a paramount role in evaluating the intrinsic performance of the rewarder model and the holistic training regimen. Its profound impact is manifest in the capability to orchestrate a seamless and continuous spectrum for score mapping of pseudo labels, as opposed to engendering numerous isolated points that could precipitate a distortion in the alignment between accuracies and reward scores."
+        },
+        {
+            "heading": "B.3 SCHEDULER FOR SEMIREWRD",
+            "text": "We conducted experiments on the CIFAR-100 with 400 labels and ESC-50 with 250 labels datasets. The model training effects under different start timings were counted. Start timing represents the time node from pre-training (stage-1) to semi-supervised training (stage-2) of the rewarder, indicating that SemiReward will utilize high-quality pseudo labels to ensure the further convergence of the student model and itself. This is what we define as SemiRewards scheduler.\nTable A6: The starting time is the comparison of the round in which training starts to the total rounds. At the same time, we measured the convergence time and accuracy.\nStart Timing CV AudioAccuracy(%) iteration Accuracy(%) iteration 0% 80.35 159743 iters 62.86 96255 iters 5% 82.11 169984 iters 65.59 65535 iters 10% 83.35 100352 iters 67.42 38911 iters 15% 83.18 174080 iters 67.10 69631 iters\nIt can be seen that when switching at 0%, the model achieves poor results on the two data sets. However, there is experience value in the range of 5%-15%, and the robustness to nodes is maintained. In fact, for the scheduler selection of the model, the intuitive understanding is that turning\nout of range is more likely to produce poor results. This is because premature means that the pretraining phase has not been completed, causing problems with the score mapping during the initial screening and causing subsequent online training to learn worse score targets. Too late will make the model converge slowly and easily fall into local optimality, making it difficult to achieve favorable performance in the early stage.\nTable A7: Analysis of selecting pseudo labels on CIFAR-100 (400 labels) with or without decay. Top-1 accuracy (%) and the training speedup times are reported.\nMethod FlexMatch Baseline 82.12 (\u00d71.0) +Decay 79.42 (\u00d71.4) Semireward 82.90 (\u00d72.7) +Decay 83.25(\u00d72.2) For the screening phase, we employed a multi-forward approach to generate multiple pseudo-labels for a given dataset, facilitating iterative screening. The parameter decay denotes the frequency of forward passes. In the subsequent stages, we introduced an annealing strategy, dynamically adjusting decay throughout the training process. Specifically, we divided the total training steps by the current iteration, rounding up the result as the updated number of forward passes. To underscore that the performance enhancement of our algorithm extends beyond the impact of decay alone, we augmented the baseline algorithm with multiple forward passes and conducted comparative experiments A7. Our findings revealed that the algorithm achieves peak performance when decay and reward-based screening collaborate."
+        },
+        {
+            "heading": "B.4 LOSS FOR SEMIREWRD",
+            "text": "In the ablation experiment, we not only compared the results of replacing MSE (`2) loss with BCE loss. We also changed the algorithm of SemiReward total loss. Initially, two independent losses were used for gradient backpropagation, but we also considered the impact of weighting on the overall model training. We conducted ablation experiments on CIRFA-100 with 400 labels to compare their difference and find that the proposed MSE loss yields the best results.\nTable A8: Analysis of the loss types and loss weight for the proposed reward loss.\nMSE BCE Weighted Accuracy(%) iteration X \u2212 83.35 100352 iters X 0.1 80.99 204799 iters X 0.5 81.25 204799 iters X 0.9 79.85 204799 iters\nX \u2212 82.34 153600 iters X 0.1 80.02 196608 iters X 0.5 81.11 194559 iters X 0.9 81.01 196608 iters As shown in Table A8, we can find that the weighted loss is more negative for model training, which may cause the rewarder to not converge and introduce many low-quality labels into the training process. Therefore, the importance of independent loss design can be seen here. On the other hand, BCE loss is also difficult to train the rewarder to convergence. This may be because our scoring model essentially follows the idea of regression tasks."
+        },
+        {
+            "heading": "B.5 TARGET FOR SEMIREWRD",
+            "text": "As for the reward score, i.e., the target of the rewarder model, its distance measurement is essential. We pursue that the scored pseudo-standards can be distributed evenly on the accuracy-score mapping with favorite properties mentioned in Sec. 3.1. Therefore, we constructed different score labels using different distance measures to train the rewarder and inferred why cosine similarity is an acceptable distance measure. We conducted ablation experiments on CIRFA-100 with 400 labels to compare the differences. As analyzed of Sec. 3, it can be seen that the divergence method represented by JS\nTable A9: Analysis of the impact of training scoring targets calculated using different distance metric methods on the model, including using L2 distance and cosine similarity or not in SemiReward.\nCosine Similarity L2 Distance Accuracy(%) iteration X 83.35 100352 iters\nX 80.23 202751 iters \u2212 \u2212 82.25 204799 iters\ndivergence has serious failures in the thinking of the calibration curve. This is because JS divergence may cause the scores of some tags to be too concentrated so that bad labels with similar scores will be selected as reliable labels. In Table A9, we found that the target score derived from the negative L2 distance will cause the filtering ability of the rewarder to decline rapidly so that many low-\nquality labels are selected, causing the training process of the student model trapped in relatively low accuracy."
+        },
+        {
+            "heading": "B.6 THRESHOLD FOR SEMIREWRD",
+            "text": "In Appendix A1, we ablate the thresholding strategy for SemiReward, which compares the average thresholding with several fixed threshold \u03c4 settings, including 0.5, 0.7, and 0.9. The red dotted line denotes the result of the average strategy. In the context of reward score threshold-based filtering, it becomes evident that the fixation of this threshold engenders a multitude of challenges. During the training of SSL, employing a static threshold for pseudo-label selection poses prominent challenges (Zhang et al., 2021). During the early epochs of training, a model is still in its nascent state of underfitting and unstable. Setting a high threshold during these phases can inadvertently discard a substantial portion of potentially informative pseudo-labels. Such an action can curtail the model\u2019s ability to learn from these early indicators, potentially decelerating the overall convergence trajectory.\n0.5 0.6 0.7 0.8 0.9 Reward Threshold\n16.8\n17.0\n17.2\n17.4\n17.6\nEr ro\nr\nFixed Threshold Average Value Threshold\nFigure A1: Thresholding \u03c4 for reward scores with adding SemiReward to FlexMatch on CIFAR-100 with 400 labels. Conversely, as training progresses and the model refines its internal representations, a static low threshold may fall short in filtering out subpar-quality pseudo-labels. This introduces the hazard of the model overfitting these less reliable markers, jeopardizing its generalization capabilities. We advocate for a dynamic thresholding strategy grounded in averaging principles to address these challenges. Instead of adhering to a rigid threshold, our approach recalculates the threshold value within each mini-batch, considering the current quality distribution of the pseudo-labels. Such a mechanism ensures consistent retention of high-quality pseudo-labels throughout the training lifespan while effectively sidelining low-quality ones. Our empirical evaluations underline the efficacy of this method, not only amplifying the model\u2019s rate of convergence but also bolstering its performance on out-of-sample evaluations.\nMethod FlexMatch+SR Coupled Training 82.12 (\u00d71.0) +Gradient Ascent 82.23 (\u00d71.2) Decoupled Training 83.11 (\u00d72.2) +Gradient Ascent 83.25(\u00d71.7)\nTable A10: Analysis of two training processes and the gradient accent of pseudo labels on CIFAR-100 (400 labels). Top-1 accuracy (%) and the training speedup times are reported.\n0 20 40 60 80 100\nIteration (2048)\n66.0%\n68.0%\n70.0%\n72.0%\n74.0%\n76.0%\n78.0%\n80.0%\nA cc\nur ac\ny\nCoupled Decoupled\n(a) Coupled v.s. Decoupled\n20 40 60 80 100\nIteration (2048)\n40.0%\n45.0%\n50.0%\n55.0%\n60.0%\n65.0%\n70.0%\n75.0%\n80.0%\nA cc\nur ac\ny\nFake Labels Pseudo Labels\n(b) Pseudo labels v.s. Fake labels Figure A2: Analysis of SR training on CIFAR-100 with FlexMatch. The mean and std of top-1 accuracy are plotted for (a) pseudo labels for the coupled and decoupled training and (b) pseudo and fake labels in the decoupled training."
+        },
+        {
+            "heading": "B.7 DECOUPLING OF STUDENT AND REWARDER TRAINING",
+            "text": "As discussed in Sec. 3.2, we decouple the training of the student model and the rewarder by introducing the Generator and two-stage training pipeline to prevent confirmation bias. Here, we analyze the two training processes to verify whether the decoupled two-stage training with the Generator is an essential design. The first type of training process is to optimize the student and the Rewarder together without the Generator, where the teacher model generates candidate pseudo labels for the student and the Rewarder, which we call coupled training. Contrastively, the proposed two-stage training is the decoupled training. There are two reasons for decoupling the training process of the student and the Rewarder. Firstly, the Rewarder requires diverse pseudo-labels as the training data to fit the ground truth reward scores rather than deterministic high-performance labels. Secondly, the student and the Rewarder might suffer from confirmation bias. To further enhance the generated pseudo labels for the student training, we also designed a gradient ascent trick. Given selected reliable pseudo labels, we can modify them to generate more high-quality pseudo labels (or fake labels) by maximizing the reward scores with a step of gradient ascent in the inference process of the Rewarder.\nAs shown in Table B.6, when using the coupled training of the student and the Rewarder, FlexMatch+SR yields worse performance than the baseline (82.12 vs. 82.20), and FlexMatch+SR with the gradient ascent can only obtain a limited performance gain and speedup over the baseline. As shown in Figure 2(a), selected pseudo labels in the coupled training are unstable and affected by the student model, while the decoupled training produces high-quality pseudo labels steadily. Meanwhile, the proposed two-stage training decouples the student and the Rewarder by the Generator (aiming to maximize the reward score). It achieves a great trade-off between performance gains and speedup. Further applying the gradient ascent to the decoupled training will yield a little performance gain with more extra computational costs and cause unstable training. As shown in Figure 2(b), the quality of fake labels is relatively diverse, and it is difficult to obtain high-quality labels steadily. Therefore, we intend to use the decoupled training process without the gradient ascent trick as the final design."
+        },
+        {
+            "heading": "C EXTENSIVE EXPERIMENT RESULTS",
+            "text": ""
+        },
+        {
+            "heading": "C.1 DETAILS IN SPEEDUP",
+            "text": "In Sec. 4, we give the average speed gain but not the specific training time. Table A11 gives the different training times corresponding to the nine sets of data sets in the three modes in the main text. We stipulate that the calculation is on a single NVIDIA A100 GPU to carry out relevant statistics, and the reported unit is the total hours."
+        },
+        {
+            "heading": "C.2 CAPACITY OF SEMIREWARD",
+            "text": "From Table 1 and Table A11. In a few situations, SemiReward did not reach full convergence in a shorter time frame for primitive SSL algorithms like Pseudo Label, especially when evaluated on certain datasets such as STL-10 and Euro-SAT. This may be attributed to the simplicity of those basic methods like pseudo-labeling and entropy regularization in SSL tasks, which do not guide the model effectively towards a better local minimum. In contrast, our SemiReward compensates\nfor these shortcomings and unveils the potential of unlabeled data, allowing the model to progress toward better local minima, albeit requiring more time. This represents a trade-off and specific decisions about early stopping times for the optimal balance between speed and quality."
+        },
+        {
+            "heading": "C.3 RESULTS FOR ADDITIONAL DATASETS AND MORE LABEL SETTINGS",
+            "text": "Due to the relatively antiquated nature and lower quality of the STL-10 dataset, our approach did not achieve optimal mean gain while emphasizing speed and lightweight characteristics. This can be attributed to the fact that we selected different random seeds multiple times, resulting in varied averages. Consequently, we have supplemented our study with datasets from the CV and NLP domains that exhibit superior performance in A12. In several settings of CIFAR-100, we have augmented the relevant tasks, as illustrated in A13, with the ImageNet pre-trained Vision Transformers (ViT) architecture serves as the backbone. Additionally, we have supplemented the data results for 1% and 10% labeled datasets (i.e., 13 and 128 labels per class) in A14. We find that applying the proposed SemiReward (+SR) upon FixMatch (Sohn et al., 2020) and CoMatch (Li et al., 2021) can achieve around 1.3% performance gains, and CoMatch+SR outperforms the current SOTA SimMatch (Zheng et al., 2022))."
+        },
+        {
+            "heading": "D EXTENSIVE RELATED WORK",
+            "text": ""
+        },
+        {
+            "heading": "D.1 SELF-TRAINING",
+            "text": "In semi-supervised learning (SSL), self-training frameworks (Rosenberg et al., 2005; Grandvalet & Bengio, 2004; Yarowsky, 1995) play a very important role in unlabeled data utilization. Then, pseudo-labeling (Lee et al., 2013), as one of the classic self-training ways, pioneered the generation of artificial labels for unlabeled data. However, this embodiment faces the need for high-quality labels due to the problem of confirmation bias (Arazo et al., 2020). Subsequent work will mainly address this problem from two perspectives: one is to design a class or combine multiple methods to improve the quality of pseudo-label generation and application, and the other is to consider enhancing the network\u2019s acceptance of pseudo-labels, that is, a small number of low-quality pseudo-labels will not affect the overall prediction of the network.\nConsistency Regularization. Samuli & Timo (2017) first proposed consistency regularization to ensure consistent predictions for similar data points, which has become a basic method for generating high-quality pseudo labels. Based on this, MixMatch (Berthelot et al., 2019b) and its variants (Berthelot et al., 2019a; Liu et al., 2023) performs data augmentation on unlabeled data, inputs multiple data into the same classifier, obtains different predicted classification probabilities, and uses a class method to make the average variance of multiple probability distributions smaller. UDA (Xie et al., 2020a) goes a step further and starts to use two branches of weak and strong augmented samples and regards the predictions of the weak augmentation branch as the target of the strong augmentation branch to improve the consistency of the pseudo-label and predictions. After that, ReMixMatch (Berthelot et al., 2019a) uses the distribution alignment method to encourage the marginal distribution of predictions for unlabeled data to be close to the marginal distribution of ground truth labels. Fixmatch (Sohn et al., 2020) designs a fixed confidence threshold to filter pseudo labels so that the high-quality pseudo-labels can be used in the SSL training process. The following works, like FlexMatch (Zhang et al., 2021), deeply explore the idea of confidence thresholds and\npropose curriculum learning to dynamically adjust the thresholds generated by pseudo labels based on the training process. Additionally, softmatch (Chen et al., 2022c) shows the trade-off between the quantity and quality of pseudo labels and also derives a truncated Gaussian function to weight sample confidence. Freematch (Wang et al., 2022b) proposes a free matching method that adaptively adjusts confidence thresholds based on the model\u2019s learning state. The above methods essentially follow the strategy of training teacher-student distillation. Even the most advanced methods still rely on the manual design of confidence thresholds for screening. Although Meta Pseudo Labels (Pham et al., 2021) proposes to generate more accurate pseudo labels with a meta learner through bi-level optimization, it doubles training times and requires large-scale teacher models. This is why we proposed SemiReward as a simple but efficient solution for pseudo-label selection.\nTolerance to Inaccurate Pseudo Labels. Early SSL models have a certain sensitivity to lowquality pseudo labels. Then, another aspect of work starts by improving the model\u2019s tolerance to errors or low-quality labels. \u03a0-Model (Rasmus et al., 2015) adds two different perturbations to an input sample, inputs the network twice to get the result, and then compares the consistency of the two results. This weakens the impact of low-quality labels but may be less efficient since two forward propagations are required to calculate the loss. Based on this, Temporal Ensembling (Samuli & Timo, 2017) maintains an EMA of label predictions on each training example and penalizes predictions that are inconsistent with this goal. Mean Teacher (Tarvainen & Valpola, 2017) further averages model weights instead of label predictions. This allows the use of fewer labels than sequential integration during training and also improves the accuracy of testing. Meanwhile, another branch of research assumes the labeled datasets are noisy and designs robust training or ad-hoc label selection policies to discriminate inaccurate labels (Xu et al., 2021; Li et al., 2019a; Tan et al., 2021)."
+        },
+        {
+            "heading": "D.2 DISAGREEMENT-BASED MODELS",
+            "text": "From the view of disagreement SSL, it is required to train two or three different networks simultaneously and label unlabeled samples with each other (Zhou & Li, 2010) so that they are less affected by model assumptions and loss functions. Co-training (Blum & Mitchell, 1998) assumes that each data point has two different and complementary views, and each view is sufficient to train a good classifier. Noisy Student (Xie et al., 2020b) is assigned pseudo-labels by a fixed teacher from the previous round, while (Yalniz et al., 2019) scales up this training paradigm to billion-scale unlabeled datasets. MMT (Ge et al., 2019), DivideMix (Li et al., 2019a) learn through multiple models or classifiers through online mutual teaching. Multi-head Tri-training (Ruder & Plank, 2018) uses training to learn three classifiers from three different training sets obtained using bootstrap sampling. In these methods, each classifier head is still trained using potentially incorrect pseudo-labels generated by other heads. Afterward, the classifier for pseudo-labels generated by DST (Chen et al., 2022b) is trained with unused pseudo-labels, thus having better tolerance to inaccurate pseudo-labels."
+        },
+        {
+            "heading": "D.3 SELF-SUPERVISED LEARNING FOR SSL",
+            "text": "Self-supervised learning Xie et al. (2022); Li et al. (2023b; 2022; 2023a) techniques like contrastive learning (CL) approaches (Chen et al., 2020; He et al., 2020) are also widely applied to SSL, such as CoMatch (Li et al., 2021) that first introduced CL to the consistency regularization framework. ShrinkMatch (Yang et al., 2023) allows the model to search for contracted class space adaptively. In detail, for each uncertain sample, ShrinkMatch dynamically defines a shrunk class space, including the original top-1 class and less likely classes. Similarly, SimMatch (Zheng et al., 2022) uses semantic and instance similarity for mutual calibration. It uses the labeled data to train a semantic classifier and uses this classifier to generate pseudo labels for the unlabeled data. Meanwhile, ReMixMatch (Berthelot et al., 2019a) and CR-Match (Fan et al., 2021) utilize rotation prediction as the auxiliary task for SSL. Moreover, fine-tuning a pre-trained model on labeled datasets is a widely adopted form of transfer learning (TL), and several recent works (Li et al., 2018; 2019b; You et al., 2020; Ximei et al., 2021) like Self-Tuning (Ximei et al., 2021) combining TL with SSL methods. Self-Tuning (Ximei et al., 2021) and HCR (Tan et al., 2022) introduce CL pre-trained models as the regularization to mitigate confirmation bias in TL."
+        },
+        {
+            "heading": "D.4 ADVERSARIAL TRAINING FOR SSL",
+            "text": "In the realm of SSL, innovative approaches have emerged that utilize adversarial training. One approach involves generating synthetic data (Odena, 2016; Dai et al., 2017) using a generator network and assigning it to a new \u201dgenerated\u201d class. The goal is to make the discriminator network provide class labels for these synthetic samples. Another line of research creates adversarial examples through techniques like VAT (Miyato et al., 2018), which adds noise to input data; VAdD (Park et al., 2018), introducing an adversarial exit layer into the model\u2019s architecture; and RAT (Suzuki & Sato, 2020), extending the concept of noise to input transformations. These methods aim to impose local smoothness constraints on the model\u2019s learned representations without relying on pseudo-labels during training. These advancements enhance model robustness and generalization, particularly in data-scarce scenarios, by utilizing latent data distribution structures for more effective learning. This research contributes significantly to improving SSL algorithms, addressing challenges in leveraging unlabeled data to enhance the applicability and performance of machine learning models in realworld applications. These innovative adversarial training approaches are poised to advance SSL."
+        },
+        {
+            "heading": "E ALGORITHM",
+            "text": "SemiRewards algorithm flow, including two-stage training (SR Train Stage 1 and SR Train Stage 2) and inference (SR inference), is as shown in Algorithm 1.\nAlgorithm 1 Pseudocode of SemiReward training and inference in a PyTorch-like style.\n# SR_Train Stage 1 iteration < T:\n# set SemiReward data loader for x_l,y_l in loader:\nx_r,y_r,B_R = x_l,y_l,B_l # load data in B_R size batch, x_r is labeled data and y_r is ground truth label\nfor x_r,y_r,B_R in loader: feat(x_r) = f_s.feat(x_r) # get feature y_f = G(feat(x_r)) # get fake label\nr = S(feat(x_r),y_f) # get reward S = cossimin(y_r,y_f)) #get label similarity as targte\n# calculate loss L_R += MSE(r,S) L_G += MSE(r,1) L_aux = (L_R+L_G)/B_R # adam update\nL_aux.backward update(G) update(R)\n# SR_Train Stage 2 iteration >= T:\n# set SemiReward data loader for x_u,x_l in loader:\nx_r = x_u+x_l\n# get pseudolabel y_p y_p = Pseudolabel(f_s(x_r))\nr = R(y_p,x_r) # calculate reward for each pseudolabel in N\n# select top k reward in N sorted_indices = np.argsort(r)[::-1] y_p = y_p[sorted_indices] y_k = y_p[-k:]\n# get loader batch size B_R B_R = (B_l+B_u)*k/N\n# load data in B_R size batch, x_r is unlabeled data for x_r,y_k,B_R in sr_dataloader:\ny_f = G(x_r) # get fake label r = S(x_r,y_k) # get reward S = cossimin(y_k,y_f)) #get label similarity as targte\n# calculate loss L_R += MSE(r,S) L_G += MSE(r,1) L_aux = (L_R+L_G)/B_R # adam update\nL_aux.backward update(G) update(R)\n# SR_Inference iteration > T:\nfor x_u,x_l,y_l in loader: # get pseudolabel y_p y_p = Pseudolabel(f_s(x_u)) feat(x_u) = f_s+++.feat(x_u) # get feature\nr = R(feat(x_u),y_p) # evaluate score T = r.mean # get threshold mask_r = where(r>T,1,0) L_u = CrossEntropy(y_p,f_s(x_u))*mask # filter label L_l = CrossEntropy(y_l,f_s(x_l))\n# calculate loss L = L_u/B_U+L_l/B_L+L_aux # total loss # adamW update\nL.backward update(f_s)\nfeat: feature of input; cossimin: normalized cosine similarity; cat: concatenation. Pseudolabel: pseudolabel method can see in Pseudo Label algorithm (https://arxiv.org/abs/1908.02983)"
+        }
+    ],
+    "title": "SEMIREWARD: A GENERAL REWARD MODEL FOR SEMI-SUPERVISED LEARNING",
+    "year": 2024
+}
