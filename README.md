@@ -16,10 +16,6 @@
 
 1. **Clone the repository:**
 
-    ```bash
-    https://github.com/sandeep82945/PeerWatermarking.git
-    ```
-
 2. **Install dependencies:**
 
     Use `pip` to install the required libraries (you may need to specify this in a `requirements.txt` file if applicable):
