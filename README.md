@@ -43,3 +43,8 @@
     ```bash
     sh code/run_attack.sh
     ```
+3. **For Peer Review Detection: **
+
+   ```bash
+    python code/classifier.py
+    ```
